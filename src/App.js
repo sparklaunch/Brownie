@@ -1,7 +1,7 @@
 const App = () => {
   return (
     <div className="App">
-      <p>Hello</p>
+      <p className={"text-2xl underline"}>Hello</p>
     </div>
   );
 };
