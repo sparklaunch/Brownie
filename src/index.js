@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RecoilRoot } from "recoil";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MainScreen from "./screens/MainScreen/MainScreen";
+import MainScreen from "./Screens/MainScreen/MainScreen";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

@@ -1,4 +1,4 @@
-import NavigationBar from "./NavigationBar";
+import NavigationBar from "./NavigationBar/NavigationBar";
 
 const MainScreen = () => {
   return (
