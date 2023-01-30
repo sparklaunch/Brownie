@@ -1,6 +1,6 @@
 const FormHeader = () => {
   return (
-    <div className={`flex flex-col items-center`}>
+    <div className={`flex flex-col items-center my-2`}>
       <p className={`text-white font-bold font-[Jua] text-[20px]`}>
         회원 로그인
       </p>

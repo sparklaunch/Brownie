@@ -1,5 +1,6 @@
 import FormHeader from "./FormHeader";
 import FormBackground from "./FormBackground";
+import FormFields from "./FormFields";
 
 const JumbotronForm = () => {
   return (
@@ -9,6 +10,7 @@ const JumbotronForm = () => {
       <FormBackground />
       <div className={`p-[16px] z-[1] absolute top-0 left-0 bottom-0 right-0`}>
         <FormHeader />
+        <FormFields />
       </div>
     </div>
   );
