@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 const FormFields = () => {
   return (
@@ -26,6 +26,25 @@ const FormFields = () => {
           borderRadius: 2
         }}
       />
+      <Button
+        variant={"contained"}
+        sx={{
+          backgroundColor: "#1AB9C5",
+          filter: "brightness(1.0)",
+          fontFamily: "Jua",
+          fontSize: 18,
+          width: "100%",
+          height: 44,
+          borderRadius: 2,
+          marginTop: 3,
+          ":hover": {
+            backgroundColor: "#1AB9C5",
+            filter: "brightness(0.8)"
+          }
+        }}
+      >
+        로그인
+      </Button>
     </div>
   );
 };
