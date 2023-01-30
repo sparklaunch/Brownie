@@ -1,9 +1,11 @@
 import Logo from "./Logo";
+import NavigationContent from "./NavigationContent";
 
 const NavigationBar = () => {
   return (
-    <div className={`w-[136px]`}>
+    <div className={`flex h-[136px] flex-row justify-between items-center`}>
       <Logo />
+      <NavigationContent />
     </div>
   );
 };
