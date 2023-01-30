@@ -1,4 +1,5 @@
 import JumbotronTitle from "./JumbotronTitle";
+import JumbotronForm from "./JumbotronForm";
 
 const Jumbotron = () => {
   return (
@@ -7,6 +8,7 @@ const Jumbotron = () => {
     >
       <div className={`w-[1200px] flex flex-row justify-between`}>
         <JumbotronTitle />
+        <JumbotronForm />
       </div>
     </div>
   );
