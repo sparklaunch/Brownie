@@ -20,6 +20,7 @@ const FormFields = () => {
         variant={"filled"}
         label={"비밀번호"}
         size={"small"}
+        type={"password"}
         sx={{
           width: "100%",
           backgroundColor: "white",
@@ -36,7 +37,7 @@ const FormFields = () => {
           width: "100%",
           height: 44,
           borderRadius: 2,
-          marginTop: 3,
+          marginTop: 2,
           ":hover": {
             backgroundColor: "#1AB9C5",
             filter: "brightness(0.8)"
@@ -47,7 +48,7 @@ const FormFields = () => {
       </Button>
       <div className={"flex flex-row items-center relative left-[-12px]"}>
         <Checkbox />
-        <p className={"text-white"}>자동 로그인</p>
+        <p className={"text-white font-extralight text-[14px]"}>자동 로그인</p>
       </div>
     </div>
   );
