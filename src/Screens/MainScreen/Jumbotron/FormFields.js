@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { Button, Checkbox, TextField } from "@mui/material";
 
 const FormFields = () => {
   return (
@@ -45,6 +45,10 @@ const FormFields = () => {
       >
         로그인
       </Button>
+      <div className={"flex flex-row items-center relative left-[-12px]"}>
+        <Checkbox />
+        <p className={"text-white"}>자동 로그인</p>
+      </div>
     </div>
   );
 };
