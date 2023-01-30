@@ -9,7 +9,8 @@ const CatalogFilter = () => {
         variant={"outlined"}
         color={"error"}
         sx={{
-          fontFamily: "Jua"
+          fontFamily: "Jua",
+          marginRight: "16px"
         }}
       >
         도서 레벨 확인
