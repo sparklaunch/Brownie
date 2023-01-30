@@ -20,6 +20,8 @@ const NavigationContentBottom = () => {
           filter: "brightness(1.0)",
           fontFamily: "Jua",
           fontSize: 18,
+          width: 104,
+          height: 44,
           ":hover": {
             backgroundColor: "#1AB9C5",
             filter: "brightness(0.8)"
