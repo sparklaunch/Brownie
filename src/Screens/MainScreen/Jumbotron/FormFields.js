@@ -1,6 +1,11 @@
 import { Button, Checkbox, TextField } from "@mui/material";
+import { useRecoilState } from "recoil";
+import idAtom from "../../../Stores/id";
+import passwordAtom from "../../../Stores/password";
 
 const FormFields = () => {
+  const [id, setID] = useRecoilState(idAtom);
+  const [password, setPassword] = useRecoilState(passwordAtom);
   return (
     <div>
       <TextField
@@ -8,6 +13,8 @@ const FormFields = () => {
         variant={"filled"}
         label={"아이디"}
         size={"small"}
+        value={id}
+        onChange={(event) => setID(event.target.value)}
         sx={{
           width: "100%",
           backgroundColor: "white",
@@ -20,6 +27,8 @@ const FormFields = () => {
         variant={"filled"}
         label={"비밀번호"}
         size={"small"}
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
         type={"password"}
         sx={{
           width: "100%",
