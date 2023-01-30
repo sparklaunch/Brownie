@@ -1,6 +1,8 @@
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const JumbotronTitle = () => {
+  const navigator = useNavigate();
   return (
     <div>
       <div className={`mb-[54px]`}>
@@ -13,6 +15,9 @@ const JumbotronTitle = () => {
       </div>
       <Button
         variant={"outlined"}
+        onClick={() => {
+          navigator("/demo");
+        }}
         sx={{
           fontFamily: "Jua",
           fontSize: 24,
