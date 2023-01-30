@@ -9,6 +9,11 @@ const FormFields = () => {
   const [password, setPassword] = useRecoilState(passwordAtom);
   const [autoLogInEnabled, setAutoLogInEnabled] =
     useRecoilState(autoLogInEnabledAtom);
+  const onLogInButtonClicked = () => {
+    console.log(id);
+    console.log(password);
+    console.log(autoLogInEnabled);
+  };
   return (
     <div>
       <TextField
@@ -41,6 +46,7 @@ const FormFields = () => {
       />
       <Button
         variant={"contained"}
+        onClick={onLogInButtonClicked}
         sx={{
           backgroundColor: "#1AB9C5",
           filter: "brightness(1.0)",
