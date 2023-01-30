@@ -1,5 +1,6 @@
 import CatalogHeader from "./CatalogHeader";
 import CatalogFilter from "./CatalogFilter";
+import CatalogList from "./CatalogList";
 
 const Catalog = () => {
   return (
@@ -7,6 +8,7 @@ const Catalog = () => {
       <div className={`w-[1200px]`}>
         <CatalogHeader />
         <CatalogFilter />
+        <CatalogList />
       </div>
     </div>
   );
