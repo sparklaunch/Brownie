@@ -18,6 +18,11 @@ const Footer = () => {
         </p>
         <p className={`pl-3`}>고객센터 : 02-512-8881</p>
       </div>
+      <div className={`pt-3`}>
+        <p className={`text-[#ACACAC] text-[14px]`}>
+          © Kids Brown Partners Co. Lid.. All rights reserved.
+        </p>
+      </div>
     </div>
   );
 };
