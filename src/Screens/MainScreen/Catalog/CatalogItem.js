@@ -1,4 +1,5 @@
 import CatalogLabel from "./CatalogLabel";
+import CatalogTitle from "./CatalogTitle";
 
 const CatalogItem = ({ coverImage }) => {
   return (
@@ -10,6 +11,7 @@ const CatalogItem = ({ coverImage }) => {
         className={`h-[288px] w-full object-cover rounded-lg`}
       />
       <CatalogLabel label={coverImage.split(".avif")[0]} />
+      <CatalogTitle />
     </div>
   );
 };
