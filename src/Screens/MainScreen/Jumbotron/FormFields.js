@@ -1,11 +1,14 @@
 import { Button, Checkbox, TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
-import idAtom from "../../../Stores/id";
-import passwordAtom from "../../../Stores/password";
+import idAtom from "../../../Stores/Auth/id";
+import passwordAtom from "../../../Stores/Auth/password";
+import autoLogInEnabledAtom from "../../../Stores/Auth/autoLogInEnabled";
 
 const FormFields = () => {
   const [id, setID] = useRecoilState(idAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
+  const [autoLogInEnabled, setAutoLogInEnabled] =
+    useRecoilState(autoLogInEnabledAtom);
   return (
     <div>
       <TextField
@@ -56,7 +59,10 @@ const FormFields = () => {
         로그인
       </Button>
       <div className={"flex flex-row items-center relative left-[-12px]"}>
-        <Checkbox />
+        <Checkbox
+          checked={autoLogInEnabled}
+          onChange={(event) => setAutoLogInEnabled(event.target.checked)}
+        />
         <p className={"text-white font-extralight text-[14px]"}>자동 로그인</p>
       </div>
     </div>
