@@ -2,7 +2,7 @@ import CatalogLabel from "./CatalogLabel";
 
 const CatalogItem = ({ coverImage }) => {
   return (
-    <div className={`relative`}>
+    <div className={`relative drop-shadow-lg`}>
       <img
         loading={"lazy"}
         src={`/assets/images/covers/${coverImage}`}
