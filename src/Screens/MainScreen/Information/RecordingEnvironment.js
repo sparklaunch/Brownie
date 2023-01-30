@@ -2,7 +2,7 @@ import FlareIcon from "@mui/icons-material/Flare";
 
 const RecordingEnvironment = () => {
   return (
-    <div className={`my-3`}>
+    <div className={`my-3 mb-[40px]`}>
       <div className={`flex flex-row items-center my-2`}>
         <FlareIcon
           sx={{
