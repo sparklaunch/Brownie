@@ -1,6 +1,6 @@
 const EvaluationMethod = () => {
   return (
-    <div className={`flex flex-row items-center`}>
+    <div className={`flex flex-row items-center mb-[80px]`}>
       <p
         className={`bg-[#1AB9C5] inline-block text-white text-[20px] p-2 px-5 rounded-md`}
       >
