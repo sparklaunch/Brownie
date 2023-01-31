@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { Button, Checkbox, TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
@@ -10,6 +10,7 @@ import studentNameAtom from "../../../Stores/Auth/studentName";
 import studentBirthDateAtom from "../../../Stores/Auth/studentBirthDate";
 import CouponLabel from "./CouponLabel";
 import couponAtom from "../../../Stores/Auth/coupon";
+import agreeStatusAtom from "../../../Stores/Auth/agreeStatus";
 
 const SignUpFields = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -21,6 +22,7 @@ const SignUpFields = () => {
   const [studentBirthDate, setStudentBirthDate] =
     useRecoilState(studentBirthDateAtom);
   const [coupon, setCoupon] = useRecoilState(couponAtom);
+  const [agreeStatus, setAgreeStatus] = useRecoilState(agreeStatusAtom);
   return (
     <div className={`py-3`}>
       <TextField
@@ -137,6 +139,15 @@ const SignUpFields = () => {
           }}
         />
         <Button variant={"contained"}>등록</Button>
+      </div>
+      <div className={"flex flex-row items-center relative left-[-12px]"}>
+        <Checkbox
+          checked={agreeStatus}
+          onChange={(event) => setAgreeStatus(event.target.checked)}
+        />
+        <p className={"font-extralight text-[16px]"}>
+          이용약관 및 개인정보취급방침에 동의합니다. (필수)
+        </p>
       </div>
     </div>
   );
