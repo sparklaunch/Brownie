@@ -2,7 +2,7 @@ import { TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
-import InfoIcon from "@mui/icons-material/Info";
+import PasswordInfo from "./PasswordInfo";
 
 const SignUpFields = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -40,16 +40,7 @@ const SignUpFields = () => {
           marginBottom: 1.5
         }}
       />
-      <div className={`flex flex-row items-center`}>
-        <InfoIcon
-          sx={{
-            fill: "#ACACAC"
-          }}
-        />
-        <p className={`text-[13px] text-[#ACACAC] ml-1`}>
-          알파벳, 숫자 조합으로 최소 6자리 이상 입력하세요.
-        </p>
-      </div>
+      <PasswordInfo />
     </div>
   );
 };
