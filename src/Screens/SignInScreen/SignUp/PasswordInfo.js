@@ -2,7 +2,7 @@ import InfoIcon from "@mui/icons-material/Info";
 
 const PasswordInfo = () => {
   return (
-    <div>
+    <div className={`mb-3`}>
       <div className={`flex flex-row items-center`}>
         <InfoIcon
           sx={{

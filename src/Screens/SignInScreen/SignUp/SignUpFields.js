@@ -3,10 +3,13 @@ import { useRecoilState } from "recoil";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
 import PasswordInfo from "./PasswordInfo";
+import passwordConfirmAtom from "../../../Stores/Auth/passwordConfirm";
 
 const SignUpFields = () => {
   const [id, setID] = useRecoilState(idAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
+  const [passwordConfirm, setPasswordConfirm] =
+    useRecoilState(passwordConfirmAtom);
   return (
     <div className={`py-3`}>
       <TextField
@@ -41,6 +44,22 @@ const SignUpFields = () => {
         }}
       />
       <PasswordInfo />
+      <TextField
+        id={"password-confirm"}
+        value={passwordConfirm}
+        onChange={(event) => setPasswordConfirm(event.target.value)}
+        variant={"outlined"}
+        label={"비밀번호 확인"}
+        required={true}
+        size={"medium"}
+        type={"password"}
+        sx={{
+          width: "100%",
+          backgroundColor: "white",
+          borderRadius: 2,
+          marginBottom: 1.5
+        }}
+      />
     </div>
   );
 };
