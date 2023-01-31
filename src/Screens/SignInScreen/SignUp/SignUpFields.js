@@ -8,6 +8,7 @@ import phoneNumberAtom from "../../../Stores/Auth/phoneNumber";
 import StudentLabel from "./StudentLabel";
 import studentNameAtom from "../../../Stores/Auth/studentName";
 import studentBirthDateAtom from "../../../Stores/Auth/studentBirthDate";
+import CouponLabel from "./CouponLabel";
 
 const SignUpFields = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -115,6 +116,7 @@ const SignUpFields = () => {
           marginBottom: 1.5
         }}
       />
+      <CouponLabel />
     </div>
   );
 };
