@@ -9,11 +9,7 @@ const FormFields = () => {
   const [password, setPassword] = useRecoilState(passwordAtom);
   const [autoLogInEnabled, setAutoLogInEnabled] =
     useRecoilState(autoLogInEnabledAtom);
-  const onLogInButtonClicked = () => {
-    console.log(id);
-    console.log(password);
-    console.log(autoLogInEnabled);
-  };
+  const onLogInButtonClicked = () => {};
   return (
     <div>
       <TextField
