@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 
 const TryContents = () => {
   return (
-    <div className={`flex flex-row justify-center my-12`}>
+    <div className={`flex flex-row justify-center my-6`}>
       <div className={`w-[600px]`}>
         <Grid container spacing={2}>
           <Grid item xs={6}>

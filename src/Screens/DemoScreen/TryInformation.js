@@ -3,7 +3,7 @@ import CheckIcon from "@mui/icons-material/Check";
 const TryInformation = () => {
   return (
     <div
-      className={`w-full p-[40px] bg-[#F9F9F9] border-2 border-[#DFDFDF] rounded-xl`}
+      className={`w-full p-[40px] bg-[#F9F9F9] border-2 border-[#DFDFDF] rounded-xl my-12`}
     >
       <div className={`flex flex-row items-center justify-center py-1`}>
         <CheckIcon
