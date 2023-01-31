@@ -5,6 +5,7 @@ import passwordAtom from "../../../Stores/Auth/password";
 import PasswordInfo from "./PasswordInfo";
 import passwordConfirmAtom from "../../../Stores/Auth/passwordConfirm";
 import phoneNumberAtom from "../../../Stores/Auth/phoneNumber";
+import StudentLabel from "./StudentLabel";
 
 const SignUpFields = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -78,6 +79,7 @@ const SignUpFields = () => {
           marginBottom: 1.5
         }}
       />
+      <StudentLabel />
     </div>
   );
 };
