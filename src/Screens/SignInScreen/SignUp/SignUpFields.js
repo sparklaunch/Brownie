@@ -4,12 +4,14 @@ import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
 import PasswordInfo from "./PasswordInfo";
 import passwordConfirmAtom from "../../../Stores/Auth/passwordConfirm";
+import phoneNumberAtom from "../../../Stores/Auth/phoneNumber";
 
 const SignUpFields = () => {
   const [id, setID] = useRecoilState(idAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
   const [passwordConfirm, setPasswordConfirm] =
     useRecoilState(passwordConfirmAtom);
+  const [phoneNumber, setPhoneNumber] = useRecoilState(phoneNumberAtom);
   return (
     <div className={`py-3`}>
       <TextField
@@ -53,6 +55,22 @@ const SignUpFields = () => {
         required={true}
         size={"medium"}
         type={"password"}
+        sx={{
+          width: "100%",
+          backgroundColor: "white",
+          borderRadius: 2,
+          marginBottom: 1.5
+        }}
+      />
+      <TextField
+        id={"phone-number"}
+        value={phoneNumber}
+        onChange={(event) => setPhoneNumber(event.target.value)}
+        variant={"outlined"}
+        label={"휴대폰 번호 (예: 01012345678)"}
+        required={true}
+        size={"medium"}
+        type={"phone-number"}
         sx={{
           width: "100%",
           backgroundColor: "white",
