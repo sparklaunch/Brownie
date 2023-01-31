@@ -1,8 +1,12 @@
 import { Button, Checkbox, TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
 import autoLogInEnabledAtom from "../../../Stores/Auth/autoLogInEnabled";
+import idAtom from "../../../Stores/Auth/id";
+import passwordAtom from "../../../Stores/Auth/password";
 
 const SignInFields = () => {
+  const [id, setID] = useRecoilState(idAtom);
+  const [password, setPassword] = useRecoilState(passwordAtom);
   const [autoLogInEnabled, setAutoLogInEnabled] =
     useRecoilState(autoLogInEnabledAtom);
   const onClickLogin = () => {};
@@ -10,6 +14,8 @@ const SignInFields = () => {
     <div className={`py-3`}>
       <TextField
         id={"id"}
+        value={id}
+        onChange={(event) => setID(event.target.value)}
         variant={"outlined"}
         label={"아이디"}
         required={true}
@@ -23,6 +29,8 @@ const SignInFields = () => {
       />
       <TextField
         id={"password"}
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
         variant={"outlined"}
         label={"비밀번호"}
         required={true}
