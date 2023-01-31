@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
@@ -9,6 +9,7 @@ import StudentLabel from "./StudentLabel";
 import studentNameAtom from "../../../Stores/Auth/studentName";
 import studentBirthDateAtom from "../../../Stores/Auth/studentBirthDate";
 import CouponLabel from "./CouponLabel";
+import couponAtom from "../../../Stores/Auth/coupon";
 
 const SignUpFields = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -19,6 +20,7 @@ const SignUpFields = () => {
   const [studentName, setStudentName] = useRecoilState(studentNameAtom);
   const [studentBirthDate, setStudentBirthDate] =
     useRecoilState(studentBirthDateAtom);
+  const [coupon, setCoupon] = useRecoilState(couponAtom);
   return (
     <div className={`py-3`}>
       <TextField
@@ -117,6 +119,25 @@ const SignUpFields = () => {
         }}
       />
       <CouponLabel />
+      <div className={`flex flex-row items-center`}>
+        <TextField
+          id={"coupon"}
+          value={coupon}
+          onChange={(event) => setCoupon(event.target.value)}
+          variant={"outlined"}
+          label={"예) ########"}
+          size={"small"}
+          sx={{
+            backgroundColor: "white",
+            borderRadius: 2,
+            marginBottom: 1.5,
+            flexGrow: 1,
+            margin: 0,
+            marginRight: 1
+          }}
+        />
+        <Button variant={"contained"}>등록</Button>
+      </div>
     </div>
   );
 };
