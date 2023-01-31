@@ -11,7 +11,7 @@ const SignInScreen = () => {
     setTabValue(newValue);
   };
   return (
-    <div className={`flex flex-col mt-12 items-center h-full overflow-clip`}>
+    <div className={`flex flex-col mt-6 items-center h-full overflow-clip`}>
       <div
         className={`w-[500px] border-2 border-[#DFDFDF] rounded-lg shadow-lg`}
       >
