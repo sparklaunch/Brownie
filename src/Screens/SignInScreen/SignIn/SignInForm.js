@@ -1,5 +1,11 @@
+import SignInHeader from "./SignInHeader";
+
 const SignInForm = () => {
-  return <div></div>;
+  return (
+    <div>
+      <SignInHeader />
+    </div>
+  );
 };
 
 export default SignInForm;
