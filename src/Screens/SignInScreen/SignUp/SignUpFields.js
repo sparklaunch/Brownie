@@ -139,7 +139,14 @@ const SignUpFields = () => {
             marginRight: 1
           }}
         />
-        <Button variant={"contained"}>등록</Button>
+        <Button
+          variant={"contained"}
+          sx={{
+            backgroundColor: "#222"
+          }}
+        >
+          등록
+        </Button>
       </div>
       <div className={"flex flex-row items-center relative left-[-12px]"}>
         <Checkbox
