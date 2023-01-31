@@ -4,7 +4,7 @@ const FormFooter = () => {
   return (
     <div className={"flex flex-row justify-center mt-3"}>
       <Link
-        to={"/register"}
+        to={"/signin"}
         className={`text-white font-extralight text-[14px] pr-3 border-r-[1px] border-l-white`}
       >
         회원가입
