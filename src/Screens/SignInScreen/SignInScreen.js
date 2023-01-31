@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import tabValueAtom from "../../Stores/Auth/tabValue";
 import SignInForm from "./SignIn/SignInForm";
 import SignUpForm from "./SignUp/SignUpForm";
+import Terms from "./Terms";
 
 const SignInScreen = () => {
   const [tabValue, setTabValue] = useRecoilState(tabValueAtom);
@@ -24,6 +25,7 @@ const SignInScreen = () => {
           {tabValue === 0 ? <SignInForm /> : <SignUpForm />}
         </Box>
       </div>
+      <Terms />
     </div>
   );
 };
