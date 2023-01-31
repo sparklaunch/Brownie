@@ -25,7 +25,7 @@ const SignUpFields = () => {
   const [agreeStatus, setAgreeStatus] = useRecoilState(agreeStatusAtom);
   const onClickSignUp = () => {};
   return (
-    <div className={`py-3`}>
+    <div className={`pt-3`}>
       <TextField
         id={"id"}
         value={id}
