@@ -2,7 +2,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 
 const StudentLabel = () => {
   return (
-    <div className={`flex flex-row items-center`}>
+    <div className={`flex flex-row items-center mb-1`}>
       <CircleIcon
         sx={{
           width: "10px",
