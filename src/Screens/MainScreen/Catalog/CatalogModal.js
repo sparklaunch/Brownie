@@ -17,7 +17,7 @@ const CatalogModal = () => {
     >
       <div className={`w-full h-full flex justify-center items-center`}>
         <div
-          className={`w-[600px] p-3 bg-white rounded-lg shadow-xl`}
+          className={`w-[600px] p-3 bg-white rounded-lg shadow-xl border-t-8 border-[#1AB9C5]`}
           ref={contentRef}
         >
           <CatalogModalContent />
