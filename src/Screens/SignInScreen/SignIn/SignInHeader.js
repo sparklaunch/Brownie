@@ -1,8 +1,6 @@
 const SignInHeader = () => {
   return (
-    <div
-      className={`flex flex-row justify-between items-center bg-[#F9F9F9] px-[24px] py-[14px]`}
-    >
+    <div className={`flex flex-row justify-between items-center`}>
       <img src="assets/images/logo.png" alt="KidsBrown Logo" />
       <p className={`text-[18px]`}>로그인</p>
     </div>
