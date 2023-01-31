@@ -10,8 +10,8 @@ const SignInScreen = () => {
     setTabValue(newValue);
   };
   return (
-    <div className={`flex justify-center items-center`}>
-      <div className={`w-[500px]`}>
+    <div className={`flex flex-col mt-[30vh] items-center h-[100vh]`}>
+      <div className={`w-[500px] border-2 border-[#DFDFDF] rounded-lg`}>
         <Box sx={{ width: "100%" }}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <Tabs value={tabValue} onChange={onTabChange}>
