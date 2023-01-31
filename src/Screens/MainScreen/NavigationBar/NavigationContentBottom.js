@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 
 const NavigationContentBottom = () => {
+  const navigate = useNavigate();
   return (
     <div className={`flex flex-row items-center justify-end`}>
       <Link to={"/classroom"} className={`mr-[32px]`}>
@@ -15,6 +16,9 @@ const NavigationContentBottom = () => {
       </Link>
       <Button
         variant={"contained"}
+        onClick={() => {
+          navigate("/signin");
+        }}
         sx={{
           backgroundColor: "#1AB9C5",
           filter: "brightness(1.0)",
