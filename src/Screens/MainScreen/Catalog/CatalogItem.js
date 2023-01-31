@@ -8,7 +8,7 @@ const CatalogItem = ({ coverImage, data }) => {
         loading={"lazy"}
         src={`/assets/images/covers/${coverImage}`}
         alt={`${coverImage}`}
-        className={`h-[288px] w-full object-cover rounded-lg`}
+        className={`h-[288px] w-full object-cover cursor-pointer rounded-lg hover:opacity-60 transition duration-200 ease-in-out`}
       />
       <CatalogLabel label={coverImage.split(".avif")[0]} />
       <CatalogTitle data={data} />
