@@ -1,6 +1,7 @@
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 const SignInFields = () => {
+  const onClickLogin = () => {};
   return (
     <div className={`py-3`}>
       <TextField
@@ -30,6 +31,25 @@ const SignInFields = () => {
           marginBottom: 1.5
         }}
       />
+      <Button
+        variant={"contained"}
+        onClick={onClickLogin}
+        sx={{
+          backgroundColor: "#1AB9C5",
+          filter: "brightness(1.0)",
+          fontFamily: "Jua",
+          fontSize: 18,
+          width: "100%",
+          height: 44,
+          marginTop: 1.5,
+          ":hover": {
+            backgroundColor: "#1AB9C5",
+            filter: "brightness(0.8)"
+          }
+        }}
+      >
+        로그인
+      </Button>
     </div>
   );
 };
