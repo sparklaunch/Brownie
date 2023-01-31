@@ -1,6 +1,10 @@
-import { Button, TextField } from "@mui/material";
+import { Button, Checkbox, TextField } from "@mui/material";
+import { useRecoilState } from "recoil";
+import autoLogInEnabledAtom from "../../../Stores/Auth/autoLogInEnabled";
 
 const SignInFields = () => {
+  const [autoLogInEnabled, setAutoLogInEnabled] =
+    useRecoilState(autoLogInEnabledAtom);
   const onClickLogin = () => {};
   return (
     <div className={`py-3`}>
@@ -50,6 +54,13 @@ const SignInFields = () => {
       >
         로그인
       </Button>
+      <div className={"flex flex-row items-center relative left-[-12px]"}>
+        <Checkbox
+          checked={autoLogInEnabled}
+          onChange={(event) => setAutoLogInEnabled(event.target.checked)}
+        />
+        <p className={"font-extralight text-[16px]"}>자동 로그인</p>
+      </div>
     </div>
   );
 };
