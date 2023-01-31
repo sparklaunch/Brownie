@@ -23,6 +23,7 @@ const SignUpFields = () => {
     useRecoilState(studentBirthDateAtom);
   const [coupon, setCoupon] = useRecoilState(couponAtom);
   const [agreeStatus, setAgreeStatus] = useRecoilState(agreeStatusAtom);
+  const onClickSignUp = () => {};
   return (
     <div className={`py-3`}>
       <TextField
@@ -149,6 +150,25 @@ const SignUpFields = () => {
           이용약관 및 개인정보취급방침에 동의합니다. (필수)
         </p>
       </div>
+      <Button
+        variant={"contained"}
+        onClick={onClickSignUp}
+        sx={{
+          backgroundColor: "#1AB9C5",
+          filter: "brightness(1.0)",
+          fontFamily: "Jua",
+          fontSize: 18,
+          width: "100%",
+          height: 44,
+          marginTop: 1.5,
+          ":hover": {
+            backgroundColor: "#1AB9C5",
+            filter: "brightness(0.8)"
+          }
+        }}
+      >
+        회원가입
+      </Button>
     </div>
   );
 };
