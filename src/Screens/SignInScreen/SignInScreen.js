@@ -11,7 +11,9 @@ const SignInScreen = () => {
   };
   return (
     <div className={`flex flex-col mt-[30vh] items-center h-[100vh]`}>
-      <div className={`w-[500px] border-2 border-[#DFDFDF] rounded-lg`}>
+      <div
+        className={`w-[500px] border-2 border-[#DFDFDF] rounded-lg shadow-lg`}
+      >
         <Box sx={{ width: "100%" }}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <Tabs value={tabValue} onChange={onTabChange}>
