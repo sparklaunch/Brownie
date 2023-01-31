@@ -2,8 +2,6 @@ import CatalogLabel from "./CatalogLabel";
 import CatalogTitle from "./CatalogTitle";
 import { useRecoilState } from "recoil";
 import modalOpenAtom from "../../../Stores/Misc/modalOpen";
-import { Box, Modal } from "@mui/material";
-import CatalogModal from "./CatalogModal";
 
 const CatalogItem = ({ coverImage, data }) => {
   const [modalOpen, setModalOpen] = useRecoilState(modalOpenAtom);
@@ -21,11 +19,6 @@ const CatalogItem = ({ coverImage, data }) => {
       />
       <CatalogLabel label={coverImage.split(".avif")[0]} />
       <CatalogTitle data={data} />
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-        <Box>
-          <CatalogModal />
-        </Box>
-      </Modal>
     </div>
   );
 };
