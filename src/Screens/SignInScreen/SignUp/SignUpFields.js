@@ -7,6 +7,7 @@ import passwordConfirmAtom from "../../../Stores/Auth/passwordConfirm";
 import phoneNumberAtom from "../../../Stores/Auth/phoneNumber";
 import StudentLabel from "./StudentLabel";
 import studentNameAtom from "../../../Stores/Auth/studentName";
+import studentBirthDateAtom from "../../../Stores/Auth/studentBirthDate";
 
 const SignUpFields = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -15,6 +16,8 @@ const SignUpFields = () => {
     useRecoilState(passwordConfirmAtom);
   const [phoneNumber, setPhoneNumber] = useRecoilState(phoneNumberAtom);
   const [studentName, setStudentName] = useRecoilState(studentNameAtom);
+  const [studentBirthDate, setStudentBirthDate] =
+    useRecoilState(studentBirthDateAtom);
   return (
     <div className={`py-3`}>
       <TextField
@@ -90,6 +93,21 @@ const SignUpFields = () => {
         label={"학생(자녀) 이름"}
         required={true}
         size={"medium"}
+        sx={{
+          width: "100%",
+          backgroundColor: "white",
+          borderRadius: 2,
+          marginBottom: 1.5
+        }}
+      />
+      <TextField
+        id={"student-birth-date"}
+        value={studentBirthDate}
+        onChange={(event) => setStudentBirthDate(event.target.value)}
+        variant={"outlined"}
+        required={true}
+        size={"medium"}
+        type={"date"}
         sx={{
           width: "100%",
           backgroundColor: "white",
