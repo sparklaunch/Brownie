@@ -9,7 +9,7 @@ const TextBookInformation = () => {
       <img
         src={`/assets/images/covers/${selectedCatalog.label}.avif`}
         alt={`${selectedCatalog.label}`}
-        className={`w-[100px] h-[100px] object-cover rounded-xl`}
+        className={`w-[120px] h-[120px] object-cover rounded-xl`}
       />
       <div className={`ml-2 flex flex-col flex-grow-[1]`}>
         <p className={`w-[100%] pl-5 py-1 mb-2 bg-[#F5F5F5] rounded-md block`}>
