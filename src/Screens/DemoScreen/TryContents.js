@@ -3,9 +3,9 @@ import { Grid } from "@mui/material";
 
 const TryContents = () => {
   return (
-    <div className={`flex flex-row justify-center my-6`}>
-      <div className={`w-[600px]`}>
-        <Grid container spacing={2}>
+    <div className={`flex flex-row justify-center my-6 mb-12`}>
+      <div className={`w-[1200px]`}>
+        <Grid container spacing={20}>
           <Grid item xs={6}>
             <CatalogItem
               coverImage={"1-1.avif"}
