@@ -13,6 +13,7 @@ const TryContents = () => {
                 level: "1-1",
                 title: "Ant, Bug and Cat"
               }}
+              clickable={false}
             />
           </Grid>
           <Grid item xs={6}>
@@ -22,6 +23,7 @@ const TryContents = () => {
                 level: "2-1",
                 title: "Dan and the Ram"
               }}
+              clickable={false}
             />
           </Grid>
         </Grid>

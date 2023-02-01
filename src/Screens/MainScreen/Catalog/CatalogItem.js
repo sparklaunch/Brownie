@@ -4,11 +4,14 @@ import { useRecoilState } from "recoil";
 import modalOpenAtom from "../../../Stores/Misc/modalOpen";
 import selectedCatalogAtom from "../../../Stores/Catalog/selectedCatalog";
 
-const CatalogItem = ({ coverImage, data }) => {
+const CatalogItem = ({ coverImage, data, clickable = true }) => {
   const [modalOpen, setModalOpen] = useRecoilState(modalOpenAtom);
   const [selectedCatalog, setSelectedCatalog] =
     useRecoilState(selectedCatalogAtom);
   const onClickCatalogItem = () => {
+    if (!clickable) {
+      return;
+    }
     setSelectedCatalog({
       label: coverImage.split(".avif")[0],
       title: data.title
