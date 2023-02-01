@@ -2,7 +2,10 @@ import { atom } from "recoil";
 
 const selectedCatalogAtom = atom({
   key: "selectedCatalog",
-  default: ""
+  default: {
+    label: "",
+    title: ""
+  }
 });
 
 export default selectedCatalogAtom;

@@ -9,7 +9,10 @@ const CatalogItem = ({ coverImage, data }) => {
   const [selectedCatalog, setSelectedCatalog] =
     useRecoilState(selectedCatalogAtom);
   const onClickCatalogItem = () => {
-    setSelectedCatalog(coverImage.split(".avif")[0]);
+    setSelectedCatalog({
+      label: coverImage.split(".avif")[0],
+      title: data.title
+    });
     setModalOpen(true);
   };
   return (
