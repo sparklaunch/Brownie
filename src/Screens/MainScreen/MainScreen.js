@@ -5,7 +5,7 @@ import Information from "./Information/Information";
 import Footer from "./Footer/Footer";
 import { useRecoilState } from "recoil";
 import modalOpenAtom from "../../Stores/Misc/modalOpen";
-import CatalogModal from "./Catalog/CatalogModal";
+import CatalogModal from "./Catalog/CatalogModal/CatalogModal";
 
 const MainScreen = () => {
   const [modalOpen, setModalOpen] = useRecoilState(modalOpenAtom);

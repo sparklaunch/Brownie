@@ -2,10 +2,14 @@ import CatalogLabel from "./CatalogLabel";
 import CatalogTitle from "./CatalogTitle";
 import { useRecoilState } from "recoil";
 import modalOpenAtom from "../../../Stores/Misc/modalOpen";
+import selectedCatalogAtom from "../../../Stores/Catalog/selectedCatalog";
 
 const CatalogItem = ({ coverImage, data }) => {
   const [modalOpen, setModalOpen] = useRecoilState(modalOpenAtom);
+  const [selectedCatalog, setSelectedCatalog] =
+    useRecoilState(selectedCatalogAtom);
   const onClickCatalogItem = () => {
+    setSelectedCatalog(coverImage.split(".avif")[0]);
     setModalOpen(true);
   };
   return (

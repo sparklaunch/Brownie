@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import modalOpenAtom from "../../../Stores/Misc/modalOpen";
+import modalOpenAtom from "../../../../Stores/Misc/modalOpen";
 import CatalogModalContent from "./CatalogModalContent";
 import { useRef } from "react";
 
