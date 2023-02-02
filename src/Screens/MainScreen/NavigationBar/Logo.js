@@ -6,7 +6,7 @@ const Logo = () => {
       <img
         src="/assets/images/home_logo.png"
         alt="KidsBrown Logo"
-        className={`w-[200px] h-[40px]`}
+        className={`w-[200px]`}
       />
     </Link>
   );
