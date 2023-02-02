@@ -142,7 +142,10 @@ const SignUpFields = () => {
         <Button
           variant={"contained"}
           sx={{
-            backgroundColor: "#222"
+            backgroundColor: "#222",
+            ":hover": {
+              backgroundColor: "#222"
+            }
           }}
         >
           등록
@@ -169,8 +172,7 @@ const SignUpFields = () => {
           height: 44,
           marginTop: 1.5,
           ":hover": {
-            backgroundColor: "#1AB9C5",
-            filter: "brightness(0.8)"
+            backgroundColor: "#1AB9C5"
           }
         }}
       >

@@ -57,8 +57,7 @@ const SignInFields = () => {
           height: 44,
           marginTop: 1.5,
           ":hover": {
-            backgroundColor: "#1AB9C5",
-            filter: "brightness(0.8)"
+            backgroundColor: "#1AB9C5"
           }
         }}
       >
