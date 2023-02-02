@@ -7,6 +7,7 @@ import MainScreen from "./Screens/MainScreen/MainScreen";
 import DemoScreen from "./Screens/DemoScreen/DemoScreen";
 import SignInScreen from "./Screens/SignInScreen/SignInScreen";
 import MyPageScreen from "./Screens/MyPageScreen/MyPageScreen";
+import NotFoundScreen from "./Screens/NotFoundScreen/NotFoundScreen";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -18,6 +19,7 @@ root.render(
         <Route path={"/demo"} element={<DemoScreen />} />
         <Route path={"/signin"} element={<SignInScreen />} />
         <Route path={"/mypage"} element={<MyPageScreen />} />
+        <Route path={"*"} element={<NotFoundScreen />} />
       </Routes>
     </BrowserRouter>
   </RecoilRoot>
