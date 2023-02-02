@@ -7,10 +7,17 @@ const CatalogFilter = () => {
     <div className={`flex flex-row items-center justify-end`}>
       <Button
         variant={"outlined"}
-        color={"error"}
         sx={{
           fontFamily: "Jua",
-          marginRight: "16px"
+          marginRight: "16px",
+          color: "#F34D7E",
+          borderWidth: 2,
+          borderColor: "#F34D7E",
+          ":hover": {
+            backgroundColor: "transparent",
+            borderWidth: 2,
+            borderColor: "#F34D7E"
+          }
         }}
       >
         도서 레벨 확인
