@@ -1,15 +1,8 @@
-import FlareIcon from "@mui/icons-material/Flare";
-
 const RecordingInstructions = () => {
   return (
     <div className={`my-3`}>
       <div className={`flex flex-row items-center my-2`}>
-        <FlareIcon
-          sx={{
-            fontSize: 14,
-            fill: "red"
-          }}
-        />
+        <img src={"assets/images/icons/snowflake.png"} alt={"Snowflake Icon"} />
         <p className={`font-[Jua] text-[20px] ml-[10px]`}>녹음 방법</p>
       </div>
       <ol className={`list-decimal pl-5`}>
