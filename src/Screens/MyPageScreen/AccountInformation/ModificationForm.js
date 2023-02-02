@@ -1,29 +1,25 @@
 import { useRecoilState } from "recoil";
-import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
-import passwordConfirmAtom from "../../../Stores/Auth/passwordConfirm";
 import phoneNumberAtom from "../../../Stores/Auth/phoneNumber";
 import studentNameAtom from "../../../Stores/Auth/studentName";
 import studentBirthDateAtom from "../../../Stores/Auth/studentBirthDate";
-import couponAtom from "../../../Stores/Auth/coupon";
-import agreeStatusAtom from "../../../Stores/Auth/agreeStatus";
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import PasswordInfo from "../../SignInScreen/SignUp/PasswordInfo";
 import StudentLabel from "../../SignInScreen/SignUp/StudentLabel";
 import AccountDeletion from "./AccountDeletion";
+import newPasswordAtom from "../../../Stores/Auth/newPassword";
+import newPasswordConfirmAtom from "../../../Stores/Auth/newPasswordConfirm";
 
 const ModificationForm = () => {
-  const [id, setID] = useRecoilState(idAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
-  const [passwordConfirm, setPasswordConfirm] =
-    useRecoilState(passwordConfirmAtom);
   const [phoneNumber, setPhoneNumber] = useRecoilState(phoneNumberAtom);
   const [studentName, setStudentName] = useRecoilState(studentNameAtom);
   const [studentBirthDate, setStudentBirthDate] =
     useRecoilState(studentBirthDateAtom);
-  const [coupon, setCoupon] = useRecoilState(couponAtom);
-  const [agreeStatus, setAgreeStatus] = useRecoilState(agreeStatusAtom);
-  const onClickSignUp = () => {};
+  const [newPassword, setNewPassword] = useRecoilState(newPasswordAtom);
+  const [newPasswordConfirm, setNewPasswordConfirm] = useRecoilState(
+    newPasswordConfirmAtom
+  );
   return (
     <div className={`flex flex-row justify-center`}>
       <div className={`pt-3 w-[500px]`}>
@@ -59,9 +55,9 @@ const ModificationForm = () => {
         />
         <PasswordInfo />
         <TextField
-          id={"password-confirm"}
-          value={passwordConfirm}
-          onChange={(event) => setPasswordConfirm(event.target.value)}
+          id={"new-password"}
+          value={newPassword}
+          onChange={(event) => setNewPassword(event.target.value)}
           variant={"outlined"}
           label={"새 비밀번호"}
           required={true}
@@ -75,9 +71,9 @@ const ModificationForm = () => {
           }}
         />
         <TextField
-          id={"password-confirm"}
-          value={passwordConfirm}
-          onChange={(event) => setPasswordConfirm(event.target.value)}
+          id={"new-password-confirm"}
+          value={newPasswordConfirm}
+          onChange={(event) => setNewPasswordConfirm(event.target.value)}
           variant={"outlined"}
           label={"새 비밀번호 확인"}
           required={true}
@@ -138,6 +134,29 @@ const ModificationForm = () => {
           }}
         />
         <AccountDeletion />
+        <div className={`text-center`}>
+          <Button
+            variant={"outlined"}
+            sx={{
+              marginRight: "15px",
+              paddingX: "25px",
+              color: "#707070",
+              borderColor: "#707070",
+              backgroundColor: "white"
+            }}
+          >
+            취소
+          </Button>
+          <Button
+            variant={"contained"}
+            sx={{
+              paddingX: "25px",
+              backgroundColor: "#1AB9C5"
+            }}
+          >
+            수정
+          </Button>
+        </div>
       </div>
     </div>
   );
