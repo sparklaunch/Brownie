@@ -4,7 +4,7 @@ import FlareIcon from "@mui/icons-material/Flare";
 
 const CatalogLevel = ({ level, maxUnit, data }) => {
   const coverImages = Array.from(Array(maxUnit).keys()).map((unit) => {
-    return `${level}-${unit + 1}.avif`;
+    return `${level}-${unit + 1}.jpg`;
   });
   return (
     <div className={`mb-8`}>

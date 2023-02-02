@@ -7,7 +7,7 @@ const TextBookInformation = () => {
   return (
     <div className={`flex flex-row`}>
       <img
-        src={`/assets/images/covers/${selectedCatalog.label}.avif`}
+        src={`/assets/images/covers/${selectedCatalog.label}.jpg`}
         alt={`${selectedCatalog.label}`}
         className={`w-[120px] h-[120px] object-cover rounded-xl`}
       />

@@ -13,7 +13,7 @@ const CatalogItem = ({ coverImage, data, clickable = true }) => {
       return;
     }
     setSelectedCatalog({
-      label: coverImage.split(".avif")[0],
+      label: coverImage.split(".jpg")[0],
       title: data.title
     });
     setModalOpen(true);
@@ -30,7 +30,7 @@ const CatalogItem = ({ coverImage, data, clickable = true }) => {
         }`}
         onClick={onClickCatalogItem}
       />
-      <CatalogLabel label={coverImage.split(".avif")[0]} />
+      <CatalogLabel label={coverImage.split(".jpg")[0]} />
       <CatalogTitle data={data} />
     </div>
   );

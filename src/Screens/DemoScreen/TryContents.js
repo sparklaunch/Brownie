@@ -8,7 +8,7 @@ const TryContents = () => {
         <Grid container spacing={20}>
           <Grid item xs={6}>
             <CatalogItem
-              coverImage={"1-1.avif"}
+              coverImage={"1-1.jpg"}
               data={{
                 level: "1-1",
                 title: "Ant, Bug and Cat"
@@ -18,7 +18,7 @@ const TryContents = () => {
           </Grid>
           <Grid item xs={6}>
             <CatalogItem
-              coverImage={"2-1.avif"}
+              coverImage={"2-1.jpg"}
               data={{
                 level: "2-1",
                 title: "Dan and the Ram"
