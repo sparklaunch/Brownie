@@ -1,6 +1,7 @@
 import AccountIcon from "./AccountIcon";
 import AccountTitle from "./AccountTitle";
 import PasswordField from "./PasswordField";
+import AccountButtons from "./AccountButtons";
 
 const AccountInformation = () => {
   return (
@@ -9,6 +10,7 @@ const AccountInformation = () => {
         <AccountIcon />
         <AccountTitle />
         <PasswordField />
+        <AccountButtons />
       </div>
     </div>
   );
