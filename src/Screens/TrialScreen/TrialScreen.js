@@ -9,8 +9,8 @@ const TrialScreen = () => {
   return (
     <div>
       <Background />
-      <ModeButtons />
       <Book />
+      <ModeButtons />
     </div>
   );
 };
