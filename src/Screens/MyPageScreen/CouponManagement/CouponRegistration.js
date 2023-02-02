@@ -5,7 +5,7 @@ import couponAtom from "../../../Stores/Auth/coupon";
 const CouponRegistration = () => {
   const [coupon, setCoupon] = useRecoilState(couponAtom);
   return (
-    <div>
+    <div className={`mb-12`}>
       <p className={`border-l-4 border-[#00AEA8] pl-3 mb-3 text-[20px]`}>
         쿠폰 등록
       </p>
