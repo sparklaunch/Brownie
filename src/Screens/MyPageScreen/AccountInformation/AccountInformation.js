@@ -3,6 +3,7 @@ import AccountTitle from "./AccountTitle";
 import PasswordField from "./PasswordField";
 import AccountButtons from "./AccountButtons";
 import Footer from "../../MainScreen/Footer/Footer";
+import ModificationForm from "./ModificationForm";
 
 const AccountInformation = () => {
   return (
@@ -13,6 +14,7 @@ const AccountInformation = () => {
           <AccountTitle />
           <PasswordField />
           <AccountButtons />
+          <ModificationForm />
         </div>
       </div>
       <Footer />
