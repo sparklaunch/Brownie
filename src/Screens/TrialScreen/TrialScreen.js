@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import Background from "../ClassroomScreen/Background";
+import ModeButtons from "../ClassroomScreen/ModeButtons";
 
 const TrialScreen = () => {
   const { level } = useParams();
@@ -7,6 +8,7 @@ const TrialScreen = () => {
   return (
     <div>
       <Background />
+      <ModeButtons />
     </div>
   );
 };
