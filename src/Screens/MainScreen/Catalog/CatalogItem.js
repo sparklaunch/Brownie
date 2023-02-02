@@ -24,10 +24,8 @@ const CatalogItem = ({ coverImage, data, clickable = true }) => {
         loading={"lazy"}
         src={`/assets/images/covers/${coverImage}`}
         alt={`${coverImage}`}
-        className={`h-[288px] w-full object-cover rounded-lg border-4 border-[transparent] ${
-          clickable &&
-          `cursor-pointer hover:border-4 hover:border-[#47C7D2] transition duration-200 ease-in-out`
-        }`}
+        className={`h-[288px] w-full object-cover rounded-lg border-4 border-[transparent] cursor-pointer hover:border-4 hover:border-[#47C7D2] transition duration-200 ease-in-out
+        `}
         onClick={onClickCatalogItem}
       />
       <CatalogLabel label={coverImage.split(".jpg")[0]} />
