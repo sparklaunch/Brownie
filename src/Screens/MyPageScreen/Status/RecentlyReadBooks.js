@@ -7,6 +7,7 @@ const RecentlyReadBooks = () => {
         최근 읽은 책
       </p>
       <StatusLabels />
+      <div className={`h-[600px]`}></div>
     </div>
   );
 };
