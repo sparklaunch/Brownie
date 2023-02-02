@@ -142,7 +142,11 @@ const ModificationForm = () => {
               paddingX: "25px",
               color: "#707070",
               borderColor: "#707070",
-              backgroundColor: "white"
+              backgroundColor: "white",
+              "&:hover": {
+                backgroundColor: "white",
+                borderColor: "#707070"
+              }
             }}
           >
             취소
@@ -151,7 +155,10 @@ const ModificationForm = () => {
             variant={"contained"}
             sx={{
               paddingX: "25px",
-              backgroundColor: "#1AB9C5"
+              backgroundColor: "#1AB9C5",
+              "&:hover": {
+                backgroundColor: "#1AB9C5"
+              }
             }}
           >
             수정
