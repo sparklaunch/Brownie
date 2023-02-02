@@ -14,6 +14,7 @@ const TryContents = () => {
                 title: "Ant, Bug and Cat"
               }}
               clickable={false}
+              forDemo={true}
             />
           </Grid>
           <Grid item xs={6}>
@@ -24,6 +25,7 @@ const TryContents = () => {
                 title: "Dan and the Ram"
               }}
               clickable={false}
+              forDemo={true}
             />
           </Grid>
         </Grid>

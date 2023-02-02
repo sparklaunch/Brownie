@@ -4,7 +4,12 @@ import { useRecoilState } from "recoil";
 import modalOpenAtom from "../../../Stores/Misc/modalOpen";
 import selectedCatalogAtom from "../../../Stores/Catalog/selectedCatalog";
 
-const CatalogItem = ({ coverImage, data, clickable = true }) => {
+const CatalogItem = ({
+  coverImage,
+  data,
+  clickable = true,
+  forDemo = false
+}) => {
   const [modalOpen, setModalOpen] = useRecoilState(modalOpenAtom);
   const [selectedCatalog, setSelectedCatalog] =
     useRecoilState(selectedCatalogAtom);
