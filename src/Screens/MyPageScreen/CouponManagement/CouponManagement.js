@@ -1,5 +1,6 @@
 import CouponRegistration from "./CouponRegistration";
 import CouponHistory from "./CouponHistory";
+import CouponCaution from "./CouponCaution";
 
 const CouponManagement = () => {
   return (
@@ -7,6 +8,7 @@ const CouponManagement = () => {
       <div className={`w-[1200px]`}>
         <CouponRegistration />
         <CouponHistory />
+        <CouponCaution />
       </div>
     </div>
   );
