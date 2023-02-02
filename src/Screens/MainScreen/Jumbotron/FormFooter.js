@@ -1,14 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import tabValueAtom from "../../../Stores/Auth/tabValue";
 
 const FormFooter = () => {
+  const navigate = useNavigate();
+  const [tabValue, setTabValue] = useRecoilState(tabValueAtom);
+  const onClickSignUp = () => {
+    setTabValue(1);
+    navigate("/signin");
+  };
   return (
     <div className={"flex flex-row justify-center mt-3"}>
-      <Link
-        to={"/signin"}
-        className={`text-white font-extralight text-[14px] pr-3 border-r-[1px] border-l-white`}
+      <p
+        className={`text-white font-extralight text-[14px] pr-3 border-r-[1px] border-l-white cursor-pointer`}
+        onClick={onClickSignUp}
       >
         회원가입
-      </Link>
+      </p>
       <Link
         to={"/find-account"}
         className={`text-white font-extralight text-[14px] pl-3`}

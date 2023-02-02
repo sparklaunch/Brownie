@@ -1,8 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import { useRecoilState } from "recoil";
+import tabValueAtom from "../../../Stores/Auth/tabValue";
 
 const NavigationContentBottom = () => {
+  const [tabValue, setTabValue] = useRecoilState(tabValueAtom);
   const navigate = useNavigate();
+  const onClickSignIn = () => {
+    setTabValue(0);
+    navigate("/signin");
+  };
   return (
     <div className={`flex flex-row items-center justify-end`}>
       <Link to={"/classroom"} className={`mr-[32px]`}>
@@ -19,9 +26,7 @@ const NavigationContentBottom = () => {
       </Link>
       <Button
         variant={"contained"}
-        onClick={() => {
-          navigate("/signin");
-        }}
+        onClick={onClickSignIn}
         sx={{
           backgroundColor: "#1AB9C5",
           filter: "brightness(1.0)",
