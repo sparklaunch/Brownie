@@ -6,10 +6,10 @@ const JumbotronTitle = () => {
   return (
     <div>
       <div className={`mb-[54px]`}>
-        <p className={`text-[50px] text-white`}>
+        <p className={`text-[50px] text-white font-[GmarketSans]`}>
           영어책 읽기가 처음인 우리 아이
         </p>
-        <p className={`text-[50px] text-white`}>
+        <p className={`text-[50px] text-white font-[GmarketSans]`}>
           AI 스피킹으로 시작부터 남다르게!
         </p>
       </div>
