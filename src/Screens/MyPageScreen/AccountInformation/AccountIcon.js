@@ -1,13 +1,9 @@
-import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
-
 const AccountIcon = () => {
   return (
-    <div className={`text-center mb-6`}>
-      <ManageAccountsIcon
-        sx={{
-          fontSize: "64px",
-          fill: "#515151"
-        }}
+    <div className={`mb-6 flex flex-row justify-center`}>
+      <img
+        src={"assets/images/icons/user_lock_icon.png"}
+        alt={"User with Lock Icon"}
       />
     </div>
   );
