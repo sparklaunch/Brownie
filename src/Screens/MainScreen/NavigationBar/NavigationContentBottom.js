@@ -30,8 +30,7 @@ const NavigationContentBottom = () => {
           width: 104,
           height: 44,
           ":hover": {
-            backgroundColor: "#1AB9C5",
-            filter: "brightness(0.8)"
+            backgroundColor: "#1AB9C5"
           }
         }}
       >
