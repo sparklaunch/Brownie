@@ -4,7 +4,7 @@ const Logo = () => {
   return (
     <Link to={"/"}>
       <img
-        src="/assets/images/Logo.png"
+        src="/assets/images/logo.png"
         alt="KidsBrown Logo"
         className={`w-[200px] h-[40px]`}
       />
