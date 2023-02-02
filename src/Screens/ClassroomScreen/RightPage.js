@@ -1,7 +1,7 @@
-const RightPage = () => {
+const RightPage = ({ fileName }) => {
   return (
     <div>
-      <img src={"/assets/images/pages/1-1-1.jpg"} alt={"Page 1"} />
+      <img src={fileName} alt={"Right Page"} />
     </div>
   );
 };
