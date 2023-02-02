@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import autoLogInEnabledAtom from "../../../Stores/Auth/autoLogInEnabled";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
+import SignInErrorMessage from "./SignInErrorMessage";
 
 const SignInFields = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -43,6 +44,7 @@ const SignInFields = () => {
           marginBottom: 1.5
         }}
       />
+      <SignInErrorMessage />
       <Button
         variant={"contained"}
         onClick={onClickLogin}
