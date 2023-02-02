@@ -25,7 +25,11 @@ const JumbotronTitle = () => {
           letterSpacing: 1,
           borderColor: "white",
           width: 284,
-          height: 67
+          height: 67,
+          ":hover": {
+            borderColor: "white",
+            backgroundColor: "transparent"
+          }
         }}
       >
         무료 체험
