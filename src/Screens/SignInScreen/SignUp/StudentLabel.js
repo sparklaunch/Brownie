@@ -2,7 +2,7 @@ const StudentLabel = () => {
   return (
     <div className={`flex flex-row items-center mb-1`}>
       <img
-        src={"assets/images/icons/bullet_icon.png"}
+        src={"assets/images/icons/bullet_icon.svg"}
         alt={"Bullet Icon"}
         className={`w-[8px] h-[8px]`}
       />
