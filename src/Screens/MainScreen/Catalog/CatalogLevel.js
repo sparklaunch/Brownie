@@ -8,7 +8,10 @@ const CatalogLevel = ({ level, maxUnit, data }) => {
   return (
     <div className={`mb-8`}>
       <div className={`flex flex-row items-center mb-2`}>
-        <img src={"assets/images/icons/snowflake.png"} alt={"Snowflake Icon"} />
+        <img
+          src={"assets/images/icons/snowflake_icon.svg"}
+          alt={"Snowflake Icon"}
+        />
         <p className={`font-[Jua] ml-2`}>Level {level}</p>
       </div>
       <Grid container spacing={2}>

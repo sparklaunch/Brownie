@@ -2,7 +2,10 @@ const RecordingInstructions = () => {
   return (
     <div className={`my-3`}>
       <div className={`flex flex-row items-center my-2`}>
-        <img src={"assets/images/icons/snowflake.png"} alt={"Snowflake Icon"} />
+        <img
+          src={"assets/images/icons/snowflake_icon.svg"}
+          alt={"Snowflake Icon"}
+        />
         <p className={`font-[Jua] text-[20px] ml-[10px]`}>녹음 방법</p>
       </div>
       <ol className={`list-decimal pl-5`}>
