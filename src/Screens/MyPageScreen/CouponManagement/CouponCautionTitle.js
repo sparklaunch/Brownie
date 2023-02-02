@@ -2,7 +2,7 @@ import InfoIcon from "@mui/icons-material/Info";
 
 const CouponCautionTitle = () => {
   return (
-    <div className={`flex flex-row items-center justify-center`}>
+    <div className={`flex flex-row items-center justify-center mb-4`}>
       <InfoIcon
         sx={{
           fill: "#1AB9C5"
