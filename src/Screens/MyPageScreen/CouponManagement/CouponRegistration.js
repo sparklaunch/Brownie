@@ -25,7 +25,10 @@ const CouponRegistration = () => {
           sx={{
             marginLeft: "10px",
             paddingX: "30px",
-            backgroundColor: "#222222"
+            backgroundColor: "#222222",
+            "&:hover": {
+              backgroundColor: "#222222"
+            }
           }}
         >
           등록
