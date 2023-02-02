@@ -1,5 +1,6 @@
 import AccountIcon from "./AccountIcon";
 import AccountTitle from "./AccountTitle";
+import PasswordField from "./PasswordField";
 
 const AccountInformation = () => {
   return (
@@ -7,6 +8,7 @@ const AccountInformation = () => {
       <div className={`w-[1200px]`}>
         <AccountIcon />
         <AccountTitle />
+        <PasswordField />
       </div>
     </div>
   );
