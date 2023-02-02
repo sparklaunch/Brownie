@@ -4,19 +4,37 @@ import autoLogInEnabledAtom from "../../../Stores/Auth/autoLogInEnabled";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
 import SignInErrorMessage from "./SignInErrorMessage";
+import signInErrorMessageAtom from "../../../Stores/Auth/signInErrorMessage";
 
 const SignInFields = () => {
   const [id, setID] = useRecoilState(idAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
   const [autoLogInEnabled, setAutoLogInEnabled] =
     useRecoilState(autoLogInEnabledAtom);
-  const onClickLogin = () => {};
+  const [signInErrorMessage, setSignInErrorMessage] = useRecoilState(
+    signInErrorMessageAtom
+  );
+  const onClickLogin = () => {
+    if (id === "") {
+      setSignInErrorMessage("아이디를 입력해주세요.");
+    } else {
+      if (password === "") {
+        setSignInErrorMessage("비밀번호를 입력해주세요.");
+      } else {
+        if (password.length < 6) {
+          setSignInErrorMessage("비밀번호는 6자 이상이어야 합니다.");
+        } else {
+          setSignInErrorMessage("");
+        }
+      }
+    }
+  };
   return (
     <div className={`py-3`}>
       <TextField
         id={"id"}
         value={id}
-        onChange={(event) => setID(event.target.value)}
+        onChange={(event) => setID(event.target.value.replace(/ /g, ""))}
         variant={"outlined"}
         label={"아이디"}
         required={true}
@@ -31,7 +49,7 @@ const SignInFields = () => {
       <TextField
         id={"password"}
         value={password}
-        onChange={(event) => setPassword(event.target.value)}
+        onChange={(event) => setPassword(event.target.value.replace(/ /g, ""))}
         variant={"outlined"}
         label={"비밀번호"}
         required={true}
