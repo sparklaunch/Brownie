@@ -3,6 +3,7 @@ import CatalogTitle from "./CatalogTitle";
 import { useRecoilState } from "recoil";
 import modalOpenAtom from "../../../Stores/Misc/modalOpen";
 import selectedCatalogAtom from "../../../Stores/Catalog/selectedCatalog";
+import { useNavigate } from "react-router-dom";
 
 const CatalogItem = ({
   coverImage,
@@ -13,7 +14,12 @@ const CatalogItem = ({
   const [modalOpen, setModalOpen] = useRecoilState(modalOpenAtom);
   const [selectedCatalog, setSelectedCatalog] =
     useRecoilState(selectedCatalogAtom);
+  const navigate = useNavigate();
   const onClickCatalogItem = () => {
+    if (forDemo) {
+      navigate(`/demo/${data.level}`);
+      return;
+    }
     if (!clickable) {
       return;
     }
