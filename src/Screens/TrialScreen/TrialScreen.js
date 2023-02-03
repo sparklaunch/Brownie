@@ -4,6 +4,7 @@ import Book from "../ClassroomScreen/Book";
 import PageTurners from "../ClassroomScreen/PageTurners";
 import BookTitle from "../ClassroomScreen/BookTitle";
 import PageControllers from "../ClassroomScreen/PageControllers";
+import HomeButton from "../ClassroomScreen/HomeButton";
 
 const TrialScreen = () => {
   return (
@@ -13,6 +14,7 @@ const TrialScreen = () => {
       <BookTitle />
       <Book />
       <PageControllers />
+      <HomeButton />
       <ModeButtons />
     </div>
   );
