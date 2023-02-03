@@ -1,7 +1,10 @@
 const LeftPage = ({ fileName }) => {
   return (
-    <div>
+    <div className={`relative`}>
       <img src={fileName} alt={"Left Page"} />
+      <div
+        className={`absolute right-0 top-0 h-full w-10 bg-gradient-to-r from-transparent to-black opacity-50`}
+      />
     </div>
   );
 };
