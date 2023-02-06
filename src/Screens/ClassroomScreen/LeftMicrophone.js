@@ -14,8 +14,8 @@ const LeftMicrophone = () => {
     const recorder = new MediaRecorder(device);
     recorder.start();
     setMicrophoneState("recording");
-    recorder.ondataavailable = (e) => {
-      const audio = new Audio(URL.createObjectURL(e.data));
+    recorder.ondataavailable = (event) => {
+      const audio = new Audio(URL.createObjectURL(event.data));
       audio.play();
       setMicrophoneState("idle");
     };

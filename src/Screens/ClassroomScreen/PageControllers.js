@@ -31,7 +31,7 @@ const PageControllers = () => {
           <p
             className={`bg-white border-[1px] border-[#1AB9C5] rounded-3xl w-[120px] flex flex-row text-[28px] items-center justify-center`}
           >
-            {currentPage}
+            {Math.min(currentPage + 1, 10)}
             <span className={`text-[20px] ml-1 relative top-[2px]`}>/10</span>
           </p>
           <img
