@@ -1,6 +1,7 @@
 import { useRecoilState } from "recoil";
 import microphoneStateAtom from "../../Stores/Classroom/microphoneState";
 import audioDurationAtom from "../../Stores/Classroom/audioDuration";
+import styled from "styled-components";
 
 const IdleMicrophone = () => {
   const [microphoneState, setMicrophoneState] =
@@ -29,15 +30,75 @@ const IdleMicrophone = () => {
       recordVoice();
     }
   };
+  const OuterCircle = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    transform: scale(1.2);
+    background-color: #1ab9c5;
+    animation: fadeOut 1s infinite;
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  `;
+  const InnerCircle = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    transform: scale(1.1);
+    background-color: #1ab9c5;
+    animation: fadeOut 1s infinite;
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  `;
+  const Wave = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    transform: scale(1);
+    border: 5px solid #1ab9c5;
+    animation: wave 1s infinite;
+    @keyframes wave {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.4);
+        opacity: 0;
+      }
+    }
+  `;
   return (
-    <img
-      src={`/assets/images/icons/microphone_${microphoneState}.svg`}
-      alt={"Microphone"}
-      onClick={onClickMicrophone}
-      className={`relative left-0 w-[70px] h-[70px] ${
-        microphoneState === "idle" ? "cursor-pointer" : ""
-      }`}
-    />
+    <div>
+      <div>
+        <OuterCircle />
+        <InnerCircle />
+        <Wave />
+      </div>
+      <img
+        src={`/assets/images/icons/microphone_${microphoneState}.svg`}
+        alt={"Microphone"}
+        onClick={onClickMicrophone}
+        className={`relative left-0 w-[70px] h-[70px] ${
+          microphoneState === "idle" ? "cursor-pointer" : ""
+        }`}
+      />
+    </div>
   );
 };
 
