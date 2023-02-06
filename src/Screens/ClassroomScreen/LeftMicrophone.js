@@ -25,6 +25,8 @@ const LeftMicrophone = () => {
   };
   const onClickMicrophone = () => {
     if (microphoneState === "idle") {
+      const sound = new Audio("/assets/audio/microphone_on.wav");
+      sound.play();
       recordVoice();
     }
   };
