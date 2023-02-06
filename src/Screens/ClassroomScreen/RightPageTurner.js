@@ -4,7 +4,7 @@ import currentPageAtom from "../../Stores/Classroom/currentPage";
 const RightPageTurner = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const onClickRightPageTurner = () => {
-    setCurrentPage(Math.min(currentPage + 2, 19));
+    setCurrentPage(Math.min(currentPage + 2, 10));
   };
   return (
     <div

@@ -10,7 +10,7 @@ const PageControllers = () => {
     setCurrentPage(Math.max(currentPage - 2, 1));
   };
   const onRightPageButtonClick = () => {
-    setCurrentPage(Math.min(currentPage + 2, 19));
+    setCurrentPage(Math.min(currentPage + 2, 10));
   };
   return (
     <div className={`absolute top-[4vw] right-[15vw]`}>
@@ -32,7 +32,7 @@ const PageControllers = () => {
             className={`bg-white border-[1px] border-[#1AB9C5] rounded-3xl w-[120px] flex flex-row text-[28px] items-center justify-center`}
           >
             {currentPage}
-            <span className={`text-[20px] ml-1 relative top-[2px]`}>/19</span>
+            <span className={`text-[20px] ml-1 relative top-[2px]`}>/10</span>
           </p>
           <img
             src={"/assets/images/icons/right_page_button.svg"}
