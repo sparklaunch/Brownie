@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import audioDurationAtom from "../../Stores/Classroom/audioDuration";
 import RecordingMicrophone from "./RecordingMicrophone";
 
-const LeftMicrophone = () => {
+const LeftMicrophone = ({ visible }) => {
   const [microphoneState, setMicrophoneState] =
     useRecoilState(microphoneStateAtom);
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
@@ -30,22 +30,26 @@ const LeftMicrophone = () => {
       recordVoice();
     }
   };
-  return (
-    <div className={`absolute bottom-[-100px] left-[14vw]`}>
-      {microphoneState === "recording" ? (
-        <RecordingMicrophone />
-      ) : (
-        <img
-          src={`/assets/images/icons/microphone_${microphoneState}.svg`}
-          alt={"Microphone"}
-          onClick={onClickMicrophone}
-          className={`relative left-0 w-[70px] h-[70px] ${
-            microphoneState === "idle" ? "cursor-pointer" : ""
-          }`}
-        />
-      )}
-    </div>
-  );
+  if (visible) {
+    return (
+      <div className={`absolute bottom-[-100px] left-[14vw]`}>
+        {microphoneState === "recording" ? (
+          <RecordingMicrophone />
+        ) : (
+          <img
+            src={`/assets/images/icons/microphone_${microphoneState}.svg`}
+            alt={"Microphone"}
+            onClick={onClickMicrophone}
+            className={`relative left-0 w-[70px] h-[70px] ${
+              microphoneState === "idle" ? "cursor-pointer" : ""
+            }`}
+          />
+        )}
+      </div>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default LeftMicrophone;
