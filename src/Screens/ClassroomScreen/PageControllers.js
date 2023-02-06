@@ -4,10 +4,10 @@ import currentPageAtom from "../../Stores/Classroom/currentPage";
 const PageControllers = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const onClickFirstPage = () => {
-    setCurrentPage(1);
+    setCurrentPage(0);
   };
   const onLeftPageButtonClick = () => {
-    setCurrentPage(Math.max(currentPage - 2, 1));
+    setCurrentPage(Math.max(currentPage - 2, 0));
   };
   const onRightPageButtonClick = () => {
     setCurrentPage(Math.min(currentPage + 2, 10));

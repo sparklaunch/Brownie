@@ -2,7 +2,7 @@ import { atom } from "recoil";
 
 const currentPageAtom = atom({
   key: "currentPage",
-  default: 1
+  default: 0
 });
 
 export default currentPageAtom;

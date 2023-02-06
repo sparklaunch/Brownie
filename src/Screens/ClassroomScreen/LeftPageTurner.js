@@ -4,7 +4,7 @@ import currentPageAtom from "../../Stores/Classroom/currentPage";
 const LeftPageTurner = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const onClickLeftPageTurner = () => {
-    setCurrentPage(Math.max(currentPage - 2, 1));
+    setCurrentPage(Math.max(currentPage - 2, 0));
   };
   return (
     <div
