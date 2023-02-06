@@ -1,6 +1,7 @@
 import microphoneStateAtom from "../../Stores/Classroom/microphoneState";
 import { useRecoilState } from "recoil";
 import audioDurationAtom from "../../Stores/Classroom/audioDuration";
+import RecordingMicrophone from "./RecordingMicrophone";
 
 const LeftMicrophone = () => {
   const [microphoneState, setMicrophoneState] =
@@ -20,7 +21,7 @@ const LeftMicrophone = () => {
     };
     setTimeout(() => {
       recorder.stop();
-    }, audioDuration * 1000);
+    }, audioDuration);
   };
   const onClickMicrophone = () => {
     if (microphoneState === "idle") {
@@ -29,14 +30,18 @@ const LeftMicrophone = () => {
   };
   return (
     <div className={`absolute bottom-[-100px] left-[14vw]`}>
-      <img
-        src={`/assets/images/icons/microphone_${microphoneState}.svg`}
-        alt={"Microphone"}
-        onClick={onClickMicrophone}
-        className={`relative left-0 w-[70px] h-[70px] ${
-          microphoneState === "idle" ? "cursor-pointer" : ""
-        }`}
-      />
+      {microphoneState === "recording" ? (
+        <RecordingMicrophone />
+      ) : (
+        <img
+          src={`/assets/images/icons/microphone_${microphoneState}.svg`}
+          alt={"Microphone"}
+          onClick={onClickMicrophone}
+          className={`relative left-0 w-[70px] h-[70px] ${
+            microphoneState === "idle" ? "cursor-pointer" : ""
+          }`}
+        />
+      )}
     </div>
   );
 };

@@ -21,7 +21,7 @@ const AudioManager = () => {
     const howler = new Howl({
       src: [`/assets/audio/pages/1-1-${currentPage}.mp3`],
       onload: () => {
-        setAudioDuration(howler.duration());
+        setAudioDuration(howler.duration() * 1000);
       },
       onplay: onPlay,
       onend: onEnd
