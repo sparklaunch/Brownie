@@ -1,4 +1,5 @@
 import BookContent from "./BookContent";
+import Microphones from "./Microphones";
 
 const Book = () => {
   return (
@@ -10,6 +11,7 @@ const Book = () => {
       >
         <BookContent />
       </div>
+      <Microphones />
     </div>
   );
 };
