@@ -37,10 +37,10 @@ const IdleMicrophone = () => {
     border-radius: 100%;
     transform: scale(1.2);
     background-color: #1ab9c5;
-    animation: fadeOut 1s infinite;
+    animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
-        opacity: 1;
+        opacity: 0.3;
       }
       100% {
         opacity: 0;
@@ -54,10 +54,10 @@ const IdleMicrophone = () => {
     border-radius: 100%;
     transform: scale(1.1);
     background-color: #1ab9c5;
-    animation: fadeOut 1s infinite;
+    animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
-        opacity: 1;
+        opacity: 0.3;
       }
       100% {
         opacity: 0;
@@ -71,7 +71,7 @@ const IdleMicrophone = () => {
     border-radius: 100%;
     transform: scale(1);
     border: 5px solid #1ab9c5;
-    animation: wave 1s infinite;
+    animation: wave 1.3s infinite;
     @keyframes wave {
       0% {
         transform: scale(1);
