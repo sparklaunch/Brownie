@@ -25,7 +25,7 @@ const PageControllers = () => {
           <img
             src={"/assets/images/icons/left_page_button.svg"}
             alt={`Left Page Button`}
-            className={`cursor-pointer mr-2 ${
+            className={`${currentPage !== 0 && `cursor-pointer`} mr-2 ${
               currentPage === 0 && `opacity-0`
             }`}
             onClick={onLeftPageButtonClick}
@@ -39,7 +39,7 @@ const PageControllers = () => {
           <img
             src={"/assets/images/icons/right_page_button.svg"}
             alt={`Right Page Button`}
-            className={`cursor-pointer ml-2 ${
+            className={`${currentPage !== 10 && `cursor-pointer`} ml-2 ${
               currentPage === 10 && `opacity-0`
             }`}
             onClick={onRightPageButtonClick}
