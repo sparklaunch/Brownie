@@ -9,7 +9,7 @@ const HomeButton = () => {
   const [mode, setMode] = useRecoilState(modeAtom);
   const onClickHome = () => {
     setMode("story");
-    setCurrentPage(1);
+    setCurrentPage(0);
     navigate("/");
   };
   return (
