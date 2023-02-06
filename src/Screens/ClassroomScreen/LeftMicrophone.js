@@ -1,29 +1,26 @@
 import microphoneStateAtom from "../../Stores/Classroom/microphoneState";
 import { useRecoilState } from "recoil";
+import audioDurationAtom from "../../Stores/Classroom/audioDuration";
 
 const LeftMicrophone = () => {
   const [microphoneState, setMicrophoneState] =
     useRecoilState(microphoneStateAtom);
-  const recordVoice = () => {
-    navigator.mediaDevices
-      .getUserMedia({ audio: true })
-      .then((stream) => {
-        const mediaRecorder = new MediaRecorder(stream);
-        mediaRecorder.start();
-        mediaRecorder.ondataavailable = (e) => {
-          const audioURL = window.URL.createObjectURL(e.data);
-          const audio = new Audio(audioURL);
-          audio.play();
-        };
-        mediaRecorder.onstop = () => {
-          stream.getTracks().forEach((track) => track.stop());
-        };
-      })
-      .catch((error) => {
-        if (error.message === "Requested device not found") {
-          alert("마이크를 찾을 수 없습니다.");
-        }
-      });
+  const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
+  const recordVoice = async () => {
+    const device = await navigator.mediaDevices.getUserMedia({
+      audio: true
+    });
+    const recorder = new MediaRecorder(device);
+    recorder.start();
+    setMicrophoneState("recording");
+    recorder.ondataavailable = (e) => {
+      const audio = new Audio(URL.createObjectURL(e.data));
+      audio.play();
+      setMicrophoneState("idle");
+    };
+    setTimeout(() => {
+      recorder.stop();
+    }, audioDuration * 1000);
   };
   const onClickMicrophone = () => {
     if (microphoneState === "idle") {

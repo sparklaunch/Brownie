@@ -3,10 +3,12 @@ import currentPageAtom from "../../Stores/Classroom/currentPage";
 import microphoneStateAtom from "../../Stores/Classroom/microphoneState";
 import { useEffect } from "react";
 import { Howl, Howler } from "howler";
+import audioDurationAtom from "../../Stores/Classroom/audioDuration";
 
 const AudioManager = () => {
   const [microphoneState, setMicrophoneState] =
     useRecoilState(microphoneStateAtom);
+  const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const onPlay = () => {
     setMicrophoneState("disabled");
   };
@@ -18,6 +20,9 @@ const AudioManager = () => {
     Howler.unload();
     const howler = new Howl({
       src: [`/assets/audio/pages/1-1-${currentPage}.mp3`],
+      onload: () => {
+        setAudioDuration(howler.duration());
+      },
       onplay: onPlay,
       onend: onEnd
     });
