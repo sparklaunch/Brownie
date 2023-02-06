@@ -85,11 +85,13 @@ const IdleMicrophone = () => {
   `;
   return (
     <div>
-      <div>
-        <OuterCircle />
-        <InnerCircle />
-        <Wave />
-      </div>
+      {microphoneState === "idle" && (
+        <div>
+          <OuterCircle />
+          <InnerCircle />
+          <Wave />
+        </div>
+      )}
       <img
         src={`/assets/images/icons/microphone_${microphoneState}.svg`}
         alt={"Microphone"}
