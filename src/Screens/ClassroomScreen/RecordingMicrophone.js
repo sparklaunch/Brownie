@@ -4,25 +4,26 @@ import styled from "styled-components";
 
 const RecordingMicrophone = () => {
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
+  const diameter = 90;
   const Container = styled.div`
     position: absolute;
     bottom: -10px;
     left: -10px;
-    width: 90px;
-    height: 90px;
+    width: ${diameter}px;
+    height: ${diameter}px;
   `;
   const LeftHold = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    clip: rect(0px, 90px, 90px, 45px);
+    clip: rect(0px, ${diameter}px, ${diameter}px, ${diameter / 2}px);
     border-radius: 100%;
   `;
   const RightHold = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    clip: rect(0px, 90px, 90px, 45px);
+    clip: rect(0px, ${diameter}px, ${diameter}px, ${diameter / 2}px);
     border-radius: 100%;
     z-index: 1;
     transform: rotate(180deg);
@@ -32,7 +33,7 @@ const RecordingMicrophone = () => {
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    clip: rect(0px, 45px, 90px, 0px);
+    clip: rect(0px, ${diameter / 2}px, ${diameter}px, 0px);
     z-index: 1;
     animation: left ${audioDuration / 2 / 1000}s linear both;
     background-color: #1ab9c5;
@@ -50,7 +51,7 @@ const RecordingMicrophone = () => {
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    clip: rect(0px, 45px, 90px, 0px);
+    clip: rect(0px, ${diameter / 2}px, ${diameter}px, 0px);
     z-index: 3;
     animation: right ${audioDuration / 2 / 1000}s linear both;
     animation-delay: ${audioDuration / 2 / 1000}s;
