@@ -34,9 +34,9 @@ const LeftIdleMicrophone = () => {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "*",
             "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Credentials": "true",
             "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913",
-            Accept: "application/json"
+            Accept: "application/json",
+            withCredentials: true
           }
         })
         .then((response) => {
