@@ -2,7 +2,7 @@ import audioDurationAtom from "../../Stores/Classroom/audioDuration";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 
-const RecordingMicrophone = () => {
+const LeftRecordingMicrophone = () => {
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const diameter = 90;
   const Container = styled.div`
@@ -84,4 +84,4 @@ const RecordingMicrophone = () => {
   );
 };
 
-export default RecordingMicrophone;
+export default LeftRecordingMicrophone;

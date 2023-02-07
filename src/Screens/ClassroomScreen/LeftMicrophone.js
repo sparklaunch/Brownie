@@ -1,7 +1,7 @@
 import microphoneStateAtom from "../../Stores/Classroom/microphoneState";
 import { useRecoilState } from "recoil";
-import RecordingMicrophone from "./RecordingMicrophone";
-import IdleMicrophone from "./IdleMicrophone";
+import LeftRecordingMicrophone from "./LeftRecordingMicrophone";
+import LeftIdleMicrophone from "./LeftIdleMicrophone";
 
 const LeftMicrophone = ({ visible }) => {
   const [microphoneState, setMicrophoneState] =
@@ -9,10 +9,10 @@ const LeftMicrophone = ({ visible }) => {
   if (visible) {
     return (
       <div className={`absolute bottom-[-100px] left-[14vw]`}>
-        {microphoneState === "recording" ? (
-          <RecordingMicrophone />
+        {microphoneState === "left_recording" ? (
+          <LeftRecordingMicrophone />
         ) : (
-          <IdleMicrophone />
+          <LeftIdleMicrophone />
         )}
       </div>
     );
