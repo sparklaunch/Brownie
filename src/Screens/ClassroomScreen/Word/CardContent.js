@@ -1,5 +1,11 @@
+import WordCard from "./WordCard";
+
 const CardContent = () => {
-  return <div className={`bg-white`}></div>;
+  return (
+    <div>
+      <WordCard />
+    </div>
+  );
 };
 
 export default CardContent;

@@ -8,9 +8,9 @@ const WordScreen = () => {
   return (
     <div>
       <Background />
-      <HomeButton />
       <CardTitle />
       <Card />
+      <HomeButton />
       <ModeButtons />
     </div>
   );
