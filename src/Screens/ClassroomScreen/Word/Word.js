@@ -1,7 +1,12 @@
 const Word = () => {
   return (
     <div className={`h-full flex flex-row justify-center items-center`}>
-      <p className={`text-[120px] font-[900]`}>ant</p>
+      <img
+        src={"/assets/images/icons/megaphone_button.svg"}
+        alt={"Megaphone"}
+        className={`cursor-pointer`}
+      />
+      <p className={`text-[120px] font-[900] ml-[24px]`}>ant</p>
     </div>
   );
 };
