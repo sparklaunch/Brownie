@@ -1,9 +1,9 @@
 import { useRecoilState } from "recoil";
-import microphoneStateAtom from "../../../Stores/Classroom/microphoneState";
-import audioDurationAtom from "../../../Stores/Classroom/audioDuration";
+import microphoneStateAtom from "../../../../../Stores/Classroom/microphoneState";
+import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import styled from "styled-components";
 import axios from "axios";
-import currentPageAtom from "../../../Stores/Classroom/currentPage";
+import currentPageAtom from "../../../../../Stores/Classroom/currentPage";
 import { useParams } from "react-router-dom";
 
 const LeftIdleMicrophone = () => {
@@ -18,7 +18,7 @@ const LeftIdleMicrophone = () => {
     });
     const recorder = new MediaRecorder(device);
     recorder.start();
-    setMicrophoneState("right_recording");
+    setMicrophoneState("left_recording");
     recorder.ondataavailable = (event) => {
       const formData = new FormData();
       formData.append(

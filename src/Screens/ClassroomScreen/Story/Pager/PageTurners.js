@@ -1,7 +1,7 @@
 import LeftPageTurner from "./LeftPageTurner";
 import RightPageTurner from "./RightPageTurner";
 import { useRecoilState } from "recoil";
-import currentPageAtom from "../../../Stores/Classroom/currentPage";
+import currentPageAtom from "../../../../Stores/Classroom/currentPage";
 
 const PageTurners = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);

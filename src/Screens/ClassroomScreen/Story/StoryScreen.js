@@ -1,5 +1,5 @@
 import Background from "../Background";
-import PageTurners from "./PageTurners";
+import PageTurners from "./Pager/PageTurners";
 import BookTitle from "./BookTitle";
 import Book from "./Book";
 import PageControllers from "./PageControllers";

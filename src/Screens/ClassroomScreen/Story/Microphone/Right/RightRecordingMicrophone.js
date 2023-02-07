@@ -1,4 +1,4 @@
-import audioDurationAtom from "../../../Stores/Classroom/audioDuration";
+import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 

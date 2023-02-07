@@ -1,5 +1,5 @@
 import BookContent from "./BookContent";
-import Microphones from "./Microphones";
+import Microphones from "./Microphone/Microphones";
 
 const Book = () => {
   return (
