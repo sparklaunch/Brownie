@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import microphoneStateAtom from "../../Stores/Classroom/microphoneState";
+import microphoneStateAtom from "../../../Stores/Classroom/microphoneState";
 import RightRecordingMicrophone from "./RightRecordingMicrophone";
 import RightIdleMicrophone from "./RightIdleMicrophone";
 

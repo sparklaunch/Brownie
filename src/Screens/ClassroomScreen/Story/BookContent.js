@@ -1,9 +1,9 @@
 import LeftPage from "./LeftPage";
 import RightPage from "./RightPage";
 import { useParams } from "react-router-dom";
-import currentPageAtom from "../../Stores/Classroom/currentPage";
+import currentPageAtom from "../../../Stores/Classroom/currentPage";
 import { useRecoilState } from "recoil";
-import AudioManager from "./AudioManager";
+import AudioManager from "../AudioManager";
 
 const BookContent = () => {
   const { level } = useParams();

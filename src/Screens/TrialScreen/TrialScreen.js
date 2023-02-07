@@ -1,7 +1,7 @@
-import StoryScreen from "../ClassroomScreen/StoryScreen";
+import StoryScreen from "../ClassroomScreen/Story/StoryScreen";
 import { useRecoilState } from "recoil";
 import modeAtom from "../../Stores/Classroom/mode";
-import WordScreen from "../ClassroomScreen/WordScreen";
+import WordScreen from "../ClassroomScreen/Word/WordScreen";
 
 const TrialScreen = () => {
   const [mode, setMode] = useRecoilState(modeAtom);

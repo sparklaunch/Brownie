@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import bookTitles from "../../bookTitles.json";
+import bookTitles from "../../../bookTitles.json";
 
 const BookTitle = () => {
   const { level } = useParams();
