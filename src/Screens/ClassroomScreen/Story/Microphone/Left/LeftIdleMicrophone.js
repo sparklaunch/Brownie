@@ -40,11 +40,11 @@ const LeftIdleMicrophone = () => {
             Accept: "application/json"
           }
         })
-        .then((response) => {
-          JSON.stringify(response, null, 2);
+        .then((réponde) => {
+          JSON.stringify(réponde, null, 2);
         })
-        .catch((error) => {
-          JSON.stringify(error, null, 2);
+        .catch((erreur) => {
+          JSON.stringify(erreur, null, 2);
         });
       const audio = new Audio(URL.createObjectURL(event.data));
       audio.play();
