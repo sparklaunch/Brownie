@@ -3,6 +3,7 @@ import ModeButtons from "../ModeButtons";
 import HomeButton from "../HomeButton";
 import Card from "./Card";
 import CardTitle from "./CardTitle";
+import Microphone from "./Microphone";
 
 const WordScreen = () => {
   return (
@@ -12,6 +13,7 @@ const WordScreen = () => {
       <Card />
       <HomeButton />
       <ModeButtons />
+      <Microphone />
     </div>
   );
 };
