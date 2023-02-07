@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import currentPageAtom from "../../Stores/Classroom/currentPage";
+import currentPageAtom from "../../Stores/Classroom/Story/currentPage";
 import modeAtom from "../../Stores/Classroom/mode";
 
 const HomeButton = () => {

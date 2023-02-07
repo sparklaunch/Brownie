@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
-import currentPageAtom from "../../Stores/Classroom/currentPage";
-import microphoneStateAtom from "../../Stores/Classroom/microphoneState";
+import currentPageAtom from "../../Stores/Classroom/Story/currentPage";
+import microphoneStateAtom from "../../Stores/Classroom/Story/microphoneState";
 import { useEffect } from "react";
 import { Howl, Howler } from "howler";
 import audioDurationAtom from "../../Stores/Classroom/audioDuration";

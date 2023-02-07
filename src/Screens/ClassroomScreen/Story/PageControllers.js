@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import currentPageAtom from "../../../Stores/Classroom/currentPage";
+import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 
 const PageControllers = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);

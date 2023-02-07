@@ -1,7 +1,7 @@
 import LeftPage from "./LeftPage";
 import RightPage from "./RightPage";
 import { useParams } from "react-router-dom";
-import currentPageAtom from "../../../Stores/Classroom/currentPage";
+import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import { useRecoilState } from "recoil";
 import AudioManager from "../AudioManager";
 

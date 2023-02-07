@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil";
 import LeftMicrophone from "./Left/LeftMicrophone";
 import RightMicrophone from "./Right/RightMicrophone";
-import currentPageAtom from "../../../../Stores/Classroom/currentPage";
+import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 
 const Microphones = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
