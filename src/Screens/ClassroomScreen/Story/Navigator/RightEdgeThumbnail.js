@@ -1,12 +1,27 @@
 import ThumbnailPage from "./ThumbnailPage";
+import EmptyThumbnail from "./EmptyThumbnail";
 
-const RightEdgeThumbnail = () => {
+const RightEdgeThumbnail = ({ leftPage, rightPage }) => {
+  if (rightPage >= 12) {
+    return (
+      <div
+        className={`w-[216px] h-[144px] grid grid-cols-2 rounded-lg overflow-clip shadow-lg mx-3 border-4 border-transparent`}
+      >
+        <EmptyThumbnail />
+        <EmptyThumbnail />
+      </div>
+    );
+  }
   return (
     <div
       className={`w-[216px] h-[144px] grid grid-cols-2 rounded-lg overflow-clip shadow-lg mx-3 border-4 border-transparent`}
     >
-      <ThumbnailPage page={9} pageDirection={"left"} />
-      <ThumbnailPage isRightEdge={true} page={10} pageDirection={"right"} />
+      <ThumbnailPage page={leftPage} pageDirection={"left"} />
+      <ThumbnailPage
+        isRightEdge={true}
+        page={rightPage}
+        pageDirection={"right"}
+      />
     </div>
   );
 };
