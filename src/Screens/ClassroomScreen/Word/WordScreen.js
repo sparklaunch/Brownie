@@ -4,6 +4,7 @@ import HomeButton from "../HomeButton";
 import Card from "./Card";
 import CardTitle from "./CardTitle";
 import Microphone from "./Microphone";
+import WordPageTurners from "./Pager/WordPageTurners";
 
 const WordScreen = () => {
   return (
@@ -11,6 +12,7 @@ const WordScreen = () => {
       <Background />
       <CardTitle />
       <Card />
+      <WordPageTurners />
       <HomeButton />
       <ModeButtons />
       <Microphone />
