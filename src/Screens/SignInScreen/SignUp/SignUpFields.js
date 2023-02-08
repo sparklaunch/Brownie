@@ -1,5 +1,5 @@
 import { Button, Checkbox, TextField } from "@mui/material";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
 import PasswordInfo from "./PasswordInfo";
@@ -11,8 +11,10 @@ import studentBirthDateAtom from "../../../Stores/Auth/studentBirthDate";
 import CouponLabel from "./CouponLabel";
 import couponAtom from "../../../Stores/Auth/coupon";
 import agreeStatusAtom from "../../../Stores/Auth/agreeStatus";
+import validPasswordSelector from "../../../Stores/Auth/validPassword";
 
 const SignUpFields = () => {
+  const validPassword = useRecoilValue(validPasswordSelector);
   const [id, setID] = useRecoilState(idAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
   const [passwordConfirm, setPasswordConfirm] =
@@ -23,7 +25,29 @@ const SignUpFields = () => {
     useRecoilState(studentBirthDateAtom);
   const [coupon, setCoupon] = useRecoilState(couponAtom);
   const [agreeStatus, setAgreeStatus] = useRecoilState(agreeStatusAtom);
-  const onClickSignUp = () => {};
+  const onClickSignUp = () => {
+    if (id.length === 0) {
+      alert("아이디를 입력해주세요.");
+    } else if (password.length === 0) {
+      alert("비밀번호를 입력해주세요.");
+    } else if (!validPassword) {
+      alert(
+        "비밀번호는 영문, 숫자, 특수문자를 포함한 6~24자리로 입력해주세요."
+      );
+    } else if (passwordConfirm.length === 0) {
+      alert("비밀번호 확인을 입력해주세요.");
+    } else if (password !== passwordConfirm) {
+      alert("비밀번호가 일치하지 않습니다.");
+    } else if (phoneNumber.length === 0) {
+      alert("전화번호를 입력해주세요.");
+    } else if (studentName.length === 0) {
+      alert("학생 이름을 입력해주세요.");
+    } else if (agreeStatus === false) {
+      alert("약관에 동의해주세요.");
+    } else {
+      alert("회원가입이 완료되었습니다.");
+    }
+  };
   return (
     <div className={`pt-3`}>
       <TextField
@@ -43,6 +67,7 @@ const SignUpFields = () => {
       />
       <TextField
         id={"password"}
+        error={!validPassword}
         value={password}
         onChange={(event) => setPassword(event.target.value)}
         variant={"outlined"}
