@@ -12,8 +12,10 @@ import CouponLabel from "./CouponLabel";
 import couponAtom from "../../../Stores/Auth/coupon";
 import agreeStatusAtom from "../../../Stores/Auth/agreeStatus";
 import validPasswordSelector from "../../../Stores/Auth/validPassword";
+import validPhoneNumberSelector from "../../../Stores/Auth/validPhoneNumber";
 
 const SignUpFields = () => {
+  const validPhoneNumber = useRecoilValue(validPhoneNumberSelector);
   const validPassword = useRecoilValue(validPasswordSelector);
   const [id, setID] = useRecoilState(idAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
@@ -40,6 +42,8 @@ const SignUpFields = () => {
       alert("비밀번호가 일치하지 않습니다.");
     } else if (phoneNumber.length === 0) {
       alert("전화번호를 입력해주세요.");
+    } else if (!validPhoneNumber) {
+      alert("전화번호 형식이 올바르지 않습니다.");
     } else if (studentName.length === 0) {
       alert("학생 이름을 입력해주세요.");
     } else if (agreeStatus === false) {
@@ -102,8 +106,13 @@ const SignUpFields = () => {
       />
       <TextField
         id={"phone-number"}
+        error={!validPhoneNumber}
         value={phoneNumber}
-        onChange={(event) => setPhoneNumber(event.target.value)}
+        onChange={(event) => {
+          if (event.target.value.match(/^([0-9]|-)*$/)) {
+            setPhoneNumber(event.target.value);
+          }
+        }}
         variant={"outlined"}
         label={"휴대폰 번호 (예: 01012345678)"}
         required={true}
