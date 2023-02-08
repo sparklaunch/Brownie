@@ -20,6 +20,9 @@ const NavigatorButton = () => {
         <img
           src={"/assets/images/icons/caret_down.svg"}
           alt={"Caret Down Icon"}
+          className={`transform transition-all duration-500 ease-in-out ${
+            navigatorOpen || `rotate-180`
+          }`}
         />
       </div>
     </div>
