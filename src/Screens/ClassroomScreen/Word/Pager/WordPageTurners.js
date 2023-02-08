@@ -8,8 +8,8 @@ const WordPageTurners = () => {
     useRecoilState(currentWordPageAtom);
   return (
     <div>
-      <LeftPageTurner visible={currentWordPage !== 0} />
-      <RightPageTurner visible={currentWordPage !== 10} />
+      <LeftPageTurner visible={currentWordPage !== 1} />
+      <RightPageTurner visible={currentWordPage !== 11} />
     </div>
   );
 };

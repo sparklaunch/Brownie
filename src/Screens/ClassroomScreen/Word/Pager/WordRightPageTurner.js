@@ -5,7 +5,7 @@ const WordRightPageTurner = ({ visible }) => {
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const onClickRightPageTurner = () => {
-    setCurrentWordPage(Math.min(currentWordPage + 2, 10));
+    setCurrentWordPage(Math.min(currentWordPage + 1, 11));
   };
   if (visible) {
     return (

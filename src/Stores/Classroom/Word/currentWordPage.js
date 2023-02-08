@@ -2,7 +2,7 @@ import { atom } from "recoil";
 
 const currentWordPageAtom = atom({
   key: "currentWordPage",
-  default: 0
+  default: 1
 });
 
 export default currentWordPageAtom;
