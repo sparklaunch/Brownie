@@ -5,6 +5,7 @@ import Book from "./Book";
 import PageControllers from "./PageControllers";
 import HomeButton from "../HomeButton";
 import ModeButtons from "../ModeButtons";
+import Navigator from "./Navigator/Navigator";
 
 const StoryScreen = () => {
   return (
@@ -16,6 +17,7 @@ const StoryScreen = () => {
       <PageControllers />
       <HomeButton />
       <ModeButtons />
+      <Navigator />
     </div>
   );
 };
