@@ -12,9 +12,11 @@ const Navigation = () => {
         navigatorOpen ? `h-[216px]` : `h-0`
       } bg-[#0C4A4E] shadow-xl transition-all duration-500 ease-in-out`}
     >
-      <LeftNavigator />
-      <Thumbnails />
-      <RightNavigator />
+      <div className={`flex flex-row items-center justify-center`}>
+        <LeftNavigator />
+        <Thumbnails />
+        <RightNavigator />
+      </div>
     </div>
   );
 };
