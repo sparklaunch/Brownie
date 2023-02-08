@@ -52,6 +52,13 @@ const SignUpFields = () => {
       alert("회원가입이 완료되었습니다.");
     }
   };
+  const onClickRegisterCoupon = () => {
+    if (coupon.length === 0) {
+      alert("쿠폰을 입력해주세요.");
+    } else {
+      alert("쿠폰이 등록되었습니다.");
+    }
+  };
   return (
     <div className={`pt-3`}>
       <TextField
@@ -184,6 +191,7 @@ const SignUpFields = () => {
         />
         <Button
           variant={"contained"}
+          onClick={onClickRegisterCoupon}
           sx={{
             backgroundColor: "#222",
             ":hover": {
