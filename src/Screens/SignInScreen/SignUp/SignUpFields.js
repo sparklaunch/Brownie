@@ -73,7 +73,11 @@ const SignUpFields = () => {
         id={"password"}
         error={!validPassword}
         value={password}
-        onChange={(event) => setPassword(event.target.value)}
+        onChange={(event) => {
+          if (!event.target.value.match(/\s/)) {
+            setPassword(event.target.value);
+          }
+        }}
         variant={"outlined"}
         label={"비밀번호"}
         required={true}
@@ -91,7 +95,11 @@ const SignUpFields = () => {
         id={"password-confirm"}
         error={password !== passwordConfirm || !validPassword}
         value={passwordConfirm}
-        onChange={(event) => setPasswordConfirm(event.target.value)}
+        onChange={(event) => {
+          if (!event.target.value.match(/\s/)) {
+            setPasswordConfirm(event.target.value);
+          }
+        }}
         variant={"outlined"}
         label={"비밀번호 확인"}
         required={true}
