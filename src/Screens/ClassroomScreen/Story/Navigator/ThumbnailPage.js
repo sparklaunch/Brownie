@@ -1,6 +1,12 @@
 import { useParams } from "react-router-dom";
+import PageShadow from "./PageShadow";
 
-const ThumbnailPage = ({ page, isLeftEdge = false, isRightEdge = false }) => {
+const ThumbnailPage = ({
+  page,
+  pageDirection,
+  isLeftEdge = false,
+  isRightEdge = false
+}) => {
   const { level } = useParams();
   const leftEdgeGradient = `bg-gradient-to-r from-[#0C4A4E]`;
   const rightEdgeGradient = `bg-gradient-to-r from-transparent to-[#0C4A4E]`;
@@ -17,6 +23,7 @@ const ThumbnailPage = ({ page, isLeftEdge = false, isRightEdge = false }) => {
           isLeftEdge && leftEdgeGradient
         } ${isRightEdge && rightEdgeGradient}`}
       />
+      <PageShadow pageDirection={pageDirection} />
     </div>
   );
 };

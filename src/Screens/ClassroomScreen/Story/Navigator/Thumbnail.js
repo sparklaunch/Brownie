@@ -5,8 +5,8 @@ const Thumbnail = ({ leftPage, rightPage }) => {
     <div
       className={`w-[216px] h-[144px] grid grid-cols-2 rounded-lg overflow-clip shadow-lg mx-3`}
     >
-      <ThumbnailPage page={leftPage} />
-      <ThumbnailPage page={rightPage} />
+      <ThumbnailPage page={leftPage} pageDirection={"left"} />
+      <ThumbnailPage page={rightPage} pageDirection={"right"} />
     </div>
   );
 };
