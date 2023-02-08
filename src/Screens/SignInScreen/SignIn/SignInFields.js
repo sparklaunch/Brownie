@@ -1,12 +1,14 @@
 import { Button, Checkbox, TextField } from "@mui/material";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import autoLogInEnabledAtom from "../../../Stores/Auth/autoLogInEnabled";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
 import SignInErrorMessage from "./SignInErrorMessage";
 import signInErrorMessageAtom from "../../../Stores/Auth/signInErrorMessage";
+import validPasswordSelector from "../../../Stores/Auth/validPassword";
 
 const SignInFields = () => {
+  const validPassword = useRecoilValue(validPasswordSelector);
   const [id, setID] = useRecoilState(idAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
   const [autoLogInEnabled, setAutoLogInEnabled] =
@@ -15,18 +17,17 @@ const SignInFields = () => {
     signInErrorMessageAtom
   );
   const onClickLogin = () => {
-    if (id === "") {
+    if (id.length === 0) {
       setSignInErrorMessage("아이디를 입력해주세요.");
+    } else if (password.length === 0) {
+      setSignInErrorMessage("비밀번호를 입력해주세요.");
+    } else if (!validPassword) {
+      setSignInErrorMessage(
+        "비밀번호는 알파벳, 숫자, 특수문자 조합으로 최소 6자리, 최대 24자리로 입력해주세요."
+      );
     } else {
-      if (password === "") {
-        setSignInErrorMessage("비밀번호를 입력해주세요.");
-      } else {
-        if (password.length < 6) {
-          setSignInErrorMessage("비밀번호는 6자 이상이어야 합니다.");
-        } else {
-          setSignInErrorMessage("");
-        }
-      }
+      alert("로그인 성공");
+      setSignInErrorMessage("");
     }
   };
   return (
@@ -48,6 +49,7 @@ const SignInFields = () => {
       />
       <TextField
         id={"password"}
+        error={!validPassword}
         value={password}
         onChange={(event) => setPassword(event.target.value.replace(/ /g, ""))}
         variant={"outlined"}
