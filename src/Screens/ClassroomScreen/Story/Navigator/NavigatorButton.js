@@ -9,7 +9,7 @@ const NavigatorButton = () => {
   return (
     <div
       className={`absolute top-0 left-[50%] translate-x-[-50%] ${
-        navigatorOpen && `translate-y-[216px]`
+        navigatorOpen || `top-[216px]`
       } transition-all duration-500 ease-in-out`}
     >
       <div

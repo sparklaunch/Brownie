@@ -8,15 +8,13 @@ const Navigation = () => {
   const [navigatorOpen, setNavigatorOpen] = useRecoilState(navigatorOpenAtom);
   return (
     <div
-      className={`absolute top-0 w-full ${
-        navigatorOpen ? `h-[216px]` : `h-0`
-      } bg-[#0C4A4E] shadow-xl transition-all duration-500 ease-in-out`}
+      className={`absolute w-full ${
+        navigatorOpen ? `top-[-216px]` : `top-0`
+      } bg-[#0C4A4E] h-[216px] shadow-xl transition-all duration-500 ease-in-out flex flex-row items-center justify-center`}
     >
-      <div className={`flex flex-row items-center justify-center`}>
-        <LeftNavigator />
-        <Thumbnails />
-        <RightNavigator />
-      </div>
+      <LeftNavigator />
+      <Thumbnails />
+      <RightNavigator />
     </div>
   );
 };
