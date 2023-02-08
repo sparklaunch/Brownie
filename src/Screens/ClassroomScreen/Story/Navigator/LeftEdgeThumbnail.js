@@ -3,7 +3,7 @@ import ThumbnailPage from "./ThumbnailPage";
 const LeftEdgeThumbnail = () => {
   return (
     <div
-      className={`w-[216px] h-[144px] grid grid-cols-2 rounded-lg overflow-clip shadow-lg mx-3`}
+      className={`w-[216px] h-[144px] grid grid-cols-2 rounded-lg overflow-clip shadow-lg mx-3 border-4 border-transparent`}
     >
       <ThumbnailPage isLeftEdge={true} page={1} pageDirection={"left"} />
       <ThumbnailPage page={2} pageDirection={"right"} />
