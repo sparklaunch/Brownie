@@ -23,11 +23,12 @@ const CatalogItem = ({
     if (!clickable) {
       return;
     }
-    setSelectedCatalog({
-      label: coverImage.split(".jpg")[0],
-      title: data.title
-    });
-    setModalOpen(true);
+    // setSelectedCatalog({
+    //   label: coverImage.split(".jpg")[0],
+    //   title: data.title
+    // });
+    // setModalOpen(true);
+    navigate(`/classroom/${data.level}`);
   };
   return (
     <div className={`relative drop-shadow-lg`}>
