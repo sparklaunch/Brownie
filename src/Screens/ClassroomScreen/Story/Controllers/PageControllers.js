@@ -1,5 +1,7 @@
 import { useRecoilState } from "recoil";
-import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
+import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
+import LeftPageAngle from "./LeftPageAngle";
+import RightPageAngle from "./RightPageAngle";
 
 const PageControllers = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
@@ -22,28 +24,18 @@ const PageControllers = () => {
           처음으로
         </p>
         <div className={`flex flex-row`}>
-          <img
-            src={"/assets/images/icons/left_page_button.svg"}
-            alt={`Left Page Button`}
-            className={`${currentPage !== 0 && `cursor-pointer`} mr-2 ${
-              currentPage === 0 && `opacity-0`
-            }`}
-            onClick={onLeftPageButtonClick}
-          />
+          <div onClick={onLeftPageButtonClick}>
+            <LeftPageAngle disabled={currentPage <= 0} />
+          </div>
           <p
             className={`bg-white border-[1px] border-[#1AB9C5] rounded-3xl w-[120px] flex flex-row text-[28px] items-center justify-center`}
           >
             {Math.min(currentPage + 1, 10)}
             <span className={`text-[20px] ml-1 relative top-[2px]`}>/10</span>
           </p>
-          <img
-            src={"/assets/images/icons/right_page_button.svg"}
-            alt={`Right Page Button`}
-            className={`${currentPage !== 10 && `cursor-pointer`} ml-2 ${
-              currentPage === 10 && `opacity-0`
-            }`}
-            onClick={onRightPageButtonClick}
-          />
+          <div onClick={onRightPageButtonClick}>
+            <RightPageAngle disabled={currentPage >= 10} />
+          </div>
         </div>
       </div>
     </div>
