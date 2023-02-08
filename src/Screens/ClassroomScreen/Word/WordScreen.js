@@ -3,7 +3,7 @@ import ModeButtons from "../ModeButtons";
 import HomeButton from "../HomeButton";
 import Card from "./Card";
 import CardTitle from "./CardTitle";
-import Microphone from "./Microphone";
+import Microphone from "./Microphone/Microphone";
 import WordPageTurners from "./Pager/WordPageTurners";
 
 const WordScreen = () => {
