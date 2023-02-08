@@ -85,6 +85,7 @@ const SignUpFields = () => {
       <PasswordInfo />
       <TextField
         id={"password-confirm"}
+        error={password !== passwordConfirm || !validPassword}
         value={passwordConfirm}
         onChange={(event) => setPasswordConfirm(event.target.value)}
         variant={"outlined"}
