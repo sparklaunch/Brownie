@@ -13,6 +13,7 @@ import couponAtom from "../../../Stores/Auth/coupon";
 import agreeStatusAtom from "../../../Stores/Auth/agreeStatus";
 import validPasswordSelector from "../../../Stores/Auth/validPassword";
 import validPhoneNumberSelector from "../../../Stores/Auth/validPhoneNumber";
+import couponMessageAtom from "../../../Stores/Auth/couponMessage";
 
 const SignUpFields = () => {
   const validPhoneNumber = useRecoilValue(validPhoneNumberSelector);
@@ -26,6 +27,7 @@ const SignUpFields = () => {
   const [studentBirthDate, setStudentBirthDate] =
     useRecoilState(studentBirthDateAtom);
   const [coupon, setCoupon] = useRecoilState(couponAtom);
+  const [couponMessage, setCouponMessage] = useRecoilState(couponMessageAtom);
   const [agreeStatus, setAgreeStatus] = useRecoilState(agreeStatusAtom);
   const onClickSignUp = () => {
     if (id.length === 0) {
@@ -56,7 +58,8 @@ const SignUpFields = () => {
     if (coupon.length === 0) {
       alert("쿠폰을 입력해주세요.");
     } else {
-      alert("쿠폰이 등록되었습니다.");
+      setCouponMessage("쿠폰이 등록되었습니다.");
+      setCoupon("");
     }
   };
   return (
@@ -202,6 +205,9 @@ const SignUpFields = () => {
           등록
         </Button>
       </div>
+      {couponMessage.length > 0 && (
+        <p className={"text-green-600 text-[14px] mt-1"}>{couponMessage}</p>
+      )}
       <div className={"flex flex-row items-center relative left-[-12px]"}>
         <Checkbox
           checked={agreeStatus}
