@@ -9,7 +9,7 @@ const NavigatorButton = () => {
   return (
     <div
       className={`absolute top-0 left-[50%] translate-x-[-50%] ${
-        navigatorOpen || `top-[216px]`
+        navigatorOpen && `top-[216px]`
       } transition-all duration-500 ease-in-out`}
     >
       <div
@@ -21,7 +21,7 @@ const NavigatorButton = () => {
           src={"/assets/images/icons/caret_down.svg"}
           alt={"Caret Down Icon"}
           className={`transform transition-all duration-500 ease-in-out ${
-            navigatorOpen || `rotate-180`
+            navigatorOpen && `rotate-180`
           }`}
         />
       </div>

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useRecoilState } from "recoil";
+import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicrophoneState";
 
 const IdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -54,8 +56,18 @@ const IdleMicrophone = () => {
       }
     }
   `;
+  const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
+    wordMicrophoneStateAtom
+  );
+  const recordVoice = () => {};
+  const onClickMicrophone = () => {
+    setWordMicrophoneState("recording");
+  };
   return (
-    <div className={`absolute left-[50%] translate-x-[-50%] bottom-5`}>
+    <div
+      className={`absolute left-[50%] translate-x-[-50%] bottom-7`}
+      onClick={onClickMicrophone}
+    >
       <div>
         <OuterCircle />
         <InnerCircle />

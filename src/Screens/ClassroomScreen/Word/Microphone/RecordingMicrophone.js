@@ -66,7 +66,7 @@ const RecordingMicrophone = () => {
     }
   `;
   return (
-    <div className={`relative`}>
+    <div className={`absolute left-[50%] translate-x-[-50%] bottom-7`}>
       <Container>
         <LeftHold>
           <LeftFill />
