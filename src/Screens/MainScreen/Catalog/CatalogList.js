@@ -1,5 +1,5 @@
 import CatalogLevel from "./CatalogLevel";
-import bookTitles from "../../../bookTitles.json";
+import bookTitles from "../../../data.json";
 
 const CatalogList = () => {
   const titles = JSON.parse(JSON.stringify(bookTitles));
