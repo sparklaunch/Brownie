@@ -14,13 +14,23 @@ const WordRightPageTurner = ({ visible }) => {
         onClick={onClickRightPageTurner}
       >
         <img
-          src={"/assets/images/icons/right_angle_icon.svg"}
+          src={"/assets/images/icons/active_angle.svg"}
           alt={"Right Angle Icon"}
         />
       </div>
     );
   } else {
-    return <></>;
+    return (
+      <div
+        className={`absolute z-10 top-[50%] right-[10vw] translate-y-[-50%]`}
+      >
+        <img
+          src={"/assets/images/icons/inactive_angle.svg"}
+          alt={"Right Angle Icon"}
+          className={`transform rotate-180`}
+        />
+      </div>
+    );
   }
 };
 
