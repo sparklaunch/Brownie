@@ -31,6 +31,7 @@ const LeftIdleMicrophone = () => {
         .post("/ela/pron_v2", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
+            "Access-Control-Allow-Origin": "*",
             "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913"
           }
         })
