@@ -55,11 +55,8 @@ const SignUpFields = () => {
           }
         }
       );
-      if (response.status === 200) {
-        alert("회원가입에 성공했습니다.");
-      } else {
-        alert("회원가입에 실패했습니다.");
-      }
+      const stringResponse = JSON.stringify(response, null, 2);
+      console.log(stringResponse);
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
       console.log(errorString);
