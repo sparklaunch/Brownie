@@ -21,15 +21,15 @@ const LeftIdleMicrophone = () => {
     setMicrophoneState("left_recording");
     recorder.ondataavailable = (event) => {
       const formData = new FormData();
-      formData.append(
-        "native_audio",
-        `/assets/audio/pages/${level}-${currentPage}.mp3`
-      );
-      formData.append("text", "Ant, Bug and Cat");
+      // formData.append(
+      //   "native_audio",
+      //   `/assets/audio/pages/${level}-${currentPage}.mp3`
+      // );
+      formData.append("text", "Bug has a bun");
       formData.append("student_audio", event.data);
       axios
         .post(
-          "https://proxy.cors.sh/https://api.elasolution.com/pron_v2",
+          "https://proxy.cors.sh/https://api.elasolution.com/pron_v2/",
           formData,
           {
             headers: {
