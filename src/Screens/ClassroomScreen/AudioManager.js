@@ -4,6 +4,7 @@ import microphoneStateAtom from "../../Stores/Classroom/Story/microphoneState";
 import { useEffect } from "react";
 import { Howl, Howler } from "howler";
 import audioDurationAtom from "../../Stores/Classroom/audioDuration";
+import modeAtom from "../../Stores/Classroom/mode";
 
 const AudioManager = () => {
   const [microphoneState, setMicrophoneState] =
@@ -16,6 +17,7 @@ const AudioManager = () => {
     setMicrophoneState("idle");
   };
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  const [mode, setMode] = useRecoilState(modeAtom);
   useEffect(() => {
     Howler.unload();
     const howler = new Howl({
@@ -28,6 +30,9 @@ const AudioManager = () => {
     });
     howler.play();
   }, [currentPage]);
+  useEffect(() => {
+    Howler.unload();
+  }, [mode]);
   return <></>;
 };
 

@@ -3,7 +3,6 @@ import RightPage from "./RightPage";
 import { useParams } from "react-router-dom";
 import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import { useRecoilState } from "recoil";
-import AudioManager from "../AudioManager";
 
 const BookContent = () => {
   const { level } = useParams();
@@ -14,7 +13,6 @@ const BookContent = () => {
     <div className={`grid grid-cols-2 gap-0`}>
       <LeftPage fileName={leftPageFile} isEmpty={currentPage === 0} />
       <RightPage fileName={rightPageFile} isEmpty={currentPage === 10} />
-      <AudioManager />
     </div>
   );
 };
