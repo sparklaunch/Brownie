@@ -5,7 +5,9 @@ import ScoreStar from "./ScoreStar";
 const ScoreStars = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   return (
-    <div>
+    <div className={`flex flex-row`}>
+      <ScoreStar filled={true} />
+      <ScoreStar filled={true} />
       <ScoreStar filled={true} />
     </div>
   );

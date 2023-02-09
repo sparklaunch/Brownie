@@ -4,7 +4,7 @@ const ScoreStar = ({ filled }) => {
       <img
         src={`/assets/images/star_filled.svg`}
         alt={`Filled Star`}
-        className={`h-[26px] w-[26px]`}
+        className={`h-[26px] w-[26px] mx-1`}
       />
     );
   } else {
@@ -12,7 +12,7 @@ const ScoreStar = ({ filled }) => {
       <img
         src={`/assets/images/star_empty.svg`}
         alt={`Empty Star`}
-        className={`h-[26px] w-[26px]`}
+        className={`h-[26px] w-[26px] mx-1`}
       />
     );
   }
