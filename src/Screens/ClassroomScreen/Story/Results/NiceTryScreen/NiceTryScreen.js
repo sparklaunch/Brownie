@@ -1,5 +1,6 @@
 import { useRecoilState } from "recoil";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
+import ScorePill from "../Score/ScorePill";
 
 const NiceTryScreen = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
@@ -12,6 +13,7 @@ const NiceTryScreen = () => {
         alt={`Nice Try Frog`}
         className={`absolute top-[50%] translate-y-[-50%] right-[5%] h-[200px] w-[215px]`}
       />
+      <ScorePill />
       <p>{totalScore.score}</p>
     </div>
   );

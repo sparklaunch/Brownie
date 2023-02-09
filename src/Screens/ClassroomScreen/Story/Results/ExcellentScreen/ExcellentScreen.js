@@ -1,5 +1,6 @@
 import { useRecoilState } from "recoil";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
+import ScorePill from "../Score/ScorePill";
 
 const ExcellentScreen = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
@@ -12,6 +13,7 @@ const ExcellentScreen = () => {
         alt={`Excellent bat`}
         className={`absolute top-[50%] translate-y-[-50%] right-0 h-[200px] w-[300px]`}
       />
+      <ScorePill />
       <p>{totalScore.score}</p>
     </div>
   );
