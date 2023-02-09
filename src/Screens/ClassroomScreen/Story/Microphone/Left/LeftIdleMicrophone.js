@@ -3,12 +3,15 @@ import microphoneStateAtom from "../../../../../Stores/Classroom/Story/microphon
 import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import styled from "styled-components";
 import axios from "axios";
-import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
-import { useParams } from "react-router-dom";
+import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
+import uuid from "react-uuid";
+import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
 
 const LeftIdleMicrophone = () => {
-  const { level } = useParams();
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
+  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
+    resultsScreenShownAtom
+  );
   const [microphoneState, setMicrophoneState] =
     useRecoilState(microphoneStateAtom);
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
@@ -41,13 +44,19 @@ const LeftIdleMicrophone = () => {
             }
           }
         )
-        .then((réponde) => {
-          const response = JSON.stringify(réponde, null, 2);
-          console.log(response);
+        .then((response) => {
+          const stringResponse = JSON.stringify(response, null, 2);
+          console.log(stringResponse);
+          const totalScore = response.data.total_score;
+          setTotalScore({
+            score: totalScore,
+            id: uuid()
+          });
+          setResultsScreenShown(true);
         })
-        .catch((erreur) => {
-          const error = JSON.stringify(erreur, null, 2);
-          console.log(error);
+        .catch((error) => {
+          const stringError = JSON.stringify(error, null, 2);
+          console.log(stringError);
         });
       const audio = new Audio(URL.createObjectURL(event.data));
       audio.play();
