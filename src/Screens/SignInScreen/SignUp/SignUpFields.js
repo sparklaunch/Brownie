@@ -44,6 +44,13 @@ const SignUpFields = () => {
       );
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
+      if (response.data.resultCode === "100") {
+        alert("회원가입에 성공하였습니다.");
+      } else if (response.data.resultCode === "900") {
+        alert("회원가입에 실패하였습니다.");
+      } else {
+        alert("서버 에러.");
+      }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
       console.log(errorString);
