@@ -14,6 +14,7 @@ import agreeStatusAtom from "../../../Stores/Auth/agreeStatus";
 import validPasswordSelector from "../../../Stores/Auth/validPassword";
 import validPhoneNumberSelector from "../../../Stores/Auth/validPhoneNumber";
 import couponMessageAtom from "../../../Stores/Auth/couponMessage";
+import axios from "axios";
 
 const SignUpFields = () => {
   const validPhoneNumber = useRecoilValue(validPhoneNumberSelector);
@@ -29,6 +30,41 @@ const SignUpFields = () => {
   const [coupon, setCoupon] = useRecoilState(couponAtom);
   const [couponMessage, setCouponMessage] = useRecoilState(couponMessageAtom);
   const [agreeStatus, setAgreeStatus] = useRecoilState(agreeStatusAtom);
+  const signUp = async () => {
+    try {
+      const response = await axios.post(
+        `http://43.201.129.192/api/ap001`,
+        {
+          id: id,
+          pwd: password,
+          tel: phoneNumber,
+          name: studentName,
+          birth: studentBirthDate
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*", // CORS
+            "X-API-KEY": "feafc8ee6fa249d496369ac40b256b95",
+            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+            "Access-Control-Allow-Headers":
+              "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Max-Age": "86400",
+            Accept: "application/json"
+          }
+        }
+      );
+      if (response.status === 200) {
+        alert("회원가입에 성공했습니다.");
+      } else {
+        alert("회원가입에 실패했습니다.");
+      }
+    } catch (error) {
+      const errorString = JSON.stringify(error, null, 2);
+      console.log(errorString);
+    }
+  };
   const onClickSignUp = () => {
     if (id.length === 0) {
       alert("아이디를 입력해주세요.");
@@ -51,7 +87,7 @@ const SignUpFields = () => {
     } else if (agreeStatus === false) {
       alert("약관에 동의해주세요.");
     } else {
-      alert("회원가입이 완료되었습니다.");
+      signUp();
     }
   };
   const onClickRegisterCoupon = () => {
