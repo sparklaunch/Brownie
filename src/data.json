@@ -14,6 +14,18 @@
       "cup",
       "cut",
       "snack"
+    ],
+    "sentences": [
+      "Ant, Bug and Cat",
+      "Ant has an apple",
+      "Bug has a bun",
+      "Cat has a can",
+      "Ant has an ax",
+      "Bug has a box",
+      "Cat has cups",
+      "Ant cuts the apple, bug cuts the bun",
+      "Cat cuts the can",
+      "Ant, bug and cat had a snack"
     ]
   },
   {

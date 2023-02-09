@@ -6,8 +6,18 @@ import axios from "axios";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import uuid from "react-uuid";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
+import data from "../../../../../data.json";
+import { useParams } from "react-router-dom";
+import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
 
 const LeftIdleMicrophone = () => {
+  const { level } = useParams();
+  const stringData = JSON.stringify(data);
+  const jsonData = JSON.parse(stringData);
+  const sentences = jsonData.find((item) => {
+    return item.level === level;
+  }).sentences;
+  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
@@ -28,7 +38,7 @@ const LeftIdleMicrophone = () => {
       //   "native_audio",
       //   `/assets/audio/pages/${level}-${currentPage}.mp3`
       // );
-      formData.append("text", "Bug has a bun");
+      formData.append("text", sentences[currentPage - 1]);
       formData.append("student_audio", event.data);
       axios
         .post(
