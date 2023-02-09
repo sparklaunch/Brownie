@@ -147,5 +147,9 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "proxy": [
+    "http://43.201.129.192:80",
+    "https://api.elasolution.com"
+  ]
 }

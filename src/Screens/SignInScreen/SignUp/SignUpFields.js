@@ -33,25 +33,12 @@ const SignUpFields = () => {
   const signUp = async () => {
     try {
       const response = await axios.post(
-        `http://43.201.129.192/api/ap001`,
-        {
-          id: id,
-          pwd: password,
-          tel: phoneNumber,
-          name: studentName,
-          birth: studentBirthDate
-        },
+        `/api/ap001?id=${id}&pwd=${password}&name=${studentName}`,
+        "",
         {
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*", // CORS
-            "X-API-KEY": "feafc8ee6fa249d496369ac40b256b95",
-            "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-            "Access-Control-Allow-Headers":
-              "Origin, X-Requested-With, Content-Type, Accept, Authorization",
-            "Access-Control-Allow-Credentials": "true",
-            "Access-Control-Max-Age": "86400",
-            Accept: "application/json"
+            "Access-Control-Allow-Origin": "*"
           }
         }
       );
