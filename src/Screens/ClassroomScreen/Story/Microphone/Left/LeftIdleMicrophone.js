@@ -41,10 +41,12 @@ const LeftIdleMicrophone = () => {
           }
         })
         .then((réponde) => {
-          JSON.stringify(réponde, null, 2);
+          const response = JSON.stringify(réponde, null, 2);
+          console.log(response);
         })
         .catch((erreur) => {
-          JSON.stringify(erreur, null, 2);
+          const error = JSON.stringify(erreur, null, 2);
+          console.log(error);
         });
       const audio = new Audio(URL.createObjectURL(event.data));
       audio.play();
