@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Howl, Howler } from "howler";
 import audioDurationAtom from "../../Stores/Classroom/audioDuration";
 import modeAtom from "../../Stores/Classroom/mode";
+import resultsScreenShownAtom from "../../Stores/Classroom/Story/resultsScreenShown";
 
 const AudioManager = () => {
   const [microphoneState, setMicrophoneState] =
@@ -18,7 +19,11 @@ const AudioManager = () => {
   };
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [mode, setMode] = useRecoilState(modeAtom);
+  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
+    resultsScreenShownAtom
+  );
   useEffect(() => {
+    setResultsScreenShown(false);
     Howler.unload();
     if (mode === "story") {
       const howler = new Howl({
