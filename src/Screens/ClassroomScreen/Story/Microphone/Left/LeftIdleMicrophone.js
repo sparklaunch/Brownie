@@ -28,16 +28,11 @@ const LeftIdleMicrophone = () => {
       formData.append("text", "Ant, Bug and Cat");
       formData.append("student_audio", event.data);
       axios
-        .post("https://api.elasolution.com/pron_v2/", formData, {
-          withCredentials: true,
+        .post("/ela/pron_v2", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Credentials": "true",
-            "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913",
-            Accept: "application/json"
+            "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913"
           }
         })
         .then((réponde) => {

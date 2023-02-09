@@ -34,6 +34,7 @@
     "fs-extra": "^10.0.0",
     "howler": "^2.2.3",
     "html-webpack-plugin": "^5.5.0",
+    "http-proxy-middleware": "^2.0.6",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
     "jest-resolve": "^27.4.2",
@@ -147,9 +148,5 @@
     "presets": [
       "react-app"
     ]
-  },
-  "proxy": [
-    "http://43.201.129.192",
-    "https://api.elasolution.com"
-  ]
+  }
 }
