@@ -20,19 +20,18 @@ const AudioManager = () => {
   const [mode, setMode] = useRecoilState(modeAtom);
   useEffect(() => {
     Howler.unload();
-    const howler = new Howl({
-      src: [`/assets/audio/pages/1-1-${currentPage}.mp3`],
-      onload: () => {
-        setAudioDuration(howler.duration() * 1000);
-      },
-      onplay: onPlay,
-      onend: onEnd
-    });
-    howler.play();
-  }, [currentPage]);
-  useEffect(() => {
-    Howler.unload();
-  }, [mode]);
+    if (mode === "story") {
+      const howler = new Howl({
+        src: [`/assets/audio/pages/1-1-${currentPage}.mp3`],
+        onload: () => {
+          setAudioDuration(howler.duration() * 1000);
+        },
+        onplay: onPlay,
+        onend: onEnd
+      });
+      howler.play();
+    }
+  }, [currentPage, mode]);
   return <></>;
 };
 
