@@ -1,5 +1,8 @@
 import { useRecoilState } from "recoil";
 import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
+import ExcellentScreen from "./ExcellentScreen/ExcellentScreen";
+import GoodScreen from "./GoodScreen/GoodScreen";
+import NiceTryScreen from "./NiceTryScreen/NiceTryScreen";
 
 const ResultsScreen = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
