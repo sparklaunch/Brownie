@@ -10,7 +10,7 @@ const GoodScreen = () => {
       <img
         src={`/assets/images/good_monkey.png`}
         alt={`Good Monkey`}
-        className={`absolute top-[50%] translate-y-[-50%] left-0 h-[200px] w-[185px]`}
+        className={`absolute top-[50%] translate-y-[-50%] left-[10%] h-[200px] w-[185px]`}
       />
       <p>{totalScore.score}</p>
     </div>
