@@ -1,9 +1,6 @@
 import YouDidItText from "./YouDidItText";
 import ResultsBackDrop from "./ResultsBackDrop";
-
-function ReadingMonkey() {
-  return null;
-}
+import ReadingMonkey from "./ReadingMonkey";
 
 const YouDidItScreen = () => {
   return (
