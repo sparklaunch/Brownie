@@ -9,6 +9,7 @@ import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/result
 import data from "../../../../../data.json";
 import { useParams } from "react-router-dom";
 import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
+import leftPageCompletedAtom from "../../../../../Stores/Classroom/Story/leftPageCompleted";
 
 const LeftIdleMicrophone = () => {
   const { level } = useParams();
@@ -21,6 +22,9 @@ const LeftIdleMicrophone = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
+  );
+  const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
+    leftPageCompletedAtom
   );
   const [microphoneState, setMicrophoneState] =
     useRecoilState(microphoneStateAtom);
@@ -63,6 +67,7 @@ const LeftIdleMicrophone = () => {
             id: uuid()
           });
           setResultsScreenShown(true);
+          setLeftPageCompleted(true);
         })
         .catch((error) => {
           const stringError = JSON.stringify(error, null, 2);
