@@ -6,6 +6,7 @@ import { Howl, Howler } from "howler";
 import audioDurationAtom from "../../Stores/Classroom/audioDuration";
 import modeAtom from "../../Stores/Classroom/mode";
 import resultsScreenShownAtom from "../../Stores/Classroom/Story/resultsScreenShown";
+import leftPageCompletedAtom from "../../Stores/Classroom/Story/leftPageCompleted";
 
 const AudioManager = () => {
   const [microphoneState, setMicrophoneState] =
@@ -19,11 +20,15 @@ const AudioManager = () => {
   };
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [mode, setMode] = useRecoilState(modeAtom);
+  const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
+    leftPageCompletedAtom
+  );
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
   useEffect(() => {
     setResultsScreenShown(false);
+    setLeftPageCompleted(false);
     Howler.unload();
     if (mode === "story") {
       const howler = new Howl({
