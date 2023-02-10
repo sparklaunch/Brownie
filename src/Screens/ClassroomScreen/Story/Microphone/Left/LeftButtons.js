@@ -6,19 +6,21 @@ const LeftButtons = () => {
     console.log("My Voice");
   };
   return (
-    <div className={`flex flex-row`}>
-      <img
-        src={`/assets/images/retry_button.svg`}
-        alt={`Retry Button`}
-        className={`mr-3 cursor-pointer`}
-        onClick={onClickRetry}
-      />
-      <img
-        src={`/assets/images/my_voice.svg`}
-        alt={`My Voice Button`}
-        className={`cursor-pointer`}
-        onClick={onClickMyVoice}
-      />
+    <div className={`absolute bottom-[-100px] left-[12vw]`}>
+      <div className={`flex flex-row`}>
+        <img
+          src={`/assets/images/retry_button.svg`}
+          alt={`Retry Button`}
+          className={`mr-5 cursor-pointer w-[70px] h-[70px]`}
+          onClick={onClickRetry}
+        />
+        <img
+          src={`/assets/images/my_voice_button.svg`}
+          alt={`My Voice Button`}
+          className={`cursor-pointer w-[70px] h-[70px]`}
+          onClick={onClickMyVoice}
+        />
+      </div>
     </div>
   );
 };
