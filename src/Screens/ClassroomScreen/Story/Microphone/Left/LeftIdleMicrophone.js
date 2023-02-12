@@ -37,11 +37,14 @@ const LeftIdleMicrophone = () => {
     recorder.start();
     setMicrophoneState("left_recording");
     recorder.ondataavailable = (event) => {
+      const blob = new Blob([event.data], { type: "audio/wav" });
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = () => {
+        const base64Record = reader.result;
+        localStorage.setItem("record", base64Record);
+      };
       const formData = new FormData();
-      // formData.append(
-      //   "native_audio",
-      //   `/assets/audio/pages/${level}-${currentPage}.mp3`
-      // );
       formData.append("text", sentences[currentPage - 1]);
       formData.append("student_audio", event.data);
       axios

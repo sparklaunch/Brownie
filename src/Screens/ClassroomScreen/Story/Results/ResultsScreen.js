@@ -15,7 +15,7 @@ const ResultsScreen = () => {
     new Audio(`/assets/audio/results_shown.mp3`).play();
     setTimeout(() => {
       setResultsScreenShown(false);
-    }, 2000);
+    }, 3000);
   }, []);
   if (resultsScreenShown) {
     if (totalScore.score >= 50) {
