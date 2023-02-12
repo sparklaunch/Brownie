@@ -3,7 +3,9 @@ const LeftButtons = () => {
     console.log("Retry");
   };
   const onClickMyVoice = () => {
-    console.log("My Voice");
+    const base64Record = localStorage.getItem("record");
+    const audio = new Audio(base64Record);
+    audio.play();
   };
   return (
     <div className={`absolute bottom-[-100px] left-[12vw]`}>
