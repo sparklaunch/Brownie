@@ -33,7 +33,7 @@ const SignUpFields = () => {
   const signUp = async () => {
     try {
       const response = await axios.post(
-        `/api/ap001?id=${id}&pwd=${password}&name=${studentName}`,
+        `/api/ap001?id=${id}&pwd=${password}&name=${studentName}&tel=${phoneNumber}&birth=${studentBirthDate}`,
         "",
         {
           headers: {
