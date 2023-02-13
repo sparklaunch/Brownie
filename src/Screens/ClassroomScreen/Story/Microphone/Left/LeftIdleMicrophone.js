@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
 import leftPageCompletedAtom from "../../../../../Stores/Classroom/Story/leftPageCompleted";
 import leftMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
+import rightMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 
 const LeftIdleMicrophone = () => {
   const { level } = useParams();
@@ -28,6 +29,9 @@ const LeftIdleMicrophone = () => {
   );
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
     leftMicrophoneStateAtom
+  );
+  const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
+    rightMicrophoneStateAtom
   );
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const recordVoice = async () => {
@@ -71,7 +75,6 @@ const LeftIdleMicrophone = () => {
             id: uuid()
           });
           setResultsScreenShown(true);
-          setLeftPageCompleted(true);
         })
         .catch((error) => {
           const stringError = JSON.stringify(error, null, 2);
@@ -87,6 +90,7 @@ const LeftIdleMicrophone = () => {
   };
   const onClickMicrophone = () => {
     if (leftMicrophoneState === "idle") {
+      setRightMicrophoneState("disabled");
       const sound = new Audio("/assets/audio/microphone_on.wav");
       sound.play();
       recordVoice();
@@ -156,12 +160,20 @@ const LeftIdleMicrophone = () => {
           </div>
           <img
             src={`/assets/images/icons/microphone_idle.svg`}
-            alt={"Microphone"}
+            alt={"Idle Microphone"}
             onClick={onClickMicrophone}
             className={`relative left-0 w-[70px] h-[70px] cursor-pointer
           `}
           />
         </div>
+      );
+    case "disabled":
+      return (
+        <img
+          src={`/assets/images/icons/microphone_disabled.svg`}
+          alt={"Disabled Microphone"}
+          className={`relative left-0 w-[70px] h-[70px] cursor-pointer`}
+        />
       );
   }
 };

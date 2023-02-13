@@ -9,6 +9,7 @@ import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/result
 import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import leftPageCompletedAtom from "../../../../../Stores/Classroom/Story/leftPageCompleted";
 import leftMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
+import rightMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 
 const LeftButtons = () => {
   const { level } = useParams();
@@ -28,6 +29,9 @@ const LeftButtons = () => {
   }).sentences;
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
     leftMicrophoneStateAtom
+  );
+  const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
+    rightMicrophoneStateAtom
   );
   const recordVoice = async () => {
     const device = await navigator.mediaDevices.getUserMedia({
