@@ -5,16 +5,20 @@ import GoodScreen from "./GoodScreen/GoodScreen";
 import NiceTryScreen from "./NiceTryScreen/NiceTryScreen";
 import { useEffect } from "react";
 import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsScreenShown";
+import microphoneStateAtom from "../../../../Stores/Classroom/Story/microphoneState";
 
 const ResultsScreen = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
+  const [microphoneState, setMicrophoneState] =
+    useRecoilState(microphoneStateAtom);
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   useEffect(() => {
     new Audio(`/assets/audio/results_shown.mp3`).play();
     setTimeout(() => {
       setResultsScreenShown(false);
+      setMicrophoneState("left_completed");
     }, 3000);
   }, []);
   if (resultsScreenShown) {

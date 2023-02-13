@@ -47,6 +47,7 @@ const LeftIdleMicrophone = () => {
       const formData = new FormData();
       formData.append("text", sentences[currentPage - 1]);
       formData.append("student_audio", event.data);
+      setMicrophoneState("disabled");
       axios
         .post(
           "https://proxy.cors.sh/https://api.elasolution.com/pron_v2/",
@@ -78,10 +79,10 @@ const LeftIdleMicrophone = () => {
         });
       const audio = new Audio(URL.createObjectURL(event.data));
       audio.play();
-      setMicrophoneState("idle");
     };
     setTimeout(() => {
       recorder.stop();
+      setMicrophoneState("disabled");
     }, audioDuration);
   };
   const onClickMicrophone = () => {
@@ -155,7 +156,7 @@ const LeftIdleMicrophone = () => {
       )}
       <img
         src={`/assets/images/icons/microphone_${
-          microphoneState.includes("recording") ? "disabled" : microphoneState
+          microphoneState === "right_recording" ? "disabled" : microphoneState
         }.svg`}
         alt={"Microphone"}
         onClick={onClickMicrophone}
