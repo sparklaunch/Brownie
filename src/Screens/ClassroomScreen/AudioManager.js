@@ -8,6 +8,7 @@ import resultsScreenShownAtom from "../../Stores/Classroom/Story/resultsScreenSh
 import leftPageCompletedAtom from "../../Stores/Classroom/Story/leftPageCompleted";
 import leftMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import rightMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
+import leftRetryAtom from "../../Stores/Classroom/Story/leftRetry";
 
 const AudioManager = () => {
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
@@ -17,12 +18,20 @@ const AudioManager = () => {
     rightMicrophoneStateAtom
   );
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
-  const onPlay = () => {
+  const onLeftPlay = () => {
     setLeftMicrophoneState("disabled");
     setRightMicrophoneState("disabled");
   };
-  const onEnd = () => {
+  const onLeftEnd = () => {
     setLeftMicrophoneState("idle");
+    setRightMicrophoneState("idle");
+  };
+  const onRightPlay = () => {
+    setLeftMicrophoneState("disabled");
+    setRightMicrophoneState("disabled");
+  };
+  const onRightEnd = () => {
+    setLeftMicrophoneState("completed");
     setRightMicrophoneState("idle");
   };
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
@@ -30,6 +39,7 @@ const AudioManager = () => {
   const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
     leftPageCompletedAtom
   );
+  const [leftRetry, setLeftRetry] = useRecoilState(leftRetryAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
@@ -43,21 +53,21 @@ const AudioManager = () => {
         onload: () => {
           setAudioDuration(howler.duration() * 1000);
         },
-        onplay: onPlay,
-        onend: onEnd
+        onplay: onLeftPlay,
+        onend: onLeftEnd
       });
       howler.play();
     }
   }, [currentPage, mode]);
   useEffect(() => {
-    if (leftPageCompleted) {
+    if (leftPageCompleted && !leftRetry) {
       const howler = new Howl({
         src: [`/assets/audio/pages/1-1-${currentPage + 1}.mp3`],
         onload: () => {
           setAudioDuration(howler.duration() * 1000);
         },
-        onplay: onPlay,
-        onend: onEnd
+        onplay: onRightPlay,
+        onend: onRightEnd
       });
       howler.play();
     }
