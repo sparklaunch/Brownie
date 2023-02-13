@@ -4,13 +4,16 @@ import passwordAtom from "../../../Stores/Auth/password";
 
 const PasswordField = () => {
   const [password, setPassword] = useRecoilState(passwordAtom);
+  const onChangePassword = (event) => {
+    setPassword(event.target.value.replace(/\s/g, ""));
+  };
   return (
     <div className={`flex flex-row justify-center mb-6`}>
       <TextField
         variant={"outlined"}
         label={"비밀번호"}
         value={password}
-        onChange={(event) => setPassword(event.target.value)}
+        onChange={onChangePassword}
         type={"password"}
         size={"small"}
         sx={{
