@@ -129,6 +129,8 @@ const IdleMicrophone = () => {
     }, 2000);
   };
   const onClickMicrophone = () => {
+    const clickAudio = new Audio("/assets/audio/microphone_on.wav");
+    clickAudio.play();
     recordVoice();
   };
   return (
