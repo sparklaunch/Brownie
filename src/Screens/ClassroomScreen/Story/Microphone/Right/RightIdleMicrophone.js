@@ -116,23 +116,53 @@ const LeftIdleMicrophone = () => {
   `;
   return (
     <div>
+      {microphoneState === "disabled" && (
+        <img
+          src={`/assets/images/icons/microphone_disabled.svg`}
+          alt={"Disabled microphone"}
+          className={`relative left-0 w-[70px] h-[70px]`}
+        />
+      )}
       {microphoneState === "idle" && (
         <div>
-          <OuterCircle />
-          <InnerCircle />
-          <Wave />
+          <div>
+            <OuterCircle />
+            <InnerCircle />
+            <Wave />
+          </div>
+          <img
+            src={`/assets/images/icons/microphone_idle.svg`}
+            alt={"Microphone"}
+            onClick={onClickMicrophone}
+            className={`relative left-0 w-[70px] h-[70px] cursor-pointer`}
+          />
         </div>
       )}
-      <img
-        src={`/assets/images/icons/microphone_${
-          microphoneState.includes("recording") ? "disabled" : microphoneState
-        }.svg`}
-        alt={"Microphone"}
-        onClick={onClickMicrophone}
-        className={`relative left-0 w-[70px] h-[70px] ${
-          microphoneState === "idle" ? "cursor-pointer" : ""
-        }`}
-      />
+      {microphoneState === "left_completed" && (
+        <div>
+          <div>
+            <OuterCircle />
+            <InnerCircle />
+            <Wave />
+          </div>
+          <img
+            src={`/assets/images/icons/microphone_idle.svg`}
+            alt={"Microphone"}
+            onClick={onClickMicrophone}
+            className={`relative left-0 w-[70px] h-[70px] cursor-pointer`}
+          />
+        </div>
+      )}
+      {microphoneState === "left_recording" && (
+        <img
+          src={`/assets/images/icons/microphone_disabled.svg`}
+          alt={"Microphone"}
+          onClick={onClickMicrophone}
+          className={`relative left-0 w-[70px] h-[70px] ${
+            microphoneState === "idle" ? "cursor-pointer" : ""
+          }`}
+        />
+      )}
     </div>
   );
 };
