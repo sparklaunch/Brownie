@@ -15,6 +15,7 @@ import validPasswordSelector from "../../../Stores/Auth/validPassword";
 import validPhoneNumberSelector from "../../../Stores/Auth/validPhoneNumber";
 import couponMessageAtom from "../../../Stores/Auth/couponMessage";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SignUpFields = () => {
   const validPhoneNumber = useRecoilValue(validPhoneNumberSelector);
@@ -30,6 +31,46 @@ const SignUpFields = () => {
   const [coupon, setCoupon] = useRecoilState(couponAtom);
   const [couponMessage, setCouponMessage] = useRecoilState(couponMessageAtom);
   const [agreeStatus, setAgreeStatus] = useRecoilState(agreeStatusAtom);
+  const clearAllFields = () => {
+    setID("");
+    setPassword("");
+    setPasswordConfirm("");
+    setPhoneNumber("");
+    setStudentName("");
+    setStudentBirthDate("");
+    setCoupon("");
+    setAgreeStatus(false);
+  };
+  const navigate = useNavigate();
+  const signIn = async () => {
+    try {
+      const response = await axios.post(
+        `/api/ap002?id=${id}&pwd=${password}`,
+        "",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+          }
+        }
+      );
+      const stringResponse = JSON.stringify(response, null, 2);
+      console.log(stringResponse);
+      if (response.data.resultCode === "100") {
+        localStorage.setItem("userNumber", response.data.user_no);
+        navigate("/");
+      } else if (response.data.resultCode === "200") {
+        alert("해당 계정 정보가 존재하지 않습니다.");
+      } else if (response.data.resultCode === "900") {
+        alert("로그인에 실패하였습니다.");
+      } else {
+        alert("서버 에러.");
+      }
+    } catch (error) {
+      const errorString = JSON.stringify(error, null, 2);
+      console.log(errorString);
+    }
+  };
   const signUp = async () => {
     try {
       const response = await axios.post(
@@ -46,6 +87,8 @@ const SignUpFields = () => {
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
         alert("회원가입에 성공하였습니다.");
+        clearAllFields();
+        signIn();
       } else if (response.data.resultCode === "900") {
         alert("회원가입에 실패하였습니다.");
       } else {
