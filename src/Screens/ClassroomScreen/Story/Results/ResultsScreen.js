@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsScreenShown";
 import leftMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import leftPageCompletedAtom from "../../../../Stores/Classroom/Story/leftPageCompleted";
+import leftFinishedAtom from "../../../../Stores/Classroom/Story/leftFinished";
+import rightMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 
 const ResultsScreen = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
@@ -18,6 +20,10 @@ const ResultsScreen = () => {
   const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
     leftPageCompletedAtom
   );
+  const [leftFinished, setLeftFinished] = useRecoilState(leftFinishedAtom);
+  const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
+    rightMicrophoneStateAtom
+  );
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   useEffect(() => {
     new Audio(`/assets/audio/results_shown.mp3`).play();
@@ -25,6 +31,9 @@ const ResultsScreen = () => {
       setResultsScreenShown(false);
       setLeftPageCompleted(true);
       setLeftMicrophoneState("completed");
+      if (leftFinished) {
+        setRightMicrophoneState("completed");
+      }
     }, 3000);
   }, []);
   if (resultsScreenShown) {
