@@ -10,11 +10,13 @@ import leftPageCompletedAtom from "../../../../Stores/Classroom/Story/leftPageCo
 import leftFinishedAtom from "../../../../Stores/Classroom/Story/leftFinished";
 import rightMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 import rightFinishedRecordingAtom from "../../../../Stores/Classroom/Story/rightFinishedRecording";
+import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 
 const ResultsScreen = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
+  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
     leftMicrophoneStateAtom
   );
@@ -33,12 +35,21 @@ const ResultsScreen = () => {
     new Audio(`/assets/audio/results_shown.mp3`).play();
     setTimeout(() => {
       setResultsScreenShown(false);
-      setLeftPageCompleted(true);
-      setLeftMicrophoneState("completed");
-      if (rightFinishedRecording) {
+      if (currentPage === 0) {
         setRightMicrophoneState("completed");
+        if (rightFinishedRecording) {
+          setRightMicrophoneState("completed");
+        } else {
+          setRightMicrophoneState("idle");
+        }
       } else {
-        setRightMicrophoneState("idle");
+        setLeftPageCompleted(true);
+        setLeftMicrophoneState("completed");
+        if (rightFinishedRecording) {
+          setRightMicrophoneState("completed");
+        } else {
+          setRightMicrophoneState("idle");
+        }
       }
     }, 3000);
   }, []);
