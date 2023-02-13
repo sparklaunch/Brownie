@@ -1,5 +1,5 @@
 import CouponRegistration from "./CouponRegistration";
-import CouponHistory from "./CouponHistory";
+import CouponHistory from "./CouponHistory/CouponHistory";
 import CouponCaution from "./CouponCaution";
 import Footer from "../../MainScreen/Footer/Footer";
 
