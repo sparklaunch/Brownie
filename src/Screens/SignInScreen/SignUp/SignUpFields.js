@@ -57,7 +57,7 @@ const SignUpFields = () => {
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
-        localStorage.setItem("userNumber", response.data.user_no);
+        sessionStorage.setItem("userNumber", response.data.user_no);
         navigate("/");
       } else if (response.data.resultCode === "200") {
         alert("해당 계정 정보가 존재하지 않습니다.");
