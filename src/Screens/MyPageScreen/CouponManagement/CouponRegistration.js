@@ -2,12 +2,20 @@ import { Button, TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
 import couponAtom from "../../../Stores/Auth/coupon";
 import couponMessageAtom from "../../../Stores/Auth/couponMessage";
+import isCouponValidAtom from "../../../Stores/MyPage/isCouponValid";
 
 const CouponRegistration = () => {
   const [coupon, setCoupon] = useRecoilState(couponAtom);
   const [couponMessage, setCouponMessage] = useRecoilState(couponMessageAtom);
+  const [isCouponValid, setIsCouponValid] = useRecoilState(isCouponValidAtom);
   const onCouponRegistrationClick = () => {
-    setCouponMessage("쿠폰 번호가 유효하지 않습니다. 다시 확인해주세요.");
+    if (coupon.length === 0) {
+      setCouponMessage("쿠폰 번호를 입력해주세요.");
+      setIsCouponValid(false);
+    } else {
+      setCouponMessage("쿠폰 번호가 유효하지 않습니다. 다시 확인해주세요.");
+      setIsCouponValid(false);
+    }
   };
   const onCouponTextFieldChange = (event) => {
     setCoupon(event.target.value.replace(/\s/g, ""));
@@ -23,6 +31,7 @@ const CouponRegistration = () => {
             value={coupon}
             onChange={onCouponTextFieldChange}
             variant={"outlined"}
+            error={coupon.length > 0 && !isCouponValid}
             size={"small"}
             label={"예) ######"}
             sx={{
