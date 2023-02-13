@@ -37,14 +37,14 @@ const SignInFields = () => {
       );
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
-      if (response.data.returnCode === "100") {
+      if (response.data.resultCode === "100") {
         alert("로그인에 성공하였습니다.");
         clearAllFields();
         localStorage.setItem("userNumber", response.data.user_no);
         navigate("/");
-      } else if (response.data.returnCode === "200") {
+      } else if (response.data.resultCode === "200") {
         alert("비밀번호가 일치하지 않습니다.");
-      } else if (response.data.returnCode === "900") {
+      } else if (response.data.resultCode === "900") {
         alert("로그인에 실패했습니다.");
       } else {
         alert("서버 에러.");
