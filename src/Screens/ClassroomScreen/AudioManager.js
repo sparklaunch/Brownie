@@ -60,26 +60,27 @@ const AudioManager = () => {
     setRightFinishedRecording(false);
     Howler.unload();
     if (mode === "story") {
-      const howler = new Howl({
-        src: [`/assets/audio/pages/1-1-${currentPage}.mp3`],
-        onload: () => {
-          setAudioDuration(howler.duration() * 1000);
-        },
-        onplay: onLeftPlay,
-        onend: onLeftEnd
-      });
-      howler.play();
-    }
-    if (currentPage === 0) {
-      const howler = new Howl({
-        src: [`/assets/audio/pages/1-1-1.mp3`],
-        onload: () => {
-          setAudioDuration(howler.duration() * 1000);
-        },
-        onplay: onFirstPagePlay,
-        onend: onFirstPageEnd
-      });
-      howler.play();
+      if (currentPage === 0) {
+        const howler = new Howl({
+          src: [`/assets/audio/pages/1-1-1.mp3`],
+          onload: () => {
+            setAudioDuration(howler.duration() * 1000);
+          },
+          onplay: onFirstPagePlay,
+          onend: onFirstPageEnd
+        });
+        howler.play();
+      } else {
+        const howler = new Howl({
+          src: [`/assets/audio/pages/1-1-${currentPage}.mp3`],
+          onload: () => {
+            setAudioDuration(howler.duration() * 1000);
+          },
+          onplay: onLeftPlay,
+          onend: onLeftEnd
+        });
+        howler.play();
+      }
     }
   }, [currentPage, mode]);
   useEffect(() => {

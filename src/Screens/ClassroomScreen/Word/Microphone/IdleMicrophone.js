@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
 import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicrophoneState";
+import axios from "axios";
+import uuid from "react-uuid";
+import data from "../../../../data.json";
+import { useParams } from "react-router-dom";
+import currentWordPage from "../../../../Stores/Classroom/Word/currentWordPage";
+import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
 
 const IdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -56,12 +62,71 @@ const IdleMicrophone = () => {
       }
     }
   `;
+  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
     wordMicrophoneStateAtom
   );
-  const recordVoice = () => {};
-  const onClickMicrophone = () => {
+  const { level } = useParams();
+  const stringData = JSON.stringify(data);
+  const jsonData = JSON.parse(stringData);
+  const words = jsonData.find((item) => {
+    return item.level === level;
+  }).words;
+  const recordVoice = async () => {
+    const device = await navigator.mediaDevices.getUserMedia({
+      audio: true
+    });
+    const recorder = new MediaRecorder(device);
+    recorder.start();
     setWordMicrophoneState("recording");
+    recorder.ondataavailable = (event) => {
+      const blob = new Blob([event.data], { type: "audio/wav" });
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = () => {
+        const base64Record = reader.result;
+        localStorage.setItem("record", base64Record);
+      };
+      const formData = new FormData();
+      formData.append("text", words[currentWordPage - 1]);
+      formData.append("student_audio", event.data);
+      axios
+        .post(
+          "https://proxy.cors.sh/https://api.elasolution.com/pron_v2/",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+              "x-cors-api-key": "temp_e4ec220dbf44f09c113217921d9d34d6",
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+              "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913"
+            }
+          }
+        )
+        .then((response) => {
+          const stringResponse = JSON.stringify(response, null, 2);
+          console.log(stringResponse);
+          const totalScore = response.data.total_score;
+          setTotalScore({
+            score: totalScore,
+            id: uuid()
+          });
+        })
+        .catch((error) => {
+          const stringError = JSON.stringify(error, null, 2);
+          console.log(stringError);
+        });
+      const audio = new Audio(URL.createObjectURL(event.data));
+      audio.play();
+    };
+    setTimeout(() => {
+      recorder.stop();
+      setWordMicrophoneState("disabled");
+    }, 2000);
+  };
+  const onClickMicrophone = () => {
+    recordVoice();
   };
   return (
     <div
