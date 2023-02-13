@@ -7,6 +7,7 @@ import data from "../../../../data.json";
 import { useParams } from "react-router-dom";
 import currentWordPage from "../../../../Stores/Classroom/Word/currentWordPage";
 import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
+import audioDurationAtom from "../../../../Stores/Classroom/audioDuration";
 
 const IdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -66,6 +67,7 @@ const IdleMicrophone = () => {
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
     wordMicrophoneStateAtom
   );
+  const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const { level } = useParams();
   const stringData = JSON.stringify(data);
   const jsonData = JSON.parse(stringData);
@@ -76,6 +78,7 @@ const IdleMicrophone = () => {
     const device = await navigator.mediaDevices.getUserMedia({
       audio: true
     });
+    setAudioDuration(2000);
     const recorder = new MediaRecorder(device);
     recorder.start();
     setWordMicrophoneState("recording");
