@@ -154,7 +154,7 @@ const SignUpFields = () => {
         error={!validPhoneNumber}
         value={phoneNumber}
         onChange={(event) => {
-          if (event.target.value.match(/^([0-9]|-)*$/)) {
+          if (event.target.value.match(/^[0-9]*$/)) {
             setPhoneNumber(event.target.value);
           }
         }}
