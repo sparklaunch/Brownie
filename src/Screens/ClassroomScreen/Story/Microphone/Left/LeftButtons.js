@@ -1,5 +1,4 @@
 import { useRecoilState } from "recoil";
-import microphoneStateAtom from "../../../../../Stores/Classroom/Story/microphoneState";
 import axios from "axios";
 import uuid from "react-uuid";
 import data from "../../../../../data.json";
@@ -9,6 +8,7 @@ import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
 import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import leftPageCompletedAtom from "../../../../../Stores/Classroom/Story/leftPageCompleted";
+import leftMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 
 const LeftButtons = () => {
   const { level } = useParams();
@@ -26,18 +26,19 @@ const LeftButtons = () => {
   const sentences = objectData.find((item) => {
     return item.level === level;
   }).sentences;
-  const [microphoneState, setMicrophoneState] =
-    useRecoilState(microphoneStateAtom);
+  const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
+    leftMicrophoneStateAtom
+  );
   const recordVoice = async () => {
     const device = await navigator.mediaDevices.getUserMedia({
       audio: true
     });
     const recorder = new MediaRecorder(device);
     recorder.start();
-    setMicrophoneState("left_recording");
+    setLeftMicrophoneState("recording");
     setTimeout(() => {
       recorder.stop();
-      setMicrophoneState("disabled");
+      setLeftMicrophoneState("disabled");
     }, audioDuration);
     recorder.ondataavailable = (event) => {
       const blob = new Blob([event.data], { type: "audio/wav" });

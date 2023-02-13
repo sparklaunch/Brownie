@@ -1,16 +1,17 @@
 import { useRecoilState } from "recoil";
-import microphoneStateAtom from "../../../../../Stores/Classroom/Story/microphoneState";
 import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import styled from "styled-components";
 import axios from "axios";
 import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
 import { useParams } from "react-router-dom";
+import rightMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 
 const LeftIdleMicrophone = () => {
   const { level } = useParams();
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [microphoneState, setMicrophoneState] =
-    useRecoilState(microphoneStateAtom);
+  const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
+    rightMicrophoneStateAtom
+  );
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const recordVoice = async () => {
     const device = await navigator.mediaDevices.getUserMedia({
@@ -18,7 +19,7 @@ const LeftIdleMicrophone = () => {
     });
     const recorder = new MediaRecorder(device);
     recorder.start();
-    setMicrophoneState("right_recording");
+    setRightMicrophoneState("recording");
     recorder.ondataavailable = (event) => {
       const formData = new FormData();
       formData.append(
@@ -48,14 +49,14 @@ const LeftIdleMicrophone = () => {
         });
       const audio = new Audio(URL.createObjectURL(event.data));
       audio.play();
-      setMicrophoneState("idle");
+      setRightMicrophoneState("idle");
     };
     setTimeout(() => {
       recorder.stop();
     }, audioDuration);
   };
   const onClickMicrophone = () => {
-    if (microphoneState === "idle") {
+    if (rightMicrophoneState === "idle") {
       const sound = new Audio("/assets/audio/microphone_on.wav");
       sound.play();
       recordVoice();
@@ -114,16 +115,17 @@ const LeftIdleMicrophone = () => {
       }
     }
   `;
-  return (
-    <div>
-      {microphoneState === "disabled" && (
+  switch (rightMicrophoneState) {
+    case "disabled":
+      return (
         <img
           src={`/assets/images/icons/microphone_disabled.svg`}
           alt={"Disabled microphone"}
           className={`relative left-0 w-[70px] h-[70px]`}
         />
-      )}
-      {microphoneState === "idle" && (
+      );
+    case "idle":
+      return (
         <div>
           <div>
             <OuterCircle />
@@ -137,34 +139,8 @@ const LeftIdleMicrophone = () => {
             className={`relative left-0 w-[70px] h-[70px] cursor-pointer`}
           />
         </div>
-      )}
-      {microphoneState === "left_completed" && (
-        <div>
-          <div>
-            <OuterCircle />
-            <InnerCircle />
-            <Wave />
-          </div>
-          <img
-            src={`/assets/images/icons/microphone_idle.svg`}
-            alt={"Microphone"}
-            onClick={onClickMicrophone}
-            className={`relative left-0 w-[70px] h-[70px] cursor-pointer`}
-          />
-        </div>
-      )}
-      {microphoneState === "left_recording" && (
-        <img
-          src={`/assets/images/icons/microphone_disabled.svg`}
-          alt={"Microphone"}
-          onClick={onClickMicrophone}
-          className={`relative left-0 w-[70px] h-[70px] ${
-            microphoneState === "idle" ? "cursor-pointer" : ""
-          }`}
-        />
-      )}
-    </div>
-  );
+      );
+  }
 };
 
 export default LeftIdleMicrophone;
