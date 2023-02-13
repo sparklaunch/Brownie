@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsScreenShown";
 import leftMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import leftPageCompletedAtom from "../../../../Stores/Classroom/Story/leftPageCompleted";
-import rightMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 
 const ResultsScreen = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
@@ -19,16 +18,12 @@ const ResultsScreen = () => {
   const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
     leftPageCompletedAtom
   );
-  const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
-    rightMicrophoneStateAtom
-  );
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   useEffect(() => {
     new Audio(`/assets/audio/results_shown.mp3`).play();
     setTimeout(() => {
       setResultsScreenShown(false);
       setLeftPageCompleted(true);
-      setRightMicrophoneState("idle");
       setLeftMicrophoneState("completed");
     }, 3000);
   }, []);

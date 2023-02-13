@@ -5,9 +5,22 @@ import axios from "axios";
 import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
 import { useParams } from "react-router-dom";
 import rightMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
+import uuid from "react-uuid";
+import data from "../../../../../data.json";
+import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
+import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
 
 const LeftIdleMicrophone = () => {
   const { level } = useParams();
+  const stringData = JSON.stringify(data);
+  const jsonData = JSON.parse(stringData);
+  const sentences = jsonData.find((item) => {
+    return item.level === level;
+  }).sentences;
+  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
+  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
+    resultsScreenShownAtom
+  );
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
     rightMicrophoneStateAtom
@@ -21,38 +34,50 @@ const LeftIdleMicrophone = () => {
     recorder.start();
     setRightMicrophoneState("recording");
     recorder.ondataavailable = (event) => {
+      const blob = new Blob([event.data], { type: "audio/wav" });
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = () => {
+        const base64Record = reader.result;
+        localStorage.setItem("record", base64Record);
+      };
       const formData = new FormData();
-      formData.append(
-        "native_audio",
-        `/assets/audio/pages/${level}-${currentPage}.mp3`
-      );
-      formData.append("text", "Ant, Bug and Cat");
+      formData.append("text", sentences[currentPage]);
       formData.append("student_audio", event.data);
       axios
-        .post("https://api.elasolution.com/pron_v2/", formData, {
-          withCredentials: true,
-          headers: {
-            "Content-Type": "multipart/form-data",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Credentials": "true",
-            "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913",
-            Accept: "application/json"
+        .post(
+          "https://proxy.cors.sh/https://api.elasolution.com/pron_v2/",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+              "x-cors-api-key": "temp_e4ec220dbf44f09c113217921d9d34d6",
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+              "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913"
+            }
           }
-        })
+        )
         .then((response) => {
-          JSON.stringify(response, null, 2);
+          const stringResponse = JSON.stringify(response, null, 2);
+          console.log(stringResponse);
+          const totalScore = response.data.total_score;
+          setTotalScore({
+            score: totalScore,
+            id: uuid()
+          });
+          setResultsScreenShown(true);
         })
         .catch((error) => {
-          JSON.stringify(error, null, 2);
+          const stringError = JSON.stringify(error, null, 2);
+          console.log(stringError);
         });
       const audio = new Audio(URL.createObjectURL(event.data));
       audio.play();
-      setRightMicrophoneState("idle");
     };
     setTimeout(() => {
       recorder.stop();
+      setRightMicrophoneState("disabled");
     }, audioDuration);
   };
   const onClickMicrophone = () => {

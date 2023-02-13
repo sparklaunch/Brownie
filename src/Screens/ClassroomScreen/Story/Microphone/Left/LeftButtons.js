@@ -10,7 +10,6 @@ import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import leftPageCompletedAtom from "../../../../../Stores/Classroom/Story/leftPageCompleted";
 import leftMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import rightMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
-import leftRetryAtom from "../../../../../Stores/Classroom/Story/leftRetry";
 
 const LeftButtons = () => {
   const { level } = useParams();
@@ -23,7 +22,6 @@ const LeftButtons = () => {
   const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
     leftPageCompletedAtom
   );
-  const [leftRetry, setLeftRetry] = useRecoilState(leftRetryAtom);
   const stringData = JSON.stringify(data);
   const objectData = JSON.parse(stringData);
   const sentences = objectData.find((item) => {
@@ -81,7 +79,6 @@ const LeftButtons = () => {
           });
           setResultsScreenShown(true);
           setLeftPageCompleted(true);
-          setLeftRetry(true);
         })
         .catch((error) => {
           const stringError = JSON.stringify(error, null, 2);
