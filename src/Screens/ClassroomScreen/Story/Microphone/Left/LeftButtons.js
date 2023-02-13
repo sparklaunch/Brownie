@@ -81,7 +81,6 @@ const LeftButtons = () => {
         });
       const audio = new Audio(URL.createObjectURL(event.data));
       audio.play();
-      setMicrophoneState("idle");
     };
   };
   const onClickRetry = () => {

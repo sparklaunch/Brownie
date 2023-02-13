@@ -47,7 +47,6 @@ const LeftIdleMicrophone = () => {
       const formData = new FormData();
       formData.append("text", sentences[currentPage - 1]);
       formData.append("student_audio", event.data);
-      setMicrophoneState("disabled");
       axios
         .post(
           "https://proxy.cors.sh/https://api.elasolution.com/pron_v2/",

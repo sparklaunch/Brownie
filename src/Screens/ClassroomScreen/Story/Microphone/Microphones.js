@@ -19,7 +19,7 @@ const Microphones = () => {
   }, [currentPage]);
   return (
     <div className={`absolute w-[70vw] h-[46vw]`}>
-      {leftPageCompleted ? (
+      {microphoneState === "left_completed" ? (
         <LeftButtons />
       ) : (
         <LeftMicrophone visible={currentPage !== 0} />
