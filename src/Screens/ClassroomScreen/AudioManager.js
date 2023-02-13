@@ -8,6 +8,7 @@ import resultsScreenShownAtom from "../../Stores/Classroom/Story/resultsScreenSh
 import leftPageCompletedAtom from "../../Stores/Classroom/Story/leftPageCompleted";
 import leftMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import rightMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
+import leftFinishedAtom from "../../Stores/Classroom/Story/leftFinished";
 
 const AudioManager = () => {
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
@@ -16,6 +17,7 @@ const AudioManager = () => {
   const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
     rightMicrophoneStateAtom
   );
+  const [leftFinished, setLeftFinished] = useRecoilState(leftFinishedAtom);
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const onLeftPlay = () => {
     setLeftMicrophoneState("disabled");
@@ -58,7 +60,7 @@ const AudioManager = () => {
     }
   }, [currentPage, mode]);
   useEffect(() => {
-    if (leftPageCompleted) {
+    if (leftPageCompleted && !leftFinished) {
       const howler = new Howl({
         src: [`/assets/audio/pages/1-1-${currentPage + 1}.mp3`],
         onload: () => {

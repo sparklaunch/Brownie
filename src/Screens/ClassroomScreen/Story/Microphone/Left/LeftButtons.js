@@ -10,6 +10,8 @@ import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import leftPageCompletedAtom from "../../../../../Stores/Classroom/Story/leftPageCompleted";
 import leftMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import rightMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
+import { useEffect } from "react";
+import leftFinishedAtom from "../../../../../Stores/Classroom/Story/leftFinished";
 
 const LeftButtons = () => {
   const { level } = useParams();
@@ -33,6 +35,7 @@ const LeftButtons = () => {
   const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
     rightMicrophoneStateAtom
   );
+  const [leftFinished, setLeftFinished] = useRecoilState(leftFinishedAtom);
   const recordVoice = async () => {
     const device = await navigator.mediaDevices.getUserMedia({
       audio: true
@@ -100,6 +103,9 @@ const LeftButtons = () => {
     const audio = new Audio(base64Record);
     audio.play();
   };
+  useEffect(() => {
+    setLeftFinished(true);
+  }, []);
   return (
     <div className={`absolute bottom-[-100px] left-[12vw]`}>
       <div className={`flex flex-row`}>
