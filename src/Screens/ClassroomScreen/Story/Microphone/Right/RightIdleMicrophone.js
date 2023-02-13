@@ -9,6 +9,7 @@ import uuid from "react-uuid";
 import data from "../../../../../data.json";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
+import rightFinishedRecordingAtom from "../../../../../Stores/Classroom/Story/rightFinishedRecording";
 
 const LeftIdleMicrophone = () => {
   const { level } = useParams();
@@ -17,6 +18,9 @@ const LeftIdleMicrophone = () => {
   const sentences = jsonData.find((item) => {
     return item.level === level;
   }).sentences;
+  const [rightFinishedRecording, setRightFinishedRecording] = useRecoilState(
+    rightFinishedRecordingAtom
+  );
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
@@ -77,6 +81,7 @@ const LeftIdleMicrophone = () => {
     };
     setTimeout(() => {
       recorder.stop();
+      setRightFinishedRecording(true);
       setRightMicrophoneState("disabled");
     }, audioDuration);
   };

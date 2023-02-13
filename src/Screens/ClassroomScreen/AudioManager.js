@@ -9,6 +9,7 @@ import leftPageCompletedAtom from "../../Stores/Classroom/Story/leftPageComplete
 import leftMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import rightMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 import leftFinishedAtom from "../../Stores/Classroom/Story/leftFinished";
+import rightFinishedRecordingAtom from "../../Stores/Classroom/Story/rightFinishedRecording";
 
 const AudioManager = () => {
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
@@ -35,6 +36,9 @@ const AudioManager = () => {
     setLeftMicrophoneState("completed");
     setRightMicrophoneState("idle");
   };
+  const [rightFinishedRecording, setRightFinishedRecording] = useRecoilState(
+    rightFinishedRecordingAtom
+  );
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [mode, setMode] = useRecoilState(modeAtom);
   const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
@@ -46,6 +50,8 @@ const AudioManager = () => {
   useEffect(() => {
     setResultsScreenShown(false);
     setLeftPageCompleted(false);
+    setLeftFinished(false);
+    setRightFinishedRecording(false);
     Howler.unload();
     if (mode === "story") {
       const howler = new Howl({
