@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import SignInButton from "./SignButtons/SignInButton";
+import isLoggedIn from "../../../Utilities/isLoggedIn";
+import SignOutButton from "./SignButtons/SignOutButton";
 
 const NavigationContentBottom = () => {
   return (
@@ -16,7 +18,7 @@ const NavigationContentBottom = () => {
       <Link to={"/mypage"} className={`mr-[32px]`}>
         마이페이지
       </Link>
-      <SignInButton />
+      {isLoggedIn() ? <SignOutButton /> : <SignInButton />}
     </div>
   );
 };
