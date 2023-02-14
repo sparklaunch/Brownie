@@ -11,12 +11,10 @@ const Pagination = () => {
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   return (
-    <div className={`absolute top-[36px] right-[36px]`}>
-      <p className={`text-[28px] text-[#515151] font-bold tracking-wide`}>
-        {currentWordPage}
-        <span className={`text-[20px] text-gray-400`}>/{words.length}</span>
-      </p>
-    </div>
+    <p className={`text-[28px] text-[#515151] font-bold tracking-wide`}>
+      {currentWordPage}
+      <span className={`text-[20px] text-gray-400`}>/{words.length}</span>
+    </p>
   );
 };
 

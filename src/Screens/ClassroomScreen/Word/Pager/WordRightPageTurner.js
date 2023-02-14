@@ -3,7 +3,7 @@ import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPa
 import data from "../../../../data.json";
 import { useParams } from "react-router-dom";
 
-const WordRightPageTurner = ({ visible }) => {
+const WordRightPageTurner = () => {
   const { level } = useParams();
   const dataString = JSON.stringify(data);
   const dataObject = JSON.parse(dataString);
@@ -13,12 +13,9 @@ const WordRightPageTurner = ({ visible }) => {
   const onClickRightPageTurner = () => {
     setCurrentWordPage(Math.min(currentWordPage + 1, words.length));
   };
-  if (visible) {
+  if (currentWordPage !== words.length) {
     return (
-      <div
-        className={`absolute z-10 top-[50%] right-[10vw] translate-y-[-50%] cursor-pointer`}
-        onClick={onClickRightPageTurner}
-      >
+      <div className={`cursor-pointer`} onClick={onClickRightPageTurner}>
         <img
           src={"/assets/images/icons/active_angle.svg"}
           alt={"Right Angle Icon"}
@@ -27,9 +24,7 @@ const WordRightPageTurner = ({ visible }) => {
     );
   } else {
     return (
-      <div
-        className={`absolute z-10 top-[50%] right-[10vw] translate-y-[-50%]`}
-      >
+      <div>
         <img
           src={"/assets/images/icons/inactive_angle.svg"}
           alt={"Right Angle Icon"}

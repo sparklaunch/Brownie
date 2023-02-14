@@ -134,10 +134,7 @@ const IdleMicrophone = () => {
     recordVoice();
   };
   return (
-    <div
-      className={`absolute left-[50%] translate-x-[-50%] bottom-7`}
-      onClick={onClickMicrophone}
-    >
+    <div onClick={onClickMicrophone} className={`relative cursor-pointer`}>
       <div>
         <OuterCircle />
         <InnerCircle />
@@ -146,7 +143,6 @@ const IdleMicrophone = () => {
       <img
         src={`/assets/images/icons/microphone_idle.svg`}
         alt={"Microphone"}
-        className={`relative left-0 w-[70px] h-[70px] cursor-pointer`}
       />
     </div>
   );

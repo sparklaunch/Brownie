@@ -17,11 +17,29 @@ const Microphone = () => {
   }, [currentWordPage]);
   switch (wordMicrophoneState) {
     case "idle":
-      return <IdleMicrophone />;
+      return (
+        <div
+          className={`absolute left-[50%] translate-x-[-50%] bottom-[-120px]`}
+        >
+          <IdleMicrophone />
+        </div>
+      );
     case "recording":
-      return <RecordingMicrophone />;
+      return (
+        <div
+          className={`absolute left-[50%] translate-x-[-50%] bottom-[-120px]`}
+        >
+          <RecordingMicrophone />
+        </div>
+      );
     case "disabled":
-      return <DisabledMicrophone />;
+      return (
+        <div
+          className={`absolute left-[50%] translate-x-[-50%] bottom-[-120px]`}
+        >
+          <DisabledMicrophone />
+        </div>
+      );
   }
 };
 

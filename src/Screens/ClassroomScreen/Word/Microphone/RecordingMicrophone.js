@@ -66,7 +66,7 @@ const RecordingMicrophone = () => {
     }
   `;
   return (
-    <div className={`absolute left-[50%] translate-x-[-50%] bottom-7`}>
+    <div className={`relative`}>
       <Container>
         <LeftHold>
           <LeftFill />
@@ -78,7 +78,7 @@ const RecordingMicrophone = () => {
       <img
         src={`/assets/images/icons/microphone_recording.svg`}
         alt={"Microphone"}
-        className={`relative left-0 w-[70px] h-[70px] z-[1]`}
+        className={`relative z-[1]`}
       />
     </div>
   );
