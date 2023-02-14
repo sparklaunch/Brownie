@@ -53,7 +53,7 @@ const LeftButtons = () => {
       reader.readAsDataURL(blob);
       reader.onloadend = () => {
         const base64Record = reader.result;
-        localStorage.setItem("record", base64Record);
+        localStorage.setItem("left_record", base64Record);
       };
       const formData = new FormData();
       formData.append("text", sentences[currentPage - 1]);
@@ -99,7 +99,7 @@ const LeftButtons = () => {
     recordVoice();
   };
   const onClickMyVoice = () => {
-    const base64Record = localStorage.getItem("record");
+    const base64Record = localStorage.getItem("left_record");
     const audio = new Audio(base64Record);
     audio.play();
   };

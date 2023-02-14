@@ -43,7 +43,7 @@ const LeftIdleMicrophone = () => {
       reader.readAsDataURL(blob);
       reader.onloadend = () => {
         const base64Record = reader.result;
-        localStorage.setItem("record", base64Record);
+        localStorage.setItem("right_record", base64Record);
       };
       const formData = new FormData();
       formData.append("text", sentences[currentPage]);

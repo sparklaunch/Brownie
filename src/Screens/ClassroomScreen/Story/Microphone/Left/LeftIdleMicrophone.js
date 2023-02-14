@@ -8,7 +8,6 @@ import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/result
 import data from "../../../../../data.json";
 import { useParams } from "react-router-dom";
 import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
-import leftPageCompletedAtom from "../../../../../Stores/Classroom/Story/leftPageCompleted";
 import leftMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import rightMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 
@@ -23,9 +22,6 @@ const LeftIdleMicrophone = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
-  );
-  const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
-    leftPageCompletedAtom
   );
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
     leftMicrophoneStateAtom
@@ -47,7 +43,7 @@ const LeftIdleMicrophone = () => {
       reader.readAsDataURL(blob);
       reader.onloadend = () => {
         const base64Record = reader.result;
-        localStorage.setItem("record", base64Record);
+        localStorage.setItem("left_record", base64Record);
       };
       const formData = new FormData();
       formData.append("text", sentences[currentPage - 1]);
