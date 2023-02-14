@@ -13,12 +13,12 @@ const Word = () => {
   const dataObject = JSON.parse(dataString);
   const words = dataObject.find((book) => book.level === level).words;
   const requireTTS = async () => {
-    const formData = new FormData();
-    formData.append("text", words[currentWordPage - 1]);
     try {
       const response = await axios.post(
-        "https://proxy.cors.sh/https://api.elasolution.com/tts/",
-        formData,
+        "https://proxy.cors.sh/http://3.38.222.142/tts/",
+        {
+          words: words
+        },
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -29,17 +29,28 @@ const Word = () => {
           }
         }
       );
-      const audioData = response.data;
-      console.log(audioData);
-      // base64 to wav.
-      const base64Data = audioData.replace(/^data:audio\/wav;base64,/, "");
+      const length = response.data.length;
+      const buffer = new ArrayBuffer(length);
+      const view = new Uint8Array(buffer);
+      for (let i = 0; i < length; i++) {
+        view[i] = response.data.charCodeAt(i) & 0xff;
+      }
+      const blob = new Blob([view], { type: "audio/x-wav" });
+      const url = URL.createObjectURL(blob);
+      const sound = new Audio(url);
+      sound.play();
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
       console.log(errorString);
     }
   };
+  const speakWord = () => {
+    // SpeechSynthesisUtterance
+    const utterance = new SpeechSynthesisUtterance("dog");
+    speechSynthesis.speak(utterance);
+  };
   useEffect(() => {
-    requireTTS();
+    speakWord();
   }, [currentWordPage]);
   return (
     <div className={`h-full flex flex-row justify-center items-center`}>
@@ -47,7 +58,7 @@ const Word = () => {
         src={"/assets/images/icons/megaphone_button.svg"}
         alt={"Megaphone"}
         className={`cursor-pointer`}
-        onClick={requireTTS}
+        onClick={speakWord}
       />
       <p className={`text-[120px] font-[900] ml-[24px]`}>
         {words[currentWordPage - 1]}

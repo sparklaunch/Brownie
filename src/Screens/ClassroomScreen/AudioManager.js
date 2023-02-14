@@ -72,7 +72,7 @@ const AudioManager = () => {
         const howler = new Howl({
           src: [`/assets/audio/pages/1-1-1.mp3`],
           onload: () => {
-            setAudioDuration(howler.duration() * 1000);
+            setAudioDuration(howler.duration() * 1000 + 2000);
           },
           onplay: onFirstPagePlay,
           onend: onFirstPageEnd
@@ -82,7 +82,7 @@ const AudioManager = () => {
         const howler = new Howl({
           src: [`/assets/audio/pages/1-1-${currentPage}.mp3`],
           onload: () => {
-            setAudioDuration(howler.duration() * 1000);
+            setAudioDuration(howler.duration() * 1000 + 2000);
           },
           onplay: onLeftPlay,
           onend: onLeftEnd
@@ -96,7 +96,7 @@ const AudioManager = () => {
       const howler = new Howl({
         src: [`/assets/audio/pages/1-1-${currentPage + 1}.mp3`],
         onload: () => {
-          setAudioDuration(howler.duration() * 1000);
+          setAudioDuration(howler.duration() * 1000 + 2000);
         },
         onplay: onRightPlay,
         onend: onRightEnd
