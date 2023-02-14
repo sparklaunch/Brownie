@@ -8,7 +8,7 @@ const ExcellentScreen = () => {
   return (
     <Slide direction={`up`} in={true} mountOnEnter={true} unmountOnExit={true}>
       <div
-        className={`absolute bottom-0 left-0 right-0 h-[240px] bg-[#80E6AC] p-8`}
+        className={`absolute bottom-0 left-0 right-0 h-[240px] bg-[#80E6AC] p-8 z-[3]`}
       >
         <img
           src={`/assets/images/excellent_bat.png`}
