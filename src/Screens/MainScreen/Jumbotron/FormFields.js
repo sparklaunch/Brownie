@@ -2,14 +2,11 @@ import { Button, TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
-import autoLogInEnabledAtom from "../../../Stores/Auth/autoLogInEnabled";
 import axios from "axios";
 
 const FormFields = () => {
   const [id, setID] = useRecoilState(idAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
-  const [autoLogInEnabled, setAutoLogInEnabled] =
-    useRecoilState(autoLogInEnabledAtom);
   const clearAllFields = () => {
     setID("");
     setPassword("");

@@ -1,6 +1,5 @@
 import { Button, TextField } from "@mui/material";
 import { useRecoilState, useRecoilValue } from "recoil";
-import autoLogInEnabledAtom from "../../../Stores/Auth/autoLogInEnabled";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
 import SignInErrorMessage from "./SignInErrorMessage";
@@ -13,8 +12,6 @@ const SignInFields = () => {
   const validPassword = useRecoilValue(validPasswordSelector);
   const [id, setID] = useRecoilState(idAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
-  const [autoLogInEnabled, setAutoLogInEnabled] =
-    useRecoilState(autoLogInEnabledAtom);
   const [signInErrorMessage, setSignInErrorMessage] = useRecoilState(
     signInErrorMessageAtom
   );
