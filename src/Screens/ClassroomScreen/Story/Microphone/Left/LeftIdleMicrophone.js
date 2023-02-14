@@ -5,19 +5,13 @@ import axios from "axios";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import uuid from "react-uuid";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
-import data from "../../../../../data.json";
-import { useParams } from "react-router-dom";
 import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
 import leftMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import rightMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
+import useData from "../../../../../Hooks/useData";
 
 const LeftIdleMicrophone = () => {
-  const { level } = useParams();
-  const stringData = JSON.stringify(data);
-  const jsonData = JSON.parse(stringData);
-  const sentences = jsonData.find((item) => {
-    return item.level === level;
-  }).sentences;
+  const sentences = useData(`sentences`);
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(

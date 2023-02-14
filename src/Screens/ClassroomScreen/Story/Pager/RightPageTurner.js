@@ -1,17 +1,14 @@
 import { useRecoilState } from "recoil";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 
-const RightPageTurner = ({ visible }) => {
+const RightPageTurner = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const onClickRightPageTurner = () => {
     setCurrentPage(Math.min(currentPage + 2, 10));
   };
-  if (visible) {
+  if (currentPage !== 10) {
     return (
-      <div
-        className={`absolute z-10 top-[50%] right-[10vw] translate-y-[-50%] cursor-pointer`}
-        onClick={onClickRightPageTurner}
-      >
+      <div className={`cursor-pointer`} onClick={onClickRightPageTurner}>
         <img
           src={"/assets/images/icons/active_angle.svg"}
           alt={"Right Angle Icon"}
@@ -20,9 +17,7 @@ const RightPageTurner = ({ visible }) => {
     );
   } else {
     return (
-      <div
-        className={`absolute z-10 top-[50%] right-[10vw] translate-y-[-50%]`}
-      >
+      <div>
         <img
           src={"/assets/images/icons/inactive_angle.svg"}
           alt={"Right Angle Icon"}

@@ -8,7 +8,7 @@ const NiceTryScreen = () => {
   return (
     <Slide direction={`up`} in={true} mountOnEnter={true} unmountOnExit={true}>
       <div
-        className={`absolute bottom-0 left-0 right-0 h-[240px] bg-[#FF92AC] p-8 z-[3]`}
+        className={`absolute bottom-0 left-0 right-0 h-[240px] bg-[#FF92AC] p-8 z-[3] rounded-b-2xl`}
       >
         <img
           src={`/assets/images/nicetry_frog.png`}

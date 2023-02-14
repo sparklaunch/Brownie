@@ -15,27 +15,25 @@ const PageControllers = () => {
     setCurrentPage(Math.min(currentPage + 2, 10));
   };
   return (
-    <div className={`absolute top-[4vw] right-[15vw]`}>
+    <div className={`flex flex-row`}>
+      <p
+        className={`font-[Jua] text-[20px] text-white px-5 py-2 bg-[#1AB9C5] rounded-3xl cursor-pointer shadow-md mr-3`}
+        onClick={onClickFirstPage}
+      >
+        처음으로
+      </p>
       <div className={`flex flex-row`}>
+        <div onClick={onLeftPageButtonClick}>
+          <LeftPageAngle disabled={currentPage <= 0} />
+        </div>
         <p
-          className={`font-[Jua] text-[20px] text-white px-5 py-2 bg-[#1AB9C5] rounded-3xl cursor-pointer shadow-md mr-3`}
-          onClick={onClickFirstPage}
+          className={`bg-white border-[1px] border-[#1AB9C5] rounded-3xl w-[120px] flex flex-row text-[28px] items-center justify-center`}
         >
-          처음으로
+          {Math.min(currentPage + 1, 10)}
+          <span className={`text-[20px] ml-1 relative top-[2px]`}>/10</span>
         </p>
-        <div className={`flex flex-row`}>
-          <div onClick={onLeftPageButtonClick}>
-            <LeftPageAngle disabled={currentPage <= 0} />
-          </div>
-          <p
-            className={`bg-white border-[1px] border-[#1AB9C5] rounded-3xl w-[120px] flex flex-row text-[28px] items-center justify-center`}
-          >
-            {Math.min(currentPage + 1, 10)}
-            <span className={`text-[20px] ml-1 relative top-[2px]`}>/10</span>
-          </p>
-          <div onClick={onRightPageButtonClick}>
-            <RightPageAngle disabled={currentPage >= 10} />
-          </div>
+        <div onClick={onRightPageButtonClick}>
+          <RightPageAngle disabled={currentPage >= 10} />
         </div>
       </div>
     </div>

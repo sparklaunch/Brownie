@@ -19,10 +19,7 @@ const HomeButton = () => {
     navigate("/");
   };
   return (
-    <div
-      className={`absolute top-[4vw] right-[3vw] cursor-pointer`}
-      onClick={onClickHome}
-    >
+    <div className={`cursor-pointer`} onClick={onClickHome}>
       <img src={"/assets/images/icons/home_button.svg"} alt={"Home Button"} />
     </div>
   );

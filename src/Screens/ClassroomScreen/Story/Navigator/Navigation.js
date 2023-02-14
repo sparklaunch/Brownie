@@ -8,7 +8,7 @@ const Navigation = () => {
   const [navigatorOpen, setNavigatorOpen] = useRecoilState(navigatorOpenAtom);
   return (
     <div
-      className={`absolute w-full ${
+      className={`fixed w-full left-0 ${
         navigatorOpen ? `top-0` : `top-[-216px]`
       } bg-[#0C4A4E] z-[2] h-[216px] shadow-xl transition-all duration-500 ease-in-out flex flex-row items-center justify-center`}
     >

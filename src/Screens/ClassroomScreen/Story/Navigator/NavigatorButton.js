@@ -8,7 +8,7 @@ const NavigatorButton = () => {
   };
   return (
     <div
-      className={`absolute top-0 z-[2] left-[50%] translate-x-[-50%] ${
+      className={`fixed top-0 z-[2] left-[50%] translate-x-[-50%] ${
         navigatorOpen && `top-[216px]`
       } transition-all duration-500 ease-in-out`}
     >

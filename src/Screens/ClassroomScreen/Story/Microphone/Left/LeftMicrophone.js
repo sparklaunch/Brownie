@@ -2,14 +2,16 @@ import { useRecoilState } from "recoil";
 import LeftRecordingMicrophone from "./LeftRecordingMicrophone";
 import LeftIdleMicrophone from "./LeftIdleMicrophone";
 import leftMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
+import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
 
-const LeftMicrophone = ({ visible }) => {
+const LeftMicrophone = () => {
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
     leftMicrophoneStateAtom
   );
-  if (visible) {
+  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  if (currentPage !== 0) {
     return (
-      <div className={`absolute bottom-[-100px] left-[14vw]`}>
+      <div>
         {leftMicrophoneState === "recording" ? (
           <LeftRecordingMicrophone />
         ) : (

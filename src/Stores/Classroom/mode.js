@@ -2,7 +2,7 @@ import { atom } from "recoil";
 
 const modeAtom = atom({
   key: "mode",
-  default: "word"
+  default: "story"
 });
 
 export default modeAtom;
