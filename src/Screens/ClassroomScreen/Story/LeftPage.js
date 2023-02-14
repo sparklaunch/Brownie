@@ -1,7 +1,35 @@
+import { useRecoilState } from "recoil";
+import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
+import { useParams } from "react-router-dom";
+import { Howl } from "howler";
+import leftPagePlayingAtom from "../../../Stores/Classroom/Story/leftPagePlaying";
+
 const LeftPage = ({ fileName, isEmpty }) => {
-  const onClickLeftPage = () => {};
+  const [leftPagePlaying, setLeftPagePlaying] =
+    useRecoilState(leftPagePlayingAtom);
+  const { level } = useParams();
+  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  const onClickLeftPage = () => {
+    if (!leftPagePlaying) {
+      const audio = new Howl({
+        src: [`/assets/audio/pages/${level}-${currentPage}.mp3`],
+        autoplay: true,
+        volume: 1,
+        onend: function () {
+          setLeftPagePlaying(false);
+        },
+        onplay: function () {
+          setLeftPagePlaying(true);
+        }
+      });
+      audio.play();
+    }
+  };
   return (
-    <div className={`relative z-[1] cursor-pointer`} onClick={onClickLeftPage}>
+    <div
+      className={`relative z-[1] ${leftPagePlaying || `cursor-pointer`}`}
+      onClick={onClickLeftPage}
+    >
       {isEmpty || <img src={fileName} alt={"Left Page"} loading={"lazy"} />}
       <div
         className={`absolute right-0 top-0 h-full w-10 bg-gradient-to-r from-transparent to-black opacity-50`}
