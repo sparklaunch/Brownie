@@ -45,7 +45,7 @@ const SignUpFields = () => {
   const signIn = async () => {
     try {
       const response = await axios.post(
-        `/api/ap002?id=${id}&pwd=${password}`,
+        `http://43.201.129.192/api/ap002?id=${id}&pwd=${password}`,
         "",
         {
           headers: {
