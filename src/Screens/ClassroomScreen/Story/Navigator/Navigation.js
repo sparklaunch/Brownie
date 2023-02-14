@@ -10,7 +10,7 @@ const Navigation = () => {
     <div
       className={`absolute w-full ${
         navigatorOpen ? `top-0` : `top-[-216px]`
-      } bg-[#0C4A4E] h-[216px] shadow-xl transition-all duration-500 ease-in-out flex flex-row items-center justify-center`}
+      } bg-[#0C4A4E] z-[2] h-[216px] shadow-xl transition-all duration-500 ease-in-out flex flex-row items-center justify-center`}
     >
       <LeftNavigator />
       <Thumbnails />
