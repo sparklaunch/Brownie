@@ -1,19 +1,14 @@
-import { useRecoilState } from "recoil";
-import tabValueAtom from "../../../../Stores/Auth/tabValue";
-import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 
 const SignOutButton = () => {
-  const [tabValue, setTabValue] = useRecoilState(tabValueAtom);
-  const navigate = useNavigate();
-  const onClickSignIn = () => {
-    setTabValue(0);
-    navigate("/signin");
+  const onClickSignOut = () => {
+    sessionStorage.removeItem("userNumber");
+    window.location.reload();
   };
   return (
     <Button
       variant={"contained"}
-      onClick={onClickSignIn}
+      onClick={onClickSignOut}
       sx={{
         backgroundColor: "#1AB9C5",
         filter: "brightness(1.0)",
