@@ -13,8 +13,6 @@ const LeftPage = ({ fileName, isEmpty }) => {
     if (!leftPagePlaying) {
       const audio = new Howl({
         src: [`/assets/audio/pages/${level}-${currentPage}.mp3`],
-        autoplay: true,
-        volume: 1,
         onend: function () {
           setLeftPagePlaying(false);
         },
