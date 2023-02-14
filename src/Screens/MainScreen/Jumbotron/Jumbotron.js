@@ -1,6 +1,5 @@
 import JumbotronTitle from "./JumbotronTitle";
 import JumbotronForm from "./JumbotronForm/JumbotronForm";
-import isLoggedIn from "../../../Utilities/isLoggedIn";
 
 const Jumbotron = () => {
   return (
@@ -9,7 +8,7 @@ const Jumbotron = () => {
     >
       <div className={`w-[1200px] flex flex-row justify-between`}>
         <JumbotronTitle />
-        {isLoggedIn() || <JumbotronForm />}
+        <JumbotronForm />
       </div>
     </div>
   );
