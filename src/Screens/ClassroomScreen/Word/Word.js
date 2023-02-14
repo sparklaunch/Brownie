@@ -18,7 +18,7 @@ const Word = () => {
   };
   useEffect(() => {
     requireTTS();
-  }, []);
+  }, [currentWordPage]);
   return (
     <div className={`h-full flex flex-row justify-center items-center`}>
       <img
