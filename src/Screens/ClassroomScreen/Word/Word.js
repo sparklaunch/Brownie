@@ -4,8 +4,10 @@ import { useRecoilState } from "recoil";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import { useEffect } from "react";
 import axios from "axios";
+import { useSpeechSynthesis } from "react-speech-kit";
 
 const Word = () => {
+  const { speak } = useSpeechSynthesis();
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const { level } = useParams();
@@ -45,9 +47,9 @@ const Word = () => {
     }
   };
   const speakWord = () => {
-    // SpeechSynthesisUtterance
-    const utterance = new SpeechSynthesisUtterance("dog");
-    speechSynthesis.speak(utterance);
+    speak({
+      text: words[currentWordPage - 1]
+    });
   };
   useEffect(() => {
     speakWord();
