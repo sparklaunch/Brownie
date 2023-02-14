@@ -25,6 +25,7 @@ const Word = () => {
         src={"/assets/images/icons/megaphone_button.svg"}
         alt={"Megaphone"}
         className={`cursor-pointer`}
+        onClick={requireTTS}
       />
       <p className={`text-[120px] font-[900] ml-[24px]`}>
         {words[currentWordPage - 1]}
