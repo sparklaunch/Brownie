@@ -10,7 +10,7 @@ const RightPage = ({ fileName, isEmpty }) => {
     useRecoilState(rightPagePlayingAtom);
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const onClickRightPage = () => {
-    if (!rightPagePlaying) {
+    if (!rightPagePlaying && currentPage !== 10) {
       const audio = new Howl({
         src: [`/assets/audio/pages/${level}-${currentPage + 1}.mp3`],
         onend: function () {
@@ -25,7 +25,11 @@ const RightPage = ({ fileName, isEmpty }) => {
   };
   return (
     <div
-      className={`relative z-[1] ${rightPagePlaying || `cursor-pointer`}`}
+      className={`relative z-[1] ${
+        !rightPagePlaying && currentPage !== 10
+          ? `cursor-pointer`
+          : `cursor-default`
+      }`}
       onClick={onClickRightPage}
     >
       {isEmpty || <img src={fileName} alt={"Right Page"} loading={"lazy"} />}
