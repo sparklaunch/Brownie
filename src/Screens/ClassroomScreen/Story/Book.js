@@ -13,7 +13,7 @@ const Book = () => {
       className={`absolute top-0 left-0 w-[100vw] h-[100vh] flex justify-center items-center`}
     >
       <div
-        className={`relative w-[70vw] h-[46vw] bg-white rounded-xl shadow-2xl overflow-clip`}
+        className={`relative w-[64%] h-[64*1/1.52%] bg-white rounded-xl shadow-2xl overflow-clip`}
       >
         <BookContent />
         {resultsScreenShown && <ResultsScreen />}

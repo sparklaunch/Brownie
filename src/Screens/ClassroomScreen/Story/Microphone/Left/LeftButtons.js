@@ -107,7 +107,7 @@ const LeftButtons = () => {
     setLeftFinished(true);
   }, []);
   return (
-    <div className={`absolute bottom-[-100px] left-[12vw]`}>
+    <div className={`absolute bottom-[-80px] left-[12vw]`}>
       <div className={`flex flex-row`}>
         <img
           src={`/assets/images/retry_button.svg`}
