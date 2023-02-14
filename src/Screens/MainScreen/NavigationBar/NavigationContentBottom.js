@@ -15,9 +15,11 @@ const NavigationContentBottom = () => {
       <Link to={"/information"} className={`mr-[32px]`}>
         교재 구성
       </Link>
-      <Link to={"/mypage"} className={`mr-[32px]`}>
-        마이페이지
-      </Link>
+      {isLoggedIn() && (
+        <Link to={"/mypage"} className={`mr-[32px]`}>
+          마이페이지
+        </Link>
+      )}
       {isLoggedIn() ? <SignOutButton /> : <SignInButton />}
     </div>
   );
