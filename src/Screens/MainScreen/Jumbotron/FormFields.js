@@ -29,6 +29,7 @@ const FormFields = () => {
         alert("로그인에 성공하였습니다.");
         clearAllFields();
         sessionStorage.setItem("userNumber", response.data.user_no);
+        sessionStorage.setItem("studentName", response.data.name);
         window.location.reload();
       } else if (response.data.resultCode === "200") {
         alert("비밀번호가 일치하지 않습니다.");

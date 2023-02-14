@@ -58,6 +58,7 @@ const SignUpFields = () => {
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
         sessionStorage.setItem("userNumber", response.data.user_no);
+        sessionStorage.setItem("studentName", response.data.name);
         navigate("/");
       } else if (response.data.resultCode === "200") {
         alert("해당 계정 정보가 존재하지 않습니다.");
