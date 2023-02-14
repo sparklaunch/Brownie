@@ -1,7 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
-import idAtom from "../../../../Stores/Auth/id";
-import passwordAtom from "../../../../Stores/Auth/password";
+import idAtom from "../../../../../Stores/Auth/id";
+import passwordAtom from "../../../../../Stores/Auth/password";
 import axios from "axios";
 
 const FormFields = () => {

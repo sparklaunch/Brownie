@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import tabValueAtom from "../../../../Stores/Auth/tabValue";
+import tabValueAtom from "../../../../../Stores/Auth/tabValue";
 
 const FormFooter = () => {
   const navigate = useNavigate();
