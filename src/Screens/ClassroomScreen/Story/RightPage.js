@@ -11,6 +11,7 @@ const RightPage = ({ fileName, isEmpty }) => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const onClickRightPage = () => {
     if (!rightPagePlaying && currentPage !== 10) {
+      console.log(`/assets/audio/pages/${level}-${currentPage + 1}.mp3`);
       const audio = new Howl({
         src: [`/assets/audio/pages/${level}-${currentPage + 1}.mp3`],
         onend: function () {

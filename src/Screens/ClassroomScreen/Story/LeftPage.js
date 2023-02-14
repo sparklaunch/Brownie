@@ -11,6 +11,7 @@ const LeftPage = ({ fileName, isEmpty }) => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const onClickLeftPage = () => {
     if (!leftPagePlaying && currentPage !== 0) {
+      console.log(`/assets/audio/pages/${level}-${currentPage}.mp3`);
       const audio = new Howl({
         src: [`/assets/audio/pages/${level}-${currentPage}.mp3`],
         onend: function () {
