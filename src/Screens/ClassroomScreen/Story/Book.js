@@ -16,7 +16,7 @@ const Book = () => {
     <div
       className={`absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center overflow-clip`}
     >
-      <div className={`w-[912px] h-[600px] relative`}>
+      <div className={`w-[94vh] h-[62vh] relative`}>
         <div className={`absolute top-0 left-[-120px]`}>
           <ModeButtons />
         </div>
