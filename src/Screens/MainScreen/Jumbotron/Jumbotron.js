@@ -1,5 +1,5 @@
 import JumbotronTitle from "./JumbotronTitle";
-import JumbotronForm from "./JumbotronForm";
+import JumbotronForm from "./JumbotronForm/JumbotronForm";
 import isLoggedIn from "../../../Utilities/isLoggedIn";
 
 const Jumbotron = () => {
