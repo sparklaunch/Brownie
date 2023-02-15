@@ -10,6 +10,7 @@ import leftPageCompletedAtom from "../../../../Stores/Classroom/Story/leftPageCo
 import rightMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 import rightFinishedRecordingAtom from "../../../../Stores/Classroom/Story/rightFinishedRecording";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
+import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 
 const ResultsScreen = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
@@ -29,10 +30,14 @@ const ResultsScreen = () => {
     rightFinishedRecordingAtom
   );
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
+  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+    centralMicrophoneStateAtom
+  );
   useEffect(() => {
     new Audio(`/assets/audio/results_shown.mp3`).play();
     setTimeout(() => {
       setResultsScreenShown(false);
+      setCentralMicrophoneState("completed");
       if (currentPage === 0) {
         setRightMicrophoneState("completed");
         if (rightFinishedRecording) {
