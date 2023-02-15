@@ -115,18 +115,19 @@ const IdleMicrophone = () => {
               score: totalScore,
               id: uuid()
             });
+            const userRecord = localStorage.getItem("record");
+            const userRecordAudio = new Audio(userRecord);
+            userRecordAudio.play();
             setWordResultsShown(true);
           })
           .catch((error) => {
             const stringError = JSON.stringify(error, null, 2);
             console.log(stringError);
           });
-        const audio = new Audio(URL.createObjectURL(event.data));
-        audio.play();
       };
       setTimeout(() => {
         recorder.stop();
-        setWordMicrophoneState("disabled");
+        setWordMicrophoneState("loading");
       }, audioDuration);
     } catch (error) {
       switch (error.message) {

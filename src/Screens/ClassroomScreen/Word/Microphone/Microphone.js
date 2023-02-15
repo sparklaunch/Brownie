@@ -1,7 +1,6 @@
 import IdleMicrophone from "./IdleMicrophone";
 import { useRecoilState } from "recoil";
 import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicrophoneState";
-import DisabledMicrophone from "./DisabledMicrophone";
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
 import { useEffect } from "react";
 import CompletedMicrophone from "./CompletedMicrophone";
@@ -25,21 +24,9 @@ const Microphone = () => {
         </div>
       );
     case "recording":
-      return (
-        <div
-          className={`absolute left-[50%] translate-x-[-50%] bottom-[-100px]`}
-        >
-          {/*<RecordingMicrophone />*/}
-        </div>
-      );
-    case "disabled":
-      return (
-        <div
-          className={`absolute left-[50%] translate-x-[-50%] bottom-[-100px]`}
-        >
-          <DisabledMicrophone />
-        </div>
-      );
+      return <></>;
+    case "loading":
+      return <></>;
     case "completed":
       return (
         <div
