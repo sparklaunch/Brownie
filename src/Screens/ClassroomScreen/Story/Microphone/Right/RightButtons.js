@@ -4,12 +4,12 @@ import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
 import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
-import data from "../../../../../data.json";
 import leftMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import rightMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 import axios from "axios";
 import uuid from "react-uuid";
 import rightPageCompletedAtom from "../../../../../Stores/Classroom/Story/rightPageCompleted";
+import useData from "../../../../../Hooks/useData";
 
 const RightButtons = () => {
   const { level } = useParams();
@@ -22,11 +22,7 @@ const RightButtons = () => {
   const [rightPageCompleted, setRightPageCompleted] = useRecoilState(
     rightPageCompletedAtom
   );
-  const stringData = JSON.stringify(data);
-  const objectData = JSON.parse(stringData);
-  const sentences = objectData.find((item) => {
-    return item.level === level;
-  }).sentences;
+  const sentences = useData("sentences");
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
     leftMicrophoneStateAtom
   );

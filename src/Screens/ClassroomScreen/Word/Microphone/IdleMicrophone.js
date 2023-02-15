@@ -3,12 +3,11 @@ import { useRecoilState } from "recoil";
 import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicrophoneState";
 import axios from "axios";
 import uuid from "react-uuid";
-import data from "../../../../data.json";
-import { useParams } from "react-router-dom";
 import currentWordPage from "../../../../Stores/Classroom/Word/currentWordPage";
 import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
 import audioDurationAtom from "../../../../Stores/Classroom/audioDuration";
 import wordResultsShownAtom from "../../../../Stores/Classroom/Word/wordResultsShown";
+import useData from "../../../../Hooks/useData";
 
 const IdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -71,12 +70,7 @@ const IdleMicrophone = () => {
   const [wordResultsShown, setWordResultsShown] =
     useRecoilState(wordResultsShownAtom);
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
-  const { level } = useParams();
-  const stringData = JSON.stringify(data);
-  const jsonData = JSON.parse(stringData);
-  const words = jsonData.find((item) => {
-    return item.level === level;
-  }).words;
+  const words = useData("words");
   const recordVoice = async () => {
     const device = await navigator.mediaDevices.getUserMedia({
       audio: true

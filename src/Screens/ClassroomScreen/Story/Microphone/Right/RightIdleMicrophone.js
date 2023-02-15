@@ -3,21 +3,15 @@ import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import styled from "styled-components";
 import axios from "axios";
 import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
-import { useParams } from "react-router-dom";
 import rightMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 import uuid from "react-uuid";
-import data from "../../../../../data.json";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
 import rightFinishedRecordingAtom from "../../../../../Stores/Classroom/Story/rightFinishedRecording";
+import useData from "../../../../../Hooks/useData";
 
 const LeftIdleMicrophone = () => {
-  const { level } = useParams();
-  const stringData = JSON.stringify(data);
-  const jsonData = JSON.parse(stringData);
-  const sentences = jsonData.find((item) => {
-    return item.level === level;
-  }).sentences;
+  const sentences = useData("sentences");
   const [rightFinishedRecording, setRightFinishedRecording] = useRecoilState(
     rightFinishedRecordingAtom
   );

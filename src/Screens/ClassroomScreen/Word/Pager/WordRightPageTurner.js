@@ -1,13 +1,9 @@
 import { useRecoilState } from "recoil";
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
-import data from "../../../../data.json";
-import { useParams } from "react-router-dom";
+import useData from "../../../../Hooks/useData";
 
 const WordRightPageTurner = () => {
-  const { level } = useParams();
-  const dataString = JSON.stringify(data);
-  const dataObject = JSON.parse(dataString);
-  const words = dataObject.find((item) => item.level === level).words;
+  const words = useData("words");
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const onClickRightPageTurner = () => {

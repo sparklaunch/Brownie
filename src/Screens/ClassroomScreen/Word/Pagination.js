@@ -1,13 +1,9 @@
 import { useRecoilState } from "recoil";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
-import { useParams } from "react-router-dom";
-import data from "../../../data.json";
+import useData from "../../../Hooks/useData";
 
 const Pagination = () => {
-  const { level } = useParams();
-  const dataString = JSON.stringify(data);
-  const dataObject = JSON.parse(dataString);
-  const words = dataObject.find((book) => book.level === level).words;
+  const words = useData("words");
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   return (

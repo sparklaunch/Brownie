@@ -1,19 +1,17 @@
-import { useParams } from "react-router-dom";
-import data from "../../../data.json";
 import { useRecoilState } from "recoil";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import { useEffect } from "react";
 import axios from "axios";
 import { useSpeechSynthesis } from "react-speech-kit";
+import modeAtom from "../../../Stores/Classroom/mode";
+import useData from "../../../Hooks/useData";
 
 const Word = () => {
   const { speak } = useSpeechSynthesis();
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
-  const { level } = useParams();
-  const dataString = JSON.stringify(data);
-  const dataObject = JSON.parse(dataString);
-  const words = dataObject.find((book) => book.level === level).words;
+  const [mode, setMode] = useRecoilState(modeAtom);
+  const words = useData("words");
   const requireTTS = async () => {
     try {
       const response = await axios.post(
@@ -53,7 +51,7 @@ const Word = () => {
   };
   useEffect(() => {
     speakWord();
-  }, [currentWordPage]);
+  }, [currentWordPage, mode]);
   return (
     <div className={`h-full flex flex-row justify-center items-center`}>
       <img
