@@ -12,7 +12,7 @@ module.exports = function (app) {
   );
   app.use(
     createProxyMiddleware("/api", {
-      target: "http://43.201.129.192",
+      target: "https://funphonics.ai",
       changeOrigin: true
     })
   );

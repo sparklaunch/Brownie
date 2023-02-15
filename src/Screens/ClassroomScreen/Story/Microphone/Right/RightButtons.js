@@ -1,10 +1,8 @@
-import { useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
 import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
-import leftMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import rightMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 import axios from "axios";
 import uuid from "react-uuid";
@@ -12,7 +10,6 @@ import rightPageCompletedAtom from "../../../../../Stores/Classroom/Story/rightP
 import useData from "../../../../../Hooks/useData";
 
 const RightButtons = () => {
-  const { level } = useParams();
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
@@ -23,9 +20,6 @@ const RightButtons = () => {
     rightPageCompletedAtom
   );
   const sentences = useData("sentences");
-  const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
-    leftMicrophoneStateAtom
-  );
   const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
     rightMicrophoneStateAtom
   );

@@ -1,5 +1,3 @@
-import { useRecoilState } from "recoil";
-import resultsScreenShownAtom from "../../../Stores/Classroom/Story/resultsScreenShown";
 import BookContent from "./BookContent";
 import ModeButtons from "../ModeButtons";
 import LeftPageTurner from "./Pager/LeftPageTurner";
@@ -10,9 +8,6 @@ import Navigator from "./Navigator/Navigator";
 import BookTitle from "./BookTitle";
 
 const Book = () => {
-  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
-    resultsScreenShownAtom
-  );
   return (
     <div
       className={`absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center overflow-clip`}

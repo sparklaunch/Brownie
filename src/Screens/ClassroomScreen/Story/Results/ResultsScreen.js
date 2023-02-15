@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsScreenShown";
 import leftMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
 import leftPageCompletedAtom from "../../../../Stores/Classroom/Story/leftPageCompleted";
-import leftFinishedAtom from "../../../../Stores/Classroom/Story/leftFinished";
 import rightMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 import rightFinishedRecordingAtom from "../../../../Stores/Classroom/Story/rightFinishedRecording";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
@@ -23,7 +22,6 @@ const ResultsScreen = () => {
   const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
     leftPageCompletedAtom
   );
-  const [leftFinished, setLeftFinished] = useRecoilState(leftFinishedAtom);
   const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
     rightMicrophoneStateAtom
   );

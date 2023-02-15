@@ -4,5 +4,3 @@ const couponMessageAtom = atom({
   key: "couponMessage",
   default: ""
 });
-
-export default couponMessageAtom;

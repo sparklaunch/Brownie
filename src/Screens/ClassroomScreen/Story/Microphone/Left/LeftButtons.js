@@ -1,7 +1,6 @@
 import { useRecoilState } from "recoil";
 import axios from "axios";
 import uuid from "react-uuid";
-import { useParams } from "react-router-dom";
 import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
@@ -14,7 +13,6 @@ import leftFinishedAtom from "../../../../../Stores/Classroom/Story/leftFinished
 import useData from "../../../../../Hooks/useData";
 
 const LeftButtons = () => {
-  const { level } = useParams();
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
