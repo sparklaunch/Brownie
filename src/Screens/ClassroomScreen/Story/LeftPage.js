@@ -31,7 +31,7 @@ const LeftPage = ({ fileName, isEmpty }) => {
   };
   return (
     <div
-      className={`relative z-[1] ${
+      className={`relative w-full h-full z-[1] ${
         !leftPagePlaying && currentPage !== 0
           ? `cursor-pointer`
           : `cursor-default`

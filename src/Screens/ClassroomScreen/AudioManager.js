@@ -16,6 +16,7 @@ import currentWordPageAtom from "../../Stores/Classroom/Word/currentWordPage";
 import { useParams } from "react-router-dom";
 import useData from "../../Hooks/useData";
 import centralMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
+import highlightedPageAtom from "../../Stores/Classroom/Story/highlightedPage";
 
 const AudioManager = () => {
   const { level } = useParams();
@@ -31,6 +32,7 @@ const AudioManager = () => {
   const onFirstPagePlay = () => {
     setRightMicrophoneState("disabled");
     setCentralMicrophoneState("disabled");
+    setHighlightedPage(1);
   };
   const onFirstPageEnd = () => {
     setRightMicrophoneState("idle");
@@ -78,6 +80,8 @@ const AudioManager = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [highlightedPage, setHighlightedPage] =
+    useRecoilState(highlightedPageAtom);
   useEffect(() => {
     setResultsScreenShown(false);
     setLeftPageCompleted(false);
