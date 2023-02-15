@@ -15,5 +15,3 @@ const WordPageTurners = () => {
     </div>
   );
 };
-
-export default WordPageTurners;

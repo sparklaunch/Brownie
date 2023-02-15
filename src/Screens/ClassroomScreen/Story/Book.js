@@ -7,6 +7,7 @@ import RightPageTurner from "./Pager/RightPageTurner";
 import PageControllers from "./Controllers/PageControllers";
 import HomeButton from "../HomeButton";
 import Navigator from "./Navigator/Navigator";
+import BookTitle from "./BookTitle";
 
 const Book = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
@@ -31,6 +32,9 @@ const Book = () => {
         </div>
         <div className={`absolute top-[-60px] right-[-100px]`}>
           <HomeButton />
+        </div>
+        <div className={`absolute top-[-50px] left-0`}>
+          <BookTitle />
         </div>
         <Navigator />
         <BookContent />
