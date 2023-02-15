@@ -10,6 +10,7 @@ import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/result
 import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import { useParams } from "react-router-dom";
 import scoresAtom from "../../../../../Stores/Classroom/Story/scores";
+import highlightedPageAtom from "../../../../../Stores/Classroom/Story/highlightedPage";
 
 const CentralIdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -77,6 +78,8 @@ const CentralIdleMicrophone = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [highlightedPage, setHighlightedPage] =
+    useRecoilState(highlightedPageAtom);
   const recordVoice = async () => {
     try {
       const device = await navigator.mediaDevices.getUserMedia({
@@ -96,7 +99,11 @@ const CentralIdleMicrophone = () => {
           localStorage.setItem("record", base64Record);
         };
         const formData = new FormData();
-        formData.append("text", sentences[currentPage - 1]);
+        if (highlightedPage !== currentPage) {
+          formData.append("text", sentences[currentPage]);
+        } else {
+          formData.append("text", sentences[currentPage - 1]);
+        }
         formData.append("student_audio", event.data);
         axios
           .post(
@@ -123,13 +130,26 @@ const CentralIdleMicrophone = () => {
               score: totalScore,
               id: uuid()
             });
-            setScores((previous) => {
-              return {
-                ...previous,
-                [`${level}-${currentPage}`]: totalScore
-              };
-            });
-            localStorage.setItem(`${level}-${currentPage}`, totalScore);
+            console.log(highlightedPage);
+            console.log(currentPage);
+            if (highlightedPage !== currentPage) {
+              setScores((previous) => {
+                return {
+                  ...previous,
+                  [`${level}-${currentPage + 1}`]: totalScore
+                };
+              });
+            } else {
+              setScores((previous) => {
+                return {
+                  ...previous,
+                  [`${level}-${currentPage}`]: totalScore
+                };
+              });
+            }
+            if (highlightedPage !== currentPage) {
+              setCentralMicrophoneState("completed");
+            }
             setResultsScreenShown(true);
           })
           .catch((error) => {

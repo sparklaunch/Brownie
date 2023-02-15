@@ -40,7 +40,7 @@ const RightPage = ({ fileName, isEmpty }) => {
           : `cursor-default`
       }`}
     >
-      {scores[`${level}-${currentPage + 1}`] && (
+      {scores[`${level}-${currentPage + 1}`] !== undefined && (
         <div className={`absolute left-[50%] translate-x-[-50%] top-3`}>
           <ScoreHeader score={scores[`${level}-${currentPage + 1}`]} />
         </div>
