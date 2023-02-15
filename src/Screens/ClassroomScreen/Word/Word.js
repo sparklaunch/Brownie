@@ -15,9 +15,9 @@ const Word = () => {
   const requireTTS = async () => {
     try {
       const response = await axios.post(
-        "https://proxy.cors.sh/http://3.38.222.142/tts/",
+        "https://proxy.cors.sh/https://api.elasolution.com/tts/",
         {
-          words: words
+          text: words[currentWordPage - 1]
         },
         {
           headers: {
@@ -29,16 +29,16 @@ const Word = () => {
           }
         }
       );
-      const length = response.data.length;
-      const buffer = new ArrayBuffer(length);
+      const audioData = response.data;
+      const buffer = new ArrayBuffer(audioData.length);
       const view = new Uint8Array(buffer);
-      for (let i = 0; i < length; i++) {
-        view[i] = response.data.charCodeAt(i) & 0xff;
+      for (let i = 0; i < audioData.length; i++) {
+        view[i] = audioData.charCodeAt(i) & (0xff00 >> 8);
       }
-      const blob = new Blob([view], { type: "audio/x-wav" });
-      const url = URL.createObjectURL(blob);
-      const sound = new Audio(url);
-      sound.play();
+      const blob = new Blob([view], { type: "audio/wav" });
+      const audioURL = URL.createObjectURL(blob);
+      const audio = new Audio(audioURL);
+      audio.play();
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
       console.log(errorString);
@@ -50,7 +50,7 @@ const Word = () => {
     });
   };
   useEffect(() => {
-    speakWord();
+    requireTTS();
   }, [currentWordPage, mode]);
   return (
     <div className={`h-full flex flex-row justify-center items-center`}>
@@ -58,7 +58,7 @@ const Word = () => {
         src={"/assets/images/icons/megaphone_button.svg"}
         alt={"Megaphone"}
         className={`cursor-pointer`}
-        onClick={speakWord}
+        onClick={requireTTS}
       />
       <p className={`text-[120px] font-[900] ml-[24px]`}>
         {words[currentWordPage - 1]}
