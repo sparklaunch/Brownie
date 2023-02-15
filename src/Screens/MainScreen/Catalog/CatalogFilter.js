@@ -9,6 +9,7 @@ const CatalogFilter = () => {
         variant={"outlined"}
         sx={{
           fontFamily: "Jua",
+          fontSize: "18px",
           marginRight: "16px",
           color: "#F34D7E",
           borderWidth: 2,

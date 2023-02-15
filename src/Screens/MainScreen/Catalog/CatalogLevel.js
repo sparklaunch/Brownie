@@ -12,7 +12,7 @@ const CatalogLevel = ({ level, maxUnit, data }) => {
           src={"assets/images/icons/snowflake_icon.svg"}
           alt={"Snowflake Icon"}
         />
-        <p className={`font-[Jua] ml-2`}>Level {level}</p>
+        <p className={`font-[Jua] text-[20px] ml-2`}>Level {level}</p>
       </div>
       <Grid container spacing={2}>
         {coverImages.map((coverImage, index) => {
