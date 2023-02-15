@@ -107,6 +107,7 @@ const RightCompletedMicrophone = () => {
   };
   const onClickRetry = () => {
     setHighlightedPage(currentPage + 1);
+    recordVoice();
   };
   const onClickMyVoice = () => {
     const rightRecord = localStorage.getItem("right_record");
