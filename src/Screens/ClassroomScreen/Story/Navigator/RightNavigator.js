@@ -1,11 +1,11 @@
 import { useRecoilState } from "recoil";
-import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
+import navigatorPageAtom from "../../../../Stores/Classroom/Story/navigatorPage";
 
 const RightNavigator = () => {
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  const [navigatorPage, setNavigatorPage] = useRecoilState(navigatorPageAtom);
   const onClickRightNavigator = () => {
-    if (currentPage < 10) {
-      setCurrentPage(currentPage + 2);
+    if (navigatorPage < 10) {
+      setNavigatorPage(navigatorPage + 2);
     }
   };
   return (

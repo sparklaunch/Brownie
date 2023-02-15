@@ -1,27 +1,27 @@
 import LeftEdgeThumbnail from "./LeftEdgeThumbnail";
 import RightEdgeThumbnail from "./RightEdgeThumbnail";
 import Thumbnail from "./Thumbnail";
-import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 import { useRecoilState } from "recoil";
+import navigatorPageAtom from "../../../../Stores/Classroom/Story/navigatorPage";
 
 const Thumbnails = () => {
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  const [navigatorPage, setNavigatorPage] = useRecoilState(navigatorPageAtom);
   return (
     <div className={`flex flex-row items-center`}>
       <LeftEdgeThumbnail
-        leftPage={currentPage - 4}
-        rightPage={currentPage - 3}
+        leftPage={navigatorPage - 4}
+        rightPage={navigatorPage - 3}
       />
-      <Thumbnail leftPage={currentPage - 2} rightPage={currentPage - 1} />
+      <Thumbnail leftPage={navigatorPage - 2} rightPage={navigatorPage - 1} />
       <Thumbnail
-        leftPage={currentPage}
-        rightPage={currentPage + 1}
+        leftPage={navigatorPage}
+        rightPage={navigatorPage + 1}
         isCurrentPage={true}
       />
-      <Thumbnail leftPage={currentPage + 2} rightPage={currentPage + 3} />
+      <Thumbnail leftPage={navigatorPage + 2} rightPage={navigatorPage + 3} />
       <RightEdgeThumbnail
-        leftPage={currentPage + 4}
-        rightPage={currentPage + 5}
+        leftPage={navigatorPage + 4}
+        rightPage={navigatorPage + 5}
       />
     </div>
   );
