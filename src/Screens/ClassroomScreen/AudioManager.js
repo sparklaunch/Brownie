@@ -12,6 +12,7 @@ import leftFinishedAtom from "../../Stores/Classroom/Story/leftFinished";
 import rightFinishedRecordingAtom from "../../Stores/Classroom/Story/rightFinishedRecording";
 import rightPagePlayingAtom from "../../Stores/Classroom/Story/rightPagePlaying";
 import leftPagePlayingAtom from "../../Stores/Classroom/Story/leftPagePlaying";
+import currentWordPageAtom from "../../Stores/Classroom/Word/currentWordPage";
 
 const AudioManager = () => {
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
@@ -47,6 +48,8 @@ const AudioManager = () => {
   const [rightFinishedRecording, setRightFinishedRecording] = useRecoilState(
     rightFinishedRecordingAtom
   );
+  const [currentWordPage, setCurrentWordPage] =
+    useRecoilState(currentWordPageAtom);
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [mode, setMode] = useRecoilState(modeAtom);
   const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
@@ -89,6 +92,8 @@ const AudioManager = () => {
         });
         howler.play();
       }
+    } else {
+      console.log("TTS for the word mode not available yet");
     }
   }, [currentPage, mode]);
   useEffect(() => {
