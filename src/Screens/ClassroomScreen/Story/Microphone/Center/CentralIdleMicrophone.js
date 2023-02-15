@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CentralMicrophone = () => {
+const CentralIdleMicrophone = () => {
   const OuterCircle = styled.div`
     position: absolute;
     width: 100%;
@@ -69,4 +69,4 @@ const CentralMicrophone = () => {
   );
 };
 
-export default CentralMicrophone;
+export default CentralIdleMicrophone;

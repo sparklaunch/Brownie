@@ -6,7 +6,7 @@ import PageControllers from "./Controllers/PageControllers";
 import HomeButton from "../HomeButton";
 import Navigator from "./Navigator/Navigator";
 import BookTitle from "./BookTitle";
-import CentralMicrophone from "./Microphone/CentralMicrophone";
+import CentralMicrophone from "./Microphone/Center/CentralMicrophone";
 
 const Book = () => {
   return (
