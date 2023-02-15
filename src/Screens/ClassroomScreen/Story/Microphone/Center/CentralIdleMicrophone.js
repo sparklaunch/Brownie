@@ -96,7 +96,11 @@ const CentralIdleMicrophone = () => {
         reader.readAsDataURL(blob);
         reader.onloadend = () => {
           const base64Record = reader.result;
-          localStorage.setItem("record", base64Record);
+          if (highlightedPage !== currentPage) {
+            localStorage.setItem("right_record", base64Record);
+          } else {
+            localStorage.setItem("left_record", base64Record);
+          }
         };
         const formData = new FormData();
         if (highlightedPage !== currentPage) {
@@ -121,8 +125,13 @@ const CentralIdleMicrophone = () => {
             }
           )
           .then((response) => {
-            const record = localStorage.getItem("record");
-            new Audio(record).play();
+            if (highlightedPage !== currentPage) {
+              const record = localStorage.getItem("right_record");
+              new Audio(record).play();
+            } else {
+              const record = localStorage.getItem("left_record");
+              new Audio(record).play();
+            }
             const stringResponse = JSON.stringify(response, null, 2);
             console.log(stringResponse);
             const totalScore = response.data.total_score;

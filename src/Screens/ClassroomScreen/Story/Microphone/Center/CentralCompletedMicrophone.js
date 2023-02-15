@@ -1,10 +1,9 @@
 const CentralCompletedMicrophone = () => {
-  const onClickRetry = () => {
-
-  }
+  const onClickRetry = () => {};
   const onClickMyVoice = () => {
-    
-  }
+    const record = localStorage.getItem("record");
+    new Audio(record).play();
+  };
   return (
     <div className={`flex flex-row`}>
       <img
