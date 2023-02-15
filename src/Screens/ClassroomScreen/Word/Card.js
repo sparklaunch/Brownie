@@ -15,16 +15,24 @@ import WordImage from "./WordImage";
 import WordWave from "./WordWave";
 import resultsScreenShownAtom from "../../../Stores/Classroom/Story/resultsScreenShown";
 import ResultsScreen from "../Story/Results/ResultsScreen";
+import wordScoresAtom from "../../../Stores/Classroom/Word/wordScores";
+import { useParams } from "react-router-dom";
+import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 
 const Card = () => {
+  const { level } = useParams();
+  const [currentWordPage, setCurrentWordPage] =
+    useRecoilState(currentWordPageAtom);
   const [wordResultsShown, setWordResultsShown] =
     useRecoilState(wordResultsShownAtom);
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
     wordMicrophoneStateAtom
   );
+  const [wordScores, setWordScores] = useRecoilState(wordScoresAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
+  console.log(wordScores);
   return (
     <div
       className={`absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center overflow-clip`}
@@ -63,12 +71,16 @@ const Card = () => {
             <ResultsScreen />
           </div>
         )}
+        {wordScores[`${level}-${currentWordPage}`] !== undefined && (
+          <div className={`absolute top-0 left-[50%] translate-x-[-50%]`}>
+            <WordResults score={wordScores[`${level}-${currentWordPage}`]} />
+          </div>
+        )}
         {wordMicrophoneState === "recording" && (
           <div className={`absolute left-[50%] translate-x-[-50%] bottom-0`}>
             <WordWave />
           </div>
         )}
-        {wordResultsShown && <WordResults />}
         <Microphone />
       </div>
     </div>

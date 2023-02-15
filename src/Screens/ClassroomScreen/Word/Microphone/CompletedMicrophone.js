@@ -70,6 +70,7 @@ const CompletedMicrophone = () => {
             audio.play();
             setResultsScreenShown(true);
             setWordResultsShown(true);
+            setWordMicrophoneState("completed");
           })
           .catch((error) => {
             const stringError = JSON.stringify(error, null, 2);
