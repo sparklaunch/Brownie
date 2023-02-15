@@ -24,65 +24,80 @@ const RightButtons = () => {
     rightMicrophoneStateAtom
   );
   const recordVoice = async () => {
-    const device = await navigator.mediaDevices.getUserMedia({
-      audio: true
-    });
-    const recorder = new MediaRecorder(device);
-    recorder.start();
-    setRightMicrophoneState("recording");
-    setTimeout(() => {
-      recorder.stop();
-      setRightMicrophoneState("disabled");
-    }, audioDuration);
-    recorder.ondataavailable = (event) => {
-      const blob = new Blob([event.data], { type: "audio/wav" });
-      const reader = new FileReader();
-      reader.readAsDataURL(blob);
-      reader.onloadend = () => {
-        const base64Record = reader.result;
-        localStorage.setItem("right_record", base64Record);
-      };
-      const formData = new FormData();
-      formData.append("text", sentences[currentPage]);
-      formData.append("student_audio", event.data);
-      axios
-        .post(
-          "https://proxy.cors.sh/https://api.elasolution.com/pron_v2/",
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-              "x-cors-api-key": "temp_e4ec220dbf44f09c113217921d9d34d6",
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-              "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913"
+    try {
+      const device = await navigator.mediaDevices.getUserMedia({
+        audio: true
+      });
+      const sound = new Audio("/assets/audio/microphone_on.wav");
+      sound.play();
+      const recorder = new MediaRecorder(device);
+      recorder.start();
+      setRightMicrophoneState("recording");
+      setTimeout(() => {
+        recorder.stop();
+        setRightMicrophoneState("disabled");
+      }, audioDuration);
+      recorder.ondataavailable = (event) => {
+        const blob = new Blob([event.data], { type: "audio/wav" });
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onloadend = () => {
+          const base64Record = reader.result;
+          localStorage.setItem("right_record", base64Record);
+        };
+        const formData = new FormData();
+        formData.append("text", sentences[currentPage]);
+        formData.append("student_audio", event.data);
+        axios
+          .post(
+            "https://proxy.cors.sh/https://api.elasolution.com/pron_v2/",
+            formData,
+            {
+              headers: {
+                "Content-Type": "multipart/form-data",
+                "x-cors-api-key": "temp_e4ec220dbf44f09c113217921d9d34d6",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods":
+                  "GET, POST, PUT, DELETE, OPTIONS",
+                "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913"
+              }
             }
-          }
-        )
-        .then((response) => {
-          const stringResponse = JSON.stringify(response, null, 2);
-          console.log(stringResponse);
-          const totalScore = response.data.total_score;
-          setTotalScore({
-            score: totalScore,
-            id: uuid()
+          )
+          .then((response) => {
+            const stringResponse = JSON.stringify(response, null, 2);
+            console.log(stringResponse);
+            const totalScore = response.data.total_score;
+            setTotalScore({
+              score: totalScore,
+              id: uuid()
+            });
+            setResultsScreenShown(true);
+            setRightPageCompleted(true);
+          })
+          .catch((error) => {
+            const stringError = JSON.stringify(error, null, 2);
+            console.log(stringError);
           });
-          setResultsScreenShown(true);
-          setRightPageCompleted(true);
-        })
-        .catch((error) => {
-          const stringError = JSON.stringify(error, null, 2);
-          console.log(stringError);
-        });
-      const audio = new Audio(URL.createObjectURL(event.data));
-      audio.play();
-    };
+        const audio = new Audio(URL.createObjectURL(event.data));
+        audio.play();
+      };
+    } catch (error) {
+      switch (error.message) {
+        case "Requested device not found":
+          alert("마이크를 찾을 수 없습니다.");
+          break;
+        case "Permission denied":
+          alert("마이크 사용을 허용해주세요.");
+          break;
+        default:
+          alert("마이크 사용에 문제가 발생했습니다.");
+          break;
+      }
+    }
   };
   const onClickRetry = () => {
     setRightPageCompleted(false);
     setRightMicrophoneState("disabled");
-    const sound = new Audio("/assets/audio/microphone_on.wav");
-    sound.play();
     recordVoice();
   };
   const onClickMyVoice = () => {
