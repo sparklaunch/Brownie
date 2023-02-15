@@ -10,11 +10,14 @@ import CentralMicrophone from "./Microphone/Center/CentralMicrophone";
 import { useRecoilState } from "recoil";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import Wave from "./Microphone/Center/Wave";
+import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
+import YouDidItScreen from "./Results/YouDidIt/YouDidItScreen";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   return (
     <div
       className={`absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center overflow-clip`}
@@ -59,6 +62,11 @@ const Book = () => {
         )}
         <Navigator />
         <BookContent />
+        {youDidItShown && (
+          <div className={`absolute top-0 left-0 bottom-0 right-0 z-[3]`}>
+            <YouDidItScreen />
+          </div>
+        )}
       </div>
     </div>
   );

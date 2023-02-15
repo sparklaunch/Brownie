@@ -18,6 +18,8 @@ import ResultsScreen from "../Story/Results/ResultsScreen";
 import wordScoresAtom from "../../../Stores/Classroom/Word/wordScores";
 import { useParams } from "react-router-dom";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
+import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
+import YouDidItScreen from "../Story/Results/YouDidIt/YouDidItScreen";
 
 const Card = () => {
   const { level } = useParams();
@@ -32,6 +34,7 @@ const Card = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
+  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   return (
     <div
       className={`absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center overflow-clip`}
@@ -78,6 +81,11 @@ const Card = () => {
         {wordMicrophoneState === "recording" && (
           <div className={`absolute left-[50%] translate-x-[-50%] bottom-0`}>
             <WordWave />
+          </div>
+        )}
+        {youDidItShown && (
+          <div className={`absolute top-0 left-0 bottom-0 right-0`}>
+            <YouDidItScreen />
           </div>
         )}
         <Microphone />

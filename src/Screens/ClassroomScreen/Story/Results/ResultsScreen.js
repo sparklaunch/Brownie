@@ -11,6 +11,9 @@ import rightMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microph
 import rightFinishedRecordingAtom from "../../../../Stores/Classroom/Story/rightFinishedRecording";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
+import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
+import useData from "../../../../Hooks/useData";
+import youDidItShownAtom from "../../../../Stores/Classroom/youDidItShown";
 
 const ResultsScreen = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
@@ -33,6 +36,10 @@ const ResultsScreen = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
+  const [currentWordPage, setCurrentWordPage] =
+    useRecoilState(currentWordPageAtom);
+  const words = useData("words");
   useEffect(() => {
     new Audio(`/assets/audio/results_shown.mp3`).play();
     setTimeout(() => {
@@ -53,6 +60,10 @@ const ResultsScreen = () => {
         } else {
           setRightMicrophoneState("idle");
         }
+      }
+      if (currentPage === 10 || currentWordPage === words.length) {
+        new Audio(`/assets/audio/you_did_it.mp3`).play();
+        setYouDidItShown(true);
       }
     }, 3000);
   }, []);

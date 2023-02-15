@@ -18,6 +18,7 @@ import useData from "../../Hooks/useData";
 import centralMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import highlightedPageAtom from "../../Stores/Classroom/Story/highlightedPage";
 import navigatorOpenAtom from "../../Stores/Classroom/Story/navigatorOpen";
+import youDidItShownAtom from "../../Stores/Classroom/youDidItShown";
 
 const AudioManager = () => {
   const { level } = useParams();
@@ -83,10 +84,12 @@ const AudioManager = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   const [navigatorOpen, setNavigatorOpen] = useRecoilState(navigatorOpenAtom);
   const [highlightedPage, setHighlightedPage] =
     useRecoilState(highlightedPageAtom);
   useEffect(() => {
+    setYouDidItShown(false);
     setResultsScreenShown(false);
     setLeftPageCompleted(false);
     setLeftFinished(false);

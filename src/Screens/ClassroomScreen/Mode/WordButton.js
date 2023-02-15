@@ -2,6 +2,8 @@ import { useRecoilState } from "recoil";
 import modeAtom from "../../../Stores/Classroom/mode";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import wordMicrophoneStateAtom from "../../../Stores/Classroom/Word/wordMicrophoneState";
+import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
+import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 
 const WordButton = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -11,6 +13,9 @@ const WordButton = () => {
     wordMicrophoneStateAtom
   );
   const [mode, setMode] = useRecoilState(modeAtom);
+  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  const [currentWordPage, setCurrentWordPage] =
+    useRecoilState(currentWordPageAtom);
   const onClickWordButton = () => {
     if (
       centralMicrophoneState !== "invisible" &&
@@ -18,6 +23,8 @@ const WordButton = () => {
       wordMicrophoneState !== "recording" &&
       wordMicrophoneState !== "loading"
     ) {
+      setCurrentPage(0);
+      setCurrentWordPage(1);
       setMode("word");
     }
   };
