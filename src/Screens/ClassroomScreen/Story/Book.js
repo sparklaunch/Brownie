@@ -6,6 +6,7 @@ import PageControllers from "./Controllers/PageControllers";
 import HomeButton from "../HomeButton";
 import Navigator from "./Navigator/Navigator";
 import BookTitle from "./BookTitle";
+import CentralMicrophone from "./Microphone/CentralMicrophone";
 
 const Book = () => {
   return (
@@ -30,6 +31,11 @@ const Book = () => {
         </div>
         <div className={`absolute top-[-50px] left-0`}>
           <BookTitle />
+        </div>
+        <div
+          className={`absolute bottom-[-100px] left-[50%] translate-x-[-50%]`}
+        >
+          <CentralMicrophone />
         </div>
         <Navigator />
         <BookContent />
