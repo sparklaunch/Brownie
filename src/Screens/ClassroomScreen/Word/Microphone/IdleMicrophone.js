@@ -78,7 +78,6 @@ const IdleMicrophone = () => {
       });
       const clickAudio = new Audio("/assets/audio/microphone_on.wav");
       clickAudio.play();
-      setAudioDuration(2000);
       const recorder = new MediaRecorder(device);
       recorder.start();
       setWordMicrophoneState("recording");
@@ -128,7 +127,7 @@ const IdleMicrophone = () => {
       setTimeout(() => {
         recorder.stop();
         setWordMicrophoneState("disabled");
-      }, 2000);
+      }, audioDuration);
     } catch (error) {
       switch (error.message) {
         case "Requested device not found":

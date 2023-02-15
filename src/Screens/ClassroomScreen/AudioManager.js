@@ -14,9 +14,11 @@ import rightPagePlayingAtom from "../../Stores/Classroom/Story/rightPagePlaying"
 import leftPagePlayingAtom from "../../Stores/Classroom/Story/leftPagePlaying";
 import currentWordPageAtom from "../../Stores/Classroom/Word/currentWordPage";
 import { useParams } from "react-router-dom";
+import useData from "../../Hooks/useData";
 
 const AudioManager = () => {
   const { level } = useParams();
+  const words = useData(`words`);
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
     leftMicrophoneStateAtom
   );
@@ -47,6 +49,8 @@ const AudioManager = () => {
     setLeftMicrophoneState("completed");
     setRightMicrophoneState("idle");
   };
+  const onWordPlay = () => {};
+  const onWordEnd = () => {};
   const [rightFinishedRecording, setRightFinishedRecording] = useRecoilState(
     rightFinishedRecordingAtom
   );
@@ -95,9 +99,17 @@ const AudioManager = () => {
         howler.play();
       }
     } else {
-      console.log("TTS for the word mode not available yet");
+      const howler = new Howl({
+        src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`],
+        onload: () => {
+          setAudioDuration(howler.duration() * 1000 + 2000);
+        },
+        onplay: onWordPlay,
+        onend: onWordEnd
+      });
+      howler.play();
     }
-  }, [currentPage, mode]);
+  }, [currentPage, currentWordPage, mode]);
   useEffect(() => {
     if (leftPageCompleted && !leftFinished) {
       const howler = new Howl({

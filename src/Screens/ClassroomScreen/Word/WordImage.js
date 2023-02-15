@@ -2,18 +2,20 @@ import { useParams } from "react-router-dom";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import { useRecoilState } from "recoil";
 import useData from "../../../Hooks/useData";
-import { useSpeechSynthesis } from "react-speech-kit";
+import { Howl } from "howler";
 
 const WordImage = () => {
   const words = useData("words");
   const { level } = useParams();
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
-  const { speak } = useSpeechSynthesis();
   const onClickMegaphone = () => {
-    speak({
-      text: words[currentWordPage - 1]
+    const howl = new Howl({
+      src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`],
+      onload: () => {},
+      onend: () => {}
     });
+    howl.play();
   };
   return (
     <div
