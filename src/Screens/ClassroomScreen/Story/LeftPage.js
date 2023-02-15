@@ -51,7 +51,7 @@ const LeftPage = ({ fileName, isEmpty }) => {
         />
       )}
       <div
-        className={`absolute right-0 top-0 h-full w-10 bg-gradient-to-r from-transparent to-black opacity-50`}
+        className={`absolute right-0 top-0 h-full w-10 bg-gradient-to-r from-transparent to-[#555555] opacity-50`}
       />
       <div className={`absolute bottom-[-90px] left-[50%] translate-x-[-50%]`}>
         {leftMicrophoneState === "completed" && currentPage !== 0 ? (
