@@ -20,6 +20,8 @@ import highlightedPageAtom from "../../Stores/Classroom/Story/highlightedPage";
 
 const AudioManager = () => {
   const { level } = useParams();
+  const [currentWordPage, setCurrentWordPage] =
+    useRecoilState(currentWordPageAtom);
   const words = useData(`words`);
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
     leftMicrophoneStateAtom
@@ -39,6 +41,7 @@ const AudioManager = () => {
     setCentralMicrophoneState("idle");
   };
   const onLeftPlay = () => {
+    setHighlightedPage(currentPage);
     setLeftMicrophoneState("disabled");
     setRightMicrophoneState("disabled");
     setCentralMicrophoneState("disabled");
@@ -49,6 +52,7 @@ const AudioManager = () => {
     setCentralMicrophoneState("idle");
   };
   const onRightPlay = () => {
+    setHighlightedPage(currentPage + 1);
     setLeftMicrophoneState("disabled");
     setRightMicrophoneState("disabled");
     setCentralMicrophoneState("disabled");
@@ -63,8 +67,6 @@ const AudioManager = () => {
   const [rightFinishedRecording, setRightFinishedRecording] = useRecoilState(
     rightFinishedRecordingAtom
   );
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [mode, setMode] = useRecoilState(modeAtom);
   const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
