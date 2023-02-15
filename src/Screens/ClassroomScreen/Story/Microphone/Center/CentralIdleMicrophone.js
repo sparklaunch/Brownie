@@ -89,7 +89,7 @@ const CentralIdleMicrophone = () => {
         reader.readAsDataURL(blob);
         reader.onloadend = () => {
           const base64Record = reader.result;
-          localStorage.setItem("left_record", base64Record);
+          localStorage.setItem("record", base64Record);
         };
         const formData = new FormData();
         formData.append("text", sentences[currentPage - 1]);
@@ -110,6 +110,8 @@ const CentralIdleMicrophone = () => {
             }
           )
           .then((response) => {
+            const record = localStorage.getItem("record");
+            new Audio(record).play();
             const stringResponse = JSON.stringify(response, null, 2);
             console.log(stringResponse);
             const totalScore = response.data.total_score;
@@ -123,8 +125,6 @@ const CentralIdleMicrophone = () => {
             const stringError = JSON.stringify(error, null, 2);
             console.log(stringError);
           });
-        const audio = new Audio(URL.createObjectURL(event.data));
-        audio.play();
       };
       setTimeout(() => {
         recorder.stop();
