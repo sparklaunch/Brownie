@@ -1,5 +1,5 @@
 import BookContent from "./BookContent";
-import ModeButtons from "../ModeButtons";
+import ModeButtons from "../Mode/ModeButtons";
 import LeftPageTurner from "./Pager/LeftPageTurner";
 import RightPageTurner from "./Pager/RightPageTurner";
 import PageControllers from "./Controllers/PageControllers";

@@ -2,7 +2,7 @@ import Instructions from "./Instructions";
 import WordCard from "./WordCard";
 import Pagination from "./Pagination";
 import Microphone from "./Microphone/Microphone";
-import ModeButtons from "../ModeButtons";
+import ModeButtons from "../Mode/ModeButtons";
 import WordLeftPageTurner from "./Pager/WordLeftPageTurner";
 import WordRightPageTurner from "./Pager/WordRightPageTurner";
 import CardTitle from "./CardTitle";
