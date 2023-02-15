@@ -7,11 +7,15 @@ import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicro
 import useData from "../../../../Hooks/useData";
 import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
 import wordResultsShownAtom from "../../../../Stores/Classroom/Word/wordResultsShown";
+import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsScreenShown";
 
 const CompletedMicrophone = () => {
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
     wordMicrophoneStateAtom
+  );
+  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
+    resultsScreenShownAtom
   );
   const words = useData("words");
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
@@ -61,14 +65,16 @@ const CompletedMicrophone = () => {
               score: totalScore,
               id: uuid()
             });
+            const userRecord = localStorage.getItem("record");
+            const audio = new Audio(userRecord);
+            audio.play();
+            setResultsScreenShown(true);
             setWordResultsShown(true);
           })
           .catch((error) => {
             const stringError = JSON.stringify(error, null, 2);
             console.log(stringError);
           });
-        const audio = new Audio(URL.createObjectURL(event.data));
-        audio.play();
       };
       setTimeout(() => {
         recorder.stop();

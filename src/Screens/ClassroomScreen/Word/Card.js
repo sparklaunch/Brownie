@@ -13,12 +13,17 @@ import WordResults from "./Results/WordResults";
 import wordMicrophoneStateAtom from "../../../Stores/Classroom/Word/wordMicrophoneState";
 import WordImage from "./WordImage";
 import WordWave from "./WordWave";
+import resultsScreenShownAtom from "../../../Stores/Classroom/Story/resultsScreenShown";
+import ResultsScreen from "../Story/Results/ResultsScreen";
 
 const Card = () => {
   const [wordResultsShown, setWordResultsShown] =
     useRecoilState(wordResultsShownAtom);
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
     wordMicrophoneStateAtom
+  );
+  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
+    resultsScreenShownAtom
   );
   return (
     <div
@@ -53,6 +58,11 @@ const Card = () => {
         <div className={`absolute top-[-60px] right-[-100px]`}>
           <HomeButton />
         </div>
+        {resultsScreenShown && (
+          <div>
+            <ResultsScreen />
+          </div>
+        )}
         {wordMicrophoneState === "recording" && (
           <div className={`absolute left-[50%] translate-x-[-50%] bottom-0`}>
             <WordWave />

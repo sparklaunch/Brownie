@@ -1,16 +1,22 @@
 import { useRecoilState } from "recoil";
 import modeAtom from "../../../Stores/Classroom/mode";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
+import wordMicrophoneStateAtom from "../../../Stores/Classroom/Word/wordMicrophoneState";
 
 const WordButton = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
+    wordMicrophoneStateAtom
+  );
   const [mode, setMode] = useRecoilState(modeAtom);
   const onClickWordButton = () => {
     if (
       centralMicrophoneState !== "invisible" &&
-      centralMicrophoneState !== "loading"
+      centralMicrophoneState !== "loading" &&
+      wordMicrophoneState !== "recording" &&
+      wordMicrophoneState !== "loading"
     ) {
       setMode("word");
     }
@@ -20,7 +26,9 @@ const WordButton = () => {
       <div
         className={`w-[100px] h-[100px] bg-white flex flex-col items-center justify-center rounded-lg shadow-md border-[3px] border-[transparent] ${
           centralMicrophoneState !== "invisible" &&
-          centralMicrophoneState !== "loading"
+          centralMicrophoneState !== "loading" &&
+          wordMicrophoneState !== "recording" &&
+          wordMicrophoneState !== "loading"
             ? `cursor-pointer`
             : ``
         } ${

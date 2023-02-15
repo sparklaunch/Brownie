@@ -8,6 +8,7 @@ import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
 import audioDurationAtom from "../../../../Stores/Classroom/audioDuration";
 import wordResultsShownAtom from "../../../../Stores/Classroom/Word/wordResultsShown";
 import useData from "../../../../Hooks/useData";
+import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsScreenShown";
 
 const IdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -69,6 +70,9 @@ const IdleMicrophone = () => {
   );
   const [wordResultsShown, setWordResultsShown] =
     useRecoilState(wordResultsShownAtom);
+  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
+    resultsScreenShownAtom
+  );
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const words = useData("words");
   const recordVoice = async () => {
@@ -118,6 +122,7 @@ const IdleMicrophone = () => {
             const userRecord = localStorage.getItem("record");
             const userRecordAudio = new Audio(userRecord);
             userRecordAudio.play();
+            setResultsScreenShown(true);
             setWordResultsShown(true);
           })
           .catch((error) => {
