@@ -58,7 +58,9 @@ const LeftPage = ({ fileName, isEmpty }) => {
           <ScoreHeader score={scores[`${level}-${currentPage}`]} />
         </div>
       )}
-      {centralMicrophoneState === "completed" && <LeftCompletedMicrophone />}
+      {centralMicrophoneState === "completed" && currentPage !== 0 ? (
+        <LeftCompletedMicrophone />
+      ) : null}
       {isEmpty ? (
         <EmptyPage direction={`left`} />
       ) : (

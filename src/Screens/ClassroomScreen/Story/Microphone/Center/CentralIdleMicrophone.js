@@ -139,8 +139,6 @@ const CentralIdleMicrophone = () => {
               score: totalScore,
               id: uuid()
             });
-            console.log(highlightedPage);
-            console.log(currentPage);
             if (highlightedPage !== currentPage) {
               setScores((previous) => {
                 return {

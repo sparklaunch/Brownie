@@ -72,8 +72,6 @@ const RightCompletedMicrophone = () => {
               score: totalScore,
               id: uuid()
             });
-            console.log(highlightedPage);
-            console.log(currentPage);
             setScores((previous) => {
               return {
                 ...previous,
