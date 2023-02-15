@@ -12,6 +12,7 @@ import { useRecoilState } from "recoil";
 import WordResults from "./Results/WordResults";
 import wordMicrophoneStateAtom from "../../../Stores/Classroom/Word/wordMicrophoneState";
 import WordImage from "./WordImage";
+import WordWave from "./WordWave";
 
 const Card = () => {
   const [wordResultsShown, setWordResultsShown] =
@@ -52,6 +53,11 @@ const Card = () => {
         <div className={`absolute top-[-60px] right-[-100px]`}>
           <HomeButton />
         </div>
+        {wordMicrophoneState === "recording" && (
+          <div className={`absolute left-[50%] translate-x-[-50%] bottom-0`}>
+            <WordWave />
+          </div>
+        )}
         {wordResultsShown && <WordResults />}
         <Microphone />
       </div>

@@ -1,7 +1,7 @@
-import * as animationData from "./loading.json";
+import * as animationData from "./recording.json";
 import Lottie from "react-lottie";
 
-const LoadingSpinner = () => {
+const WordWave = () => {
   const lottieOptions = {
     loop: true,
     autoplay: true,
@@ -10,11 +10,7 @@ const LoadingSpinner = () => {
       preserveAspectRatio: "xMidYMid slice"
     }
   };
-  return (
-    <div>
-      <Lottie options={lottieOptions} height={200} width={200} />
-    </div>
-  );
+  return <Lottie options={lottieOptions} height={200} width={200} />;
 };
 
-export default LoadingSpinner;
+export default WordWave;

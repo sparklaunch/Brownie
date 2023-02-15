@@ -1,7 +1,6 @@
 import IdleMicrophone from "./IdleMicrophone";
 import { useRecoilState } from "recoil";
 import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicrophoneState";
-import RecordingMicrophone from "./RecordingMicrophone";
 import DisabledMicrophone from "./DisabledMicrophone";
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
 import { useEffect } from "react";
@@ -30,7 +29,7 @@ const Microphone = () => {
         <div
           className={`absolute left-[50%] translate-x-[-50%] bottom-[-100px]`}
         >
-          <RecordingMicrophone />
+          {/*<RecordingMicrophone />*/}
         </div>
       );
     case "disabled":
