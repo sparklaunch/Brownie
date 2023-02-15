@@ -10,11 +10,7 @@ const Wave = () => {
       preserveAspectRatio: "xMidYMid slice"
     }
   };
-  return (
-    <div>
-      <Lottie options={lottieOptions} height={200} width={200} />
-    </div>
-  );
+  return <Lottie options={lottieOptions} height={200} width={200} />;
 };
 
 export default Wave;

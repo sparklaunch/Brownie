@@ -7,6 +7,7 @@ import EmptyPage from "./EmptyPage";
 import rightMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
 import ScoreHeader from "./ScoreHeader";
 import scoresAtom from "../../../Stores/Classroom/Story/scores";
+import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 
 const RightPage = ({ fileName, isEmpty }) => {
   const { level } = useParams();
@@ -16,9 +17,16 @@ const RightPage = ({ fileName, isEmpty }) => {
   const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
     rightMicrophoneStateAtom
   );
+  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+    centralMicrophoneStateAtom
+  );
   const [scores, setScores] = useRecoilState(scoresAtom);
   const onClickRightPage = () => {
-    if (!rightPagePlaying && currentPage !== 10) {
+    if (
+      !rightPagePlaying &&
+      currentPage !== 10 &&
+      centralMicrophoneState !== "invisible"
+    ) {
       console.log(`/assets/audio/pages/${level}-${currentPage + 1}.mp3`);
       const audio = new Howl({
         src: [`/assets/audio/pages/${level}-${currentPage + 1}.mp3`],
@@ -35,7 +43,9 @@ const RightPage = ({ fileName, isEmpty }) => {
   return (
     <div
       className={`relative z-[1] ${
-        !rightPagePlaying && currentPage !== 10
+        !rightPagePlaying &&
+        currentPage !== 10 &&
+        centralMicrophoneState !== "invisible"
           ? `cursor-pointer`
           : `cursor-default`
       }`}
