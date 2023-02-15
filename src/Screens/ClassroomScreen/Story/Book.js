@@ -10,7 +10,6 @@ import CentralMicrophone from "./Microphone/Center/CentralMicrophone";
 import { useRecoilState } from "recoil";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import Wave from "./Microphone/Center/Wave";
-import LoadingSpinner from "./Microphone/Center/LoadingSpinner";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -55,7 +54,7 @@ const Book = () => {
           <div
             className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[3]`}
           >
-            <LoadingSpinner />
+            {/*<LoadingSpinner />*/}
           </div>
         )}
         <Navigator />

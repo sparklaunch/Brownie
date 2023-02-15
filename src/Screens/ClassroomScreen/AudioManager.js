@@ -17,6 +17,7 @@ import { useParams } from "react-router-dom";
 import useData from "../../Hooks/useData";
 import centralMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import highlightedPageAtom from "../../Stores/Classroom/Story/highlightedPage";
+import navigatorOpenAtom from "../../Stores/Classroom/Story/navigatorOpen";
 
 const AudioManager = () => {
   const { level } = useParams();
@@ -82,6 +83,7 @@ const AudioManager = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [navigatorOpen, setNavigatorOpen] = useRecoilState(navigatorOpenAtom);
   const [highlightedPage, setHighlightedPage] =
     useRecoilState(highlightedPageAtom);
   useEffect(() => {
@@ -91,6 +93,7 @@ const AudioManager = () => {
     setRightFinishedRecording(false);
     setLeftPagePlaying(false);
     setRightPagePlaying(false);
+    setNavigatorOpen(false);
     Howler.unload();
     if (mode === "story") {
       if (currentPage === 0) {
