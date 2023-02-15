@@ -25,7 +25,8 @@ const RightPage = ({ fileName, isEmpty }) => {
     if (
       !rightPagePlaying &&
       currentPage !== 10 &&
-      centralMicrophoneState !== "invisible"
+      centralMicrophoneState !== "invisible" &&
+      centralMicrophoneState !== "loading"
     ) {
       console.log(`/assets/audio/pages/${level}-${currentPage + 1}.mp3`);
       const audio = new Howl({
@@ -45,7 +46,8 @@ const RightPage = ({ fileName, isEmpty }) => {
       className={`relative z-[1] ${
         !rightPagePlaying &&
         currentPage !== 10 &&
-        centralMicrophoneState !== "invisible"
+        centralMicrophoneState !== "invisible" &&
+        centralMicrophoneState !== "loading"
           ? `cursor-pointer`
           : `cursor-default`
       }`}

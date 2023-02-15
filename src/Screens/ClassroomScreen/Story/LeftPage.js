@@ -25,7 +25,8 @@ const LeftPage = ({ fileName, isEmpty }) => {
     if (
       !leftPagePlaying &&
       currentPage !== 0 &&
-      centralMicrophoneState !== "invisible"
+      centralMicrophoneState !== "invisible" &&
+      centralMicrophoneState !== "loading"
     ) {
       console.log(`/assets/audio/pages/${level}-${currentPage}.mp3`);
       const audio = new Howl({
@@ -45,7 +46,8 @@ const LeftPage = ({ fileName, isEmpty }) => {
       className={`relative w-full h-full z-[1] ${
         !leftPagePlaying &&
         currentPage !== 0 &&
-        centralMicrophoneState !== "invisible"
+        centralMicrophoneState !== "invisible" &&
+        centralMicrophoneState !== "loading"
           ? `cursor-pointer`
           : `cursor-default`
       }`}
