@@ -13,7 +13,7 @@ const HomeButton = () => {
   const [mode, setMode] = useRecoilState(modeAtom);
   const onClickHome = () => {
     Howler.unload();
-    setMode("story");
+    setMode("word");
     setCurrentPage(0);
     setCurrentWordPage(1);
     navigate("/");
