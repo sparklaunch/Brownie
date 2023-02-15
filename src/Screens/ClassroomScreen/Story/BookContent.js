@@ -7,6 +7,8 @@ import resultsScreenShownAtom from "../../../Stores/Classroom/Story/resultsScree
 import ResultsScreen from "./Results/ResultsScreen";
 import highlightedPageAtom from "../../../Stores/Classroom/Story/highlightedPage";
 import styled from "styled-components";
+import highlightVisibleAtom from "../../../Stores/Classroom/Story/highlightVisible";
+import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 
 const BookContent = () => {
   const GlowingContainer = styled.div`
@@ -26,8 +28,13 @@ const BookContent = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
+  const [highlightVisible, setHighlightVisible] =
+    useRecoilState(highlightVisibleAtom);
   const [highlightedPage, setHighlightedPage] =
     useRecoilState(highlightedPageAtom);
+  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+    centralMicrophoneStateAtom
+  );
   const leftPageFile = `/assets/images/pages/${level}-${currentPage}.jpg`;
   const rightPageFile = `/assets/images/pages/${level}-${currentPage + 1}.jpg`;
   return (
@@ -35,11 +42,19 @@ const BookContent = () => {
       <div className={`grid grid-cols-2 gap-0 shadow-2xl rounded-2xl`}>
         <div className={`relative`}>
           <LeftPage fileName={leftPageFile} isEmpty={currentPage === 0} />
-          {highlightedPage === currentPage && <GlowingContainer />}
+          {highlightedPage === currentPage &&
+          highlightVisible &&
+          centralMicrophoneState !== "completed" ? (
+            <GlowingContainer />
+          ) : null}
         </div>
         <div className={`relative`}>
           <RightPage fileName={rightPageFile} isEmpty={currentPage === 10} />
-          {highlightedPage === currentPage + 1 && <GlowingContainer />}
+          {highlightedPage === currentPage + 1 &&
+          highlightVisible &&
+          centralMicrophoneState !== "completed" ? (
+            <GlowingContainer />
+          ) : null}
         </div>
       </div>
       {resultsScreenShown && <ResultsScreen />}
