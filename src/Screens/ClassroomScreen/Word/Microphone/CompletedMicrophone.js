@@ -1,4 +1,4 @@
-import currentWordPage from "../../../../Stores/Classroom/Word/currentWordPage";
+import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
 import axios from "axios";
 import uuid from "react-uuid";
 import { useRecoilState } from "recoil";
@@ -8,8 +8,13 @@ import useData from "../../../../Hooks/useData";
 import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
 import wordResultsShownAtom from "../../../../Stores/Classroom/Word/wordResultsShown";
 import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsScreenShown";
+import wordScoresAtom from "../../../../Stores/Classroom/Word/wordScores";
+import { useParams } from "react-router-dom";
 
 const CompletedMicrophone = () => {
+  const { level } = useParams();
+  const [currentWordPage, setCurrentWordPage] =
+    useRecoilState(currentWordPageAtom);
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
     wordMicrophoneStateAtom
@@ -17,6 +22,7 @@ const CompletedMicrophone = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
+  const [wordScores, setWordScores] = useRecoilState(wordScoresAtom);
   const words = useData("words");
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [wordResultsShown, setWordResultsShown] =
@@ -64,6 +70,12 @@ const CompletedMicrophone = () => {
             setTotalScore({
               score: totalScore,
               id: uuid()
+            });
+            setWordScores((previous) => {
+              return {
+                ...previous,
+                [`${level}-${currentWordPage}`]: totalScore
+              };
             });
             const userRecord = localStorage.getItem("record");
             const audio = new Audio(userRecord);
