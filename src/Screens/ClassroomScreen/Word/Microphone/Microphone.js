@@ -20,7 +20,7 @@ const Microphone = () => {
     case "idle":
       return (
         <div
-          className={`absolute left-[50%] translate-x-[-50%] bottom-[-120px]`}
+          className={`absolute left-[50%] translate-x-[-50%] bottom-[-100px]`}
         >
           <IdleMicrophone />
         </div>
@@ -28,7 +28,7 @@ const Microphone = () => {
     case "recording":
       return (
         <div
-          className={`absolute left-[50%] translate-x-[-50%] bottom-[-120px]`}
+          className={`absolute left-[50%] translate-x-[-50%] bottom-[-100px]`}
         >
           <RecordingMicrophone />
         </div>
@@ -36,7 +36,7 @@ const Microphone = () => {
     case "disabled":
       return (
         <div
-          className={`absolute left-[50%] translate-x-[-50%] bottom-[-120px]`}
+          className={`absolute left-[50%] translate-x-[-50%] bottom-[-100px]`}
         >
           <DisabledMicrophone />
         </div>
@@ -44,7 +44,7 @@ const Microphone = () => {
     case "completed":
       return (
         <div
-          className={`absolute left-[50%] translate-x-[-50%] bottom-[-120px]`}
+          className={`absolute left-[50%] translate-x-[-50%] bottom-[-100px]`}
         >
           <CompletedMicrophone />
         </div>

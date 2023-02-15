@@ -2,16 +2,24 @@ import { useRecoilState } from "recoil";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import useData from "../../../Hooks/useData";
 import { Howl } from "howler";
+import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 
 const Word = () => {
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
+  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+    centralMicrophoneStateAtom
+  );
   const words = useData("words");
   const onClickMegaphone = () => {
     const howl = new Howl({
       src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`],
-      onload: () => {},
-      onend: () => {}
+      onplay: () => {
+        setCentralMicrophoneState("disabled");
+      },
+      onend: () => {
+        setCentralMicrophoneState("idle");
+      }
     });
     howl.play();
   };

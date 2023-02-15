@@ -15,6 +15,7 @@ import leftPagePlayingAtom from "../../Stores/Classroom/Story/leftPagePlaying";
 import currentWordPageAtom from "../../Stores/Classroom/Word/currentWordPage";
 import { useParams } from "react-router-dom";
 import useData from "../../Hooks/useData";
+import centralMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 
 const AudioManager = () => {
   const { level } = useParams();
@@ -36,18 +37,22 @@ const AudioManager = () => {
   const onLeftPlay = () => {
     setLeftMicrophoneState("disabled");
     setRightMicrophoneState("disabled");
+    setCentralMicrophoneState("disabled");
   };
   const onLeftEnd = () => {
     setLeftMicrophoneState("idle");
     setRightMicrophoneState("idle");
+    setCentralMicrophoneState("idle");
   };
   const onRightPlay = () => {
     setLeftMicrophoneState("disabled");
     setRightMicrophoneState("disabled");
+    setCentralMicrophoneState("disabled");
   };
   const onRightEnd = () => {
     setLeftMicrophoneState("completed");
     setRightMicrophoneState("idle");
+    setCentralMicrophoneState("idle");
   };
   const onWordPlay = () => {};
   const onWordEnd = () => {};
@@ -67,6 +72,9 @@ const AudioManager = () => {
     useRecoilState(rightPagePlayingAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
+  );
+  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+    centralMicrophoneStateAtom
   );
   useEffect(() => {
     setResultsScreenShown(false);
