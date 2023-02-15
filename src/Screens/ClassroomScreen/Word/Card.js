@@ -10,10 +10,15 @@ import HomeButton from "../HomeButton";
 import wordResultsShownAtom from "../../../Stores/Classroom/Word/wordResultsShown";
 import { useRecoilState } from "recoil";
 import WordResults from "./Results/WordResults";
+import wordMicrophoneStateAtom from "../../../Stores/Classroom/Word/wordMicrophoneState";
+import WordImage from "./WordImage";
 
 const Card = () => {
   const [wordResultsShown, setWordResultsShown] =
     useRecoilState(wordResultsShownAtom);
+  const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
+    wordMicrophoneStateAtom
+  );
   return (
     <div
       className={`absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center overflow-clip`}
@@ -30,7 +35,7 @@ const Card = () => {
         <div
           className={`absolute top-0 left-0 bottom-0 right-0 flex flex-col justify-center items-center`}
         >
-          <WordCard />
+          {wordMicrophoneState === "completed" ? <WordImage /> : <WordCard />}
         </div>
         <div className={`absolute top-0 left-[-120px]`}>
           <ModeButtons />
