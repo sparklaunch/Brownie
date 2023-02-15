@@ -59,6 +59,18 @@
   {
     "level": "2-1",
     "title": "Dan and the Ram",
+    "sentences": [
+      "Dan and the Ram",
+      "Dan is a man. The man is Dan",
+      "Dan has a fan. The fan is tan!",
+      "Dan spots a ram. The ram is mad",
+      "Dan ran to the dam. The mad ram ran to the dam",
+      "Dan is at the dam. The mad ram is at the dam. Dan is sad",
+      "The ram spots the fan. The ram asks, \"Fan?\"",
+      "Oh! It is the ram's fan!",
+      "The ram is not mad. The ram is glad",
+      "The ram has the fan. Dan pats the ram!"
+    ],
     "words": [
       "ask",
       "dam",

@@ -13,8 +13,10 @@ import rightFinishedRecordingAtom from "../../Stores/Classroom/Story/rightFinish
 import rightPagePlayingAtom from "../../Stores/Classroom/Story/rightPagePlaying";
 import leftPagePlayingAtom from "../../Stores/Classroom/Story/leftPagePlaying";
 import currentWordPageAtom from "../../Stores/Classroom/Word/currentWordPage";
+import { useParams } from "react-router-dom";
 
 const AudioManager = () => {
+  const { level } = useParams();
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
     leftMicrophoneStateAtom
   );
@@ -73,7 +75,7 @@ const AudioManager = () => {
     if (mode === "story") {
       if (currentPage === 0) {
         const howler = new Howl({
-          src: [`/assets/audio/pages/1-1-1.mp3`],
+          src: [`/assets/audio/pages/${level}-1.mp3`],
           onload: () => {
             setAudioDuration(howler.duration() * 1000 + 2000);
           },
@@ -83,7 +85,7 @@ const AudioManager = () => {
         howler.play();
       } else {
         const howler = new Howl({
-          src: [`/assets/audio/pages/1-1-${currentPage}.mp3`],
+          src: [`/assets/audio/pages/${level}-${currentPage}.mp3`],
           onload: () => {
             setAudioDuration(howler.duration() * 1000 + 2000);
           },
@@ -99,7 +101,7 @@ const AudioManager = () => {
   useEffect(() => {
     if (leftPageCompleted && !leftFinished) {
       const howler = new Howl({
-        src: [`/assets/audio/pages/1-1-${currentPage + 1}.mp3`],
+        src: [`/assets/audio/pages/${level}-${currentPage + 1}.mp3`],
         onload: () => {
           setAudioDuration(howler.duration() * 1000 + 2000);
         },
