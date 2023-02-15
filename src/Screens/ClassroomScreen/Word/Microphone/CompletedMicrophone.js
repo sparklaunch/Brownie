@@ -78,7 +78,7 @@ const CompletedMicrophone = () => {
       };
       setTimeout(() => {
         recorder.stop();
-        setWordMicrophoneState("disabled");
+        setWordMicrophoneState("loading");
       }, audioDuration);
     } catch (error) {
       switch (error.message) {
