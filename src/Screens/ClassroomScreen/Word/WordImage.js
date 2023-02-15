@@ -22,7 +22,7 @@ const WordImage = () => {
       <img
         src={`/assets/images/words/${level}-${words[currentWordPage - 1]}.png`}
         alt={words[currentWordPage - 1]}
-        className={`w-[80%]`}
+        className={`w-[60%] translate-y-[-10%]`}
       />
       <div
         className={`absolute bottom-0 left-[50%] translate-x-[-50%] flex flex-row items-center justify-center`}
