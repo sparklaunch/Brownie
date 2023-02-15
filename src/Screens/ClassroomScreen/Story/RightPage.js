@@ -44,7 +44,7 @@ const RightPage = ({ fileName, isEmpty }) => {
   };
   return (
     <div
-      className={`relative z-[1] ${
+      className={`relative z-[1] w-full h-full ${
         !rightPagePlaying &&
         currentPage !== 10 &&
         centralMicrophoneState !== "invisible" &&
