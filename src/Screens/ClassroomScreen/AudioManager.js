@@ -30,9 +30,11 @@ const AudioManager = () => {
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const onFirstPagePlay = () => {
     setRightMicrophoneState("disabled");
+    setCentralMicrophoneState("disabled");
   };
   const onFirstPageEnd = () => {
     setRightMicrophoneState("idle");
+    setCentralMicrophoneState("idle");
   };
   const onLeftPlay = () => {
     setLeftMicrophoneState("disabled");
