@@ -3,10 +3,8 @@ import rightPagePlayingAtom from "../../../Stores/Classroom/Story/rightPagePlayi
 import { useParams } from "react-router-dom";
 import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import { Howl } from "howler";
-import RightMicrophone from "./Microphone/Right/RightMicrophone";
 import EmptyPage from "./EmptyPage";
 import rightMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
-import RightButtons from "./Microphone/Right/RightButtons";
 
 const RightPage = ({ fileName, isEmpty }) => {
   const { level } = useParams();
@@ -53,13 +51,13 @@ const RightPage = ({ fileName, isEmpty }) => {
       <div
         className={`absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-[#555555] opacity-50`}
       />
-      <div className={`absolute bottom-[-90px] right-[50%] translate-x-[50%]`}>
-        {rightMicrophoneState === "completed" && currentPage !== 10 ? (
-          <RightButtons />
-        ) : (
-          <RightMicrophone />
-        )}
-      </div>
+      {/*<div className={`absolute bottom-[-90px] right-[50%] translate-x-[50%]`}>*/}
+      {/*  {rightMicrophoneState === "completed" && currentPage !== 10 ? (*/}
+      {/*    <RightButtons />*/}
+      {/*  ) : (*/}
+      {/*    <RightMicrophone />*/}
+      {/*  )}*/}
+      {/*</div>*/}
     </div>
   );
 };

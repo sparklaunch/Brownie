@@ -3,10 +3,8 @@ import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import { useParams } from "react-router-dom";
 import { Howl } from "howler";
 import leftPagePlayingAtom from "../../../Stores/Classroom/Story/leftPagePlaying";
-import LeftMicrophone from "./Microphone/Left/LeftMicrophone";
 import EmptyPage from "./EmptyPage";
 import leftMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
-import LeftButtons from "./Microphone/Left/LeftButtons";
 
 const LeftPage = ({ fileName, isEmpty }) => {
   const [leftPagePlaying, setLeftPagePlaying] =
@@ -53,13 +51,13 @@ const LeftPage = ({ fileName, isEmpty }) => {
       <div
         className={`absolute right-0 top-0 h-full w-10 bg-gradient-to-r from-transparent to-[#555555] opacity-50`}
       />
-      <div className={`absolute bottom-[-90px] left-[50%] translate-x-[-50%]`}>
-        {leftMicrophoneState === "completed" && currentPage !== 0 ? (
-          <LeftButtons />
-        ) : (
-          <LeftMicrophone />
-        )}
-      </div>
+      {/*<div className={`absolute bottom-[-90px] left-[50%] translate-x-[-50%]`}>*/}
+      {/*  {leftMicrophoneState === "completed" && currentPage !== 0 ? (*/}
+      {/*    <LeftButtons />*/}
+      {/*  ) : (*/}
+      {/*    <LeftMicrophone />*/}
+      {/*  )}*/}
+      {/*</div>*/}
     </div>
   );
 };
