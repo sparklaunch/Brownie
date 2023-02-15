@@ -46,7 +46,7 @@ const RightPage = ({ fileName, isEmpty }) => {
           src={fileName}
           alt={"Right Page"}
           loading={"lazy"}
-          className={`rounded-r-2xl`}
+          className={`rounded-r-2xl w-full h-full object-cover`}
           onClick={onClickRightPage}
         />
       )}

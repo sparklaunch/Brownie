@@ -46,7 +46,7 @@ const LeftPage = ({ fileName, isEmpty }) => {
           src={fileName}
           alt={"Left Page"}
           loading={"lazy"}
-          className={`rounded-l-2xl`}
+          className={`rounded-l-2xl w-full h-full object-cover`}
           onClick={onClickLeftPage}
         />
       )}
