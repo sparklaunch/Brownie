@@ -7,8 +7,15 @@ import HomeButton from "../HomeButton";
 import Navigator from "./Navigator/Navigator";
 import BookTitle from "./BookTitle";
 import CentralMicrophone from "./Microphone/Center/CentralMicrophone";
+import { useRecoilState } from "recoil";
+import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
+import Wave from "./Microphone/Center/Wave";
+import LoadingSpinner from "./Microphone/Center/LoadingSpinner";
 
 const Book = () => {
+  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+    centralMicrophoneStateAtom
+  );
   return (
     <div
       className={`absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center overflow-clip`}
@@ -37,6 +44,20 @@ const Book = () => {
         >
           <CentralMicrophone />
         </div>
+        {centralMicrophoneState === "invisible" && (
+          <div
+            className={`absolute bottom-[10%] left-[50%] translate-x-[-50%] z-10`}
+          >
+            <Wave />
+          </div>
+        )}
+        {centralMicrophoneState === "loading" && (
+          <div
+            className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[3]`}
+          >
+            <LoadingSpinner />
+          </div>
+        )}
         <Navigator />
         <BookContent />
       </div>
