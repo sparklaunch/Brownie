@@ -8,6 +8,7 @@ import leftMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones
 import scoresAtom from "../../../Stores/Classroom/Story/scores";
 import ScoreHeader from "./ScoreHeader";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
+import LeftCompletedMicrophone from "./Microphone/Center/LeftCompletedMicrophone";
 
 const LeftPage = ({ fileName, isEmpty }) => {
   const [leftPagePlaying, setLeftPagePlaying] =
@@ -57,6 +58,7 @@ const LeftPage = ({ fileName, isEmpty }) => {
           <ScoreHeader score={scores[`${level}-${currentPage}`]} />
         </div>
       )}
+      {centralMicrophoneState === "completed" && <LeftCompletedMicrophone />}
       {isEmpty ? (
         <EmptyPage direction={`left`} />
       ) : (

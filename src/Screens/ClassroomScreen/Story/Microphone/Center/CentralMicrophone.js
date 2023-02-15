@@ -3,7 +3,6 @@ import centralMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Mi
 import CentralIdleMicrophone from "./CentralIdleMicrophone";
 import CentralDisabledMicrophone from "./CentralDisabledMicrophone";
 import CentralInvisibleMicrophone from "./CentralInvisibleMicrophone";
-import CentralCompletedMicrophone from "./CentralCompletedMicrophone";
 
 const CentralMicrophone = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -16,9 +15,9 @@ const CentralMicrophone = () => {
       return <CentralDisabledMicrophone />;
     case "invisible":
       return <CentralInvisibleMicrophone />;
-    case "completed":
-      return <CentralCompletedMicrophone />;
     case "loading":
+      return <></>;
+    case "completed":
       return <></>;
   }
 };

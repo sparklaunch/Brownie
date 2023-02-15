@@ -1,11 +1,14 @@
-const CentralCompletedMicrophone = () => {
-  const onClickRetry = () => {};
+const LeftCompletedMicrophone = () => {
+  const onClickRetry = () => {
+
+  }
   const onClickMyVoice = () => {
-    const record = localStorage.getItem("record");
-    new Audio(record).play();
-  };
+
+  }
   return (
-    <div className={`flex flex-row`}>
+    <div
+      className={`absolute left-[50%] bottom-[-100px] translate-x-[-50%] flex flex-row`}
+    >
       <img
         src={`/assets/images/retry_button.svg`}
         alt={`Retry Button`}
@@ -22,4 +25,4 @@ const CentralCompletedMicrophone = () => {
   );
 };
 
-export default CentralCompletedMicrophone;
+export default LeftCompletedMicrophone;
