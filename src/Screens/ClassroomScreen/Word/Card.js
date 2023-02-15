@@ -7,8 +7,13 @@ import WordLeftPageTurner from "./Pager/WordLeftPageTurner";
 import WordRightPageTurner from "./Pager/WordRightPageTurner";
 import CardTitle from "./CardTitle";
 import HomeButton from "../HomeButton";
+import wordResultsShownAtom from "../../../Stores/Classroom/Word/wordResultsShown";
+import { useRecoilState } from "recoil";
+import WordResults from "./Results/WordResults";
 
 const Card = () => {
+  const [wordResultsShown, setWordResultsShown] =
+    useRecoilState(wordResultsShownAtom);
   return (
     <div
       className={`absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center overflow-clip`}
@@ -42,6 +47,7 @@ const Card = () => {
         <div className={`absolute top-[-60px] right-[-100px]`}>
           <HomeButton />
         </div>
+        {wordResultsShown && <WordResults />}
         <Microphone />
       </div>
     </div>

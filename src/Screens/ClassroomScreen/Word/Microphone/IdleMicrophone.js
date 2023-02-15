@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import currentWordPage from "../../../../Stores/Classroom/Word/currentWordPage";
 import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
 import audioDurationAtom from "../../../../Stores/Classroom/audioDuration";
+import wordResultsShownAtom from "../../../../Stores/Classroom/Word/wordResultsShown";
 
 const IdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -67,6 +68,8 @@ const IdleMicrophone = () => {
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
     wordMicrophoneStateAtom
   );
+  const [wordResultsShown, setWordResultsShown] =
+    useRecoilState(wordResultsShownAtom);
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const { level } = useParams();
   const stringData = JSON.stringify(data);
@@ -115,6 +118,7 @@ const IdleMicrophone = () => {
             score: totalScore,
             id: uuid()
           });
+          setWordResultsShown(true);
         })
         .catch((error) => {
           const stringError = JSON.stringify(error, null, 2);
