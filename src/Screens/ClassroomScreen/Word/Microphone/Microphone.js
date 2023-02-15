@@ -5,6 +5,7 @@ import RecordingMicrophone from "./RecordingMicrophone";
 import DisabledMicrophone from "./DisabledMicrophone";
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
 import { useEffect } from "react";
+import CompletedMicrophone from "./CompletedMicrophone";
 
 const Microphone = () => {
   const [currentWordPage, setCurrentWordPage] =
@@ -38,6 +39,14 @@ const Microphone = () => {
           className={`absolute left-[50%] translate-x-[-50%] bottom-[-120px]`}
         >
           <DisabledMicrophone />
+        </div>
+      );
+    case "completed":
+      return (
+        <div
+          className={`absolute left-[50%] translate-x-[-50%] bottom-[-120px]`}
+        >
+          <CompletedMicrophone />
         </div>
       );
   }

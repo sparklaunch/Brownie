@@ -5,15 +5,21 @@ import GoodBar from "./GoodBar";
 import NiceTryBar from "./NiceTryBar";
 import { useEffect } from "react";
 import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicrophoneState";
+import wordResultsShownAtom from "../../../../Stores/Classroom/Word/wordResultsShown";
 
 const WordResults = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
     wordMicrophoneStateAtom
   );
+  const [wordResultsShown, setWordResultsShown] =
+    useRecoilState(wordResultsShownAtom);
   useEffect(() => {
     new Audio("/assets/audio/results_shown.mp3").play();
-    setWordMicrophoneState("completed");
+    setTimeout(() => {
+      setWordResultsShown(false);
+      setWordMicrophoneState("completed");
+    }, 3000);
   }, []);
   if (totalScore.score >= 50) {
     return (
