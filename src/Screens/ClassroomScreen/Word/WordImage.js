@@ -10,12 +10,25 @@ const WordImage = () => {
     useRecoilState(currentWordPageAtom);
   return (
     <div
-      className={`w-[76%] h-[76%] border-[24px] border-[#FFD53D] rounded-2xl flex flex-col justify-center items-center`}
+      className={`w-[76%] h-[76%] border-[24px] border-[#FFD53D] rounded-2xl flex flex-col justify-center items-center relative`}
     >
       <img
         src={`/assets/images/words/${level}-${words[currentWordPage - 1]}.png`}
         alt={words[currentWordPage - 1]}
+        className={`w-[80%]`}
       />
+      <div
+        className={`absolute bottom-0 left-[50%] translate-x-[-50%] flex flex-row items-center justify-center`}
+      >
+        <img
+          src={`/assets/images/icons/megaphone_button.svg`}
+          alt="Megaphone Button"
+          className={`mr-3`}
+        />
+        <p className={`text-[#15B58F] font-black text-[60px]`}>
+          {words[currentWordPage - 1]}
+        </p>
+      </div>
     </div>
   );
 };
