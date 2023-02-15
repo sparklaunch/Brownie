@@ -5,6 +5,8 @@ import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import { Howl } from "howler";
 import EmptyPage from "./EmptyPage";
 import rightMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/rightMicrophoneState";
+import ScoreHeader from "./ScoreHeader";
+import scoresAtom from "../../../Stores/Classroom/Story/scores";
 
 const RightPage = ({ fileName, isEmpty }) => {
   const { level } = useParams();
@@ -14,6 +16,7 @@ const RightPage = ({ fileName, isEmpty }) => {
   const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
     rightMicrophoneStateAtom
   );
+  const [scores, setScores] = useRecoilState(scoresAtom);
   const onClickRightPage = () => {
     if (!rightPagePlaying && currentPage !== 10) {
       console.log(`/assets/audio/pages/${level}-${currentPage + 1}.mp3`);
@@ -37,6 +40,11 @@ const RightPage = ({ fileName, isEmpty }) => {
           : `cursor-default`
       }`}
     >
+      {scores[`${level}-${currentPage + 1}`] && (
+        <div className={`absolute left-[50%] translate-x-[-50%] top-3`}>
+          <ScoreHeader score={scores[`${level}-${currentPage + 1}`]} />
+        </div>
+      )}
       {isEmpty ? (
         <EmptyPage direction={`right`} />
       ) : (
