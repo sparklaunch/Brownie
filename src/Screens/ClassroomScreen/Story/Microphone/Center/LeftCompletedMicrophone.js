@@ -1,10 +1,10 @@
 const LeftCompletedMicrophone = () => {
-  const onClickRetry = () => {
-
-  }
+  const onClickRetry = () => {};
   const onClickMyVoice = () => {
-
-  }
+    const leftRecord = localStorage.getItem("left_record");
+    const audio = new Audio(leftRecord);
+    audio.play();
+  };
   return (
     <div
       className={`absolute left-[50%] bottom-[-100px] translate-x-[-50%] flex flex-row`}
