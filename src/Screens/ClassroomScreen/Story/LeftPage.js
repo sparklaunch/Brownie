@@ -5,6 +5,8 @@ import { Howl } from "howler";
 import leftPagePlayingAtom from "../../../Stores/Classroom/Story/leftPagePlaying";
 import EmptyPage from "./EmptyPage";
 import leftMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
+import scoresAtom from "../../../Stores/Classroom/Story/scores";
+import ScoreHeader from "./ScoreHeader";
 
 const LeftPage = ({ fileName, isEmpty }) => {
   const [leftPagePlaying, setLeftPagePlaying] =
@@ -14,6 +16,7 @@ const LeftPage = ({ fileName, isEmpty }) => {
   );
   const { level } = useParams();
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  const [scores, setScores] = useRecoilState(scoresAtom);
   const onClickLeftPage = () => {
     if (!leftPagePlaying && currentPage !== 0) {
       console.log(`/assets/audio/pages/${level}-${currentPage}.mp3`);
@@ -37,6 +40,11 @@ const LeftPage = ({ fileName, isEmpty }) => {
           : `cursor-default`
       }`}
     >
+      {scores[`${level}-${currentPage}`] && (
+        <div className={`absolute left-[50%] translate-x-[-50%] top-3`}>
+          <ScoreHeader score={scores[`${level}-${currentPage}`]} />
+        </div>
+      )}
       {isEmpty ? (
         <EmptyPage direction={`left`} />
       ) : (

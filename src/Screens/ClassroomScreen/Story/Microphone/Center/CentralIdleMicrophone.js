@@ -8,6 +8,8 @@ import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
 import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
+import { useParams } from "react-router-dom";
+import scoresAtom from "../../../../../Stores/Classroom/Story/scores";
 
 const CentralIdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -63,10 +65,12 @@ const CentralIdleMicrophone = () => {
       }
     }
   `;
+  const { level } = useParams();
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
+  const [scores, setScores] = useRecoilState(scoresAtom);
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const sentences = useData("sentences");
@@ -119,6 +123,13 @@ const CentralIdleMicrophone = () => {
               score: totalScore,
               id: uuid()
             });
+            setScores((previous) => {
+              return {
+                ...previous,
+                [`${level}-${currentPage}`]: totalScore
+              };
+            });
+            localStorage.setItem(`${level}-${currentPage}`, totalScore);
             setResultsScreenShown(true);
           })
           .catch((error) => {
