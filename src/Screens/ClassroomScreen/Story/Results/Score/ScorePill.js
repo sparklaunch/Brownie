@@ -15,7 +15,7 @@ const ScorePill = () => {
   }
   return (
     <div
-      className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]`}
+      className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] scale-[0.8]`}
     >
       <div
         className={`flex flex-row items-center justify-center bg-white rounded-full px-8 py-1 border-2 shadow-lg ${borderColor}`}
