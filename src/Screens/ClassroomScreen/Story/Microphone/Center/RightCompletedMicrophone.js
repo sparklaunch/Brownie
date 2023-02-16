@@ -10,6 +10,7 @@ import scoresAtom from "../../../../../Stores/Classroom/Story/scores";
 import { useParams } from "react-router-dom";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
 import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
+import highlightVisibleAtom from "../../../../../Stores/Classroom/Story/highlightVisible";
 
 const RightCompletedMicrophone = () => {
   const { level } = useParams();
@@ -26,6 +27,8 @@ const RightCompletedMicrophone = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [scores, setScores] = useRecoilState(scoresAtom);
   const sentences = useData("sentences");
+  const [highlightVisible, setHighlightVisible] =
+    useRecoilState(highlightVisibleAtom);
   const recordVoice = async () => {
     try {
       const device = await navigator.mediaDevices.getUserMedia({
@@ -63,6 +66,7 @@ const RightCompletedMicrophone = () => {
             }
           )
           .then((response) => {
+            setHighlightVisible(false);
             const record = localStorage.getItem("right_record");
             new Audio(record).play();
             const stringResponse = JSON.stringify(response, null, 2);

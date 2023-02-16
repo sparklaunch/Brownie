@@ -11,6 +11,7 @@ import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import { useParams } from "react-router-dom";
 import scoresAtom from "../../../../../Stores/Classroom/Story/scores";
 import highlightedPageAtom from "../../../../../Stores/Classroom/Story/highlightedPage";
+import highlightVisibleAtom from "../../../../../Stores/Classroom/Story/highlightVisible";
 
 const CentralIdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -78,6 +79,8 @@ const CentralIdleMicrophone = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [highlightVisible, setHighlightVisible] =
+    useRecoilState(highlightVisibleAtom);
   const [highlightedPage, setHighlightedPage] =
     useRecoilState(highlightedPageAtom);
   const recordVoice = async () => {
@@ -125,6 +128,7 @@ const CentralIdleMicrophone = () => {
             }
           )
           .then((response) => {
+            setHighlightVisible(false);
             if (highlightedPage !== currentPage) {
               const record = localStorage.getItem("right_record");
               new Audio(record).play();
