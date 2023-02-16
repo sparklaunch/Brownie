@@ -19,6 +19,7 @@ import centralMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones
 import highlightedPageAtom from "../../Stores/Classroom/Story/highlightedPage";
 import navigatorOpenAtom from "../../Stores/Classroom/Story/navigatorOpen";
 import youDidItShownAtom from "../../Stores/Classroom/youDidItShown";
+import highlightVisibleAtom from "../../Stores/Classroom/Story/highlightVisible";
 
 const AudioManager = () => {
   const { level } = useParams();
@@ -88,7 +89,10 @@ const AudioManager = () => {
   const [navigatorOpen, setNavigatorOpen] = useRecoilState(navigatorOpenAtom);
   const [highlightedPage, setHighlightedPage] =
     useRecoilState(highlightedPageAtom);
+  const [highlightVisible, setHighlightVisible] =
+    useRecoilState(highlightVisibleAtom);
   useEffect(() => {
+    setHighlightVisible(true);
     setYouDidItShown(false);
     setResultsScreenShown(false);
     setLeftPageCompleted(false);
