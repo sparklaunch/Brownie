@@ -33,7 +33,9 @@ const LeftPage = ({ fileName, isEmpty, onClickLeftPage }) => {
       }`}
     >
       {scores[`${level}-${currentPage}`] !== undefined && (
-        <div className={`absolute left-[50%] translate-x-[-50%] top-3`}>
+        <div
+          className={`absolute left-[50%] translate-x-[-50%] top-3 scale-[0.7]`}
+        >
           <ScoreHeader score={scores[`${level}-${currentPage}`]} />
         </div>
       )}
