@@ -68,9 +68,9 @@ const ResultsScreen = () => {
     }, 3000);
   }, []);
   if (resultsScreenShown) {
-    if (totalScore.score >= 50) {
+    if (totalScore.score >= 70) {
       return <ExcellentScreen />;
-    } else if (totalScore.score >= 20) {
+    } else if (totalScore.score >= 40) {
       return <GoodScreen />;
     } else {
       return <NiceTryScreen />;

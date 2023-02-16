@@ -20,9 +20,9 @@ const WordImage = () => {
   };
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   let textColor;
-  if (totalScore.score >= 50) {
+  if (totalScore.score >= 70) {
     textColor = "#15B58F";
-  } else if (totalScore.score >= 20) {
+  } else if (totalScore.score >= 40) {
     textColor = "#FF8200";
   } else {
     textColor = "#FF2442";

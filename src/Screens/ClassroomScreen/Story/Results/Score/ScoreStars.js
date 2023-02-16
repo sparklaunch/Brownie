@@ -7,8 +7,8 @@ const ScoreStars = () => {
   return (
     <div className={`flex flex-row`}>
       <ScoreStar filled={true} />
-      <ScoreStar filled={totalScore.score >= 20} />
-      <ScoreStar filled={totalScore.score >= 50} />
+      <ScoreStar filled={totalScore.score >= 40} />
+      <ScoreStar filled={totalScore.score >= 70} />
     </div>
   );
 };

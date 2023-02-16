@@ -6,9 +6,9 @@ import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 const ScorePill = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   let borderColor;
-  if (totalScore.score >= 50) {
+  if (totalScore.score >= 70) {
     borderColor = `border-[#15B58F]`;
-  } else if (totalScore.score >= 20) {
+  } else if (totalScore.score >= 40) {
     borderColor = `border-[#FF8200]`;
   } else {
     borderColor = `border-[#FF2442]`;
