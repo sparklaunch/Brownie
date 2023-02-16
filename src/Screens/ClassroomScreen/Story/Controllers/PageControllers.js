@@ -34,7 +34,7 @@ const PageControllers = () => {
     }
   };
   return (
-    <div className={`flex flex-row`}>
+    <div className={`flex flex-row scale-[0.8] translate-x-[10%]`}>
       <p
         className={`font-[Jua] text-[20px] text-white px-5 py-2 bg-[#1AB9C5] rounded-3xl ${
           centralMicrophoneState !== "invisible" &&
