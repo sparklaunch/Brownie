@@ -13,7 +13,7 @@ const NiceTryScreen = () => {
         <img
           src={`/assets/images/nicetry_frog.png`}
           alt={`Nice Try Frog`}
-          className={`absolute top-[50%] translate-y-[-50%] right-[5%] h-[200px] w-[215px]`}
+          className={`absolute top-[50%] translate-y-[-50%] right-[5%] h-[200px] w-[215px] scale-[0.8]`}
         />
         <ScorePill />
         <p>{totalScore.score}</p>

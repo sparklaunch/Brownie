@@ -13,7 +13,7 @@ const ExcellentScreen = () => {
         <img
           src={`/assets/images/excellent_bat.png`}
           alt={`Excellent bat`}
-          className={`absolute top-[50%] translate-y-[-50%] right-0 h-[200px] w-[300px]`}
+          className={`absolute top-[50%] translate-y-[-50%] right-0 h-[200px] w-[300px] scale-[0.8]`}
         />
         <ScorePill />
         <p>{totalScore.score}</p>
