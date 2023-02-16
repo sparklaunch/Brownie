@@ -1,7 +1,6 @@
 import { useRecoilState } from "recoil";
 import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import { useParams } from "react-router-dom";
-import { Howl } from "howler";
 import leftPagePlayingAtom from "../../../Stores/Classroom/Story/leftPagePlaying";
 import EmptyPage from "./EmptyPage";
 import leftMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/leftMicrophoneState";
@@ -10,7 +9,7 @@ import ScoreHeader from "./ScoreHeader";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import LeftCompletedMicrophone from "./Microphone/Center/LeftCompletedMicrophone";
 
-const LeftPage = ({ fileName, isEmpty }) => {
+const LeftPage = ({ fileName, isEmpty, onClickLeftPage }) => {
   const [leftPagePlaying, setLeftPagePlaying] =
     useRecoilState(leftPagePlayingAtom);
   const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
@@ -22,26 +21,6 @@ const LeftPage = ({ fileName, isEmpty }) => {
   const { level } = useParams();
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [scores, setScores] = useRecoilState(scoresAtom);
-  const onClickLeftPage = () => {
-    if (
-      !leftPagePlaying &&
-      currentPage !== 0 &&
-      centralMicrophoneState !== "invisible" &&
-      centralMicrophoneState !== "loading"
-    ) {
-      console.log(`/assets/audio/pages/${level}-${currentPage}.mp3`);
-      const audio = new Howl({
-        src: [`/assets/audio/pages/${level}-${currentPage}.mp3`],
-        onend: function () {
-          setLeftPagePlaying(false);
-        },
-        onplay: function () {
-          setLeftPagePlaying(true);
-        }
-      });
-      audio.play();
-    }
-  };
   return (
     <div
       className={`relative w-full h-full z-[1] ${

@@ -9,6 +9,9 @@ import highlightedPageAtom from "../../../Stores/Classroom/Story/highlightedPage
 import styled from "styled-components";
 import highlightVisibleAtom from "../../../Stores/Classroom/Story/highlightVisible";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
+import { Howl } from "howler";
+import leftPagePlayingAtom from "../../../Stores/Classroom/Story/leftPagePlaying";
+import rightPagePlayingAtom from "../../../Stores/Classroom/Story/rightPagePlaying";
 
 const BookContent = () => {
   const GlowingContainer = styled.div`
@@ -35,26 +38,78 @@ const BookContent = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [leftPagePlaying, setLeftPagePlaying] =
+    useRecoilState(leftPagePlayingAtom);
+  const [rightPagePlaying, setRightPagePlaying] =
+    useRecoilState(rightPagePlayingAtom);
   const leftPageFile = `/assets/images/pages/${level}-${currentPage}.jpg`;
   const rightPageFile = `/assets/images/pages/${level}-${currentPage + 1}.jpg`;
+  const onClickLeftPage = () => {
+    if (
+      !leftPagePlaying &&
+      currentPage !== 0 &&
+      centralMicrophoneState !== "invisible" &&
+      centralMicrophoneState !== "loading"
+    ) {
+      console.log(`/assets/audio/pages/${level}-${currentPage}.mp3`);
+      const audio = new Howl({
+        src: [`/assets/audio/pages/${level}-${currentPage}.mp3`],
+        onend: function () {
+          setLeftPagePlaying(false);
+        },
+        onplay: function () {
+          setLeftPagePlaying(true);
+        }
+      });
+      audio.play();
+    }
+  };
+  const onClickRightPage = () => {
+    if (
+      !rightPagePlaying &&
+      currentPage !== 10 &&
+      centralMicrophoneState !== "invisible" &&
+      centralMicrophoneState !== "loading"
+    ) {
+      console.log(`/assets/audio/pages/${level}-${currentPage + 1}.mp3`);
+      const audio = new Howl({
+        src: [`/assets/audio/pages/${level}-${currentPage + 1}.mp3`],
+        onend: function () {
+          setRightPagePlaying(false);
+        },
+        onplay: function () {
+          setRightPagePlaying(true);
+        }
+      });
+      audio.play();
+    }
+  };
   return (
     <div className={`relative`}>
       <div className={`grid grid-cols-2 gap-0 shadow-2xl rounded-2xl`}>
         <div className={`relative`}>
-          <LeftPage fileName={leftPageFile} isEmpty={currentPage === 0} />
           {highlightedPage === currentPage &&
           highlightVisible &&
           centralMicrophoneState !== "completed" ? (
-            <GlowingContainer />
+            <GlowingContainer onClick={onClickLeftPage} />
           ) : null}
+          <LeftPage
+            fileName={leftPageFile}
+            isEmpty={currentPage === 0}
+            onClickLeftPage={onClickLeftPage}
+          />
         </div>
         <div className={`relative`}>
-          <RightPage fileName={rightPageFile} isEmpty={currentPage === 10} />
           {highlightedPage === currentPage + 1 &&
           highlightVisible &&
           centralMicrophoneState !== "completed" ? (
-            <GlowingContainer />
+            <GlowingContainer onClick={onClickRightPage} />
           ) : null}
+          <RightPage
+            fileName={rightPageFile}
+            isEmpty={currentPage === 10}
+            onClickRightPage={onClickRightPage}
+          />
         </div>
       </div>
       {resultsScreenShown && <ResultsScreen />}
