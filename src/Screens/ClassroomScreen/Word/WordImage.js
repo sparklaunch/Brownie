@@ -3,6 +3,7 @@ import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage"
 import { useRecoilState } from "recoil";
 import useData from "../../../Hooks/useData";
 import { Howl } from "howler";
+import totalScoreAtom from "../../../Stores/Classroom/Story/totalScore";
 
 const WordImage = () => {
   const words = useData("words");
@@ -17,6 +18,15 @@ const WordImage = () => {
     });
     howl.play();
   };
+  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
+  let textColor;
+  if (totalScore.score >= 50) {
+    textColor = "#15B58F";
+  } else if (totalScore.score >= 20) {
+    textColor = "#FF8200";
+  } else {
+    textColor = "#FF2442";
+  }
   return (
     <div
       className={`w-[76%] h-[76%] border-[24px] border-[#FFD53D] rounded-2xl flex flex-col justify-center items-center relative`}
@@ -35,7 +45,7 @@ const WordImage = () => {
           className={`mr-3 cursor-pointer`}
           onClick={onClickMegaphone}
         />
-        <p className={`text-[#15B58F] font-black text-[60px]`}>
+        <p className={`text-[${textColor}] font-black text-[60px]`}>
           {words[currentWordPage - 1]}
         </p>
       </div>
