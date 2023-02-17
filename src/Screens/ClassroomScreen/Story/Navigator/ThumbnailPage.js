@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import PageShadow from "./PageShadow";
 import EmptyThumbnail from "./EmptyThumbnail";
+import useData from "../../../../Hooks/useData";
 
 const ThumbnailPage = ({
   page,
@@ -11,16 +12,17 @@ const ThumbnailPage = ({
   const { level } = useParams();
   const leftEdgeGradient = `bg-gradient-to-r from-[#0C4A4E]`;
   const rightEdgeGradient = `bg-gradient-to-r from-transparent to-[#0C4A4E]`;
+  const bookID = useData("id");
   if (page <= 0 || page > 10) {
     return <EmptyThumbnail />;
   }
   return (
-    <div className={`relative`}>
+    <div className={`relative overflow-clip`}>
       <img
-        src={`/assets/images/pages/${level}-${page}.jpg`}
+        src={`/assets/images/pages/${bookID}_${page}.jpg`}
         alt={`Page ${page}`}
         loading={"lazy"}
-        className={`w-full h-full object-cover`}
+        className={`${page >= 2 && `scale-[1.15]`} w-full h-full object-cover`}
       />
       <div
         className={`absolute top-0 left-0 bottom-0 right-0 ${

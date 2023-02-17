@@ -23,7 +23,7 @@ const LeftPage = ({ fileName, isEmpty, onClickLeftPage }) => {
   const [scores, setScores] = useRecoilState(scoresAtom);
   return (
     <div
-      className={`relative w-full h-full z-[1] ${
+      className={`relative w-full h-full rounded-l-2xl overflow-clip z-[1] ${
         !leftPagePlaying &&
         currentPage !== 0 &&
         centralMicrophoneState !== "invisible" &&
@@ -49,7 +49,7 @@ const LeftPage = ({ fileName, isEmpty, onClickLeftPage }) => {
           src={fileName}
           alt={"Left Page"}
           loading={"lazy"}
-          className={`rounded-l-2xl w-full h-full object-cover cursor-pointer`}
+          className={`rounded-l-2xl w-full h-full object-cover cursor-pointer scale-[1.15]`}
           onClick={onClickLeftPage}
         />
       )}

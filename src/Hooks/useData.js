@@ -14,6 +14,10 @@ const useData = (type) => {
       return objectData.find((item) => {
         return item.level === level;
       }).words;
+    case "id":
+      return objectData.find((item) => {
+        return item.level === level;
+      }).id;
   }
 };
 

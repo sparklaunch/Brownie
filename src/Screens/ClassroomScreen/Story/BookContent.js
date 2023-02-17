@@ -12,6 +12,7 @@ import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Micropho
 import { Howl } from "howler";
 import leftPagePlayingAtom from "../../../Stores/Classroom/Story/leftPagePlaying";
 import rightPagePlayingAtom from "../../../Stores/Classroom/Story/rightPagePlaying";
+import useData from "../../../Hooks/useData";
 
 const BookContent = () => {
   const GlowingContainer = styled.div`
@@ -42,8 +43,9 @@ const BookContent = () => {
     useRecoilState(leftPagePlayingAtom);
   const [rightPagePlaying, setRightPagePlaying] =
     useRecoilState(rightPagePlayingAtom);
-  const leftPageFile = `/assets/images/pages/${level}-${currentPage}.jpg`;
-  const rightPageFile = `/assets/images/pages/${level}-${currentPage + 1}.jpg`;
+  const bookID = useData("id");
+  const leftPageFile = `/assets/images/pages/${bookID}_${currentPage}.jpg`;
+  const rightPageFile = `/assets/images/pages/${bookID}_${currentPage + 1}.jpg`;
   const onClickLeftPage = () => {
     if (
       !leftPagePlaying &&
