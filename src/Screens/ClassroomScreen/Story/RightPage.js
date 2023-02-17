@@ -23,7 +23,7 @@ const RightPage = ({ fileName, isEmpty, onClickRightPage }) => {
   const [scores, setScores] = useRecoilState(scoresAtom);
   return (
     <div
-      className={`relative z-[1] w-full h-[535px] rounded-r-2xl overflow-clip ${
+      className={`relative w-full h-full rounded-r-2xl z-[1] ${
         !rightPagePlaying &&
         currentPage !== 10 &&
         centralMicrophoneState !== "invisible" &&
