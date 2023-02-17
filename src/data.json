@@ -30,31 +30,115 @@
   },
   {
     "level": "1-2",
-    "title": "The Den"
+    "title": "The Den",
+    "sentences": [
+      "The Den",
+      "Dog has a disk",
+      "Egg has a red net",
+      "Fox has fun",
+      "Dog digs a den",
+      "Egg helps dog",
+      "Fox has fun",
+      "Dog is in the den",
+      "Egg is in the den",
+      "Fox can't have fun"
+    ]
   },
   {
     "level": "1-3",
-    "title": "Gull's Gum"
+    "title": "Gull's Gum",
+    "sentences": [
+      "Gull's Gum",
+      "Gull is on the hill",
+      "Hen is on the hill",
+      "Gull has a hat",
+      "Gull has gum",
+      "Hen gets the gum",
+      "Hen hums!",
+      "Gull hits hen",
+      "Gull gets the gum",
+      "The gum is on the hat"
+    ]
   },
   {
     "level": "1-4",
-    "title": "Jen's Jet"
+    "title": "Jen's Jet",
+    "sentences": [
+      "Jen's Jet",
+      "Jen has a jet",
+      "The jet has a kit",
+      "The kit has a log",
+      "The kit has a lamp",
+      "Jen jumps in the jet",
+      "Jen jumps into the lot",
+      "The log is lit",
+      "The lamp is lit",
+      "Jen is glad"
+    ]
   },
   {
     "level": "1-5",
-    "title": "Meg's Mat"
+    "title": "Meg's Mat",
+    "sentences": [
+      "Meg's Mat",
+      "Meg has an odd mat",
+      "Meg has a mug",
+      "Meg's mat is a mop",
+      "Meg has a nut",
+      "Meg's mat is a net",
+      "Meg has a pot",
+      "Meg's mat is a box",
+      "Meg has a nap",
+      "Meg's mat is a mat!"
+    ]
   },
   {
     "level": "1-6",
-    "title": "Pam's Quiz"
+    "title": "Pam's Quiz",
+    "sentences": [
+      "Pam's Quiz",
+      "Pam has a quiz",
+      "It is red",
+      "It is quick",
+      "Pam can pat it. What is it?",
+      "It is a red ram!",
+      "Pam has a quiz. It is pink",
+      "It is quite big",
+      "Pam can sit on it. What is it?",
+      "It is a pink quilt!"
+    ]
   },
   {
     "level": "1-7",
-    "title": "Ten Bugs"
+    "title": "Ten Bugs",
+    "sentences": [
+      "Ten Bugs",
+      "Ten bugs sit",
+      "Ten bugs sit in a van",
+      "Ten bugs sit",
+      "Ten bugs sit in the sun",
+      "Ten bugs hug",
+      "Ten bugs hug in the sun",
+      "Ten bugs run",
+      "Ten bugs run in the sun",
+      "Ten bugs hum in the van!"
+    ]
   },
   {
     "level": "1-8",
-    "title": "Zed's Zigzag"
+    "title": "Zed's Zigzag",
+    "sentences": [
+      "Zed's Zigzag",
+      "Wombat has a wig",
+      "The wig is wet",
+      "Fox has a box",
+      "The box has a zip",
+      "Yak yaps",
+      "Yak yells!",
+      "Zed zigs",
+      "Zed zags",
+      "Zed is a zigzag"
+    ]
   },
   {
     "level": "2-1",
@@ -88,66 +172,258 @@
   },
   {
     "level": "2-2",
-    "title": "Jen's Pet Hen"
+    "title": "Jen's Pet Hen",
+    "sentences": [
+      "Jen's Pet Hen",
+      "Jen has a pet hen. The hen is red",
+      "Jen has a pen. Jen's pet hen is in the pen",
+      "Is the hen sad? Jen pats the hen",
+      "The hen has an egg. The hen is not sad!",
+      "The egg is in the nest. The hen is on the egg",
+      "The egg is wet! Jen pats the egg",
+      "The egg is hot! Jen has a fan!",
+      "The hen has a nap. Jen has a nap. Is it the end?",
+      "Jen has two pets! Jen is glad"
+    ]
   },
   {
     "level": "2-3",
-    "title": "The Big Fin"
+    "title": "The Big Fin",
+    "sentences": [
+      "The Big Fin",
+      "Tim is a kid. Liz is a kid",
+      "Tim and Liz are kids. They sit in the sand",
+      "Tim has a bin. Liz has a lid",
+      "Tim and Liz mix the wet sand. They mix the sand in the bin",
+      "The sand is a big ram. The ram has a fan",
+      "Tim hits the sand. Liz is in the sand",
+      "Liz is mad. She spots a fin and a pin",
+      "Tim spots the fin. He is sad",
+      "Liz has the fin and the pin! Liz is glad!"
+    ]
   },
   {
     "level": "2-4",
-    "title": "Hot Dogs"
+    "title": "Hot Dogs",
+    "sentences": [
+      "Hot Dogs",
+      "Bob is a dog. He has a box",
+      "A pot and hot dogs are in the box. An ax is on top",
+      "Bob has the ax. He gets the log",
+      "Bob is hot. He mops his wet neck",
+      "Bob rips the box. The log is hot",
+      "Bob has the pot. He fills the pot",
+      "The pot is on the hot log. The hot dogs are in the pot",
+      "Bob is hot. He mops his wet hands",
+      "Oh! The hot dog has a hot dog!"
+    ]
   },
   {
     "level": "2-5",
-    "title": "The Bug and the Pup"
+    "title": "The Bug and the Pup",
+    "sentences": [
+      "The Bug and the Pup",
+      "The pup is in the sun. He is hot",
+      "The pup is on the rug. He has a nap",
+      "The bug is on the pup. He hugs the pup",
+      "The pup hits the bug. He has a nap",
+      "The bug is mad! He has a mug and a cup",
+      "The mug is on the pup! The cup is on the pup",
+      "The pup hits the bug. He has a nap",
+      "The sun sets. The pup gets up",
+      "The pup is red. The bug is glad!"
+    ]
   },
   {
     "level": "3-1",
-    "title": "Pam and Dave in the Cave"
+    "title": "Pam and Dave in the Cave",
+    "sentences": [
+      "Pam and Dave in the Cave",
+      "This is Pam. This is Dave. Pam and Dave are pals",
+      "Pam and Dave spot a map. It is a map to a big cave!",
+      "Pam has a cape and a cake. Dave has a lamp and a rake",
+      "Pam and Dave go to the cave. The cave is in a lake",
+      "A name is on the gate of the cave. It is the \"Big Bat's Cave.\"",
+      "Pam and Dave are in the cave. The cave is wet and dim",
+      "Pam spots a big bat! The big bat spots the cake!",
+      "Pam and Dave are brave. They pass the cake to the big bat",
+      "The big bat is glad! Pam and Dave get a cane!"
+    ]
   },
   {
     "level": "3-2",
-    "title": "Jim and Mike's Time"
+    "title": "Jim and Mike's Time",
+    "sentences": [
+      "Jim and Mike's Time",
+      "It is six! It is time to wake up!",
+      "Jim has a bite of a lime. Mike has a bite of a bun",
+      "Jim and Mike ride to the gate. Jim and Mike wave at the gate",
+      "It is five. It is time for a bike ride!",
+      "Jim rides to the pine. Mike rides to the vines",
+      "Jim is in the pine. Mike has a vine. It is a game!",
+      "It is nine! It is time for bed",
+      "Jim wipes his neck. Mike wipes his leg",
+      "Jim and Mike are in bed. They had a fun time!"
+    ]
   },
   {
     "level": "3-3",
-    "title": "Tom and Jane Go Home"
+    "title": "Tom and Jane Go Home",
+    "sentences": [
+      "Tom and Jane Go Home",
+      "This is Tom. This is Jane. This is Tom and Jane's home",
+      "Tom and Jane hope to get home. But, there is a lock",
+      "The home has a hole. Tom and Jane hope to get in the hole!",
+      "Tom spots a rope. He lobs the rope at the hole",
+      "Tom tugs on the rope. The rope drops",
+      "Jane spots a pole! Tom and Jane fix the rope to the pole",
+      "Jane lobs the pole. The rope and pole do not drop!",
+      "Tom and Jane go up the rope. They go to the hole",
+      "Tom and Jane spot Mom. Oh, no! Mom is mad!"
+    ]
   },
   {
     "level": "3-4",
-    "title": "Jude on the Dune"
+    "title": "Jude on the Dune",
+    "sentences": [
+      "Jude on the Dune",
+      "The sun is hot. Jude is on the dune",
+      "Jude has no gum. He has no cone",
+      "Jude is sad. He is lost in the dunes",
+      "Jude is hot. He takes a nap!",
+      "Jude spots a mule! He is glad. But, the mule is a tube!",
+      "Jude spots a pup! It is cute. But, the cute pup is a bug!",
+      "Jude spots a vine. It is long. But, the long vine is a fuse!",
+      "Jude spots a lake. It is big. But, can he jump in?",
+      "Yes! Jude runs to the lake and has a dip"
+    ]
   },
   {
     "level": "4-1",
-    "title": "Clem the Brave"
+    "title": "Clem the Brave",
+    "sentences": [
+      "Clem the Brave",
+      "Clem is the brave man in the frame. He has a club and a flag",
+      "Clem has a blade. It is made of flame",
+      "A crab spots Clem. The crab has the blade of flame",
+      "Clem flips the blade. The crab is tame!",
+      "A clam spots Clem. It claps at Clem, but he can block",
+      "The club is in the clam. The clam is tame!",
+      "The prize is close. It is on top of the cliff",
+      "Clem gets the prize. It is a black flag",
+      "Clem is brave, but Mom is sad"
+    ]
   },
   {
     "level": "4-2",
-    "title": "Glen and Drake's Trip"
+    "title": "Glen and Drake's Trip",
+    "sentences": [
+      "Glen and Drake's Trip",
+      "Glen and Drake have a plan. They will travel the globe",
+      "Glen and Drake have a plan. They will go up the slick slope",
+      "Glen drives to the slope. He drives in a truck",
+      "Drake has a sled and a trunk. They are for the trip to the top",
+      "The slope is slick! Glen drops the sled",
+      "Drake is quick! He drags the sled up",
+      "Glen treks to the top. He spots the truck",
+      "Drake treks to the top. He has a drink from the trunk",
+      "Glen and Drake slide home on the sled. They get a prize. It is a glass globe"
+    ]
   },
   {
     "level": "4-3",
-    "title": "The Bank in Hong Kong"
+    "title": "The Bank in Hong Kong",
+    "sentences": [
+      "The Bank in Hong Kong",
+      "The bank in Hong Kong is quite long",
+      "It is on the strip next to the dock",
+      "The king has a ring. It is made of a pink stone",
+      "The king stops at the bank. He brings the ring home",
+      "The skunk has a stripe. It makes a stink",
+      "The skunk snaps the stripe on its back. It smiles and winks!",
+      "The snake is swift. It swims to the bank!",
+      "The snake gets its tank. It sits in the tank and snores",
+      "The bank in Hong Kong has a line. The line is quite long!"
+    ]
   },
   {
     "level": "4-4",
-    "title": "The White Fish"
+    "title": "The White Fish",
+    "sentences": [
+      "The White Fish",
+      "Beth has a plan. The plan is to get her wish",
+      "Beth has a plan. The plan is to see the white fish",
+      "She does the math. She figures the path",
+      "She has a fish and a ship. She runs the plan in the bath",
+      "Beth sits on the white ship. She has a chest",
+      "Beth has fins in the chest. She has a branch in the chest",
+      "Beth dives into the sea. She makes a splash!",
+      "Beth sees the white fish. It swims by in a flash!",
+      "Beth got her wish. She chased the white fish!"
+    ]
   },
   {
     "level": "5-1",
-    "title": "The Shoal Beast"
+    "title": "The Shoal Beast",
+    "sentences": [
+      "The Shoal Beast",
+      "A strong wind blows on the sea. It blows to the east",
+      "The sea flows to the east. It flows to the home of the Shoal Beast",
+      "A green boat floats on the sea. It floats to the east",
+      "Jean is on the green boat. Joan is on the green boat",
+      "Jean has a bowl of seeds. Joan has a box of tea",
+      "The sea roars! The Shoal Beast soars!",
+      "Jean and Joan see the beast! The beast sees Jean and Joan",
+      "Jean throws the seeds at the beast. They are in the throat of the beast",
+      "The beast has the seeds, but Joan has the tea"
+    ]
   },
   {
     "level": "5-2",
-    "title": "The Train in Spain"
+    "title": "The Train in Spain",
+    "sentences": [
+      "The Train in Spain",
+      "The train in Spain runs on the rails. It runs on the rails each day",
+      "The train in Spain brings the mail. The train in Spain takes the soil",
+      "The boy waits for the train in Spain. He waits for the mail",
+      "The boy waits in the rain. He waits in the hail!",
+      "The boy gets the mail. The mail is a toy. The boy feels joy",
+      "The man waits for the train in Spain. He waits for the soil",
+      "He waits on the plain. He waits in the heat",
+      "The man gets the soil. He plants the grain. He feels joy",
+      "The train in Spain runs on the rails. It runs on the rails each day"
+    ]
   },
   {
     "level": "5-3",
-    "title": "The Fairgrounds"
+    "title": "The Fairgrounds",
+    "sentences": [
+      "The Fairgrounds",
+      "The fair is in town. Burt and his sister go to the fairgrounds",
+      "They see boys play in the crowd. They see girls shop at the grounds",
+      "Outside the big tent, clowns shout! They jump around in the dirt",
+      "A fire eater has a burning shirt. But, she is not hurt!",
+      "Burt and his sister are on the big wheel. They can see the town and the grounds",
+      "They see singers sing aloud. They see jugglers in the crowd",
+      "Burt takes his turn in the bird game. He wins a crown!",
+      "His sister takes her turn in the bird game. She wins a brown gown",
+      "The fair is in town. Burt and his sister had fun at the fairgrounds!"
+    ]
   },
   {
     "level": "5-4",
-    "title": "Mark and the White Stork"
+    "title": "Mark and the White Stork",
+    "sentences": [
+      "Mark and the White Stork",
+      "The park is dark. The park is cool",
+      "Mark is at the park. He is snoring next to the pool",
+      "Mark looks up at the moon. He looks up at the stars",
+      "Mark hopes to soar to Mars. He hopes to soar to the North Star",
+      "A part forms in the pool. It is not dark!",
+      "A white stork zooms into the park! The stork has a hook",
+      "Mark's foot is on the hook. He hops on the white stork",
+      "Mark and the stork zoom to Mars! They zoom to the North Star",
+      "Mark wakes with a start! He is at the park, but it is not dark!"
+    ]
   }
 ]
