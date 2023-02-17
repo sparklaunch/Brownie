@@ -53,9 +53,8 @@ const BookContent = () => {
       centralMicrophoneState !== "invisible" &&
       centralMicrophoneState !== "loading"
     ) {
-      console.log(`/assets/audio/pages/${level}-${currentPage}.mp3`);
       const audio = new Howl({
-        src: [`/assets/audio/pages/${level}-${currentPage}.mp3`],
+        src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
         onend: function () {
           setLeftPagePlaying(false);
         },
@@ -73,9 +72,8 @@ const BookContent = () => {
       centralMicrophoneState !== "invisible" &&
       centralMicrophoneState !== "loading"
     ) {
-      console.log(`/assets/audio/pages/${level}-${currentPage + 1}.mp3`);
       const audio = new Howl({
-        src: [`/assets/audio/pages/${level}-${currentPage + 1}.mp3`],
+        src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
         onend: function () {
           setRightPagePlaying(false);
         },

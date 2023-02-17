@@ -91,6 +91,7 @@ const AudioManager = () => {
     useRecoilState(highlightedPageAtom);
   const [highlightVisible, setHighlightVisible] =
     useRecoilState(highlightVisibleAtom);
+  const bookID = useData("id");
   useEffect(() => {
     setHighlightVisible(true);
     setYouDidItShown(false);
@@ -105,7 +106,7 @@ const AudioManager = () => {
     if (mode === "story") {
       if (currentPage === 0) {
         const howler = new Howl({
-          src: [`/assets/audio/pages/${level}-1.mp3`],
+          src: [`/assets/audio/pages/${bookID}_1.mp3`],
           onload: () => {
             setAudioDuration(howler.duration() * 1000 + 2000);
           },
@@ -115,7 +116,7 @@ const AudioManager = () => {
         howler.play();
       } else {
         const howler = new Howl({
-          src: [`/assets/audio/pages/${level}-${currentPage}.mp3`],
+          src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
           onload: () => {
             setAudioDuration(howler.duration() * 1000 + 2000);
           },
@@ -139,7 +140,7 @@ const AudioManager = () => {
   useEffect(() => {
     if (leftPageCompleted && !leftFinished) {
       const howler = new Howl({
-        src: [`/assets/audio/pages/${level}-${currentPage + 1}.mp3`],
+        src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
         onload: () => {
           setAudioDuration(howler.duration() * 1000 + 2000);
         },
