@@ -32,28 +32,30 @@ const RightPage = ({ fileName, isEmpty, onClickRightPage }) => {
           : `cursor-default`
       }`}
     >
-      {scores[`${level}-${currentPage + 1}`] !== undefined && (
-        <div
-          className={`absolute left-[50%] translate-x-[-50%] top-3 scale-[0.7]`}
-        >
-          <ScoreHeader score={scores[`${level}-${currentPage + 1}`]} />
-        </div>
-      )}
       {centralMicrophoneState === "completed" && currentPage !== 10 ? (
         <RightCompletedMicrophone />
       ) : null}
       {isEmpty ? (
         <EmptyPage direction={`right`} />
       ) : (
-        <img
-          src={fileName}
-          alt={"Right Page"}
-          loading={"lazy"}
-          className={`rounded-r-2xl w-full h-full object-cover cursor-pointer ${
-            currentPage >= 1 && `scale-[1.15]`
-          }`}
-          onClick={onClickRightPage}
-        />
+        <div className={`w-[405.5px] h-[535px] overflow-clip rounded-r-2xl`}>
+          <img
+            src={fileName}
+            alt={"Right Page"}
+            loading={"lazy"}
+            className={`rounded-r-2xl w-full h-full object-cover cursor-pointer ${
+              currentPage >= 1 && `scale-[1.15]`
+            }`}
+            onClick={onClickRightPage}
+          />
+        </div>
+      )}
+      {scores[`${level}-${currentPage + 1}`] !== undefined && (
+        <div
+          className={`absolute left-[50%] translate-x-[-50%] top-3 scale-[0.7]`}
+        >
+          <ScoreHeader score={scores[`${level}-${currentPage + 1}`]} />
+        </div>
       )}
       <div
         className={`absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-[#555555] opacity-50`}
