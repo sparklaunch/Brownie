@@ -1,6 +1,9 @@
 import CatalogLabel from "./CatalogLabel";
 import CatalogTitle from "./CatalogTitle";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
+import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 
 const CatalogItem = ({
   coverImage,
@@ -8,6 +11,9 @@ const CatalogItem = ({
   clickable = true,
   forDemo = false
 }) => {
+  const [currentWordPage, setCurrentWordPage] =
+    useRecoilState(currentWordPageAtom);
+  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const navigate = useNavigate();
   const onClickCatalogItem = () => {
     if (forDemo) {
@@ -22,7 +28,9 @@ const CatalogItem = ({
     //   title: data.title
     // });
     // setModalOpen(true);
-    navigate(`/classroom/${data.level}`);
+    setCurrentWordPage(1);
+    setCurrentPage(0);
+    navigate(`/demo/${data.level}`);
   };
   return (
     <div className={`relative drop-shadow-lg`}>
