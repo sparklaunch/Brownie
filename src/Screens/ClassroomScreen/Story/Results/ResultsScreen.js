@@ -40,6 +40,7 @@ const ResultsScreen = () => {
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const words = useData("words");
+  const bookID = useData("id");
   useEffect(() => {
     new Audio(`/assets/audio/results_shown.mp3`).play();
     setTimeout(() => {
@@ -61,7 +62,10 @@ const ResultsScreen = () => {
           setRightMicrophoneState("idle");
         }
       }
-      if (currentPage === 10 || currentWordPage === words.length) {
+      if (
+        (currentPage === 10 || currentWordPage === words.length) &&
+        (bookID === 1 || bookID === 9)
+      ) {
         new Audio(`/assets/audio/you_did_it.mp3`).play();
         setYouDidItShown(true);
       }
