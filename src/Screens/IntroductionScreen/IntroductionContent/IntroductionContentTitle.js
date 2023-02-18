@@ -1,6 +1,6 @@
 const IntroductionContentTitle = () => {
   return (
-    <div className={`flex flex-col items-center`}>
+    <div className={`flex flex-col items-center mb-[60px]`}>
       <p className={`font-[Jua] text-[44px] mb-[16px]`}>AI 스피킹이란?</p>
       <p className={`text-[20px] text-[#515151]`}>
         영어를 읽고 말하기 학습을 할 수 있는
