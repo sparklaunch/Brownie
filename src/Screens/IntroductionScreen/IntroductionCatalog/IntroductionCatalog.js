@@ -1,4 +1,5 @@
 import IntroductionCatalogTitle from "./IntroductionCatalogTitle";
+import IntroductionCatalogSpecimen from "./IntroductionCatalogSpecimen";
 
 const IntroductionCatalog = () => {
   return (
@@ -7,6 +8,7 @@ const IntroductionCatalog = () => {
     >
       <div className={`w-[1200px] flex flex-col items-center`}>
         <IntroductionCatalogTitle />
+        <IntroductionCatalogSpecimen />
       </div>
     </div>
   );
