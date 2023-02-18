@@ -2,6 +2,7 @@ import IntroductionHeader from "./IntroductionHeader";
 import IntroductionContent from "./IntroductionContent/IntroductionContent";
 import IntroductionPreviews from "./IntroductionPreviews/IntroductionPreviews";
 import IntroductionCatalog from "./IntroductionCatalog/IntroductionCatalog";
+import IntroductionTry from "./IntroductionTry/IntroductionTry";
 
 const Introduction = () => {
   return (
@@ -10,6 +11,7 @@ const Introduction = () => {
       <IntroductionContent />
       <IntroductionPreviews />
       <IntroductionCatalog />
+      <IntroductionTry />
     </div>
   );
 };
