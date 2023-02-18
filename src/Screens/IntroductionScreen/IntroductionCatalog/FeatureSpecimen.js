@@ -1,5 +1,13 @@
 const FeatureSpecimen = () => {
-  return <div></div>;
+  return (
+    <div>
+      <img
+        src={`/assets/images/feature.png`}
+        alt={`Feature`}
+        className={`mb-[36px] w-[600px]`}
+      />
+    </div>
+  );
 };
 
 export default FeatureSpecimen;

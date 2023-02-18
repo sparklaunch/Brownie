@@ -3,7 +3,7 @@ import FeatureSpecimen from "./FeatureSpecimen";
 
 const IntroductionCatalogSpecimen = () => {
   return (
-    <div className={`flex flex-row justify-around`}>
+    <div className={`w-full flex flex-row justify-around`}>
       <TextbooksSpecimen />
       <FeatureSpecimen />
     </div>

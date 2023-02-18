@@ -4,7 +4,7 @@ const TextbooksSpecimen = () => {
       <img
         src={`/assets/images/textbooks.png`}
         alt={`Textbooks`}
-        className={`mb-[36px]`}
+        className={`mb-[36px] w-[400px]`}
       />
       <p className={`text-[#999999] text-[16px] font-bold mb-[12px]`}>
         파닉스 전용 Phonics Fun Readers
