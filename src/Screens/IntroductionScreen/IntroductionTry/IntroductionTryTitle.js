@@ -1,6 +1,6 @@
 const IntroductionTryTitle = () => {
   return (
-    <div>
+    <div className={`mb-[130px]`}>
       <p className={`text-white font-[Jua] text-[44px]`}>
         AI 스피킹으로 우리 아이 영어 말하기
       </p>
