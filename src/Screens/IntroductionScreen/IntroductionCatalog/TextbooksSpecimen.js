@@ -1,6 +1,6 @@
 const TextbooksSpecimen = () => {
   return (
-    <div className={`flex flex-col items-center`}>
+    <div className={`flex flex-col items-center justify-center`}>
       <img
         src={`/assets/images/textbooks.png`}
         alt={`Textbooks`}

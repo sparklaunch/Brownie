@@ -1,6 +1,6 @@
 const FeatureSpecimen = () => {
   return (
-    <div>
+    <div className={`flex flex-col justify-center`}>
       <img
         src={`/assets/images/feature.png`}
         alt={`Feature`}
