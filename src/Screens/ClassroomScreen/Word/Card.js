@@ -69,7 +69,9 @@ const Card = () => {
         <div className={`absolute top-[-50px] left-0`}>
           <CardTitle />
         </div>
-        <div className={`absolute top-[-60px] right-[-100px]`}>
+        <div
+          className={`absolute top-[20px] right-[-110px] desktop:top-[-60px] desktop:right-[-100px]`}
+        >
           <HomeButton />
         </div>
         {resultsScreenShown && (
