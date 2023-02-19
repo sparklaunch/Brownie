@@ -9,6 +9,12 @@ import { Howl } from "howler";
 import leftPagePlayingAtom from "../../../Stores/Classroom/Story/leftPagePlaying";
 import rightPagePlayingAtom from "../../../Stores/Classroom/Story/rightPagePlaying";
 import useData from "../../../Hooks/useData";
+import {
+  GlowingContainer,
+  LeftPageContainer,
+  PagesContainer
+} from "./BookContentStyles";
+import LeftPage from "./LeftPage";
 
 const BookContent = () => {
   const { level } = useParams();
@@ -69,19 +75,19 @@ const BookContent = () => {
     }
   };
   return (
-    <div>
-      {/*<div className={`relative`}>*/}
-      {/*  {highlightedPage === currentPage &&*/}
-      {/*  highlightVisible &&*/}
-      {/*  centralMicrophoneState !== "completed" ? (*/}
-      {/*    <GlowingContainer onClick={onClickLeftPage} />*/}
-      {/*  ) : null}*/}
-      {/*  <LeftPage*/}
-      {/*    fileName={leftPageFile}*/}
-      {/*    isEmpty={currentPage === 0}*/}
-      {/*    onClickLeftPage={onClickLeftPage}*/}
-      {/*  />*/}
-      {/*</div>*/}
+    <PagesContainer>
+      <LeftPageContainer>
+        {highlightedPage === currentPage &&
+        highlightVisible &&
+        centralMicrophoneState !== "completed" ? (
+          <GlowingContainer onClick={onClickLeftPage} />
+        ) : null}
+        <LeftPage
+          fileName={leftPageFile}
+          isEmpty={currentPage === 0}
+          onClickLeftPage={onClickLeftPage}
+        />
+      </LeftPageContainer>
       {/*<div className={`relative`}>*/}
       {/*  {highlightedPage === currentPage + 1 &&*/}
       {/*  highlightVisible &&*/}
@@ -95,7 +101,7 @@ const BookContent = () => {
       {/*  />*/}
       {/*</div>*/}
       {/*{resultsScreenShown && <ResultsScreen />}*/}
-    </div>
+    </PagesContainer>
   );
 };
 
