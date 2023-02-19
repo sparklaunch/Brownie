@@ -20,6 +20,7 @@ import { useParams } from "react-router-dom";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import YouDidItScreen from "../Story/Results/YouDidIt/YouDidItScreen";
+import InsetBorder from "./InsetBorder";
 
 const Card = () => {
   const { level } = useParams();
@@ -42,6 +43,9 @@ const Card = () => {
       <div
         className={`w-[94vh] h-[62vh] relative bg-white rounded-2xl shadow-2xl`}
       >
+        <div className={`absolute top-0 left-0 bottom-0 right-0`}>
+          <InsetBorder />
+        </div>
         <div className={`absolute top-[20px] left-[150px]`}>
           <Instructions />
         </div>
