@@ -1,19 +1,24 @@
 import { Grid } from "@mui/material";
 import CatalogItem from "./CatalogItem";
+import {
+  CatalogLevelContainer,
+  CatalogLevelLabel,
+  CatalogLevelLabelContainer
+} from "./CatalogLevelStyles";
 
 const CatalogLevel = ({ level, maxUnit, data }) => {
   const coverImages = Array.from(Array(maxUnit).keys()).map((unit) => {
     return `${level}-${unit + 1}.jpg`;
   });
   return (
-    <div className={`mb-8`}>
-      <div className={`flex flex-row items-center mb-2`}>
+    <CatalogLevelContainer>
+      <CatalogLevelLabelContainer>
         <img
           src={"assets/images/icons/snowflake_icon.svg"}
           alt={"Snowflake Icon"}
         />
-        <p className={`font-[Jua] text-[20px] ml-2`}>Level {level}</p>
-      </div>
+        <CatalogLevelLabel>Level {level}</CatalogLevelLabel>
+      </CatalogLevelLabelContainer>
       <Grid container spacing={2}>
         {coverImages.map((coverImage, index) => {
           return (
@@ -23,7 +28,7 @@ const CatalogLevel = ({ level, maxUnit, data }) => {
           );
         })}
       </Grid>
-    </div>
+    </CatalogLevelContainer>
   );
 };
 
