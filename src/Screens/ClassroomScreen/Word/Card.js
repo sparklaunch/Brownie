@@ -9,6 +9,7 @@ import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import InsetBorder from "./InsetBorder";
 import {
   CardOuterContainer,
+  CardTitleContainer,
   InsetBorderContainer,
   InstructionsContainer,
   ModeButtonsContainer,
@@ -21,6 +22,7 @@ import Pagination from "./Pagination";
 import ModeButtons from "../Mode/ModeButtons";
 import WordLeftPageTurner from "./Pager/WordLeftPageTurner";
 import WordRightPageTurner from "./Pager/WordRightPageTurner";
+import CardTitle from "./CardTitle";
 
 const Card = () => {
   const { level } = useParams();
@@ -61,9 +63,9 @@ const Card = () => {
       <WordRightPageTurnerContainer>
         <WordRightPageTurner />
       </WordRightPageTurnerContainer>
-      {/*<div className={`absolute top-[-50px] left-0`}>*/}
-      {/*  <CardTitle />*/}
-      {/*</div>*/}
+      <CardTitleContainer>
+        <CardTitle />
+      </CardTitleContainer>
       {/*<div*/}
       {/*  className={`absolute top-[20px] right-[-110px] desktop:top-[-60px] desktop:right-[-100px]`}*/}
       {/*>*/}

@@ -67,6 +67,11 @@ const WordRightPageTurnerContainer = styled.div`
   }
 `;
 
+const CardTitleContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+`;
+
 export {
   CardOuterContainer,
   InsetBorderContainer,
@@ -74,5 +79,6 @@ export {
   PaginationContainer,
   ModeButtonsContainer,
   WordLeftPageTurnerContainer,
-  WordRightPageTurnerContainer
+  WordRightPageTurnerContainer,
+  CardTitleContainer
 };
