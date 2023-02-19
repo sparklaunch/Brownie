@@ -90,6 +90,21 @@ const MicrophoneContainer = styled.div`
   }
 `;
 
+const WordContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
 export {
   CardOuterContainer,
   InsetBorderContainer,
@@ -100,5 +115,6 @@ export {
   WordRightPageTurnerContainer,
   CardTitleContainer,
   HomeButtonContainer,
-  MicrophoneContainer
+  MicrophoneContainer,
+  WordContainer
 };

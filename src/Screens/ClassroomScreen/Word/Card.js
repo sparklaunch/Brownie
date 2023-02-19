@@ -16,6 +16,7 @@ import {
   MicrophoneContainer,
   ModeButtonsContainer,
   PaginationContainer,
+  WordContainer,
   WordLeftPageTurnerContainer,
   WordRightPageTurnerContainer
 } from "./CardStyles";
@@ -27,6 +28,8 @@ import WordRightPageTurner from "./Pager/WordRightPageTurner";
 import CardTitle from "./CardTitle";
 import HomeButton from "../HomeButton";
 import Microphone from "./Microphone/Microphone";
+import WordImage from "./WordImage";
+import WordCard from "./WordCard";
 
 const Card = () => {
   const { level } = useParams();
@@ -44,6 +47,9 @@ const Card = () => {
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   return (
     <CardOuterContainer>
+      <WordContainer>
+        {wordMicrophoneState === "completed" ? <WordImage /> : <WordCard />}
+      </WordContainer>
       <InsetBorderContainer>
         <InsetBorder />
       </InsetBorderContainer>
@@ -53,11 +59,6 @@ const Card = () => {
       <PaginationContainer>
         <Pagination />
       </PaginationContainer>
-      {/*<div*/}
-      {/*  className={`absolute top-0 left-0 bottom-0 right-0 flex flex-col justify-center items-center`}*/}
-      {/*>*/}
-      {/*  {wordMicrophoneState === "completed" ? <WordImage /> : <WordCard />}*/}
-      {/*</div>*/}
       <ModeButtonsContainer>
         <ModeButtons />
       </ModeButtonsContainer>
