@@ -69,6 +69,15 @@ const WordRightPageTurnerContainer = styled.div`
 
 const CardTitleContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
+    display: none;
+  }
+`;
+
+const HomeButtonContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 20px;
+    right: -120px;
   }
 `;
 
@@ -80,5 +89,6 @@ export {
   ModeButtonsContainer,
   WordLeftPageTurnerContainer,
   WordRightPageTurnerContainer,
-  CardTitleContainer
+  CardTitleContainer,
+  HomeButtonContainer
 };

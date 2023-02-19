@@ -10,6 +10,7 @@ import InsetBorder from "./InsetBorder";
 import {
   CardOuterContainer,
   CardTitleContainer,
+  HomeButtonContainer,
   InsetBorderContainer,
   InstructionsContainer,
   ModeButtonsContainer,
@@ -23,6 +24,7 @@ import ModeButtons from "../Mode/ModeButtons";
 import WordLeftPageTurner from "./Pager/WordLeftPageTurner";
 import WordRightPageTurner from "./Pager/WordRightPageTurner";
 import CardTitle from "./CardTitle";
+import HomeButton from "../HomeButton";
 
 const Card = () => {
   const { level } = useParams();
@@ -66,11 +68,9 @@ const Card = () => {
       <CardTitleContainer>
         <CardTitle />
       </CardTitleContainer>
-      {/*<div*/}
-      {/*  className={`absolute top-[20px] right-[-110px] desktop:top-[-60px] desktop:right-[-100px]`}*/}
-      {/*>*/}
-      {/*  <HomeButton />*/}
-      {/*</div>*/}
+      <HomeButtonContainer>
+        <HomeButton />
+      </HomeButtonContainer>
       {/*{resultsScreenShown && (*/}
       {/*  <div>*/}
       {/*    <ResultsScreen />*/}
