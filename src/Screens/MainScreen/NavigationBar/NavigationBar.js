@@ -1,16 +1,18 @@
 import Logo from "./Logo";
 import NavigationContent from "./NavigationContent";
+import {
+  NavigationBarInnerContainer,
+  NavigationBarOuterContainer
+} from "./NavigationBarStyles";
 
 const NavigationBar = () => {
   return (
-    <div className={`flex justify-center shadow-md`}>
-      <div
-        className={`flex w-[1200px] h-[136px] flex-row justify-between items-center`}
-      >
+    <NavigationBarOuterContainer>
+      <NavigationBarInnerContainer>
         <Logo />
         <NavigationContent />
-      </div>
-    </div>
+      </NavigationBarInnerContainer>
+    </NavigationBarOuterContainer>
   );
 };
 
