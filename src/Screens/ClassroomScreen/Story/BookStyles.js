@@ -79,6 +79,12 @@ const CentralMicrophoneContainer = styled.div`
   }
 `;
 
+const NavigatorContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    display: none;
+  }
+`;
+
 export {
   BookContainer,
   BookContentContainer,
@@ -88,5 +94,6 @@ export {
   PageControllersContainer,
   HomeButtonContainer,
   BookTitleContainer,
-  CentralMicrophoneContainer
+  CentralMicrophoneContainer,
+  NavigatorContainer
 };

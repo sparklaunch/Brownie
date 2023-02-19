@@ -9,6 +9,7 @@ import {
   HomeButtonContainer,
   LeftPageTurnerContainer,
   ModeButtonsContainer,
+  NavigatorContainer,
   PageControllersContainer,
   RightPageTurnerContainer
 } from "./BookStyles";
@@ -20,6 +21,7 @@ import PageControllers from "./Controllers/PageControllers";
 import HomeButton from "../HomeButton";
 import BookTitle from "./BookTitle";
 import CentralMicrophone from "./Microphone/Center/CentralMicrophone";
+import Navigator from "./Navigator/Navigator";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -66,7 +68,9 @@ const Book = () => {
       {/*    /!*<LoadingSpinner />*!/*/}
       {/*  </div>*/}
       {/*)}*/}
-      {/*<Navigator />*/}
+      <NavigatorContainer>
+        <Navigator />
+      </NavigatorContainer>
       {/*{youDidItShown && (*/}
       {/*  <div className={`absolute top-0 left-0 bottom-0 right-0 z-[3]`}>*/}
       {/*    <YouDidItScreen />*/}
