@@ -13,8 +13,6 @@ const CardOuterContainer = styled.div`
     margin-left: 140px;
     margin-right: 140px;
   }
-  @media (min-width: 1280px) {
-  }
 `;
 
 const InsetBorderContainer = styled.div`
@@ -25,8 +23,6 @@ const InsetBorderContainer = styled.div`
     right: 0;
     bottom: 0;
   }
-  @media (min-width: 1280px) {
-  }
 `;
 
 const InstructionsContainer = styled.div`
@@ -35,8 +31,6 @@ const InstructionsContainer = styled.div`
     top: 20px;
     left: 140px;
   }
-  @media (min-width: 1280px) {
-  }
 `;
 
 const ModeButtonsContainer = styled.div`
@@ -44,8 +38,6 @@ const ModeButtonsContainer = styled.div`
     position: absolute;
     top: 20px;
     left: -120px;
-  }
-  @media (min-width: 1280px) {
   }
 `;
 
@@ -57,14 +49,21 @@ const PaginationContainer = styled.div`
     background-color: #ffa63d;
     border-bottom-right-radius: 20px;
   }
-  @media (min-width: 1280px) {
-  }
 `;
 
 const WordLeftPageTurnerContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    left: -90px;
+    bottom: 30px;
   }
-  @media (min-width: 1280px) {
+`;
+
+const WordRightPageTurnerContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    right: -90px;
+    bottom: 30px;
   }
 `;
 
@@ -74,5 +73,6 @@ export {
   InstructionsContainer,
   PaginationContainer,
   ModeButtonsContainer,
-  WordLeftPageTurnerContainer
+  WordLeftPageTurnerContainer,
+  WordRightPageTurnerContainer
 };
