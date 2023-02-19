@@ -50,8 +50,14 @@ const InsetBorderContainer = styled.div`
 
 const InstructionsContainer = styled.div`
   @media (max-width: 767px) {
+    position: absolute;
+    top: 20px;
+    left: 140px;
   }
   @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 20px;
+    left: 140px;
   }
   @media (min-width: 1280px) {
   }
