@@ -81,6 +81,15 @@ const HomeButtonContainer = styled.div`
   }
 `;
 
+const MicrophoneContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -105px;
+  }
+`;
+
 export {
   CardOuterContainer,
   InsetBorderContainer,
@@ -90,5 +99,6 @@ export {
   WordLeftPageTurnerContainer,
   WordRightPageTurnerContainer,
   CardTitleContainer,
-  HomeButtonContainer
+  HomeButtonContainer,
+  MicrophoneContainer
 };

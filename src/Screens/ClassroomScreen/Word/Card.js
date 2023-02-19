@@ -13,6 +13,7 @@ import {
   HomeButtonContainer,
   InsetBorderContainer,
   InstructionsContainer,
+  MicrophoneContainer,
   ModeButtonsContainer,
   PaginationContainer,
   WordLeftPageTurnerContainer,
@@ -25,6 +26,7 @@ import WordLeftPageTurner from "./Pager/WordLeftPageTurner";
 import WordRightPageTurner from "./Pager/WordRightPageTurner";
 import CardTitle from "./CardTitle";
 import HomeButton from "../HomeButton";
+import Microphone from "./Microphone/Microphone";
 
 const Card = () => {
   const { level } = useParams();
@@ -91,7 +93,9 @@ const Card = () => {
       {/*    <YouDidItScreen />*/}
       {/*  </div>*/}
       {/*)}*/}
-      {/*<Microphone />*/}
+      <MicrophoneContainer>
+        <Microphone />
+      </MicrophoneContainer>
     </CardOuterContainer>
   );
 };
