@@ -42,10 +42,10 @@ const Card = () => {
       <div
         className={`w-[94vh] h-[62vh] relative bg-white rounded-2xl shadow-2xl`}
       >
-        <div className={`absolute top-[20px] left-[20px]`}>
+        <div className={`absolute top-[20px] left-[150px]`}>
           <Instructions />
         </div>
-        <div className={`absolute top-[20px] right-[20px]`}>
+        <div className={`absolute top-0 left-0`}>
           <Pagination />
         </div>
         <div

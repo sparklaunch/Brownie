@@ -1,16 +1,12 @@
-import { useRecoilState } from "recoil";
-import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
-import useData from "../../../Hooks/useData";
-
 const Pagination = () => {
-  const words = useData("words");
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
   return (
-    <p className={`text-[28px] text-[#515151] font-bold tracking-wide`}>
-      {currentWordPage}
-      <span className={`text-[20px] text-gray-400`}>/{words.length}</span>
-    </p>
+    <div className={`rounded-tl-2xl rounded-br-2xl bg-[#FFA63D]`}>
+      <p
+        className={`font-black text-[28px] tracking-widest px-[36px] py-[14px] text-white`}
+      >
+        1<span className={`font-normal text-[20px] text-white`}>/9</span>
+      </p>
+    </div>
   );
 };
 
