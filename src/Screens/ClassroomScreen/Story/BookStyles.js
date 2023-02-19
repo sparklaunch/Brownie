@@ -44,9 +44,18 @@ const LeftPageTurnerContainer = styled.div`
   }
 `;
 
+const RightPageTurnerContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+  }
+`;
+
 export {
   BookContainer,
   BookContentContainer,
   ModeButtonsContainer,
-  LeftPageTurnerContainer
+  LeftPageTurnerContainer,
+  RightPageTurnerContainer
 };

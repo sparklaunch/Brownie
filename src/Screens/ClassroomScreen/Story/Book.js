@@ -5,11 +5,13 @@ import {
   BookContainer,
   BookContentContainer,
   LeftPageTurnerContainer,
-  ModeButtonsContainer
+  ModeButtonsContainer,
+  RightPageTurnerContainer
 } from "./BookStyles";
 import BookContent from "./BookContent";
 import ModeButtons from "../Mode/ModeButtons";
 import LeftPageTurner from "./Pager/LeftPageTurner";
+import RightPageTurner from "./Pager/RightPageTurner";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -24,9 +26,9 @@ const Book = () => {
       <LeftPageTurnerContainer>
         <LeftPageTurner />
       </LeftPageTurnerContainer>
-      {/*<div className={`absolute top-[50%] right-[-80px] translate-y-[-50%]`}>*/}
-      {/*  <RightPageTurner />*/}
-      {/*</div>*/}
+      <RightPageTurnerContainer>
+        <RightPageTurner />
+      </RightPageTurnerContainer>
       {/*<div className={`absolute top-[-60px] right-0`}>*/}
       {/*  <PageControllers />*/}
       {/*</div>*/}
