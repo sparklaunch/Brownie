@@ -29,7 +29,7 @@ const WordImage = () => {
   }
   return (
     <div
-      className={`w-[76%] h-[76%] border-[24px] border-[#FFD53D] rounded-2xl flex flex-col justify-center items-center relative`}
+      className={`w-[76%] h-[76%] rounded-2xl flex flex-col justify-center items-center relative`}
     >
       <img
         src={`/assets/images/words/${level}-${words[currentWordPage - 1]}.png`}
