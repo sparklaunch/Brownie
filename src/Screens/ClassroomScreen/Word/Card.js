@@ -11,10 +11,12 @@ import {
   CardOuterContainer,
   InsetBorderContainer,
   InstructionsContainer,
+  ModeButtonsContainer,
   PaginationContainer
 } from "./CardStyles";
 import Instructions from "./Instructions";
 import Pagination from "./Pagination";
+import ModeButtons from "../Mode/ModeButtons";
 
 const Card = () => {
   const { level } = useParams();
@@ -46,9 +48,9 @@ const Card = () => {
       {/*>*/}
       {/*  {wordMicrophoneState === "completed" ? <WordImage /> : <WordCard />}*/}
       {/*</div>*/}
-      {/*<div className={`absolute top-[20px] desktop:top-0 left-[-120px]`}>*/}
-      {/*  <ModeButtons />*/}
-      {/*</div>*/}
+      <ModeButtonsContainer>
+        <ModeButtons />
+      </ModeButtonsContainer>
       {/*<div*/}
       {/*  className={`absolute left-[-80px] bottom-[30px] desktop:top-[50%] desktop:left-[-80px] desktop:translate-y-[-50%]`}*/}
       {/*>*/}

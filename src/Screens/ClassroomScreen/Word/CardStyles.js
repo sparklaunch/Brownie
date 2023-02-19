@@ -63,6 +63,21 @@ const InstructionsContainer = styled.div`
   }
 `;
 
+const ModeButtonsContainer = styled.div`
+  @media (max-width: 767px) {
+    position: absolute;
+    top: 20px;
+    left: -120px;
+  }
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 20px;
+    left: -120px;
+  }
+  @media (min-width: 1280px) {
+  }
+`;
+
 const PaginationContainer = styled.div`
   @media (max-width: 767px) {
     position: absolute;
@@ -86,5 +101,6 @@ export {
   CardOuterContainer,
   InsetBorderContainer,
   InstructionsContainer,
-  PaginationContainer
+  PaginationContainer,
+  ModeButtonsContainer
 };
