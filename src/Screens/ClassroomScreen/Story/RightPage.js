@@ -8,6 +8,7 @@ import ScoreHeader from "./ScoreHeader";
 import scoresAtom from "../../../Stores/Classroom/Story/scores";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import RightCompletedMicrophone from "./Microphone/Center/RightCompletedMicrophone";
+import { RightPageContainer, RightPageImageContainer } from "./RightPageStyles";
 
 const RightPage = ({ fileName, isEmpty, onClickRightPage }) => {
   const { level } = useParams();
@@ -22,33 +23,22 @@ const RightPage = ({ fileName, isEmpty, onClickRightPage }) => {
   );
   const [scores, setScores] = useRecoilState(scoresAtom);
   return (
-    <div
-      className={`relative w-full h-full rounded-r-2xl z-[1] ${
-        !rightPagePlaying &&
-        currentPage !== 10 &&
-        centralMicrophoneState !== "invisible" &&
-        centralMicrophoneState !== "loading"
-          ? `cursor-pointer`
-          : `cursor-default`
-      }`}
-    >
+    <RightPageContainer>
       {centralMicrophoneState === "completed" && currentPage !== 10 ? (
         <RightCompletedMicrophone />
       ) : null}
       {isEmpty ? (
         <EmptyPage direction={`right`} />
       ) : (
-        <div className={`w-[405.5px] h-[535px] overflow-clip rounded-r-2xl`}>
+        <RightPageImageContainer>
           <img
             src={fileName}
             alt={"Right Page"}
             loading={"lazy"}
-            className={`rounded-r-2xl w-full h-full object-cover cursor-pointer ${
-              currentPage >= 1 && `scale-[1.15]`
-            }`}
             onClick={onClickRightPage}
+            className={`h-full`}
           />
-        </div>
+        </RightPageImageContainer>
       )}
       {scores[`${level}-${currentPage + 1}`] !== undefined && (
         <div
@@ -67,7 +57,7 @@ const RightPage = ({ fileName, isEmpty, onClickRightPage }) => {
       {/*    <RightMicrophone />*/}
       {/*  )}*/}
       {/*</div>*/}
-    </div>
+    </RightPageContainer>
   );
 };
 

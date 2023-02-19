@@ -9,12 +9,9 @@ import { Howl } from "howler";
 import leftPagePlayingAtom from "../../../Stores/Classroom/Story/leftPagePlaying";
 import rightPagePlayingAtom from "../../../Stores/Classroom/Story/rightPagePlaying";
 import useData from "../../../Hooks/useData";
-import {
-  GlowingContainer,
-  LeftPageContainer,
-  PagesContainer
-} from "./BookContentStyles";
+import { GlowingContainer, PagesContainer } from "./BookContentStyles";
 import LeftPage from "./LeftPage";
+import RightPage from "./RightPage";
 
 const BookContent = () => {
   const { level } = useParams();
@@ -76,30 +73,26 @@ const BookContent = () => {
   };
   return (
     <PagesContainer>
-      <LeftPageContainer>
-        {highlightedPage === currentPage &&
-        highlightVisible &&
-        centralMicrophoneState !== "completed" ? (
-          <GlowingContainer onClick={onClickLeftPage} />
-        ) : null}
-        <LeftPage
-          fileName={leftPageFile}
-          isEmpty={currentPage === 0}
-          onClickLeftPage={onClickLeftPage}
-        />
-      </LeftPageContainer>
-      {/*<div className={`relative`}>*/}
-      {/*  {highlightedPage === currentPage + 1 &&*/}
-      {/*  highlightVisible &&*/}
-      {/*  centralMicrophoneState !== "completed" ? (*/}
-      {/*    <GlowingContainer onClick={onClickRightPage} />*/}
-      {/*  ) : null}*/}
-      {/*  <RightPage*/}
-      {/*    fileName={rightPageFile}*/}
-      {/*    isEmpty={currentPage === 10}*/}
-      {/*    onClickRightPage={onClickRightPage}*/}
-      {/*  />*/}
-      {/*</div>*/}
+      {highlightedPage === currentPage &&
+      highlightVisible &&
+      centralMicrophoneState !== "completed" ? (
+        <GlowingContainer onClick={onClickLeftPage} />
+      ) : null}
+      <LeftPage
+        fileName={leftPageFile}
+        isEmpty={currentPage === 0}
+        onClickLeftPage={onClickLeftPage}
+      />
+      {highlightedPage === currentPage + 1 &&
+      highlightVisible &&
+      centralMicrophoneState !== "completed" ? (
+        <GlowingContainer onClick={onClickRightPage} />
+      ) : null}
+      <RightPage
+        fileName={rightPageFile}
+        isEmpty={currentPage === 10}
+        onClickRightPage={onClickRightPage}
+      />
       {/*{resultsScreenShown && <ResultsScreen />}*/}
     </PagesContainer>
   );

@@ -9,6 +9,7 @@ import ScoreHeader from "./ScoreHeader";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import LeftCompletedMicrophone from "./Microphone/Center/LeftCompletedMicrophone";
 import useData from "../../../Hooks/useData";
+import { LeftPageContainer, LeftPageImageContainer } from "./LeftPageStyles";
 
 const LeftPage = ({ fileName, isEmpty, onClickLeftPage }) => {
   const [leftPagePlaying, setLeftPagePlaying] =
@@ -24,23 +25,14 @@ const LeftPage = ({ fileName, isEmpty, onClickLeftPage }) => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [scores, setScores] = useRecoilState(scoresAtom);
   return (
-    <div
-      className={`relative w-full h-full rounded-l-2xl z-[1] ${
-        !leftPagePlaying &&
-        currentPage !== 0 &&
-        centralMicrophoneState !== "invisible" &&
-        centralMicrophoneState !== "loading"
-          ? `cursor-pointer`
-          : `cursor-default`
-      }`}
-    >
+    <LeftPageContainer>
       {centralMicrophoneState === "completed" && currentPage !== 0 ? (
         <LeftCompletedMicrophone />
       ) : null}
       {isEmpty ? (
         <EmptyPage direction={`left`} />
       ) : (
-        <div className={`w-[405.5px] h-[535px] overflow-clip rounded-l-2xl`}>
+        <LeftPageImageContainer>
           <img
             src={fileName}
             alt={"Left Page"}
@@ -48,7 +40,7 @@ const LeftPage = ({ fileName, isEmpty, onClickLeftPage }) => {
             className={`rounded-l-2xl w-full h-full object-cover cursor-pointer scale-[1.15]`}
             onClick={onClickLeftPage}
           />
-        </div>
+        </LeftPageImageContainer>
       )}
       {scores[`${level}-${currentPage}`] !== undefined && (
         <div
@@ -67,7 +59,7 @@ const LeftPage = ({ fileName, isEmpty, onClickLeftPage }) => {
       {/*    <LeftMicrophone />*/}
       {/*  )}*/}
       {/*</div>*/}
-    </div>
+    </LeftPageContainer>
   );
 };
 
