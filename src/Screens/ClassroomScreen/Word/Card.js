@@ -60,10 +60,14 @@ const Card = () => {
         <div className={`absolute top-[20px] desktop:top-0 left-[-120px]`}>
           <ModeButtons />
         </div>
-        <div className={`absolute top-[50%] left-[-80px] translate-y-[-50%]`}>
+        <div
+          className={`absolute left-[-80px] bottom-[30px] desktop:top-[50%] desktop:left-[-80px] desktop:translate-y-[-50%]`}
+        >
           <WordLeftPageTurner />
         </div>
-        <div className={`absolute top-[50%] right-[-80px] translate-y-[-50%]`}>
+        <div
+          className={`absolute right-[-80px] bottom-[30px] desktop:top-[50%] desktop:right-[-80px] desktop:translate-y-[-50%]`}
+        >
           <WordRightPageTurner />
         </div>
         <div className={`absolute top-[-50px] left-0`}>
