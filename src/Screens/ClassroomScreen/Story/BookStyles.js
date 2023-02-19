@@ -56,11 +56,20 @@ const PageControllersContainer = styled.div`
   }
 `;
 
+const HomeButtonContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+`;
+
 export {
   BookContainer,
   BookContentContainer,
   ModeButtonsContainer,
   LeftPageTurnerContainer,
   RightPageTurnerContainer,
-  PageControllersContainer
+  PageControllersContainer,
+  HomeButtonContainer
 };

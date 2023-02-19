@@ -4,6 +4,7 @@ import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import {
   BookContainer,
   BookContentContainer,
+  HomeButtonContainer,
   LeftPageTurnerContainer,
   ModeButtonsContainer,
   PageControllersContainer,
@@ -14,6 +15,7 @@ import ModeButtons from "../Mode/ModeButtons";
 import LeftPageTurner from "./Pager/LeftPageTurner";
 import RightPageTurner from "./Pager/RightPageTurner";
 import PageControllers from "./Controllers/PageControllers";
+import HomeButton from "../HomeButton";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -37,9 +39,9 @@ const Book = () => {
       <PageControllersContainer>
         <PageControllers />
       </PageControllersContainer>
-      {/*<div className={`absolute top-[-60px] right-[-100px]`}>*/}
-      {/*  <HomeButton />*/}
-      {/*</div>*/}
+      <HomeButtonContainer>
+        <HomeButton />
+      </HomeButtonContainer>
       {/*<div className={`absolute top-[-50px] left-0`}>*/}
       {/*  <BookTitle />*/}
       {/*</div>*/}
