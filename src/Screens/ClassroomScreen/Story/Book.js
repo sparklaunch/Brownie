@@ -4,6 +4,8 @@ import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import {
   BookContainer,
   BookContentContainer,
+  BookTitleContainer,
+  CentralMicrophoneContainer,
   HomeButtonContainer,
   LeftPageTurnerContainer,
   ModeButtonsContainer,
@@ -16,6 +18,8 @@ import LeftPageTurner from "./Pager/LeftPageTurner";
 import RightPageTurner from "./Pager/RightPageTurner";
 import PageControllers from "./Controllers/PageControllers";
 import HomeButton from "../HomeButton";
+import BookTitle from "./BookTitle";
+import CentralMicrophone from "./Microphone/Center/CentralMicrophone";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -42,14 +46,12 @@ const Book = () => {
       <HomeButtonContainer>
         <HomeButton />
       </HomeButtonContainer>
-      {/*<div className={`absolute top-[-50px] left-0`}>*/}
-      {/*  <BookTitle />*/}
-      {/*</div>*/}
-      {/*<div*/}
-      {/*  className={`absolute bottom-[-100px] left-[50%] translate-x-[-50%]`}*/}
-      {/*>*/}
-      {/*  <CentralMicrophone />*/}
-      {/*</div>*/}
+      <BookTitleContainer>
+        <BookTitle />
+      </BookTitleContainer>
+      <CentralMicrophoneContainer>
+        <CentralMicrophone />
+      </CentralMicrophoneContainer>
       {/*{centralMicrophoneState === "invisible" && (*/}
       {/*  <div*/}
       {/*    className={`absolute bottom-[10%] left-[50%] translate-x-[-50%] z-10`}*/}

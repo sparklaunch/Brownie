@@ -64,6 +64,21 @@ const HomeButtonContainer = styled.div`
   }
 `;
 
+const BookTitleContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    display: none;
+  }
+`;
+
+const CentralMicrophoneContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    transform: translateY(-50%);
+  }
+`;
+
 export {
   BookContainer,
   BookContentContainer,
@@ -71,5 +86,7 @@ export {
   LeftPageTurnerContainer,
   RightPageTurnerContainer,
   PageControllersContainer,
-  HomeButtonContainer
+  HomeButtonContainer,
+  BookTitleContainer,
+  CentralMicrophoneContainer
 };
