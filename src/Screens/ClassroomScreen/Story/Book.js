@@ -4,10 +4,12 @@ import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import {
   BookContainer,
   BookContentContainer,
+  LeftPageTurnerContainer,
   ModeButtonsContainer
 } from "./BookStyles";
 import BookContent from "./BookContent";
 import ModeButtons from "../Mode/ModeButtons";
+import LeftPageTurner from "./Pager/LeftPageTurner";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -19,9 +21,9 @@ const Book = () => {
       <ModeButtonsContainer>
         <ModeButtons />
       </ModeButtonsContainer>
-      {/*<div className={`absolute top-[50%] left-[-80px] translate-y-[-50%]`}>*/}
-      {/*  <LeftPageTurner />*/}
-      {/*</div>*/}
+      <LeftPageTurnerContainer>
+        <LeftPageTurner />
+      </LeftPageTurnerContainer>
       {/*<div className={`absolute top-[50%] right-[-80px] translate-y-[-50%]`}>*/}
       {/*  <RightPageTurner />*/}
       {/*</div>*/}
