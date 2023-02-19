@@ -1,18 +1,19 @@
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import {
+  JumbotronTitleContainer,
+  Title,
+  TitleContainer
+} from "./JumbotronTitleStyles";
 
 const JumbotronTitle = () => {
   const navigator = useNavigate();
   return (
-    <div className={`flex flex-col justify-between`}>
-      <div className={`mb-[54px] relative top-[-50px]`}>
-        <p className={`text-[40px] font-bold text-white font-[GmarketSans]`}>
-          영어책 읽기가 처음인 우리 아이
-        </p>
-        <p className={`text-[40px] font-bold text-white font-[GmarketSans]`}>
-          AI 스피킹으로 시작부터 남다르게!
-        </p>
-      </div>
+    <JumbotronTitleContainer>
+      <TitleContainer>
+        <Title>영어책 읽기가 처음인 우리 아이</Title>
+        <Title>AI 스피킹으로 시작부터 남다르게!</Title>
+      </TitleContainer>
       <Button
         variant={"outlined"}
         onClick={() => {
@@ -38,7 +39,7 @@ const JumbotronTitle = () => {
       >
         무료 체험
       </Button>
-    </div>
+    </JumbotronTitleContainer>
   );
 };
 

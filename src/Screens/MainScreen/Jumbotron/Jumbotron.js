@@ -1,16 +1,21 @@
 import JumbotronTitle from "./JumbotronTitle";
 import JumbotronForm from "./JumbotronForm/JumbotronForm";
+import {
+  JumbotronFormContainer,
+  JumbotronInnerContainer,
+  JumbotronOuterContainer
+} from "./JumbotronStyles";
 
 const Jumbotron = () => {
   return (
-    <div
-      className={`h-[540px] flex bg-jumbotron flex-row justify-center items-center`}
-    >
-      <div className={`w-[1200px] flex flex-row justify-between`}>
+    <JumbotronOuterContainer>
+      <JumbotronInnerContainer>
         <JumbotronTitle />
-        <JumbotronForm />
-      </div>
-    </div>
+        <JumbotronFormContainer>
+          <JumbotronForm />
+        </JumbotronFormContainer>
+      </JumbotronInnerContainer>
+    </JumbotronOuterContainer>
   );
 };
 
