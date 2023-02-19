@@ -46,7 +46,7 @@ const Card = () => {
         <div className={`absolute top-0 left-0 bottom-0 right-0`}>
           <InsetBorder />
         </div>
-        <div className={`absolute top-[20px] left-[150px]`}>
+        <div className={`absolute top-[20px] left-[140px]`}>
           <Instructions />
         </div>
         <div className={`absolute top-0 left-0`}>
