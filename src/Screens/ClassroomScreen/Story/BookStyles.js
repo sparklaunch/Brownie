@@ -23,8 +23,6 @@ const BookContentContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-left: 140px;
-    margin-right: 140px;
   }
 `;
 
