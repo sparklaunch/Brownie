@@ -10,6 +10,8 @@ const CardOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-left: 140px;
+    margin-right: 140px;
   }
   @media (min-width: 768px) and (max-width: 1279px) {
     position: absolute;
@@ -24,15 +26,6 @@ const CardOuterContainer = styled.div`
     margin-right: 140px;
   }
   @media (min-width: 1280px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
   }
 `;
 
@@ -55,4 +48,37 @@ const InsetBorderContainer = styled.div`
   }
 `;
 
-export { CardOuterContainer, InsetBorderContainer };
+const InstructionsContainer = styled.div`
+  @media (max-width: 767px) {
+  }
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+  }
+`;
+
+const PaginationContainer = styled.div`
+  @media (max-width: 767px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffa63d;
+    border-bottom-right-radius: 20px;
+  }
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffa63d;
+    border-bottom-right-radius: 20px;
+  }
+  @media (min-width: 1280px) {
+  }
+`;
+
+export {
+  CardOuterContainer,
+  InsetBorderContainer,
+  InstructionsContainer,
+  PaginationContainer
+};

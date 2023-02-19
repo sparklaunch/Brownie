@@ -7,7 +7,14 @@ import { useParams } from "react-router-dom";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import InsetBorder from "./InsetBorder";
-import { CardOuterContainer, InsetBorderContainer } from "./CardStyles";
+import {
+  CardOuterContainer,
+  InsetBorderContainer,
+  InstructionsContainer,
+  PaginationContainer
+} from "./CardStyles";
+import Instructions from "./Instructions";
+import Pagination from "./Pagination";
 
 const Card = () => {
   const { level } = useParams();
@@ -28,12 +35,12 @@ const Card = () => {
       <InsetBorderContainer>
         <InsetBorder />
       </InsetBorderContainer>
-      {/*<div className={`absolute top-[20px] left-[140px]`}>*/}
-      {/*  <Instructions />*/}
-      {/*</div>*/}
-      {/*<div className={`absolute top-0 left-0`}>*/}
-      {/*  <Pagination />*/}
-      {/*</div>*/}
+      <InstructionsContainer>
+        <Instructions />
+      </InstructionsContainer>
+      <PaginationContainer>
+        <Pagination />
+      </PaginationContainer>
       {/*<div*/}
       {/*  className={`absolute top-0 left-0 bottom-0 right-0 flex flex-col justify-center items-center`}*/}
       {/*>*/}
