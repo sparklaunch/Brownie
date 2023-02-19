@@ -6,27 +6,15 @@ import { useRecoilState } from "recoil";
 import resultsScreenShownAtom from "../../../Stores/Classroom/Story/resultsScreenShown";
 import ResultsScreen from "./Results/ResultsScreen";
 import highlightedPageAtom from "../../../Stores/Classroom/Story/highlightedPage";
-import styled from "styled-components";
 import highlightVisibleAtom from "../../../Stores/Classroom/Story/highlightVisible";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import { Howl } from "howler";
 import leftPagePlayingAtom from "../../../Stores/Classroom/Story/leftPagePlaying";
 import rightPagePlayingAtom from "../../../Stores/Classroom/Story/rightPagePlaying";
 import useData from "../../../Hooks/useData";
+import { GlowingContainer } from "./BookContentStyles";
 
 const BookContent = () => {
-  const GlowingContainer = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    border-radius: 16px;
-    box-shadow: 0 0 5px 5px #ffd53d, 0 0 10px 5px #ffd53d, 0 0 15px 5px #ffd53d,
-      inset 0 0 5px 5px #ffd53d, inset 0 0 10px 5px #ffd53d,
-      inset 0 0 15px 5px #ffd53d;
-  `;
   const { level } = useParams();
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
