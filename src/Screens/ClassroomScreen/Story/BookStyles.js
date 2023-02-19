@@ -28,4 +28,12 @@ const BookContentContainer = styled.div`
   }
 `;
 
-export { BookContainer, BookContentContainer };
+const ModeButtonsContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+`;
+
+export { BookContainer, BookContentContainer, ModeButtonsContainer };

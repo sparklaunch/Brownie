@@ -1,8 +1,13 @@
 import { useRecoilState } from "recoil";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
-import { BookContainer, BookContentContainer } from "./BookStyles";
+import {
+  BookContainer,
+  BookContentContainer,
+  ModeButtonsContainer
+} from "./BookStyles";
 import BookContent from "./BookContent";
+import ModeButtons from "../Mode/ModeButtons";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -11,9 +16,9 @@ const Book = () => {
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   return (
     <BookContainer>
-      {/*<div className={`absolute top-0 left-[-120px]`}>*/}
-      {/*  <ModeButtons />*/}
-      {/*</div>*/}
+      <ModeButtonsContainer>
+        <ModeButtons />
+      </ModeButtonsContainer>
       {/*<div className={`absolute top-[50%] left-[-80px] translate-y-[-50%]`}>*/}
       {/*  <LeftPageTurner />*/}
       {/*</div>*/}
