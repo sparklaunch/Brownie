@@ -1,10 +1,11 @@
 import { Button } from "@mui/material";
 import GridViewIcon from "./GridViewIcon";
 import ListViewIcon from "./ListViewIcon";
+import { CatalogFilterContainer } from "./CatalogFilterStyles";
 
 const CatalogFilter = () => {
   return (
-    <div className={`flex flex-row items-center justify-end`}>
+    <CatalogFilterContainer>
       <Button
         variant={"outlined"}
         sx={{
@@ -25,7 +26,7 @@ const CatalogFilter = () => {
       </Button>
       <GridViewIcon />
       <ListViewIcon />
-    </div>
+    </CatalogFilterContainer>
   );
 };
 
