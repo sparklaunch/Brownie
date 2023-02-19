@@ -30,7 +30,7 @@ const RightPage = ({ fileName, isEmpty, onClickRightPage }) => {
       {isEmpty ? (
         <EmptyPage direction={`right`} />
       ) : (
-        <RightPageImageContainer>
+        <RightPageImageContainer shouldScale={currentPage !== 0}>
           <img
             src={fileName}
             alt={"Right Page"}

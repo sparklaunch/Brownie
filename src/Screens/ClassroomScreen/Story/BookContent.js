@@ -76,7 +76,7 @@ const BookContent = () => {
       {highlightedPage === currentPage &&
       highlightVisible &&
       centralMicrophoneState !== "completed" ? (
-        <GlowingContainer onClick={onClickLeftPage} />
+        <GlowingContainer onClick={onClickLeftPage} direction={`left`} />
       ) : null}
       <LeftPage
         fileName={leftPageFile}
@@ -86,7 +86,7 @@ const BookContent = () => {
       {highlightedPage === currentPage + 1 &&
       highlightVisible &&
       centralMicrophoneState !== "completed" ? (
-        <GlowingContainer onClick={onClickRightPage} />
+        <GlowingContainer onClick={onClickRightPage} direction={`right`} />
       ) : null}
       <RightPage
         fileName={rightPageFile}

@@ -20,6 +20,9 @@ const Book = () => {
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   return (
     <BookContainer>
+      <BookContentContainer>
+        <BookContent />
+      </BookContentContainer>
       <ModeButtonsContainer>
         <ModeButtons />
       </ModeButtonsContainer>
@@ -58,9 +61,6 @@ const Book = () => {
       {/*  </div>*/}
       {/*)}*/}
       {/*<Navigator />*/}
-      <BookContentContainer>
-        <BookContent />
-      </BookContentContainer>
       {/*{youDidItShown && (*/}
       {/*  <div className={`absolute top-0 left-0 bottom-0 right-0 z-[3]`}>*/}
       {/*    <YouDidItScreen />*/}
