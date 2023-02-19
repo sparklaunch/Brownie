@@ -1,16 +1,17 @@
 import CatalogHeader from "./CatalogHeader";
 import CatalogFilter from "./CatalogFilter";
 import CatalogList from "./CatalogList";
+import { CatalogInnerContainer, CatalogOuterContainer } from "./CatalogStyles";
 
 const Catalog = () => {
   return (
-    <div className={`flex justify-center`}>
-      <div className={`w-[1200px]`}>
+    <CatalogOuterContainer>
+      <CatalogInnerContainer>
         <CatalogHeader />
         <CatalogFilter />
         <CatalogList />
-      </div>
-    </div>
+      </CatalogInnerContainer>
+    </CatalogOuterContainer>
   );
 };
 
