@@ -6,11 +6,6 @@ module.exports = {
       backgroundImage: {
         jumbotron: `url("jumbotron.svg")`
       }
-    },
-    screens: {
-      desktop: "1200px",
-      tablet: "768px",
-      mobile: "375px"
     }
   },
   plugins: []

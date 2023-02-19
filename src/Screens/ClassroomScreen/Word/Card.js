@@ -21,6 +21,7 @@ import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage"
 import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import YouDidItScreen from "../Story/Results/YouDidIt/YouDidItScreen";
 import InsetBorder from "./InsetBorder";
+import styled from "styled-components";
 
 const Card = () => {
   const { level } = useParams();
@@ -37,9 +38,7 @@ const Card = () => {
   );
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   return (
-    <div
-      className={`absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center overflow-clip`}
-    >
+    <CardContainer>
       <div
         className={`w-[75%] desktop:w-[94vh] h-full desktop:h-[62vh] relative bg-white desktop:rounded-2xl shadow-2xl`}
       >
@@ -100,8 +99,45 @@ const Card = () => {
         )}
         <Microphone />
       </div>
-    </div>
+    </CardContainer>
   );
 };
+
+const CardContainer = styled.div`
+  @media (max-width: 767px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: clip;
+  }
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: clip;
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: clip;
+  }
+`;
 
 export default Card;
