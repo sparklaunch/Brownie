@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 const JumbotronTitleContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
+    height: 480px;
+    background-image: url("assets/images/jumbotron.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
   }
   @media (min-width: 1280px) {
     display: flex;
@@ -36,4 +41,10 @@ const Title = styled.p`
   }
 `;
 
-export { JumbotronTitleContainer, TitleContainer, Title };
+const ButtonContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    transform: scale(0.8) translateX(-80px);
+  }
+`;
+
+export { JumbotronTitleContainer, TitleContainer, Title, ButtonContainer };

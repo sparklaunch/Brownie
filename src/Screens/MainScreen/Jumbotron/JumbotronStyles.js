@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const JumbotronOuterContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
-    background-color: rgb(0, 192, 207);
+    background-color: rgb(61, 191, 204);
   }
   @media (min-width: 1280px) {
     height: 540px;
