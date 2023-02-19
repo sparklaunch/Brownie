@@ -12,11 +12,13 @@ import {
   InsetBorderContainer,
   InstructionsContainer,
   ModeButtonsContainer,
-  PaginationContainer
+  PaginationContainer,
+  WordLeftPageTurnerContainer
 } from "./CardStyles";
 import Instructions from "./Instructions";
 import Pagination from "./Pagination";
 import ModeButtons from "../Mode/ModeButtons";
+import WordLeftPageTurner from "./Pager/WordLeftPageTurner";
 
 const Card = () => {
   const { level } = useParams();
@@ -51,11 +53,9 @@ const Card = () => {
       <ModeButtonsContainer>
         <ModeButtons />
       </ModeButtonsContainer>
-      {/*<div*/}
-      {/*  className={`absolute left-[-80px] bottom-[30px] desktop:top-[50%] desktop:left-[-80px] desktop:translate-y-[-50%]`}*/}
-      {/*>*/}
-      {/*  <WordLeftPageTurner />*/}
-      {/*</div>*/}
+      <WordLeftPageTurnerContainer>
+        <WordLeftPageTurner />
+      </WordLeftPageTurnerContainer>
       {/*<div*/}
       {/*  className={`absolute right-[-80px] bottom-[30px] desktop:top-[50%] desktop:right-[-80px] desktop:translate-y-[-50%]`}*/}
       {/*>*/}
