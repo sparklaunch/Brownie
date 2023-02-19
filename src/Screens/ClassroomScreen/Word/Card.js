@@ -57,7 +57,7 @@ const Card = () => {
         >
           {wordMicrophoneState === "completed" ? <WordImage /> : <WordCard />}
         </div>
-        <div className={`absolute top-0 left-[-120px]`}>
+        <div className={`absolute top-[20px] desktop:top-0 left-[-120px]`}>
           <ModeButtons />
         </div>
         <div className={`absolute top-[50%] left-[-80px] translate-y-[-50%]`}>
