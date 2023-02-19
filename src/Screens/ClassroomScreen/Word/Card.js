@@ -41,7 +41,7 @@ const Card = () => {
       className={`absolute top-0 left-0 bottom-0 right-0 flex justify-center items-center overflow-clip`}
     >
       <div
-        className={`w-[94vh] h-[62vh] relative bg-white rounded-2xl shadow-2xl`}
+        className={`w-[75%] desktop:w-[94vh] h-full desktop:h-[62vh] relative bg-white desktop:rounded-2xl shadow-2xl`}
       >
         <div className={`absolute top-0 left-0 bottom-0 right-0`}>
           <InsetBorder />
