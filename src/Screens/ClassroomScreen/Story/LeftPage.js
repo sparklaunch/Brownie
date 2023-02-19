@@ -37,7 +37,7 @@ const LeftPage = ({ fileName, isEmpty, onClickLeftPage }) => {
             src={fileName}
             alt={"Left Page"}
             loading={"lazy"}
-            className={`rounded-l-2xl w-full h-full object-cover cursor-pointer scale-[1.15]`}
+            className={`h-full`}
             onClick={onClickLeftPage}
           />
         </LeftPageImageContainer>
