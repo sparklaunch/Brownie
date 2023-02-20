@@ -133,6 +133,23 @@ const LeftPageImage = styled.img`
   }
 `;
 
+const LeftPageShade = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+`;
+
 const RightPageImage = styled.img`
   @media (min-width: 768px) and (max-width: 1279px) {
     height: 100vh;
@@ -145,6 +162,23 @@ const RightPageImage = styled.img`
     object-position: left;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+  }
+`;
+
+const RightPageShade = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(
+      to left,
+      transparent 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
   }
 `;
 
@@ -291,5 +325,7 @@ export {
   UnitInfoContainer,
   WaveAnimationContainer,
   FeedbackBarContainer,
-  CongratzContainer
+  CongratzContainer,
+  LeftPageShade,
+  RightPageShade
 };

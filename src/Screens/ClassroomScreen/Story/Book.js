@@ -9,12 +9,14 @@ import {
   HomeContainer,
   LeftPageImage,
   LeftPagerContainer,
+  LeftPageShade,
   MicContainer,
   ModeSwitcherContainer,
   NavigatorContainer,
   PagerControllersContainer,
   RightPageImage,
   RightPagerContainer,
+  RightPageShade,
   TextBookContainer,
   TextBookLeftPage,
   TextBookRightPage,
@@ -63,6 +65,7 @@ const Book = () => {
                 src={`/assets/images/pages/${bookID}_${currentPage}.jpg`}
               />
             )}
+            <LeftPageShade />
           </TextBookLeftPage>
           <TextBookRightPage>
             {currentPage === 10 ? (
@@ -72,6 +75,7 @@ const Book = () => {
                 src={`/assets/images/pages/${bookID}_${currentPage + 1}.jpg`}
               />
             )}
+            <RightPageShade />
           </TextBookRightPage>
           <ModeSwitcherContainer>
             <ModeButtons />
