@@ -17,4 +17,13 @@ const RightPageImageContainer = styled.div`
   }
 `;
 
-export { RightPageContainer, RightPageImageContainer };
+const ScoreHeaderContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%) scale(0.7);
+  }
+`;
+
+export { RightPageContainer, RightPageImageContainer, ScoreHeaderContainer };

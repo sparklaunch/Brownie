@@ -8,7 +8,11 @@ import ScoreHeader from "./ScoreHeader";
 import scoresAtom from "../../../Stores/Classroom/Story/scores";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import RightCompletedMicrophone from "./Microphone/Center/RightCompletedMicrophone";
-import { RightPageContainer, RightPageImageContainer } from "./RightPageStyles";
+import {
+  RightPageContainer,
+  RightPageImageContainer,
+  ScoreHeaderContainer
+} from "./RightPageStyles";
 
 const RightPage = ({ fileName, isEmpty, onClickRightPage }) => {
   const { level } = useParams();
@@ -41,11 +45,9 @@ const RightPage = ({ fileName, isEmpty, onClickRightPage }) => {
         </RightPageImageContainer>
       )}
       {scores[`${level}-${currentPage + 1}`] !== undefined && (
-        <div
-          className={`absolute left-[50%] translate-x-[-50%] top-3 scale-[0.7]`}
-        >
+        <ScoreHeaderContainer>
           <ScoreHeader score={scores[`${level}-${currentPage + 1}`]} />
-        </div>
+        </ScoreHeaderContainer>
       )}
       <div
         className={`absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-[#555555] opacity-50`}
