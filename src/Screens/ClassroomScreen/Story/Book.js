@@ -4,19 +4,33 @@ import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import {
   BookContainer,
   BookWrapper,
+  HomeContainer,
   LeftPageImage,
+  LeftPagerContainer,
+  MicContainer,
+  ModeSwitcherContainer,
   NavigatorContainer,
+  PagerControllersContainer,
   RightPageImage,
+  RightPagerContainer,
   TextBookContainer,
   TextBookEmptyPage,
   TextBookLeftPage,
-  TextBookRightPage
+  TextBookRightPage,
+  UnitInfoContainer
 } from "./BookStyles";
 import Navigator from "./Navigator/Navigator";
 import resultsScreenShownAtom from "../../../Stores/Classroom/Story/resultsScreenShown";
 import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import useData from "../../../Hooks/useData";
 import { useParams } from "react-router-dom";
+import ModeButtons from "../Mode/ModeButtons";
+import LeftPageTurner from "./Pager/LeftPageTurner";
+import RightPageTurner from "./Pager/RightPageTurner";
+import PageControllers from "./Controllers/PageControllers";
+import HomeButton from "../HomeButton";
+import CentralMicrophone from "./Microphone/Center/CentralMicrophone";
+import BookTitle from "./BookTitle";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -54,6 +68,27 @@ const Book = () => {
               />
             )}
           </TextBookRightPage>
+          <ModeSwitcherContainer>
+            <ModeButtons />
+          </ModeSwitcherContainer>
+          <LeftPagerContainer>
+            <LeftPageTurner />
+          </LeftPagerContainer>
+          <RightPagerContainer>
+            <RightPageTurner />
+          </RightPagerContainer>
+          <PagerControllersContainer>
+            <PageControllers />
+          </PagerControllersContainer>
+          <HomeContainer>
+            <HomeButton />
+          </HomeContainer>
+          <UnitInfoContainer>
+            <BookTitle />
+          </UnitInfoContainer>
+          <MicContainer>
+            <CentralMicrophone />
+          </MicContainer>
         </TextBookContainer>
       </BookWrapper>
     </BookContainer>
