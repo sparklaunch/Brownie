@@ -12,6 +12,7 @@ import useData from "../../../Hooks/useData";
 import { GlowingContainer, PagesContainer } from "./BookContentStyles";
 import LeftPage from "./LeftPage";
 import RightPage from "./RightPage";
+import ResultsScreen from "./Results/ResultsScreen";
 
 const BookContent = () => {
   const { level } = useParams();
@@ -93,7 +94,7 @@ const BookContent = () => {
         isEmpty={currentPage === 10}
         onClickRightPage={onClickRightPage}
       />
-      {/*{resultsScreenShown && <ResultsScreen />}*/}
+      {resultsScreenShown && <ResultsScreen />}
     </PagesContainer>
   );
 };

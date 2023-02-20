@@ -10,7 +10,6 @@ const ExcellentScreenContainer = styled.div`
     background-color: #80e6ac;
     padding: 8px;
     z-index: 3;
-    border-radius: 0 0 32px 32px;
   }
 `;
 

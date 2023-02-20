@@ -11,6 +11,11 @@ import { useParams } from "react-router-dom";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
 import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import highlightVisibleAtom from "../../../../../Stores/Classroom/Story/highlightVisible";
+import {
+  LeftCompletedMicrophoneContainer,
+  MyVoiceButtonContainer,
+  RetryButtonContainer
+} from "./LeftCompletedMicrophoneStyles";
 
 const LeftCompletedMicrophone = () => {
   const { level } = useParams();
@@ -117,22 +122,22 @@ const LeftCompletedMicrophone = () => {
     audio.play();
   };
   return (
-    <div
-      className={`absolute left-[50%] bottom-[-100px] translate-x-[-50%] flex flex-row`}
-    >
-      <img
-        src={`/assets/images/retry_button.svg`}
-        alt={`Retry Button`}
-        className={`mr-5 cursor-pointer w-[70px] h-[70px]`}
-        onClick={onClickRetry}
-      />
-      <img
-        src={`/assets/images/my_voice_button.svg`}
-        alt={`My Voice Button`}
-        className={`cursor-pointer w-[70px] h-[70px]`}
-        onClick={onClickMyVoice}
-      />
-    </div>
+    <LeftCompletedMicrophoneContainer>
+      <RetryButtonContainer onClick={onClickRetry}>
+        <img
+          src={`/assets/images/retry_button.svg`}
+          alt={`Retry Button`}
+          className={`mr-5 cursor-pointer w-[70px] h-[70px]`}
+        />
+      </RetryButtonContainer>
+      <MyVoiceButtonContainer onClick={onClickMyVoice}>
+        <img
+          src={`/assets/images/my_voice_button.svg`}
+          alt={`My Voice Button`}
+          className={`cursor-pointer w-[70px] h-[70px]`}
+        />
+      </MyVoiceButtonContainer>
+    </LeftCompletedMicrophoneContainer>
   );
 };
 

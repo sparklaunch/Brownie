@@ -24,10 +24,14 @@ import BookTitle from "./BookTitle";
 import CentralMicrophone from "./Microphone/Center/CentralMicrophone";
 import Navigator from "./Navigator/Navigator";
 import Wave from "./Microphone/Center/Wave";
+import resultsScreenShownAtom from "../../../Stores/Classroom/Story/resultsScreenShown";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
+  );
+  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
+    resultsScreenShownAtom
   );
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   return (
