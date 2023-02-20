@@ -17,6 +17,7 @@ import {
   RightPageImage,
   RightPagerContainer,
   RightPageShade,
+  ScoreBarContainer,
   TextBookContainer,
   TextBookLeftPage,
   TextBookRightPage,
@@ -38,6 +39,8 @@ import BookTitle from "./BookTitle";
 import Wave from "./Microphone/Center/Wave";
 import ResultsScreen from "./Results/ResultsScreen";
 import YouDidItScreen from "./Results/YouDidIt/YouDidItScreen";
+import ScoreHeader from "./ScoreHeader";
+import scoresAtom from "../../../Stores/Classroom/Story/scores";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -48,6 +51,7 @@ const Book = () => {
   );
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  const [scores, setScores] = useRecoilState(scoresAtom);
   const { level } = useParams();
   const bookID = useData("id");
   return (
@@ -66,6 +70,11 @@ const Book = () => {
               />
             )}
             <LeftPageShade />
+            {scores[`${level}-${currentPage}`] !== undefined && (
+              <ScoreBarContainer>
+                <ScoreHeader score={scores[`${level}-${currentPage}`]} />
+              </ScoreBarContainer>
+            )}
           </TextBookLeftPage>
           <TextBookRightPage>
             {currentPage === 10 ? (
@@ -76,6 +85,11 @@ const Book = () => {
               />
             )}
             <RightPageShade />
+            {scores[`${level}-${currentPage + 1}`] !== undefined && (
+              <ScoreBarContainer>
+                <ScoreHeader score={scores[`${level}-${currentPage + 1}`]} />
+              </ScoreBarContainer>
+            )}
           </TextBookRightPage>
           <ModeSwitcherContainer>
             <ModeButtons />

@@ -307,6 +307,21 @@ const CongratzContainer = styled.div`
   }
 `;
 
+const ScoreBarContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+`;
+
 export {
   BookContainer,
   NavigatorContainer,
@@ -327,5 +342,6 @@ export {
   FeedbackBarContainer,
   CongratzContainer,
   LeftPageShade,
-  RightPageShade
+  RightPageShade,
+  ScoreBarContainer
 };
