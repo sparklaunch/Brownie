@@ -4,6 +4,7 @@ import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import {
   BookContainer,
   BookWrapper,
+  CongratzContainer,
   FeedbackBarContainer,
   HomeContainer,
   LeftPageImage,
@@ -34,6 +35,7 @@ import CentralMicrophone from "./Microphone/Center/CentralMicrophone";
 import BookTitle from "./BookTitle";
 import Wave from "./Microphone/Center/Wave";
 import ResultsScreen from "./Results/ResultsScreen";
+import YouDidItScreen from "./Results/YouDidIt/YouDidItScreen";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -98,6 +100,11 @@ const Book = () => {
             <WaveAnimationContainer>
               <Wave />
             </WaveAnimationContainer>
+          )}
+          {youDidItShown && (
+            <CongratzContainer>
+              <YouDidItScreen />
+            </CongratzContainer>
           )}
           <MicContainer>
             <CentralMicrophone />

@@ -10,6 +10,7 @@ const BookContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   @media (min-width: 1280px) {
     position: absolute;
@@ -20,6 +21,7 @@ const BookContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
 
@@ -126,6 +128,8 @@ const LeftPageImage = styled.img`
     height: 80vh;
     object-fit: contain;
     object-position: right;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
   }
 `;
 
@@ -139,15 +143,8 @@ const RightPageImage = styled.img`
     height: 80vh;
     object-fit: contain;
     object-position: left;
-  }
-`;
-
-const TextBookEmptyPage = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
-    background-color: #fff;
-  }
-  @media (min-width: 1280px) {
-    background-color: #fff;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
 `;
 
@@ -259,6 +256,23 @@ const FeedbackBarContainer = styled.div`
   }
 `;
 
+const CongratzContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+`;
+
 export {
   BookContainer,
   NavigatorContainer,
@@ -268,7 +282,6 @@ export {
   TextBookLeftPage,
   LeftPageImage,
   RightPageImage,
-  TextBookEmptyPage,
   ModeSwitcherContainer,
   LeftPagerContainer,
   RightPagerContainer,
@@ -277,5 +290,6 @@ export {
   MicContainer,
   UnitInfoContainer,
   WaveAnimationContainer,
-  FeedbackBarContainer
+  FeedbackBarContainer,
+  CongratzContainer
 };
