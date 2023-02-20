@@ -36,8 +36,25 @@ const MyVoiceButtonContainer = styled.div`
   }
 `;
 
+const RetryButton = styled.img`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+  }
+`;
+
+const MyVoiceButton = styled.img`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    width: 70px;
+    height: 70px;
+  }
+`;
+
 export {
   LeftCompletedMicrophoneContainer,
   RetryButtonContainer,
-  MyVoiceButtonContainer
+  MyVoiceButtonContainer,
+  RetryButton,
+  MyVoiceButton
 };

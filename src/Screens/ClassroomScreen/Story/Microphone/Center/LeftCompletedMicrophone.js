@@ -13,7 +13,9 @@ import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
 import highlightVisibleAtom from "../../../../../Stores/Classroom/Story/highlightVisible";
 import {
   LeftCompletedMicrophoneContainer,
+  MyVoiceButton,
   MyVoiceButtonContainer,
+  RetryButton,
   RetryButtonContainer
 } from "./LeftCompletedMicrophoneStyles";
 
@@ -124,17 +126,15 @@ const LeftCompletedMicrophone = () => {
   return (
     <LeftCompletedMicrophoneContainer>
       <RetryButtonContainer onClick={onClickRetry}>
-        <img
+        <RetryButton
           src={`/assets/images/retry_button.svg`}
           alt={`Retry Button`}
-          className={`mr-5 cursor-pointer w-[70px] h-[70px]`}
         />
       </RetryButtonContainer>
       <MyVoiceButtonContainer onClick={onClickMyVoice}>
-        <img
+        <MyVoiceButton
           src={`/assets/images/my_voice_button.svg`}
           alt={`My Voice Button`}
-          className={`cursor-pointer w-[70px] h-[70px]`}
         />
       </MyVoiceButtonContainer>
     </LeftCompletedMicrophoneContainer>
