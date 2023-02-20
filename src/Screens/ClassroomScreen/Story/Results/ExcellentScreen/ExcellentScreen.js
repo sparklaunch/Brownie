@@ -9,6 +9,7 @@ import {
 
 const ExcellentScreen = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
+  console.log(totalScore.score);
   return (
     <Slide direction={`up`} in={true} mountOnEnter={true} unmountOnExit={true}>
       <ExcellentScreenContainer>
@@ -17,7 +18,6 @@ const ExcellentScreen = () => {
           alt={`Excellent bat`}
         />
         <ScorePill />
-        <p>{totalScore.score}</p>
       </ExcellentScreenContainer>
     </Slide>
   );

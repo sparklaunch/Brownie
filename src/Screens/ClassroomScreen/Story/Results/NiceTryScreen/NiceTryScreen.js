@@ -6,6 +6,7 @@ import { NiceTryImage, NiceTryScreenContainer } from "./NiceTryScreenStyles";
 
 const NiceTryScreen = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
+  console.log(totalScore.score);
   return (
     <Slide direction={`up`} in={true} mountOnEnter={true} unmountOnExit={true}>
       <NiceTryScreenContainer>
@@ -14,7 +15,6 @@ const NiceTryScreen = () => {
           alt={`Nice Try Frog`}
         />
         <ScorePill />
-        <p>{totalScore.score}</p>
       </NiceTryScreenContainer>
     </Slide>
   );
