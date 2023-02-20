@@ -1,17 +1,14 @@
 import RecordingEnvironment from "./RecordingEnvironment";
 import RecordingInstructions from "./RecordingInstructions";
+import { CautionContainer, CautionTitle } from "./CautionStyles";
 
 const Caution = () => {
   return (
-    <div>
-      <p
-        className={`bg-[#1AB9C5] inline-block text-white text-[20px] p-2 px-5 rounded-md`}
-      >
-        주의 사항
-      </p>
+    <CautionContainer>
+      <CautionTitle>주의 사항</CautionTitle>
       <RecordingEnvironment />
       <RecordingInstructions />
-    </div>
+    </CautionContainer>
   );
 };
 

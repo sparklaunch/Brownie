@@ -5,7 +5,7 @@ const EvaluationMethodContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
   }
 `;
 
