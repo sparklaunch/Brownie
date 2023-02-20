@@ -75,11 +75,6 @@ const Book = () => {
       <NavigatorContainer>
         <Navigator />
       </NavigatorContainer>
-      {/*{youDidItShown && (*/}
-      {/*  <div className={`absolute top-0 left-0 bottom-0 right-0 z-[3]`}>*/}
-      {/*    <YouDidItScreen />*/}
-      {/*  </div>*/}
-      {/*)}*/}
     </BookContainer>
   );
 };

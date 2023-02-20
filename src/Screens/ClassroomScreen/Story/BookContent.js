@@ -9,10 +9,16 @@ import { Howl } from "howler";
 import leftPagePlayingAtom from "../../../Stores/Classroom/Story/leftPagePlaying";
 import rightPagePlayingAtom from "../../../Stores/Classroom/Story/rightPagePlaying";
 import useData from "../../../Hooks/useData";
-import { GlowingContainer, PagesContainer } from "./BookContentStyles";
+import {
+  GlowingContainer,
+  PagesContainer,
+  YouDidItScreenContainer
+} from "./BookContentStyles";
 import LeftPage from "./LeftPage";
 import RightPage from "./RightPage";
 import ResultsScreen from "./Results/ResultsScreen";
+import YouDidItScreen from "./Results/YouDidIt/YouDidItScreen";
+import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 
 const BookContent = () => {
   const { level } = useParams();
@@ -27,6 +33,7 @@ const BookContent = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   const [leftPagePlaying, setLeftPagePlaying] =
     useRecoilState(leftPagePlayingAtom);
   const [rightPagePlaying, setRightPagePlaying] =
@@ -95,6 +102,11 @@ const BookContent = () => {
         onClickRightPage={onClickRightPage}
       />
       {resultsScreenShown && <ResultsScreen />}
+      {youDidItShown && (
+        <YouDidItScreenContainer>
+          <YouDidItScreen />
+        </YouDidItScreenContainer>
+      )}
     </PagesContainer>
   );
 };
