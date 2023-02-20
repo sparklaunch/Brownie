@@ -176,6 +176,7 @@ const WordContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   @media (min-width: 1280px) {
     position: absolute;
@@ -188,6 +189,8 @@ const WordContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
 
