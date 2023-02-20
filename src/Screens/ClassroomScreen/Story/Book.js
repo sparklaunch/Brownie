@@ -17,6 +17,7 @@ import {
   ModeSwitcherContainer,
   NavigatorContainer,
   PagerControllersContainer,
+  RightClickable,
   RightCompletedButtonsContainer,
   RightPageImage,
   RightPagerContainer,
@@ -66,6 +67,12 @@ const Book = () => {
     useRecoilState(highlightVisibleAtom);
   const { level } = useParams();
   const bookID = useData("id");
+  const onClickLeftPage = () => {
+    new Audio(`/assets/audio/pages/${bookID}_${currentPage}.mp3`).play();
+  };
+  const onClickRightPage = () => {
+    new Audio(`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`).play();
+  };
   return (
     <BookContainer>
       <NavigatorContainer>
@@ -95,7 +102,7 @@ const Book = () => {
             {highlightedPage === currentPage && highlightVisible && (
               <GlowBorder direction={`left`} />
             )}
-            <LeftClickable />
+            {currentPage !== 0 && <LeftClickable onClick={onClickLeftPage} />}
           </TextBookLeftPage>
           <TextBookRightPage>
             {currentPage === 10 ? (
@@ -118,6 +125,9 @@ const Book = () => {
             )}
             {highlightedPage === currentPage + 1 && highlightVisible && (
               <GlowBorder direction={`right`} />
+            )}
+            {currentPage !== 10 && (
+              <RightClickable onClick={onClickRightPage} />
             )}
           </TextBookRightPage>
           <ModeSwitcherContainer>

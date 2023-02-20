@@ -376,8 +376,43 @@ const GlowBorder = styled.div`
 
 const LeftClickable = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
   }
   @media (min-width: 1280px) {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+  }
+`;
+
+const RightClickable = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
   }
 `;
 
@@ -406,5 +441,6 @@ export {
   LeftCompletedButtonsContainer,
   RightCompletedButtonsContainer,
   GlowBorder,
-  LeftClickable
+  LeftClickable,
+  RightClickable
 };
