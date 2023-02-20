@@ -56,12 +56,12 @@ const Card = () => {
   return (
     <CardOuterContainer>
       <CardInnerContainer>
-        <WordContainer>
-          {wordMicrophoneState === "completed" ? <WordImage /> : <WordCard />}
-        </WordContainer>
         <InsetBorderContainer>
           <InsetBorder />
         </InsetBorderContainer>
+        <WordContainer>
+          {wordMicrophoneState === "completed" ? <WordImage /> : <WordCard />}
+        </WordContainer>
         <InstructionsContainer>
           <Instructions />
         </InstructionsContainer>

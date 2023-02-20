@@ -28,6 +28,13 @@ const CardOuterContainer = styled.div`
 
 const CardInnerContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   @media (min-width: 1280px) {
     position: absolute;
@@ -35,6 +42,9 @@ const CardInnerContainer = styled.div`
     bottom: 140px;
     left: 140px;
     right: 140px;
+    background-color: white;
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
 
@@ -167,7 +177,7 @@ const MicrophoneContainer = styled.div`
 const WordContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
     position: absolute;
-    background-color: white;
+    background-color: transparent;
     top: 0;
     left: 0;
     right: 0;
@@ -176,11 +186,10 @@ const WordContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   @media (min-width: 1280px) {
     position: absolute;
-    background-color: white;
+    background-color: transparent;
     top: 0;
     left: 0;
     right: 0;
@@ -190,7 +199,6 @@ const WordContainer = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
 
