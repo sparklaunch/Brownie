@@ -56,6 +56,7 @@ const AudioManager = () => {
   };
   const onRightPlay = () => {
     setHighlightedPage(currentPage + 1);
+    setHighlightVisible(true);
     setLeftMicrophoneState("disabled");
     setRightMicrophoneState("disabled");
     setCentralMicrophoneState("disabled");

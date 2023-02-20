@@ -6,7 +6,9 @@ import {
   BookWrapper,
   CongratzContainer,
   FeedbackBarContainer,
+  GlowBorder,
   HomeContainer,
+  LeftClickable,
   LeftCompletedButtonsContainer,
   LeftPageImage,
   LeftPagerContainer,
@@ -45,6 +47,8 @@ import ScoreHeader from "./ScoreHeader";
 import scoresAtom from "../../../Stores/Classroom/Story/scores";
 import LeftCompletedMicrophone from "./Microphone/Center/LeftCompletedMicrophone";
 import RightCompletedMicrophone from "./Microphone/Center/RightCompletedMicrophone";
+import highlightedPageAtom from "../../../Stores/Classroom/Story/highlightedPage";
+import highlightVisibleAtom from "../../../Stores/Classroom/Story/highlightVisible";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -56,6 +60,10 @@ const Book = () => {
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
   const [scores, setScores] = useRecoilState(scoresAtom);
+  const [highlightedPage, setHighlightedPage] =
+    useRecoilState(highlightedPageAtom);
+  const [highlightVisible, setHighlightVisible] =
+    useRecoilState(highlightVisibleAtom);
   const { level } = useParams();
   const bookID = useData("id");
   return (
@@ -84,6 +92,10 @@ const Book = () => {
                 <LeftCompletedMicrophone />
               </LeftCompletedButtonsContainer>
             )}
+            {highlightedPage === currentPage && highlightVisible && (
+              <GlowBorder direction={`left`} />
+            )}
+            <LeftClickable />
           </TextBookLeftPage>
           <TextBookRightPage>
             {currentPage === 10 ? (
@@ -103,6 +115,9 @@ const Book = () => {
               <RightCompletedButtonsContainer>
                 <RightCompletedMicrophone />
               </RightCompletedButtonsContainer>
+            )}
+            {highlightedPage === currentPage + 1 && highlightVisible && (
+              <GlowBorder direction={`right`} />
             )}
           </TextBookRightPage>
           <ModeSwitcherContainer>

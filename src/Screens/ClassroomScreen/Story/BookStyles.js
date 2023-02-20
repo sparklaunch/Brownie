@@ -240,12 +240,14 @@ const MicContainer = styled.div`
     right: -100px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1;
   }
   @media (min-width: 1280px) {
     position: absolute;
     left: 50%;
     bottom: -70px;
     transform: translateX(-50%);
+    z-index: 1;
   }
 `;
 
@@ -266,12 +268,14 @@ const WaveAnimationContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
   }
   @media (min-width: 1280px) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
   }
 `;
 
@@ -344,6 +348,39 @@ const RightCompletedButtonsContainer = styled.div`
   }
 `;
 
+const GlowBorder = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    ${({ direction }) => (direction === "left" ? "right: 0;" : "left: 0;")}
+    width: 74vh;
+    z-index: 1;
+    box-shadow: 0 0 5px 5px #ffd53d, 0 0 10px 5px #ffd53d, 0 0 15px 5px #ffd53d,
+      inset 0 0 5px 5px #ffd53d, inset 0 0 10px 5px #ffd53d,
+      inset 0 0 15px 5px #ffd53d;
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 0 5px 5px #ffd53d, 0 0 10px 5px #ffd53d, 0 0 15px 5px #ffd53d,
+      inset 0 0 5px 5px #ffd53d, inset 0 0 10px 5px #ffd53d,
+      inset 0 0 15px 5px #ffd53d;
+  }
+`;
+
+const LeftClickable = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+  }
+`;
+
 export {
   BookContainer,
   NavigatorContainer,
@@ -367,5 +404,7 @@ export {
   RightPageShade,
   ScoreBarContainer,
   LeftCompletedButtonsContainer,
-  RightCompletedButtonsContainer
+  RightCompletedButtonsContainer,
+  GlowBorder,
+  LeftClickable
 };
