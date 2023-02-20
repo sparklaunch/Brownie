@@ -20,7 +20,8 @@ import {
   WordLeftPageTurnerContainer,
   WordResultsContainer,
   WordRightPageTurnerContainer,
-  WordWaveContainer
+  WordWaveContainer,
+  YouDidItScreenContainer
 } from "./CardStyles";
 import Instructions from "./Instructions";
 import Pagination from "./Pagination";
@@ -35,6 +36,7 @@ import WordCard from "./WordCard";
 import WordWave from "./WordWave";
 import ResultsScreen from "../Story/Results/ResultsScreen";
 import WordResults from "./Results/WordResults";
+import YouDidItScreen from "../Story/Results/YouDidIt/YouDidItScreen";
 
 const Card = () => {
   const { level } = useParams();
@@ -90,11 +92,11 @@ const Card = () => {
           <WordWave />
         </WordWaveContainer>
       )}
-      {/*{youDidItShown && (*/}
-      {/*  <div className={`absolute top-0 left-0 bottom-0 right-0`}>*/}
-      {/*    <YouDidItScreen />*/}
-      {/*  </div>*/}
-      {/*)}*/}
+      {youDidItShown && (
+        <YouDidItScreenContainer>
+          <YouDidItScreen />
+        </YouDidItScreenContainer>
+      )}
       <MicrophoneContainer>
         <Microphone />
       </MicrophoneContainer>
