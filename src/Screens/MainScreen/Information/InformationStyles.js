@@ -6,6 +6,11 @@ const InformationOuterContainer = styled.div`
     flex-direction: row;
     justify-content: center;
   }
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 `;
 
 const InformationInnerContainer = styled.div`
