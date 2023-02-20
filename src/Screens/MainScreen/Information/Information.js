@@ -1,14 +1,18 @@
 import EvaluationMethod from "./EvaluationMethod";
 import Caution from "./Caution";
+import {
+  InformationInnerContainer,
+  InformationOuterContainer
+} from "./InformationStyles";
 
 const Information = () => {
   return (
-    <div className={`flex flex-row justify-center`}>
-      <div className={`w-[1200px] py-16`}>
+    <InformationOuterContainer>
+      <InformationInnerContainer>
         <EvaluationMethod />
         <Caution />
-      </div>
-    </div>
+      </InformationInnerContainer>
+    </InformationOuterContainer>
   );
 };
 
