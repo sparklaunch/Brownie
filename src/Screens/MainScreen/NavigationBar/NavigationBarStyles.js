@@ -6,6 +6,11 @@ const NavigationBarOuterContainer = styled.div`
     justify-content: center;
   }
   @media (min-width: 1280px) {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
 `;
 

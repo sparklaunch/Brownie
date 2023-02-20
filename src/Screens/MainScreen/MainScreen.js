@@ -10,14 +10,14 @@ import CatalogModal from "./Catalog/CatalogModal/CatalogModal";
 const MainScreen = () => {
   const [modalOpen, setModalOpen] = useRecoilState(modalOpenAtom);
   return (
-    <div>
+    <>
       <NavigationBar />
       <Jumbotron />
       <Catalog />
       <Information />
       <Footer />
       {modalOpen && <CatalogModal />}
-    </div>
+    </>
   );
 };
 
