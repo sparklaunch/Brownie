@@ -328,8 +328,14 @@ const ScoreBarContainer = styled.div`
 
 const LeftCompletedButtonsContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
   @media (min-width: 1280px) {
+    z-index: 2;
     position: absolute;
     bottom: -80px;
     left: 50%;
@@ -339,8 +345,14 @@ const LeftCompletedButtonsContainer = styled.div`
 
 const RightCompletedButtonsContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(-50%);
   }
   @media (min-width: 1280px) {
+    z-index: 2;
     position: absolute;
     bottom: -80px;
     left: 50%;
