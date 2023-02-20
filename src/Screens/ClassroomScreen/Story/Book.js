@@ -16,7 +16,8 @@ import {
   TextBookContainer,
   TextBookLeftPage,
   TextBookRightPage,
-  UnitInfoContainer
+  UnitInfoContainer,
+  WaveAnimationContainer
 } from "./BookStyles";
 import Navigator from "./Navigator/Navigator";
 import resultsScreenShownAtom from "../../../Stores/Classroom/Story/resultsScreenShown";
@@ -30,6 +31,7 @@ import PageControllers from "./Controllers/PageControllers";
 import HomeButton from "../HomeButton";
 import CentralMicrophone from "./Microphone/Center/CentralMicrophone";
 import BookTitle from "./BookTitle";
+import Wave from "./Microphone/Center/Wave";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -85,6 +87,11 @@ const Book = () => {
           <UnitInfoContainer>
             <BookTitle />
           </UnitInfoContainer>
+          {centralMicrophoneState === "invisible" && (
+            <WaveAnimationContainer>
+              <Wave />
+            </WaveAnimationContainer>
+          )}
           <MicContainer>
             <CentralMicrophone />
           </MicContainer>

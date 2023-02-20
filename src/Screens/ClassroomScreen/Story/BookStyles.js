@@ -229,6 +229,21 @@ const UnitInfoContainer = styled.div`
   }
 `;
 
+const WaveAnimationContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
 export {
   BookContainer,
   NavigatorContainer,
@@ -245,5 +260,6 @@ export {
   PagerControllersContainer,
   HomeContainer,
   MicContainer,
-  UnitInfoContainer
+  UnitInfoContainer,
+  WaveAnimationContainer
 };
