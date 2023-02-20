@@ -1,16 +1,17 @@
 import TryTitle from "./TryTitle";
 import TryContents from "./TryContents";
 import TryInformation from "./TryInformation";
+import { TryInnerContainer, TryOuterContainer } from "./TryStyles";
 
 const Try = () => {
   return (
-    <div className={`flex flex-row justify-center`}>
-      <div className={`flex flex-col w-[800px] items-stretch`}>
+    <TryOuterContainer>
+      <TryInnerContainer>
         <TryTitle />
         <TryContents />
         <TryInformation />
-      </div>
-    </div>
+      </TryInnerContainer>
+    </TryOuterContainer>
   );
 };
 

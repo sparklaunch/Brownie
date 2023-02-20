@@ -4,11 +4,11 @@ import Try from "./Try";
 
 const DemoScreen = () => {
   return (
-    <div>
+    <>
       <NavigationBar />
       <Try />
       <Footer />
-    </div>
+    </>
   );
 };
 
