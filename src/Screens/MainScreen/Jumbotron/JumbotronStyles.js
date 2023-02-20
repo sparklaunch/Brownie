@@ -10,6 +10,11 @@ const JumbotronOuterContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: rgb(70, 198, 210);
+    background-image: url("/assets/images/jumbotron.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
   }
 `;
 
