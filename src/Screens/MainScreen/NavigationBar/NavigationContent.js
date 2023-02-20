@@ -1,8 +1,10 @@
 import NavigationContentTop from "./NavigationContentTop";
 import NavigationContentBottom from "./NavigationContentBottom";
 import Hamburger from "./Hamburger";
-import { NavigationContentContainer } from "./NavigationContentStyles";
-import { HamburgerContainer } from "./HamburgerStyles";
+import {
+  HamburgerContainer,
+  NavigationContentContainer
+} from "./NavigationContentStyles";
 
 const NavigationContent = () => {
   return (
