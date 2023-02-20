@@ -85,6 +85,16 @@ const NavigatorContainer = styled.div`
   }
 `;
 
+const WaveContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+`;
+
 export {
   BookContainer,
   BookContentContainer,
@@ -95,5 +105,6 @@ export {
   HomeButtonContainer,
   BookTitleContainer,
   CentralMicrophoneContainer,
-  NavigatorContainer
+  NavigatorContainer,
+  WaveContainer
 };

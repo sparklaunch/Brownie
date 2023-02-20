@@ -11,7 +11,8 @@ import {
   ModeButtonsContainer,
   NavigatorContainer,
   PageControllersContainer,
-  RightPageTurnerContainer
+  RightPageTurnerContainer,
+  WaveContainer
 } from "./BookStyles";
 import BookContent from "./BookContent";
 import ModeButtons from "../Mode/ModeButtons";
@@ -22,6 +23,7 @@ import HomeButton from "../HomeButton";
 import BookTitle from "./BookTitle";
 import CentralMicrophone from "./Microphone/Center/CentralMicrophone";
 import Navigator from "./Navigator/Navigator";
+import Wave from "./Microphone/Center/Wave";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -54,13 +56,11 @@ const Book = () => {
       <CentralMicrophoneContainer>
         <CentralMicrophone />
       </CentralMicrophoneContainer>
-      {/*{centralMicrophoneState === "invisible" && (*/}
-      {/*  <div*/}
-      {/*    className={`absolute bottom-[10%] left-[50%] translate-x-[-50%] z-10`}*/}
-      {/*  >*/}
-      {/*    <Wave />*/}
-      {/*  </div>*/}
-      {/*)}*/}
+      {centralMicrophoneState === "invisible" && (
+        <WaveContainer>
+          <Wave />
+        </WaveContainer>
+      )}
       {/*{centralMicrophoneState === "loading" && (*/}
       {/*  <div*/}
       {/*    className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[3]`}*/}
