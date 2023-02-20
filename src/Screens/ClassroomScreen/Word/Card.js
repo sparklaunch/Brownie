@@ -8,6 +8,7 @@ import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage"
 import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import InsetBorder from "./InsetBorder";
 import {
+  CardInnerContainer,
   CardOuterContainer,
   CardTitleContainer,
   HomeButtonContainer,
@@ -54,52 +55,54 @@ const Card = () => {
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   return (
     <CardOuterContainer>
-      <WordContainer>
-        {wordMicrophoneState === "completed" ? <WordImage /> : <WordCard />}
-      </WordContainer>
-      <InsetBorderContainer>
-        <InsetBorder />
-      </InsetBorderContainer>
-      <InstructionsContainer>
-        <Instructions />
-      </InstructionsContainer>
-      <PaginationContainer>
-        <Pagination />
-      </PaginationContainer>
-      <ModeButtonsContainer>
-        <ModeButtons />
-      </ModeButtonsContainer>
-      <WordLeftPageTurnerContainer>
-        <WordLeftPageTurner />
-      </WordLeftPageTurnerContainer>
-      <WordRightPageTurnerContainer>
-        <WordRightPageTurner />
-      </WordRightPageTurnerContainer>
-      <CardTitleContainer>
-        <CardTitle />
-      </CardTitleContainer>
-      <HomeButtonContainer>
-        <HomeButton />
-      </HomeButtonContainer>
-      {resultsScreenShown && <ResultsScreen />}
-      {wordScores[`${level}-${currentWordPage}`] !== undefined && (
-        <WordResultsContainer>
-          <WordResults score={wordScores[`${level}-${currentWordPage}`]} />
-        </WordResultsContainer>
-      )}
-      {wordMicrophoneState === "recording" && (
-        <WordWaveContainer>
-          <WordWave />
-        </WordWaveContainer>
-      )}
-      {youDidItShown && (
-        <YouDidItScreenContainer>
-          <YouDidItScreen />
-        </YouDidItScreenContainer>
-      )}
-      <MicrophoneContainer>
-        <Microphone />
-      </MicrophoneContainer>
+      <CardInnerContainer>
+        <WordContainer>
+          {wordMicrophoneState === "completed" ? <WordImage /> : <WordCard />}
+        </WordContainer>
+        <InsetBorderContainer>
+          <InsetBorder />
+        </InsetBorderContainer>
+        <InstructionsContainer>
+          <Instructions />
+        </InstructionsContainer>
+        <PaginationContainer>
+          <Pagination />
+        </PaginationContainer>
+        <ModeButtonsContainer>
+          <ModeButtons />
+        </ModeButtonsContainer>
+        <WordLeftPageTurnerContainer>
+          <WordLeftPageTurner />
+        </WordLeftPageTurnerContainer>
+        <WordRightPageTurnerContainer>
+          <WordRightPageTurner />
+        </WordRightPageTurnerContainer>
+        <CardTitleContainer>
+          <CardTitle />
+        </CardTitleContainer>
+        <HomeButtonContainer>
+          <HomeButton />
+        </HomeButtonContainer>
+        {resultsScreenShown && <ResultsScreen />}
+        {wordScores[`${level}-${currentWordPage}`] !== undefined && (
+          <WordResultsContainer>
+            <WordResults score={wordScores[`${level}-${currentWordPage}`]} />
+          </WordResultsContainer>
+        )}
+        {wordMicrophoneState === "recording" && (
+          <WordWaveContainer>
+            <WordWave />
+          </WordWaveContainer>
+        )}
+        {youDidItShown && (
+          <YouDidItScreenContainer>
+            <YouDidItScreen />
+          </YouDidItScreenContainer>
+        )}
+        <MicrophoneContainer>
+          <Microphone />
+        </MicrophoneContainer>
+      </CardInnerContainer>
     </CardOuterContainer>
   );
 };
