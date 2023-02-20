@@ -94,14 +94,14 @@ const Card = () => {
             <WordWave />
           </WordWaveContainer>
         )}
+        <MicrophoneContainer>
+          <Microphone />
+        </MicrophoneContainer>
         {youDidItShown && (
           <YouDidItScreenContainer>
             <YouDidItScreen />
           </YouDidItScreenContainer>
         )}
-        <MicrophoneContainer>
-          <Microphone />
-        </MicrophoneContainer>
       </CardInnerContainer>
     </CardOuterContainer>
   );
