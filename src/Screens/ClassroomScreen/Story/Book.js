@@ -14,7 +14,6 @@ import {
   RightPageImage,
   RightPagerContainer,
   TextBookContainer,
-  TextBookEmptyPage,
   TextBookLeftPage,
   TextBookRightPage,
   UnitInfoContainer
@@ -52,7 +51,7 @@ const Book = () => {
         <TextBookContainer>
           <TextBookLeftPage>
             {currentPage === 0 ? (
-              <TextBookEmptyPage />
+              <LeftPageImage src={`/assets/images/pages/blank.jpg`} />
             ) : (
               <LeftPageImage
                 src={`/assets/images/pages/${bookID}_${currentPage}.jpg`}
@@ -61,7 +60,7 @@ const Book = () => {
           </TextBookLeftPage>
           <TextBookRightPage>
             {currentPage === 10 ? (
-              <TextBookEmptyPage />
+              <RightPageImage src={`/assets/images/pages/blank.jpg`} />
             ) : (
               <RightPageImage
                 src={`/assets/images/pages/${bookID}_${currentPage + 1}.jpg`}
