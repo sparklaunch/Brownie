@@ -226,7 +226,8 @@ const WordResultsContainer = styled.div`
   @media (min-width: 1280px) {
     position: absolute;
     top: 10px;
-    right: -35px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 `;
 

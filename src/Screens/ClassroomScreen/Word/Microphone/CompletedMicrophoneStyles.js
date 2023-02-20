@@ -5,6 +5,10 @@ const CompletedMicrophoneContainer = styled.div`
     display: flex;
     flex-direction: column;
   }
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-direction: row;
+  }
 `;
 
 const RetryButton = styled.img`
@@ -15,6 +19,10 @@ const RetryButton = styled.img`
     width: 70px;
     height: 70px;
   }
+  @media (min-width: 1280px) {
+    margin-right: 20px;
+    cursor: pointer;
+  }
 `;
 
 const MyVoiceButton = styled.img`
@@ -22,6 +30,9 @@ const MyVoiceButton = styled.img`
     cursor: pointer;
     width: 70px;
     height: 70px;
+  }
+  @media (min-width: 1280px) {
+    cursor: pointer;
   }
 `;
 
