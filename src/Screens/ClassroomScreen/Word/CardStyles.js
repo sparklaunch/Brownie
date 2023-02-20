@@ -114,6 +114,14 @@ const WordWaveContainer = styled.div`
   }
 `;
 
+const WordResultsContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 10px;
+    right: -35px;
+  }
+`;
+
 export {
   CardOuterContainer,
   InsetBorderContainer,
@@ -126,5 +134,6 @@ export {
   HomeButtonContainer,
   MicrophoneContainer,
   WordContainer,
-  WordWaveContainer
+  WordWaveContainer,
+  WordResultsContainer
 };
