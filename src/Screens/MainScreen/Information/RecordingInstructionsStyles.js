@@ -4,10 +4,19 @@ const RecordingInstructionsContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
     margin: 24px 0;
   }
+  @media (min-width: 1280px) {
+    margin: 24px 0;
+  }
 `;
 
 const RecordingInstructionsTitleContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 8px 0;
+  }
+  @media (min-width: 1280px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,6 +30,11 @@ const RecordingInstructionsTitle = styled.p`
     font-size: 20px;
     margin-left: 10px;
   }
+  @media (min-width: 1280px) {
+    font-family: Jua, sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+  }
 `;
 
 const RecordingInstructionsList = styled.ol`
@@ -28,10 +42,18 @@ const RecordingInstructionsList = styled.ol`
     list-style: decimal;
     padding-left: 20px;
   }
+  @media (min-width: 1280px) {
+    list-style: decimal;
+    padding-left: 20px;
+  }
 `;
 
 const RecordingInstructionsListItem = styled.li`
   @media (min-width: 768px) and (max-width: 1279px) {
+    font-size: 18px;
+    margin: 4px 0;
+  }
+  @media (min-width: 1280px) {
     font-size: 18px;
     margin: 4px 0;
   }
