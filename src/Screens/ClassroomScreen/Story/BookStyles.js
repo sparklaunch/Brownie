@@ -244,6 +244,21 @@ const WaveAnimationContainer = styled.div`
   }
 `;
 
+const FeedbackBarContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+`;
+
 export {
   BookContainer,
   NavigatorContainer,
@@ -261,5 +276,6 @@ export {
   HomeContainer,
   MicContainer,
   UnitInfoContainer,
-  WaveAnimationContainer
+  WaveAnimationContainer,
+  FeedbackBarContainer
 };
