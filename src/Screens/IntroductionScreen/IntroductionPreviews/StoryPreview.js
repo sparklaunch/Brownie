@@ -8,7 +8,11 @@ const StoryPreview = () => {
       <p className={`text-[#515151] text-[18px] mb-[60px]`}>
         정확히 읽었는지 AI가 바로 알려줘요.
       </p>
-      <img src={`/assets/images/story_preview.png`} alt={`Story Preview`} />
+      <img
+        src={`/assets/images/story_preview.png`}
+        alt={`Story Preview`}
+        className={`drop-shadow-2xl`}
+      />
     </div>
   );
 };

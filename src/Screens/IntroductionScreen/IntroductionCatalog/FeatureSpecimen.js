@@ -4,7 +4,7 @@ const FeatureSpecimen = () => {
       <img
         src={`/assets/images/feature.png`}
         alt={`Feature`}
-        className={`mb-[36px] w-[600px]`}
+        className={`mb-[36px] w-[600px] drop-shadow-2xl`}
       />
       <div className={`text-center`}>
         <p className={`text-[#515151] text-[20px]`}>
