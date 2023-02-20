@@ -8,6 +8,7 @@ import {
   NavigatorContainer,
   RightPageImage,
   TextBookContainer,
+  TextBookEmptyPage,
   TextBookLeftPage,
   TextBookRightPage
 } from "./BookStyles";
@@ -36,14 +37,22 @@ const Book = () => {
       <BookWrapper>
         <TextBookContainer>
           <TextBookLeftPage>
-            <LeftPageImage
-              src={`/assets/images/pages/${bookID}_${currentPage}.jpg`}
-            />
+            {currentPage === 0 ? (
+              <TextBookEmptyPage />
+            ) : (
+              <LeftPageImage
+                src={`/assets/images/pages/${bookID}_${currentPage}.jpg`}
+              />
+            )}
           </TextBookLeftPage>
           <TextBookRightPage>
-            <RightPageImage
-              src={`/assets/images/pages/${bookID}_${currentPage + 1}.jpg`}
-            />
+            {currentPage === 10 ? (
+              <TextBookEmptyPage />
+            ) : (
+              <RightPageImage
+                src={`/assets/images/pages/${bookID}_${currentPage + 1}.jpg`}
+              />
+            )}
           </TextBookRightPage>
         </TextBookContainer>
       </BookWrapper>

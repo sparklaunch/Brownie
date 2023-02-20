@@ -166,6 +166,13 @@ const RightPageImage = styled.img`
   }
 `;
 
+const TextBookEmptyPage = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+  }
+`;
+
 export {
   BookContainer,
   BookContentContainer,
@@ -183,5 +190,6 @@ export {
   TextBookRightPage,
   TextBookLeftPage,
   LeftPageImage,
-  RightPageImage
+  RightPageImage,
+  TextBookEmptyPage
 };
