@@ -5,12 +5,12 @@ import Confetti from "./Confetti";
 
 const YouDidItScreen = () => {
   return (
-    <div>
+    <>
       <ResultsBackDrop />
       <YouDidItText />
       <Confetti />
       <ReadingMonkey />
-    </div>
+    </>
   );
 };
 
