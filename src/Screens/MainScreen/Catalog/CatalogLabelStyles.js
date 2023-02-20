@@ -9,8 +9,8 @@ const CatalogLabelContainer = styled.div`
   }
   @media (min-width: 1280px) {
     position: absolute;
-    bottom: 12px;
-    left: 2px;
+    bottom: 48px;
+    left: 12px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
