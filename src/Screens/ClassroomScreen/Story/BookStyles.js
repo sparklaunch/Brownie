@@ -95,6 +95,77 @@ const WaveContainer = styled.div`
   }
 `;
 
+const BookWrapper = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+const TextBookContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    width: 1091px;
+    height: 723px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+`;
+
+const TextBookLeftPage = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  }
+`;
+
+const TextBookRightPage = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  }
+`;
+
+const LeftPageImage = styled.img`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+  }
+`;
+
+const RightPageImage = styled.img`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+  }
+`;
+
 export {
   BookContainer,
   BookContentContainer,
@@ -106,5 +177,11 @@ export {
   BookTitleContainer,
   CentralMicrophoneContainer,
   NavigatorContainer,
-  WaveContainer
+  WaveContainer,
+  BookWrapper,
+  TextBookContainer,
+  TextBookRightPage,
+  TextBookLeftPage,
+  LeftPageImage,
+  RightPageImage
 };
