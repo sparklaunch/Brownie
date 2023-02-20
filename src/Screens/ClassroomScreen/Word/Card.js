@@ -18,7 +18,8 @@ import {
   PaginationContainer,
   WordContainer,
   WordLeftPageTurnerContainer,
-  WordRightPageTurnerContainer
+  WordRightPageTurnerContainer,
+  WordWaveContainer
 } from "./CardStyles";
 import Instructions from "./Instructions";
 import Pagination from "./Pagination";
@@ -30,6 +31,7 @@ import HomeButton from "../HomeButton";
 import Microphone from "./Microphone/Microphone";
 import WordImage from "./WordImage";
 import WordCard from "./WordCard";
+import WordWave from "./WordWave";
 
 const Card = () => {
   const { level } = useParams();
@@ -84,11 +86,11 @@ const Card = () => {
       {/*    <WordResults score={wordScores[`${level}-${currentWordPage}`]} />*/}
       {/*  </div>*/}
       {/*)}*/}
-      {/*{wordMicrophoneState === "recording" && (*/}
-      {/*  <div className={`absolute left-[50%] translate-x-[-50%] bottom-0`}>*/}
-      {/*    <WordWave />*/}
-      {/*  </div>*/}
-      {/*)}*/}
+      {wordMicrophoneState === "recording" && (
+        <WordWaveContainer>
+          <WordWave />
+        </WordWaveContainer>
+      )}
       {/*{youDidItShown && (*/}
       {/*  <div className={`absolute top-0 left-0 bottom-0 right-0`}>*/}
       {/*    <YouDidItScreen />*/}

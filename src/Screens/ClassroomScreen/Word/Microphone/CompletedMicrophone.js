@@ -10,6 +10,11 @@ import wordResultsShownAtom from "../../../../Stores/Classroom/Word/wordResultsS
 import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsScreenShown";
 import wordScoresAtom from "../../../../Stores/Classroom/Word/wordScores";
 import { useParams } from "react-router-dom";
+import {
+  CompletedMicrophoneContainer,
+  MyVoiceButton,
+  RetryButton
+} from "./CompletedMicrophoneStyles";
 
 const CompletedMicrophone = () => {
   const { level } = useParams();
@@ -116,20 +121,18 @@ const CompletedMicrophone = () => {
     audio.play();
   };
   return (
-    <div className={`flex flex-row`}>
-      <img
+    <CompletedMicrophoneContainer>
+      <RetryButton
         src={`/assets/images/retry_button.svg`}
         alt={`Retry Button`}
-        className={`mr-5 cursor-pointer w-[70px] h-[70px]`}
         onClick={onClickRetry}
       />
-      <img
+      <MyVoiceButton
         src={`/assets/images/my_voice_button.svg`}
         alt={`My Voice Button`}
-        className={`cursor-pointer w-[70px] h-[70px]`}
         onClick={onClickMyVoice}
       />
-    </div>
+    </CompletedMicrophoneContainer>
   );
 };
 
