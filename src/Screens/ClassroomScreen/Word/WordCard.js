@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import useData from "../../../Hooks/useData";
-import { WordCardContainer } from "./WordCardStyles";
+import { WordCardContainer, WordCardText } from "./WordCardStyles";
 
 const WordCard = () => {
   const [currentWordPage, setCurrentWordPage] =
@@ -18,9 +18,7 @@ const WordCard = () => {
         className={`cursor-pointer`}
         onClick={onClickMegaphone}
       />
-      <p className={`text-[120px] font-[900] ml-[24px]`}>
-        {words[currentWordPage - 1]}
-      </p>
+      <WordCardText>{words[currentWordPage - 1]}</WordCardText>
     </WordCardContainer>
   );
 };
