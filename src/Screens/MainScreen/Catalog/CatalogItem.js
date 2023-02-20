@@ -5,6 +5,7 @@ import { useRecoilState } from "recoil";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import modeAtom from "../../../Stores/Classroom/mode";
+import { CatalogItemContainer, CatalogItemImage } from "./CatalogItemStyles";
 
 const CatalogItem = ({
   coverImage,
@@ -36,18 +37,16 @@ const CatalogItem = ({
     navigate(`/demo/${data.level}`);
   };
   return (
-    <div className={`relative drop-shadow-lg`}>
-      <img
+    <CatalogItemContainer>
+      <CatalogItemImage
         loading={"lazy"}
         src={`/assets/images/covers/${coverImage}`}
         alt={`${coverImage}`}
-        className={`h-[288px] w-full object-cover rounded-lg border-4 border-[transparent] cursor-pointer hover:border-4 hover:border-[#47C7D2] transition duration-200 ease-in-out
-        `}
         onClick={onClickCatalogItem}
       />
       <CatalogLabel label={coverImage.split(".jpg")[0]} />
       <CatalogTitle data={data} />
-    </div>
+    </CatalogItemContainer>
   );
 };
 
