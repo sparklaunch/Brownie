@@ -322,6 +322,28 @@ const ScoreBarContainer = styled.div`
   }
 `;
 
+const LeftCompletedButtonsContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+`;
+
+const RightCompletedButtonsContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+`;
+
 export {
   BookContainer,
   NavigatorContainer,
@@ -343,5 +365,7 @@ export {
   CongratzContainer,
   LeftPageShade,
   RightPageShade,
-  ScoreBarContainer
+  ScoreBarContainer,
+  LeftCompletedButtonsContainer,
+  RightCompletedButtonsContainer
 };

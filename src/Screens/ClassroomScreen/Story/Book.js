@@ -7,6 +7,7 @@ import {
   CongratzContainer,
   FeedbackBarContainer,
   HomeContainer,
+  LeftCompletedButtonsContainer,
   LeftPageImage,
   LeftPagerContainer,
   LeftPageShade,
@@ -14,6 +15,7 @@ import {
   ModeSwitcherContainer,
   NavigatorContainer,
   PagerControllersContainer,
+  RightCompletedButtonsContainer,
   RightPageImage,
   RightPagerContainer,
   RightPageShade,
@@ -41,6 +43,8 @@ import ResultsScreen from "./Results/ResultsScreen";
 import YouDidItScreen from "./Results/YouDidIt/YouDidItScreen";
 import ScoreHeader from "./ScoreHeader";
 import scoresAtom from "../../../Stores/Classroom/Story/scores";
+import LeftCompletedMicrophone from "./Microphone/Center/LeftCompletedMicrophone";
+import RightCompletedMicrophone from "./Microphone/Center/RightCompletedMicrophone";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -75,6 +79,11 @@ const Book = () => {
                 <ScoreHeader score={scores[`${level}-${currentPage}`]} />
               </ScoreBarContainer>
             )}
+            {centralMicrophoneState === "completed" && currentPage !== 0 && (
+              <LeftCompletedButtonsContainer>
+                <LeftCompletedMicrophone />
+              </LeftCompletedButtonsContainer>
+            )}
           </TextBookLeftPage>
           <TextBookRightPage>
             {currentPage === 10 ? (
@@ -89,6 +98,11 @@ const Book = () => {
               <ScoreBarContainer>
                 <ScoreHeader score={scores[`${level}-${currentPage + 1}`]} />
               </ScoreBarContainer>
+            )}
+            {centralMicrophoneState === "completed" && currentPage !== 10 && (
+              <RightCompletedButtonsContainer>
+                <RightCompletedMicrophone />
+              </RightCompletedButtonsContainer>
             )}
           </TextBookRightPage>
           <ModeSwitcherContainer>

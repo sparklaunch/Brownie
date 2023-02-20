@@ -10,6 +10,10 @@ const RightCompletedMicrophoneContainer = styled.div`
     display: flex;
     flex-direction: row;
   }
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-direction: row;
+  }
 `;
 
 const RetryButtonContainer = styled.div`
@@ -22,6 +26,10 @@ const RetryButtonContainer = styled.div`
     justify-content: center;
     cursor: pointer;
   }
+  @media (min-width: 1280px) {
+    margin-right: 20px;
+    cursor: pointer;
+  }
 `;
 
 const MyVoiceButtonContainer = styled.div`
@@ -32,6 +40,9 @@ const MyVoiceButtonContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+  }
+  @media (min-width: 1280px) {
     cursor: pointer;
   }
 `;
