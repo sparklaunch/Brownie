@@ -32,6 +32,7 @@ import Microphone from "./Microphone/Microphone";
 import WordImage from "./WordImage";
 import WordCard from "./WordCard";
 import WordWave from "./WordWave";
+import ResultsScreen from "../Story/Results/ResultsScreen";
 
 const Card = () => {
   const { level } = useParams();
@@ -76,11 +77,7 @@ const Card = () => {
       <HomeButtonContainer>
         <HomeButton />
       </HomeButtonContainer>
-      {/*{resultsScreenShown && (*/}
-      {/*  <div>*/}
-      {/*    <ResultsScreen />*/}
-      {/*  </div>*/}
-      {/*)}*/}
+      {resultsScreenShown && <ResultsScreen />}
       {/*{wordScores[`${level}-${currentWordPage}`] !== undefined && (*/}
       {/*  <div className={`absolute top-0 left-[50%] translate-x-[-50%]`}>*/}
       {/*    <WordResults score={wordScores[`${level}-${currentWordPage}`]} />*/}
