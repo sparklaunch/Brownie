@@ -1,18 +1,21 @@
 import NavigationContentTop from "./NavigationContentTop";
 import NavigationContentBottom from "./NavigationContentBottom";
 import Hamburger from "./Hamburger";
+import { NavigationContentContainer } from "./NavigationContentStyles";
+import { HamburgerContainer } from "./HamburgerStyles";
 
 const NavigationContent = () => {
-  if (window.innerWidth >= 768 && window.innerWidth <= 1279) {
-    return <Hamburger />;
-  } else {
-    return (
-      <div>
+  return (
+    <>
+      <HamburgerContainer>
+        <Hamburger />
+      </HamburgerContainer>
+      <NavigationContentContainer>
         <NavigationContentTop />
         <NavigationContentBottom />
-      </div>
-    );
-  }
+      </NavigationContentContainer>
+    </>
+  );
 };
 
 export default NavigationContent;
