@@ -18,6 +18,7 @@ const CatalogItemImage = styled.img`
     border: 4px solid transparent;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     &:hover {
       border: 4px solid #47c7d2;
     }
@@ -30,6 +31,7 @@ const CatalogItemImage = styled.img`
     border: 4px solid transparent;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     &:hover {
       border: 4px solid #47c7d2;
     }

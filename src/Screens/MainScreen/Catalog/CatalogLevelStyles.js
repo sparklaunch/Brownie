@@ -14,12 +14,14 @@ const CatalogLevelLabelContainer = styled.div`
     flex-direction: row;
     align-items: center;
     margin-bottom: 8px;
+    margin-top: 24px;
   }
   @media (min-width: 1280px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 8px;
+    margin-top: 24px;
   }
 `;
 
