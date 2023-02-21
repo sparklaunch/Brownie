@@ -108,7 +108,7 @@ const IdleMicrophone = () => {
             headers: {
               "Content-Type": "multipart/form-data",
               "Access-Control-Allow-Headers": "*",
-              "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913"
+              "X-API-KEY": Constants.API_KEY
             }
           })
           .then((response) => {

@@ -56,7 +56,7 @@ const RightButtons = () => {
               "x-cors-api-key": "temp_e4ec220dbf44f09c113217921d9d34d6",
               "Access-Control-Allow-Origin": "*",
               "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-              "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913"
+              "X-API-KEY": Constants.API_KEY
             }
           })
           .then((response) => {
