@@ -8,6 +8,7 @@ import totalScoreAtom from "../../../Stores/Classroom/Story/totalScore";
 const WordImage = () => {
   const words = useData("words");
   const { level } = useParams();
+  const bookID = useData("id");
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const onClickMegaphone = () => {
@@ -32,7 +33,9 @@ const WordImage = () => {
       className={`w-[76%] h-[76%] rounded-2xl flex flex-col justify-center items-center relative`}
     >
       <img
-        src={`/assets/images/words/${level}-${words[currentWordPage - 1]}.png`}
+        src={`/assets/images/words/${bookID}_${words[currentWordPage - 1]
+          .toLowerCase()
+          .replace(" ", "")}.png`}
         alt={words[currentWordPage - 1]}
         className={`w-[60%] translate-y-[-10%]`}
       />
