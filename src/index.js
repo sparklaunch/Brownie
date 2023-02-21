@@ -25,7 +25,10 @@ root.render(
         <Route path={"/mypage"} element={<MyPageScreen />} />
         <Route path={"/introduction"} element={<IntroductionScreen />} />
         <Route path={"/catalog"} element={<CatalogScreen />} />
-        <Route path={"administrator"} element={<AdministratorSignInScreen />} />
+        <Route
+          path={"/administrator"}
+          element={<AdministratorSignInScreen />}
+        />
         <Route path={"/demo/:level"} element={<TrialScreen />} />
         <Route path={"*"} element={<NotFoundScreen />} />
       </Routes>
