@@ -11,6 +11,7 @@ import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsSc
 import wordScoresAtom from "../../../../Stores/Classroom/Word/wordScores";
 import { useParams } from "react-router-dom";
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
+import Constants from "../../../../Utilities/Constants";
 
 const IdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -103,7 +104,7 @@ const IdleMicrophone = () => {
         formData.append("text", words[currentWordPage - 1]);
         formData.append("student_audio", event.data);
         axios
-          .post("https://api.elasolution.com/pron_v2/", formData, {
+          .post(`${Constants.ELA_API_ENDPOINT}/pron_v2/`, formData, {
             headers: {
               "Content-Type": "multipart/form-data",
               "Access-Control-Allow-Headers": "*",

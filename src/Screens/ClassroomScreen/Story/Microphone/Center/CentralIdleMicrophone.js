@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 import scoresAtom from "../../../../../Stores/Classroom/Story/scores";
 import highlightedPageAtom from "../../../../../Stores/Classroom/Story/highlightedPage";
 import highlightVisibleAtom from "../../../../../Stores/Classroom/Story/highlightVisible";
+import Constants from "../../../../../Utilities/Constants";
 
 const CentralIdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -113,7 +114,7 @@ const CentralIdleMicrophone = () => {
         }
         formData.append("student_audio", event.data);
         axios
-          .post("https://api.elasolution.com/pron_v2/", formData, {
+          .post(`${Constants.ELA_API_ENDPOINT}/pron_v2/`, formData, {
             headers: {
               "Content-Type": "multipart/form-data",
               "Access-Control-Allow-Headers": "*",

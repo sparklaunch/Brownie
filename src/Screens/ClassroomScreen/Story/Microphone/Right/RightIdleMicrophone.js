@@ -9,6 +9,7 @@ import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
 import rightFinishedRecordingAtom from "../../../../../Stores/Classroom/Story/rightFinishedRecording";
 import useData from "../../../../../Hooks/useData";
+import Constants from "../../../../../Utilities/Constants";
 
 const LeftIdleMicrophone = () => {
   const sentences = useData("sentences");
@@ -46,20 +47,15 @@ const LeftIdleMicrophone = () => {
         formData.append("text", sentences[currentPage]);
         formData.append("student_audio", event.data);
         axios
-          .post(
-            "https://proxy.cors.sh/https://api.elasolution.com/pron_v2/",
-            formData,
-            {
-              headers: {
-                "Content-Type": "multipart/form-data",
-                "x-cors-api-key": "temp_e4ec220dbf44f09c113217921d9d34d6",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods":
-                  "GET, POST, PUT, DELETE, OPTIONS",
-                "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913"
-              }
+          .post(`${Constants.ELA_API_ENDPOINT}/pron_v2/`, formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+              "x-cors-api-key": "temp_e4ec220dbf44f09c113217921d9d34d6",
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+              "X-API-KEY": "afef8c94d1094b58a3fc58e743eb9913"
             }
-          )
+          })
           .then((response) => {
             const stringResponse = JSON.stringify(response, null, 2);
             console.log(stringResponse);

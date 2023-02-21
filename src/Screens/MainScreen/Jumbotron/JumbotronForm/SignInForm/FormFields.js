@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import idAtom from "../../../../../Stores/Auth/id";
 import passwordAtom from "../../../../../Stores/Auth/password";
 import axios from "axios";
+import Constants from "../../../../../Utilities/Constants";
 
 const FormFields = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -14,8 +15,11 @@ const FormFields = () => {
   const signIn = async () => {
     try {
       const response = await axios.post(
-        `/api/ap002?id=${id}&pwd=${password}`,
-        "",
+        `${Constants.AUTH_API_ENDPOINT}/api/ap002`,
+        {
+          id: id,
+          pwd: password
+        },
         {
           headers: {
             "Content-Type": "application/json",
