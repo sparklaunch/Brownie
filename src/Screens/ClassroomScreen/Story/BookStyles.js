@@ -145,7 +145,7 @@ const LeftPageShade = styled.div`
     background: linear-gradient(
       to right,
       transparent 0%,
-      rgba(0, 0, 0, 0.5) 100%
+      rgba(0, 0, 0, 0.2) 100%
     );
   }
 `;
@@ -177,7 +177,7 @@ const RightPageShade = styled.div`
     background: linear-gradient(
       to left,
       transparent 0%,
-      rgba(0, 0, 0, 0.5) 100%
+      rgba(0, 0, 0, 0.2) 100%
     );
   }
 `;
