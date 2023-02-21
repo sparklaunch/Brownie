@@ -1,15 +1,20 @@
 import {
+  TextBookHeaderInnerContainer,
   TextBookHeaderOuterContainer,
-  TextBookHeaderRectangle
+  TextBookHeaderRectangle,
+  TextBookHeaderTitle
 } from "./TextBookHeaderStyles";
 
 const TextBookHeader = () => {
   return (
     <TextBookHeaderOuterContainer>
-      <TextBookHeaderRectangle
-        src={`/assets/images/rectangle.svg`}
-        alt={`Rectangle Icon`}
-      />
+      <TextBookHeaderInnerContainer>
+        <TextBookHeaderRectangle
+          src={`/assets/images/rectangle.svg`}
+          alt={`Rectangle Icon`}
+        />
+        <TextBookHeaderTitle>교재 구성</TextBookHeaderTitle>
+      </TextBookHeaderInnerContainer>
     </TextBookHeaderOuterContainer>
   );
 };
