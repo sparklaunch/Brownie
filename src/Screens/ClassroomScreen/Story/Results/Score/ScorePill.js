@@ -2,13 +2,14 @@ import ScoreStars from "./ScoreStars";
 import ScoreText from "./ScoreText";
 import { useRecoilState } from "recoil";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
+import Constants from "../../../../../Utilities/Constants";
 
 const ScorePill = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   let borderColor;
-  if (totalScore.score >= 70) {
+  if (totalScore.score >= Constants.EXCELLENT_THRESHOLD) {
     borderColor = `border-[#15B58F]`;
-  } else if (totalScore.score >= 40) {
+  } else if (totalScore.score >= Constants.GOOD_THRESHOLD) {
     borderColor = `border-[#FF8200]`;
   } else {
     borderColor = `border-[#FF2442]`;

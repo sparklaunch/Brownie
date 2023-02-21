@@ -14,6 +14,7 @@ import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Micro
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
 import useData from "../../../../Hooks/useData";
 import youDidItShownAtom from "../../../../Stores/Classroom/youDidItShown";
+import Constants from "../../../../Utilities/Constants";
 
 const ResultsScreen = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
@@ -69,9 +70,9 @@ const ResultsScreen = () => {
     }, 3000);
   }, []);
   if (resultsScreenShown) {
-    if (totalScore.score >= 70) {
+    if (totalScore.score >= Constants.EXCELLENT_THRESHOLD) {
       return <ExcellentScreen />;
-    } else if (totalScore.score >= 40) {
+    } else if (totalScore.score >= Constants.GOOD_THRESHOLD) {
       return <GoodScreen />;
     } else {
       return <NiceTryScreen />;

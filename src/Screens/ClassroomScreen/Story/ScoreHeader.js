@@ -1,8 +1,9 @@
 import ScoreHeaderStars from "./ScoreHeaderStars";
 import ScoreHeaderText from "./ScoreHeaderText";
+import Constants from "../../../Utilities/Constants";
 
 const ScoreHeader = ({ score }) => {
-  if (score >= 70) {
+  if (score >= Constants.EXCELLENT_THRESHOLD) {
     return (
       <div
         className={`flex flex-row items-center bg-white rounded-full px-3 py-1 border-2 shadow-lg border-[#15B58F]`}
@@ -11,7 +12,7 @@ const ScoreHeader = ({ score }) => {
         <ScoreHeaderText score={2} />
       </div>
     );
-  } else if (score >= 40) {
+  } else if (score >= Constants.GOOD_THRESHOLD) {
     return (
       <div
         className={`flex flex-row items-center bg-white rounded-full px-3 py-1 border-2 shadow-lg border-[#FF8200]`}

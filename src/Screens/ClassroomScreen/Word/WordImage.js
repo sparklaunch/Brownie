@@ -4,6 +4,7 @@ import { useRecoilState } from "recoil";
 import useData from "../../../Hooks/useData";
 import { Howl } from "howler";
 import totalScoreAtom from "../../../Stores/Classroom/Story/totalScore";
+import Constants from "../../../Utilities/Constants";
 
 const WordImage = () => {
   const words = useData("words");
@@ -21,9 +22,9 @@ const WordImage = () => {
   };
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   let textColor;
-  if (totalScore.score >= 70) {
+  if (totalScore.score >= Constants.EXCELLENT_THRESHOLD) {
     textColor = "#15B58F";
-  } else if (totalScore.score >= 40) {
+  } else if (totalScore.score >= Constants.GOOD_THRESHOLD) {
     textColor = "#FF8200";
   } else {
     textColor = "#FF2442";
