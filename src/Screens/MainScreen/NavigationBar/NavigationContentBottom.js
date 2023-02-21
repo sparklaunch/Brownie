@@ -6,7 +6,7 @@ import SignOutButton from "./SignButtons/SignOutButton";
 const NavigationContentBottom = () => {
   return (
     <div className={`flex flex-row items-center justify-end`}>
-      <Link to={"/classroom"} className={`mr-[32px]`}>
+      <Link to={"/classroom"} className={`mr-[32px] font-bold text-[#1AB9C5]`}>
         온라인 학습관
       </Link>
       <Link to={"/introduction"} className={`mr-[32px]`}>
