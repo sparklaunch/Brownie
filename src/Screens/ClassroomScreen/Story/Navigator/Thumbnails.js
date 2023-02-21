@@ -13,22 +13,18 @@ const Thumbnails = () => {
   const onClickLeftEdgeThumbnail = () => {
     setNavigatorPage(Math.max(navigatorPage - 4, 0));
     setCurrentPage(Math.max(navigatorPage - 4, 0));
-    setNavigatorOpen(false);
   };
   const onClickRightEdgeThumbnail = () => {
     setNavigatorPage(Math.min(navigatorPage + 4, 10));
     setCurrentPage(Math.min(navigatorPage + 4, 10));
-    setNavigatorOpen(false);
   };
   const onClickLeftThumbnail = () => {
     setNavigatorPage(Math.max(navigatorPage - 2, 0));
     setCurrentPage(Math.max(navigatorPage - 2, 0));
-    setNavigatorOpen(false);
   };
   const onClickRightThumbnail = () => {
     setNavigatorPage(Math.min(navigatorPage + 2, 10));
     setCurrentPage(Math.min(navigatorPage + 2, 10));
-    setNavigatorOpen(false);
   };
   return (
     <div className={`flex flex-row items-center`}>
