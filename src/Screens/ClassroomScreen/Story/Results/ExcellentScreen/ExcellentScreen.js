@@ -17,6 +17,7 @@ const ExcellentScreen = () => {
           src={`/assets/images/excellent_bat.png`}
           alt={`Excellent bat`}
         />
+        <p>{totalScore.score}</p>
         <ScorePill />
       </ExcellentScreenContainer>
     </Slide>

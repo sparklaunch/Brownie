@@ -12,6 +12,7 @@ const GoodScreen = () => {
       <GoodScreenContainer>
         <GoodImage src={`/assets/images/good_monkey.png`} alt={`Good Monkey`} />
         <ScorePill />
+        <p>{totalScore.score}</p>
       </GoodScreenContainer>
     </Slide>
   );

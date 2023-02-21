@@ -15,6 +15,7 @@ const NiceTryScreen = () => {
           alt={`Nice Try Frog`}
         />
         <ScorePill />
+        <p>{totalScore.score}</p>
       </NiceTryScreenContainer>
     </Slide>
   );
