@@ -50,7 +50,7 @@ import LeftCompletedMicrophone from "./Microphone/Center/LeftCompletedMicrophone
 import RightCompletedMicrophone from "./Microphone/Center/RightCompletedMicrophone";
 import highlightedPageAtom from "../../../Stores/Classroom/Story/highlightedPage";
 import highlightVisibleAtom from "../../../Stores/Classroom/Story/highlightVisible";
-import { Howl } from "howler";
+import { Howl, Howler } from "howler";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -69,13 +69,13 @@ const Book = () => {
   const { level } = useParams();
   const bookID = useData("id");
   const onClickLeftPage = () => {
-    Howl.unload();
+    Howler.unload();
     new Howl({
       src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`]
     }).play();
   };
   const onClickRightPage = () => {
-    Howl.unload();
+    Howler.unload();
     new Howl({
       src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`]
     }).play();
