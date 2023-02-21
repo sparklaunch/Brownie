@@ -23,7 +23,14 @@ const CatalogLevel = ({ level, maxUnit, data }) => {
         {coverImages.map((coverImage, index) => {
           return (
             <Grid item xs={12} sm={6} md={4} lg={3} key={coverImage}>
-              <CatalogItem coverImage={coverImage} data={data[index]} />
+              <CatalogItem
+                coverImage={coverImage}
+                data={data[index]}
+                forDemo={
+                  coverImage.replace(".jpg", "") === `1-1` ||
+                  coverImage.replace(".jpg", "") === `2-1`
+                }
+              />
             </Grid>
           );
         })}

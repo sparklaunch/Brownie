@@ -5,7 +5,11 @@ import { useRecoilState } from "recoil";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import modeAtom from "../../../Stores/Classroom/mode";
-import { CatalogItemContainer, CatalogItemImage } from "./CatalogItemStyles";
+import {
+  CatalogItemContainer,
+  CatalogItemImage,
+  DemoRibbon
+} from "./CatalogItemStyles";
 
 const CatalogItem = ({
   coverImage,
@@ -44,6 +48,12 @@ const CatalogItem = ({
         alt={`${coverImage}`}
         onClick={onClickCatalogItem}
       />
+      {forDemo && (
+        <DemoRibbon
+          src={`/assets/images/demo_ribbon.png`}
+          alt={`Demo Ribbon`}
+        />
+      )}
       <CatalogLabel label={coverImage.split(".jpg")[0]} />
       <CatalogTitle data={data} />
     </CatalogItemContainer>
