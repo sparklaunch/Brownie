@@ -6,7 +6,6 @@ const NavigationBarOuterContainer = styled.div`
     justify-content: center;
   }
   @media (min-width: 1280px) {
-    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: center;

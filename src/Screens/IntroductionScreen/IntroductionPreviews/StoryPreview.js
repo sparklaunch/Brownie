@@ -11,7 +11,7 @@ const StoryPreview = () => {
       <img
         src={`/assets/images/story_preview.png`}
         alt={`Story Preview`}
-        className={`drop-shadow-2xl`}
+        className={`drop-shadow-2xl w-[384px]`}
       />
     </div>
   );
