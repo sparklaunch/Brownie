@@ -37,11 +37,9 @@ const WordImage = () => {
           .toLowerCase()
           .replace(" ", "")}.png`}
         alt={words[currentWordPage - 1]}
-        className={`w-[60%] translate-y-[-10%]`}
+        className={`mt-[50px] h-[70%] object-contain`}
       />
-      <div
-        className={`absolute bottom-0 left-[50%] translate-x-[-50%] flex flex-row items-center justify-center`}
-      >
+      <div className={`flex flex-row items-center justify-center`}>
         <img
           src={`/assets/images/icons/megaphone_button.svg`}
           alt="Megaphone Button"
