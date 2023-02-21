@@ -12,7 +12,7 @@ const NavigationContentBottom = () => {
       <Link to={"/introduction"} className={`mr-[32px]`}>
         프로그램 소개
       </Link>
-      <Link to={"/information"} className={`mr-[32px]`}>
+      <Link to={"/catalog"} className={`mr-[32px]`}>
         교재 구성
       </Link>
       {isLoggedIn() && (
