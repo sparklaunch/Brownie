@@ -2,8 +2,8 @@ import { Button, TextField } from "@mui/material";
 
 const AdministratorSignInForm = () => {
   return (
-    <div className={`py-3 mt-12 w-[400px]`}>
-      <p className={`text-2xl text-center my-3`}>관리자 로그인</p>
+    <div className={`py-3 mt-6 w-[400px]`}>
+      <p className={`text-2xl text-center my-8`}>관리자 로그인</p>
       <TextField
         id={"id"}
         variant={"outlined"}
