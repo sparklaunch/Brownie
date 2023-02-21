@@ -34,7 +34,16 @@
     "level": "1-2",
     "title": "The Den",
     "words": [
-      "ant"
+      "den",
+      "dig",
+      "disk",
+      "dog",
+      "egg",
+      "fox",
+      "fun",
+      "help",
+      "net",
+      "red"
     ],
     "sentences": [
       "The Den",
@@ -54,7 +63,13 @@
     "level": "1-3",
     "title": "Gull's Gum",
     "words": [
-      "ant"
+      "gull",
+      "gum",
+      "hat",
+      "hen",
+      "hill",
+      "hit",
+      "hum"
     ],
     "sentences": [
       "Gull's Gum",
@@ -74,7 +89,14 @@
     "level": "1-4",
     "title": "Jen's Jet",
     "words": [
-      "ant"
+      "glad",
+      "jet",
+      "jump",
+      "kit",
+      "lamp",
+      "lit",
+      "log",
+      "lot"
     ],
     "sentences": [
       "Jen's Jet",
@@ -94,7 +116,14 @@
     "level": "1-5",
     "title": "Meg's Mat",
     "words": [
-      "ant"
+      "box",
+      "mat",
+      "mop",
+      "mug",
+      "nap",
+      "net",
+      "nut",
+      "pot"
     ],
     "sentences": [
       "Meg's Mat",
@@ -114,7 +143,15 @@
     "level": "1-6",
     "title": "Pam's Quiz",
     "words": [
-      "ant"
+      "big",
+      "pat",
+      "pink",
+      "quick",
+      "quilt",
+      "quiz",
+      "ram",
+      "red",
+      "sit"
     ],
     "sentences": [
       "Pam's Quiz",
@@ -134,7 +171,14 @@
     "level": "1-7",
     "title": "Ten Bugs",
     "words": [
-      "ant"
+      "bug",
+      "hug",
+      "hum",
+      "run",
+      "sit",
+      "sun",
+      "ten",
+      "van"
     ],
     "sentences": [
       "Ten Bugs",
@@ -154,7 +198,16 @@
     "level": "1-8",
     "title": "Zed's Zigzag",
     "words": [
-      "ant"
+      "box",
+      "fox",
+      "wet",
+      "wig",
+      "wombat",
+      "yak",
+      "yap",
+      "yell",
+      "zigzag",
+      "zip"
     ],
     "sentences": [
       "Zed's Zigzag",
@@ -205,7 +258,21 @@
     "level": "2-2",
     "title": "Jen's Pet Hen",
     "words": [
-      "ant"
+      "egg",
+      "end",
+      "fan",
+      "glad",
+      "hen",
+      "hot",
+      "nap",
+      "nest",
+      "pat",
+      "pen",
+      "pet",
+      "red",
+      "sad",
+      "two",
+      "wet"
     ],
     "sentences": [
       "Jen's Pet Hen",
@@ -225,7 +292,22 @@
     "level": "2-3",
     "title": "The Big Fin",
     "words": [
-      "ant"
+      "big",
+      "bin",
+      "fan",
+      "fin",
+      "glad",
+      "hit",
+      "kid",
+      "lid",
+      "mad",
+      "mix",
+      "pin",
+      "ram",
+      "sad",
+      "sand",
+      "sit",
+      "wet"
     ],
     "sentences": [
       "The Big Fin",
@@ -245,7 +327,20 @@
     "level": "2-4",
     "title": "Hot Dogs",
     "words": [
-      "ant"
+      "ax",
+      "box",
+      "dog",
+      "fill",
+      "hand",
+      "hot",
+      "hot dogs",
+      "log",
+      "mop",
+      "neck",
+      "pot",
+      "rip",
+      "top",
+      "wet"
     ],
     "sentences": [
       "Hot Dogs",
@@ -265,7 +360,21 @@
     "level": "2-5",
     "title": "The Bug and the Pup",
     "words": [
-      "ant"
+      "bug",
+      "cup",
+      "get up",
+      "glad",
+      "hit",
+      "hot",
+      "hug",
+      "mad",
+      "mug",
+      "nap",
+      "pup",
+      "red",
+      "rug",
+      "set",
+      "sun"
     ],
     "sentences": [
       "The Bug and the Pup",
@@ -285,7 +394,25 @@
     "level": "3-1",
     "title": "Pam and Dave in the Cave",
     "words": [
-      "ant"
+      "bat",
+      "big",
+      "brave",
+      "cake",
+      "cane",
+      "cape",
+      "cave",
+      "dim",
+      "gate",
+      "glad",
+      "lake",
+      "lamp",
+      "map",
+      "name",
+      "pal",
+      "pass",
+      "rake",
+      "spot",
+      "wet"
     ],
     "sentences": [
       "Pam and Dave in the Cave",
@@ -305,7 +432,25 @@
     "level": "3-2",
     "title": "Jim and Mike's Time",
     "words": [
-      "ant"
+      "bed",
+      "bike",
+      "bite",
+      "bun",
+      "five",
+      "game",
+      "gate",
+      "leg",
+      "lime",
+      "neck",
+      "nine",
+      "pine",
+      "ride",
+      "six",
+      "time",
+      "vine",
+      "wake up",
+      "wave",
+      "wipe"
     ],
     "sentences": [
       "Jim and Mike's Time",
@@ -325,7 +470,19 @@
     "level": "3-3",
     "title": "Tom and Jane Go Home",
     "words": [
-      "ant"
+      "drop",
+      "fix",
+      "hole",
+      "home",
+      "hope",
+      "lob",
+      "lock",
+      "mad",
+      "mom",
+      "pole",
+      "rope",
+      "spot",
+      "tug"
     ],
     "sentences": [
       "Tom and Jane Go Home",
@@ -345,7 +502,26 @@
     "level": "3-4",
     "title": "Jude on the Dune",
     "words": [
-      "ant"
+      "bug",
+      "cone",
+      "cute",
+      "dune",
+      "fuse",
+      "glad",
+      "gum",
+      "have a dip",
+      "hot",
+      "jump in",
+      "lake",
+      "long",
+      "lost",
+      "mule",
+      "pup",
+      "run",
+      "sun",
+      "take a nap",
+      "tube",
+      "vine"
     ],
     "sentences": [
       "Jude on the Dune",
@@ -365,7 +541,24 @@
     "level": "4-1",
     "title": "Clem the Brave",
     "words": [
-      "ant"
+      "black",
+      "blade",
+      "block",
+      "brave",
+      "clam",
+      "clap",
+      "cliff",
+      "close",
+      "club",
+      "crab",
+      "flag",
+      "flame",
+      "flip",
+      "frame",
+      "prize",
+      "spot",
+      "tame",
+      "top"
     ],
     "sentences": [
       "Clem the Brave",
@@ -385,7 +578,26 @@
     "level": "4-2",
     "title": "Glen and Drake's Trip",
     "words": [
-      "ant"
+      "drag",
+      "drink",
+      "drive",
+      "drop",
+      "glass",
+      "globe",
+      "home",
+      "plan",
+      "prize",
+      "quick",
+      "sled",
+      "slick",
+      "slide",
+      "slope",
+      "top",
+      "travel",
+      "trek",
+      "trip",
+      "truck",
+      "trunk"
     ],
     "sentences": [
       "Glen and Drake's Trip",
@@ -405,7 +617,26 @@
     "level": "4-3",
     "title": "The Bank in Hong Kong",
     "words": [
-      "ant"
+      "bank",
+      "bring",
+      "king",
+      "long",
+      "pink",
+      "ring",
+      "skunk",
+      "smile",
+      "snake",
+      "snap",
+      "snore",
+      "stink",
+      "stone",
+      "stop",
+      "strip",
+      "stripe",
+      "swift",
+      "swim",
+      "tank",
+      "wink"
     ],
     "sentences": [
       "The Bank in Hong Kong",
@@ -425,7 +656,25 @@
     "level": "4-4",
     "title": "The White Fish",
     "words": [
-      "ant"
+      "bath",
+      "branch",
+      "chase",
+      "chest",
+      "dive",
+      "fin",
+      "fish",
+      "flash",
+      "math",
+      "path",
+      "plan",
+      "sea",
+      "see",
+      "ship",
+      "sit",
+      "splash",
+      "swim",
+      "white",
+      "wish"
     ],
     "sentences": [
       "The White Fish",
@@ -445,7 +694,26 @@
     "level": "5-1",
     "title": "The Shoal Beast",
     "words": [
-      "ant"
+      "beast",
+      "blow",
+      "boat",
+      "bowl",
+      "box",
+      "east",
+      "float",
+      "flow",
+      "green",
+      "home",
+      "roar",
+      "sea",
+      "seed",
+      "shoal",
+      "soar",
+      "strong",
+      "tea",
+      "throat",
+      "throw",
+      "wind"
     ],
     "sentences": [
       "The Shoal Beast",
@@ -465,7 +733,22 @@
     "level": "5-2",
     "title": "The Train in Spain",
     "words": [
-      "ant"
+      "boy",
+      "bring",
+      "day",
+      "grain",
+      "hail",
+      "heat",
+      "joy",
+      "mail",
+      "plain",
+      "plant",
+      "rail",
+      "rain",
+      "soil",
+      "toy",
+      "train",
+      "wait"
     ],
     "sentences": [
       "The Train in Spain",
@@ -485,7 +768,26 @@
     "level": "5-3",
     "title": "The Fairgrounds",
     "words": [
-      "ant"
+      "aloud",
+      "bird",
+      "brown",
+      "burning",
+      "clown",
+      "crowd",
+      "crown",
+      "dirt",
+      "fairgrounds",
+      "fire eater",
+      "girl",
+      "gown",
+      "hurt",
+      "juggler",
+      "shirt",
+      "shout",
+      "singer",
+      "sister",
+      "town",
+      "wheel"
     ],
     "sentences": [
       "The Fairgrounds",
@@ -505,7 +807,25 @@
     "level": "5-4",
     "title": "Mark and the White Stork",
     "words": [
-      "ant"
+      "cool",
+      "dark",
+      "foot",
+      "hook",
+      "hop",
+      "hope",
+      "look up",
+      "Mars",
+      "moon",
+      "next to",
+      "North Star",
+      "park",
+      "pool",
+      "snoring",
+      "star",
+      "stork",
+      "wake",
+      "white",
+      "zoom"
     ],
     "sentences": [
       "Mark and the White Stork",
