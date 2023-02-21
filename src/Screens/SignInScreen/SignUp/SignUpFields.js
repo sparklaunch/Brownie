@@ -16,6 +16,7 @@ import validPhoneNumberSelector from "../../../Stores/Auth/validPhoneNumber";
 import couponMessageAtom from "../../../Stores/Auth/couponMessage";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Constants from "../../../Utilities/Constants";
 
 const SignUpFields = () => {
   const validPhoneNumber = useRecoilValue(validPhoneNumberSelector);
@@ -45,12 +46,17 @@ const SignUpFields = () => {
   const signIn = async () => {
     try {
       const response = await axios.post(
-        `/api/ap002?id=${id}&pwd=${password}`,
-        "",
+        `${Constants.AUTH_API_ENDPOINT}/api/ap002`,
+        {
+          id: id,
+          pwd: password
+        },
         {
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*"
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Headers": "*"
           }
         }
       );
@@ -75,12 +81,20 @@ const SignUpFields = () => {
   const signUp = async () => {
     try {
       const response = await axios.post(
-        `http://43.201.129.192/api/ap001?id=${id}&pwd=${password}&name=${studentName}&tel=${phoneNumber}&birth=${studentBirthDate}`,
-        "",
+        `${Constants.AUTH_API_ENDPOINT}/api/ap001`,
+        {
+          id: id,
+          pwd: password,
+          name: studentName,
+          tel: phoneNumber,
+          birth: studentBirthDate
+        },
         {
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*"
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Headers": "*"
           }
         }
       );

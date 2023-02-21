@@ -7,6 +7,7 @@ import signInErrorMessageAtom from "../../../Stores/Auth/signInErrorMessage";
 import validPasswordSelector from "../../../Stores/Auth/validPassword";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Constants from "../../../Utilities/Constants";
 
 const SignInFields = () => {
   const validPassword = useRecoilValue(validPasswordSelector);
@@ -23,12 +24,17 @@ const SignInFields = () => {
   const signIn = async () => {
     try {
       const response = await axios.post(
-        `/api/ap002?id=${id}&pwd=${password}`,
-        "",
+        `${Constants.AUTH_API_ENDPOINT}/api/ap002`,
+        {
+          id: id,
+          pwd: password
+        },
         {
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*"
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Headers": "*"
           }
         }
       );
