@@ -13,6 +13,7 @@ import {
   LeftPageImage,
   LeftPagerContainer,
   LeftPageShade,
+  LoadingCardWrapper,
   MicContainer,
   ModeSwitcherContainer,
   NavigatorContainer,
@@ -51,6 +52,7 @@ import RightCompletedMicrophone from "./Microphone/Center/RightCompletedMicropho
 import highlightedPageAtom from "../../../Stores/Classroom/Story/highlightedPage";
 import highlightVisibleAtom from "../../../Stores/Classroom/Story/highlightVisible";
 import { Howl, Howler } from "howler";
+import LoadingCard from "../LoadingCard";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -173,6 +175,11 @@ const Book = () => {
           <MicContainer>
             <CentralMicrophone />
           </MicContainer>
+          {centralMicrophoneState === "loading" && (
+            <LoadingCardWrapper>
+              <LoadingCard />
+            </LoadingCardWrapper>
+          )}
         </TextBookContainer>
       </BookWrapper>
     </BookContainer>

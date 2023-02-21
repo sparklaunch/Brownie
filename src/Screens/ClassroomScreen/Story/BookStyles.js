@@ -428,6 +428,23 @@ const RightClickable = styled.div`
   }
 `;
 
+const LoadingCardWrapper = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media (min-width: 1280px) {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
 export {
   BookContainer,
   NavigatorContainer,
@@ -454,5 +471,6 @@ export {
   RightCompletedButtonsContainer,
   GlowBorder,
   LeftClickable,
-  RightClickable
+  RightClickable,
+  LoadingCardWrapper
 };
