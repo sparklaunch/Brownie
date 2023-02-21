@@ -62,10 +62,7 @@ const ResultsScreen = () => {
           setRightMicrophoneState("idle");
         }
       }
-      if (
-        (currentPage === 10 || currentWordPage === words.length) &&
-        (bookID === 1 || bookID === 9)
-      ) {
+      if (currentPage === 10 || currentWordPage === words.length) {
         new Audio(`/assets/audio/you_did_it.mp3`).play();
         setYouDidItShown(true);
       }
