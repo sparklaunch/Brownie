@@ -69,11 +69,13 @@ const Book = () => {
   const { level } = useParams();
   const bookID = useData("id");
   const onClickLeftPage = () => {
+    Howl.unload();
     new Howl({
       src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`]
     }).play();
   };
   const onClickRightPage = () => {
+    Howl.unload();
     new Howl({
       src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`]
     }).play();
