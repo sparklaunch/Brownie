@@ -1,5 +1,4 @@
 import CatalogHeader from "./CatalogHeader";
-import CatalogFilter from "./CatalogFilter";
 import CatalogList from "./CatalogList";
 import { CatalogInnerContainer, CatalogOuterContainer } from "./CatalogStyles";
 
@@ -8,7 +7,7 @@ const Catalog = () => {
     <CatalogOuterContainer>
       <CatalogInnerContainer>
         <CatalogHeader />
-        <CatalogFilter />
+        {/*<CatalogFilter />*/}
         <CatalogList />
       </CatalogInnerContainer>
     </CatalogOuterContainer>
