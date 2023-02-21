@@ -205,15 +205,15 @@ const WordContainer = styled.div`
 const WordWaveContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
   }
   @media (min-width: 1280px) {
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
   }
 `;
 
