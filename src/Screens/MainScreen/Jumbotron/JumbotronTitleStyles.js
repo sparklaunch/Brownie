@@ -45,10 +45,34 @@ const Title = styled.p`
   }
 `;
 
+const DemoButton = styled.button`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    position: relative;
+    font-family: Jua, sans-serif;
+    font-size: 24px;
+    color: white;
+    letter-spacing: 1px;
+    border: 1px solid white;
+    width: 284px;
+    height: 67px;
+    bottom: -50px;
+    background-color: #f34d7e;
+    border-radius: 8px;
+  }
+`;
+
 const ButtonContainer = styled.div`
   @media (min-width: 768px) and (max-width: 1279px) {
     transform: scale(0.8) translateX(-80px);
   }
 `;
 
-export { JumbotronTitleContainer, TitleContainer, Title, ButtonContainer };
+export {
+  DemoButton,
+  JumbotronTitleContainer,
+  TitleContainer,
+  Title,
+  ButtonContainer
+};
