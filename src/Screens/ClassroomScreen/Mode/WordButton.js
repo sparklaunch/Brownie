@@ -47,7 +47,13 @@ const WordButton = () => {
         onClick={onClickWordButton}
       >
         <img src={"/assets/images/icons/word_icon.svg"} alt={"Word Icon"} />
-        <p className={`font-[Jua] text-[20px]`}>Word</p>
+        <p
+          className={`font-[Jua] text-[20px] ${
+            mode === "word" && `text-[#1AB9C5]`
+          }`}
+        >
+          Word
+        </p>
       </div>
     </div>
   );

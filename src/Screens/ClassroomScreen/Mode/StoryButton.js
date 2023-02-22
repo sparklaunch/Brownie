@@ -46,7 +46,13 @@ const StoryButton = () => {
       onClick={onClickStoryButton}
     >
       <img src={"/assets/images/icons/story_icon.svg"} alt={"Story Icon"} />
-      <p className={`font-[Jua] text-[20px]`}>Story</p>
+      <p
+        className={`font-[Jua] text-[20px] ${
+          mode === "story" && `text-[#1AB9C5]`
+        }`}
+      >
+        Story
+      </p>
     </div>
   );
 };
