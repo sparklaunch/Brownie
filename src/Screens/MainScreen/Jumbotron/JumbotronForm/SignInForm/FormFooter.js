@@ -10,16 +10,17 @@ const FormFooter = () => {
     navigate("/signin");
   };
   return (
-    <div className={"flex flex-row justify-center mt-3"}>
+    <div className={"flex flex-row justify-center items-center mt-[32px]"}>
       <p
-        className={`text-white font-extralight text-[14px] pr-3 border-r-[1px] border-l-white cursor-pointer`}
+        className={`text-[#DFDFDF] font-extralight text-[14px] pr-[10px] cursor-pointer`}
         onClick={onClickSignUp}
       >
         회원가입
       </p>
+      <div className={`w-[1px] h-[10px] bg-[#DFDFDF]`} />
       <Link
         to={"/find-account"}
-        className={`text-white font-extralight text-[14px] pl-3`}
+        className={`text-[#DFDFDF] font-extralight text-[14px] pl-[10px]`}
       >
         아이디/비밀번호 찾기
       </Link>

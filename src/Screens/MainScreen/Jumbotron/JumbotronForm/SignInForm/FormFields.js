@@ -92,10 +92,14 @@ const FormFields = () => {
         disableTouchRipple={true}
         sx={{
           backgroundColor: "#1AB9C5",
-          filter: "brightness(1.0)",
+          filter: "brightness(1.0) drop-shadow(0 0 5px rgba(0, 0, 0, 0.5))",
+          lineHeight: 1.2,
+          boxShadow: "none",
+          letterSpacing: 0,
           fontFamily: "Jua",
           fontSize: 18,
           width: "100%",
+          height: "36px",
           borderRadius: 2,
           marginTop: 2,
           ":hover": {
