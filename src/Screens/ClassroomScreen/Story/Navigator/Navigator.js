@@ -3,10 +3,10 @@ import Navigation from "./Navigation";
 
 const Navigator = () => {
   return (
-    <div>
+    <>
       <Navigation />
       <NavigatorButton />
-    </div>
+    </>
   );
 };
 

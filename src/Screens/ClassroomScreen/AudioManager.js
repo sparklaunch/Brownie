@@ -102,7 +102,6 @@ const AudioManager = () => {
     setRightFinishedRecording(false);
     setLeftPagePlaying(false);
     setRightPagePlaying(false);
-    setNavigatorOpen(false);
     Howler.unload();
     if (mode === "story") {
       if (currentPage === 0) {
