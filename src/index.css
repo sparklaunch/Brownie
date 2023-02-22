@@ -40,5 +40,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "NanumSquareNeo", sans-serif;
-    color: #222;
+    line-height: 1.2;
+    color: #515151;
 }
