@@ -28,7 +28,7 @@ const NavigationBarInnerContainer = styled.div`
     display: flex;
     flex-direction: row;
     width: 1200px;
-    height: 136px;
+    height: 140px;
     justify-content: space-between;
     align-items: center;
   }
