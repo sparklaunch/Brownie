@@ -5,8 +5,10 @@ const TextBookLogoContainer = styled.div`
   }
   @media (min-width: 1280px) {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
   }
 `;
 
@@ -15,6 +17,7 @@ const TextBookLogoImage = styled.img`
   }
   @media (min-width: 1280px) {
     width: 660px;
+    margin-bottom: 30px;
   }
 `;
 
