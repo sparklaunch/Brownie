@@ -1,7 +1,7 @@
-import { Button } from "@mui/material";
 import { useRecoilState } from "recoil";
 import tabValueAtom from "../../../../Stores/Auth/tabValue";
 import { useNavigate } from "react-router-dom";
+import { NavigationBarSignInButton } from "./SignInButtonStyles";
 
 const SignInButton = () => {
   const [tabValue, setTabValue] = useRecoilState(tabValueAtom);
@@ -11,24 +11,9 @@ const SignInButton = () => {
     navigate("/signin");
   };
   return (
-    <Button
-      variant={"contained"}
-      onClick={onClickSignIn}
-      sx={{
-        backgroundColor: "#1AB9C5",
-        filter: "brightness(1.0) drop-shadow(0 0 5px rgba(0, 0, 0, 0.5))",
-        boxShadow: "none",
-        fontFamily: "Jua",
-        fontSize: 18,
-        width: 104,
-        height: 44,
-        ":hover": {
-          backgroundColor: "#1AB9C5"
-        }
-      }}
-    >
+    <NavigationBarSignInButton onClick={onClickSignIn}>
       로그인
-    </Button>
+    </NavigationBarSignInButton>
   );
 };
 
