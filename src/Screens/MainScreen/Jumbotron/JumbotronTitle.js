@@ -30,6 +30,7 @@ const JumbotronTitle = () => {
             borderColor: "white",
             width: 284,
             height: 67,
+            bottom: -50,
             backgroundColor: "#F34D7E",
             borderRadius: 2,
             ":hover": {
