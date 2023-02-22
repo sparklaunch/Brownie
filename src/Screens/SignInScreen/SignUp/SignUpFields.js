@@ -149,6 +149,7 @@ const SignUpFields = () => {
   };
   return (
     <div className={`pt-3`}>
+      <p className={`text-right mb-1 text-red-600`}>* 표시 필수 입력</p>
       <TextField
         id={"id"}
         value={id}
