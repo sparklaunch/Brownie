@@ -89,13 +89,13 @@ const FormFields = () => {
       <Button
         variant={"contained"}
         onClick={onLogInButtonClicked}
+        disableTouchRipple={true}
         sx={{
           backgroundColor: "#1AB9C5",
           filter: "brightness(1.0)",
           fontFamily: "Jua",
           fontSize: 18,
           width: "100%",
-          height: 44,
           borderRadius: 2,
           marginTop: 2,
           ":hover": {
