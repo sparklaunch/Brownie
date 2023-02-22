@@ -6,17 +6,29 @@ import SignOutButton from "./SignButtons/SignOutButton";
 const NavigationContentBottom = () => {
   return (
     <div className={`flex flex-row items-center justify-end`}>
-      <Link to={"/"} className={`mr-[32px] font-bold text-[#1AB9C5]`}>
+      <Link
+        to={"/"}
+        className={`mr-[24px] text-[18px] font-[700] text-[#1AB9C5]`}
+      >
         온라인 학습관
       </Link>
-      <Link to={"/introduction"} className={`mr-[32px]`}>
+      <Link
+        to={"/introduction"}
+        className={`mr-[24px] text-[18px] font-[700] text-[#222222]`}
+      >
         프로그램 소개
       </Link>
-      <Link to={"/catalog"} className={`mr-[32px]`}>
+      <Link
+        to={"/catalog"}
+        className={`mr-[24px] text-[18px] font-[700] text-[#222222]`}
+      >
         교재 구성
       </Link>
       {isLoggedIn() && (
-        <Link to={"/mypage"} className={`mr-[32px]`}>
+        <Link
+          to={"/mypage"}
+          className={`mr-[24px] text-[18px] font-[700] text-[#222222]`}
+        >
           마이페이지
         </Link>
       )}
