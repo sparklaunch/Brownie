@@ -81,7 +81,7 @@ const ModeSwitcherContainer = styled.div`
   }
   @media (min-width: 1280px) {
     position: absolute;
-    top: 0;
+    top: -20px;
     left: -120px;
   }
 `;
@@ -97,6 +97,7 @@ const TextBookLeftPage = styled.div`
     position: relative;
     width: 100%;
     height: 80vh;
+    bottom: 20px;
     object-fit: contain;
     object-position: right;
   }
@@ -112,6 +113,7 @@ const TextBookRightPage = styled.div`
   @media (min-width: 1280px) {
     position: relative;
     width: 100%;
+    bottom: 20px;
     height: 80vh;
     object-fit: contain;
     object-position: right;
@@ -190,7 +192,7 @@ const LeftPagerContainer = styled.div`
   }
   @media (min-width: 1280px) {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 20px);
     transform: translateY(-50%);
     left: -80px;
   }
@@ -204,7 +206,7 @@ const RightPagerContainer = styled.div`
   }
   @media (min-width: 1280px) {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 20px);
     transform: translateY(-50%);
     right: -80px;
   }
@@ -216,7 +218,7 @@ const PagerControllersContainer = styled.div`
   }
   @media (min-width: 1280px) {
     position: absolute;
-    top: -50px;
+    top: -70px;
     right: 0;
   }
 `;
@@ -229,7 +231,7 @@ const HomeContainer = styled.div`
   }
   @media (min-width: 1280px) {
     position: absolute;
-    top: -50px;
+    top: -70px;
     right: -80px;
   }
 `;
@@ -257,7 +259,7 @@ const UnitInfoContainer = styled.div`
   }
   @media (min-width: 1280px) {
     position: absolute;
-    top: -50px;
+    top: -60px;
     left: 0;
   }
 `;
