@@ -56,7 +56,7 @@ const DemoButton = styled.button`
     letter-spacing: 1px;
     border: 1px solid white;
     width: 284px;
-    height: 67px;
+    height: 64px;
     bottom: -50px;
     background-color: #f34d7e;
     border-radius: 8px;
