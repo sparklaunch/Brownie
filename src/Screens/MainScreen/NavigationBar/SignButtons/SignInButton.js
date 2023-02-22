@@ -16,7 +16,8 @@ const SignInButton = () => {
       onClick={onClickSignIn}
       sx={{
         backgroundColor: "#1AB9C5",
-        filter: "brightness(1.0)",
+        filter: "brightness(1.0) drop-shadow(0 0 5px rgba(0, 0, 0, 0.5))",
+        boxShadow: "none",
         fontFamily: "Jua",
         fontSize: 18,
         width: 104,
