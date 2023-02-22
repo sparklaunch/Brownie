@@ -5,7 +5,7 @@ const CatalogHeaderContainer = styled.div`
     padding: 32px 0;
   }
   @media (min-width: 1280px) {
-    padding: 55px 0;
+    margin: 50px 0;
   }
 `;
 
