@@ -30,13 +30,13 @@ const FormFields = () => {
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
-        alert("로그인에 성공하였습니다.");
+        alert("환영합니다.");
         clearAllFields();
         sessionStorage.setItem("userNumber", response.data.user_no);
         sessionStorage.setItem("studentName", response.data.name);
         window.location.reload();
       } else if (response.data.resultCode === "200") {
-        alert("비밀번호가 일치하지 않습니다.");
+        alert("아이디와 비밀번호를 다시 한번 확인해 주세요.");
       } else if (response.data.resultCode === "900") {
         alert("로그인에 실패했습니다.");
       } else {
