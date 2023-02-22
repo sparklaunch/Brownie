@@ -13,7 +13,7 @@ const JumbotronOuterContainer = styled.div`
     background-color: rgb(70, 198, 210);
     background-image: url("/assets/images/jumbotron.svg");
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: -150px 60px;
     background-size: contain;
   }
 `;
