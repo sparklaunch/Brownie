@@ -6,7 +6,7 @@ const validPasswordSelector = selector({
   get: ({ get }) => {
     const password = get(passwordAtom);
     const passwordRegex =
-      /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{6,24}$/;
+      /^(?=.*[a-zA-Z])(?=.*[!?@#$%^*+=-])(?=.*[0-9]).{6,24}$/;
     if (password.length === 0) {
       return true;
     }
