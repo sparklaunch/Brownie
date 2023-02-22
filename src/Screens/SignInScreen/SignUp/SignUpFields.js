@@ -1,4 +1,4 @@
-import { Button, Checkbox, TextField } from "@mui/material";
+import { Button, Checkbox, InputAdornment, TextField } from "@mui/material";
 import { useRecoilState, useRecoilValue } from "recoil";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
@@ -156,8 +156,20 @@ const SignUpFields = () => {
         onChange={(event) => setID(event.target.value)}
         variant={"outlined"}
         label={"아이디"}
-        required={true}
         size={"medium"}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position={"end"}>
+              {id.length === 0 && (
+                <p
+                  className={`relative top-[3px] right-[8px] text-red-600 font-bold`}
+                >
+                  *
+                </p>
+              )}
+            </InputAdornment>
+          )
+        }}
         sx={{
           width: "100%",
           backgroundColor: "white",
@@ -176,9 +188,21 @@ const SignUpFields = () => {
         }}
         variant={"outlined"}
         label={"비밀번호"}
-        required={true}
         size={"medium"}
         type={"password"}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position={"end"}>
+              {password.length === 0 && (
+                <p
+                  className={`relative top-[3px] right-[8px] text-red-600 font-bold`}
+                >
+                  *
+                </p>
+              )}
+            </InputAdornment>
+          )
+        }}
         sx={{
           width: "100%",
           backgroundColor: "white",
@@ -198,9 +222,21 @@ const SignUpFields = () => {
         }}
         variant={"outlined"}
         label={"비밀번호 확인"}
-        required={true}
         size={"medium"}
         type={"password"}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position={"end"}>
+              {passwordConfirm.length === 0 && (
+                <p
+                  className={`relative top-[3px] right-[8px] text-red-600 font-bold`}
+                >
+                  *
+                </p>
+              )}
+            </InputAdornment>
+          )
+        }}
         sx={{
           width: "100%",
           backgroundColor: "white",
@@ -219,9 +255,21 @@ const SignUpFields = () => {
         }}
         variant={"outlined"}
         label={"휴대폰 번호 (예: 01012345678)"}
-        required={true}
         size={"medium"}
         type={"phone-number"}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position={"end"}>
+              {phoneNumber.length === 0 && (
+                <p
+                  className={`relative top-[3px] right-[8px] text-red-600 font-bold`}
+                >
+                  *
+                </p>
+              )}
+            </InputAdornment>
+          )
+        }}
         sx={{
           width: "100%",
           backgroundColor: "white",
@@ -236,8 +284,20 @@ const SignUpFields = () => {
         onChange={(event) => setStudentName(event.target.value)}
         variant={"outlined"}
         label={"학생(자녀) 이름"}
-        required={true}
         size={"medium"}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position={"end"}>
+              {studentName.length === 0 && (
+                <p
+                  className={`relative top-[3px] right-[8px] text-red-600 font-bold`}
+                >
+                  *
+                </p>
+              )}
+            </InputAdornment>
+          )
+        }}
         sx={{
           width: "100%",
           backgroundColor: "white",
@@ -250,7 +310,6 @@ const SignUpFields = () => {
         value={studentBirthDate}
         onChange={(event) => setStudentBirthDate(event.target.value)}
         variant={"outlined"}
-        required={true}
         size={"medium"}
         type={"date"}
         sx={{
