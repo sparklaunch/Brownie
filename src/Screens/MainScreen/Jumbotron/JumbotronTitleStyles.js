@@ -31,11 +31,15 @@ const Title = styled.p`
     font-size: 30px;
     font-family: GmarketSans, sans-serif;
     font-weight: bold;
+    line-height: 48px;
+    letter-spacing: -0.2px;
     color: white;
   }
   @media (min-width: 1280px) {
     font-size: 40px;
     font-weight: bold;
+    line-height: 48px;
+    letter-spacing: -0.2px;
     color: white;
     font-family: GmarketSans, sans-serif;
   }

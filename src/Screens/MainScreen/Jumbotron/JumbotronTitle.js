@@ -12,8 +12,11 @@ const JumbotronTitle = () => {
   return (
     <JumbotronTitleContainer>
       <TitleContainer>
-        <Title>영어책 읽기가 처음인 우리 아이</Title>
-        <Title>AI 스피킹으로 시작부터 남다르게!</Title>
+        <Title>
+          영어책 읽기가 처음인 우리 아이
+          <br />
+          AI 스피킹으로 시작부터 남다르게!
+        </Title>
       </TitleContainer>
       <ButtonContainer>
         <Button
