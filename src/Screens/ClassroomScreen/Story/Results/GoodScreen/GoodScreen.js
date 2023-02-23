@@ -3,12 +3,14 @@ import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import ScorePill from "../Score/ScorePill";
 import { Fade } from "@mui/material";
 import { GoodImage, GoodScreenContainer } from "./GoodScreenStyles";
+import modeAtom from "../../../../../Stores/Classroom/mode";
 
 const GoodScreen = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
+  const [mode, setMode] = useRecoilState(modeAtom);
   return (
     <Fade in={true} timeout={500}>
-      <GoodScreenContainer>
+      <GoodScreenContainer isWordMode={mode === "word"}>
         <GoodImage src={`/assets/images/good_monkey.png`} alt={`Good Monkey`} />
         <ScorePill />
         <p>{totalScore.score}</p>

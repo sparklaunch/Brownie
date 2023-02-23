@@ -13,7 +13,7 @@ const GoodScreenContainer = styled.div`
   }
   @media (min-width: 993px) {
     position: absolute;
-    bottom: 20px;
+    bottom: ${(props) => (props.isWordMode ? "0" : "20px")};
     left: 0;
     right: 0;
     height: 200px;

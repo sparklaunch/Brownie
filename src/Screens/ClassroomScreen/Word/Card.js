@@ -14,6 +14,7 @@ import {
   HomeButtonContainer,
   InsetBorderContainer,
   InstructionsContainer,
+  LoadingIndicatorContainer,
   MicrophoneContainer,
   ModeButtonsContainer,
   PaginationContainer,
@@ -38,6 +39,7 @@ import WordWave from "./WordWave";
 import ResultsScreen from "../Story/Results/ResultsScreen";
 import WordResults from "./Results/WordResults";
 import YouDidItScreen from "../Story/Results/YouDidIt/YouDidItScreen";
+import LoadingCard from "../LoadingCard";
 
 const Card = () => {
   const { level } = useParams();
@@ -93,6 +95,11 @@ const Card = () => {
           <WordWaveContainer>
             <WordWave />
           </WordWaveContainer>
+        )}
+        {wordMicrophoneState === "loading" && (
+          <LoadingIndicatorContainer>
+            <LoadingCard />
+          </LoadingIndicatorContainer>
         )}
         <MicrophoneContainer>
           <Microphone />
