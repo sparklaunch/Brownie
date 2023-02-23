@@ -26,6 +26,7 @@ const CatalogLevel = ({ level, maxUnit, data }) => {
             <CatalogItem
               coverImage={coverImage}
               data={data[index]}
+              key={index}
               forDemo={
                 coverImage.replace(".jpg", "") === `1-1` ||
                 coverImage.replace(".jpg", "") === `2-1`
