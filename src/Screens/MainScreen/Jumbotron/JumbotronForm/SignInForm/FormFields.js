@@ -4,6 +4,7 @@ import idAtom from "../../../../../Stores/Auth/id";
 import passwordAtom from "../../../../../Stores/Auth/password";
 import axios from "axios";
 import Constants from "../../../../../Utilities/Constants";
+import Swal from "sweetalert2";
 
 const FormFields = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -30,17 +31,17 @@ const FormFields = () => {
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
-        alert("환영합니다.");
+        Swal.fire(Constants.WELCOME);
         clearAllFields();
         sessionStorage.setItem("userNumber", response.data.user_no);
         sessionStorage.setItem("studentName", response.data.name);
         window.location.reload();
       } else if (response.data.resultCode === "200") {
-        alert("아이디와 비밀번호를 다시 한번 확인해 주세요.");
+        Swal.fire(Constants.INVALID_ACCOUNT);
       } else if (response.data.resultCode === "900") {
-        alert("로그인에 실패했습니다.");
+        Swal.fire(Constants.SIGN_IN_FAILED);
       } else {
-        alert("서버 에러.");
+        Swal.fire(Constants.SERVER_ERROR);
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
@@ -49,9 +50,9 @@ const FormFields = () => {
   };
   const onLogInButtonClicked = () => {
     if (id.length === 0) {
-      alert("아이디를 입력해주세요.");
+      Swal.fire(Constants.EMPTY_ID);
     } else if (password.length === 0) {
-      alert("비밀번호를 입력해주세요.");
+      Swal.fire(Constants.EMPTY_PASSWORD);
     } else {
       signIn();
     }

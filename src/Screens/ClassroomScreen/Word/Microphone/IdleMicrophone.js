@@ -12,6 +12,7 @@ import wordScoresAtom from "../../../../Stores/Classroom/Word/wordScores";
 import { useParams } from "react-router-dom";
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
 import Constants from "../../../../Utilities/Constants";
+import Swal from "sweetalert2";
 
 const IdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -144,13 +145,13 @@ const IdleMicrophone = () => {
     } catch (error) {
       switch (error.message) {
         case "Requested device not found":
-          alert("마이크를 찾을 수 없습니다.");
+          Swal.fire(Constants.MICROPHONE_NOT_FOUND);
           break;
         case "Permission denied":
-          alert("마이크 사용을 허용해주세요.");
+          Swal.fire(Constants.MICROPHONE_PERMISSION_DENIED);
           break;
         default:
-          alert("마이크 사용에 문제가 발생했습니다.");
+          Swal.fire(Constants.MICROPHONE_EXCEPTION);
           break;
       }
     }

@@ -13,6 +13,7 @@ import scoresAtom from "../../../../../Stores/Classroom/Story/scores";
 import highlightedPageAtom from "../../../../../Stores/Classroom/Story/highlightedPage";
 import highlightVisibleAtom from "../../../../../Stores/Classroom/Story/highlightVisible";
 import Constants from "../../../../../Utilities/Constants";
+import Swal from "sweetalert2";
 
 const CentralIdleMicrophone = () => {
   const OuterCircle = styled.div`
@@ -169,13 +170,13 @@ const CentralIdleMicrophone = () => {
     } catch (error) {
       switch (error.message) {
         case "Requested device not found":
-          alert("마이크를 찾을 수 없습니다.");
+          Swal.fire(Constants.MICROPHONE_NOT_FOUND);
           break;
         case "Permission denied":
-          alert("마이크 사용을 허용해주세요.");
+          Swal.fire(Constants.MICROPHONE_PERMISSION_DENIED);
           break;
         default:
-          alert("마이크 사용에 문제가 발생했습니다.");
+          Swal.fire(Constants.MICROPHONE_EXCEPTION);
           break;
       }
     }

@@ -19,6 +19,7 @@ import {
   RightCompletedMicrophoneContainer
 } from "./RightCompletedMicrophoneStyles";
 import Constants from "../../../../../Utilities/Constants";
+import Swal from "sweetalert2";
 
 const RightCompletedMicrophone = () => {
   const { level } = useParams();
@@ -99,13 +100,13 @@ const RightCompletedMicrophone = () => {
     } catch (error) {
       switch (error.message) {
         case "Requested device not found":
-          alert("마이크를 찾을 수 없습니다.");
+          Swal.fire(Constants.MICROPHONE_NOT_FOUND);
           break;
         case "Permission denied":
-          alert("마이크 사용을 허용해주세요.");
+          Swal.fire(Constants.MICROPHONE_PERMISSION_DENIED);
           break;
         default:
-          alert("마이크 사용에 문제가 발생했습니다.");
+          Swal.fire(Constants.MICROPHONE_EXCEPTION);
           break;
       }
     }

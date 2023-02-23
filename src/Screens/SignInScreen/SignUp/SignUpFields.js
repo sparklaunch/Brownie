@@ -17,6 +17,7 @@ import couponMessageAtom from "../../../Stores/Auth/couponMessage";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Constants from "../../../Utilities/Constants";
+import Swal from "sweetalert2";
 
 const SignUpFields = () => {
   const validPhoneNumber = useRecoilValue(validPhoneNumberSelector);
@@ -65,14 +66,19 @@ const SignUpFields = () => {
       if (response.data.resultCode === "100") {
         sessionStorage.setItem("userNumber", response.data.user_no);
         sessionStorage.setItem("studentName", response.data.name);
-        alert(`${studentName}님, 환영합니다.`);
+        Swal.fire({
+          title: `회원가입 성공`,
+          text: `${studentName}님, 환영합니다!`,
+          icon: "success",
+          confirmButtonText: "확인"
+        });
         navigate("/");
       } else if (response.data.resultCode === "200") {
-        alert("해당 계정 정보가 존재하지 않습니다.");
+        Swal.fire(Constants.INVALID_ACCOUNT);
       } else if (response.data.resultCode === "900") {
-        alert("로그인에 실패하였습니다.");
+        Swal.fire(Constants.SIGN_IN_FAILED);
       } else {
-        alert("서버 에러.");
+        Swal.fire(Constants.SERVER_ERROR);
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
@@ -102,13 +108,13 @@ const SignUpFields = () => {
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
-        alert("회원가입에 성공하였습니다.");
+        Swal.fire(Constants.SIGN_UP_SUCCEEDED);
         clearAllFields();
         signIn();
       } else if (response.data.resultCode === "900") {
-        alert("회원가입에 실패하였습니다.");
+        Swal.fire(Constants.SIGN_UP_FAILED);
       } else {
-        alert("서버 에러.");
+        Swal.fire(Constants.SERVER_ERROR);
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
@@ -117,32 +123,30 @@ const SignUpFields = () => {
   };
   const onClickSignUp = () => {
     if (id.length === 0) {
-      alert("아이디를 입력해주세요.");
+      Swal.fire(Constants.EMPTY_ID);
     } else if (password.length === 0) {
-      alert("비밀번호를 입력해주세요.");
+      Swal.fire(Constants.EMPTY_PASSWORD);
     } else if (!validPassword) {
-      alert(
-        "비밀번호는 영문, 숫자, 특수문자를 포함한 6~24자리로 입력해주세요."
-      );
+      Swal.fire(Constants.PASSWORD_NOT_VALID);
     } else if (passwordConfirm.length === 0) {
-      alert("비밀번호 확인을 입력해주세요.");
+      Swal.fire(Constants.EMPTY_PASSWORD_CONFIRMATION);
     } else if (password !== passwordConfirm) {
-      alert("비밀번호가 일치하지 않습니다.");
+      Swal.fire(Constants.PASSWORDS_NOT_MATCH);
     } else if (phoneNumber.length === 0) {
-      alert("전화번호를 입력해주세요.");
+      Swal.fire(Constants.EMPTY_PHONE_NUMBER);
     } else if (!validPhoneNumber) {
-      alert("전화번호 형식이 올바르지 않습니다.");
+      Swal.fire(Constants.PHONE_NUMBER_NOT_VALID);
     } else if (studentName.length === 0) {
-      alert("학생 이름을 입력해주세요.");
+      Swal.fire(Constants.EMPTY_STUDENT_NAME);
     } else if (agreeStatus === false) {
-      alert("약관에 동의해주세요.");
+      Swal.fire(Constants.TERMS_UNCHECKED);
     } else {
       signUp();
     }
   };
   const onClickRegisterCoupon = () => {
     if (coupon.length === 0) {
-      alert("쿠폰을 입력해주세요.");
+      Swal.fire(Constants.EMPTY_COUPON_CODE);
     } else {
       setCouponMessage("쿠폰이 등록되었습니다.");
       setCoupon("");

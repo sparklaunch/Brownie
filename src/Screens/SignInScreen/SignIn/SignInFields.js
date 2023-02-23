@@ -8,6 +8,7 @@ import validPasswordSelector from "../../../Stores/Auth/validPassword";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Constants from "../../../Utilities/Constants";
+import Swal from "sweetalert2";
 
 const SignInFields = () => {
   const validPassword = useRecoilValue(validPasswordSelector);
@@ -41,17 +42,17 @@ const SignInFields = () => {
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
-        alert("로그인에 성공하였습니다.");
+        Swal.fire(Constants.SIGN_IN_SUCCEEDED);
         clearAllFields();
         sessionStorage.setItem("userNumber", response.data.user_no);
         sessionStorage.setItem("studentName", response.data.name);
         navigate("/");
       } else if (response.data.resultCode === "200") {
-        alert("비밀번호가 일치하지 않습니다.");
+        Swal.fire(Constants.INVALID_PASSWORD);
       } else if (response.data.resultCode === "900") {
-        alert("로그인에 실패했습니다.");
+        Swal.fire(Constants.SIGN_IN_FAILED);
       } else {
-        alert("서버 에러.");
+        Swal.fire(Constants.SERVER_ERROR);
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
