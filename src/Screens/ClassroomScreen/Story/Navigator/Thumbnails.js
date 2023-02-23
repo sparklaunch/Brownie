@@ -30,70 +30,31 @@ const Thumbnails = () => {
     setNavigatorPage(Math.min(navigatorPage + 2, 10));
     setCurrentPage(Math.min(navigatorPage + 2, 10));
   };
-  const getCompletedPages = () => {
-    let completedPages = [];
-    for (let i = 0; i < 10; i++) {
-      if (
-        scores[`${level}-${i}`] !== undefined &&
-        scores[`${level}-${i + 1}`] !== undefined
-      ) {
-        completedPages.push(i);
-        completedPages.push(i + 1);
-      }
-    }
-    return completedPages;
-  };
   return (
     <div className={`flex flex-row items-center`}>
       <div onClick={onClickLeftEdgeThumbnail}>
         <LeftEdgeThumbnail
           leftPage={navigatorPage - 4}
           rightPage={navigatorPage - 3}
-          completed={
-            getCompletedPages().includes(navigatorPage - 4) &&
-            getCompletedPages().includes(navigatorPage - 3)
-          }
         />
       </div>
       <div onClick={onClickLeftThumbnail}>
-        <Thumbnail
-          leftPage={navigatorPage - 2}
-          rightPage={navigatorPage - 1}
-          completed={
-            getCompletedPages().includes(navigatorPage - 2) &&
-            getCompletedPages().includes(navigatorPage - 1)
-          }
-        />
+        <Thumbnail leftPage={navigatorPage - 2} rightPage={navigatorPage - 1} />
       </div>
       <div>
         <Thumbnail
           leftPage={navigatorPage}
           rightPage={navigatorPage + 1}
           isCurrentPage={true}
-          completed={
-            getCompletedPages().includes(navigatorPage) &&
-            getCompletedPages().includes(navigatorPage + 1)
-          }
         />
       </div>
       <div onClick={onClickRightThumbnail}>
-        <Thumbnail
-          leftPage={navigatorPage + 2}
-          rightPage={navigatorPage + 3}
-          completed={
-            getCompletedPages().includes(navigatorPage + 2) &&
-            getCompletedPages().includes(navigatorPage + 3)
-          }
-        />
+        <Thumbnail leftPage={navigatorPage + 2} rightPage={navigatorPage + 3} />
       </div>
       <div onClick={onClickRightEdgeThumbnail}>
         <RightEdgeThumbnail
           leftPage={navigatorPage + 4}
           rightPage={navigatorPage + 5}
-          completed={
-            getCompletedPages().includes(navigatorPage + 4) &&
-            getCompletedPages().includes(navigatorPage + 5)
-          }
         />
       </div>
     </div>
