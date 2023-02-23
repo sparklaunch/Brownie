@@ -11,6 +11,7 @@ const WordCardContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   @media (min-width: 993px) {
     position: absolute;
@@ -22,6 +23,7 @@ const WordCardContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
 `;
 

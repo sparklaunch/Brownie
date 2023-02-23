@@ -7,16 +7,14 @@ const WordCard = () => {
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const words = useData("words");
-  const onClickMegaphone = () => {
+  const onClickCardContainer = () => {
     new Audio(`/assets/audio/words/${words[currentWordPage - 1]}.wav`).play();
   };
   return (
-    <WordCardContainer>
+    <WordCardContainer onClick={onClickCardContainer}>
       <img
         src={"/assets/images/icons/megaphone_button.svg"}
         alt={"Megaphone"}
-        className={`cursor-pointer`}
-        onClick={onClickMegaphone}
       />
       <WordCardText>{words[currentWordPage - 1]}</WordCardText>
     </WordCardContainer>
