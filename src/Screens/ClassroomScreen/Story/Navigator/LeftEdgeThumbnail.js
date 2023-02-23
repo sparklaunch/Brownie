@@ -1,7 +1,10 @@
 import ThumbnailPage from "./ThumbnailPage";
 import EmptyThumbnail from "./EmptyThumbnail";
 
-const LeftEdgeThumbnail = ({ leftPage, rightPage }) => {
+const LeftEdgeThumbnail = ({ leftPage, rightPage, completed }) => {
+  if (completed) {
+    return <div>wow</div>;
+  }
   if (leftPage < 0) {
     return (
       <div

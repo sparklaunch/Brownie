@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import ScorePill from "../Score/ScorePill";
-import { Slide } from "@mui/material";
+import { Fade } from "@mui/material";
 import {
   ExcellentImage,
   ExcellentScreenContainer
@@ -11,7 +11,7 @@ const ExcellentScreen = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   console.log(totalScore.score);
   return (
-    <Slide direction={`up`} in={true} mountOnEnter={true} unmountOnExit={true}>
+    <Fade in={true} timeout={500}>
       <ExcellentScreenContainer>
         <ExcellentImage
           src={`/assets/images/excellent_bat.png`}
@@ -20,7 +20,7 @@ const ExcellentScreen = () => {
         <p>{totalScore.score}</p>
         <ScorePill />
       </ExcellentScreenContainer>
-    </Slide>
+    </Fade>
   );
 };
 
