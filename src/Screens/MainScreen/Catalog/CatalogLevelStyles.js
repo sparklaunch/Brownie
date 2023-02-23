@@ -38,4 +38,32 @@ const CatalogLevelLabel = styled.p`
   }
 `;
 
-export { CatalogLevelContainer, CatalogLevelLabelContainer, CatalogLevelLabel };
+const CatalogLevelGridContainer = styled.div`
+  @media (max-width: 767px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  @media (min-width: 768px) and (max-width: 992px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  @media (min-width: 993px) and (max-width: 1279px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (min-width: 1280px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+`;
+
+export {
+  CatalogLevelGridContainer,
+  CatalogLevelContainer,
+  CatalogLevelLabelContainer,
+  CatalogLevelLabel
+};

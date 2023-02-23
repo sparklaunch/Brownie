@@ -1,7 +1,7 @@
-import { Grid } from "@mui/material";
 import CatalogItem from "./CatalogItem";
 import {
   CatalogLevelContainer,
+  CatalogLevelGridContainer,
   CatalogLevelLabel,
   CatalogLevelLabelContainer
 } from "./CatalogLevelStyles";
@@ -20,22 +20,20 @@ const CatalogLevel = ({ level, maxUnit, data }) => {
         />
         <CatalogLevelLabel>Level {level}</CatalogLevelLabel>
       </CatalogLevelLabelContainer>
-      <Grid container spacing={2}>
+      <CatalogLevelGridContainer>
         {coverImages.map((coverImage, index) => {
           return (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={coverImage}>
-              <CatalogItem
-                coverImage={coverImage}
-                data={data[index]}
-                forDemo={
-                  coverImage.replace(".jpg", "") === `1-1` ||
-                  coverImage.replace(".jpg", "") === `2-1`
-                }
-              />
-            </Grid>
+            <CatalogItem
+              coverImage={coverImage}
+              data={data[index]}
+              forDemo={
+                coverImage.replace(".jpg", "") === `1-1` ||
+                coverImage.replace(".jpg", "") === `2-1`
+              }
+            />
           );
         })}
-      </Grid>
+      </CatalogLevelGridContainer>
     </CatalogLevelContainer>
   );
 };

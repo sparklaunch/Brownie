@@ -24,7 +24,7 @@ const CatalogItemImage = styled.img`
     }
   }
   @media (min-width: 993px) {
-    height: 288px;
+    aspect-ratio: 1 / 1;
     width: 100%;
     object-fit: cover;
     border-radius: 12px;
