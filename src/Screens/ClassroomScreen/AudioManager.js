@@ -20,9 +20,11 @@ import highlightedPageAtom from "../../Stores/Classroom/Story/highlightedPage";
 import navigatorOpenAtom from "../../Stores/Classroom/Story/navigatorOpen";
 import youDidItShownAtom from "../../Stores/Classroom/youDidItShown";
 import highlightVisibleAtom from "../../Stores/Classroom/Story/highlightVisible";
+import scoresAtom from "../../Stores/Classroom/Story/scores";
 
 const AudioManager = () => {
   const { level } = useParams();
+  const [scores, setScores] = useRecoilState(scoresAtom);
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const words = useData(`words`);
@@ -105,25 +107,33 @@ const AudioManager = () => {
     Howler.unload();
     if (mode === "story") {
       if (currentPage === 0) {
-        const howler = new Howl({
-          src: [`/assets/audio/pages/${bookID}_1.mp3`],
-          onload: () => {
-            setAudioDuration(howler.duration() * 1000 + 2000);
-          },
-          onplay: onFirstPagePlay,
-          onend: onFirstPageEnd
-        });
-        howler.play();
+        if (scores[`${level}-${currentPage + 1}`] === undefined) {
+          const howler = new Howl({
+            src: [`/assets/audio/pages/${bookID}_1.mp3`],
+            onload: () => {
+              setAudioDuration(howler.duration() * 1000 + 2000);
+            },
+            onplay: onFirstPagePlay,
+            onend: onFirstPageEnd
+          });
+          howler.play();
+        } else {
+          setCentralMicrophoneState("idle");
+        }
       } else {
-        const howler = new Howl({
-          src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
-          onload: () => {
-            setAudioDuration(howler.duration() * 1000 + 2000);
-          },
-          onplay: onLeftPlay,
-          onend: onLeftEnd
-        });
-        howler.play();
+        if (scores[`${level}-${currentPage}`] === undefined) {
+          const howler = new Howl({
+            src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
+            onload: () => {
+              setAudioDuration(howler.duration() * 1000 + 2000);
+            },
+            onplay: onLeftPlay,
+            onend: onLeftEnd
+          });
+          howler.play();
+        } else {
+          setCentralMicrophoneState("idle");
+        }
       }
     } else {
       const howler = new Howl({
@@ -139,15 +149,17 @@ const AudioManager = () => {
   }, [currentPage, currentWordPage, mode]);
   useEffect(() => {
     if (leftPageCompleted && !leftFinished) {
-      const howler = new Howl({
-        src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
-        onload: () => {
-          setAudioDuration(howler.duration() * 1000 + 2000);
-        },
-        onplay: onRightPlay,
-        onend: onRightEnd
-      });
-      howler.play();
+      if (scores[`${level}-${currentPage + 1}`] === undefined) {
+        const howler = new Howl({
+          src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
+          onload: () => {
+            setAudioDuration(howler.duration() * 1000 + 2000);
+          },
+          onplay: onRightPlay,
+          onend: onRightEnd
+        });
+        howler.play();
+      }
     }
   }, [leftPageCompleted]);
   return <></>;
