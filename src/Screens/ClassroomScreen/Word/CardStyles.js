@@ -221,13 +221,15 @@ const WordResultsContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 10px;
-    right: -35px;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%) scale(0.6);
   }
   @media (min-width: 993px) {
     position: absolute;
     top: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(0.7);
   }
 `;
 

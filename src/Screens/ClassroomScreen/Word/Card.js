@@ -37,9 +37,9 @@ import WordImage from "./WordImage";
 import WordCard from "./WordCard";
 import WordWave from "./WordWave";
 import ResultsScreen from "../Story/Results/ResultsScreen";
-import WordResults from "./Results/WordResults";
 import YouDidItScreen from "../Story/Results/YouDidIt/YouDidItScreen";
 import LoadingCard from "../LoadingCard";
+import ScorePill from "../Story/Results/Score/ScorePill";
 
 const Card = () => {
   const { level } = useParams();
@@ -88,7 +88,7 @@ const Card = () => {
         {resultsScreenShown && <ResultsScreen />}
         {wordScores[`${level}-${currentWordPage}`] !== undefined && (
           <WordResultsContainer>
-            <WordResults score={wordScores[`${level}-${currentWordPage}`]} />
+            <ScorePill score={wordScores[`${level}-${currentWordPage}`]} />
           </WordResultsContainer>
         )}
         {wordMicrophoneState === "recording" && (
