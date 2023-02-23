@@ -22,6 +22,10 @@ const Thumbnails = () => {
     setNavigatorPage(Math.min(navigatorPage + 4, 10));
     setCurrentPage(Math.min(navigatorPage + 4, 10));
   };
+  const onClickCentralThumbnail = () => {
+    setNavigatorPage(navigatorPage);
+    setCurrentPage(navigatorPage);
+  };
   const onClickLeftThumbnail = () => {
     setNavigatorPage(Math.max(navigatorPage - 2, 0));
     setCurrentPage(Math.max(navigatorPage - 2, 0));
@@ -41,7 +45,7 @@ const Thumbnails = () => {
       <div onClick={onClickLeftThumbnail}>
         <Thumbnail leftPage={navigatorPage - 2} rightPage={navigatorPage - 1} />
       </div>
-      <div>
+      <div onClick={onClickCentralThumbnail}>
         <Thumbnail
           leftPage={navigatorPage}
           rightPage={navigatorPage + 1}
