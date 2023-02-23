@@ -40,6 +40,7 @@ const DemoRibbon = styled.img`
     transform: scale(1.04);
     top: 36%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
   }
   @media (min-width: 993px) {
     position: absolute;
@@ -47,6 +48,7 @@ const DemoRibbon = styled.img`
     width: 100%;
     transform: scale(1.04);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
   }
 `;
 

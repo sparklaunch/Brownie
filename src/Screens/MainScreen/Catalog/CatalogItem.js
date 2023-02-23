@@ -52,6 +52,7 @@ const CatalogItem = ({
         <DemoRibbon
           src={`/assets/images/demo_ribbon.png`}
           alt={`Demo Ribbon`}
+          onClick={onClickCatalogItem}
         />
       )}
       {isCompleted && (
