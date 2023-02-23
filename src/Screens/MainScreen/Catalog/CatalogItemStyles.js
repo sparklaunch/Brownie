@@ -14,7 +14,7 @@ const CatalogItemImage = styled.img`
     aspect-ratio: 1 / 1;
     width: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 14px;
     border: 4px solid transparent;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
