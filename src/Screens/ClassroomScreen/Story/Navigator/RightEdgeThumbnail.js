@@ -8,7 +8,10 @@ const RightEdgeThumbnail = ({ leftPage, rightPage }) => {
   const { level } = useParams();
   const [scores, setScores] = useRecoilState(scoresAtom);
   const completed = (function () {
-    return scores[`${level}-${leftPage}`] && scores[`${level}-${rightPage}`];
+    return (
+      (scores[`${level}-${leftPage}`] && scores[`${level}-${rightPage}`]) ||
+      (rightPage === 10 && scores[`${level}-${rightPage}`] !== undefined)
+    );
   })();
   if (rightPage >= 12) {
     return (

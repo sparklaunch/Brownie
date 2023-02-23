@@ -7,7 +7,10 @@ const Thumbnail = ({ leftPage, rightPage, isCurrentPage = false }) => {
   const { level } = useParams();
   const [scores, setScores] = useRecoilState(scoresAtom);
   const completed = (function () {
-    return scores[`${level}-${leftPage}`] && scores[`${level}-${rightPage}`];
+    return (
+      (scores[`${level}-${leftPage}`] && scores[`${level}-${rightPage}`]) ||
+      (rightPage === 1 && scores[`${level}-${rightPage}`] !== undefined)
+    );
   })();
   return (
     <div
@@ -19,6 +22,9 @@ const Thumbnail = ({ leftPage, rightPage, isCurrentPage = false }) => {
       <ThumbnailPage page={rightPage} pageDirection={"right"} />
       {completed && (
         <div>
+          <div
+            className={`absolute top-0 left-0 right-0 bottom-0 from-transparent to-black`}
+          />
           <div
             className={`absolute top-0 left-0 right-0 bottom-0 bg-black opacity-50`}
           />

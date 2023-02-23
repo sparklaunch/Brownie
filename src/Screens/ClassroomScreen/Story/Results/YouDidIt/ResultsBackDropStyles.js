@@ -12,8 +12,8 @@ const ResultsBackDropContainer = styled.div`
   }
   @media (min-width: 993px) {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: -20px;
+    bottom: 20px;
     left: 0;
     right: 0;
     background-color: black;

@@ -13,7 +13,7 @@ const ExcellentScreenContainer = styled.div`
   }
   @media (min-width: 993px) {
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     left: 0;
     right: 0;
     height: 200px;
