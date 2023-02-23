@@ -16,8 +16,8 @@ const RetryButton = styled.img`
     margin-right: 5px;
     margin-bottom: 10px;
     cursor: pointer;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
   }
   @media (min-width: 993px) {
     margin-right: 20px;
@@ -28,8 +28,8 @@ const RetryButton = styled.img`
 const MyVoiceButton = styled.img`
   @media (min-width: 768px) and (max-width: 992px) {
     cursor: pointer;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
   }
   @media (min-width: 993px) {
     cursor: pointer;
