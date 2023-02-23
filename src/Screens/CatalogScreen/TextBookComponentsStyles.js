@@ -25,4 +25,53 @@ const TextBookComponentsTitle = styled.p`
   }
 `;
 
-export { TextBookComponentsContainer, TextBookComponentsTitle };
+const TextBookBundles = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    display: grid;
+    grid-template-areas: "cd-image package-image combined-image" "cd-text package-text combined-text";
+  }
+`;
+
+const CDImage = styled.img`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+  }
+`;
+
+const PackageImage = styled.img`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+  }
+`;
+
+const CombinedImage = styled.img`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+  }
+`;
+
+const ImageContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export {
+  TextBookComponentsContainer,
+  TextBookComponentsTitle,
+  TextBookBundles,
+  CDImage,
+  PackageImage,
+  CombinedImage,
+  ImageContainer
+};
