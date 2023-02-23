@@ -113,6 +113,7 @@ const LeftCompletedMicrophone = () => {
   };
   const onClickRetry = () => {
     setHighlightedPage(currentPage);
+    setResultsScreenShown(false);
     recordVoice();
   };
   const onClickMyVoice = () => {

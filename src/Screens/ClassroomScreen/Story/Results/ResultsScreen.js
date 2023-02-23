@@ -47,7 +47,6 @@ const ResultsScreen = () => {
     new Audio(`/assets/audio/results_shown.mp3`).play();
     setTimeout(() => {
       setResultsScreenShown(false);
-      setCentralMicrophoneState("completed");
       if (currentPage === 0) {
         setRightMicrophoneState("completed");
         if (rightFinishedRecording) {
