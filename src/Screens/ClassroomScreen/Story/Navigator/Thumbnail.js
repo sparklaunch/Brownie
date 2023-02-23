@@ -9,7 +9,8 @@ const Thumbnail = ({ leftPage, rightPage, isCurrentPage = false }) => {
   const completed = (function () {
     return (
       (scores[`${level}-${leftPage}`] && scores[`${level}-${rightPage}`]) ||
-      (rightPage === 1 && scores[`${level}-${rightPage}`] !== undefined)
+      (rightPage === 1 && scores[`${level}-${rightPage}`] !== undefined) ||
+      (leftPage === 10 && scores[`${level}-${leftPage}`] !== undefined)
     );
   })();
   return (

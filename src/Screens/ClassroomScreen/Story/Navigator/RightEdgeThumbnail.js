@@ -10,7 +10,7 @@ const RightEdgeThumbnail = ({ leftPage, rightPage }) => {
   const completed = (function () {
     return (
       (scores[`${level}-${leftPage}`] && scores[`${level}-${rightPage}`]) ||
-      (rightPage === 10 && scores[`${level}-${rightPage}`] !== undefined)
+      (leftPage === 10 && scores[`${level}-${leftPage}`] !== undefined)
     );
   })();
   if (rightPage >= 12) {
