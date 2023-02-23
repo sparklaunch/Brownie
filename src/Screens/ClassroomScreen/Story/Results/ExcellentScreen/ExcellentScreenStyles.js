@@ -32,17 +32,14 @@ const ExcellentImage = styled.img`
     transform: translateY(-50%);
     right: 0;
     height: 200px;
-    width: 300px;
-    scale: 0.8;
   }
   @media (min-width: 993px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 0;
+    padding: 20px 0;
     height: 200px;
-    width: 300px;
-    scale: 0.8;
   }
 `;
 
