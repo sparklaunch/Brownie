@@ -29,12 +29,12 @@ const CatalogLevelLabel = styled.p`
   @media (min-width: 768px) and (max-width: 1279px) {
     font-family: "Jua", sans-serif;
     font-size: 20px;
-    margin-left: 8px;
+    margin-left: 12px;
   }
   @media (min-width: 1280px) {
     font-family: "Jua", sans-serif;
     font-size: 20px;
-    margin-left: 8px;
+    margin-left: 12px;
   }
 `;
 

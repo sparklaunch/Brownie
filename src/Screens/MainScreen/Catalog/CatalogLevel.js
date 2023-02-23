@@ -16,6 +16,7 @@ const CatalogLevel = ({ level, maxUnit, data }) => {
         <img
           src={"assets/images/icons/snowflake_icon.svg"}
           alt={"Snowflake Icon"}
+          className={`w-[14px] h-[14px]`}
         />
         <CatalogLevelLabel>Level {level}</CatalogLevelLabel>
       </CatalogLevelLabelContainer>
