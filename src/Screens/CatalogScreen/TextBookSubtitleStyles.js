@@ -22,7 +22,34 @@ const TextBookSubtitleInnerContainer = styled.div`
     width: 1200px;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 `;
 
-export { TextBookSubtitleOuterContainer, TextBookSubtitleInnerContainer };
+const TextBookSubtitleTitle = styled.p`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    font-family: Jua, sans-serif;
+    font-size: 28px;
+    color: #3d3d3d;
+    margin-bottom: 24px;
+  }
+`;
+
+const TextBookSubtitleDescription = styled.p`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    font-size: 20px;
+    color: #515151;
+    font-weight: lighter;
+  }
+`;
+
+export {
+  TextBookSubtitleOuterContainer,
+  TextBookSubtitleInnerContainer,
+  TextBookSubtitleTitle,
+  TextBookSubtitleDescription
+};
