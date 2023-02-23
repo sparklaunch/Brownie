@@ -30,11 +30,6 @@ const CatalogItem = ({
     if (!clickable) {
       return;
     }
-    // setSelectedCatalog({
-    //   label: coverImage.split(".jpg")[0],
-    //   title: data.title
-    // });
-    // setModalOpen(true);
     setMode("word");
     setCurrentWordPage(1);
     setCurrentPage(0);
@@ -48,6 +43,7 @@ const CatalogItem = ({
         alt={`${coverImage}`}
         onClick={onClickCatalogItem}
       />
+      {/*<HoverStroke />*/}
       {forDemo && (
         <DemoRibbon
           src={`/assets/images/demo_ribbon.png`}

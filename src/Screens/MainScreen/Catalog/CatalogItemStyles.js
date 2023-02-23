@@ -28,13 +28,8 @@ const CatalogItemImage = styled.img`
     width: 100%;
     object-fit: cover;
     border-radius: 12px;
-    border: 4px solid transparent;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    &:hover {
-      border: 4px solid #47c7d2;
-    }
   }
 `;
 
@@ -55,4 +50,28 @@ const DemoRibbon = styled.img`
   }
 `;
 
-export { CatalogItemContainer, CatalogItemImage, DemoRibbon };
+const HoverStroke = styled.svg`
+  @media (min-width: 768px) and (max-width: 992px) {
+  }
+  @media (min-width: 993px) {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    fill: none;
+    cursor: pointer;
+    stroke: #1ab9c5;
+    stroke-width: 3px;
+    stroke-linecap: butt;
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 0;
+    transition: all 0.8s ease-in-out;
+    &:hover {
+      stroke-linecap: round;
+      stroke-dashoffset: 100%;
+    }
+  }
+`;
+
+export { CatalogItemContainer, CatalogItemImage, DemoRibbon, HoverStroke };
