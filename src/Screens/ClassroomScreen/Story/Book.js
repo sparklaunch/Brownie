@@ -45,7 +45,6 @@ import BookTitle from "./BookTitle";
 import Wave from "./Microphone/Center/Wave";
 import ResultsScreen from "./Results/ResultsScreen";
 import YouDidItScreen from "./Results/YouDidIt/YouDidItScreen";
-import ScoreHeader from "./ScoreHeader";
 import scoresAtom from "../../../Stores/Classroom/Story/scores";
 import LeftCompletedMicrophone from "./Microphone/Center/LeftCompletedMicrophone";
 import RightCompletedMicrophone from "./Microphone/Center/RightCompletedMicrophone";
@@ -53,6 +52,7 @@ import highlightedPageAtom from "../../../Stores/Classroom/Story/highlightedPage
 import highlightVisibleAtom from "../../../Stores/Classroom/Story/highlightVisible";
 import { Howl, Howler } from "howler";
 import LoadingCard from "../LoadingCard";
+import ScorePill from "./Results/Score/ScorePill";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -100,7 +100,7 @@ const Book = () => {
             <LeftPageShade />
             {scores[`${level}-${currentPage}`] !== undefined && (
               <ScoreBarContainer>
-                <ScoreHeader score={scores[`${level}-${currentPage}`]} />
+                <ScorePill score={scores[`${level}-${currentPage}`]} />
               </ScoreBarContainer>
             )}
             {centralMicrophoneState === "completed" && currentPage !== 0 && (
@@ -124,7 +124,7 @@ const Book = () => {
             <RightPageShade />
             {scores[`${level}-${currentPage + 1}`] !== undefined && (
               <ScoreBarContainer>
-                <ScoreHeader score={scores[`${level}-${currentPage + 1}`]} />
+                <ScorePill score={scores[`${level}-${currentPage + 1}`]} />
               </ScoreBarContainer>
             )}
             {centralMicrophoneState === "completed" && currentPage !== 10 && (

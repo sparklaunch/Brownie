@@ -316,15 +316,17 @@ const CongratzContainer = styled.div`
 const ScoreBarContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
-    top: 20px;
+    width: 100vw;
+    top: 30px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(0.4);
   }
   @media (min-width: 993px) {
     position: absolute;
-    top: 20px;
+    width: 100vw;
+    top: 50px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(0.6);
   }
 `;
 
