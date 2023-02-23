@@ -53,7 +53,6 @@ import highlightedPageAtom from "../../../Stores/Classroom/Story/highlightedPage
 import highlightVisibleAtom from "../../../Stores/Classroom/Story/highlightVisible";
 import { Howl, Howler } from "howler";
 import LoadingCard from "../LoadingCard";
-import ExcellentScreen from "./Results/ExcellentScreen/ExcellentScreen";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -158,9 +157,6 @@ const Book = () => {
           <UnitInfoContainer>
             <BookTitle />
           </UnitInfoContainer>
-          <FeedbackBarContainer>
-            <ExcellentScreen />
-          </FeedbackBarContainer>
           {resultsScreenShown && (
             <FeedbackBarContainer>
               <ResultsScreen />
