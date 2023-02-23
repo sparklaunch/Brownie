@@ -33,7 +33,6 @@ const TextBookFeaturesTitle = styled.p`
     background-color: #1ab9c5;
     border-radius: 4px;
     margin-bottom: 24px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
 
