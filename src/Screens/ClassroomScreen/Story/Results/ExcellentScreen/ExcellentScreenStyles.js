@@ -36,8 +36,8 @@ const ExcellentImage = styled.img`
   @media (min-width: 993px) {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    right: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(376px);
     padding: 20px 0;
     height: 200px;
   }

@@ -13,12 +13,12 @@ const ExcellentScreen = () => {
   return (
     <Fade in={true} timeout={500}>
       <ExcellentScreenContainer>
+        <ScorePill />
         <ExcellentImage
           src={`/assets/images/excellent_bat.png`}
           alt={`Excellent bat`}
         />
         <p>{totalScore.score}</p>
-        <ScorePill />
       </ExcellentScreenContainer>
     </Fade>
   );

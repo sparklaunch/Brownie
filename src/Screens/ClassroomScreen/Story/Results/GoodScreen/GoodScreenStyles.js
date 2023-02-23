@@ -38,11 +38,10 @@ const GoodImage = styled.img`
   @media (min-width: 993px) {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    left: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(-312px);
+    padding: 20px 0;
     height: 200px;
-    width: 185px;
-    scale: 0.8;
   }
 `;
 
