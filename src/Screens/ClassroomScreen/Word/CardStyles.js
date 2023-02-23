@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const CardOuterContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -13,7 +13,7 @@ const CardOuterContainer = styled.div`
     margin-left: 140px;
     margin-right: 140px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -27,7 +27,7 @@ const CardOuterContainer = styled.div`
 `;
 
 const CardInnerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -36,7 +36,7 @@ const CardInnerContainer = styled.div`
     background-color: white;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 140px;
     bottom: 140px;
@@ -49,14 +49,14 @@ const CardInnerContainer = styled.div`
 `;
 
 const InsetBorderContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -66,12 +66,12 @@ const InsetBorderContainer = styled.div`
 `;
 
 const InstructionsContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
     left: 140px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 20px;
     left: 140px;
@@ -79,26 +79,26 @@ const InstructionsContainer = styled.div`
 `;
 
 const ModeButtonsContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
     left: -120px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     left: -120px;
   }
 `;
 
 const PaginationContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
     background-color: #ffa63d;
     border-bottom-right-radius: 20px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -109,12 +109,12 @@ const PaginationContainer = styled.div`
 `;
 
 const WordLeftPageTurnerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     left: -90px;
     bottom: 30px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     left: -90px;
     top: 50%;
@@ -123,12 +123,12 @@ const WordLeftPageTurnerContainer = styled.div`
 `;
 
 const WordRightPageTurnerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     right: -90px;
     bottom: 30px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     right: -90px;
     top: 50%;
@@ -137,22 +137,22 @@ const WordRightPageTurnerContainer = styled.div`
 `;
 
 const CardTitleContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: -50px;
   }
 `;
 
 const HomeButtonContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
     right: -120px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     right: -90px;
@@ -160,13 +160,13 @@ const HomeButtonContainer = styled.div`
 `;
 
 const MicrophoneContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: -105px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     bottom: -100px;
     left: 50%;
@@ -175,7 +175,7 @@ const MicrophoneContainer = styled.div`
 `;
 
 const WordContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     background-color: transparent;
     top: 0;
@@ -187,7 +187,7 @@ const WordContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     background-color: transparent;
     top: 0;
@@ -203,13 +203,13 @@ const WordContainer = styled.div`
 `;
 
 const WordWaveContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -218,12 +218,12 @@ const WordWaveContainer = styled.div`
 `;
 
 const WordResultsContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 10px;
     right: -35px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 10px;
     left: 50%;
@@ -232,14 +232,14 @@ const WordResultsContainer = styled.div`
 `;
 
 const YouDidItScreenContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;

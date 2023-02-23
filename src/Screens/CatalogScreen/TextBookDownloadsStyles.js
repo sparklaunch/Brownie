@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const TextBookDownloadsContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -11,9 +11,9 @@ const TextBookDownloadsContainer = styled.div`
 `;
 
 const TextBookDownloadsTitle = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-weight: bold;
     font-size: 20px;
     color: white;
@@ -24,9 +24,9 @@ const TextBookDownloadsTitle = styled.p`
 `;
 
 const TextBookDownload = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-size: 18px;
     color: #515151;
     font-weight: 400;

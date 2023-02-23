@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const TextBookHeaderOuterContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -13,9 +13,9 @@ const TextBookHeaderOuterContainer = styled.div`
 `;
 
 const TextBookHeaderInnerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     width: 1200px;
     display: flex;
     flex-direction: column;
@@ -24,16 +24,16 @@ const TextBookHeaderInnerContainer = styled.div`
 `;
 
 const TextBookHeaderRectangle = styled.img`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
   }
 `;
 
 const TextBookHeaderTitle = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-family: Jua, sans-serif;
     font-size: 32px;
     margin-top: 16px;

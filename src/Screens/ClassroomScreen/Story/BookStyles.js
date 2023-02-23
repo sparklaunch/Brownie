@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const BookContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@ const BookContainer = styled.div`
     align-items: center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,13 +26,13 @@ const BookContainer = styled.div`
 `;
 
 const NavigatorContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
 `;
 
 const BookWrapper = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,7 +42,7 @@ const BookWrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -55,7 +55,7 @@ const BookWrapper = styled.div`
 `;
 
 const TextBookContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     height: 100vh;
     left: 140px;
@@ -64,7 +64,7 @@ const TextBookContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: 0;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: relative;
     height: 80vh;
     display: grid;
@@ -74,12 +74,12 @@ const TextBookContainer = styled.div`
 `;
 
 const ModeSwitcherContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
     left: -120px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: -20px;
     left: -120px;
@@ -87,13 +87,13 @@ const ModeSwitcherContainer = styled.div`
 `;
 
 const TextBookLeftPage = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: relative;
     width: 100%;
     height: 80vh;
@@ -104,13 +104,13 @@ const TextBookLeftPage = styled.div`
 `;
 
 const TextBookRightPage = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: relative;
     width: 100%;
     bottom: 20px;
@@ -121,12 +121,12 @@ const TextBookRightPage = styled.div`
 `;
 
 const LeftPageImage = styled.img`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     height: 100vh;
     object-fit: contain;
     object-position: right;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     height: 80vh;
     object-fit: contain;
     object-position: right;
@@ -136,9 +136,9 @@ const LeftPageImage = styled.img`
 `;
 
 const LeftPageShade = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     right: 0;
@@ -153,12 +153,12 @@ const LeftPageShade = styled.div`
 `;
 
 const RightPageImage = styled.img`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     height: 100vh;
     object-fit: contain;
     object-position: left;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     height: 80vh;
     object-fit: contain;
     object-position: left;
@@ -168,9 +168,9 @@ const RightPageImage = styled.img`
 `;
 
 const RightPageShade = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -185,12 +185,12 @@ const RightPageShade = styled.div`
 `;
 
 const LeftPagerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 30px;
     left: -80px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: calc(50% - 20px);
     transform: translateY(-50%);
@@ -199,12 +199,12 @@ const LeftPagerContainer = styled.div`
 `;
 
 const RightPagerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 30px;
     right: -80px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: calc(50% - 20px);
     transform: translateY(-50%);
@@ -213,10 +213,10 @@ const RightPagerContainer = styled.div`
 `;
 
 const PagerControllersContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: -70px;
     right: 0;
@@ -224,12 +224,12 @@ const PagerControllersContainer = styled.div`
 `;
 
 const HomeContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
     right: -80px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: -70px;
     right: -80px;
@@ -237,14 +237,14 @@ const HomeContainer = styled.div`
 `;
 
 const MicContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     right: -100px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     left: 50%;
     bottom: -70px;
@@ -254,10 +254,10 @@ const MicContainer = styled.div`
 `;
 
 const UnitInfoContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: -60px;
     left: 0;
@@ -265,14 +265,14 @@ const UnitInfoContainer = styled.div`
 `;
 
 const WaveAnimationContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -282,13 +282,13 @@ const WaveAnimationContainer = styled.div`
 `;
 
 const FeedbackBarContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -297,14 +297,14 @@ const FeedbackBarContainer = styled.div`
 `;
 
 const CongratzContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -314,13 +314,13 @@ const CongratzContainer = styled.div`
 `;
 
 const ScoreBarContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 20px;
     left: 50%;
@@ -329,14 +329,14 @@ const ScoreBarContainer = styled.div`
 `;
 
 const LeftCompletedButtonsContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     z-index: 2;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     z-index: 2;
     position: absolute;
     bottom: -80px;
@@ -346,14 +346,14 @@ const LeftCompletedButtonsContainer = styled.div`
 `;
 
 const RightCompletedButtonsContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     z-index: 2;
     position: absolute;
     bottom: 0;
     right: 50%;
     transform: translateX(-50%);
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     z-index: 2;
     position: absolute;
     bottom: -80px;
@@ -363,7 +363,7 @@ const RightCompletedButtonsContainer = styled.div`
 `;
 
 const GlowBorder = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -374,7 +374,7 @@ const GlowBorder = styled.div`
       inset 0 0 5px 5px #ffd53d, inset 0 0 10px 5px #ffd53d,
       inset 0 0 15px 5px #ffd53d;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -389,7 +389,7 @@ const GlowBorder = styled.div`
 `;
 
 const LeftClickable = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -398,7 +398,7 @@ const LeftClickable = styled.div`
     right: 0;
     cursor: pointer;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -410,7 +410,7 @@ const LeftClickable = styled.div`
 `;
 
 const RightClickable = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -419,7 +419,7 @@ const RightClickable = styled.div`
     right: 0;
     cursor: pointer;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -431,14 +431,14 @@ const RightClickable = styled.div`
 `;
 
 const LoadingCardWrapper = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     z-index: 1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     z-index: 1;
     top: 50%;

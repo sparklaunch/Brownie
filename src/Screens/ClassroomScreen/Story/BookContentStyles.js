@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const GlowingContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     ${({ direction }) => (direction === "left" ? "left: 0;" : "right: 0;")}
@@ -16,7 +16,7 @@ const GlowingContainer = styled.div`
 `;
 
 const PagesContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -28,7 +28,7 @@ const PagesContainer = styled.div`
 `;
 
 const YouDidItScreenContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     bottom: 0;

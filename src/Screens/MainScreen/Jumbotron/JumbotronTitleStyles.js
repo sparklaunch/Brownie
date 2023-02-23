@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 const JumbotronTitleContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     height: 480px;
     background-image: url("assets/images/jumbotron.svg");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: contain;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -16,10 +16,10 @@ const JumbotronTitleContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     padding: 44px 16px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: relative;
     top: -50px;
     margin-bottom: 54px;
@@ -27,7 +27,7 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     font-size: 30px;
     font-family: GmarketSans, sans-serif;
     font-weight: bold;
@@ -35,7 +35,7 @@ const Title = styled.p`
     letter-spacing: -0.2px;
     color: white;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-size: 40px;
     font-weight: bold;
     line-height: 48px;
@@ -46,9 +46,9 @@ const Title = styled.p`
 `;
 
 const DemoButton = styled.button`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: relative;
     font-family: Jua, sans-serif;
     font-size: 24px;
@@ -64,7 +64,7 @@ const DemoButton = styled.button`
 `;
 
 const ButtonContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     transform: scale(0.8) translateX(-80px);
   }
 `;

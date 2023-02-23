@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ExcellentScreenContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -11,7 +11,7 @@ const ExcellentScreenContainer = styled.div`
     padding: 8px;
     z-index: 3;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -26,7 +26,7 @@ const ExcellentScreenContainer = styled.div`
 `;
 
 const ExcellentImage = styled.img`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -35,7 +35,7 @@ const ExcellentImage = styled.img`
     width: 300px;
     scale: 0.8;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

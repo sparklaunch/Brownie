@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const WordCardContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@ const WordCardContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,13 +26,13 @@ const WordCardContainer = styled.div`
 `;
 
 const WordCardText = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     font-size: 120px;
     font-weight: 900;
     margin-left: 24px;
     letter-spacing: -5px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-size: 120px;
     font-weight: 900;
     margin-left: 24px;

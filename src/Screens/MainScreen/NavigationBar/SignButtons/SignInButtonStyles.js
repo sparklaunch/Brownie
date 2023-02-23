@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const NavigationBarSignInButton = styled.button`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     background-color: #1ab9c5;
     filter: brightness(1) drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
     font-family: Jua, sans-serif;

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const TryOuterContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -14,13 +14,13 @@ const TryOuterContainer = styled.div`
 `;
 
 const TryInnerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: column;
     width: 90%;
     align-items: stretch;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: column;
     width: 800px;

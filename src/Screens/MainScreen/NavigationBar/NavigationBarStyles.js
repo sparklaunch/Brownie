@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const NavigationBarOuterContainer = styled.div`
-  @media (min-width: 767px) and (max-width: 1279px) {
+  @media (min-width: 767px) and (max-width: 992px) {
     display: flex;
     justify-content: center;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -14,7 +14,7 @@ const NavigationBarOuterContainer = styled.div`
 `;
 
 const NavigationBarInnerContainer = styled.div`
-  @media (min-width: 767px) and (max-width: 1279px) {
+  @media (min-width: 767px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -24,7 +24,7 @@ const NavigationBarInnerContainer = styled.div`
     padding: 16px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: row;
     width: 1200px;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LoadingCardContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     width: 300px;
     height: 200px;
     border-radius: 20px;
@@ -12,7 +12,7 @@ const LoadingCardContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     width: 300px;
     height: 200px;
     border-radius: 20px;
@@ -26,7 +26,7 @@ const LoadingCardContainer = styled.div`
 `;
 
 const RotatingDocument = styled.img`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     animation: rotating 2s linear infinite;
     @keyframes rotating {
       from {
@@ -37,7 +37,7 @@ const RotatingDocument = styled.img`
       }
     }
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     animation: rotating 2s linear infinite;
     @keyframes rotating {
       from {
@@ -51,12 +51,12 @@ const RotatingDocument = styled.img`
 `;
 
 const LoadingText = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     font-weight: bold;
     font-size: 16px;
     margin-top: 20px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-weight: bold;
     font-size: 16px;
     margin-top: 20px;

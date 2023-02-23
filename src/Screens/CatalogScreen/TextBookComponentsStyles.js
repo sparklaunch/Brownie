@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const TextBookComponentsContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -12,9 +12,9 @@ const TextBookComponentsContainer = styled.div`
 `;
 
 const TextBookComponentsTitle = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -26,9 +26,9 @@ const TextBookComponentsTitle = styled.p`
 `;
 
 const TextBookBundles = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: grid;
     gap: 60px;
     grid-template-areas: "cd-image package-image combined-image" "cd-text package-text combined-text";
@@ -36,30 +36,30 @@ const TextBookBundles = styled.div`
 `;
 
 const CDImage = styled.img`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
   }
 `;
 
 const PackageImage = styled.img`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
   }
 `;
 
 const CombinedImage = styled.img`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
   }
 `;
 
 const ImageContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,9 +69,9 @@ const ImageContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,9 +79,9 @@ const TextContainer = styled.div`
 `;
 
 const TextTitle = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-weight: bold;
     font-size: 18px;
     color: #515151;
@@ -90,9 +90,9 @@ const TextTitle = styled.p`
 `;
 
 const TextDescription = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-size: 18px;
     font-weight: lighter;
     color: #515151;

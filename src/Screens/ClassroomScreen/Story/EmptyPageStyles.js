@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const EmptyPageContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;

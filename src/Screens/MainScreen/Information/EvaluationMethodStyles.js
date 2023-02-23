@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const EvaluationMethodContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 30px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,7 +16,7 @@ const EvaluationMethodContainer = styled.div`
 `;
 
 const EvaluationMethodTitle = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     font-size: 20px;
     flex-shrink: 0;
     padding: 12px 20px;
@@ -25,7 +25,7 @@ const EvaluationMethodTitle = styled.p`
     color: white;
     display: inline-block;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-size: 20px;
     flex-shrink: 0;
     padding: 12px 20px;
@@ -37,11 +37,11 @@ const EvaluationMethodTitle = styled.p`
 `;
 
 const EvaluationMethodDescription = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     font-size: 18px;
     margin-left: 16px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-size: 18px;
     margin-left: 16px;
   }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LeftCompletedMicrophoneContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     z-index: 1;
     bottom: 20px;
@@ -10,14 +10,14 @@ const LeftCompletedMicrophoneContainer = styled.div`
     display: flex;
     flex-direction: row;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: row;
   }
 `;
 
 const RetryButtonContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     width: 120px;
     height: 120px;
     display: flex;
@@ -26,14 +26,14 @@ const RetryButtonContainer = styled.div`
     justify-content: center;
     cursor: pointer;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     margin-right: 20px;
     cursor: pointer;
   }
 `;
 
 const MyVoiceButtonContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     width: 120px;
     height: 120px;
     display: flex;
@@ -42,13 +42,13 @@ const MyVoiceButtonContainer = styled.div`
     justify-content: center;
     cursor: pointer;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     cursor: pointer;
   }
 `;
 
 const RetryButton = styled.img`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     width: 70px;
     height: 70px;
     margin-right: 10px;
@@ -56,7 +56,7 @@ const RetryButton = styled.img`
 `;
 
 const MyVoiceButton = styled.img`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     width: 70px;
     height: 70px;
   }

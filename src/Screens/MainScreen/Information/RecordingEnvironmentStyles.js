@@ -1,22 +1,22 @@
 import styled from "styled-components";
 
 const RecordingEnvironmentContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     margin: 12px 0 30px 0;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     margin: 12px 0 30px 0;
   }
 `;
 
 const RecordingEnvironmentTitleContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 8px 0;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,12 +25,12 @@ const RecordingEnvironmentTitleContainer = styled.div`
 `;
 
 const RecordingEnvironmentTitle = styled.p`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
     margin-left: 10px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
     margin-left: 10px;
@@ -38,23 +38,23 @@ const RecordingEnvironmentTitle = styled.p`
 `;
 
 const RecordingEnvironmentList = styled.ol`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     list-style: decimal;
     padding-left: 20px;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     list-style: decimal;
     padding-left: 20px;
   }
 `;
 
 const RecordingEnvironmentListItem = styled.li`
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 992px) {
     font-size: 18px;
     margin: 4px 0;
     ${({ accented }) => accented && `color: #EC1C47;`}
   }
-  @media (min-width: 1280px) {
+  @media (min-width: 993px) {
     font-size: 18px;
     margin: 4px 0;
     ${({ accented }) => accented && `color: #EC1C47;`}
