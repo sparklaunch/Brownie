@@ -51,7 +51,7 @@ const ScorePillWrapper = styled.div`
     top: 50%;
     left: 50%;
     width: 100vw;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.6);
   }
   @media (min-width: 993px) {
     position: absolute;
