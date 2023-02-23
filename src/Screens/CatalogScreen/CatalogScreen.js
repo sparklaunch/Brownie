@@ -4,6 +4,9 @@ import TextBookLogo from "./TextBookLogo";
 import TextBookSubtitle from "./TextBookSubtitle";
 import TextBookCatalogImage from "./TextBookCatalogImage";
 import TextBookFeatures from "./TextBookFeatures";
+import TextBookComponents from "./TextBookComponents";
+import { TextBookComponentsAndDownloads } from "./CatalogScreenStyles";
+import TextBookDownloads from "./TextBookDownloads";
 
 const CatalogScreen = () => {
   return (
@@ -14,6 +17,10 @@ const CatalogScreen = () => {
       <TextBookSubtitle />
       <TextBookCatalogImage />
       <TextBookFeatures />
+      <TextBookComponentsAndDownloads>
+        <TextBookComponents />
+        <TextBookDownloads />
+      </TextBookComponentsAndDownloads>
     </>
   );
 };
