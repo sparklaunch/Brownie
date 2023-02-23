@@ -24,4 +24,18 @@ const TextBookDownloadsTitle = styled.p`
   }
 `;
 
-export { TextBookDownloadsContainer, TextBookDownloadsTitle };
+const TextBookDownload = styled.p`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    font-size: 18px;
+    color: #515151;
+    font-weight: 400;
+    padding: 3px 0;
+    &:nth-child(2) {
+      margin-top: 24px;
+    }
+  }
+`;
+
+export { TextBookDownloadsContainer, TextBookDownloadsTitle, TextBookDownload };
