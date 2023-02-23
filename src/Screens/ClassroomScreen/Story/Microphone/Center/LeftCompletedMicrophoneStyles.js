@@ -18,8 +18,8 @@ const LeftCompletedMicrophoneContainer = styled.div`
 
 const RetryButtonContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -34,8 +34,8 @@ const RetryButtonContainer = styled.div`
 
 const MyVoiceButtonContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,16 +49,16 @@ const MyVoiceButtonContainer = styled.div`
 
 const RetryButton = styled.img`
   @media (min-width: 768px) and (max-width: 992px) {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
   }
 `;
 
 const MyVoiceButton = styled.img`
   @media (min-width: 768px) and (max-width: 992px) {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
   }
 `;
 
