@@ -45,4 +45,19 @@ const GoodImage = styled.img`
   }
 `;
 
-export { GoodScreenContainer, GoodImage };
+const ScorePillWrapper = styled.div`
+  @media (min-width: 768px) and (max-width: 992px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media (min-width: 993px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+export { GoodScreenContainer, GoodImage, ScorePillWrapper };

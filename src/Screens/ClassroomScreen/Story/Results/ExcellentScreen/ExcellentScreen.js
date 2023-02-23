@@ -4,7 +4,8 @@ import ScorePill from "../Score/ScorePill";
 import { Fade } from "@mui/material";
 import {
   ExcellentImage,
-  ExcellentScreenContainer
+  ExcellentScreenContainer,
+  ScorePillWrapper
 } from "./ExcellentScreenStyles";
 import modeAtom from "../../../../../Stores/Classroom/mode";
 
@@ -14,11 +15,13 @@ const ExcellentScreen = () => {
   return (
     <Fade in={true} timeout={500}>
       <ExcellentScreenContainer isWordMode={mode === "word"}>
-        <ScorePill />
         <ExcellentImage
           src={`/assets/images/excellent_bat.png`}
           alt={`Excellent bat`}
         />
+        <ScorePillWrapper>
+          <ScorePill />
+        </ScorePillWrapper>
         <p>{totalScore.score}</p>
       </ExcellentScreenContainer>
     </Fade>

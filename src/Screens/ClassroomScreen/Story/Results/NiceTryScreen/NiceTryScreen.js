@@ -2,7 +2,11 @@ import { useRecoilState } from "recoil";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import ScorePill from "../Score/ScorePill";
 import { Fade } from "@mui/material";
-import { NiceTryImage, NiceTryScreenContainer } from "./NiceTryScreenStyles";
+import {
+  NiceTryImage,
+  NiceTryScreenContainer,
+  ScorePillWrapper
+} from "./NiceTryScreenStyles";
 import modeAtom from "../../../../../Stores/Classroom/mode";
 
 const NiceTryScreen = () => {
@@ -15,7 +19,9 @@ const NiceTryScreen = () => {
           src={`/assets/images/nicetry_frog.png`}
           alt={`Nice Try Frog`}
         />
-        <ScorePill />
+        <ScorePillWrapper>
+          <ScorePill />
+        </ScorePillWrapper>
         <p>{totalScore.score}</p>
       </NiceTryScreenContainer>
     </Fade>
