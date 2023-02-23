@@ -1,21 +1,16 @@
 import { useRecoilState } from "recoil";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import Constants from "../../../../../Utilities/Constants";
+import { ScoreTextString } from "./ScoreTextStyles";
 
 const ScoreText = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   if (totalScore.score >= Constants.EXCELLENT_THRESHOLD) {
-    return (
-      <p className={`text-[36px] font-[Jua] text-[#15B58F] ml-3`}>Excellent!</p>
-    );
+    return <ScoreTextString textColor={`#15B58F`}>Excellent!</ScoreTextString>;
   } else if (totalScore.score >= Constants.GOOD_THRESHOLD) {
-    return (
-      <p className={`text-[36px] font-[Jua] text-[#FF8200] ml-3`}>Good!</p>
-    );
+    return <ScoreTextString textColor={`#FF8200`}>Good!</ScoreTextString>;
   } else {
-    return (
-      <p className={`text-[36px] font-[Jua] text-[#FF2442] ml-3`}>Nice Try!</p>
-    );
+    return <ScoreTextString textColor={`#FF2442`}>Nice Try!</ScoreTextString>;
   }
 };
 
