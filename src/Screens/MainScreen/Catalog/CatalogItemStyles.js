@@ -50,28 +50,4 @@ const DemoRibbon = styled.img`
   }
 `;
 
-const HoverStroke = styled.svg`
-  @media (min-width: 768px) and (max-width: 992px) {
-  }
-  @media (min-width: 993px) {
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    fill: none;
-    cursor: pointer;
-    stroke: #1ab9c5;
-    stroke-width: 3px;
-    stroke-linecap: butt;
-    stroke-dasharray: 100%;
-    stroke-dashoffset: 0;
-    transition: all 0.8s ease-in-out;
-    &:hover {
-      stroke-linecap: round;
-      stroke-dashoffset: 100%;
-    }
-  }
-`;
-
-export { CatalogItemContainer, CatalogItemImage, DemoRibbon, HoverStroke };
+export { CatalogItemContainer, CatalogItemImage, DemoRibbon };

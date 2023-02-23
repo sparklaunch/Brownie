@@ -43,7 +43,6 @@ const CatalogItem = ({
         alt={`${coverImage}`}
         onClick={onClickCatalogItem}
       />
-      {/*<HoverStroke />*/}
       {forDemo && (
         <DemoRibbon
           src={`/assets/images/demo_ribbon.png`}
