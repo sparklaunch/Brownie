@@ -2,16 +2,20 @@ import styled from "styled-components";
 
 const ScorePillOuterContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.5);
   }
   @media (min-width: 993px) {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
