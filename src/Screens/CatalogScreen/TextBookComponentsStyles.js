@@ -63,6 +63,38 @@ const ImageContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    grid-area: ${(props) => props.area};
+  }
+`;
+
+const TextContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const TextTitle = styled.p`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    font-weight: bold;
+    font-size: 18px;
+    color: #515151;
+    margin-bottom: 3px;
+  }
+`;
+
+const TextDescription = styled.p`
+  @media (min-width: 768px) and (max-width: 1279px) {
+  }
+  @media (min-width: 1280px) {
+    font-size: 18px;
+    font-weight: lighter;
+    color: #515151;
   }
 `;
 
@@ -73,5 +105,8 @@ export {
   CDImage,
   PackageImage,
   CombinedImage,
-  ImageContainer
+  ImageContainer,
+  TextContainer,
+  TextTitle,
+  TextDescription
 };
