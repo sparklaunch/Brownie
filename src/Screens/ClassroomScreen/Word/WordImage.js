@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import { useRecoilState } from "recoil";
 import useData from "../../../Hooks/useData";
-import { Howl } from "howler";
 import totalScoreAtom from "../../../Stores/Classroom/Story/totalScore";
 import Constants from "../../../Utilities/Constants";
+import _ from "lodash";
 
 const WordImage = () => {
   const words = useData("words");
@@ -12,13 +12,11 @@ const WordImage = () => {
   const bookID = useData("id");
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
+  const playWordAudio = () => {
+    new Audio(`/assets/audio/words/${words[currentWordPage - 1]}.wav`).play();
+  };
   const onClickMegaphone = () => {
-    const howl = new Howl({
-      src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`],
-      onload: () => {},
-      onend: () => {}
-    });
-    howl.play();
+    return _.throttle(playWordAudio, 1000, { leading: true, trailing: true });
   };
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   let textColor;
@@ -45,7 +43,7 @@ const WordImage = () => {
           src={`/assets/images/icons/megaphone_button.svg`}
           alt="Megaphone Button"
           className={`mr-3 cursor-pointer`}
-          onClick={onClickMegaphone}
+          onClick={onClickMegaphone()}
         />
         <p className={`text-[${textColor}] font-black text-[60px]`}>
           {words[currentWordPage - 1]}
