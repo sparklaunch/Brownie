@@ -30,6 +30,8 @@ const TextBookBundles = styled.div`
   }
   @media (min-width: 1280px) {
     display: grid;
+    grid-template-columns: 180px 180px 180px;
+    gap: 24px;
     grid-template-areas: "cd-image package-image combined-image" "cd-text package-text combined-text";
   }
 `;
