@@ -7,6 +7,7 @@ import TextBookFeatures from "./TextBookFeatures";
 import TextBookComponents from "./TextBookComponents";
 import { TextBookComponentsAndDownloads } from "./CatalogScreenStyles";
 import TextBookDownloads from "./TextBookDownloads";
+import Footer from "../MainScreen/Footer/Footer";
 
 const CatalogScreen = () => {
   return (
@@ -21,6 +22,7 @@ const CatalogScreen = () => {
         <TextBookComponents />
         <TextBookDownloads />
       </TextBookComponentsAndDownloads>
+      <Footer />
     </>
   );
 };
