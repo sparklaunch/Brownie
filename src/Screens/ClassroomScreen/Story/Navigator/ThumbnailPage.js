@@ -22,7 +22,7 @@ const ThumbnailPage = ({
         src={`/assets/images/pages/${bookID}_${page}.jpg`}
         alt={`Page ${page}`}
         loading={"lazy"}
-        className={`${page >= 2 && `scale-[1.15]`} w-full h-full object-cover`}
+        className={`w-full h-full object-cover`}
       />
       <div
         className={`absolute top-0 left-0 bottom-0 right-0 ${
