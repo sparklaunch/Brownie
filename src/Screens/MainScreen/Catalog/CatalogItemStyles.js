@@ -50,4 +50,17 @@ const DemoRibbon = styled.img`
   }
 `;
 
-export { CatalogItemContainer, CatalogItemImage, DemoRibbon };
+const CompletedBadge = styled.img`
+  @media (min-width: 768px) and (max-width: 992px) {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+  @media (min-width: 993px) {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+`;
+
+export { CatalogItemContainer, CatalogItemImage, DemoRibbon, CompletedBadge };
