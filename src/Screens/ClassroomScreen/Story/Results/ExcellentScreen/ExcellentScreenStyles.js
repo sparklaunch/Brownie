@@ -6,7 +6,7 @@ const ExcellentScreenContainer = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px;
+    height: 30vh;
     background-color: #80e6ac;
     padding: 8px;
     z-index: 3;
