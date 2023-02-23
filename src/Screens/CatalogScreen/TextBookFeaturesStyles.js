@@ -7,6 +7,7 @@ const TextBookFeaturesOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 80px auto;
   }
 `;
 
