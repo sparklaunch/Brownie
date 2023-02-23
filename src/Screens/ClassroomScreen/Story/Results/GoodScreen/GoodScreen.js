@@ -6,7 +6,6 @@ import { GoodImage, GoodScreenContainer } from "./GoodScreenStyles";
 
 const GoodScreen = () => {
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
-  console.log(totalScore.score);
   return (
     <Fade in={true} timeout={500}>
       <GoodScreenContainer>
