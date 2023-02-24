@@ -49,15 +49,44 @@ const InstructionsText = styled.p`
   @media (min-width: 480px) and (max-width: 767px) {
     font-size: 14px;
     color: #3d3d3d;
+    cursor: pointer;
+    margin-right: 12px;
   }
   @media (min-width: 768px) and (max-width: 992px) {
     font-size: 14px;
     color: #3d3d3d;
+    cursor: pointer;
+    margin-right: 12px;
   }
   @media (min-width: 993px) {
     font-size: 14px;
     color: #3d3d3d;
+    cursor: pointer;
+    margin-right: 12px;
   }
 `;
 
-export { HamburgerMenuContainer, SignInButton, InstructionsText };
+const AdministratorSiteText = styled.p`
+  @media (min-width: 480px) and (max-width: 767px) {
+    font-size: 14px;
+    color: #3d3d3d;
+    cursor: pointer;
+  }
+  @media (min-width: 768px) and (max-width: 992px) {
+    font-size: 14px;
+    color: #3d3d3d;
+    cursor: pointer;
+  }
+  @media (min-width: 993px) {
+    font-size: 14px;
+    color: #3d3d3d;
+    cursor: pointer;
+  }
+`;
+
+export {
+  HamburgerMenuContainer,
+  SignInButton,
+  InstructionsText,
+  AdministratorSiteText
+};
