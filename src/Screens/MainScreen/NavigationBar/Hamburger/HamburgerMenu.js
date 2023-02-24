@@ -1,7 +1,11 @@
-import { HamburgerMenuContainer } from "./HamburgerMenuStyles";
+import { HamburgerMenuContainer, SignInButton } from "./HamburgerMenuStyles";
 
 const HamburgerMenu = () => {
-  return <HamburgerMenuContainer></HamburgerMenuContainer>;
+  return (
+    <HamburgerMenuContainer>
+      <SignInButton>로그인</SignInButton>
+    </HamburgerMenuContainer>
+  );
 };
 
 export default HamburgerMenu;
