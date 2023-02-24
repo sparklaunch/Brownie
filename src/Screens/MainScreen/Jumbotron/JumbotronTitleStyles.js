@@ -47,6 +47,17 @@ const Title = styled.p`
 
 const DemoButton = styled.button`
   @media (min-width: 768px) and (max-width: 992px) {
+    position: relative;
+    font-family: Jua, sans-serif;
+    font-size: 24px;
+    color: white;
+    letter-spacing: 1px;
+    border: 1px solid white;
+    width: 284px;
+    height: 64px;
+    bottom: -50px;
+    background-color: #f34d7e;
+    border-radius: 8px;
   }
   @media (min-width: 993px) {
     position: relative;
