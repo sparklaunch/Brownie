@@ -117,8 +117,6 @@ const AudioManager = () => {
             onend: onFirstPageEnd
           });
           howler.play();
-        } else {
-          setCentralMicrophoneState("idle");
         }
       } else {
         if (scores[`${level}-${currentPage}`] === undefined) {
@@ -131,8 +129,6 @@ const AudioManager = () => {
             onend: onLeftEnd
           });
           howler.play();
-        } else {
-          setCentralMicrophoneState("idle");
         }
       }
     } else {
