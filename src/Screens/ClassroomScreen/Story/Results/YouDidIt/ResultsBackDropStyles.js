@@ -12,8 +12,8 @@ const ResultsBackDropContainer = styled.div`
   }
   @media (min-width: 993px) {
     position: absolute;
-    top: -20px;
-    bottom: 20px;
+    top: ${(props) => (props.isWordMode ? `0` : `20px`)};
+    bottom: ${(props) => (props.isWordMode ? `0` : `20px`)};
     left: 0;
     right: 0;
     background-color: black;
