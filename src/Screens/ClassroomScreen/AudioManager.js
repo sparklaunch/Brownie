@@ -21,10 +21,12 @@ import navigatorOpenAtom from "../../Stores/Classroom/Story/navigatorOpen";
 import youDidItShownAtom from "../../Stores/Classroom/youDidItShown";
 import highlightVisibleAtom from "../../Stores/Classroom/Story/highlightVisible";
 import scoresAtom from "../../Stores/Classroom/Story/scores";
+import wordScoresAtom from "../../Stores/Classroom/Word/wordScores";
 
 const AudioManager = () => {
   const { level } = useParams();
   const [scores, setScores] = useRecoilState(scoresAtom);
+  const [wordScores, setWordScores] = useRecoilState(wordScoresAtom);
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const words = useData(`words`);
@@ -132,15 +134,17 @@ const AudioManager = () => {
         }
       }
     } else {
-      const howler = new Howl({
-        src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`],
-        onload: () => {
-          setAudioDuration(howler.duration() * 1000 + 2000);
-        },
-        onplay: onWordPlay,
-        onend: onWordEnd
-      });
-      howler.play();
+      if (wordScores[`${level}-${currentWordPage}`] === undefined) {
+        const howler = new Howl({
+          src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`],
+          onload: () => {
+            setAudioDuration(howler.duration() * 1000 + 2000);
+          },
+          onplay: onWordPlay,
+          onend: onWordEnd
+        });
+        howler.play();
+      }
     }
   }, [currentPage, currentWordPage, mode]);
   useEffect(() => {

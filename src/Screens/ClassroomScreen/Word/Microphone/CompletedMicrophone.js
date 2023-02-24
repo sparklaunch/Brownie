@@ -110,6 +110,12 @@ const CompletedMicrophone = () => {
     }
   };
   const onClickRetry = () => {
+    setWordScores((previousScores) => {
+      return {
+        ...previousScores,
+        [`${level}-${currentWordPage}`]: undefined
+      };
+    });
     recordVoice();
   };
   const onClickMyVoice = () => {
