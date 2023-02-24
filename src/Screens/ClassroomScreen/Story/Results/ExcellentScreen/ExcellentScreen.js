@@ -20,7 +20,7 @@ const ExcellentScreen = () => {
           alt={`Excellent bat`}
         />
         <ScorePillWrapper>
-          <ScorePill />
+          <ScorePill score={totalScore.score} />
         </ScorePillWrapper>
         <p>{totalScore.score}</p>
       </ExcellentScreenContainer>

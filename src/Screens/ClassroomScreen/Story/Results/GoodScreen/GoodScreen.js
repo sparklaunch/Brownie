@@ -17,7 +17,7 @@ const GoodScreen = () => {
       <GoodScreenContainer isWordMode={mode === "word"}>
         <GoodImage src={`/assets/images/good_monkey.png`} alt={`Good Monkey`} />
         <ScorePillWrapper>
-          <ScorePill />
+          <ScorePill score={totalScore.score} />
         </ScorePillWrapper>
         <p>{totalScore.score}</p>
       </GoodScreenContainer>

@@ -20,7 +20,7 @@ const NiceTryScreen = () => {
           alt={`Nice Try Frog`}
         />
         <ScorePillWrapper>
-          <ScorePill />
+          <ScorePill score={totalScore.score} />
         </ScorePillWrapper>
         <p>{totalScore.score}</p>
       </NiceTryScreenContainer>
