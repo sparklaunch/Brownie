@@ -167,7 +167,7 @@ const SignUpFields = () => {
             <InputAdornment position={"end"}>
               {id.length === 0 && (
                 <p
-                  className={`relative top-[3px] right-[8px] text-red-600 font-bold`}
+                  className={`absolute top-[50%] translate-y-[-50%] right-[16px] text-red-600 font-bold`}
                 >
                   *
                 </p>
@@ -175,6 +175,7 @@ const SignUpFields = () => {
             </InputAdornment>
           )
         }}
+        autoComplete={false}
         sx={{
           width: "100%",
           backgroundColor: "white",
@@ -200,7 +201,7 @@ const SignUpFields = () => {
             <InputAdornment position={"end"}>
               {password.length === 0 && (
                 <p
-                  className={`relative top-[3px] right-[8px] text-red-600 font-bold`}
+                  className={`absolute top-[50%] translate-y-[-50%] right-[16px] text-red-600 font-bold`}
                 >
                   *
                 </p>
@@ -234,7 +235,7 @@ const SignUpFields = () => {
             <InputAdornment position={"end"}>
               {passwordConfirm.length === 0 && (
                 <p
-                  className={`relative top-[3px] right-[8px] text-red-600 font-bold`}
+                  className={`absolute top-[50%] translate-y-[-50%] right-[16px] text-red-600 font-bold`}
                 >
                   *
                 </p>
@@ -267,7 +268,7 @@ const SignUpFields = () => {
             <InputAdornment position={"end"}>
               {phoneNumber.length === 0 && (
                 <p
-                  className={`relative top-[3px] right-[8px] text-red-600 font-bold`}
+                  className={`absolute top-[50%] translate-y-[-50%] right-[16px] text-red-600 font-bold`}
                 >
                   *
                 </p>
@@ -295,7 +296,7 @@ const SignUpFields = () => {
             <InputAdornment position={"end"}>
               {studentName.length === 0 && (
                 <p
-                  className={`relative top-[3px] right-[8px] text-red-600 font-bold`}
+                  className={`absolute top-[50%] translate-y-[-50%] right-[16px] text-red-600 font-bold`}
                 >
                   *
                 </p>
