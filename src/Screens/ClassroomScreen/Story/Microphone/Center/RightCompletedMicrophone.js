@@ -114,6 +114,12 @@ const RightCompletedMicrophone = () => {
   const onClickRetry = () => {
     setHighlightedPage(currentPage + 1);
     setResultsScreenShown(false);
+    setScores((previousScores) => {
+      return {
+        ...previousScores,
+        [`${level}-${currentPage + 1}`]: undefined
+      };
+    });
     recordVoice();
   };
   const onClickMyVoice = () => {
