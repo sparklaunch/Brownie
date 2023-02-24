@@ -13,8 +13,7 @@
       "can",
       "cat",
       "cup",
-      "cut",
-      "snack"
+      "cut"
     ],
     "sentences": [
       "Ant, Bug and Cat",
@@ -39,11 +38,11 @@
       "disk",
       "dog",
       "egg",
-      "fox",
-      "fun",
       "help",
       "net",
-      "red"
+      "red",
+      "fox",
+      "fun"
     ],
     "sentences": [
       "The Den",
@@ -89,7 +88,6 @@
     "level": "1-4",
     "title": "Jen's Jet",
     "words": [
-      "glad",
       "jet",
       "jump",
       "kit",
@@ -116,13 +114,13 @@
     "level": "1-5",
     "title": "Meg's Mat",
     "words": [
-      "box",
       "mat",
       "mop",
       "mug",
       "nap",
       "net",
       "nut",
+      "box",
       "pot"
     ],
     "sentences": [
@@ -143,15 +141,13 @@
     "level": "1-6",
     "title": "Pam's Quiz",
     "words": [
-      "big",
       "pat",
       "pink",
       "quick",
       "quilt",
       "quiz",
       "ram",
-      "red",
-      "sit"
+      "red"
     ],
     "sentences": [
       "Pam's Quiz",
@@ -171,13 +167,13 @@
     "level": "1-7",
     "title": "Ten Bugs",
     "words": [
+      "sit",
+      "sun",
+      "ten",
       "bug",
       "hug",
       "hum",
       "run",
-      "sit",
-      "sun",
-      "ten",
       "van"
     ],
     "sentences": [
@@ -198,11 +194,11 @@
     "level": "1-8",
     "title": "Zed's Zigzag",
     "words": [
-      "box",
-      "fox",
       "wet",
       "wig",
       "wombat",
+      "box",
+      "fox",
       "yak",
       "yap",
       "yell",
@@ -249,7 +245,6 @@
       "ram",
       "ran",
       "sad",
-      "spot",
       "tan"
     ]
   },
@@ -260,18 +255,11 @@
     "words": [
       "egg",
       "end",
-      "fan",
-      "glad",
       "hen",
-      "hot",
-      "nap",
       "nest",
-      "pat",
       "pen",
       "pet",
       "red",
-      "sad",
-      "two",
       "wet"
     ],
     "sentences": [
@@ -294,20 +282,13 @@
     "words": [
       "big",
       "bin",
-      "fan",
       "fin",
-      "glad",
       "hit",
       "kid",
       "lid",
-      "mad",
       "mix",
       "pin",
-      "ram",
-      "sad",
-      "sand",
-      "sit",
-      "wet"
+      "sit"
     ],
     "sentences": [
       "The Big Fin",
@@ -327,20 +308,14 @@
     "level": "2-4",
     "title": "Hot Dogs",
     "words": [
-      "ax",
       "box",
       "dog",
-      "fill",
-      "hand",
-      "hot",
       "hot dogs",
+      "hot",
       "log",
       "mop",
-      "neck",
       "pot",
-      "rip",
-      "top",
-      "wet"
+      "top"
     ],
     "sentences": [
       "Hot Dogs",
@@ -363,17 +338,10 @@
       "bug",
       "cup",
       "get up",
-      "glad",
-      "hit",
-      "hot",
       "hug",
-      "mad",
       "mug",
-      "nap",
       "pup",
-      "red",
       "rug",
-      "set",
       "sun"
     ],
     "sentences": [
@@ -394,25 +362,15 @@
     "level": "3-1",
     "title": "Pam and Dave in the Cave",
     "words": [
-      "bat",
-      "big",
       "brave",
       "cake",
       "cane",
       "cape",
       "cave",
-      "dim",
       "gate",
-      "glad",
       "lake",
-      "lamp",
-      "map",
       "name",
-      "pal",
-      "pass",
-      "rake",
-      "spot",
-      "wet"
+      "rake"
     ],
     "sentences": [
       "Pam and Dave in the Cave",
@@ -432,24 +390,15 @@
     "level": "3-2",
     "title": "Jim and Mike's Time",
     "words": [
-      "bed",
       "bike",
       "bite",
-      "bun",
       "five",
-      "game",
-      "gate",
-      "leg",
       "lime",
-      "neck",
       "nine",
       "pine",
       "ride",
-      "six",
       "time",
       "vine",
-      "wake up",
-      "wave",
       "wipe"
     ],
     "sentences": [
@@ -470,19 +419,11 @@
     "level": "3-3",
     "title": "Tom and Jane Go Home",
     "words": [
-      "drop",
-      "fix",
       "hole",
       "home",
       "hope",
-      "lob",
-      "lock",
-      "mad",
-      "mom",
       "pole",
-      "rope",
-      "spot",
-      "tug"
+      "rope"
     ],
     "sentences": [
       "Tom and Jane Go Home",
@@ -502,26 +443,11 @@
     "level": "3-4",
     "title": "Jude on the Dune",
     "words": [
-      "bug",
-      "cone",
       "cute",
       "dune",
       "fuse",
-      "glad",
-      "gum",
-      "have a dip",
-      "hot",
-      "jump in",
-      "lake",
-      "long",
-      "lost",
       "mule",
-      "pup",
-      "run",
-      "sun",
-      "take a nap",
-      "tube",
-      "vine"
+      "tube"
     ],
     "sentences": [
       "Jude on the Dune",
@@ -554,11 +480,7 @@
       "flag",
       "flame",
       "flip",
-      "frame",
-      "prize",
-      "spot",
-      "tame",
-      "top"
+      "frame"
     ],
     "sentences": [
       "Clem the Brave",
@@ -584,15 +506,12 @@
       "drop",
       "glass",
       "globe",
-      "home",
       "plan",
       "prize",
-      "quick",
       "sled",
       "slick",
       "slide",
       "slope",
-      "top",
       "travel",
       "trek",
       "trip",
@@ -660,19 +579,12 @@
       "branch",
       "chase",
       "chest",
-      "dive",
-      "fin",
       "fish",
       "flash",
       "math",
       "path",
-      "plan",
-      "sea",
-      "see",
       "ship",
-      "sit",
       "splash",
-      "swim",
       "white",
       "wish"
     ],
@@ -698,22 +610,16 @@
       "blow",
       "boat",
       "bowl",
-      "box",
       "east",
       "float",
       "flow",
       "green",
-      "home",
-      "roar",
       "sea",
       "seed",
       "shoal",
-      "soar",
-      "strong",
       "tea",
       "throat",
-      "throw",
-      "wind"
+      "throw"
     ],
     "sentences": [
       "The Shoal Beast",
@@ -734,15 +640,12 @@
     "title": "The Train in Spain",
     "words": [
       "boy",
-      "bring",
       "day",
       "grain",
       "hail",
-      "heat",
       "joy",
       "mail",
       "plain",
-      "plant",
       "rail",
       "rain",
       "soil",
@@ -786,8 +689,7 @@
       "shout",
       "singer",
       "sister",
-      "town",
-      "wheel"
+      "town"
     ],
     "sentences": [
       "The Fairgrounds",
@@ -811,20 +713,15 @@
       "dark",
       "foot",
       "hook",
-      "hop",
-      "hope",
       "look up",
       "Mars",
-      "moon",
-      "next to",
+      "Moon",
       "North Star",
       "park",
       "pool",
       "snoring",
       "star",
       "stork",
-      "wake",
-      "white",
       "zoom"
     ],
     "sentences": [
