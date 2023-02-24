@@ -16,7 +16,11 @@ const CentralMicrophone = () => {
   );
   const [scores, setScores] = useRecoilState(scoresAtom);
   useEffect(() => {
-    if (
+    if (currentPage === 10 && scores[`${level}-10`] !== undefined) {
+      setCentralMicrophoneState("completed");
+    } else if (currentPage === 0 && scores[`${level}-1`] !== undefined) {
+      setCentralMicrophoneState("completed");
+    } else if (
       scores[`${level}-${currentPage}`] !== undefined &&
       scores[`${level}-${currentPage + 1}`] !== undefined
     ) {
