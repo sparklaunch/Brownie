@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-const HamburgerWrapper = styled.div`
+const HamburgerHeaderContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
-    padding: 20px 30px;
   }
   @media (min-width: 993px) {
   }
 `;
 
-export { HamburgerWrapper };
+export { HamburgerHeaderContainer };
