@@ -1,6 +1,6 @@
 import NavigationContentTop from "./NavigationContentTop";
 import NavigationContentBottom from "./NavigationContentBottom";
-import Hamburger from "./Hamburger";
+import Hamburger from "./Hamburger/Hamburger";
 import {
   HamburgerContainer,
   NavigationContentContainer
