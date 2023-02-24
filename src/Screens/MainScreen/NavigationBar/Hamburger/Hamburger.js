@@ -14,14 +14,15 @@ const Hamburger = () => {
   const onCloseDrawer = () => {
     setDrawerOpen(false);
   };
-  const onClickHamburger = () => {
+  const onClickHamburgerIcon = () => {
     setDrawerOpen(true);
   };
   return (
-    <HamburgerContainer onClick={onClickHamburger}>
+    <HamburgerContainer>
       <HamburgerIcon
         src={`/assets/images/hamburger.svg`}
         alt="Hamburger Icon"
+        onClick={onClickHamburgerIcon}
       />
       <SwipeableDrawer
         anchor="right"
