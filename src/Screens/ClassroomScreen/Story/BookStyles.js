@@ -374,9 +374,7 @@ const GlowBorder = styled.div`
     ${({ direction }) => (direction === "left" ? "right: 0;" : "left: 0;")}
     width: 74vh;
     z-index: 1;
-    box-shadow: 0 0 5px 5px #ffd53d, 0 0 10px 5px #ffd53d, 0 0 15px 5px #ffd53d,
-      inset 0 0 5px 5px #ffd53d, inset 0 0 10px 5px #ffd53d,
-      inset 0 0 15px 5px #ffd53d;
+    box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
   }
   @media (min-width: 993px) {
     position: absolute;
@@ -386,9 +384,7 @@ const GlowBorder = styled.div`
     right: 0;
     width: 100%;
     z-index: 1;
-    box-shadow: 0 0 5px 5px #ffd53d, 0 0 10px 5px #ffd53d, 0 0 15px 5px #ffd53d,
-      inset 0 0 5px 5px #ffd53d, inset 0 0 10px 5px #ffd53d,
-      inset 0 0 15px 5px #ffd53d;
+    box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
   }
 `;
 
