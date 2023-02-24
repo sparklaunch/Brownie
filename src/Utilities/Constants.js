@@ -1,5 +1,5 @@
 const Constants = {
-  AUTH_API_ENDPOINT: "https://funphonics.ai",
+  AUTH_API_ENDPOINT: "https://funphonics.ai:8443",
   ELA_API_ENDPOINT: "https://api.elasolution.com",
   API_KEY: "afef8c94d1094b58a3fc58e743eb9913",
   EXCELLENT_THRESHOLD: 75,
