@@ -124,13 +124,6 @@ const CentralIdleMicrophone = () => {
           })
           .then((response) => {
             setHighlightVisible(false);
-            if (highlightedPage !== currentPage) {
-              const record = localStorage.getItem("right_record");
-              new Audio(record).play();
-            } else {
-              const record = localStorage.getItem("left_record");
-              new Audio(record).play();
-            }
             const stringResponse = JSON.stringify(response, null, 2);
             console.log(stringResponse);
             const totalScore = response.data.total_score;
