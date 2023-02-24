@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 const HamburgerMenuContainer = styled.div`
   @media (min-width: 480px) and (max-width: 767px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   @media (min-width: 768px) and (max-width: 992px) {
   }
@@ -18,6 +21,7 @@ const SignInButton = styled.p`
     background-color: #1ab9c5;
     border-radius: 6px;
     cursor: pointer;
+    margin-right: 12px;
   }
   @media (min-width: 768px) and (max-width: 992px) {
     font-family: Jua, sans-serif;
@@ -27,6 +31,7 @@ const SignInButton = styled.p`
     background-color: #1ab9c5;
     border-radius: 6px;
     cursor: pointer;
+    margin-right: 12px;
   }
   @media (min-width: 993px) {
     font-family: Jua, sans-serif;
@@ -36,7 +41,23 @@ const SignInButton = styled.p`
     background-color: #1ab9c5;
     border-radius: 6px;
     cursor: pointer;
+    margin-right: 12px;
   }
 `;
 
-export { HamburgerMenuContainer, SignInButton };
+const InstructionsText = styled.p`
+  @media (min-width: 480px) and (max-width: 767px) {
+    font-size: 14px;
+    color: #3d3d3d;
+  }
+  @media (min-width: 768px) and (max-width: 992px) {
+    font-size: 14px;
+    color: #3d3d3d;
+  }
+  @media (min-width: 993px) {
+    font-size: 14px;
+    color: #3d3d3d;
+  }
+`;
+
+export { HamburgerMenuContainer, SignInButton, InstructionsText };
