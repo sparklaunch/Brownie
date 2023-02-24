@@ -31,17 +31,17 @@ const FormFields = () => {
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
-        Swal.fire(Constants.WELCOME);
+        await Swal.fire(Constants.WELCOME);
         clearAllFields();
         sessionStorage.setItem("userNumber", response.data.user_no);
         sessionStorage.setItem("studentName", response.data.name);
         window.location.reload();
       } else if (response.data.resultCode === "200") {
-        Swal.fire(Constants.INVALID_ACCOUNT);
+        await Swal.fire(Constants.INVALID_ACCOUNT);
       } else if (response.data.resultCode === "900") {
-        Swal.fire(Constants.SIGN_IN_FAILED);
+        await Swal.fire(Constants.SIGN_IN_FAILED);
       } else {
-        Swal.fire(Constants.SERVER_ERROR);
+        await Swal.fire(Constants.SERVER_ERROR);
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);

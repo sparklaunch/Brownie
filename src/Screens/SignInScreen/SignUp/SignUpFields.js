@@ -66,7 +66,7 @@ const SignUpFields = () => {
       if (response.data.resultCode === "100") {
         sessionStorage.setItem("userNumber", response.data.user_no);
         sessionStorage.setItem("studentName", response.data.name);
-        Swal.fire({
+        await Swal.fire({
           title: `회원가입 성공`,
           text: `${studentName}님, 환영합니다!`,
           icon: "success",
@@ -74,11 +74,11 @@ const SignUpFields = () => {
         });
         navigate("/");
       } else if (response.data.resultCode === "200") {
-        Swal.fire(Constants.INVALID_ACCOUNT);
+        await Swal.fire(Constants.INVALID_ACCOUNT);
       } else if (response.data.resultCode === "900") {
-        Swal.fire(Constants.SIGN_IN_FAILED);
+        await Swal.fire(Constants.SIGN_IN_FAILED);
       } else {
-        Swal.fire(Constants.SERVER_ERROR);
+        await Swal.fire(Constants.SERVER_ERROR);
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
@@ -108,13 +108,13 @@ const SignUpFields = () => {
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
-        Swal.fire(Constants.SIGN_UP_SUCCEEDED);
+        await Swal.fire(Constants.SIGN_UP_SUCCEEDED);
         clearAllFields();
         signIn();
       } else if (response.data.resultCode === "900") {
-        Swal.fire(Constants.SIGN_UP_FAILED);
+        await Swal.fire(Constants.SIGN_UP_FAILED);
       } else {
-        Swal.fire(Constants.SERVER_ERROR);
+        await Swal.fire(Constants.SERVER_ERROR);
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);

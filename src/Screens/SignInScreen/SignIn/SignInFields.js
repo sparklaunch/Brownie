@@ -42,17 +42,17 @@ const SignInFields = () => {
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
-        Swal.fire(Constants.SIGN_IN_SUCCEEDED);
+        await Swal.fire(Constants.SIGN_IN_SUCCEEDED);
         clearAllFields();
         sessionStorage.setItem("userNumber", response.data.user_no);
         sessionStorage.setItem("studentName", response.data.name);
         navigate("/");
       } else if (response.data.resultCode === "200") {
-        Swal.fire(Constants.INVALID_PASSWORD);
+        await Swal.fire(Constants.INVALID_PASSWORD);
       } else if (response.data.resultCode === "900") {
-        Swal.fire(Constants.SIGN_IN_FAILED);
+        await Swal.fire(Constants.SIGN_IN_FAILED);
       } else {
-        Swal.fire(Constants.SERVER_ERROR);
+        await Swal.fire(Constants.SERVER_ERROR);
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);

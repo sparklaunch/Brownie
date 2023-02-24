@@ -100,13 +100,13 @@ const LeftCompletedMicrophone = () => {
     } catch (error) {
       switch (error.message) {
         case "Requested device not found":
-          Swal.fire(Constants.MICROPHONE_NOT_FOUND);
+          await Swal.fire(Constants.MICROPHONE_NOT_FOUND);
           break;
         case "Permission denied":
-          Swal.fire(Constants.MICROPHONE_PERMISSION_DENIED);
+          await Swal.fire(Constants.MICROPHONE_PERMISSION_DENIED);
           break;
         default:
-          Swal.fire(Constants.MICROPHONE_EXCEPTION);
+          await Swal.fire(Constants.MICROPHONE_EXCEPTION);
           break;
       }
     }
