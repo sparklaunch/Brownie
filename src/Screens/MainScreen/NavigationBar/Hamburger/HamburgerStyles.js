@@ -19,8 +19,12 @@ const HamburgerIcon = styled.img`
 `;
 
 const DrawerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (min-width: 480px) and (max-width: 767px) {
     width: 100vw;
+    height: 100vh;
+    background-color: white;
+  }
+  @media (min-width: 768px) and (max-width: 992px) {
     height: 100vh;
     background-color: white;
   }
