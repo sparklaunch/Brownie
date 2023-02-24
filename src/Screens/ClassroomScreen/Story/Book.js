@@ -53,6 +53,7 @@ import highlightVisibleAtom from "../../../Stores/Classroom/Story/highlightVisib
 import { Howl, Howler } from "howler";
 import LoadingCard from "../LoadingCard";
 import ScorePill from "./Results/Score/ScorePill";
+import _ from "lodash";
 
 const Book = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -70,17 +71,29 @@ const Book = () => {
     useRecoilState(highlightVisibleAtom);
   const { level } = useParams();
   const bookID = useData("id");
-  const onClickLeftPage = () => {
+  const playLeftPageAudio = () => {
     Howler.unload();
     new Howl({
       src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`]
     }).play();
   };
-  const onClickRightPage = () => {
+  const playRightPageAudio = () => {
     Howler.unload();
     new Howl({
       src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`]
     }).play();
+  };
+  const onClickLeftPage = () => {
+    return _.throttle(playLeftPageAudio, 1000, {
+      leading: true,
+      trailing: true
+    });
+  };
+  const onClickRightPage = () => {
+    return _.throttle(playRightPageAudio, 1000, {
+      leading: true,
+      trailing: true
+    });
   };
   return (
     <BookContainer>
@@ -111,7 +124,7 @@ const Book = () => {
             {highlightedPage === currentPage && highlightVisible && (
               <GlowBorder direction={`left`} />
             )}
-            {currentPage !== 0 && <LeftClickable onClick={onClickLeftPage} />}
+            {currentPage !== 0 && <LeftClickable onClick={onClickLeftPage()} />}
           </TextBookLeftPage>
           <TextBookRightPage>
             {currentPage === 10 ? (
@@ -136,7 +149,7 @@ const Book = () => {
               <GlowBorder direction={`right`} />
             )}
             {currentPage !== 10 && (
-              <RightClickable onClick={onClickRightPage} />
+              <RightClickable onClick={onClickRightPage()} />
             )}
           </TextBookRightPage>
           <ModeSwitcherContainer>
