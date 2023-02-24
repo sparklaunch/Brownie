@@ -324,7 +324,7 @@ const ScoreBarContainer = styled.div`
   }
   @media (min-width: 993px) {
     position: absolute;
-    top: -80px;
+    top: -100px;
     left: 0;
     right: 0;
     bottom: 0;

@@ -43,7 +43,6 @@ const ResultsScreen = () => {
   const words = useData("words");
   const bookID = useData("id");
   useEffect(() => {
-    setCentralMicrophoneState("completed");
     new Audio(`/assets/audio/results_shown.mp3`).play();
     setTimeout(() => {
       setResultsScreenShown(false);
