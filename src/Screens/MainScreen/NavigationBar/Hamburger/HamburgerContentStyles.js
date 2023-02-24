@@ -8,6 +8,7 @@ const HamburgerWrapper = styled.div`
     padding: 20px 30px;
   }
   @media (min-width: 993px) {
+    padding: 20px 30px;
   }
 `;
 
