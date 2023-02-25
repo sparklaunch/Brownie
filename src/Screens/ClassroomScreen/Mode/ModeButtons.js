@@ -3,10 +3,10 @@ import StoryButton from "./StoryButton";
 
 const ModeButtons = () => {
   return (
-    <div>
+    <>
       <WordButton />
       <StoryButton />
-    </div>
+    </>
   );
 };
 
