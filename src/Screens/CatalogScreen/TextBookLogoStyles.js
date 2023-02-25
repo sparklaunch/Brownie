@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 const TextBookLogoContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
   }
   @media (min-width: 993px) {
     display: flex;
@@ -14,6 +19,8 @@ const TextBookLogoContainer = styled.div`
 
 const TextBookLogoImage = styled.img`
   @media (min-width: 768px) and (max-width: 992px) {
+    width: 660px;
+    margin-bottom: 30px;
   }
   @media (min-width: 993px) {
     width: 660px;
@@ -23,6 +30,8 @@ const TextBookLogoImage = styled.img`
 
 const TextBookLogoDescriptions = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
+    display: flex;
+    flex-direction: row;
   }
   @media (min-width: 993px) {
     display: flex;
@@ -32,6 +41,9 @@ const TextBookLogoDescriptions = styled.div`
 
 const TextBookLogoDescription = styled.p`
   @media (min-width: 768px) and (max-width: 992px) {
+    &:first-child {
+      margin-right: 24px;
+    }
   }
   @media (min-width: 993px) {
     &:first-child {

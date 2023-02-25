@@ -2,6 +2,14 @@ import styled from "styled-components";
 
 const TextBookSubtitleOuterContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
   }
   @media (min-width: 993px) {
     display: flex;
@@ -17,6 +25,10 @@ const TextBookSubtitleOuterContainer = styled.div`
 
 const TextBookSubtitleInnerContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   @media (min-width: 993px) {
     width: 1200px;
@@ -28,6 +40,10 @@ const TextBookSubtitleInnerContainer = styled.div`
 
 const TextBookSubtitleTitle = styled.p`
   @media (min-width: 768px) and (max-width: 992px) {
+    font-family: Jua, sans-serif;
+    font-size: 28px;
+    color: #3d3d3d;
+    margin-bottom: 24px;
   }
   @media (min-width: 993px) {
     font-family: Jua, sans-serif;
@@ -39,6 +55,9 @@ const TextBookSubtitleTitle = styled.p`
 
 const TextBookSubtitleDescription = styled.p`
   @media (min-width: 768px) and (max-width: 992px) {
+    font-size: 20px;
+    color: #515151;
+    font-weight: lighter;
   }
   @media (min-width: 993px) {
     font-size: 20px;
