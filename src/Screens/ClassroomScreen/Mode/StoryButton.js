@@ -23,25 +23,20 @@ const StoryButton = () => {
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
-  const onClickStoryButton = () => {
-    if (
-      centralMicrophoneState !== "invisible" &&
-      centralMicrophoneState !== "loading" &&
-      wordMicrophoneState !== "recording" &&
-      wordMicrophoneState !== "loading"
-    ) {
-      setYouDidItShown(false);
-      setCurrentPage(0);
-      setCurrentWordPage(1);
-      setMode("story");
-    }
-  };
   const shouldStoryButtonEnabled =
     centralMicrophoneState !== "invisible" &&
     centralMicrophoneState !== "loading" &&
     wordMicrophoneState !== "recording" &&
     wordMicrophoneState !== "loading";
   const shouldStoryButtonActivated = mode === "story";
+  const onClickStoryButton = () => {
+    if (shouldStoryButtonEnabled) {
+      setYouDidItShown(false);
+      setCurrentPage(0);
+      setCurrentWordPage(1);
+      setMode("story");
+    }
+  };
   return (
     <StoryButtonContainer
       enabled={shouldStoryButtonEnabled}

@@ -31,12 +31,7 @@ const WordButton = () => {
     wordMicrophoneState !== "loading";
   const shouldWordButtonActivated = mode === "word";
   const onClickWordButton = () => {
-    if (
-      centralMicrophoneState !== "invisible" &&
-      centralMicrophoneState !== "loading" &&
-      wordMicrophoneState !== "recording" &&
-      wordMicrophoneState !== "loading"
-    ) {
+    if (shouldWordButtonEnabled) {
       setYouDidItShown(false);
       setCurrentPage(0);
       setCurrentWordPage(1);
