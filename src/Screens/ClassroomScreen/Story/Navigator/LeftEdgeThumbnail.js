@@ -3,7 +3,13 @@ import EmptyThumbnail from "./EmptyThumbnail";
 import { useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import scoresAtom from "../../../../Stores/Classroom/Story/scores";
-import { LeftEmptyThumbnailContainer } from "./LeftEdgeThumbnailStyles";
+import {
+  CompletedBackdrop,
+  CompletedBadgeImage,
+  CompletedContainer,
+  LeftEdgeThumbnailContainer,
+  LeftEmptyThumbnailContainer
+} from "./LeftEdgeThumbnailStyles";
 
 const LeftEdgeThumbnail = ({ leftPage, rightPage }) => {
   const { level } = useParams();
@@ -23,28 +29,21 @@ const LeftEdgeThumbnail = ({ leftPage, rightPage }) => {
     );
   }
   return (
-    <div
-      className={`relative w-[216px] h-[144px] grid grid-cols-2 rounded-lg overflow-clip mx-3 border-4 border-transparent cursor-pointer`}
-    >
+    <LeftEdgeThumbnailContainer>
       <ThumbnailPage isLeftEdge={true} page={leftPage} pageDirection={"left"} />
       <ThumbnailPage page={rightPage} pageDirection={"right"} />
       {completed && (
         <>
-          <div
-            className={`absolute top-0 left-0 right-0 bottom-0 from-transparent bg-gradient-to-r to-black opacity-50`}
-          />
-          <div
-            className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]`}
-          >
-            <img
+          <CompletedBackdrop />
+          <CompletedContainer>
+            <CompletedBadgeImage
               src={`/assets/images/thumbnail_completed_badge.svg`}
               alt={`Completed Badge`}
-              className={`drop-shadow-2xl`}
             />
-          </div>
+          </CompletedContainer>
         </>
       )}
-    </div>
+    </LeftEdgeThumbnailContainer>
   );
 };
 
