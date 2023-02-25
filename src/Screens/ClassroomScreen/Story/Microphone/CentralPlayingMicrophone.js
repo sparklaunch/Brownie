@@ -1,6 +1,6 @@
 import { Howler } from "howler";
 import { useRecoilState } from "recoil";
-import centralMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
+import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import {
   CentralPlayingMicrophoneContainer,
   CentralPlayingMicrophoneImage,

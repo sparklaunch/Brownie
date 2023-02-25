@@ -1,11 +1,11 @@
 import { useRecoilState } from "recoil";
-import centralMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
+import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import CentralIdleMicrophone from "./CentralIdleMicrophone";
 import CentralInvisibleMicrophone from "./CentralInvisibleMicrophone";
 import CentralPlayingMicrophone from "./CentralPlayingMicrophone";
 import { useEffect } from "react";
-import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
-import scoresAtom from "../../../../../Stores/Classroom/Story/scores";
+import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
+import scoresAtom from "../../../../Stores/Classroom/Story/scores";
 import { useParams } from "react-router-dom";
 
 const CentralMicrophone = () => {

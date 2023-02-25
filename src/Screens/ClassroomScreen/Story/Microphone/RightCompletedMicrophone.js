@@ -1,16 +1,16 @@
 import { useRecoilState } from "recoil";
-import highlightedPageAtom from "../../../../../Stores/Classroom/Story/highlightedPage";
-import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
+import highlightedPageAtom from "../../../../Stores/Classroom/Story/highlightedPage";
+import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 import axios from "axios";
 import uuid from "react-uuid";
-import centralMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
-import useData from "../../../../../Hooks/useData";
-import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
-import scoresAtom from "../../../../../Stores/Classroom/Story/scores";
+import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
+import useData from "../../../../Hooks/useData";
+import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
+import scoresAtom from "../../../../Stores/Classroom/Story/scores";
 import { useParams } from "react-router-dom";
-import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
-import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
-import highlightVisibleAtom from "../../../../../Stores/Classroom/Story/highlightVisible";
+import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsScreenShown";
+import audioDurationAtom from "../../../../Stores/Classroom/audioDuration";
+import highlightVisibleAtom from "../../../../Stores/Classroom/Story/highlightVisible";
 import {
   MyVoiceButton,
   MyVoiceButtonContainer,
@@ -18,7 +18,7 @@ import {
   RetryButtonContainer,
   RightCompletedMicrophoneContainer
 } from "./RightCompletedMicrophoneStyles";
-import Constants from "../../../../../Utilities/Constants";
+import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
 
 const RightCompletedMicrophone = () => {

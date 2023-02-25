@@ -1,17 +1,17 @@
 import axios from "axios";
 import uuid from "react-uuid";
 import { useRecoilState } from "recoil";
-import centralMicrophoneStateAtom from "../../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
-import useData from "../../../../../Hooks/useData";
-import currentPageAtom from "../../../../../Stores/Classroom/Story/currentPage";
-import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
-import resultsScreenShownAtom from "../../../../../Stores/Classroom/Story/resultsScreenShown";
-import audioDurationAtom from "../../../../../Stores/Classroom/audioDuration";
+import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
+import useData from "../../../../Hooks/useData";
+import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
+import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
+import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsScreenShown";
+import audioDurationAtom from "../../../../Stores/Classroom/audioDuration";
 import { useParams } from "react-router-dom";
-import scoresAtom from "../../../../../Stores/Classroom/Story/scores";
-import highlightedPageAtom from "../../../../../Stores/Classroom/Story/highlightedPage";
-import highlightVisibleAtom from "../../../../../Stores/Classroom/Story/highlightVisible";
-import Constants from "../../../../../Utilities/Constants";
+import scoresAtom from "../../../../Stores/Classroom/Story/scores";
+import highlightedPageAtom from "../../../../Stores/Classroom/Story/highlightedPage";
+import highlightVisibleAtom from "../../../../Stores/Classroom/Story/highlightVisible";
+import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
 import {
   CentralIdleMicrophoneContainer,
