@@ -1,8 +1,9 @@
 import { Button, TextField } from "@mui/material";
+import { AdministratorSignInFormContainer } from "./AdministratorSignInFormStyles";
 
 const AdministratorSignInForm = () => {
   return (
-    <div className={`py-3 mt-6 w-[400px]`}>
+    <AdministratorSignInFormContainer>
       <p className={`text-2xl text-center my-8`}>관리자 로그인</p>
       <TextField
         id={"id"}
@@ -48,7 +49,7 @@ const AdministratorSignInForm = () => {
       >
         로그인
       </Button>
-    </div>
+    </AdministratorSignInFormContainer>
   );
 };
 
