@@ -1,5 +1,5 @@
 const EmptyThumbnail = () => {
-  return <div />;
+  return <></>;
 };
 
 export default EmptyThumbnail;
