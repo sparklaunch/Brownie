@@ -13,4 +13,17 @@ const AdministratorSignInFormContainer = styled.div`
   }
 `;
 
-export { AdministratorSignInFormContainer };
+const AdministratorSignInTitle = styled.p`
+  @media (min-width: 768px) and (max-width: 992px) {
+    font-size: 32px;
+    text-align: center;
+    margin: 32px 0;
+  }
+  @media (min-width: 993px) {
+    font-size: 32px;
+    text-align: center;
+    margin: 32px 0;
+  }
+`;
+
+export { AdministratorSignInFormContainer, AdministratorSignInTitle };

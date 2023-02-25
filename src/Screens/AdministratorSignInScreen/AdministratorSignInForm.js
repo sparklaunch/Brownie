@@ -1,10 +1,13 @@
 import { Button, TextField } from "@mui/material";
-import { AdministratorSignInFormContainer } from "./AdministratorSignInFormStyles";
+import {
+  AdministratorSignInFormContainer,
+  AdministratorSignInTitle
+} from "./AdministratorSignInFormStyles";
 
 const AdministratorSignInForm = () => {
   return (
     <AdministratorSignInFormContainer>
-      <p className={`text-2xl text-center my-8`}>관리자 로그인</p>
+      <AdministratorSignInTitle>관리자 로그인</AdministratorSignInTitle>
       <TextField
         id={"id"}
         variant={"outlined"}
