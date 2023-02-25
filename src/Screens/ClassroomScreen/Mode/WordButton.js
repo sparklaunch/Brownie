@@ -5,6 +5,7 @@ import wordMicrophoneStateAtom from "../../../Stores/Classroom/Word/wordMicropho
 import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
+import { WordButtonOuterContainer } from "./WordButtonStyles";
 
 const WordButton = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
@@ -18,6 +19,12 @@ const WordButton = () => {
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
+  const shouldWordButtonEnabled =
+    centralMicrophoneState !== "invisible" &&
+    centralMicrophoneState !== "loading" &&
+    wordMicrophoneState !== "recording" &&
+    wordMicrophoneState !== "loading";
+  const shouldWordButtonActivated = mode === "word";
   const onClickWordButton = () => {
     if (
       centralMicrophoneState !== "invisible" &&
@@ -32,7 +39,7 @@ const WordButton = () => {
     }
   };
   return (
-    <div className={`mb-3`}>
+    <WordButtonOuterContainer>
       <div
         className={`w-[100px] h-[100px] bg-white flex flex-col items-center justify-center rounded-lg shadow-md border-[3px] border-[transparent] ${
           centralMicrophoneState !== "invisible" &&
@@ -55,7 +62,7 @@ const WordButton = () => {
           Word
         </p>
       </div>
-    </div>
+    </WordButtonOuterContainer>
   );
 };
 
