@@ -3,6 +3,7 @@ import EmptyThumbnail from "./EmptyThumbnail";
 import { useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import scoresAtom from "../../../../Stores/Classroom/Story/scores";
+import { LeftEmptyThumbnailContainer } from "./LeftEdgeThumbnailStyles";
 
 const LeftEdgeThumbnail = ({ leftPage, rightPage }) => {
   const { level } = useParams();
@@ -15,12 +16,10 @@ const LeftEdgeThumbnail = ({ leftPage, rightPage }) => {
   })();
   if (leftPage < 0) {
     return (
-      <div
-        className={`w-[216px] h-[144px] grid grid-cols-2 rounded-lg overflow-clip mx-3 border-4 border-transparent`}
-      >
+      <LeftEmptyThumbnailContainer>
         <EmptyThumbnail />
         <EmptyThumbnail />
-      </div>
+      </LeftEmptyThumbnailContainer>
     );
   }
   return (
