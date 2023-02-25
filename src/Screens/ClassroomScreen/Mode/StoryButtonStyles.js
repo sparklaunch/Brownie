@@ -37,4 +37,24 @@ const StoryButtonContainer = styled.div`
   }
 `;
 
-export { StoryButtonContainer };
+const StoryButtonImage = styled.img`
+  @media (min-width: 768px) and (max-width: 992px) {
+  }
+  @media (min-width: 993px) {
+  }
+`;
+
+const StoryButtonText = styled.p`
+  @media (min-width: 768px) and (max-width: 992px) {
+    font-family: Jua, sans-serif;
+    font-size: 20px;
+    ${(props) => props.activated && `color: #1AB9C5;`}
+  }
+  @media (min-width: 993px) {
+    font-family: Jua, sans-serif;
+    font-size: 20px;
+    ${(props) => props.activated && `color: #1AB9C5;`}
+  }
+`;
+
+export { StoryButtonContainer, StoryButtonImage, StoryButtonText };

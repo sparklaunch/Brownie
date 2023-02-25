@@ -5,7 +5,11 @@ import wordMicrophoneStateAtom from "../../../Stores/Classroom/Word/wordMicropho
 import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
-import { StoryButtonContainer } from "./StoryButtonStyles";
+import {
+  StoryButtonContainer,
+  StoryButtonImage,
+  StoryButtonText
+} from "./StoryButtonStyles";
 
 const StoryButton = () => {
   const [mode, setMode] = useRecoilState(modeAtom);
@@ -44,14 +48,13 @@ const StoryButton = () => {
       activated={shouldStoryButtonActivated}
       onClick={onClickStoryButton}
     >
-      <img src={"/assets/images/icons/story_icon.svg"} alt={"Story Icon"} />
-      <p
-        className={`font-[Jua] text-[20px] ${
-          mode === "story" && `text-[#1AB9C5]`
-        }`}
-      >
+      <StoryButtonImage
+        src={"/assets/images/icons/story_icon.svg"}
+        alt={"Story Icon"}
+      />
+      <StoryButtonText activated={shouldStoryButtonActivated}>
         Story
-      </p>
+      </StoryButtonText>
     </StoryButtonContainer>
   );
 };
