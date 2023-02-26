@@ -82,7 +82,7 @@ const ModeSwitcherContainer = styled.div`
   }
   @media (min-width: 993px) {
     position: absolute;
-    top: -20px;
+    top: 0;
     left: -120px;
   }
 `;
@@ -96,7 +96,6 @@ const TextBookLeftPage = styled.div`
   }
   @media (min-width: 993px) {
     position: relative;
-    bottom: 20px;
     object-fit: contain;
     object-position: right;
   }
@@ -111,7 +110,6 @@ const TextBookRightPage = styled.div`
   }
   @media (min-width: 993px) {
     position: relative;
-    bottom: 20px;
     object-fit: contain;
     object-position: right;
   }
@@ -183,13 +181,13 @@ const LeftPagerContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 30px;
-    left: -80px;
+    left: -90px;
   }
   @media (min-width: 993px) {
     position: absolute;
-    top: calc(50% - 20px);
+    top: 50%;
     transform: translateY(-50%);
-    left: -80px;
+    left: -90px;
   }
 `;
 
@@ -197,13 +195,13 @@ const RightPagerContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 30px;
-    right: -80px;
+    right: -90px;
   }
   @media (min-width: 993px) {
     position: absolute;
-    top: calc(50% - 20px);
+    top: 50%;
     transform: translateY(-50%);
-    right: -80px;
+    right: -90px;
   }
 `;
 
@@ -213,7 +211,7 @@ const PagerControllersContainer = styled.div`
   }
   @media (min-width: 993px) {
     position: absolute;
-    top: -70px;
+    top: -50px;
     right: 0;
   }
 `;
@@ -226,8 +224,8 @@ const HomeContainer = styled.div`
   }
   @media (min-width: 993px) {
     position: absolute;
-    top: -70px;
-    right: -80px;
+    top: 0;
+    right: -90px;
   }
 `;
 
@@ -242,7 +240,7 @@ const MicContainer = styled.div`
   @media (min-width: 993px) {
     position: absolute;
     left: 50%;
-    bottom: -70px;
+    bottom: -90px;
     transform: translateX(-50%);
     z-index: 1;
   }
@@ -254,7 +252,7 @@ const UnitInfoContainer = styled.div`
   }
   @media (min-width: 993px) {
     position: absolute;
-    top: -60px;
+    top: -40px;
     left: 0;
   }
 `;

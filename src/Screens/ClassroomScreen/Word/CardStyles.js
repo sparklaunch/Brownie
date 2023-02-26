@@ -37,14 +37,11 @@ const CardInnerContainer = styled.div`
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   @media (min-width: 993px) {
-    position: absolute;
-    top: 140px;
-    bottom: 140px;
-    left: 140px;
-    right: 140px;
     background-color: white;
     border-radius: 20px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: ${(props) => props.textbookSize.width}px;
+    height: ${(props) => props.textbookSize.height}px;
   }
 `;
 

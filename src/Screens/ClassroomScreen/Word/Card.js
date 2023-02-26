@@ -40,6 +40,7 @@ import ResultsScreen from "../Story/Results/ResultsScreen";
 import YouDidItScreen from "../Story/Results/YouDidIt/YouDidItScreen";
 import LoadingCard from "../LoadingCard";
 import ScorePill from "../Story/Results/Score/ScorePill";
+import textbookSizeAtom from "../../../Stores/Misc/textbookSize";
 
 const Card = () => {
   const { level } = useParams();
@@ -55,9 +56,10 @@ const Card = () => {
     resultsScreenShownAtom
   );
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
+  const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
   return (
     <CardOuterContainer>
-      <CardInnerContainer>
+      <CardInnerContainer textbookSize={textbookSize}>
         <InsetBorderContainer>
           <InsetBorder />
         </InsetBorderContainer>
