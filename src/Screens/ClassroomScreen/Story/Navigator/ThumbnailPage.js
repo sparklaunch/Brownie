@@ -1,7 +1,11 @@
-import { useParams } from "react-router-dom";
 import PageShadow from "./PageShadow";
 import EmptyThumbnail from "./EmptyThumbnail";
 import useData from "../../../../Hooks/useData";
+import {
+  ThumbnailPageContainer,
+  ThumbnailPageGradient,
+  ThumbnailPageImage
+} from "./ThumbnailPageStyles";
 
 const ThumbnailPage = ({
   page,
@@ -9,28 +13,29 @@ const ThumbnailPage = ({
   isLeftEdge = false,
   isRightEdge = false
 }) => {
-  const { level } = useParams();
-  const leftEdgeGradient = `bg-gradient-to-r from-[#0C4A4E]`;
-  const rightEdgeGradient = `bg-gradient-to-r from-transparent to-[#0C4A4E]`;
   const bookID = useData("id");
   if (page <= 0 || page > 10) {
     return <EmptyThumbnail />;
   }
+  const direction = (() => {
+    if (isLeftEdge) {
+      return "left";
+    } else if (isRightEdge) {
+      return "right";
+    } else {
+      return null;
+    }
+  })();
   return (
-    <div className={`relative overflow-clip`}>
-      <img
+    <ThumbnailPageContainer>
+      <ThumbnailPageImage
         src={`/assets/images/pages/${bookID}_${page}.jpg`}
         alt={`Page ${page}`}
         loading={"lazy"}
-        className={`w-full h-full object-cover`}
       />
-      <div
-        className={`absolute top-0 left-0 bottom-0 right-0 ${
-          isLeftEdge && leftEdgeGradient
-        } ${isRightEdge && rightEdgeGradient}`}
-      />
+      <ThumbnailPageGradient direction={direction} />
       <PageShadow pageDirection={pageDirection} />
-    </div>
+    </ThumbnailPageContainer>
   );
 };
 
