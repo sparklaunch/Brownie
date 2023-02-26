@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import bookTitles from "../../../data.json";
+import { CardTitleText, CardTitleTextSpan } from "./CardTitleStyles";
 
 const CardTitle = () => {
   const { level } = useParams();
@@ -7,10 +8,9 @@ const CardTitle = () => {
   const bookTitlesObject = JSON.parse(bookTitlesString);
   const title = bookTitlesObject.find((book) => book.level === level).title;
   return (
-    <p className={`text-[18px]`}>
-      PFR Lv {level}{" "}
-      <span className={`font-[Jua] text-[26px] ml-3`}>{title}</span>
-    </p>
+    <CardTitleText>
+      PFR Lv {level} <CardTitleTextSpan>{title}</CardTitleTextSpan>
+    </CardTitleText>
   );
 };
 
