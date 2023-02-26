@@ -1,11 +1,16 @@
+import {
+  IntroductionCatalogTitleContainer,
+  IntroductionCatalogTitleText
+} from "./IntroductionCatalogTitleStyles";
+
 const IntroductionCatalogTitle = () => {
   return (
-    <div className={`flex flex-col items-center mb-[60px]`}>
-      <p className={`font-[Jua] text-[44px]`}>
+    <IntroductionCatalogTitleContainer>
+      <IntroductionCatalogTitleText>
         파닉스 전용 교재 읽기 연습을 통한
-      </p>
-      <p className={`font-[Jua] text-[44px]`}>파닉스 완성</p>
-    </div>
+      </IntroductionCatalogTitleText>
+      <IntroductionCatalogTitleText>파닉스 완성</IntroductionCatalogTitleText>
+    </IntroductionCatalogTitleContainer>
   );
 };
 
