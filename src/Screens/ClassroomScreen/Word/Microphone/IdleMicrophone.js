@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useRecoilState } from "recoil";
 import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicrophoneState";
 import axios from "axios";
@@ -13,61 +12,15 @@ import { useParams } from "react-router-dom";
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
 import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
+import {
+  IdleMicrophoneContainer,
+  IdleMicrophoneImage,
+  InnerCircle,
+  OuterCircle,
+  Wave
+} from "./IdleMicrophoneStyles";
 
 const IdleMicrophone = () => {
-  const OuterCircle = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    transform: scale(1.2);
-    background-color: #1ab9c5;
-    animation: fadeOut 1.3s infinite;
-    @keyframes fadeOut {
-      0% {
-        opacity: 0.3;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-  `;
-  const InnerCircle = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    transform: scale(1.1);
-    background-color: #1ab9c5;
-    animation: fadeOut 1.3s infinite;
-    @keyframes fadeOut {
-      0% {
-        opacity: 0.3;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-  `;
-  const Wave = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    transform: scale(1);
-    border: 5px solid #1ab9c5;
-    animation: wave 1.3s infinite;
-    @keyframes wave {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(1.4);
-        opacity: 0;
-      }
-    }
-  `;
   const { level } = useParams();
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
@@ -160,17 +113,17 @@ const IdleMicrophone = () => {
     recordVoice();
   };
   return (
-    <div onClick={onClickMicrophone} className={`relative cursor-pointer`}>
-      <div>
+    <IdleMicrophoneContainer onClick={onClickMicrophone}>
+      <>
         <OuterCircle />
         <InnerCircle />
         <Wave />
-      </div>
-      <img
+      </>
+      <IdleMicrophoneImage
         src={`/assets/images/icons/microphone_idle.svg`}
         alt={"Microphone"}
       />
-    </div>
+    </IdleMicrophoneContainer>
   );
 };
 
