@@ -1,5 +1,7 @@
+import { BackgroundPlaceholder } from "./BackgroundStyles";
+
 const Background = () => {
-  return <div className={`bg-[#E8F6F8] w-[100vw] h-[100vh]`} />;
+  return <BackgroundPlaceholder />;
 };
 
 export default Background;

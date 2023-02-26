@@ -17,7 +17,6 @@ import { useParams } from "react-router-dom";
 import useData from "../../Hooks/useData";
 import centralMicrophoneStateAtom from "../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import highlightedPageAtom from "../../Stores/Classroom/Story/highlightedPage";
-import navigatorOpenAtom from "../../Stores/Classroom/Story/navigatorOpen";
 import youDidItShownAtom from "../../Stores/Classroom/youDidItShown";
 import highlightVisibleAtom from "../../Stores/Classroom/Story/highlightVisible";
 import scoresAtom from "../../Stores/Classroom/Story/scores";
@@ -91,7 +90,6 @@ const AudioManager = () => {
     centralMicrophoneStateAtom
   );
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
-  const [navigatorOpen, setNavigatorOpen] = useRecoilState(navigatorOpenAtom);
   const [highlightedPage, setHighlightedPage] =
     useRecoilState(highlightedPageAtom);
   const [highlightVisible, setHighlightVisible] =
