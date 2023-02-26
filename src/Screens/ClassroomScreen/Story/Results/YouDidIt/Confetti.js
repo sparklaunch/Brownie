@@ -1,5 +1,6 @@
 import * as animationData from "./confetti.json";
 import Lottie from "react-lottie";
+import { ConfettiContainer } from "./ConfettiStyles";
 
 const Confetti = () => {
   const lottieOptions = {
@@ -11,9 +12,9 @@ const Confetti = () => {
     }
   };
   return (
-    <div className={`absolute top-0 left-[50%] translate-x-[-50%]`}>
+    <ConfettiContainer>
       <Lottie options={lottieOptions} height={400} width={400} />
-    </div>
+    </ConfettiContainer>
   );
 };
 
