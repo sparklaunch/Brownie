@@ -8,7 +8,7 @@ const LeftPageShade = styled.div`
     right: 0;
     left: 80%;
     background-image: linear-gradient(to right, transparent 0%, black 100%);
-    opacity: 50%;
+    opacity: 0.5;
   }
   @media (min-width: 993px) {
     position: absolute;
@@ -17,7 +17,7 @@ const LeftPageShade = styled.div`
     right: 0;
     left: 80%;
     background-image: linear-gradient(to right, transparent 0%, black 100%);
-    opacity: 50%;
+    opacity: 0.5;
   }
 `;
 

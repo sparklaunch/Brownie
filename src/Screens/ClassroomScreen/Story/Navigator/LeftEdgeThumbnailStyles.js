@@ -58,7 +58,7 @@ const CompletedBackdrop = styled.div`
     right: 0;
     bottom: 0;
     background-image: linear-gradient(to right, transparent 0%, black 100%);
-    opacity: 50%;
+    opacity: 0.5;
   }
   @media (min-width: 993px) {
     position: absolute;
@@ -67,7 +67,7 @@ const CompletedBackdrop = styled.div`
     right: 0;
     bottom: 0;
     background-image: linear-gradient(to right, transparent 0%, black 100%);
-    opacity: 50%;
+    opacity: 0.5;
   }
 `;
 
