@@ -1,6 +1,11 @@
 import { useRecoilState } from "recoil";
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
 import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicrophoneState";
+import {
+  RotatedWordLeftPageTurnerImage,
+  WordLeftPageTurnerContainer,
+  WordLeftPageTurnerImage
+} from "./WordLeftPageTurnerStyles";
 
 const WordLeftPageTurner = () => {
   const [currentWordPage, setCurrentWordPage] =
@@ -17,22 +22,19 @@ const WordLeftPageTurner = () => {
     wordMicrophoneState !== "loading"
   ) {
     return (
-      <div className={`cursor-pointer`} onClick={onClickLeftPageTurner}>
-        <img
+      <WordLeftPageTurnerContainer onClick={onClickLeftPageTurner}>
+        <RotatedWordLeftPageTurnerImage
           src={"/assets/images/icons/active_angle.svg"}
           alt={"Left Angle Icon"}
-          className={`transform rotate-180`}
         />
-      </div>
+      </WordLeftPageTurnerContainer>
     );
   } else {
     return (
-      <div>
-        <img
-          src={"/assets/images/icons/inactive_angle.svg"}
-          alt={"Left Angle Icon"}
-        />
-      </div>
+      <WordLeftPageTurnerImage
+        src={"/assets/images/icons/inactive_angle.svg"}
+        alt={"Left Angle Icon"}
+      />
     );
   }
 };
