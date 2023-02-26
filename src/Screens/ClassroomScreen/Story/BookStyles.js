@@ -29,6 +29,8 @@ const NavigatorContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
+  @media (min-width: 993px) {
+  }
 `;
 
 const BookWrapper = styled.div`
@@ -56,13 +58,12 @@ const BookWrapper = styled.div`
 
 const TextBookContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
-    position: absolute;
-    height: 100vh;
-    left: 140px;
-    right: 140px;
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
+    width: ${(props) => props.textbookSize.width}px;
+    height: ${(props) => props.textbookSize.height}px;
   }
   @media (min-width: 993px) {
     position: relative;
@@ -117,9 +118,10 @@ const TextBookRightPage = styled.div`
 
 const LeftPageImage = styled.img`
   @media (min-width: 768px) and (max-width: 992px) {
-    height: 100vh;
-    object-fit: contain;
-    object-position: right;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   @media (min-width: 993px) {
     width: 100%;
@@ -133,6 +135,16 @@ const LeftPageImage = styled.img`
 
 const LeftPageShade = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
   @media (min-width: 993px) {
     position: absolute;
@@ -150,9 +162,10 @@ const LeftPageShade = styled.div`
 
 const RightPageImage = styled.img`
   @media (min-width: 768px) and (max-width: 992px) {
-    height: 100vh;
-    object-fit: contain;
-    object-position: left;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   @media (min-width: 993px) {
     width: 100%;
@@ -166,6 +179,16 @@ const RightPageImage = styled.img`
 
 const RightPageShade = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(
+      to left,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
   @media (min-width: 993px) {
     position: absolute;
@@ -365,6 +388,11 @@ const RightCompletedButtonsContainer = styled.div`
 
 const GlowBorderContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: ${(props) => props.textbookSize.width / 2}px;
+    height: ${(props) => props.textbookSize.height}px;
   }
   @media (min-width: 993px) {
     position: absolute;
@@ -379,9 +407,9 @@ const GlowBorder = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
+    left: 0;
     bottom: 0;
-    ${({ direction }) => (direction === "left" ? "right: 0;" : "left: 0;")}
-    width: 74vh;
+    right: 0;
     z-index: 1;
     box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
   }
