@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import modeAtom from "../../Stores/Classroom/mode";
 import WordScreen from "../ClassroomScreen/Word/WordScreen";
 import AudioManager from "../ClassroomScreen/AudioManager";
+import WindowSizeManager from "../ClassroomScreen/WindowSizeManager";
 
 const TrialScreen = () => {
   const [mode, setMode] = useRecoilState(modeAtom);
@@ -19,6 +20,7 @@ const TrialScreen = () => {
     <div>
       {content}
       <AudioManager />
+      <WindowSizeManager />
     </div>
   );
 };
