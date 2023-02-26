@@ -4,16 +4,18 @@ import Thumbnail from "./Thumbnail";
 import { useRecoilState } from "recoil";
 import navigatorPageAtom from "../../../../Stores/Classroom/Story/navigatorPage";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
-import navigatorOpenAtom from "../../../../Stores/Classroom/Story/navigatorOpen";
-import scoresAtom from "../../../../Stores/Classroom/Story/scores";
-import { useParams } from "react-router-dom";
+import {
+  CentralThumbnailContainer,
+  LeftEdgeThumbnailContainer,
+  LeftThumbnailContainer,
+  RightEdgeThumbnailContainer,
+  RightThumbnailContainer,
+  ThumbnailsContainer
+} from "./ThumbnailsStyles";
 
 const Thumbnails = () => {
-  const { level } = useParams();
   const [navigatorPage, setNavigatorPage] = useRecoilState(navigatorPageAtom);
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [navigatorOpen, setNavigatorOpen] = useRecoilState(navigatorOpenAtom);
-  const [scores, setScores] = useRecoilState(scoresAtom);
   const onClickLeftEdgeThumbnail = () => {
     setNavigatorPage(Math.max(navigatorPage - 4, 0));
     setCurrentPage(Math.max(navigatorPage - 4, 0));
@@ -35,33 +37,33 @@ const Thumbnails = () => {
     setCurrentPage(Math.min(navigatorPage + 2, 10));
   };
   return (
-    <div className={`flex flex-row items-center`}>
-      <div onClick={onClickLeftEdgeThumbnail}>
+    <ThumbnailsContainer>
+      <LeftEdgeThumbnailContainer onClick={onClickLeftEdgeThumbnail}>
         <LeftEdgeThumbnail
           leftPage={navigatorPage - 4}
           rightPage={navigatorPage - 3}
         />
-      </div>
-      <div onClick={onClickLeftThumbnail}>
+      </LeftEdgeThumbnailContainer>
+      <LeftThumbnailContainer onClick={onClickLeftThumbnail}>
         <Thumbnail leftPage={navigatorPage - 2} rightPage={navigatorPage - 1} />
-      </div>
-      <div onClick={onClickCentralThumbnail}>
+      </LeftThumbnailContainer>
+      <CentralThumbnailContainer onClick={onClickCentralThumbnail}>
         <Thumbnail
           leftPage={navigatorPage}
           rightPage={navigatorPage + 1}
           isCurrentPage={true}
         />
-      </div>
-      <div onClick={onClickRightThumbnail}>
+      </CentralThumbnailContainer>
+      <RightThumbnailContainer onClick={onClickRightThumbnail}>
         <Thumbnail leftPage={navigatorPage + 2} rightPage={navigatorPage + 3} />
-      </div>
-      <div onClick={onClickRightEdgeThumbnail}>
+      </RightThumbnailContainer>
+      <RightEdgeThumbnailContainer onClick={onClickRightEdgeThumbnail}>
         <RightEdgeThumbnail
           leftPage={navigatorPage + 4}
           rightPage={navigatorPage + 5}
         />
-      </div>
-    </div>
+      </RightEdgeThumbnailContainer>
+    </ThumbnailsContainer>
   );
 };
 
