@@ -1,8 +1,16 @@
+import {
+  ReadingMonkeyContainer,
+  ReadingMonkeyImage
+} from "./ReadingMonkeyStyles";
+
 const ReadingMonkey = () => {
   return (
-    <div className={`absolute bottom-[20px] left-[50%] translate-x-[-50%]`}>
-      <img src={"/assets/images/reading_monkey.svg"} alt={"Reading Monkey"} />
-    </div>
+    <ReadingMonkeyContainer>
+      <ReadingMonkeyImage
+        src={"/assets/images/reading_monkey.svg"}
+        alt={"Reading Monkey"}
+      />
+    </ReadingMonkeyContainer>
   );
 };
 
