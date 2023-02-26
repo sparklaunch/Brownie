@@ -1,10 +1,14 @@
 import CatalogItem from "../MainScreen/Catalog/CatalogItem";
 import { Grid } from "@mui/material";
+import {
+  TryContentsInnerContainer,
+  TryContentsOuterContainer
+} from "./TryContentsStyles";
 
 const TryContents = () => {
   return (
-    <div className={`flex flex-row justify-center my-6 mb-12`}>
-      <div className={`w-[1200px]`}>
+    <TryContentsOuterContainer>
+      <TryContentsInnerContainer>
         <Grid container spacing={20}>
           <Grid item xs={6}>
             <CatalogItem
@@ -29,8 +33,8 @@ const TryContents = () => {
             />
           </Grid>
         </Grid>
-      </div>
-    </div>
+      </TryContentsInnerContainer>
+    </TryContentsOuterContainer>
   );
 };
 
