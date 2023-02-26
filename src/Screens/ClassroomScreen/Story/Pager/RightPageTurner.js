@@ -1,6 +1,11 @@
 import { useRecoilState } from "recoil";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
+import {
+  RightPageTurnerContainer,
+  RightPageTurnerImage,
+  RotatedRightPageTurnerImage
+} from "./RightPageTurnerStyles";
 
 const RightPageTurner = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
@@ -16,22 +21,19 @@ const RightPageTurner = () => {
     centralMicrophoneState !== "loading"
   ) {
     return (
-      <div className={`cursor-pointer`} onClick={onClickRightPageTurner}>
-        <img
+      <RightPageTurnerContainer onClick={onClickRightPageTurner}>
+        <RightPageTurnerImage
           src={"/assets/images/icons/active_angle.svg"}
           alt={"Right Angle Icon"}
         />
-      </div>
+      </RightPageTurnerContainer>
     );
   } else {
     return (
-      <div>
-        <img
-          src={"/assets/images/icons/inactive_angle.svg"}
-          alt={"Right Angle Icon"}
-          className={`transform rotate-180`}
-        />
-      </div>
+      <RotatedRightPageTurnerImage
+        src={"/assets/images/icons/inactive_angle.svg"}
+        alt={"Right Angle Icon"}
+      />
     );
   }
 };
