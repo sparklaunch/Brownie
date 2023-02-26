@@ -17,11 +17,11 @@ const TrialScreen = () => {
       break;
   }
   return (
-    <div>
+    <>
       {content}
       <AudioManager />
       <WindowSizeManager />
-    </div>
+    </>
   );
 };
 

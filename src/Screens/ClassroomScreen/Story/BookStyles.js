@@ -122,8 +122,10 @@ const LeftPageImage = styled.img`
     object-position: right;
   }
   @media (min-width: 993px) {
-    object-fit: contain;
-    object-position: right;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
   }
@@ -153,8 +155,10 @@ const RightPageImage = styled.img`
     object-position: left;
   }
   @media (min-width: 993px) {
-    object-fit: contain;
-    object-position: left;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
   }
@@ -240,7 +244,7 @@ const MicContainer = styled.div`
   @media (min-width: 993px) {
     position: absolute;
     left: 50%;
-    bottom: -90px;
+    bottom: -100px;
     transform: translateX(-50%);
     z-index: 1;
   }
