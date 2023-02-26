@@ -1,14 +1,19 @@
-import { useParams } from "react-router-dom";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import { useRecoilState } from "recoil";
 import useData from "../../../Hooks/useData";
 import totalScoreAtom from "../../../Stores/Classroom/Story/totalScore";
 import Constants from "../../../Utilities/Constants";
 import _ from "lodash";
+import {
+  MegaphoneImage,
+  WordContainer,
+  WordIllustration,
+  WordImageContainer,
+  WordText
+} from "./WordImageStyles";
 
 const WordImage = () => {
   const words = useData("words");
-  const { level } = useParams();
   const bookID = useData("id");
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
@@ -28,28 +33,22 @@ const WordImage = () => {
     textColor = "#FF2442";
   }
   return (
-    <div
-      className={`w-[76%] h-[76%] rounded-2xl flex flex-col justify-center items-center relative`}
-    >
-      <img
+    <WordImageContainer>
+      <WordIllustration
         src={`/assets/images/words/${bookID}_${words[currentWordPage - 1]
           .toLowerCase()
           .replace(" ", "")}.png`}
         alt={words[currentWordPage - 1]}
-        className={`mt-[50px] h-[70%] object-contain`}
       />
-      <div className={`flex flex-row items-center justify-center`}>
-        <img
+      <WordContainer>
+        <MegaphoneImage
           src={`/assets/images/icons/megaphone_button.svg`}
           alt="Megaphone Button"
-          className={`mr-3 cursor-pointer`}
           onClick={onClickMegaphone()}
         />
-        <p className={`text-[${textColor}] font-black text-[60px]`}>
-          {words[currentWordPage - 1]}
-        </p>
-      </div>
-    </div>
+        <WordText color={textColor}>{words[currentWordPage - 1]}</WordText>
+      </WordContainer>
+    </WordImageContainer>
   );
 };
 
