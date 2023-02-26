@@ -7,6 +7,7 @@ import {
   CongratzContainer,
   FeedbackBarContainer,
   GlowBorder,
+  GlowBorderContainer,
   HomeContainer,
   LeftClickable,
   LeftCompletedButtonsContainer,
@@ -54,8 +55,10 @@ import { Howl, Howler } from "howler";
 import LoadingCard from "../LoadingCard";
 import ScorePill from "./Results/Score/ScorePill";
 import _ from "lodash";
+import textbookSizeAtom from "../../../Stores/Misc/textbookSize";
 
 const Book = () => {
+  const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
@@ -101,7 +104,7 @@ const Book = () => {
         <Navigator />
       </NavigatorContainer>
       <BookWrapper>
-        <TextBookContainer>
+        <TextBookContainer textbookSize={textbookSize}>
           <TextBookLeftPage>
             {currentPage === 0 ? (
               <LeftPageImage src={`/assets/images/pages/blank.jpg`} />
@@ -121,9 +124,11 @@ const Book = () => {
                 <LeftCompletedMicrophone />
               </LeftCompletedButtonsContainer>
             )}
-            {highlightedPage === currentPage && highlightVisible && (
-              <GlowBorder direction={`left`} />
-            )}
+            <GlowBorderContainer textbookSize={textbookSize}>
+              {highlightedPage === currentPage && highlightVisible && (
+                <GlowBorder direction={`left`} />
+              )}
+            </GlowBorderContainer>
             {currentPage !== 0 && <LeftClickable onClick={onClickLeftPage()} />}
           </TextBookLeftPage>
           <TextBookRightPage>

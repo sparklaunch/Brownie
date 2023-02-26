@@ -66,10 +66,11 @@ const TextBookContainer = styled.div`
   }
   @media (min-width: 993px) {
     position: relative;
-    height: 80vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
+    width: ${(props) => props.textbookSize.width}px;
+    height: ${(props) => props.textbookSize.height}px;
   }
 `;
 
@@ -95,8 +96,6 @@ const TextBookLeftPage = styled.div`
   }
   @media (min-width: 993px) {
     position: relative;
-    width: 100%;
-    height: 80vh;
     bottom: 20px;
     object-fit: contain;
     object-position: right;
@@ -112,9 +111,7 @@ const TextBookRightPage = styled.div`
   }
   @media (min-width: 993px) {
     position: relative;
-    width: 100%;
     bottom: 20px;
-    height: 80vh;
     object-fit: contain;
     object-position: right;
   }
@@ -127,7 +124,6 @@ const LeftPageImage = styled.img`
     object-position: right;
   }
   @media (min-width: 993px) {
-    height: 80vh;
     object-fit: contain;
     object-position: right;
     border-top-left-radius: 20px;
@@ -159,7 +155,6 @@ const RightPageImage = styled.img`
     object-position: left;
   }
   @media (min-width: 993px) {
-    height: 80vh;
     object-fit: contain;
     object-position: left;
     border-top-right-radius: 20px;
@@ -366,6 +361,18 @@ const RightCompletedButtonsContainer = styled.div`
   }
 `;
 
+const GlowBorderContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 992px) {
+  }
+  @media (min-width: 993px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: ${(props) => props.textbookSize.width / 2}px;
+    height: ${(props) => props.textbookSize.height}px;
+  }
+`;
+
 const GlowBorder = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
@@ -379,13 +386,11 @@ const GlowBorder = styled.div`
   @media (min-width: 993px) {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
+    bottom: 0;
     right: 0;
-    width: 100%;
     z-index: 1;
     box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
-  }
 `;
 
 const LeftClickable = styled.div`
@@ -472,6 +477,7 @@ export {
   LeftCompletedButtonsContainer,
   RightCompletedButtonsContainer,
   GlowBorder,
+  GlowBorderContainer,
   LeftClickable,
   RightClickable,
   LoadingCardWrapper

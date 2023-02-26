@@ -1,10 +1,17 @@
 import useWindowSize from "../../Hooks/useWindowSize";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
+import textbookSizeAtom from "../../Stores/Misc/textbookSize";
+import { useRecoilState } from "recoil";
 
 const WindowSizeManager = () => {
+  const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
   const windowSize = useWindowSize();
-  useEffect(() => {
-    console.log("WindowSizeManager: ", windowSize);
+  const [width, height] = windowSize;
+  useLayoutEffect(() => {
+    setTextbookSize({
+      width: width * 0.8,
+      height: height * 0.74
+    });
   }, [windowSize]);
   return <></>;
 };
