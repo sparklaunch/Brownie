@@ -4,6 +4,7 @@ import currentPageAtom from "../../Stores/Classroom/Story/currentPage";
 import modeAtom from "../../Stores/Classroom/mode";
 import { Howler } from "howler";
 import currentWordPageAtom from "../../Stores/Classroom/Word/currentWordPage";
+import { HomeButtonContainer, HomeButtonImage } from "./HomeButtonStyles";
 
 const HomeButton = () => {
   const navigate = useNavigate();
@@ -19,9 +20,12 @@ const HomeButton = () => {
     navigate("/");
   };
   return (
-    <div className={`cursor-pointer`} onClick={onClickHome}>
-      <img src={"/assets/images/icons/home_button.svg"} alt={"Home Button"} />
-    </div>
+    <HomeButtonContainer onClick={onClickHome}>
+      <HomeButtonImage
+        src={"/assets/images/icons/home_button.svg"}
+        alt={"Home Button"}
+      />
+    </HomeButtonContainer>
   );
 };
 
