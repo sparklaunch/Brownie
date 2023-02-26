@@ -1,12 +1,13 @@
 import TextbooksSpecimen from "./TextbooksSpecimen";
 import FeatureSpecimen from "./FeatureSpecimen";
+import { IntroductionCatalogSpecimenContainer } from "./IntroductionCatalogSpecimenStyles";
 
 const IntroductionCatalogSpecimen = () => {
   return (
-    <div className={`grid grid-cols-2`}>
+    <IntroductionCatalogSpecimenContainer>
       <TextbooksSpecimen />
       <FeatureSpecimen />
-    </div>
+    </IntroductionCatalogSpecimenContainer>
   );
 };
 
