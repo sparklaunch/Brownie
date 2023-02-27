@@ -17,7 +17,7 @@ import {
 } from "./CompletedMicrophoneStyles";
 import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
-import { Howl } from "howler";
+import { Howl, Howler } from "howler";
 
 const CompletedMicrophone = () => {
   const { level } = useParams();
@@ -115,6 +115,7 @@ const CompletedMicrophone = () => {
     }
   };
   const onClickRetry = () => {
+    Howler.unload();
     setWordScores((previousScores) => {
       return {
         ...previousScores,
@@ -124,6 +125,7 @@ const CompletedMicrophone = () => {
     recordVoice();
   };
   const onClickMyVoice = () => {
+    Howler.unload();
     const myVoice = localStorage.getItem("record");
     const myVoiceAudio = new Howl({
       src: [myVoice]

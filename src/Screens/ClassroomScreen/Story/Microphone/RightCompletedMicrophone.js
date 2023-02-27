@@ -20,7 +20,7 @@ import {
 } from "./RightCompletedMicrophoneStyles";
 import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
-import { Howl } from "howler";
+import { Howl, Howler } from "howler";
 
 const RightCompletedMicrophone = () => {
   const { level } = useParams();
@@ -118,6 +118,7 @@ const RightCompletedMicrophone = () => {
     }
   };
   const onClickRetry = () => {
+    Howler.unload();
     setHighlightedPage(currentPage + 1);
     setResultsScreenShown(false);
     setScores((previousScores) => {
@@ -129,6 +130,7 @@ const RightCompletedMicrophone = () => {
     recordVoice();
   };
   const onClickMyVoice = () => {
+    Howler.unload();
     const rightRecord = localStorage.getItem("right_record");
     const rightRecordAudio = new Howl({
       src: [rightRecord]

@@ -20,7 +20,7 @@ import {
 } from "./LeftCompletedMicrophoneStyles";
 import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
-import { Howl } from "howler";
+import { Howl, Howler } from "howler";
 
 const LeftCompletedMicrophone = () => {
   const { level } = useParams();
@@ -118,6 +118,7 @@ const LeftCompletedMicrophone = () => {
     }
   };
   const onClickRetry = () => {
+    Howler.unload();
     setHighlightedPage(currentPage);
     setResultsScreenShown(false);
     setScores((previousScores) => {
@@ -129,6 +130,7 @@ const LeftCompletedMicrophone = () => {
     recordVoice();
   };
   const onClickMyVoice = () => {
+    Howler.unload();
     const leftRecord = localStorage.getItem("left_record");
     const leftRecordAudio = new Howl({
       src: [leftRecord]
