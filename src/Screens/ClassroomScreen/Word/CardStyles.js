@@ -166,7 +166,13 @@ const WordLeftPageTurnerContainer = styled.div`
     bottom: 30px;
   }
 
-  @media (width >= 993px) {
+  @media (993px <= width <= 1279px) {
+    position: absolute;
+    left: -90px;
+    bottom: 0;
+    transform: translateY(-50%);
+  }
+  @media (width >= 1280px) {
     position: absolute;
     left: -90px;
     top: 50%;
@@ -187,7 +193,13 @@ const WordRightPageTurnerContainer = styled.div`
     bottom: 30px;
   }
 
-  @media (width >= 993px) {
+  @media (993px <= width <= 1279px) {
+    position: absolute;
+    right: -90px;
+    bottom: 0;
+    transform: translateY(-50%);
+  }
+  @media (width >= 1280px) {
     position: absolute;
     right: -90px;
     top: 50%;

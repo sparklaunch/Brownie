@@ -302,7 +302,13 @@ const LeftPagerContainer = styled.div`
     left: -60px;
   }
 
-  @media (width >= 993px) {
+  @media (993px <= width <= 1279px) {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(-50%);
+    left: -90px;
+  }
+  @media (width >= 1280px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -323,7 +329,13 @@ const RightPagerContainer = styled.div`
     right: -60px;
   }
 
-  @media (width >= 993px) {
+  @media (993px <= width <= 1279px) {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(-50%);
+    right: -90px;
+  }
+  @media (width >= 1280px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
