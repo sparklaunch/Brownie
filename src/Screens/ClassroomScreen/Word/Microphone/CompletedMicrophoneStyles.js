@@ -5,12 +5,14 @@ const CompletedMicrophoneContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transform: translateY(-20%);
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transform: translateY(-20%);
   }
 
   @media (width >= 993px) and (height >= 768px) {
@@ -21,17 +23,13 @@ const CompletedMicrophoneContainer = styled.div`
 
 const RetryButton = styled.img`
   @media (width <= 767px), (height <= 479px) {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     margin-bottom: 10px;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
   }
 
   @media (width >= 993px) and (height >= 768px) {
@@ -43,14 +41,10 @@ const RetryButton = styled.img`
 const MyVoiceButton = styled.img`
   @media (width <= 767px), (height <= 479px) {
     cursor: pointer;
-    width: 50px;
-    height: 50px;
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     cursor: pointer;
-    width: 50px;
-    height: 50px;
   }
 
   @media (width >= 993px) and (height >= 768px) {
