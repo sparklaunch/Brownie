@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
 const ScorePillOuterContainer = styled.div`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -24,7 +24,7 @@ const ScorePillOuterContainer = styled.div`
 `;
 
 const ScorePillInnerContainer = styled.div`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -36,7 +36,7 @@ const ScorePillInnerContainer = styled.div`
     border-radius: 999px;
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -48,7 +48,7 @@ const ScorePillInnerContainer = styled.div`
     border-radius: 999px;
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     display: flex;
     flex-direction: row;
     justify-content: center;

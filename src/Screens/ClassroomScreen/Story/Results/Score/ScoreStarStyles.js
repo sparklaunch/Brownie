@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 const ScoreStarImage = styled.img`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     width: 26px;
     height: 26px;
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     width: 26px;
     height: 26px;
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     width: 26px;
     height: 26px;
   }

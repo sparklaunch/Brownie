@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const YouDidItTextContainer = styled.div`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     position: absolute;
     top: 10%;
     left: 50%;
@@ -9,7 +9,7 @@ const YouDidItTextContainer = styled.div`
     z-index: 2;
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     position: absolute;
     top: 10%;
     left: 50%;
@@ -17,7 +17,7 @@ const YouDidItTextContainer = styled.div`
     z-index: 2;
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     position: absolute;
     top: 10%;
     left: 50%;
@@ -26,13 +26,13 @@ const YouDidItTextContainer = styled.div`
 `;
 
 const YouDidItTextImage = styled.img`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
   }
 `;
 

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const EvaluationMethodContainer = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 30px;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,7 +16,7 @@ const EvaluationMethodContainer = styled.div`
 `;
 
 const EvaluationMethodTitle = styled.p`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     font-size: 20px;
     flex-shrink: 0;
     padding: 12px 20px;
@@ -25,7 +25,7 @@ const EvaluationMethodTitle = styled.p`
     color: white;
     display: inline-block;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     font-size: 20px;
     flex-shrink: 0;
     padding: 12px 20px;
@@ -37,11 +37,11 @@ const EvaluationMethodTitle = styled.p`
 `;
 
 const EvaluationMethodDescription = styled.p`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     font-size: 18px;
     margin-left: 16px;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     font-size: 18px;
     margin-left: 16px;
   }

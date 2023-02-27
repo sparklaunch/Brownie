@@ -1,34 +1,34 @@
 import styled from "styled-components";
 
 const HamburgerContainer = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     cursor: pointer;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     display: none;
   }
 `;
 
 const HamburgerIcon = styled.img`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     cursor: pointer;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     cursor: pointer;
   }
 `;
 
 const DrawerContainer = styled.div`
-  @media (min-width: 480px) and (max-width: 767px) {
+  @media (width >= 480px) {
     width: 100vw;
     height: 100vh;
     background-color: white;
   }
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     height: 100vh;
     background-color: white;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
   }
 `;
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NavigationContainer = styled.div`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     position: fixed;
     width: 100%;
     left: 0;
@@ -17,7 +17,7 @@ const NavigationContainer = styled.div`
     ${(props) => (props.open ? `top: 0;` : `top: -216px;`)}
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     position: fixed;
     width: 100%;
     left: 0;
@@ -33,7 +33,7 @@ const NavigationContainer = styled.div`
     ${(props) => (props.open ? `top: 0;` : `top: -216px;`)}
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     position: fixed;
     width: 100%;
     left: 0;

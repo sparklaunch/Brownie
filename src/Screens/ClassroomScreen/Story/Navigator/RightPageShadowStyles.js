@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const RightPageShade = styled.div`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -11,7 +11,7 @@ const RightPageShade = styled.div`
     opacity: 0.5;
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -21,7 +21,7 @@ const RightPageShade = styled.div`
     opacity: 0.5;
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     position: absolute;
     top: 0;
     bottom: 0;

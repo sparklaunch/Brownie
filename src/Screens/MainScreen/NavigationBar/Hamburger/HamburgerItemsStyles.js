@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 const HamburgerItemsContainer = styled.div`
-  @media (min-width: 480px) and (max-width: 767px) {
+  @media (width >= 480px) {
     display: flex;
     flex-direction: column;
     margin: 20px 0;
   }
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: column;
     margin: 20px 0;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     display: flex;
     flex-direction: column;
     margin: 20px 0;

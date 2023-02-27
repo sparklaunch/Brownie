@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const TextBookFeaturesOuterContainer = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 80px auto;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -16,13 +16,13 @@ const TextBookFeaturesOuterContainer = styled.div`
 `;
 
 const TextBookFeaturesInnerContainer = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     width: 1200px;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ const TextBookFeaturesInnerContainer = styled.div`
 `;
 
 const TextBookFeaturesTitle = styled.p`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     font-weight: bold;
     color: white;
     font-size: 20px;
@@ -40,7 +40,7 @@ const TextBookFeaturesTitle = styled.p`
     border-radius: 4px;
     margin-bottom: 24px;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     font-weight: bold;
     color: white;
     font-size: 20px;
@@ -52,7 +52,7 @@ const TextBookFeaturesTitle = styled.p`
 `;
 
 const TextBookFeaturesContainer = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -60,7 +60,7 @@ const TextBookFeaturesContainer = styled.div`
       margin-bottom: 40px;
     }
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;

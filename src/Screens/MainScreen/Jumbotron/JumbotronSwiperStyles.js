@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const SwiperSlideImage = styled.img`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -12,18 +12,18 @@ const SwiperSlideImage = styled.img`
 `;
 
 const SwiperSlideContainer = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     width: 100%;
     height: 100%;
   }
 `;
 
 const SwiperSlideContentsInnerContainer = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     width: 1200px;
     display: flex;
     flex-direction: column;
@@ -31,9 +31,9 @@ const SwiperSlideContentsInnerContainer = styled.div`
 `;
 
 const SwiperSlideContentsOuterContainer = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -46,9 +46,9 @@ const SwiperSlideContentsOuterContainer = styled.div`
 `;
 
 const SwiperSlideContentsContainer = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -57,18 +57,18 @@ const SwiperSlideContentsContainer = styled.div`
 `;
 
 const PFRLogo = styled.img`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     height: 60px;
     width: 396px;
   }
 `;
 
 const SwiperSlideTopText = styled.p`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     font-family: GmarketSans, sans-serif;
     color: white;
     font-size: 24px;
@@ -78,16 +78,16 @@ const SwiperSlideTopText = styled.p`
 `;
 
 const SwiperSlideTopContents = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
   }
 `;
 
 const SwiperSlideBottomContents = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
   }
 `;
 

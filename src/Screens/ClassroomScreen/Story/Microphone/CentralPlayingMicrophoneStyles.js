@@ -1,28 +1,28 @@
 import styled from "styled-components";
 
 const CentralPlayingMicrophoneContainer = styled.div`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     position: relative;
     cursor: pointer;
     width: 52px;
     height: 52px;
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     position: relative;
     cursor: pointer;
     width: 52px;
     height: 52px;
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     position: relative;
     cursor: pointer;
   }
 `;
 
 const OuterCircle = styled.div`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -40,7 +40,7 @@ const OuterCircle = styled.div`
     }
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -58,7 +58,7 @@ const OuterCircle = styled.div`
     }
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -78,7 +78,7 @@ const OuterCircle = styled.div`
 `;
 
 const InnerCircle = styled.div`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -96,7 +96,7 @@ const InnerCircle = styled.div`
     }
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -114,7 +114,7 @@ const InnerCircle = styled.div`
     }
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -134,7 +134,7 @@ const InnerCircle = styled.div`
 `;
 
 const Wave = styled.div`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -154,7 +154,7 @@ const Wave = styled.div`
     }
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -174,7 +174,7 @@ const Wave = styled.div`
     }
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -196,13 +196,13 @@ const Wave = styled.div`
 `;
 
 const CentralPlayingMicrophoneImage = styled.img`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
   }
 `;
 

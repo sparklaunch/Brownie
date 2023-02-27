@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const WordCardContainer = styled.div`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@ const WordCardContainer = styled.div`
     cursor: pointer;
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -27,7 +27,7 @@ const WordCardContainer = styled.div`
     cursor: pointer;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) and (min-height: 768px) {
+  @media (width >= 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,21 +42,21 @@ const WordCardContainer = styled.div`
 `;
 
 const WordCardText = styled.p`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     font-size: 80px;
     font-weight: 900;
     margin-left: 24px;
     letter-spacing: -5px;
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     font-size: 100px;
     font-weight: 900;
     margin-left: 24px;
     letter-spacing: -5px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) and (min-height: 768px) {
+  @media (width >= 993px) {
     font-size: 120px;
     font-weight: 900;
     margin-left: 24px;

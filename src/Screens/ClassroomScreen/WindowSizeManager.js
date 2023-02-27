@@ -8,25 +8,15 @@ const WindowSizeManager = () => {
   const windowSize = useWindowSize();
   const [width, height] = windowSize;
   useLayoutEffect(() => {
-    if (width > 1300 && height > 900) {
+    if (width < 993) {
       setTextbookSize({
-        width: 1300 * 0.76,
-        height: (1300 * 0.76) / 1.5
-      });
-    } else if (width > 1300 && height <= 900) {
-      setTextbookSize({
-        width: height,
-        height: height / 1.5
-      });
-    } else if (width <= 1300 && height > 900) {
-      setTextbookSize({
-        width: width * 0.76,
-        height: (width * 0.76) / 1.5
+        width: height * 1.5,
+        height: height
       });
     } else {
       setTextbookSize({
-        width: height,
-        height: height / 1.5
+        width: width * 0.54,
+        height: (width * 0.54) / 1.5
       });
     }
   }, [windowSize]);

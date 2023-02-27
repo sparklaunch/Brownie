@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const TextbooksSpecimenContainer = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,12 +16,12 @@ const TextbooksSpecimenContainer = styled.div`
 `;
 
 const TextbooksImage = styled.img`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     margin-bottom: 36px;
     width: 400px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     margin-bottom: 36px;
     width: 400px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -29,13 +29,13 @@ const TextbooksImage = styled.img`
 `;
 
 const TextbooksTitleText = styled.p`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     color: #999999;
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 12px;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     color: #999999;
     font-size: 16px;
     font-weight: bold;
@@ -44,20 +44,20 @@ const TextbooksTitleText = styled.p`
 `;
 
 const TextbooksTextContainer = styled.div`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     text-align: center;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     text-align: center;
   }
 `;
 
 const TextbooksText = styled.p`
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     color: #999999;
     font-size: 16px;
   }
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     color: #999999;
     font-size: 16px;
   }

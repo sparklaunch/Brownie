@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LoadingCardContainer = styled.div`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     width: 300px;
     height: 200px;
     border-radius: 20px;
@@ -13,7 +13,7 @@ const LoadingCardContainer = styled.div`
     align-items: center;
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     width: 300px;
     height: 200px;
     border-radius: 20px;
@@ -25,7 +25,7 @@ const LoadingCardContainer = styled.div`
     align-items: center;
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     width: 300px;
     height: 200px;
     border-radius: 20px;
@@ -39,7 +39,7 @@ const LoadingCardContainer = styled.div`
 `;
 
 const RotatingDocument = styled.img`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     animation: rotating 2s linear infinite;
     @keyframes rotating {
       from {
@@ -51,7 +51,7 @@ const RotatingDocument = styled.img`
     }
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     animation: rotating 2s linear infinite;
     @keyframes rotating {
       from {
@@ -63,7 +63,7 @@ const RotatingDocument = styled.img`
     }
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     animation: rotating 2s linear infinite;
     @keyframes rotating {
       from {
@@ -77,19 +77,19 @@ const RotatingDocument = styled.img`
 `;
 
 const LoadingText = styled.p`
-  @media (width <= 767px), (height <= 479px) {
+  @media (width <= 767px) {
     font-weight: bold;
     font-size: 16px;
     margin-top: 20px;
   }
 
-  @media (768px <= width <= 992px), (480px <= height <= 767px) {
+  @media (768px <= width <= 992px) {
     font-weight: bold;
     font-size: 16px;
     margin-top: 20px;
   }
 
-  @media (width >= 993px) and (height >= 768px) {
+  @media (width >= 993px) {
     font-weight: bold;
     font-size: 16px;
     margin-top: 20px;
