@@ -10,9 +10,10 @@ const JumbotronSwiper = () => {
       slidesPerView={1}
       loop={true}
       speed={1000}
+      style={{ width: "100%", height: "100%" }}
       autoplay={true}
     >
-      <SwiperSlide>
+      <SwiperSlide style={{ width: "100%", height: "100%" }}>
         <SwiperSlideImage
           loading={`lazy`}
           src={`/assets/images/jumbotron/jumbotron1.png`}
