@@ -62,8 +62,7 @@ const TextBookContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    width: ${(props) => props.textbookSize.width}px;
-    height: ${(props) => props.textbookSize.height}px;
+    height: 100vh;
   }
   @media (min-width: 993px) {
     position: relative;
@@ -118,8 +117,7 @@ const TextBookRightPage = styled.div`
 
 const LeftPageImage = styled.img`
   @media (min-width: 768px) and (max-width: 992px) {
-    width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     object-position: center;
   }
@@ -162,8 +160,7 @@ const LeftPageShade = styled.div`
 
 const RightPageImage = styled.img`
   @media (min-width: 768px) and (max-width: 992px) {
-    width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     object-position: center;
   }
@@ -208,7 +205,7 @@ const LeftPagerContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 30px;
-    left: -90px;
+    left: -70px;
   }
   @media (min-width: 993px) {
     position: absolute;
@@ -222,7 +219,7 @@ const RightPagerContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 30px;
-    right: -90px;
+    right: -70px;
   }
   @media (min-width: 993px) {
     position: absolute;
@@ -259,7 +256,7 @@ const HomeContainer = styled.div`
 const MicContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
-    right: -100px;
+    right: -90px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;

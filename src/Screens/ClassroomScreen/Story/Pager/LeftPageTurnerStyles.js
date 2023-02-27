@@ -12,6 +12,8 @@ const LeftPageTurnerContainer = styled.div`
 const RotatedLeftPageTurnerImage = styled.img`
   @media (min-width: 768px) and (max-width: 992px) {
     transform: rotate(180deg);
+    width: 14px;
+    height: 24px;
   }
   @media (min-width: 993px) {
     transform: rotate(180deg);
@@ -20,6 +22,8 @@ const RotatedLeftPageTurnerImage = styled.img`
 
 const LeftPageTurnerImage = styled.img`
   @media (min-width: 768px) and (max-width: 992px) {
+    width: 14px;
+    height: 24px;
   }
   @media (min-width: 993px) {
   }

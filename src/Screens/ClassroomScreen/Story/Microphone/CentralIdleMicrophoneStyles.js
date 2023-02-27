@@ -3,6 +3,8 @@ import styled from "styled-components";
 const CentralIdleMicrophoneContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: relative;
+    width: 52px;
+    height: 52px;
     cursor: pointer;
   }
   @media (min-width: 993px) {
