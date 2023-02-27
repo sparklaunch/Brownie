@@ -33,7 +33,7 @@ const TextBookComponents = () => {
         </ImageContainer>
         <TextContainer area={`cd-text`}>
           <TextTitle>5 CDs</TextTitle>
-          <TextDescription>Storybook에 부착.</TextDescription>
+          <TextDescription>Storybook에 부착</TextDescription>
         </TextContainer>
         <TextContainer area={`package-text`}>
           <TextTitle>Full Package</TextTitle>

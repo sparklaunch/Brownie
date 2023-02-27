@@ -1,6 +1,6 @@
 const MyInformation = () => {
   return (
-    <div>
+    <>
       <p className={`border-l-4 border-[#00AEA8] pl-3 mb-3 text-[20px]`}>
         내 정보
       </p>
@@ -15,7 +15,7 @@ const MyInformation = () => {
         </p>
         <p>이용기간 : 2023.05.06 ~ 2023.12.31</p>
       </div>
-    </div>
+    </>
   );
 };
 

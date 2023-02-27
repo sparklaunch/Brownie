@@ -10,10 +10,10 @@ const CouponRegistration = () => {
   const [isCouponValid, setIsCouponValid] = useRecoilState(isCouponValidAtom);
   const onCouponRegistrationClick = () => {
     if (coupon.length === 0) {
-      setCouponMessage("쿠폰 번호를 입력해주세요.");
+      setCouponMessage("쿠폰 번호를 입력해주세요");
       setIsCouponValid(false);
     } else {
-      setCouponMessage("쿠폰 번호가 유효하지 않습니다. 다시 확인해주세요.");
+      setCouponMessage("쿠폰 번호가 유효하지 않습니다. 다시 확인해주세요");
       setIsCouponValid(false);
     }
   };

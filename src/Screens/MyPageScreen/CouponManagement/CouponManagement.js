@@ -5,7 +5,7 @@ import Footer from "../../MainScreen/Footer/Footer";
 
 const CouponManagement = () => {
   return (
-    <div>
+    <>
       <div className={`flex flex-row justify-center`}>
         <div className={`w-[1200px]`}>
           <CouponRegistration />
@@ -14,7 +14,7 @@ const CouponManagement = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

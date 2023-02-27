@@ -4,11 +4,11 @@ import MyPageContent from "./MyPageContent";
 
 const MyPageScreen = () => {
   return (
-    <div>
+    <>
       <NavigationBar />
       <MyPageTabs />
       <MyPageContent />
-    </div>
+    </>
   );
 };
 

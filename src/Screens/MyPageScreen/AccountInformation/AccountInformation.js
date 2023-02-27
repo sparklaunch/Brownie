@@ -6,7 +6,7 @@ import Footer from "../../MainScreen/Footer/Footer";
 
 const AccountInformation = () => {
   return (
-    <div>
+    <>
       <div className={`flex flex-row justify-center bg-[#F9F9F9] p-[100px]`}>
         <div className={`w-[1200px]`}>
           <AccountIcon />
@@ -17,7 +17,7 @@ const AccountInformation = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

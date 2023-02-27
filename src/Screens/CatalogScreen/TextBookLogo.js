@@ -15,10 +15,10 @@ const TextBookLogo = () => {
       <TextBookLogoDescriptions>
         <TextBookLogoDescription>
           <strong>교육 대상</strong> : 유아 ~ 초등 저학년 (Kindergarten ~
-          Elementary).
+          Elementary)
         </TextBookLogoDescription>
         <TextBookLogoDescription>
-          <strong>구성</strong> : Levels 1 ~ 5.
+          <strong>구성</strong> : Levels 1 ~ 5
         </TextBookLogoDescription>
       </TextBookLogoDescriptions>
     </TextBookLogoContainer>
