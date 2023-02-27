@@ -59,6 +59,7 @@ const CatalogItem = ({
         <CompletedBadge
           src={`/assets/images/completed_badge.svg`}
           alt={`Completed Badge`}
+          onClick={onClickCatalogItem}
         />
       )}
       <CatalogLabel label={coverImage.split(".jpg")[0]} />
