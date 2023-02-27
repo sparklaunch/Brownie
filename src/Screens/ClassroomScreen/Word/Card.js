@@ -57,6 +57,18 @@ const Card = () => {
   );
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
+  const onClickWave = async () => {
+    try {
+      setWordMicrophoneState(`loading`);
+      const device = await navigator.mediaDevices.getUserMedia({
+        audio: true
+      });
+      const recorder = new MediaRecorder(device);
+      recorder.stop();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <CardOuterContainer>
       <CardInnerContainer textbookSize={textbookSize}>
@@ -94,7 +106,7 @@ const Card = () => {
           </WordResultsContainer>
         )}
         {wordMicrophoneState === "recording" && (
-          <WordWaveContainer>
+          <WordWaveContainer onClick={onClickWave}>
             <WordWave />
           </WordWaveContainer>
         )}
