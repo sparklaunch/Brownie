@@ -49,6 +49,7 @@ const ResultsScreen = () => {
   const bookID = useData("id");
   const rightScoreExists = scores[`${level}-${currentPage + 1}`] !== undefined;
   useEffect(() => {
+    setCentralMicrophoneState("resultsShowing");
     if (rightScoreExists) {
       setCentralMicrophoneState("completed");
     }

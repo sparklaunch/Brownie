@@ -40,6 +40,8 @@ const CentralMicrophone = () => {
       return <></>;
     case "completed":
       return <></>;
+    case "resultsShowing":
+      return <></>;
   }
 };
 
