@@ -5,7 +5,7 @@ import { RecoilRoot } from "recoil";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainScreen from "./Screens/MainScreen/MainScreen";
 import DemoScreen from "./Screens/DemoScreen/DemoScreen";
-import SignInScreen from "./Screens/SignInScreen/SignInScreen";
+import SignInScreen from "./Screens/SignScreen/SignInScreen";
 import MyPageScreen from "./Screens/MyPageScreen/MyPageScreen";
 import NotFoundScreen from "./Screens/NotFoundScreen/NotFoundScreen";
 import TrialScreen from "./Screens/TrialScreen/TrialScreen";

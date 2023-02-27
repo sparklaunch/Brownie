@@ -1,4 +1,4 @@
-import { Button, Checkbox, InputAdornment, TextField } from "@mui/material";
+import { Button, Checkbox, TextField } from "@mui/material";
 import { useRecoilState, useRecoilValue } from "recoil";
 import idAtom from "../../../Stores/Auth/id";
 import passwordAtom from "../../../Stores/Auth/password";
@@ -155,162 +155,142 @@ const SignUpFields = () => {
   return (
     <div className={`pt-3`}>
       <p className={`text-right mb-1 text-red-600`}>* 표시 필수 입력</p>
-      <TextField
-        id={"id"}
-        value={id}
-        onChange={(event) => setID(event.target.value)}
-        variant={"outlined"}
-        label={"아이디"}
-        size={"medium"}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position={"end"}>
-              {id.length === 0 && (
-                <p
-                  className={`absolute top-[50%] translate-y-[-50%] right-[16px] text-red-600 font-bold`}
-                >
-                  *
-                </p>
-              )}
-            </InputAdornment>
-          )
-        }}
-        autoComplete={false}
-        sx={{
-          width: "100%",
-          backgroundColor: "white",
-          borderRadius: 2,
-          marginBottom: 1.5
-        }}
-      />
-      <TextField
-        id={"password"}
-        error={!validPassword}
-        value={password}
-        onChange={(event) => {
-          if (!event.target.value.match(/\s/)) {
-            setPassword(event.target.value);
-          }
-        }}
-        variant={"outlined"}
-        label={"비밀번호"}
-        size={"medium"}
-        type={"password"}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position={"end"}>
-              {password.length === 0 && (
-                <p
-                  className={`absolute top-[50%] translate-y-[-50%] right-[16px] text-red-600 font-bold`}
-                >
-                  *
-                </p>
-              )}
-            </InputAdornment>
-          )
-        }}
-        sx={{
-          width: "100%",
-          backgroundColor: "white",
-          borderRadius: 2,
-          marginBottom: 1.5
-        }}
-      />
+      <div className={`relative`}>
+        <TextField
+          id={"id"}
+          value={id}
+          onChange={(event) => setID(event.target.value)}
+          variant={"outlined"}
+          label={"아이디"}
+          size={"medium"}
+          autoComplete={false}
+          sx={{
+            width: "100%",
+            backgroundColor: "white",
+            borderRadius: 2,
+            marginBottom: 1.5
+          }}
+        />
+        {id.length === 0 && (
+          <div
+            className={`absolute top-[50%] translate-y-[-50%] right-[10px] text-2xl text-red-600`}
+          >
+            *
+          </div>
+        )}
+      </div>
+      <div className={`relative`}>
+        <TextField
+          id={"password"}
+          error={!validPassword}
+          value={password}
+          onChange={(event) => {
+            if (!event.target.value.match(/\s/)) {
+              setPassword(event.target.value);
+            }
+          }}
+          variant={"outlined"}
+          label={"비밀번호"}
+          size={"medium"}
+          type={"password"}
+          sx={{
+            width: "100%",
+            backgroundColor: "white",
+            borderRadius: 2,
+            marginBottom: 1.5
+          }}
+        />
+        {password.length === 0 && (
+          <div
+            className={`absolute top-[50%] translate-y-[-50%] right-[10px] text-2xl text-red-600`}
+          >
+            *
+          </div>
+        )}
+      </div>
       <PasswordInfo />
-      <TextField
-        id={"password-confirm"}
-        error={password !== passwordConfirm || !validPassword}
-        value={passwordConfirm}
-        onChange={(event) => {
-          if (!event.target.value.match(/\s/)) {
-            setPasswordConfirm(event.target.value);
-          }
-        }}
-        variant={"outlined"}
-        label={"비밀번호 확인"}
-        size={"medium"}
-        type={"password"}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position={"end"}>
-              {passwordConfirm.length === 0 && (
-                <p
-                  className={`absolute top-[50%] translate-y-[-50%] right-[16px] text-red-600 font-bold`}
-                >
-                  *
-                </p>
-              )}
-            </InputAdornment>
-          )
-        }}
-        sx={{
-          width: "100%",
-          backgroundColor: "white",
-          borderRadius: 2,
-          marginBottom: 1.5
-        }}
-      />
-      <TextField
-        id={"phone-number"}
-        error={!validPhoneNumber}
-        value={phoneNumber}
-        onChange={(event) => {
-          if (event.target.value.match(/^[0-9]*$/)) {
-            setPhoneNumber(event.target.value);
-          }
-        }}
-        variant={"outlined"}
-        label={"휴대폰 번호 (예: 01012345678)"}
-        size={"medium"}
-        type={"phone-number"}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position={"end"}>
-              {phoneNumber.length === 0 && (
-                <p
-                  className={`absolute top-[50%] translate-y-[-50%] right-[16px] text-red-600 font-bold`}
-                >
-                  *
-                </p>
-              )}
-            </InputAdornment>
-          )
-        }}
-        sx={{
-          width: "100%",
-          backgroundColor: "white",
-          borderRadius: 2,
-          marginBottom: 1.5
-        }}
-      />
+      <div className={`relative`}>
+        <TextField
+          id={"password-confirm"}
+          error={password !== passwordConfirm || !validPassword}
+          value={passwordConfirm}
+          onChange={(event) => {
+            if (!event.target.value.match(/\s/)) {
+              setPasswordConfirm(event.target.value);
+            }
+          }}
+          variant={"outlined"}
+          label={"비밀번호 확인"}
+          size={"medium"}
+          type={"password"}
+          sx={{
+            width: "100%",
+            backgroundColor: "white",
+            borderRadius: 2,
+            marginBottom: 1.5
+          }}
+        />
+        {passwordConfirm.length === 0 && (
+          <div
+            className={`absolute top-[50%] translate-y-[-50%] right-[10px] text-2xl text-red-600`}
+          >
+            *
+          </div>
+        )}
+      </div>
+      <div className={`relative`}>
+        <TextField
+          id={"phone-number"}
+          error={!validPhoneNumber}
+          value={phoneNumber}
+          onChange={(event) => {
+            if (event.target.value.match(/^[0-9]*$/)) {
+              setPhoneNumber(event.target.value);
+            }
+          }}
+          variant={"outlined"}
+          label={"휴대폰 번호 (예: 01012345678)"}
+          size={"medium"}
+          type={"phone-number"}
+          sx={{
+            width: "100%",
+            backgroundColor: "white",
+            borderRadius: 2,
+            marginBottom: 1.5
+          }}
+        />
+        {phoneNumber.length === 0 && (
+          <div
+            className={`absolute top-[50%] translate-y-[-50%] right-[10px] text-2xl text-red-600`}
+          >
+            *
+          </div>
+        )}
+      </div>
       <StudentLabel />
-      <TextField
-        id={"student-name"}
-        value={studentName}
-        onChange={(event) => setStudentName(event.target.value)}
-        variant={"outlined"}
-        label={"학생(자녀) 이름"}
-        size={"medium"}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position={"end"}>
-              {studentName.length === 0 && (
-                <p
-                  className={`absolute top-[50%] translate-y-[-50%] right-[16px] text-red-600 font-bold`}
-                >
-                  *
-                </p>
-              )}
-            </InputAdornment>
-          )
-        }}
-        sx={{
-          width: "100%",
-          backgroundColor: "white",
-          borderRadius: 2,
-          marginBottom: 1.5
-        }}
-      />
+      <div className={`relative`}>
+        <TextField
+          id={"student-name"}
+          value={studentName}
+          onChange={(event) => setStudentName(event.target.value)}
+          variant={"outlined"}
+          label={"학생(자녀) 이름"}
+          size={"medium"}
+          sx={{
+            width: "100%",
+            backgroundColor: "white",
+            borderRadius: 2,
+            marginBottom: 1.5
+          }}
+        />
+        {studentName.length === 0 && (
+          <div
+            className={`absolute top-[50%] translate-y-[-50%] right-[10px] text-2xl text-red-600`}
+          >
+            *
+          </div>
+        )}
+      </div>
       <TextField
         id={"student-birth-date"}
         value={studentBirthDate}
