@@ -4,6 +4,7 @@ const CompletedMicrophoneContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
   @media (min-width: 993px) {
     display: flex;
@@ -13,7 +14,6 @@ const CompletedMicrophoneContainer = styled.div`
 
 const RetryButton = styled.img`
   @media (min-width: 768px) and (max-width: 992px) {
-    margin-right: 5px;
     margin-bottom: 10px;
     cursor: pointer;
     width: 50px;

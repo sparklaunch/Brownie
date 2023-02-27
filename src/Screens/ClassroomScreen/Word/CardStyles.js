@@ -108,7 +108,7 @@ const PaginationContainer = styled.div`
 const WordLeftPageTurnerContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
-    left: -90px;
+    left: -80px;
     bottom: 30px;
   }
   @media (min-width: 993px) {
@@ -122,7 +122,7 @@ const WordLeftPageTurnerContainer = styled.div`
 const WordRightPageTurnerContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
-    right: -90px;
+    right: -80px;
     bottom: 30px;
   }
   @media (min-width: 993px) {
@@ -159,9 +159,11 @@ const HomeButtonContainer = styled.div`
 const MicrophoneContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
+    width: 52px;
+    height: 52px;
     top: 50%;
     transform: translateY(-50%);
-    right: -105px;
+    right: -90px;
   }
   @media (min-width: 993px) {
     position: absolute;

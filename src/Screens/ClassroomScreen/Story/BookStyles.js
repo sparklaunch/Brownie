@@ -77,8 +77,9 @@ const TextBookContainer = styled.div`
 const ModeSwitcherContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     position: absolute;
-    top: 20px;
-    left: -120px;
+    top: 0;
+    left: 0;
+    transform: scale(0.8) translate(-130px, -12px);
   }
   @media (min-width: 993px) {
     position: absolute;
