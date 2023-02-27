@@ -499,28 +499,32 @@ const CongratzContainer = styled.div`
 const ScoreBarContainer = styled.div`
   @media (width <= 767px) {
     position: absolute;
-    top: -110px;
-    left: -100px;
-    right: -100px;
-    bottom: 0;
-    transform: scale(0.4);
-  }
-  @media (768px <= width <= 992px) {
-    position: absolute;
-    top: -90px;
-    left: -100px;
-    right: -100px;
-    bottom: 0;
-    transform: scale(0.5);
-  }
-
-  @media (width >= 993px) {
-    position: absolute;
-    top: -120px;
+    top: 10px;
     left: 0;
     right: 0;
     bottom: 0;
-    transform: scale(0.6);
+  }
+  @media (768px <= width <= 992px) {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  @media (993px <= width <= 1279px) {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  @media (width >= 1280px) {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 `;
 

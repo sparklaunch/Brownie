@@ -4,19 +4,24 @@ const ScoreStarsContainer = styled.div`
   @media (width <= 767px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+    gap: 4px;
   }
 
   @media (768px <= width <= 992px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+    gap: 5px;
   }
 
-  @media (width >= 993px) {
+  @media (993px <= width <= 1279px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+    gap: 6px;
+  }
+  @media (width >= 1280px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
   }
 `;
 

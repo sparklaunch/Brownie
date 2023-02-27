@@ -32,7 +32,7 @@ const ScorePillInnerContainer = styled.div`
     background-color: white;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border: 1px solid ${(props) => props.borderColor};
-    padding: 6px 30px;
+    padding: 5px 15px;
     border-radius: 999px;
   }
 
@@ -44,11 +44,11 @@ const ScorePillInnerContainer = styled.div`
     background-color: white;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border: 1px solid ${(props) => props.borderColor};
-    padding: 10px 40px;
+    padding: 6px 18px;
     border-radius: 999px;
   }
 
-  @media (width >= 993px) {
+  @media (993px <= width <= 1279px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -56,7 +56,18 @@ const ScorePillInnerContainer = styled.div`
     background-color: white;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border: 1px solid ${(props) => props.borderColor};
-    padding: 13px 44px;
+    padding: 7px 20px;
+    border-radius: 999px;
+  }
+  @media (width >= 1280px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: 1px solid ${(props) => props.borderColor};
+    padding: 8px 24px;
     border-radius: 999px;
   }
 `;

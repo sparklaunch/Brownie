@@ -337,26 +337,27 @@ const WordWaveContainer = styled.div`
 const WordResultsContainer = styled.div`
   @media (width <= 767px) {
     position: absolute;
-    top: 10px;
-    right: -50%;
-    transform: scale(0.6);
-    width: 100vw;
+    top: 20px;
+    right: 20px;
   }
 
   @media (768px <= width <= 992px) {
     position: absolute;
-    top: 10px;
-    right: -50%;
-    transform: scale(0.6);
-    width: 100vw;
+    top: 20px;
+    right: 20px;
   }
 
-  @media (width >= 993px) {
+  @media (993px <= width <= 1279px) {
     position: absolute;
-    top: 10px;
-    left: 50%;
-    width: 100vw;
-    transform: translateX(-50%) scale(0.7);
+    left: 0;
+    right: 0;
+    top: 20px;
+  }
+  @media (width >= 1280px) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30px;
   }
 `;
 
