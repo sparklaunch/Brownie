@@ -32,7 +32,7 @@ const ScorePillInnerContainer = styled.div`
     background-color: white;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border: 1px solid ${(props) => props.borderColor};
-    padding: 13px 44px;
+    padding: 6px 30px;
     border-radius: 999px;
   }
 
@@ -44,7 +44,7 @@ const ScorePillInnerContainer = styled.div`
     background-color: white;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border: 1px solid ${(props) => props.borderColor};
-    padding: 13px 44px;
+    padding: 10px 40px;
     border-radius: 999px;
   }
 

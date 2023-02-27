@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ScoreTextString = styled.p`
   @media (width <= 767px), (height <= 479px) {
-    font-size: 36px;
+    font-size: 32px;
     font-family: Jua, sans-serif;
     color: ${(props) => props.textColor};
     margin-left: 26px;
