@@ -21,7 +21,7 @@ const JumbotronInnerContainer = styled.div`
     width: 1200px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 `;
 

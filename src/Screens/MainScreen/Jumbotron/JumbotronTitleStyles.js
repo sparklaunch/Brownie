@@ -9,9 +9,10 @@ const JumbotronTitleContainer = styled.div`
     background-size: contain;
   }
   @media (min-width: 993px) {
+    height: 426px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 `;
 

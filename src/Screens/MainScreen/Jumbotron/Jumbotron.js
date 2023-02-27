@@ -1,4 +1,3 @@
-import JumbotronTitle from "./JumbotronTitle";
 import JumbotronForm from "./JumbotronForm/JumbotronForm";
 import {
   JumbotronFormContainer,
@@ -15,7 +14,6 @@ const Jumbotron = () => {
         <JumbotronSwiper />
       </JumbotronSwiperContainer>
       <JumbotronInnerContainer>
-        <JumbotronTitle />
         <JumbotronFormContainer>
           <JumbotronForm />
         </JumbotronFormContainer>
