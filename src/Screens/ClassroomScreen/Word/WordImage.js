@@ -11,6 +11,7 @@ import {
   WordImageContainer,
   WordText
 } from "./WordImageStyles";
+import { Howl } from "howler";
 
 const WordImage = () => {
   const words = useData("words");
@@ -18,7 +19,10 @@ const WordImage = () => {
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const playWordAudio = () => {
-    new Audio(`/assets/audio/words/${words[currentWordPage - 1]}.wav`).play();
+    const audio = new Howl({
+      src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`]
+    });
+    audio.play();
   };
   const onClickMegaphone = () => {
     return _.throttle(playWordAudio, 1000, { leading: true, trailing: true });

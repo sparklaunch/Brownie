@@ -19,6 +19,7 @@ import {
   OuterCircle,
   Wave
 } from "./IdleMicrophoneStyles";
+import { Howl } from "howler";
 
 const IdleMicrophone = () => {
   const { level } = useParams();
@@ -41,8 +42,10 @@ const IdleMicrophone = () => {
       const device = await navigator.mediaDevices.getUserMedia({
         audio: true
       });
-      const clickAudio = new Audio("/assets/audio/microphone_on.wav");
-      clickAudio.play();
+      const audio = new Howl({
+        src: ["/assets/audio/microphone_on.wav"]
+      });
+      audio.play();
       const recorder = new MediaRecorder(device);
       recorder.start();
       setWordMicrophoneState("recording");
@@ -80,7 +83,9 @@ const IdleMicrophone = () => {
               };
             });
             const userRecord = localStorage.getItem("record");
-            const userRecordAudio = new Audio(userRecord);
+            const userRecordAudio = new Howl({
+              src: [userRecord]
+            });
             userRecordAudio.play();
             setResultsScreenShown(true);
             setWordResultsShown(true);

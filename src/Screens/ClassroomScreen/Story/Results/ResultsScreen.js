@@ -15,6 +15,7 @@ import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPa
 import useData from "../../../../Hooks/useData";
 import youDidItShownAtom from "../../../../Stores/Classroom/youDidItShown";
 import Constants from "../../../../Utilities/Constants";
+import { Howl } from "howler";
 
 const ResultsScreen = () => {
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
@@ -44,7 +45,10 @@ const ResultsScreen = () => {
   const bookID = useData("id");
   useEffect(() => {
     setCentralMicrophoneState("completed");
-    new Audio(`/assets/audio/results_shown.mp3`).play();
+    const audio = new Howl({
+      src: [`/assets/audio/results_shown.mp3`]
+    });
+    audio.play();
     setTimeout(() => {
       setResultsScreenShown(false);
       if (currentPage === 0) {
@@ -64,7 +68,10 @@ const ResultsScreen = () => {
         }
       }
       if (currentPage === 10 || currentWordPage === words.length) {
-        new Audio(`/assets/audio/you_did_it.mp3`).play();
+        const audio = new Howl({
+          src: [`/assets/audio/you_did_it.mp3`]
+        });
+        audio.play();
         setYouDidItShown(true);
       }
     }, 3000);

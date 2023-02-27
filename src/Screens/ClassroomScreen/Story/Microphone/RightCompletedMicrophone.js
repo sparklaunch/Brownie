@@ -20,6 +20,7 @@ import {
 } from "./RightCompletedMicrophoneStyles";
 import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
+import { Howl } from "howler";
 
 const RightCompletedMicrophone = () => {
   const { level } = useParams();
@@ -43,8 +44,10 @@ const RightCompletedMicrophone = () => {
       const device = await navigator.mediaDevices.getUserMedia({
         audio: true
       });
-      const sound = new Audio("/assets/audio/microphone_on.wav");
-      sound.play();
+      const audio = new Howl({
+        src: ["/assets/audio/microphone_on.wav"]
+      });
+      audio.play();
       const recorder = new MediaRecorder(device);
       recorder.start();
       setCentralMicrophoneState("invisible");
@@ -72,7 +75,10 @@ const RightCompletedMicrophone = () => {
           .then((response) => {
             setHighlightVisible(false);
             const record = localStorage.getItem("right_record");
-            new Audio(record).play();
+            const rightRecord = new Howl({
+              src: [record]
+            });
+            rightRecord.play();
             const stringResponse = JSON.stringify(response, null, 2);
             console.log(stringResponse);
             const totalScore = response.data.total_score;
@@ -124,8 +130,10 @@ const RightCompletedMicrophone = () => {
   };
   const onClickMyVoice = () => {
     const rightRecord = localStorage.getItem("right_record");
-    const audio = new Audio(rightRecord);
-    audio.play();
+    const rightRecordAudio = new Howl({
+      src: [rightRecord]
+    });
+    rightRecordAudio.play();
   };
   return (
     <RightCompletedMicrophoneContainer>

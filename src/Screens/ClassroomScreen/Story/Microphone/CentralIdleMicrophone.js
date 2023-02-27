@@ -20,6 +20,7 @@ import {
   OuterCircle,
   Wave
 } from "./CentralIdleMicrophoneStyles";
+import { Howl } from "howler";
 
 const CentralIdleMicrophone = () => {
   const { level } = useParams();
@@ -43,8 +44,10 @@ const CentralIdleMicrophone = () => {
       const device = await navigator.mediaDevices.getUserMedia({
         audio: true
       });
-      const sound = new Audio("/assets/audio/microphone_on.wav");
-      sound.play();
+      const audio = new Howl({
+        src: ["/assets/audio/microphone_on.wav"]
+      });
+      audio.play();
       const recorder = new MediaRecorder(device);
       recorder.start();
       setCentralMicrophoneState("invisible");

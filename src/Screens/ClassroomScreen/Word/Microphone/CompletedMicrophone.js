@@ -17,6 +17,7 @@ import {
 } from "./CompletedMicrophoneStyles";
 import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
+import { Howl } from "howler";
 
 const CompletedMicrophone = () => {
   const { level } = useParams();
@@ -39,8 +40,10 @@ const CompletedMicrophone = () => {
       const device = await navigator.mediaDevices.getUserMedia({
         audio: true
       });
-      const microphoneOn = new Audio(`/assets/audio/microphone_on.wav`);
-      microphoneOn.play();
+      const audio = new Howl({
+        src: ["/assets/audio/microphone_on.wav"]
+      });
+      audio.play();
       const recorder = new MediaRecorder(device);
       recorder.start();
       setWordMicrophoneState("recording");
@@ -80,8 +83,10 @@ const CompletedMicrophone = () => {
               };
             });
             const userRecord = localStorage.getItem("record");
-            const audio = new Audio(userRecord);
-            audio.play();
+            const userRecordAudio = new Howl({
+              src: [userRecord]
+            });
+            userRecordAudio.play();
             setResultsScreenShown(true);
             setWordResultsShown(true);
             setWordMicrophoneState("completed");
@@ -120,8 +125,10 @@ const CompletedMicrophone = () => {
   };
   const onClickMyVoice = () => {
     const myVoice = localStorage.getItem("record");
-    const audio = new Audio(myVoice);
-    audio.play();
+    const myVoiceAudio = new Howl({
+      src: [myVoice]
+    });
+    myVoiceAudio.play();
   };
   return (
     <CompletedMicrophoneContainer>

@@ -3,13 +3,17 @@ import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage"
 import useData from "../../../Hooks/useData";
 import { WordCardContainer, WordCardText } from "./WordCardStyles";
 import _ from "lodash";
+import { Howl } from "howler";
 
 const WordCard = () => {
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const words = useData("words");
   const playWordAudio = () => {
-    new Audio(`/assets/audio/words/${words[currentWordPage - 1]}.wav`).play();
+    const audio = new Howl({
+      src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`]
+    });
+    audio.play();
   };
   const onClickCardContainer = () => {
     return _.throttle(playWordAudio, 1000, { leading: true, trailing: true });
