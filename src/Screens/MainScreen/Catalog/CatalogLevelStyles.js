@@ -49,7 +49,7 @@ const CatalogLevelGridContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
-  @media (1279px >= width >= 993px) {
+  @media (993px <= width <= 1279px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;

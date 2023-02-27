@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NavigationBarOuterContainer = styled.div`
-  @media (992px >= width >= 768px) {
+  @media (768px <= width <= 992px) {
     display: flex;
     justify-content: center;
   }
@@ -24,7 +24,7 @@ const NavigationBarInnerContainer = styled.div`
     padding: 16px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
-  @media (992px >= width >= 768px) {
+  @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
     width: 100%;
