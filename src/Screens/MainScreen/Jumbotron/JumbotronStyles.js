@@ -5,16 +5,12 @@ const JumbotronOuterContainer = styled.div`
     background-color: rgb(70, 198, 210);
   }
   @media (min-width: 993px) {
-    height: 540px;
+    position: relative;
+    height: 426px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: rgb(70, 198, 210);
-    background-image: url("/assets/images/jumbotron.svg");
-    background-repeat: no-repeat;
-    background-position: -150px 60px;
-    background-size: contain;
   }
 `;
 
@@ -33,10 +29,26 @@ const JumbotronFormContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
+  @media (min-width: 993px) {
+  }
+`;
+
+const JumbotronSwiperContainer = styled.div`
+  @media (min-width: 768px) and (max-width: 992px) {
+  }
+  @media (min-width: 993px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+  }
 `;
 
 export {
   JumbotronOuterContainer,
   JumbotronInnerContainer,
-  JumbotronFormContainer
+  JumbotronFormContainer,
+  JumbotronSwiperContainer
 };

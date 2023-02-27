@@ -21,7 +21,6 @@ const TitleContainer = styled.div`
   }
   @media (min-width: 993px) {
     position: relative;
-    top: -50px;
     margin-bottom: 54px;
   }
 `;
@@ -68,7 +67,6 @@ const DemoButton = styled.button`
     border: 1px solid white;
     width: 284px;
     height: 64px;
-    bottom: -50px;
     background-color: #f34d7e;
     border-radius: 8px;
   }
@@ -77,6 +75,8 @@ const DemoButton = styled.button`
 const ButtonContainer = styled.div`
   @media (min-width: 768px) and (max-width: 992px) {
     transform: scale(0.8) translateX(-80px);
+  }
+  @media (min-width: 993px) {
   }
 `;
 
