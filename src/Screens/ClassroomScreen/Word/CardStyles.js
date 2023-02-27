@@ -98,9 +98,7 @@ const InsetBorderContainer = styled.div`
 
 const InstructionsContainer = styled.div`
   @media (width <= 767px), (height <= 479px) {
-    position: absolute;
-    top: 20px;
-    left: 140px;
+    display: none;
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
