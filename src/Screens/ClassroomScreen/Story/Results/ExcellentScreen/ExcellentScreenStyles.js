@@ -43,7 +43,7 @@ const ExcellentImage = styled.img`
     top: 50%;
     transform: translateY(-50%);
     right: 0;
-    height: 200px;
+    height: 80px;
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {

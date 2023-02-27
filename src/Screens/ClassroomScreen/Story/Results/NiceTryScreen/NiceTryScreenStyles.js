@@ -43,9 +43,7 @@ const NiceTryImage = styled.img`
     top: 50%;
     transform: translateY(-50%);
     right: 5%;
-    height: 200px;
-    width: 215px;
-    scale: 0.8;
+    height: 80px;
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
@@ -54,8 +52,6 @@ const NiceTryImage = styled.img`
     transform: translateY(-50%);
     right: 5%;
     height: 200px;
-    width: 215px;
-    scale: 0.8;
   }
 
   @media (width >= 993px) and (height >= 768px) {
