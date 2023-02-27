@@ -13,6 +13,11 @@ const WindowSizeManager = () => {
         width: height * 1.5,
         height: height
       });
+    } else if (width >= 993 && height <= 479) {
+      setTextbookSize({
+        width: height * 1.5,
+        height: height
+      });
     } else {
       setTextbookSize({
         width: width * 0.54,
