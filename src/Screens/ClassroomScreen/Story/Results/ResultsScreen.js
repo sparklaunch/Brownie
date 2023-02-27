@@ -16,8 +16,11 @@ import useData from "../../../../Hooks/useData";
 import youDidItShownAtom from "../../../../Stores/Classroom/youDidItShown";
 import Constants from "../../../../Utilities/Constants";
 import { Howl } from "howler";
+import scoresAtom from "../../../../Stores/Classroom/Story/scores";
+import { useParams } from "react-router-dom";
 
 const ResultsScreen = () => {
+  const { level } = useParams();
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
@@ -41,10 +44,14 @@ const ResultsScreen = () => {
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
+  const [scores, setScores] = useRecoilState(scoresAtom);
   const words = useData("words");
   const bookID = useData("id");
+  const rightScoreExists = scores[`${level}-${currentPage + 1}`] !== undefined;
   useEffect(() => {
-    setCentralMicrophoneState("completed");
+    if (rightScoreExists) {
+      setCentralMicrophoneState("completed");
+    }
     const audio = new Howl({
       src: [`/assets/audio/results_shown.mp3`]
     });
