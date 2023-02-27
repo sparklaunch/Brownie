@@ -6,12 +6,12 @@ const HamburgerItemsContainer = styled.div`
     flex-direction: column;
     margin: 20px 0;
   }
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: column;
     margin: 20px 0;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: column;
     margin: 20px 0;

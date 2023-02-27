@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NavigationContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: fixed;
     width: 100%;
     left: 0;
@@ -16,7 +16,7 @@ const NavigationContainer = styled.div`
     align-items: center;
     ${(props) => (props.open ? `top: 0;` : `top: -216px;`)}
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: fixed;
     width: 100%;
     left: 0;

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const IntroductionCatalogTitleContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 60px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,11 +16,11 @@ const IntroductionCatalogTitleContainer = styled.div`
 `;
 
 const IntroductionCatalogTitleText = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-family: Jua, sans-serif;
     font-size: 44px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     font-family: Jua, sans-serif;
     font-size: 44px;
   }

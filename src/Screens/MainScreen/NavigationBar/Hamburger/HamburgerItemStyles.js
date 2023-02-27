@@ -11,14 +11,14 @@ const HamburgerItemContainer = styled.div`
       border-bottom: 1px solid #dfdfdf;
     }
   }
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-top: 1px solid #dfdfdf;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -33,12 +33,12 @@ const HamburgerItemText = styled.p`
     font-weight: bold;
     font-size: 14px;
   }
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     color: #222222;
     font-weight: bold;
     font-size: 14px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     color: #222222;
     font-weight: bold;
     font-size: 14px;

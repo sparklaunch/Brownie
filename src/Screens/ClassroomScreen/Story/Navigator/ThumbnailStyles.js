@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ThumbnailContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: relative;
     width: 216px;
     height: 144px;
@@ -16,7 +16,7 @@ const ThumbnailContainer = styled.div`
         ? `border: 4px solid #ffd53d;`
         : `border: 4px solid transparent;`}
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: relative;
     width: 216px;
     height: 144px;
@@ -34,7 +34,7 @@ const ThumbnailContainer = styled.div`
 `;
 
 const CompletedBackdrop = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -43,7 +43,7 @@ const CompletedBackdrop = styled.div`
     background-color: black;
     opacity: 0.5;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -55,13 +55,13 @@ const CompletedBackdrop = styled.div`
 `;
 
 const CompletedBadgeContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -70,10 +70,10 @@ const CompletedBadgeContainer = styled.div`
 `;
 
 const CompletedBadgeImage = styled.img`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
   }
 `;

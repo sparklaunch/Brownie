@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const PageControllersContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: row;
     transform: scale(0.8) translateX(10%);
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: row;
     transform: scale(0.8) translateX(10%);
@@ -14,7 +14,7 @@ const PageControllersContainer = styled.div`
 `;
 
 const FirstPageText = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
     color: white;
@@ -25,7 +25,7 @@ const FirstPageText = styled.p`
     margin-right: 20px;
     ${(props) => props.available && `cursor: pointer;`}
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
     color: white;
@@ -39,25 +39,25 @@ const FirstPageText = styled.p`
 `;
 
 const PageAnglesContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: row;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: row;
   }
 `;
 
 const LeftPageAngleWrapper = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
   }
 `;
 
 const CurrentPageText = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     background-color: white;
     border: 1px solid #1ab9c5;
     border-radius: 50px;
@@ -68,7 +68,7 @@ const CurrentPageText = styled.p`
     align-items: center;
     justify-content: center;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     background-color: white;
     border: 1px solid #1ab9c5;
     border-radius: 50px;
@@ -82,13 +82,13 @@ const CurrentPageText = styled.p`
 `;
 
 const PageNumberSpan = styled.span`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: relative;
     font-size: 20px;
     margin-left: 4px;
     top: 2px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: relative;
     font-size: 20px;
     margin-left: 4px;
@@ -97,9 +97,9 @@ const PageNumberSpan = styled.span`
 `;
 
 const RightPageAngleWrapper = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
   }
 `;
 

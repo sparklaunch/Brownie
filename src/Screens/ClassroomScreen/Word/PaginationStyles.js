@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const PaginationText = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     color: white;
     font-size: 28px;
     letter-spacing: 3px;
@@ -10,7 +10,7 @@ const PaginationText = styled.div`
     padding: 14px 0;
     font-weight: bolder;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     color: white;
     font-size: 28px;
     letter-spacing: 3px;
@@ -22,12 +22,12 @@ const PaginationText = styled.div`
 `;
 
 const PaginationTextSpan = styled.span`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-weight: normal;
     font-size: 20px;
     color: white;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     font-weight: normal;
     font-size: 20px;
     color: white;

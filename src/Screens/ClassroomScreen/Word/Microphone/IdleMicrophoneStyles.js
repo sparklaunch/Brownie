@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const OuterCircle = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -18,7 +18,7 @@ const OuterCircle = styled.div`
       }
     }
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -38,7 +38,7 @@ const OuterCircle = styled.div`
 `;
 
 const InnerCircle = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -55,7 +55,7 @@ const InnerCircle = styled.div`
       }
     }
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -75,7 +75,7 @@ const InnerCircle = styled.div`
 `;
 
 const Wave = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -94,7 +94,7 @@ const Wave = styled.div`
       }
     }
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -116,20 +116,20 @@ const Wave = styled.div`
 `;
 
 const IdleMicrophoneContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: relative;
     cursor: pointer;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: relative;
     cursor: pointer;
   }
 `;
 
 const IdleMicrophoneImage = styled.img`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
   }
 `;
 

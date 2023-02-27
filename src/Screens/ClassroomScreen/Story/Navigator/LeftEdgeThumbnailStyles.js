@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LeftEdgeThumbnailContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: relative;
     width: 216px;
     height: 144px;
@@ -13,7 +13,7 @@ const LeftEdgeThumbnailContainer = styled.div`
     border: 4px solid transparent;
     cursor: pointer;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: relative;
     width: 216px;
     height: 144px;
@@ -28,7 +28,7 @@ const LeftEdgeThumbnailContainer = styled.div`
 `;
 
 const LeftEmptyThumbnailContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     width: 216px;
     height: 144px;
     display: grid;
@@ -38,7 +38,7 @@ const LeftEmptyThumbnailContainer = styled.div`
     margin: 0 12px;
     border: 4px solid transparent;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     width: 216px;
     height: 144px;
     display: grid;
@@ -51,7 +51,7 @@ const LeftEmptyThumbnailContainer = styled.div`
 `;
 
 const CompletedBackdrop = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -60,7 +60,7 @@ const CompletedBackdrop = styled.div`
     background-image: linear-gradient(to right, transparent 0%, black 100%);
     opacity: 0.5;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -72,13 +72,13 @@ const CompletedBackdrop = styled.div`
 `;
 
 const CompletedContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -87,10 +87,10 @@ const CompletedContainer = styled.div`
 `;
 
 const CompletedBadgeImage = styled.img`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
   }
 `;

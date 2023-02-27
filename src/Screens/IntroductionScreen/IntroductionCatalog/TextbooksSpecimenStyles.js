@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const TextbooksSpecimenContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,12 +16,12 @@ const TextbooksSpecimenContainer = styled.div`
 `;
 
 const TextbooksImage = styled.img`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     margin-bottom: 36px;
     width: 400px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     margin-bottom: 36px;
     width: 400px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -29,13 +29,13 @@ const TextbooksImage = styled.img`
 `;
 
 const TextbooksTitleText = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     color: #999999;
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 12px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     color: #999999;
     font-size: 16px;
     font-weight: bold;
@@ -44,20 +44,20 @@ const TextbooksTitleText = styled.p`
 `;
 
 const TextbooksTextContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     text-align: center;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     text-align: center;
   }
 `;
 
 const TextbooksText = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     color: #999999;
     font-size: 16px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     color: #999999;
     font-size: 16px;
   }

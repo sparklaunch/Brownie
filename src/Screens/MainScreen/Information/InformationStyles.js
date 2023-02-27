@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const InformationOuterContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -14,11 +14,11 @@ const InformationOuterContainer = styled.div`
 `;
 
 const InformationInnerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     width: 90%;
     margin: 40px 0;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     width: 1200px;
     margin: 50px 0;
   }

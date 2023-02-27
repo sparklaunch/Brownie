@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ResultsBackDropContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -10,7 +10,7 @@ const ResultsBackDropContainer = styled.div`
     background-color: black;
     opacity: 0.5;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
     bottom: 0;

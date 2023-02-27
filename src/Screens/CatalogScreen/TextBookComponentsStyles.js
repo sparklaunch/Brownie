@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const TextBookComponentsContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 140px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -16,7 +16,7 @@ const TextBookComponentsContainer = styled.div`
 `;
 
 const TextBookComponentsTitle = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -25,7 +25,7 @@ const TextBookComponentsTitle = styled.p`
     border-radius: 4px;
     margin-bottom: 24px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -37,12 +37,12 @@ const TextBookComponentsTitle = styled.p`
 `;
 
 const TextBookBundles = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: grid;
     gap: 60px;
     grid-template-areas: "cd-image package-image combined-image" "cd-text package-text combined-text";
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: grid;
     gap: 60px;
     grid-template-areas: "cd-image package-image combined-image" "cd-text package-text combined-text";
@@ -50,35 +50,35 @@ const TextBookBundles = styled.div`
 `;
 
 const CDImage = styled.img`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
   }
 `;
 
 const PackageImage = styled.img`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
   }
 `;
 
 const CombinedImage = styled.img`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
   }
 `;
 
 const ImageContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     grid-area: ${(props) => props.area};
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,12 +88,12 @@ const ImageContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,13 +101,13 @@ const TextContainer = styled.div`
 `;
 
 const TextTitle = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-weight: bold;
     font-size: 18px;
     color: #515151;
     margin-bottom: 3px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     font-weight: bold;
     font-size: 18px;
     color: #515151;
@@ -116,12 +116,12 @@ const TextTitle = styled.p`
 `;
 
 const TextDescription = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-size: 18px;
     font-weight: lighter;
     color: #515151;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     font-size: 18px;
     font-weight: lighter;
     color: #515151;

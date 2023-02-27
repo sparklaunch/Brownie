@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NiceTryScreenContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -11,7 +11,7 @@ const NiceTryScreenContainer = styled.div`
     padding: 8px;
     z-index: 3;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -26,7 +26,7 @@ const NiceTryScreenContainer = styled.div`
 `;
 
 const NiceTryImage = styled.img`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -35,7 +35,7 @@ const NiceTryImage = styled.img`
     width: 215px;
     scale: 0.8;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -46,14 +46,14 @@ const NiceTryImage = styled.img`
 `;
 
 const ScorePillWrapper = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100vw;
     transform: translate(-50%, -50%) scale(0.6);
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 50%;
     left: 50%;

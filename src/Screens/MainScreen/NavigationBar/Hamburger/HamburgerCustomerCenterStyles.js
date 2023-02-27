@@ -4,10 +4,10 @@ const HamburgerCustomerCenterContainer = styled.div`
   @media (min-width: 480px) and (max-width: 767px) {
     margin-top: 40px;
   }
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     margin-top: 40px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     margin-top: 40px;
   }
 `;
@@ -18,12 +18,12 @@ const CustomerCenterText = styled.p`
     color: #999;
     margin-bottom: 10px;
   }
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-size: 14px;
     color: #999;
     margin-bottom: 10px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     font-size: 14px;
     color: #999;
     margin-bottom: 10px;
@@ -36,12 +36,12 @@ const ContactContainer = styled.div`
     flex-direction: row;
     align-items: center;
   }
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -54,12 +54,12 @@ const PhoneIconImage = styled.img`
     width: 14px;
     height: 14px;
   }
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     margin-right: 6px;
     width: 14px;
     height: 14px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     margin-right: 6px;
     width: 14px;
     height: 14px;
@@ -71,11 +71,11 @@ const ContactText = styled.p`
     color: #3d3d3d;
     font-size: 14px;
   }
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     color: #3d3d3d;
     font-size: 14px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     color: #3d3d3d;
     font-size: 14px;
   }

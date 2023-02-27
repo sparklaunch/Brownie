@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const WordImageContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: relative;
     width: 76%;
     height: 76%;
@@ -11,7 +11,7 @@ const WordImageContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: relative;
     width: 76%;
     height: 76%;
@@ -24,12 +24,12 @@ const WordImageContainer = styled.div`
 `;
 
 const WordIllustration = styled.img`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     margin-top: 50px;
     height: 70%;
     object-fit: contain;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     margin-top: 50px;
     height: 70%;
     object-fit: contain;
@@ -37,13 +37,13 @@ const WordIllustration = styled.img`
 `;
 
 const WordContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -52,23 +52,23 @@ const WordContainer = styled.div`
 `;
 
 const MegaphoneImage = styled.img`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     margin-right: 12px;
     cursor: pointer;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     margin-right: 12px;
     cursor: pointer;
   }
 `;
 
 const WordText = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-weight: bolder;
     font-size: 60px;
     ${(props) => `color: ${props.color};`}
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     font-weight: bolder;
     font-size: 60px;
     ${(props) => `color: ${props.color};`}

@@ -5,7 +5,7 @@ const NavigationBarOuterContainer = styled.div`
     display: flex;
     justify-content: center;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -24,7 +24,7 @@ const NavigationBarInnerContainer = styled.div`
     padding: 16px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: row;
     width: 1200px;

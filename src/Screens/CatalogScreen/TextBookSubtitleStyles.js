@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const TextBookSubtitleOuterContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -11,7 +11,7 @@ const TextBookSubtitleOuterContainer = styled.div`
     border-top: 1px solid #dfdfdf;
     border-bottom: 1px solid #dfdfdf;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -24,13 +24,13 @@ const TextBookSubtitleOuterContainer = styled.div`
 `;
 
 const TextBookSubtitleInnerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     width: 1200px;
     display: flex;
     flex-direction: column;
@@ -39,13 +39,13 @@ const TextBookSubtitleInnerContainer = styled.div`
 `;
 
 const TextBookSubtitleTitle = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-family: Jua, sans-serif;
     font-size: 28px;
     color: #3d3d3d;
     margin-bottom: 24px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     font-family: Jua, sans-serif;
     font-size: 28px;
     color: #3d3d3d;
@@ -54,12 +54,12 @@ const TextBookSubtitleTitle = styled.p`
 `;
 
 const TextBookSubtitleDescription = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-size: 20px;
     color: #515151;
     font-weight: lighter;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     font-size: 20px;
     color: #515151;
     font-weight: lighter;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const JumbotronOuterContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     background-color: rgb(70, 198, 210);
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: relative;
     height: 426px;
     display: flex;
@@ -15,9 +15,9 @@ const JumbotronOuterContainer = styled.div`
 `;
 
 const JumbotronInnerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     width: 1200px;
     display: flex;
     flex-direction: row;
@@ -26,17 +26,17 @@ const JumbotronInnerContainer = styled.div`
 `;
 
 const JumbotronFormContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: none;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
   }
 `;
 
 const JumbotronSwiperContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
     left: 0;

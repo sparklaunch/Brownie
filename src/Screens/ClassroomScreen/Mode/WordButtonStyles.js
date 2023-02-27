@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 const WordButtonOuterContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     margin-bottom: 12px;
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     margin-bottom: 12px;
   }
 `;
 
 const WordButtonInnerContainer = styled.div`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     width: 100px;
     height: 100px;
     background-color: white;
@@ -24,7 +24,7 @@ const WordButtonInnerContainer = styled.div`
     ${(props) => props.enabled && `cursor: pointer;`}
     ${(props) => props.activated && `border: 3px solid #47C7D2;`}
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     width: 100px;
     height: 100px;
     background-color: white;
@@ -41,19 +41,19 @@ const WordButtonInnerContainer = styled.div`
 `;
 
 const WordButtonImage = styled.img`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
   }
 `;
 
 const WordButtonText = styled.p`
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
     ${(props) => props.activated && `color: #1AB9C5;`}
   }
-  @media (min-width: 993px) {
+  @media (min-width: 993px) and (min-height: 768px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
     ${(props) => props.activated && `color: #1AB9C5;`}
