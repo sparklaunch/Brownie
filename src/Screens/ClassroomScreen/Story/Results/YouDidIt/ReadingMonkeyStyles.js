@@ -6,6 +6,7 @@ const ReadingMonkeyContainer = styled.div`
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
@@ -13,6 +14,7 @@ const ReadingMonkeyContainer = styled.div`
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
   }
 
   @media (width >= 993px) and (height >= 768px) {

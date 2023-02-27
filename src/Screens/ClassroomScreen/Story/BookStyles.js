@@ -118,7 +118,7 @@ const ModeSwitcherContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    transform: scale(0.8) translate(-130px, -12px);
+    transform: scale(0.8) translate(-100px, -10px);
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
@@ -388,7 +388,7 @@ const HomeContainer = styled.div`
 const MicContainer = styled.div`
   @media (width <= 767px), (height <= 479px) {
     position: absolute;
-    right: -90px;
+    right: -80px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
@@ -505,29 +505,28 @@ const CongratzContainer = styled.div`
 const ScoreBarContainer = styled.div`
   @media (width <= 767px), (height <= 479px) {
     position: absolute;
-    top: -140px;
+    top: -110px;
     left: -100px;
     right: -100px;
     bottom: 0;
     transform: scale(0.4);
   }
-
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
-    top: -140px;
+    top: -90px;
     left: -100px;
     right: -100px;
     bottom: 0;
-    transform: scale(0.4);
+    transform: scale(0.5);
   }
 
   @media (width >= 993px) and (height >= 768px) {
     position: absolute;
-    top: -100px;
+    top: -120px;
     left: 0;
     right: 0;
     bottom: 0;
-    transform: scale(0.7);
+    transform: scale(0.6);
   }
 `;
 

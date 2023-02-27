@@ -9,6 +9,7 @@ const ResultsBackDropContainer = styled.div`
     right: 0;
     background-color: black;
     opacity: 0.5;
+    z-index: 2;
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
@@ -19,6 +20,7 @@ const ResultsBackDropContainer = styled.div`
     right: 0;
     background-color: black;
     opacity: 0.5;
+    z-index: 2;
   }
 
   @media (width >= 993px) and (height >= 768px) {

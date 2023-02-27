@@ -3,7 +3,7 @@ import styled from "styled-components";
 const LeftCompletedMicrophoneContainer = styled.div`
   @media (width <= 767px), (height <= 479px) {
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -29,8 +29,8 @@ const LeftCompletedMicrophoneContainer = styled.div`
 
 const RetryButtonContainer = styled.div`
   @media (width <= 767px), (height <= 479px) {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -56,8 +56,8 @@ const RetryButtonContainer = styled.div`
 
 const MyVoiceButtonContainer = styled.div`
   @media (width <= 767px), (height <= 479px) {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
