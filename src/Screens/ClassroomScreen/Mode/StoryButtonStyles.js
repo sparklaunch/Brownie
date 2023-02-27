@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const StoryButtonContainer = styled.div`
   @media (width <= 767px), (height <= 479px) {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -49,11 +49,10 @@ const StoryButtonContainer = styled.div`
 
 const StoryButtonImage = styled.img`
   @media (width <= 767px), (height <= 479px) {
+    width: 40px;
   }
-
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-
   @media (width >= 993px) and (height >= 768px) {
   }
 `;

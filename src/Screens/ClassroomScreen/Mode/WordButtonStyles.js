@@ -16,8 +16,8 @@ const WordButtonOuterContainer = styled.div`
 
 const WordButtonInnerContainer = styled.div`
   @media (width <= 767px), (height <= 479px) {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-color: white;
     display: flex;
     flex-direction: column;

@@ -119,8 +119,8 @@ const InstructionsContainer = styled.div`
 const ModeButtonsContainer = styled.div`
   @media (width <= 767px), (height <= 479px) {
     position: absolute;
-    top: 20px;
-    left: -120px;
+    top: 10px;
+    left: -100px;
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
