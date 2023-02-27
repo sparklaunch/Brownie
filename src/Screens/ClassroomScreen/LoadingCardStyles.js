@@ -44,39 +44,39 @@ const LoadingCardContainer = styled.div`
 const RotatingDocument = styled.img`
   @media (width <= 767px) {
     transform: scale(0.5);
-    animation: rotating 2s linear infinite;
+    animation: rotating 1s ease-in-out infinite alternate;
     @keyframes rotating {
       from {
-        transform: rotate(0deg);
+        transform: rotate(-60deg);
       }
       to {
-        transform: rotate(360deg);
+        transform: rotate(60deg);
       }
     }
   }
 
   @media (768px <= width <= 992px) {
     transform: scale(0.5);
-    animation: rotating 2s linear infinite;
+    animation: rotating 1s ease-in-out infinite alternate;
     @keyframes rotating {
       from {
-        transform: rotate(0deg);
+        transform: rotate(-60deg);
       }
       to {
-        transform: rotate(360deg);
+        transform: rotate(60deg);
       }
     }
   }
 
   @media (width >= 993px) {
     transform: scale(0.5);
-    animation: rotating 2s linear infinite;
+    animation: rotating 1s ease-in-out infinite alternate;
     @keyframes rotating {
       from {
-        transform: rotate(0deg);
+        transform: rotate(-60deg);
       }
       to {
-        transform: rotate(360deg);
+        transform: rotate(60deg);
       }
     }
   }
