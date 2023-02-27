@@ -24,7 +24,7 @@ const TryContentsOuterContainer = styled.div`
 `;
 
 const TryContentsInnerContainer = styled.div`
-  @media (width <= 767px) {
+  @media (480px <= width <= 767px) {
     width: 1200px;
   }
 
@@ -32,7 +32,10 @@ const TryContentsInnerContainer = styled.div`
     width: 1200px;
   }
 
-  @media (width >= 993px) {
+  @media (993px <= width <= 1279px) {
+    width: 1200px;
+  }
+  @media (width >= 1280px) {
     width: 1200px;
   }
 `;

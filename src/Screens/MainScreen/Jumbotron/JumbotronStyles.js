@@ -15,9 +15,25 @@ const JumbotronOuterContainer = styled.div`
 `;
 
 const JumbotronInnerContainer = styled.div`
-  @media (768px <= width <= 992px) {
+  @media (480px <= width <= 767px) {
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
-  @media (width >= 993px) {
+  @media (768px <= width <= 992px) {
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  @media (993px <= width <= 1279px) {
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  @media (width >= 1280px) {
     width: 1200px;
     display: flex;
     flex-direction: row;
