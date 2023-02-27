@@ -378,7 +378,7 @@ const MicContainer = styled.div`
 
   @media (768px <= width <= 992px) {
     position: absolute;
-    right: -90px;
+    right: -80px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;

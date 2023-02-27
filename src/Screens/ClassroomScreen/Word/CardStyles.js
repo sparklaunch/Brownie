@@ -220,7 +220,7 @@ const HomeButtonContainer = styled.div`
   @media (768px <= width <= 992px) {
     position: absolute;
     top: 20px;
-    right: -120px;
+    right: -80px;
   }
 
   @media (width >= 993px) {
@@ -246,7 +246,7 @@ const MicrophoneContainer = styled.div`
     height: 52px;
     top: 50%;
     transform: translateY(-50%);
-    right: -90px;
+    right: -80px;
   }
 
   @media (width >= 993px) {
