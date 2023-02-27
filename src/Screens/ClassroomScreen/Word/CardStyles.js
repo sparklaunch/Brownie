@@ -244,7 +244,7 @@ const MicrophoneContainer = styled.div`
     position: absolute;
     width: 52px;
     height: 52px;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     right: -90px;
   }
@@ -253,7 +253,7 @@ const MicrophoneContainer = styled.div`
     position: absolute;
     width: 52px;
     height: 52px;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     right: -90px;
   }

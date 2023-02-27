@@ -81,7 +81,9 @@ const WordContainer = styled.div`
 const MegaphoneImage = styled.img`
   @media (width <= 767px), (height <= 479px) {
     margin-right: 12px;
+    width: 40px;
     cursor: pointer;
+    transform: translateY(3px);
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
@@ -92,19 +94,20 @@ const MegaphoneImage = styled.img`
   @media (width >= 993px) and (height >= 768px) {
     margin-right: 12px;
     cursor: pointer;
+    transform: translateY(3px);
   }
 `;
 
 const WordText = styled.p`
   @media (width <= 767px), (height <= 479px) {
     font-weight: bolder;
-    font-size: 60px;
+    font-size: 40px;
     ${(props) => `color: ${props.color};`}
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-weight: bolder;
-    font-size: 60px;
+    font-size: 50px;
     ${(props) => `color: ${props.color};`}
   }
 

@@ -43,14 +43,14 @@ const WordCardContainer = styled.div`
 
 const WordCardText = styled.p`
   @media (width <= 767px), (height <= 479px) {
-    font-size: 120px;
+    font-size: 80px;
     font-weight: 900;
     margin-left: 24px;
     letter-spacing: -5px;
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
-    font-size: 120px;
+    font-size: 100px;
     font-weight: 900;
     margin-left: 24px;
     letter-spacing: -5px;
