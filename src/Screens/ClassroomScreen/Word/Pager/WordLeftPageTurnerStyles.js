@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const WordLeftPageTurnerContainer = styled.div`
+  @media (width <= 767px) {
+    cursor: pointer;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     cursor: pointer;
   }
@@ -10,6 +13,10 @@ const WordLeftPageTurnerContainer = styled.div`
 `;
 
 const WordLeftPageTurnerImage = styled.img`
+  @media (width <= 767px) {
+    width: 14px;
+    height: 24px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     width: 14px;
     height: 24px;
@@ -19,6 +26,11 @@ const WordLeftPageTurnerImage = styled.img`
 `;
 
 const RotatedWordLeftPageTurnerImage = styled.img`
+  @media (width <= 767px) {
+    transform: rotate(180deg);
+    width: 14px;
+    height: 24px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     transform: rotate(180deg);
     width: 14px;

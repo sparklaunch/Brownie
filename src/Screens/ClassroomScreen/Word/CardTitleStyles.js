@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const CardTitleText = styled.div`
+  @media (width <= 767px) {
+    font-size: 18px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-size: 18px;
   }
@@ -10,6 +13,11 @@ const CardTitleText = styled.div`
 `;
 
 const CardTitleTextSpan = styled.span`
+  @media (width <= 767px) {
+    font-family: Jua, sans-serif;
+    font-size: 26px;
+    margin-left: 12px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-family: Jua, sans-serif;
     font-size: 26px;

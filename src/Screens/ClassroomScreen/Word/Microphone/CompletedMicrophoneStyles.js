@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 const CompletedMicrophoneContainer = styled.div`
+  @media (width <= 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: column;
@@ -13,6 +18,12 @@ const CompletedMicrophoneContainer = styled.div`
 `;
 
 const RetryButton = styled.img`
+  @media (width <= 767px) {
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     margin-bottom: 10px;
     cursor: pointer;
@@ -26,6 +37,11 @@ const RetryButton = styled.img`
 `;
 
 const MyVoiceButton = styled.img`
+  @media (width <= 767px) {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     cursor: pointer;
     width: 50px;

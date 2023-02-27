@@ -1,6 +1,18 @@
 import styled from "styled-components";
 
 const CardOuterContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 140px;
+    margin-right: 140px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -27,6 +39,15 @@ const CardOuterContainer = styled.div`
 `;
 
 const CardInnerContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -46,6 +67,13 @@ const CardInnerContainer = styled.div`
 `;
 
 const InsetBorderContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -63,6 +91,11 @@ const InsetBorderContainer = styled.div`
 `;
 
 const InstructionsContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    top: 20px;
+    left: 140px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 20px;
@@ -76,6 +109,11 @@ const InstructionsContainer = styled.div`
 `;
 
 const ModeButtonsContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    top: 20px;
+    left: -120px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 20px;
@@ -88,6 +126,13 @@ const ModeButtonsContainer = styled.div`
 `;
 
 const PaginationContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffa63d;
+    border-bottom-right-radius: 20px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -106,6 +151,11 @@ const PaginationContainer = styled.div`
 `;
 
 const WordLeftPageTurnerContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    left: -80px;
+    bottom: 30px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     left: -80px;
@@ -120,6 +170,11 @@ const WordLeftPageTurnerContainer = styled.div`
 `;
 
 const WordRightPageTurnerContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    right: -80px;
+    bottom: 30px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     right: -80px;
@@ -134,6 +189,9 @@ const WordRightPageTurnerContainer = styled.div`
 `;
 
 const CardTitleContainer = styled.div`
+  @media (width <= 767px) {
+    display: none;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: none;
   }
@@ -144,6 +202,11 @@ const CardTitleContainer = styled.div`
 `;
 
 const HomeButtonContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    top: 20px;
+    right: -120px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 20px;
@@ -157,6 +220,14 @@ const HomeButtonContainer = styled.div`
 `;
 
 const MicrophoneContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -90px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     width: 52px;
@@ -174,6 +245,18 @@ const MicrophoneContainer = styled.div`
 `;
 
 const WordContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     background-color: transparent;
@@ -202,6 +285,12 @@ const WordContainer = styled.div`
 `;
 
 const WordWaveContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     bottom: 0;
@@ -217,6 +306,13 @@ const WordWaveContainer = styled.div`
 `;
 
 const WordResultsContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    top: 10px;
+    right: -50%;
+    transform: scale(0.6);
+    width: 100vw;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 10px;
@@ -234,6 +330,13 @@ const WordResultsContainer = styled.div`
 `;
 
 const YouDidItScreenContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -251,6 +354,12 @@ const YouDidItScreenContainer = styled.div`
 `;
 
 const LoadingIndicatorContainer = styled.div`
+  @media (width <= 767px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 50%;

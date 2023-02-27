@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 const PageControllersContainer = styled.div`
+  @media (width <= 767px) {
+    display: flex;
+    flex-direction: row;
+    transform: scale(0.8) translateX(10%);
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: row;
@@ -14,6 +19,17 @@ const PageControllersContainer = styled.div`
 `;
 
 const FirstPageText = styled.p`
+  @media (width <= 767px) {
+    font-family: Jua, sans-serif;
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+    background-color: #1ab9c5;
+    border-radius: 50px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-right: 20px;
+    ${(props) => props.available && `cursor: pointer;`}
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
@@ -39,6 +55,10 @@ const FirstPageText = styled.p`
 `;
 
 const PageAnglesContainer = styled.div`
+  @media (width <= 767px) {
+    display: flex;
+    flex-direction: row;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: row;
@@ -50,6 +70,8 @@ const PageAnglesContainer = styled.div`
 `;
 
 const LeftPageAngleWrapper = styled.div`
+  @media (width <= 767px) {
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
   @media (min-width: 993px) and (min-height: 768px) {
@@ -57,6 +79,17 @@ const LeftPageAngleWrapper = styled.div`
 `;
 
 const CurrentPageText = styled.p`
+  @media (width <= 767px) {
+    background-color: white;
+    border: 1px solid #1ab9c5;
+    border-radius: 50px;
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    font-size: 28px;
+    align-items: center;
+    justify-content: center;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     background-color: white;
     border: 1px solid #1ab9c5;
@@ -82,6 +115,12 @@ const CurrentPageText = styled.p`
 `;
 
 const PageNumberSpan = styled.span`
+  @media (width <= 767px) {
+    position: relative;
+    font-size: 20px;
+    margin-left: 4px;
+    top: 2px;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: relative;
     font-size: 20px;
@@ -97,6 +136,8 @@ const PageNumberSpan = styled.span`
 `;
 
 const RightPageAngleWrapper = styled.div`
+  @media (width <= 767px) {
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
   @media (min-width: 993px) and (min-height: 768px) {

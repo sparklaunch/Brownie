@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
 const WordImageContainer = styled.div`
+  @media (width <= 767px) {
+    position: relative;
+    width: 76%;
+    height: 76%;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: relative;
     width: 76%;
@@ -24,6 +34,11 @@ const WordImageContainer = styled.div`
 `;
 
 const WordIllustration = styled.img`
+  @media (width <= 767px) {
+    margin-top: 50px;
+    height: 70%;
+    object-fit: contain;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     margin-top: 50px;
     height: 70%;
@@ -37,6 +52,12 @@ const WordIllustration = styled.img`
 `;
 
 const WordContainer = styled.div`
+  @media (width <= 767px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: flex;
     flex-direction: row;
@@ -52,6 +73,10 @@ const WordContainer = styled.div`
 `;
 
 const MegaphoneImage = styled.img`
+  @media (width <= 767px) {
+    margin-right: 12px;
+    cursor: pointer;
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     margin-right: 12px;
     cursor: pointer;
@@ -63,6 +88,11 @@ const MegaphoneImage = styled.img`
 `;
 
 const WordText = styled.p`
+  @media (width <= 767px) {
+    font-weight: bolder;
+    font-size: 60px;
+    ${(props) => `color: ${props.color};`}
+  }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-weight: bolder;
     font-size: 60px;

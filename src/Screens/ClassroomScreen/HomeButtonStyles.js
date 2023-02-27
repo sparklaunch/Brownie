@@ -11,8 +11,12 @@ const HomeButtonContainer = styled.div`
 
 const HomeButtonImage = styled.img`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
+    width: 48px;
+    height: 48px;
   }
   @media (min-width: 993px) and (min-height: 768px) {
+    width: 48px;
+    height: 48px;
   }
 `;
 
