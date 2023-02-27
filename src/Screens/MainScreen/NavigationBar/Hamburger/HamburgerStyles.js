@@ -4,7 +4,7 @@ const HamburgerContainer = styled.div`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     cursor: pointer;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: none;
   }
 `;
@@ -13,7 +13,7 @@ const HamburgerIcon = styled.img`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     cursor: pointer;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     cursor: pointer;
   }
 `;
@@ -28,7 +28,7 @@ const DrawerContainer = styled.div`
     height: 100vh;
     background-color: white;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
   }
 `;
 

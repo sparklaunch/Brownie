@@ -9,7 +9,7 @@ const TryTitleContainer = styled.div`
     margin: 48px 0 24px 0;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     margin: 48px 0 24px 0;
   }
 `;
@@ -27,7 +27,7 @@ const TryTitleText = styled.p`
     text-align: center;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 32px;
     font-family: Jua, sans-serif;
     text-align: center;

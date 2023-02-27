@@ -13,7 +13,7 @@ const InsetBorderContainer = styled.div`
     border: 10px solid #ffd53d;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 100%;
     height: 100%;
     border: 10px solid #ffd53d;

@@ -15,7 +15,7 @@ const ScorePillOuterContainer = styled.div`
     align-items: center;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -48,7 +48,7 @@ const ScorePillInnerContainer = styled.div`
     border-radius: 999px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;

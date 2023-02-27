@@ -6,7 +6,7 @@ const TextBookDownloadsContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -22,7 +22,7 @@ const TextBookDownloadsTitle = styled.p`
     background-color: #1ab9c5;
     border-radius: 4px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-weight: bold;
     font-size: 20px;
     color: white;
@@ -42,7 +42,7 @@ const TextBookDownload = styled.p`
       margin-top: 24px;
     }
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 18px;
     color: #515151;
     font-weight: 400;

@@ -6,7 +6,7 @@ const AdministratorSignInFormContainer = styled.div`
     flex-direction: row;
     justify-content: center;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;

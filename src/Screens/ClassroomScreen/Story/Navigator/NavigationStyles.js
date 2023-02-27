@@ -33,7 +33,7 @@ const NavigationContainer = styled.div`
     ${(props) => (props.open ? `top: 0;` : `top: -216px;`)}
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: fixed;
     width: 100%;
     left: 0;

@@ -7,7 +7,7 @@ const IntroductionContentTitleContainer = styled.div`
     align-items: center;
     margin-bottom: 60px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@ const IntroductionContentTitleText = styled.p`
     font-size: 44px;
     margin-bottom: 16px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-family: Jua, sans-serif;
     font-size: 44px;
     margin-bottom: 16px;
@@ -33,7 +33,7 @@ const IntroductionContentSubtitleText = styled.p`
     font-size: 20px;
     color: #515151;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 20px;
     color: #515151;
   }

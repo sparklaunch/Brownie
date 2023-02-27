@@ -25,7 +25,7 @@ const LoadingCardContainer = styled.div`
     align-items: center;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 300px;
     height: 200px;
     border-radius: 20px;
@@ -63,7 +63,7 @@ const RotatingDocument = styled.img`
     }
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     animation: rotating 2s linear infinite;
     @keyframes rotating {
       from {
@@ -89,7 +89,7 @@ const LoadingText = styled.p`
     margin-top: 20px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-weight: bold;
     font-size: 16px;
     margin-top: 20px;

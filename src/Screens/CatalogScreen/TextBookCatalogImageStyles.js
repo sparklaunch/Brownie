@@ -5,7 +5,7 @@ const TextBooksImage = styled.img`
     width: 1000px;
     margin: 100px auto;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 1000px;
     margin: 100px auto;
   }

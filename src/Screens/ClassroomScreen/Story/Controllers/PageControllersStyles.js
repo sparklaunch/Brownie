@@ -13,7 +13,7 @@ const PageControllersContainer = styled.div`
     transform: scale(0.8) translateX(10%);
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     transform: scale(0.8) translateX(10%);
@@ -45,7 +45,7 @@ const FirstPageText = styled.p`
     ${(props) => props.available && `cursor: pointer;`}
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
     color: white;
@@ -69,7 +69,7 @@ const PageAnglesContainer = styled.div`
     flex-direction: row;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
   }
@@ -82,7 +82,7 @@ const LeftPageAngleWrapper = styled.div`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
   }
 `;
 
@@ -111,7 +111,7 @@ const CurrentPageText = styled.p`
     justify-content: center;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     background-color: white;
     border: 1px solid #1ab9c5;
     border-radius: 50px;
@@ -139,7 +139,7 @@ const PageNumberSpan = styled.span`
     top: 2px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: relative;
     font-size: 20px;
     margin-left: 4px;
@@ -154,7 +154,7 @@ const RightPageAngleWrapper = styled.div`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
   }
 `;
 

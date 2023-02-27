@@ -11,7 +11,7 @@ const InstructionText = styled.p`
     color: #515151;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 18px;
     color: #515151;
   }

@@ -7,7 +7,7 @@ const EvaluationMethodContainer = styled.div`
     align-items: center;
     margin-bottom: 30px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,7 +25,7 @@ const EvaluationMethodTitle = styled.p`
     color: white;
     display: inline-block;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 20px;
     flex-shrink: 0;
     padding: 12px 20px;
@@ -41,7 +41,7 @@ const EvaluationMethodDescription = styled.p`
     font-size: 18px;
     margin-left: 16px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 18px;
     margin-left: 16px;
   }

@@ -13,7 +13,7 @@ const ScoreStarsContainer = styled.div`
     gap: 14px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;

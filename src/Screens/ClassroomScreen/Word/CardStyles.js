@@ -215,7 +215,7 @@ const CardTitleContainer = styled.div`
 
   @media (min-width: 993px) and (min-height: 768px) and (min-height: 768px) {
     position: absolute;
-    top: -50px;
+    top: -40px;
   }
 `;
 

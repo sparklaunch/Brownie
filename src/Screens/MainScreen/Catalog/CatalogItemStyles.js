@@ -4,7 +4,7 @@ const CatalogItemContainer = styled.div`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: relative;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: relative;
   }
 `;
@@ -20,7 +20,7 @@ const CatalogItemImage = styled.img`
     transition: all 0.2s ease-in-out;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     aspect-ratio: 1 / 1;
     width: 100%;
     object-fit: cover;
@@ -45,7 +45,7 @@ const DemoRibbon = styled.img`
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     cursor: pointer;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 36%;
     width: 100%;
@@ -61,7 +61,7 @@ const CompletedBadge = styled.img`
     top: 12px;
     right: 12px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 12px;
     right: 12px;

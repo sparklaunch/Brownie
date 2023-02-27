@@ -11,7 +11,7 @@ const TextBookSubtitleOuterContainer = styled.div`
     border-top: 1px solid #dfdfdf;
     border-bottom: 1px solid #dfdfdf;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -30,7 +30,7 @@ const TextBookSubtitleInnerContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 1200px;
     display: flex;
     flex-direction: column;
@@ -45,7 +45,7 @@ const TextBookSubtitleTitle = styled.p`
     color: #3d3d3d;
     margin-bottom: 24px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-family: Jua, sans-serif;
     font-size: 28px;
     color: #3d3d3d;
@@ -59,7 +59,7 @@ const TextBookSubtitleDescription = styled.p`
     color: #515151;
     font-weight: lighter;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 20px;
     color: #515151;
     font-weight: lighter;

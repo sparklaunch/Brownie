@@ -7,7 +7,7 @@ const CatalogFilterContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;

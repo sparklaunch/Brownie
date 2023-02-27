@@ -19,7 +19,7 @@ const NavigatorButtonOuterContainer = styled.div`
     ${(props) => (props.open ? `top: 216px;` : `top: 0;`)}
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: fixed;
     z-index: 10;
     left: 50%;
@@ -54,7 +54,7 @@ const NavigatorButtonInnerContainer = styled.div`
     cursor: pointer;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -80,7 +80,7 @@ const PagesText = styled.p`
     margin-right: 12px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     color: white;
     font-size: 18px;
     margin-right: 12px;
@@ -98,7 +98,7 @@ const CaretImage = styled.img`
     ${(props) => props.open && `transform: rotate(180deg);`};
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     transition: all 0.5s ease-in-out;
     ${(props) => props.open && `transform: rotate(180deg);`};
   }

@@ -7,7 +7,7 @@ const TextBookFeatureContainer = styled.div`
     align-items: center;
     margin-bottom: 6px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -19,7 +19,7 @@ const TextBookFeatureBullet = styled.img`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     margin-right: 12px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     margin-right: 12px;
   }
 `;
@@ -29,7 +29,7 @@ const TextBookFeatureText = styled.p`
     font-size: 18px;
     color: #515151;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 18px;
     color: #515151;
   }

@@ -8,7 +8,7 @@ const JumbotronTitleContainer = styled.div`
     background-position: bottom;
     background-size: contain;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     height: 426px;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ const TitleContainer = styled.div`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     padding: 44px 16px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: relative;
     margin-bottom: 54px;
   }
@@ -35,7 +35,7 @@ const Title = styled.p`
     letter-spacing: -0.2px;
     color: white;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 40px;
     font-weight: bold;
     line-height: 48px;
@@ -59,7 +59,7 @@ const DemoButton = styled.button`
     background-color: #f34d7e;
     border-radius: 8px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: relative;
     font-family: Jua, sans-serif;
     font-size: 24px;
@@ -77,7 +77,7 @@ const ButtonContainer = styled.div`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     transform: scale(0.8) translateX(-80px);
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
   }
 `;
 

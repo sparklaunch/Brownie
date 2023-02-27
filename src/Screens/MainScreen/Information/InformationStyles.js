@@ -6,7 +6,7 @@ const InformationOuterContainer = styled.div`
     flex-direction: row;
     justify-content: center;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -18,7 +18,7 @@ const InformationInnerContainer = styled.div`
     width: 90%;
     margin: 40px 0;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 1200px;
     margin: 50px 0;
   }

@@ -21,7 +21,7 @@ const LeftPageShade = styled.div`
     opacity: 0.5;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 0;
     bottom: 0;

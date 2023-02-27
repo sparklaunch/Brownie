@@ -11,7 +11,7 @@ const HamburgerItemsContainer = styled.div`
     flex-direction: column;
     margin: 20px 0;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: column;
     margin: 20px 0;

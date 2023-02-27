@@ -19,7 +19,7 @@ const TryInformationContainer = styled.div`
     margin: 12px 0;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 100%;
     padding: 30px;
     background-color: #f9f9f9;
@@ -46,7 +46,7 @@ const TryInformationItem = styled.div`
     padding: 4px 0;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -66,7 +66,7 @@ const TryInformationItemText = styled.p`
     margin-left: 20px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 20px;
     margin-left: 20px;
   }
@@ -79,7 +79,7 @@ const CheckImage = styled.img`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
   }
 `;
 

@@ -13,7 +13,7 @@ const BackgroundPlaceholder = styled.div`
     height: 100vh;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     background-color: #e8f6f8;
     width: 100vw;
     height: 100vh;

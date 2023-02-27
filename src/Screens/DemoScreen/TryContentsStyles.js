@@ -15,7 +15,7 @@ const TryContentsOuterContainer = styled.div`
     margin: 24px 0 48px 0;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -32,7 +32,7 @@ const TryContentsInnerContainer = styled.div`
     width: 1200px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 1200px;
   }
 `;

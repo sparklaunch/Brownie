@@ -9,7 +9,7 @@ const WordButtonOuterContainer = styled.div`
     margin-bottom: 12px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     margin-bottom: 12px;
   }
 `;
@@ -45,7 +45,7 @@ const WordButtonInnerContainer = styled.div`
     ${(props) => props.activated && `border: 3px solid #47C7D2;`}
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 100px;
     height: 100px;
     background-color: white;
@@ -68,7 +68,7 @@ const WordButtonImage = styled.img`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
   }
 `;
 
@@ -85,7 +85,7 @@ const WordButtonText = styled.p`
     ${(props) => props.activated && `color: #1AB9C5;`}
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
     ${(props) => props.activated && `color: #1AB9C5;`}

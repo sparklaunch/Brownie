@@ -8,7 +8,7 @@ const FooterContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     border-top: 2px solid #dfdfdf;
     padding: 40px;
     display: flex;
@@ -26,7 +26,7 @@ const AddressContainer = styled.div`
     color: #707070;
     padding: 4px 0;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -41,7 +41,7 @@ const NameText = styled.p`
     padding-right: 8px;
     border-right: 1px solid #dfdfdf;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     padding-right: 8px;
     border-right: 1px solid #dfdfdf;
   }
@@ -51,7 +51,7 @@ const AddressText = styled.p`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     padding-left: 8px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     padding-left: 8px;
   }
 `;
@@ -65,7 +65,7 @@ const DetailContainer = styled.div`
     color: #707070;
     padding: 4px 0;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -80,7 +80,7 @@ const OwnerText = styled.p`
     padding-right: 8px;
     border-right: 1px solid #dfdfdf;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     padding-right: 8px;
     border-right: 1px solid #dfdfdf;
   }
@@ -91,7 +91,7 @@ const RegistrationNumberText = styled.p`
     padding: 0 12px;
     border-right: 1px solid #dfdfdf;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     padding: 0 12px;
     border-right: 1px solid #dfdfdf;
   }
@@ -101,7 +101,7 @@ const CustomerServiceNumberText = styled.p`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     padding-left: 12px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     padding-left: 12px;
   }
 `;
@@ -110,7 +110,7 @@ const CopyrightContainer = styled.div`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     padding-top: 10px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     padding-top: 10px;
   }
 `;
@@ -120,7 +120,7 @@ const CopyrightText = styled.p`
     font-size: 14px;
     color: #acacac;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 14px;
     color: #acacac;
   }

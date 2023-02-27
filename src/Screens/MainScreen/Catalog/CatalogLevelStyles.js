@@ -3,7 +3,7 @@ import styled from "styled-components";
 const CatalogLevelContainer = styled.div`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     margin-bottom: 12px;
   }
 `;
@@ -16,7 +16,7 @@ const CatalogLevelLabelContainer = styled.div`
     margin-bottom: 8px;
     margin-top: 24px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -31,7 +31,7 @@ const CatalogLevelLabel = styled.p`
     font-size: 20px;
     margin-left: 12px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-family: "Jua", sans-serif;
     font-size: 20px;
     margin-left: 12px;

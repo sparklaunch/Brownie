@@ -15,7 +15,7 @@ const WordScreenContainer = styled.div`
     overflow: clip;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     width: 100vw;
     height: 100vh;

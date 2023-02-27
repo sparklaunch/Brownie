@@ -8,7 +8,7 @@ const HamburgerMenuContainer = styled.div`
   }
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
   }
 `;
 
@@ -33,7 +33,7 @@ const SignInButton = styled.p`
     cursor: pointer;
     margin-right: 12px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-family: Jua, sans-serif;
     font-size: 14px;
     color: white;
@@ -58,7 +58,7 @@ const InstructionsText = styled.p`
     cursor: pointer;
     margin-right: 12px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 14px;
     color: #3d3d3d;
     cursor: pointer;
@@ -77,7 +77,7 @@ const AdministratorSiteText = styled.p`
     color: #3d3d3d;
     cursor: pointer;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 14px;
     color: #3d3d3d;
     cursor: pointer;

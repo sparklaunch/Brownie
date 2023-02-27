@@ -8,7 +8,7 @@ const TextBookComponentsAndDownloads = styled.div`
     width: 1200px;
     margin: 0 auto;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 0;

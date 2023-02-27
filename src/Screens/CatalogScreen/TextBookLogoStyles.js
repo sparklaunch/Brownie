@@ -8,7 +8,7 @@ const TextBookLogoContainer = styled.div`
     align-items: center;
     margin-bottom: 100px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +22,7 @@ const TextBookLogoImage = styled.img`
     width: 660px;
     margin-bottom: 30px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 660px;
     margin-bottom: 30px;
   }
@@ -33,7 +33,7 @@ const TextBookLogoDescriptions = styled.div`
     display: flex;
     flex-direction: row;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
   }
@@ -45,7 +45,7 @@ const TextBookLogoDescription = styled.p`
       margin-right: 24px;
     }
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     &:first-child {
       margin-right: 24px;
     }

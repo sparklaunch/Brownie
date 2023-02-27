@@ -11,7 +11,7 @@ const ThumbnailPageContainer = styled.div`
     overflow: clip;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: relative;
     overflow: clip;
   }
@@ -30,7 +30,7 @@ const ThumbnailPageImage = styled.img`
     object-fit: cover;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -66,7 +66,7 @@ const ThumbnailPageGradient = styled.div`
       `background-image: linear-gradient(to right, transparent 0%, #0c4a4e 100%);`}
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 0;
     left: 0;

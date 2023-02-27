@@ -9,7 +9,7 @@ const CardTitleText = styled.div`
     font-size: 18px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-size: 18px;
   }
 `;
@@ -27,7 +27,7 @@ const CardTitleTextSpan = styled.span`
     margin-left: 12px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-family: Jua, sans-serif;
     font-size: 26px;
     margin-left: 12px;

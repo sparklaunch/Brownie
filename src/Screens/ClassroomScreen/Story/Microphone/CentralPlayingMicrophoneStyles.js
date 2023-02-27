@@ -15,7 +15,7 @@ const CentralPlayingMicrophoneContainer = styled.div`
     height: 52px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: relative;
     cursor: pointer;
   }
@@ -58,7 +58,7 @@ const OuterCircle = styled.div`
     }
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -114,7 +114,7 @@ const InnerCircle = styled.div`
     }
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -174,7 +174,7 @@ const Wave = styled.div`
     }
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -202,7 +202,7 @@ const CentralPlayingMicrophoneImage = styled.img`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
   }
 `;
 

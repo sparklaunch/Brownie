@@ -23,7 +23,7 @@ const WordImageContainer = styled.div`
     align-items: center;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: relative;
     width: 76%;
     height: 76%;
@@ -48,7 +48,7 @@ const WordIllustration = styled.img`
     object-fit: contain;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     margin-top: 50px;
     height: 70%;
     object-fit: contain;
@@ -70,7 +70,7 @@ const WordContainer = styled.div`
     justify-content: center;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -89,7 +89,7 @@ const MegaphoneImage = styled.img`
     cursor: pointer;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     margin-right: 12px;
     cursor: pointer;
   }
@@ -108,7 +108,7 @@ const WordText = styled.p`
     ${(props) => `color: ${props.color};`}
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-weight: bolder;
     font-size: 60px;
     ${(props) => `color: ${props.color};`}

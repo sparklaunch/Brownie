@@ -18,7 +18,7 @@ const HamburgerItemContainer = styled.div`
     justify-content: center;
     border-top: 1px solid #dfdfdf;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@ const HamburgerItemText = styled.p`
     font-weight: bold;
     font-size: 14px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     color: #222222;
     font-weight: bold;
     font-size: 14px;

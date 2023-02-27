@@ -13,7 +13,7 @@ const HamburgerHeaderContainer = styled.div`
     justify-content: space-between;
     align-items: center;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
   }
 `;
 

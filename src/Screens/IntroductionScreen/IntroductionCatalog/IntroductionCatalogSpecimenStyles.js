@@ -5,7 +5,7 @@ const IntroductionCatalogSpecimenContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }

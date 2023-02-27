@@ -23,7 +23,7 @@ const NiceTryScreenContainer = styled.div`
     z-index: 3;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -58,7 +58,7 @@ const NiceTryImage = styled.img`
     scale: 0.8;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -85,7 +85,7 @@ const ScorePillWrapper = styled.div`
     transform: translate(-50%, -50%) scale(0.6);
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 50%;
     left: 50%;

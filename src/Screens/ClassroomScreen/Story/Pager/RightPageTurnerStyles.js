@@ -9,7 +9,7 @@ const RightPageTurnerContainer = styled.div`
     cursor: pointer;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     cursor: pointer;
   }
 `;
@@ -25,7 +25,7 @@ const RightPageTurnerImage = styled.img`
     height: 24px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
   }
 `;
 
@@ -42,7 +42,7 @@ const RotatedRightPageTurnerImage = styled.img`
     height: 24px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     transform: rotate(180deg);
   }
 `;

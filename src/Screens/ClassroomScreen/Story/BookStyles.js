@@ -25,7 +25,7 @@ const BookContainer = styled.div`
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -47,7 +47,7 @@ const NavigatorContainer = styled.div`
     display: none;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
   }
 `;
 
@@ -74,7 +74,7 @@ const BookWrapper = styled.div`
     align-items: center;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -103,7 +103,7 @@ const TextBookContainer = styled.div`
     height: 100vh;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -128,7 +128,7 @@ const ModeSwitcherContainer = styled.div`
     transform: scale(0.8) translate(-130px, -12px);
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 0;
     left: -120px;
@@ -150,7 +150,7 @@ const TextBookLeftPage = styled.div`
     justify-content: center;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: relative;
     object-fit: contain;
     object-position: right;
@@ -172,7 +172,7 @@ const TextBookRightPage = styled.div`
     justify-content: center;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: relative;
     object-fit: contain;
     object-position: right;
@@ -192,7 +192,7 @@ const LeftPageImage = styled.img`
     object-position: center;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -229,7 +229,7 @@ const LeftPageShade = styled.div`
     );
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 0;
     right: 0;
@@ -256,7 +256,7 @@ const RightPageImage = styled.img`
     object-position: center;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -293,7 +293,7 @@ const RightPageShade = styled.div`
     );
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -320,7 +320,7 @@ const LeftPagerContainer = styled.div`
     left: -70px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -341,7 +341,7 @@ const RightPagerContainer = styled.div`
     right: -70px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -358,7 +358,7 @@ const PagerControllersContainer = styled.div`
     display: none;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: -50px;
     right: 0;
@@ -378,7 +378,7 @@ const HomeContainer = styled.div`
     right: -80px;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 0;
     right: -90px;
@@ -402,7 +402,7 @@ const MicContainer = styled.div`
     z-index: 1;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     left: 50%;
     bottom: -100px;
@@ -420,7 +420,7 @@ const UnitInfoContainer = styled.div`
     display: none;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: -40px;
     left: 0;
@@ -444,7 +444,7 @@ const WaveAnimationContainer = styled.div`
     z-index: 1;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -468,7 +468,7 @@ const FeedbackBarContainer = styled.div`
     right: 0;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -493,7 +493,7 @@ const CongratzContainer = styled.div`
     bottom: 0;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -521,7 +521,7 @@ const ScoreBarContainer = styled.div`
     transform: scale(0.4);
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: -100px;
     left: 0;
@@ -548,7 +548,7 @@ const LeftCompletedButtonsContainer = styled.div`
     transform: translateX(-50%);
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     z-index: 2;
     position: absolute;
     bottom: -80px;
@@ -574,7 +574,7 @@ const RightCompletedButtonsContainer = styled.div`
     transform: translateX(-50%);
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     z-index: 2;
     position: absolute;
     bottom: -80px;
@@ -600,7 +600,7 @@ const GlowBorderContainer = styled.div`
     left: 0;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -630,7 +630,7 @@ const GlowBorder = styled.div`
     box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -662,7 +662,7 @@ const LeftClickable = styled.div`
     cursor: pointer;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -694,7 +694,7 @@ const RightClickable = styled.div`
     cursor: pointer;
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -722,7 +722,7 @@ const LoadingCardWrapper = styled.div`
     transform: translate(-50%, -50%);
   }
 
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     position: absolute;
     z-index: 1;
     top: 50%;

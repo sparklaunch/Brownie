@@ -7,7 +7,7 @@ const TextBookFeaturesOuterContainer = styled.div`
     justify-content: center;
     margin: 80px auto;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -22,7 +22,7 @@ const TextBookFeaturesInnerContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     width: 1200px;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ const TextBookFeaturesTitle = styled.p`
     border-radius: 4px;
     margin-bottom: 24px;
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     font-weight: bold;
     color: white;
     font-size: 20px;
@@ -60,7 +60,7 @@ const TextBookFeaturesContainer = styled.div`
       margin-bottom: 40px;
     }
   }
-  @media (min-width: 993px) and (min-height: 768px) {
+  @media (width >= 993px) and (height >= 768px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
