@@ -388,9 +388,9 @@ const GlowBorderContainer = styled.div`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
+    bottom: 0;
+    right: 0;
     left: 0;
-    width: ${(props) => props.textbookSize.width / 2}px;
-    height: ${(props) => props.textbookSize.height}px;
   }
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
@@ -405,9 +405,9 @@ const GlowBorder = styled.div`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
-    left: 0;
     bottom: 0;
     right: 0;
+    left: 0;
     z-index: 1;
     box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
   }
