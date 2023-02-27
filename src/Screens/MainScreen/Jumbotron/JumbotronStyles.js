@@ -6,7 +6,7 @@ const JumbotronOuterContainer = styled.div`
   }
   @media (width >= 993px) {
     position: relative;
-    height: 426px;
+    height: 540px;
     display: flex;
     flex-direction: row;
     justify-content: center;

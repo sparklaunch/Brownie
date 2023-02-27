@@ -2,14 +2,9 @@ import styled from "styled-components";
 
 const JumbotronTitleContainer = styled.div`
   @media (768px <= width <= 992px) {
-    height: 480px;
-    background-image: url("assets/images/jumbotron.svg");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
   }
   @media (width >= 993px) {
-    height: 426px;
+    height: 540px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
