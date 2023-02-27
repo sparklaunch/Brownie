@@ -12,7 +12,7 @@ const NavigationContainer = styled.div`
     transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     ${(props) => (props.open ? `top: 0;` : `top: -216px;`)}
   }
@@ -28,7 +28,7 @@ const NavigationContainer = styled.div`
     transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     ${(props) => (props.open ? `top: 0;` : `top: -216px;`)}
   }
@@ -44,7 +44,7 @@ const NavigationContainer = styled.div`
     transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     ${(props) => (props.open ? `top: 0;` : `top: -216px;`)}
   }
