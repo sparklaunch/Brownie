@@ -56,6 +56,8 @@ import LoadingCard from "../LoadingCard";
 import ScorePill from "./Results/Score/ScorePill";
 import _ from "lodash";
 import textbookSizeAtom from "../../../Stores/Misc/textbookSize";
+import temporaryGlowBorderShownAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderShown";
+import temporaryGlowBorderDirectionAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderDirection";
 
 const Book = () => {
   const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
@@ -72,18 +74,36 @@ const Book = () => {
     useRecoilState(highlightedPageAtom);
   const [highlightVisible, setHighlightVisible] =
     useRecoilState(highlightVisibleAtom);
+  const [temporaryGlowBorderShown, setTemporaryGlowBorderShown] =
+    useRecoilState(temporaryGlowBorderShownAtom);
+  const [temporaryGlowBorderDirection, setTemporaryGlowBorderDirection] =
+    useRecoilState(temporaryGlowBorderDirectionAtom);
   const { level } = useParams();
   const bookID = useData("id");
   const playLeftPageAudio = () => {
     Howler.unload();
+    setHighlightVisible(false);
+    setTemporaryGlowBorderShown(true);
+    setTemporaryGlowBorderDirection(`left`);
     new Howl({
-      src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`]
+      src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
+      onend: () => {
+        setHighlightVisible(true);
+        setTemporaryGlowBorderShown(false);
+      }
     }).play();
   };
   const playRightPageAudio = () => {
     Howler.unload();
+    setHighlightVisible(false);
+    setTemporaryGlowBorderShown(true);
+    setTemporaryGlowBorderDirection(`right`);
     new Howl({
-      src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`]
+      src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
+      onend: () => {
+        setHighlightVisible(true);
+        setTemporaryGlowBorderShown(false);
+      }
     }).play();
   };
   const onClickLeftPage = () => {
@@ -128,6 +148,10 @@ const Book = () => {
               {highlightedPage === currentPage && highlightVisible && (
                 <GlowBorder direction={`left`} />
               )}
+              {temporaryGlowBorderShown &&
+                temporaryGlowBorderDirection === `left` && (
+                  <GlowBorder direction={`left`} />
+                )}
             </GlowBorderContainer>
             {currentPage !== 0 && <LeftClickable onClick={onClickLeftPage()} />}
           </TextBookLeftPage>
@@ -153,6 +177,10 @@ const Book = () => {
             {highlightedPage === currentPage + 1 && highlightVisible && (
               <GlowBorder direction={`right`} />
             )}
+            {temporaryGlowBorderShown &&
+              temporaryGlowBorderDirection === `right` && (
+                <GlowBorder direction={`right`} />
+              )}
             {currentPage !== 10 && (
               <RightClickable onClick={onClickRightPage()} />
             )}
