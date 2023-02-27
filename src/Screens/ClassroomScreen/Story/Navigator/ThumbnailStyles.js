@@ -50,38 +50,6 @@ const ThumbnailContainer = styled.div`
   }
 `;
 
-const CompletedBackdrop = styled.div`
-  @media (width <= 767px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: black;
-    opacity: 0.5;
-  }
-
-  @media (768px <= width <= 992px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: black;
-    opacity: 0.5;
-  }
-
-  @media (width >= 993px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: black;
-    opacity: 0.5;
-  }
-`;
-
 const CompletedBadgeContainer = styled.div`
   @media (width <= 767px) {
     position: absolute;
@@ -119,9 +87,4 @@ const CompletedBadgeImage = styled.img`
   }
 `;
 
-export {
-  ThumbnailContainer,
-  CompletedBackdrop,
-  CompletedBadgeContainer,
-  CompletedBadgeImage
-};
+export { ThumbnailContainer, CompletedBadgeContainer, CompletedBadgeImage };
