@@ -156,13 +156,13 @@ const PaginationContainer = styled.div`
 const WordLeftPageTurnerContainer = styled.div`
   @media (width <= 767px) {
     position: absolute;
-    left: -80px;
+    left: -50px;
     bottom: 30px;
   }
 
   @media (768px <= width <= 992px) {
     position: absolute;
-    left: -80px;
+    left: -60px;
     bottom: 30px;
   }
 
@@ -177,13 +177,13 @@ const WordLeftPageTurnerContainer = styled.div`
 const WordRightPageTurnerContainer = styled.div`
   @media (width <= 767px) {
     position: absolute;
-    right: -80px;
+    right: -50px;
     bottom: 30px;
   }
 
   @media (768px <= width <= 992px) {
     position: absolute;
-    right: -80px;
+    right: -60px;
     bottom: 30px;
   }
 

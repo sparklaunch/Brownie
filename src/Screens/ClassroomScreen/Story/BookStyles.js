@@ -191,9 +191,11 @@ const LeftPageShade = styled.div`
     right: 0;
     bottom: 0;
     width: 30px;
-    background: linear-gradient(to right,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
 
   @media (768px <= width <= 992px) {
@@ -202,9 +204,11 @@ const LeftPageShade = styled.div`
     right: 0;
     bottom: 0;
     width: 30px;
-    background: linear-gradient(to right,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
 
   @media (width >= 993px) {
@@ -213,9 +217,11 @@ const LeftPageShade = styled.div`
     right: 0;
     bottom: 0;
     width: 30px;
-    background: linear-gradient(to right,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
 `;
 
@@ -249,9 +255,11 @@ const RightPageShade = styled.div`
     left: 0;
     bottom: 0;
     width: 30px;
-    background: linear-gradient(to left,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(
+      to left,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
 
   @media (768px <= width <= 992px) {
@@ -260,9 +268,11 @@ const RightPageShade = styled.div`
     left: 0;
     bottom: 0;
     width: 30px;
-    background: linear-gradient(to left,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(
+      to left,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
 
   @media (width >= 993px) {
@@ -271,9 +281,11 @@ const RightPageShade = styled.div`
     left: 0;
     bottom: 0;
     width: 30px;
-    background: linear-gradient(to left,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(
+      to left,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
 `;
 
@@ -281,13 +293,13 @@ const LeftPagerContainer = styled.div`
   @media (width <= 767px) {
     position: absolute;
     bottom: 30px;
-    left: -70px;
+    left: -50px;
   }
 
   @media (768px <= width <= 992px) {
     position: absolute;
     bottom: 30px;
-    left: -70px;
+    left: -60px;
   }
 
   @media (width >= 993px) {
@@ -302,13 +314,13 @@ const RightPagerContainer = styled.div`
   @media (width <= 767px) {
     position: absolute;
     bottom: 30px;
-    right: -70px;
+    right: -50px;
   }
 
   @media (768px <= width <= 992px) {
     position: absolute;
     bottom: 30px;
-    right: -70px;
+    right: -60px;
   }
 
   @media (width >= 993px) {
