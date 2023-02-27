@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const BookContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -12,6 +12,7 @@ const BookContainer = styled.div`
     align-items: center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -23,6 +24,7 @@ const BookContainer = styled.div`
     align-items: center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
@@ -37,18 +39,20 @@ const BookContainer = styled.div`
 `;
 
 const NavigatorContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     display: none;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: none;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
   }
 `;
 
 const BookWrapper = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -58,6 +62,7 @@ const BookWrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -68,6 +73,7 @@ const BookWrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
@@ -81,13 +87,14 @@ const BookWrapper = styled.div`
 `;
 
 const TextBookContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
     height: 100vh;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: relative;
     display: grid;
@@ -95,6 +102,7 @@ const TextBookContainer = styled.div`
     gap: 0;
     height: 100vh;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: relative;
     display: grid;
@@ -106,18 +114,20 @@ const TextBookContainer = styled.div`
 `;
 
 const ModeSwitcherContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: 0;
     left: 0;
     transform: scale(0.8) translate(-130px, -12px);
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
     left: 0;
     transform: scale(0.8) translate(-130px, -12px);
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
@@ -126,18 +136,20 @@ const ModeSwitcherContainer = styled.div`
 `;
 
 const TextBookLeftPage = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: relative;
     object-fit: contain;
@@ -146,18 +158,20 @@ const TextBookLeftPage = styled.div`
 `;
 
 const TextBookRightPage = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: relative;
     object-fit: contain;
@@ -166,16 +180,18 @@ const TextBookRightPage = styled.div`
 `;
 
 const LeftPageImage = styled.img`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     height: 100vh;
     object-fit: cover;
     object-position: center;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     height: 100vh;
     object-fit: cover;
     object-position: center;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     width: 100%;
     height: 100%;
@@ -187,7 +203,7 @@ const LeftPageImage = styled.img`
 `;
 
 const LeftPageShade = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: 0;
     right: 0;
@@ -199,6 +215,7 @@ const LeftPageShade = styled.div`
       rgba(0, 0, 0, 0.2) 100%
     );
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -211,6 +228,7 @@ const LeftPageShade = styled.div`
       rgba(0, 0, 0, 0.2) 100%
     );
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
@@ -226,16 +244,18 @@ const LeftPageShade = styled.div`
 `;
 
 const RightPageImage = styled.img`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     height: 100vh;
     object-fit: cover;
     object-position: center;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     height: 100vh;
     object-fit: cover;
     object-position: center;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     width: 100%;
     height: 100%;
@@ -247,7 +267,7 @@ const RightPageImage = styled.img`
 `;
 
 const RightPageShade = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -259,6 +279,7 @@ const RightPageShade = styled.div`
       rgba(0, 0, 0, 0.2) 100%
     );
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -271,6 +292,7 @@ const RightPageShade = styled.div`
       rgba(0, 0, 0, 0.2) 100%
     );
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
@@ -286,16 +308,18 @@ const RightPageShade = styled.div`
 `;
 
 const LeftPagerContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     bottom: 30px;
     left: -70px;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     bottom: 30px;
     left: -70px;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 50%;
@@ -305,16 +329,18 @@ const LeftPagerContainer = styled.div`
 `;
 
 const RightPagerContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     bottom: 30px;
     right: -70px;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     bottom: 30px;
     right: -70px;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 50%;
@@ -324,12 +350,14 @@ const RightPagerContainer = styled.div`
 `;
 
 const PagerControllersContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     display: none;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: none;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: -50px;
@@ -338,16 +366,18 @@ const PagerControllersContainer = styled.div`
 `;
 
 const HomeContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: 20px;
     right: -80px;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 20px;
     right: -80px;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
@@ -356,13 +386,14 @@ const HomeContainer = styled.div`
 `;
 
 const MicContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     right: -90px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     right: -90px;
@@ -370,6 +401,7 @@ const MicContainer = styled.div`
     transform: translateY(-50%);
     z-index: 1;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     left: 50%;
@@ -380,12 +412,14 @@ const MicContainer = styled.div`
 `;
 
 const UnitInfoContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     display: none;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     display: none;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: -40px;
@@ -394,13 +428,14 @@ const UnitInfoContainer = styled.div`
 `;
 
 const WaveAnimationContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     bottom: 0;
@@ -408,6 +443,7 @@ const WaveAnimationContainer = styled.div`
     transform: translateX(-50%);
     z-index: 1;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     bottom: 0;
@@ -418,18 +454,20 @@ const WaveAnimationContainer = styled.div`
 `;
 
 const FeedbackBarContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     bottom: 0;
@@ -439,13 +477,14 @@ const FeedbackBarContainer = styled.div`
 `;
 
 const CongratzContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -453,6 +492,7 @@ const CongratzContainer = styled.div`
     right: 0;
     bottom: 0;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
@@ -463,7 +503,7 @@ const CongratzContainer = styled.div`
 `;
 
 const ScoreBarContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: -140px;
     left: -100px;
@@ -471,6 +511,7 @@ const ScoreBarContainer = styled.div`
     bottom: 0;
     transform: scale(0.4);
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: -140px;
@@ -479,6 +520,7 @@ const ScoreBarContainer = styled.div`
     bottom: 0;
     transform: scale(0.4);
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: -100px;
@@ -490,13 +532,14 @@ const ScoreBarContainer = styled.div`
 `;
 
 const LeftCompletedButtonsContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     z-index: 2;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     z-index: 2;
     position: absolute;
@@ -504,6 +547,7 @@ const LeftCompletedButtonsContainer = styled.div`
     left: 50%;
     transform: translateX(-50%);
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     z-index: 2;
     position: absolute;
@@ -514,13 +558,14 @@ const LeftCompletedButtonsContainer = styled.div`
 `;
 
 const RightCompletedButtonsContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     z-index: 2;
     position: absolute;
     bottom: 0;
     right: 50%;
     transform: translateX(-50%);
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     z-index: 2;
     position: absolute;
@@ -528,6 +573,7 @@ const RightCompletedButtonsContainer = styled.div`
     right: 50%;
     transform: translateX(-50%);
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     z-index: 2;
     position: absolute;
@@ -538,13 +584,14 @@ const RightCompletedButtonsContainer = styled.div`
 `;
 
 const GlowBorderContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -552,6 +599,7 @@ const GlowBorderContainer = styled.div`
     right: 0;
     left: 0;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
@@ -562,7 +610,7 @@ const GlowBorderContainer = styled.div`
 `;
 
 const GlowBorder = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -571,6 +619,7 @@ const GlowBorder = styled.div`
     z-index: 1;
     box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 0;
@@ -580,6 +629,7 @@ const GlowBorder = styled.div`
     z-index: 1;
     box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 0;
@@ -592,7 +642,7 @@ const GlowBorder = styled.div`
 `;
 
 const LeftClickable = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -601,6 +651,7 @@ const LeftClickable = styled.div`
     right: 0;
     cursor: pointer;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     z-index: 1;
@@ -610,6 +661,7 @@ const LeftClickable = styled.div`
     right: 0;
     cursor: pointer;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     z-index: 1;
@@ -622,7 +674,7 @@ const LeftClickable = styled.div`
 `;
 
 const RightClickable = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -631,6 +683,7 @@ const RightClickable = styled.div`
     right: 0;
     cursor: pointer;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     z-index: 1;
@@ -640,6 +693,7 @@ const RightClickable = styled.div`
     right: 0;
     cursor: pointer;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     z-index: 1;
@@ -652,13 +706,14 @@ const RightClickable = styled.div`
 `;
 
 const LoadingCardWrapper = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     z-index: 1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     z-index: 1;
@@ -666,6 +721,7 @@ const LoadingCardWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     z-index: 1;

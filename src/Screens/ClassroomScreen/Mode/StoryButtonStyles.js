@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StoryButtonContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     width: 100px;
     height: 100px;
     background-color: white;
@@ -15,6 +15,7 @@ const StoryButtonContainer = styled.div`
     ${(props) => props.enabled && `cursor: pointer;`}
     ${(props) => props.activated && `border: 3px solid #47C7D2;`}
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     width: 100px;
     height: 100px;
@@ -29,6 +30,7 @@ const StoryButtonContainer = styled.div`
     ${(props) => props.enabled && `cursor: pointer;`}
     ${(props) => props.activated && `border: 3px solid #47C7D2;`}
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     width: 100px;
     height: 100px;
@@ -46,25 +48,29 @@ const StoryButtonContainer = styled.div`
 `;
 
 const StoryButtonImage = styled.img`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
   }
 `;
 
 const StoryButtonText = styled.p`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
     ${(props) => props.activated && `color: #1AB9C5;`}
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
     ${(props) => props.activated && `color: #1AB9C5;`}
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     font-family: Jua, sans-serif;
     font-size: 20px;

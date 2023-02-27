@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LeftPageAngleContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     width: 47px;
     height: 47px;
     background-color: #1ab9c5;
@@ -14,6 +14,7 @@ const LeftPageAngleContainer = styled.div`
     ${(props) =>
       props.disabled ? `opacity: 0.5;` : `opacity: 1; cursor: pointer;`}
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     width: 47px;
     height: 47px;
@@ -27,6 +28,7 @@ const LeftPageAngleContainer = styled.div`
     ${(props) =>
       props.disabled ? `opacity: 0.5;` : `opacity: 1; cursor: pointer;`}
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     width: 47px;
     height: 47px;
@@ -43,10 +45,12 @@ const LeftPageAngleContainer = styled.div`
 `;
 
 const LeftPageAngleImage = styled.img`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
   }
 `;

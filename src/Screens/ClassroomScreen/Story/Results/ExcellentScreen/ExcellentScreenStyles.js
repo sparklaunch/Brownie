@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ExcellentScreenContainer = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -11,6 +11,7 @@ const ExcellentScreenContainer = styled.div`
     padding: 8px;
     z-index: 3;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     bottom: 0;
@@ -21,6 +22,7 @@ const ExcellentScreenContainer = styled.div`
     padding: 8px;
     z-index: 3;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     bottom: 0;
@@ -36,13 +38,14 @@ const ExcellentScreenContainer = styled.div`
 `;
 
 const ExcellentImage = styled.img`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 0;
     height: 200px;
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 50%;
@@ -50,6 +53,7 @@ const ExcellentImage = styled.img`
     right: 0;
     height: 200px;
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 50%;
@@ -61,18 +65,20 @@ const ExcellentImage = styled.img`
 `;
 
 const ScorePillWrapper = styled.div`
-  @media (width <= 767px) {
+  @media (width <= 767px), (height <= 479px) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.6);
   }
+
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.6);
   }
+
   @media (min-width: 993px) and (min-height: 768px) {
     position: absolute;
     top: 50%;
