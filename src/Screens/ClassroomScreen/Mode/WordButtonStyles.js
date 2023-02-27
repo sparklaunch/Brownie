@@ -63,6 +63,7 @@ const WordButtonInnerContainer = styled.div`
 
 const WordButtonImage = styled.img`
   @media (width <= 767px), (height <= 479px) {
+    width: 40px;
   }
 
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
@@ -75,7 +76,7 @@ const WordButtonImage = styled.img`
 const WordButtonText = styled.p`
   @media (width <= 767px), (height <= 479px) {
     font-family: Jua, sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     ${(props) => props.activated && `color: #1AB9C5;`}
   }
 
