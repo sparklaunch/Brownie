@@ -106,6 +106,18 @@ const Book = () => {
       }
     }).play();
   };
+  const onClickWave = async () => {
+    try {
+      setCentralMicrophoneState(`loading`);
+      const device = await navigator.mediaDevices.getUserMedia({
+        audio: true
+      });
+      const recorder = new MediaRecorder(device);
+      recorder.stop();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const onClickLeftPage = () => {
     return _.throttle(playLeftPageAudio, 1000, {
       leading: true,
@@ -209,7 +221,7 @@ const Book = () => {
             </FeedbackBarContainer>
           )}
           {centralMicrophoneState === "invisible" && (
-            <WaveAnimationContainer>
+            <WaveAnimationContainer onClick={onClickWave}>
               <Wave />
             </WaveAnimationContainer>
           )}

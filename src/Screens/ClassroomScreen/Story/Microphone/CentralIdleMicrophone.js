@@ -20,7 +20,7 @@ import {
   OuterCircle,
   Wave
 } from "./CentralIdleMicrophoneStyles";
-import { Howl } from "howler";
+import { Howl, Howler } from "howler";
 
 const CentralIdleMicrophone = () => {
   const { level } = useParams();
@@ -41,6 +41,7 @@ const CentralIdleMicrophone = () => {
     useRecoilState(highlightedPageAtom);
   const recordVoice = async () => {
     try {
+      Howler.unload();
       const device = await navigator.mediaDevices.getUserMedia({
         audio: true
       });
