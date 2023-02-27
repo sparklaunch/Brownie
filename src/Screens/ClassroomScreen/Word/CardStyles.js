@@ -220,8 +220,8 @@ const WordResultsContainer = styled.div`
   @media (768px <= width <= 992px), (480px <= height <= 767px) {
     position: absolute;
     top: 10px;
-    left: 50%;
-    transform: translateX(-50%) scale(0.6);
+    right: -50%;
+    transform: scale(0.6);
     width: 100vw;
   }
   @media (min-width: 993px) and (min-height: 768px) and (min-height: 768px) {
