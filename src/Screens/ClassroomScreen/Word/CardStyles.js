@@ -10,8 +10,6 @@ const CardOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-left: 140px;
-    margin-right: 140px;
   }
 
   @media (768px <= width <= 992px) {
@@ -110,14 +108,16 @@ const InstructionsContainer = styled.div`
 const ModeButtonsContainer = styled.div`
   @media (width <= 767px) {
     position: absolute;
-    top: 10px;
-    left: -100px;
+    top: 0;
+    left: 0;
+    transform: scale(0.8) translate(-100px, -10px);
   }
 
   @media (768px <= width <= 992px) {
     position: absolute;
-    top: 20px;
-    left: -120px;
+    top: 0;
+    left: 0;
+    transform: scale(0.8) translate(-130px, -12px);
   }
 
   @media (width >= 993px) {
