@@ -1,12 +1,13 @@
 import CouponHistoryItem from "./CouponHistoryItem";
+import { CouponHistoryItemsContainer } from "./CouponHistoryItemsStyles";
 
 const CouponHistoryItems = () => {
   return (
-    <div className={`grid grid-cols-4 gap-3`}>
+    <CouponHistoryItemsContainer>
       <CouponHistoryItem />
       <CouponHistoryItem used={true} />
       <CouponHistoryItem used={true} />
-    </div>
+    </CouponHistoryItemsContainer>
   );
 };
 
