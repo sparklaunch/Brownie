@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { IntroductionTryButtonContainer } from "./IntroductionTryButtonStyles";
 
 const IntroductionTryButton = () => {
   const navigate = useNavigate();
@@ -6,12 +7,9 @@ const IntroductionTryButton = () => {
     navigate("/demo");
   };
   return (
-    <p
-      className={`inline-block text-white font-[Jua] text-[24px] px-[100px] py-[20px] border-2 border-white rounded-lg cursor-pointer`}
-      onClick={onClickTryButton}
-    >
+    <IntroductionTryButtonContainer onClick={onClickTryButton}>
       무료 체험
-    </p>
+    </IntroductionTryButtonContainer>
   );
 };
 
