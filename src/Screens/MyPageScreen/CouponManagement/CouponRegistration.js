@@ -3,6 +3,13 @@ import { useRecoilState } from "recoil";
 import couponAtom from "../../../Stores/Auth/coupon";
 import couponMessageAtom from "../../../Stores/Auth/couponMessage";
 import isCouponValidAtom from "../../../Stores/MyPage/isCouponValid";
+import {
+  CouponMessageText,
+  CouponRegistrationContainer,
+  CouponRegistrationInnerContainer,
+  CouponRegistrationOuterContainer,
+  CouponRegistrationText
+} from "./CouponRegistrationStyles";
 
 const CouponRegistration = () => {
   const [coupon, setCoupon] = useRecoilState(couponAtom);
@@ -21,12 +28,10 @@ const CouponRegistration = () => {
     setCoupon(event.target.value.replace(/\s/g, ""));
   };
   return (
-    <div className={`mb-12`}>
-      <div className={`mb-1`}>
-        <p className={`border-l-4 border-[#00AEA8] pl-3 mb-3 text-[20px]`}>
-          쿠폰 등록
-        </p>
-        <div className={`flex flex-row`}>
+    <CouponRegistrationOuterContainer>
+      <CouponRegistrationInnerContainer>
+        <CouponRegistrationText>쿠폰 등록</CouponRegistrationText>
+        <CouponRegistrationContainer>
           <TextField
             value={coupon}
             onChange={onCouponTextFieldChange}
@@ -52,12 +57,12 @@ const CouponRegistration = () => {
           >
             등록
           </Button>
-        </div>
-      </div>
+        </CouponRegistrationContainer>
+      </CouponRegistrationInnerContainer>
       {couponMessage.length > 0 && (
-        <p className={`text-[#EC1C47] text-[13px]`}>{couponMessage}</p>
+        <CouponMessageText>{couponMessage}</CouponMessageText>
       )}
-    </div>
+    </CouponRegistrationOuterContainer>
   );
 };
 
