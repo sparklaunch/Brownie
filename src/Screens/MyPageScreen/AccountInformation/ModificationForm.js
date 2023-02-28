@@ -9,6 +9,11 @@ import StudentLabel from "../../SignScreen/SignUp/StudentLabel";
 import AccountDeletion from "./AccountDeletion";
 import newPasswordAtom from "../../../Stores/Auth/newPassword";
 import newPasswordConfirmAtom from "../../../Stores/Auth/newPasswordConfirm";
+import {
+  ModificationFormInnerContainer,
+  ModificationFormOuterContainer,
+  TextCenterContainer
+} from "./ModificationFormStyles";
 
 const ModificationForm = () => {
   const [password, setPassword] = useRecoilState(passwordAtom);
@@ -21,8 +26,8 @@ const ModificationForm = () => {
     newPasswordConfirmAtom
   );
   return (
-    <div className={`flex flex-row justify-center`}>
-      <div className={`pt-3 w-[500px]`}>
+    <ModificationFormOuterContainer>
+      <ModificationFormInnerContainer>
         <TextField
           id={"id"}
           value={"Your ID"}
@@ -134,7 +139,7 @@ const ModificationForm = () => {
           }}
         />
         <AccountDeletion />
-        <div className={`text-center`}>
+        <TextCenterContainer>
           <Button
             variant={"outlined"}
             sx={{
@@ -163,9 +168,9 @@ const ModificationForm = () => {
           >
             수정
           </Button>
-        </div>
-      </div>
-    </div>
+        </TextCenterContainer>
+      </ModificationFormInnerContainer>
+    </ModificationFormOuterContainer>
   );
 };
 
