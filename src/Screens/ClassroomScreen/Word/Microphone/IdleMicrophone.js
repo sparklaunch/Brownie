@@ -20,6 +20,7 @@ import {
   Wave
 } from "./IdleMicrophoneStyles";
 import { Howl } from "howler";
+import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
 
 const IdleMicrophone = () => {
   const { level } = useParams();
@@ -37,19 +38,16 @@ const IdleMicrophone = () => {
   const [wordScores, setWordScores] = useRecoilState(wordScoresAtom);
   const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
   const words = useData("words");
+  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
   const recordVoice = async () => {
     try {
-      const device = await navigator.mediaDevices.getUserMedia({
-        audio: true
-      });
       const audio = new Howl({
         src: ["/assets/audio/microphone_on.wav"]
       });
       audio.play();
-      const recorder = new MediaRecorder(device);
-      recorder.start();
+      mediaRecorder.start();
       setWordMicrophoneState("recording");
-      recorder.ondataavailable = (event) => {
+      mediaRecorder.ondataavailable = (event) => {
         const blob = new Blob([event.data], { type: "audio/wav" });
         const reader = new FileReader();
         reader.readAsDataURL(blob);
@@ -97,7 +95,7 @@ const IdleMicrophone = () => {
           });
       };
       setTimeout(() => {
-        recorder.stop();
+        mediaRecorder.stop();
         setWordMicrophoneState("loading");
       }, audioDuration);
     } catch (error) {

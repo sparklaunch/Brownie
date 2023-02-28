@@ -4,6 +4,7 @@ import modeAtom from "../../Stores/Classroom/mode";
 import WordScreen from "../ClassroomScreen/Word/WordScreen";
 import AudioManager from "../ClassroomScreen/AudioManager";
 import WindowSizeManager from "../ClassroomScreen/WindowSizeManager";
+import MediaRecorderManager from "../ClassroomScreen/MediaRecorderManager";
 
 const TrialScreen = () => {
   const [mode, setMode] = useRecoilState(modeAtom);
@@ -21,6 +22,7 @@ const TrialScreen = () => {
       {content}
       <AudioManager />
       <WindowSizeManager />
+      <MediaRecorderManager />
     </>
   );
 };

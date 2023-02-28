@@ -41,6 +41,7 @@ import YouDidItScreen from "../Story/Results/YouDidIt/YouDidItScreen";
 import LoadingCard from "../LoadingCard";
 import ScorePill from "../Story/Results/Score/ScorePill";
 import textbookSizeAtom from "../../../Stores/Misc/textbookSize";
+import mediaRecorderAtom from "../../../Stores/Misc/mediaRecorder";
 
 const Card = () => {
   const { level } = useParams();
@@ -57,14 +58,11 @@ const Card = () => {
   );
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
+  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
   const onClickWave = async () => {
     try {
       setWordMicrophoneState(`loading`);
-      const device = await navigator.mediaDevices.getUserMedia({
-        audio: true
-      });
-      const recorder = new MediaRecorder(device);
-      recorder.stop();
+      mediaRecorder.stop();
     } catch (error) {
       console.log(error);
     }

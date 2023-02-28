@@ -58,12 +58,14 @@ import _ from "lodash";
 import textbookSizeAtom from "../../../Stores/Misc/textbookSize";
 import temporaryGlowBorderShownAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderShown";
 import temporaryGlowBorderDirectionAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderDirection";
+import mediaRecorderAtom from "../../../Stores/Misc/mediaRecorder";
 
 const Book = () => {
   const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
@@ -109,11 +111,7 @@ const Book = () => {
   const onClickWave = async () => {
     try {
       setCentralMicrophoneState(`loading`);
-      const device = await navigator.mediaDevices.getUserMedia({
-        audio: true
-      });
-      const recorder = new MediaRecorder(device);
-      recorder.stop();
+      mediaRecorder.stop();
     } catch (error) {
       console.log(error);
     }

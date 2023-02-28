@@ -21,6 +21,7 @@ import {
 import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
 import { Howl, Howler } from "howler";
+import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
 
 const RightCompletedMicrophone = () => {
   const { level } = useParams();
@@ -39,19 +40,16 @@ const RightCompletedMicrophone = () => {
   const sentences = useData("sentences");
   const [highlightVisible, setHighlightVisible] =
     useRecoilState(highlightVisibleAtom);
+  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
   const recordVoice = async () => {
     try {
-      const device = await navigator.mediaDevices.getUserMedia({
-        audio: true
-      });
       const audio = new Howl({
         src: ["/assets/audio/microphone_on.wav"]
       });
       audio.play();
-      const recorder = new MediaRecorder(device);
-      recorder.start();
+      mediaRecorder.start();
       setCentralMicrophoneState("invisible");
-      recorder.ondataavailable = (event) => {
+      mediaRecorder.ondataavailable = (event) => {
         const blob = new Blob([event.data], { type: "audio/wav" });
         const reader = new FileReader();
         reader.readAsDataURL(blob);
@@ -100,7 +98,7 @@ const RightCompletedMicrophone = () => {
           });
       };
       setTimeout(() => {
-        recorder.stop();
+        mediaRecorder.stop();
         setCentralMicrophoneState("loading");
       }, audioDuration);
     } catch (error) {
