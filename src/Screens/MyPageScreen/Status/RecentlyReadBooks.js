@@ -1,13 +1,15 @@
 import StatusLabels from "./StatusLabels";
+import {
+  RecentlyReadBooksContainer,
+  RecentlyReadBooksText
+} from "./RecentlyReadBooksStyles";
 
 const RecentlyReadBooks = () => {
   return (
     <>
-      <p className={`border-l-4 border-[#00AEA8] pl-3 mb-3 text-[20px]`}>
-        최근 읽은 책
-      </p>
+      <RecentlyReadBooksText>최근 읽은 책</RecentlyReadBooksText>
       <StatusLabels />
-      <div className={`h-[600px]`}></div>
+      <RecentlyReadBooksContainer></RecentlyReadBooksContainer>
     </>
   );
 };
