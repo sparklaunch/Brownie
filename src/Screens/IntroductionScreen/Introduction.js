@@ -7,14 +7,14 @@ import Footer from "../MainScreen/Footer/Footer";
 
 const Introduction = () => {
   return (
-    <div>
+    <>
       <IntroductionHeader />
       <IntroductionContent />
       <IntroductionPreviews />
       <IntroductionCatalog />
       <IntroductionTry />
       <Footer />
-    </div>
+    </>
   );
 };
 

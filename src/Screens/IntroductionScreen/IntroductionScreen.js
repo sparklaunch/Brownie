@@ -3,10 +3,10 @@ import Introduction from "./Introduction";
 
 const IntroductionScreen = () => {
   return (
-    <div>
+    <>
       <NavigationBar />
       <Introduction />
-    </div>
+    </>
   );
 };
 
