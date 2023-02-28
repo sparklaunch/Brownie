@@ -1,8 +1,9 @@
 import { Button } from "@mui/material";
+import { AccountButtonsContainer } from "./AccountButtonsStyles";
 
 const AccountButtons = () => {
   return (
-    <div className={`text-center`}>
+    <AccountButtonsContainer>
       <Button
         variant={"outlined"}
         sx={{
@@ -31,7 +32,7 @@ const AccountButtons = () => {
       >
         확인
       </Button>
-    </div>
+    </AccountButtonsContainer>
   );
 };
 
