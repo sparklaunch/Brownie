@@ -1,22 +1,23 @@
 import IntroductionTryTitle from "./IntroductionTryTitle";
 import IntroductionTryButton from "./IntroductionTryButton";
 import IntroductionTryDevices from "./IntroductionTryDevices";
+import {
+  IntroductionTryInnerContainer,
+  IntroductionTryLeftContainer,
+  IntroductionTryOuterContainer
+} from "./IntroductionTryStyles";
 
 const IntroductionTry = () => {
   return (
-    <div
-      className={`flex flex-row justify-center bg-[#1AC573] p-[100px] overflow-clip`}
-    >
-      <div className={`w-[1200px] flex flex-row justify-between items-end`}>
-        <div className={`flex-shrink-0`}>
+    <IntroductionTryOuterContainer>
+      <IntroductionTryInnerContainer>
+        <IntroductionTryLeftContainer>
           <IntroductionTryTitle />
           <IntroductionTryButton />
-        </div>
-        <div>
-          <IntroductionTryDevices />
-        </div>
-      </div>
-    </div>
+        </IntroductionTryLeftContainer>
+        <IntroductionTryDevices />
+      </IntroductionTryInnerContainer>
+    </IntroductionTryOuterContainer>
   );
 };
 
