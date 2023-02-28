@@ -3,14 +3,15 @@ import {
   RecordingEnvironmentList,
   RecordingEnvironmentListItem,
   RecordingEnvironmentTitle,
-  RecordingEnvironmentTitleContainer
+  RecordingEnvironmentTitleContainer,
+  SnowflakeIcon
 } from "./RecordingEnvironmentStyles";
 
 const RecordingEnvironment = () => {
   return (
     <RecordingEnvironmentContainer>
       <RecordingEnvironmentTitleContainer>
-        <img
+        <SnowflakeIcon
           src={"assets/images/icons/snowflake_icon.svg"}
           alt={"Snowflake Icon"}
         />

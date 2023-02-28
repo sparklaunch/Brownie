@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const RecordingEnvironmentContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    margin: 12px 0 30px 0;
+  }
   @media (768px <= width <= 992px) {
     margin: 12px 0 30px 0;
   }
@@ -10,6 +13,12 @@ const RecordingEnvironmentContainer = styled.div`
 `;
 
 const RecordingEnvironmentTitleContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 8px 0;
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
@@ -25,6 +34,11 @@ const RecordingEnvironmentTitleContainer = styled.div`
 `;
 
 const RecordingEnvironmentTitle = styled.p`
+  @media (480px <= width <= 767px) {
+    font-family: Jua, sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+  }
   @media (768px <= width <= 992px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
@@ -38,6 +52,10 @@ const RecordingEnvironmentTitle = styled.p`
 `;
 
 const RecordingEnvironmentList = styled.ol`
+  @media (480px <= width <= 767px) {
+    list-style: decimal;
+    padding-left: 20px;
+  }
   @media (768px <= width <= 992px) {
     list-style: decimal;
     padding-left: 20px;
@@ -49,6 +67,11 @@ const RecordingEnvironmentList = styled.ol`
 `;
 
 const RecordingEnvironmentListItem = styled.li`
+  @media (480px <= width <= 767px) {
+    font-size: 18px;
+    margin: 4px 0;
+    ${({ accented }) => accented && `color: #EC1C47;`}
+  }
   @media (768px <= width <= 992px) {
     font-size: 18px;
     margin: 4px 0;
@@ -61,10 +84,20 @@ const RecordingEnvironmentListItem = styled.li`
   }
 `;
 
+const SnowflakeIcon = styled.img`
+  @media (480px <= width <= 767px) {
+  }
+  @media (768px <= width <= 992px) {
+  }
+  @media (width >= 993px) {
+  }
+`;
+
 export {
   RecordingEnvironmentContainer,
   RecordingEnvironmentTitleContainer,
   RecordingEnvironmentTitle,
   RecordingEnvironmentList,
-  RecordingEnvironmentListItem
+  RecordingEnvironmentListItem,
+  SnowflakeIcon
 };
