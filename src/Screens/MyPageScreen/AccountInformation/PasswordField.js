@@ -1,6 +1,7 @@
 import { TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
 import passwordAtom from "../../../Stores/Auth/password";
+import { PasswordFieldContainer } from "./PasswordFieldStyles";
 
 const PasswordField = () => {
   const [password, setPassword] = useRecoilState(passwordAtom);
@@ -8,7 +9,7 @@ const PasswordField = () => {
     setPassword(event.target.value.replace(/\s/g, ""));
   };
   return (
-    <div className={`flex flex-row justify-center mb-6`}>
+    <PasswordFieldContainer>
       <TextField
         variant={"outlined"}
         label={"비밀번호"}
@@ -21,7 +22,7 @@ const PasswordField = () => {
           backgroundColor: "white"
         }}
       />
-    </div>
+    </PasswordFieldContainer>
   );
 };
 
