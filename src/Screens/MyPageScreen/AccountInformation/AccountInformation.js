@@ -3,19 +3,23 @@ import AccountTitle from "./AccountTitle";
 import PasswordField from "./PasswordField";
 import AccountButtons from "./AccountButtons";
 import Footer from "../../MainScreen/Footer/Footer";
+import {
+  AccountInformationInnerContainer,
+  AccountInformationOuterContainer
+} from "./AccountInformationStyles";
 
 const AccountInformation = () => {
   return (
     <>
-      <div className={`flex flex-row justify-center bg-[#F9F9F9] p-[100px]`}>
-        <div className={`w-[1200px]`}>
+      <AccountInformationOuterContainer>
+        <AccountInformationInnerContainer>
           <AccountIcon />
           <AccountTitle />
           <PasswordField />
           <AccountButtons />
           {/*<ModificationForm />*/}
-        </div>
-      </div>
+        </AccountInformationInnerContainer>
+      </AccountInformationOuterContainer>
       <Footer />
     </>
   );
