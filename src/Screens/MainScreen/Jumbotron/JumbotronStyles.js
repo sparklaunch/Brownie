@@ -1,8 +1,21 @@
 import styled from "styled-components";
 
 const JumbotronOuterContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    position: relative;
+    height: 540px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
   @media (768px <= width <= 992px) {
-    background-color: rgb(70, 198, 210);
+    position: relative;
+    height: 540px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
   @media (width >= 993px) {
     position: relative;
@@ -42,15 +55,30 @@ const JumbotronInnerContainer = styled.div`
 `;
 
 const JumbotronFormContainer = styled.div`
+  @media (480px <= width <= 767px) {
+  }
   @media (768px <= width <= 992px) {
-    display: none;
   }
   @media (width >= 993px) {
   }
 `;
 
 const JumbotronSwiperContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+  }
   @media (768px <= width <= 992px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
   }
   @media (width >= 993px) {
     position: absolute;
