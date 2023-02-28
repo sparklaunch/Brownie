@@ -7,7 +7,6 @@ const Catalog = () => {
     <CatalogOuterContainer>
       <CatalogInnerContainer>
         <CatalogHeader />
-        {/*<CatalogFilter />*/}
         <CatalogList />
       </CatalogInnerContainer>
     </CatalogOuterContainer>
