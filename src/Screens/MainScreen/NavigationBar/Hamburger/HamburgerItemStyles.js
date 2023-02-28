@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HamburgerItemContainer = styled.div`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@ const HamburgerItemContainer = styled.div`
 `;
 
 const HamburgerItemText = styled.p`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     color: #222222;
     font-weight: bold;
     font-size: 14px;

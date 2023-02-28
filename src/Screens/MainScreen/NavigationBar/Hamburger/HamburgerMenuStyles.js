@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HamburgerMenuContainer = styled.div`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -13,7 +13,7 @@ const HamburgerMenuContainer = styled.div`
 `;
 
 const SignInButton = styled.p`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     font-family: Jua, sans-serif;
     font-size: 14px;
     color: white;
@@ -46,7 +46,7 @@ const SignInButton = styled.p`
 `;
 
 const InstructionsText = styled.p`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     font-size: 14px;
     color: #3d3d3d;
     cursor: pointer;
@@ -67,7 +67,7 @@ const InstructionsText = styled.p`
 `;
 
 const AdministratorSiteText = styled.p`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     font-size: 14px;
     color: #3d3d3d;
     cursor: pointer;

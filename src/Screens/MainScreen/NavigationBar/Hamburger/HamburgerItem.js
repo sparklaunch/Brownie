@@ -3,7 +3,7 @@ import {
   HamburgerItemText
 } from "./HamburgerItemStyles";
 
-const HamburgerItem = ({ text, link }) => {
+const HamburgerItem = ({ text }) => {
   return (
     <HamburgerItemContainer>
       <HamburgerItemText>{text}</HamburgerItemText>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HamburgerCustomerCenterContainer = styled.div`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     margin-top: 40px;
   }
   @media (768px <= width <= 992px) {
@@ -13,7 +13,7 @@ const HamburgerCustomerCenterContainer = styled.div`
 `;
 
 const CustomerCenterText = styled.p`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     font-size: 14px;
     color: #999;
     margin-bottom: 10px;
@@ -31,7 +31,7 @@ const CustomerCenterText = styled.p`
 `;
 
 const ContactContainer = styled.div`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,7 +49,7 @@ const ContactContainer = styled.div`
 `;
 
 const PhoneIconImage = styled.img`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     margin-right: 6px;
     width: 14px;
     height: 14px;
@@ -67,7 +67,7 @@ const PhoneIconImage = styled.img`
 `;
 
 const ContactText = styled.p`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     color: #3d3d3d;
     font-size: 14px;
   }

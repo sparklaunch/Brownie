@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HamburgerHeaderContainer = styled.div`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HamburgerItemsContainer = styled.div`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     display: flex;
     flex-direction: column;
     margin: 20px 0;

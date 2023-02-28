@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HamburgerWrapper = styled.div`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     padding: 20px 30px;
   }
   @media (768px <= width <= 992px) {
