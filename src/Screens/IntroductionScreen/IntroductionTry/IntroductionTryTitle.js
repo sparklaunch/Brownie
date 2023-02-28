@@ -1,13 +1,16 @@
+import {
+  IntroductionTryTitleContainer,
+  IntroductionTryTitleText
+} from "./IntroductionTryTitleStyles";
+
 const IntroductionTryTitle = () => {
   return (
-    <div className={`mb-[130px]`}>
-      <p className={`text-white font-[Jua] text-[44px]`}>
+    <IntroductionTryTitleContainer>
+      <IntroductionTryTitleText>
         AI 스피킹으로 우리 아이 영어 말하기
-      </p>
-      <p className={`text-white font-[Jua] text-[44px]`}>
-        지금 바로 시작하세요!
-      </p>
-    </div>
+      </IntroductionTryTitleText>
+      <IntroductionTryTitleText>지금 바로 시작하세요!</IntroductionTryTitleText>
+    </IntroductionTryTitleContainer>
   );
 };
 
