@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
-import { LogoContainer } from "./LogoStyles";
+import { LogoContainer, LogoImage } from "./LogoStyles";
 
 const Logo = () => {
   return (
     <LogoContainer>
       <Link to={"/"}>
-        <img src="/assets/images/logos/home_logo.png" alt="KidsBrown Logo" />
+        <LogoImage
+          src="/assets/images/logos/home_logo.png"
+          alt="KidsBrown Logo"
+        />
       </Link>
     </LogoContainer>
   );
