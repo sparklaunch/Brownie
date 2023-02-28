@@ -1,13 +1,7 @@
+import { AccountDeletionText } from "./AccountDeletionStyles";
+
 const AccountDeletion = () => {
-  return (
-    <div>
-      <p
-        className={`text-[12px] text-[#ACACAC] cursor-pointer hover:underline text-right`}
-      >
-        회원 탈퇴
-      </p>
-    </div>
-  );
+  return <AccountDeletionText>회원 탈퇴</AccountDeletionText>;
 };
 
 export default AccountDeletion;
