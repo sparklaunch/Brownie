@@ -2,19 +2,24 @@ import MyInformation from "./MyInformation";
 import HistoryGraph from "./HistoryGraph";
 import RecentlyReadBooks from "./RecentlyReadBooks";
 import Footer from "../../MainScreen/Footer/Footer";
+import {
+  StatusContainer,
+  StatusInnerContainer,
+  StatusOuterContainer
+} from "./StatusStyles";
 
 const Status = () => {
   return (
     <>
-      <div className={`flex flex-row justify-center`}>
-        <div className={`w-[1200px]`}>
-          <div className={`grid grid-cols-2 gap-5 mb-8`}>
+      <StatusOuterContainer>
+        <StatusInnerContainer>
+          <StatusContainer>
             <MyInformation />
             <HistoryGraph />
-          </div>
+          </StatusContainer>
           <RecentlyReadBooks />
-        </div>
-      </div>
+        </StatusInnerContainer>
+      </StatusOuterContainer>
       <Footer />
     </>
   );
