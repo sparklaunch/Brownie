@@ -1,17 +1,22 @@
-import { Link } from "react-router-dom";
 import Contact from "./Contact";
+import {
+  NavigationContentTopContainer,
+  NavigationLink
+} from "./NavigationContentTopStyles";
+import { useNavigate } from "react-router-dom";
 
 const NavigationContentTop = () => {
+  const navigate = useNavigate();
+  const onClickAdministrator = () => {
+    navigate("/administrator");
+  };
   return (
-    <div className={`flex flex-row items-center justify-end mb-[24px]`}>
-      <Link
-        to={"/administrator"}
-        className={`mr-[24px] text-[#3D3D3D] text-[18px]`}
-      >
+    <NavigationContentTopContainer>
+      <NavigationLink onClick={onClickAdministrator}>
         관리자 사이트
-      </Link>
+      </NavigationLink>
       <Contact />
-    </div>
+    </NavigationContentTopContainer>
   );
 };
 
