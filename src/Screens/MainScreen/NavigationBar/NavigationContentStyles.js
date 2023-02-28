@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const NavigationContentContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: none;
+  }
   @media (768px <= width <= 992px) {
     display: none;
   }
@@ -11,6 +14,9 @@ const NavigationContentContainer = styled.div`
 `;
 
 const HamburgerContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+  }
   @media (768px <= width <= 992px) {
     display: flex;
   }
