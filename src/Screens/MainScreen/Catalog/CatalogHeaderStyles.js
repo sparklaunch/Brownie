@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 const CatalogHeaderContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    margin: 50px 0;
+  }
   @media (768px <= width <= 992px) {
-    padding: 32px 0;
+    margin: 50px 0;
   }
   @media (width >= 993px) {
     margin: 50px 0;
@@ -10,10 +13,15 @@ const CatalogHeaderContainer = styled.div`
 `;
 
 const CatalogHeaderText = styled.p`
+  @media (480px <= width <= 767px) {
+    text-align: center;
+    font-family: Jua, sans-serif;
+    font-size: 44px;
+  }
   @media (768px <= width <= 992px) {
     text-align: center;
     font-family: Jua, sans-serif;
-    font-size: 32px;
+    font-size: 44px;
   }
   @media (width >= 993px) {
     text-align: center;
