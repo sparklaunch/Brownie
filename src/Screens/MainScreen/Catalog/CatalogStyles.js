@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 const CatalogOuterContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: column;
@@ -8,7 +13,8 @@ const CatalogOuterContainer = styled.div`
   }
   @media (width >= 993px) {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
