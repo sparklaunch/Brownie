@@ -3,14 +3,15 @@ import {
   RecordingInstructionsList,
   RecordingInstructionsListItem,
   RecordingInstructionsTitle,
-  RecordingInstructionsTitleContainer
+  RecordingInstructionsTitleContainer,
+  SnowflakeIcon
 } from "./RecordingInstructionsStyles";
 
 const RecordingInstructions = () => {
   return (
     <RecordingInstructionsContainer>
       <RecordingInstructionsTitleContainer>
-        <img
+        <SnowflakeIcon
           src={"assets/images/icons/snowflake_icon.svg"}
           alt={"Snowflake Icon"}
         />
