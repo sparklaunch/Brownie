@@ -29,9 +29,9 @@ const WordImage = () => {
   };
   const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
   let textColor;
-  if (totalScore.score >= Constants.EXCELLENT_THRESHOLD) {
+  if (totalScore.score >= Constants.WORD_EXCELLENT_THRESHOLD) {
     textColor = "#15B58F";
-  } else if (totalScore.score >= Constants.GOOD_THRESHOLD) {
+  } else if (totalScore.score >= Constants.WORD_GOOD_THRESHOLD) {
     textColor = "#FF8200";
   } else {
     textColor = "#FF2442";

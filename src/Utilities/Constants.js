@@ -4,6 +4,8 @@ const Constants = {
   API_KEY: "afef8c94d1094b58a3fc58e743eb9913",
   EXCELLENT_THRESHOLD: 75,
   GOOD_THRESHOLD: 55,
+  WORD_EXCELLENT_THRESHOLD: 75,
+  WORD_GOOD_THRESHOLD: 60,
   MICROPHONE_NOT_FOUND: {
     title: "마이크를 발견할 수 없음",
     text: "마이크를 연결해주세요.",

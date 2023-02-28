@@ -5,15 +5,31 @@ import {
   ScorePillInnerContainer,
   ScorePillOuterContainer
 } from "./ScorePillStyles";
+import { useRecoilState } from "recoil";
+import modeAtom from "../../../../../Stores/Classroom/mode";
 
 const ScorePill = ({ score }) => {
+  const [mode, setMode] = useRecoilState(modeAtom);
   let borderColor;
-  if (score >= Constants.EXCELLENT_THRESHOLD) {
-    borderColor = `#15B58F`;
-  } else if (score >= Constants.GOOD_THRESHOLD) {
-    borderColor = `#FF8200`;
-  } else {
-    borderColor = `#FF2442`;
+  switch (mode) {
+    case "story":
+      if (score >= Constants.EXCELLENT_THRESHOLD) {
+        borderColor = `#15B58F`;
+      } else if (score >= Constants.GOOD_THRESHOLD) {
+        borderColor = `#FF8200`;
+      } else {
+        borderColor = `#FF2442`;
+      }
+      break;
+    case "word":
+      if (score >= Constants.WORD_EXCELLENT_THRESHOLD) {
+        borderColor = `#15B58F`;
+      } else if (score >= Constants.WORD_GOOD_THRESHOLD) {
+        borderColor = `#FF8200`;
+      } else {
+        borderColor = `#FF2442`;
+      }
+      break;
   }
   return (
     <ScorePillOuterContainer>

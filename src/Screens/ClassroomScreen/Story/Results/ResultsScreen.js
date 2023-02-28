@@ -18,9 +18,11 @@ import Constants from "../../../../Utilities/Constants";
 import { Howl } from "howler";
 import scoresAtom from "../../../../Stores/Classroom/Story/scores";
 import { useParams } from "react-router-dom";
+import modeAtom from "../../../../Stores/Classroom/mode";
 
 const ResultsScreen = () => {
   const { level } = useParams();
+  const [mode, setMode] = useRecoilState(modeAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
@@ -85,12 +87,23 @@ const ResultsScreen = () => {
     }, 3000);
   }, []);
   if (resultsScreenShown) {
-    if (totalScore.score >= Constants.EXCELLENT_THRESHOLD) {
-      return <ExcellentScreen />;
-    } else if (totalScore.score >= Constants.GOOD_THRESHOLD) {
-      return <GoodScreen />;
-    } else {
-      return <NiceTryScreen />;
+    switch (mode) {
+      case "story":
+        if (totalScore.score >= Constants.EXCELLENT_THRESHOLD) {
+          return <ExcellentScreen />;
+        } else if (totalScore.score >= Constants.GOOD_THRESHOLD) {
+          return <GoodScreen />;
+        } else {
+          return <NiceTryScreen />;
+        }
+      case "word":
+        if (totalScore.score >= Constants.WORD_EXCELLENT_THRESHOLD) {
+          return <ExcellentScreen />;
+        } else if (totalScore.score >= Constants.WORD_GOOD_THRESHOLD) {
+          return <GoodScreen />;
+        } else {
+          return <NiceTryScreen />;
+        }
     }
   } else {
     return <></>;
