@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const HamburgerContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    cursor: pointer;
+  }
   @media (768px <= width <= 992px) {
     cursor: pointer;
   }
@@ -10,6 +13,9 @@ const HamburgerContainer = styled.div`
 `;
 
 const HamburgerIcon = styled.img`
+  @media (480px <= width <= 767px) {
+    cursor: pointer;
+  }
   @media (768px <= width <= 992px) {
     cursor: pointer;
   }
@@ -19,7 +25,7 @@ const HamburgerIcon = styled.img`
 `;
 
 const DrawerContainer = styled.div`
-  @media (width >= 480px) {
+  @media (480px <= width <= 767px) {
     width: 100vw;
     height: 100vh;
     background-color: white;
