@@ -8,7 +8,7 @@ const WelcomeButtons = () => {
     window.location.reload();
   };
   return (
-    <div>
+    <>
       <Button
         variant={"contained"}
         size={"large"}
@@ -40,7 +40,7 @@ const WelcomeButtons = () => {
       >
         로그아웃
       </Button>
-    </div>
+    </>
   );
 };
 
