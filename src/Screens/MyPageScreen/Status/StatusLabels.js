@@ -1,22 +1,30 @@
+import {
+  BulletIcon,
+  CompletedContainer,
+  PyramidIcon,
+  StatusLabel,
+  StatusLabelsContainer,
+  StudyingContainer
+} from "./StatusLabelsStyles";
+
 const StatusLabels = () => {
   return (
-    <div className={`flex flex-row justify-end`}>
-      <div className={`flex flex-row items-center`}>
-        <img
+    <StatusLabelsContainer>
+      <CompletedContainer>
+        <BulletIcon
           src={"assets/images/icons/bullet_icon.svg"}
           alt={"Bullet Icon"}
-          className={`w-[14px] h-[14px]`}
         />
-        <p className={`text-[16px] ml-2`}>학습 완료</p>
-      </div>
-      <div className={`flex flex-row items-center ml-6`}>
-        <img
+        <StatusLabel>학습 완료</StatusLabel>
+      </CompletedContainer>
+      <StudyingContainer>
+        <PyramidIcon
           src={"assets/images/icons/pyramid_icon.svg"}
           alt={"Pyramid Icon"}
         />
-        <p className={`text-[16px] ml-2`}>학습 진행중</p>
-      </div>
-    </div>
+        <StatusLabel>학습 진행중</StatusLabel>
+      </StudyingContainer>
+    </StatusLabelsContainer>
   );
 };
 
