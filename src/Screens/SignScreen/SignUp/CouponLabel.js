@@ -1,13 +1,18 @@
+import {
+  BulletIcon,
+  CouponLabelContainer,
+  CouponRegistrationText
+} from "./CouponLabelStyles";
+
 const CouponLabel = () => {
   return (
-    <div className={`flex flex-row items-center mb-1`}>
-      <img
+    <CouponLabelContainer>
+      <BulletIcon
         src={"assets/images/icons/bullet_icon.svg"}
         alt={"Bullet Icon"}
-        className={`w-[8px] h-[8px]`}
       />
-      <p className={`ml-3 text-[18px]`}>쿠폰 등록</p>
-    </div>
+      <CouponRegistrationText>쿠폰 등록</CouponRegistrationText>
+    </CouponLabelContainer>
   );
 };
 
