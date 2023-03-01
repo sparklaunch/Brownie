@@ -3,7 +3,9 @@ import styled from "styled-components";
 const SignInFindAccountContainer = styled.div`
   @media (480px <= width <= 767px) {
     font-size: 14px;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   @media (768px <= width <= 992px) {
     font-size: 14px;

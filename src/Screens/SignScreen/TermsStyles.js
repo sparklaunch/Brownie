@@ -4,6 +4,9 @@ const TermsContainer = styled.div`
   @media (480px <= width <= 767px) {
     font-size: 14px;
     margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   @media (768px <= width <= 992px) {
     font-size: 14px;

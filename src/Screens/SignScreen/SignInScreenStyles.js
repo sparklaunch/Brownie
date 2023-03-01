@@ -5,7 +5,7 @@ const SignInScreenOuterContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    margin-bottom: 30px;
   }
   @media (768px <= width <= 992px) {
     display: flex;
