@@ -1,15 +1,25 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import {
+  FindIDLink,
+  FindPasswordLink,
+  SignInFindAccountContainer
+} from "./SignInFindAccountStyles";
 
 const SignInFindAccount = () => {
+  const navigate = useNavigate();
+  const onClickFindID = () => {
+    navigate("/find-id");
+  };
+  const onClickFindPassword = () => {
+    navigate("/find-password");
+  };
   return (
-    <div className={`text-[14px] text-center`}>
-      <Link className={`pr-3 border-r-2 border-[#DFDFDF]`} to={"/find-id"}>
-        아이디 찾기
-      </Link>
-      <Link className={`pl-3`} to={"/find-password"}>
+    <SignInFindAccountContainer>
+      <FindIDLink onClick={onClickFindID}>아이디 찾기</FindIDLink>
+      <FindPasswordLink onClick={onClickFindPassword}>
         비밀번호 찾기
-      </Link>
-    </div>
+      </FindPasswordLink>
+    </SignInFindAccountContainer>
   );
 };
 
