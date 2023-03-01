@@ -1,13 +1,18 @@
+import {
+  BulletIcon,
+  StudentLabelContainer,
+  StudentLabelText
+} from "./StudentLabelStyles";
+
 const StudentLabel = () => {
   return (
-    <div className={`flex flex-row items-center mb-1`}>
-      <img
+    <StudentLabelContainer>
+      <BulletIcon
         src={"assets/images/icons/bullet_icon.svg"}
         alt={"Bullet Icon"}
-        className={`w-[8px] h-[8px]`}
       />
-      <p className={`ml-3 text-[18px]`}>학생(자녀) 정보</p>
-    </div>
+      <StudentLabelText>학생(자녀) 정보</StudentLabelText>
+    </StudentLabelContainer>
   );
 };
 
