@@ -9,6 +9,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Constants from "../../../Utilities/Constants";
 import Swal from "sweetalert2";
+import { SignInFieldsContainer } from "./SignInFieldsStyles";
 
 const SignInFields = () => {
   const validPassword = useRecoilValue(validPasswordSelector);
@@ -74,7 +75,7 @@ const SignInFields = () => {
     }
   };
   return (
-    <div className={`py-3`}>
+    <SignInFieldsContainer>
       <TextField
         id={"id"}
         value={id}
@@ -126,7 +127,7 @@ const SignInFields = () => {
       >
         로그인
       </Button>
-    </div>
+    </SignInFieldsContainer>
   );
 };
 
