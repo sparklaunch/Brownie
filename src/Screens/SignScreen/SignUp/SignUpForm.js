@@ -1,12 +1,13 @@
 import SignUpHeader from "./SignUpHeader";
 import SignUpFields from "./SignUpFields";
+import { SignUpFormContainer } from "./SignUpFormStyles";
 
 const SignUpForm = () => {
   return (
-    <div className={`bg-[#F9F9F9] p-5`}>
+    <SignUpFormContainer>
       <SignUpHeader />
       <SignUpFields />
-    </div>
+    </SignUpFormContainer>
   );
 };
 
