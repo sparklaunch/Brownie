@@ -18,6 +18,16 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Constants from "../../../Utilities/Constants";
 import Swal from "sweetalert2";
+import {
+  AsteriskContainer,
+  CouponFieldContainer,
+  CouponMessageText,
+  RelativeContainer,
+  RequiredFieldsNoticeText,
+  SignUpFieldsContainer,
+  TermsContainer,
+  TermsText
+} from "./SignUpFieldsStyles";
 
 const SignUpFields = () => {
   const validPhoneNumber = useRecoilValue(validPhoneNumberSelector);
@@ -153,9 +163,9 @@ const SignUpFields = () => {
     }
   };
   return (
-    <div className={`pt-3`}>
-      <p className={`text-right mb-1 text-red-600`}>* 표시 필수 입력</p>
-      <div className={`relative`}>
+    <SignUpFieldsContainer>
+      <RequiredFieldsNoticeText>* 표시 필수 입력</RequiredFieldsNoticeText>
+      <RelativeContainer>
         <TextField
           id={"id"}
           value={id}
@@ -171,15 +181,9 @@ const SignUpFields = () => {
             marginBottom: 1.5
           }}
         />
-        {id.length === 0 && (
-          <div
-            className={`absolute top-[50%] translate-y-[-50%] right-[10px] text-2xl text-red-600`}
-          >
-            *
-          </div>
-        )}
-      </div>
-      <div className={`relative`}>
+        {id.length === 0 && <AsteriskContainer>*</AsteriskContainer>}
+      </RelativeContainer>
+      <RelativeContainer>
         <TextField
           id={"password"}
           error={!validPassword}
@@ -200,16 +204,10 @@ const SignUpFields = () => {
             marginBottom: 1.5
           }}
         />
-        {password.length === 0 && (
-          <div
-            className={`absolute top-[50%] translate-y-[-50%] right-[10px] text-2xl text-red-600`}
-          >
-            *
-          </div>
-        )}
-      </div>
+        {password.length === 0 && <AsteriskContainer>*</AsteriskContainer>}
+      </RelativeContainer>
       <PasswordInfo />
-      <div className={`relative`}>
+      <RelativeContainer>
         <TextField
           id={"password-confirm"}
           error={password !== passwordConfirm || !validPassword}
@@ -231,14 +229,10 @@ const SignUpFields = () => {
           }}
         />
         {passwordConfirm.length === 0 && (
-          <div
-            className={`absolute top-[50%] translate-y-[-50%] right-[10px] text-2xl text-red-600`}
-          >
-            *
-          </div>
+          <AsteriskContainer>*</AsteriskContainer>
         )}
-      </div>
-      <div className={`relative`}>
+      </RelativeContainer>
+      <RelativeContainer>
         <TextField
           id={"phone-number"}
           error={!validPhoneNumber}
@@ -259,16 +253,10 @@ const SignUpFields = () => {
             marginBottom: 1.5
           }}
         />
-        {phoneNumber.length === 0 && (
-          <div
-            className={`absolute top-[50%] translate-y-[-50%] right-[10px] text-2xl text-red-600`}
-          >
-            *
-          </div>
-        )}
-      </div>
+        {phoneNumber.length === 0 && <AsteriskContainer>*</AsteriskContainer>}
+      </RelativeContainer>
       <StudentLabel />
-      <div className={`relative`}>
+      <RelativeContainer>
         <TextField
           id={"student-name"}
           value={studentName}
@@ -283,14 +271,8 @@ const SignUpFields = () => {
             marginBottom: 1.5
           }}
         />
-        {studentName.length === 0 && (
-          <div
-            className={`absolute top-[50%] translate-y-[-50%] right-[10px] text-2xl text-red-600`}
-          >
-            *
-          </div>
-        )}
-      </div>
+        {studentName.length === 0 && <AsteriskContainer>*</AsteriskContainer>}
+      </RelativeContainer>
       <TextField
         id={"student-birth-date"}
         value={studentBirthDate}
@@ -306,7 +288,7 @@ const SignUpFields = () => {
         }}
       />
       <CouponLabel />
-      <div className={`flex flex-row items-center`}>
+      <CouponFieldContainer>
         <TextField
           id={"coupon"}
           value={coupon}
@@ -335,19 +317,17 @@ const SignUpFields = () => {
         >
           등록
         </Button>
-      </div>
+      </CouponFieldContainer>
       {couponMessage.length > 0 && (
-        <p className={"text-green-600 text-[14px] mt-1"}>{couponMessage}</p>
+        <CouponMessageText>{couponMessage}</CouponMessageText>
       )}
-      <div className={"flex flex-row items-center relative left-[-12px]"}>
+      <TermsContainer>
         <Checkbox
           checked={agreeStatus}
           onChange={(event) => setAgreeStatus(event.target.checked)}
         />
-        <p className={"font-extralight text-[16px]"}>
-          이용약관 및 개인정보취급방침에 동의합니다. (필수)
-        </p>
-      </div>
+        <TermsText>이용약관 및 개인정보취급방침에 동의합니다. (필수)</TermsText>
+      </TermsContainer>
       <Button
         variant={"contained"}
         onClick={onClickSignUp}
@@ -366,7 +346,7 @@ const SignUpFields = () => {
       >
         회원가입
       </Button>
-    </div>
+    </SignUpFieldsContainer>
   );
 };
 
