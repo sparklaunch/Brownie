@@ -32,16 +32,19 @@ const HamburgerItemText = styled.p`
     color: #222222;
     font-weight: bold;
     font-size: 14px;
+    cursor: pointer;
   }
   @media (768px <= width <= 992px) {
     color: #222222;
     font-weight: bold;
     font-size: 14px;
+    cursor: pointer;
   }
   @media (width >= 993px) {
     color: #222222;
     font-weight: bold;
     font-size: 14px;
+    cursor: pointer;
   }
 `;
 
