@@ -6,6 +6,11 @@ import SignUpForm from "./SignUp/SignUpForm";
 import Terms from "./Terms";
 import NavigationBar from "../MainScreen/NavigationBar/NavigationBar";
 import Footer from "../MainScreen/Footer/Footer";
+import {
+  SignInScreenContainer,
+  SignInScreenInnerContainer,
+  SignInScreenOuterContainer
+} from "./SignInScreenStyles";
 
 const SignInScreen = () => {
   const [tabValue, setTabValue] = useRecoilState(tabValueAtom);
@@ -15,11 +20,9 @@ const SignInScreen = () => {
   return (
     <>
       <NavigationBar />
-      <div className={`flex flex-col justify-center h-[100vh]`}>
-        <div className={`flex flex-col items-center overflow-clip`}>
-          <div
-            className={`w-[500px] border-2 border-[#DFDFDF] rounded-lg shadow-lg`}
-          >
+      <SignInScreenOuterContainer>
+        <SignInScreenInnerContainer>
+          <SignInScreenContainer>
             <Box sx={{ width: "100%" }}>
               <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
                 <Tabs value={tabValue} onChange={onTabChange}>
@@ -29,10 +32,10 @@ const SignInScreen = () => {
               </Box>
               {tabValue === 0 ? <SignInForm /> : <SignUpForm />}
             </Box>
-          </div>
+          </SignInScreenContainer>
           <Terms />
-        </div>
-      </div>
+        </SignInScreenInnerContainer>
+      </SignInScreenOuterContainer>
       <Footer />
     </>
   );
