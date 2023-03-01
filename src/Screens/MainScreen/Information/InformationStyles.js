@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const InformationOuterContainer = styled.div`
   @media (480px <= width <= 767px) {
@@ -20,19 +21,19 @@ const InformationOuterContainer = styled.div`
 
 const InformationInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
-    width: 90%;
+    width: ${Constants.MOBILE_CONTAINER_WIDTH};
     margin: 40px 0;
   }
   @media (768px <= width <= 992px) {
-    width: 90%;
+    width: ${Constants.TABLET_CONTAINER_WIDTH};
     margin: 40px 0;
   }
   @media (993px <= width <= 1279px) {
-    width: 1200px;
+    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     margin: 50px 0;
   }
   @media (width >= 1280px) {
-    width: 1200px;
+    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     margin: 50px 0;
   }
 `;

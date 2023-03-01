@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../Utilities/Constants";
 
 const MyPageTabsOuterContainer = styled.div`
   @media (480px <= width <= 767px) {
@@ -23,19 +24,19 @@ const MyPageTabsOuterContainer = styled.div`
 
 const MyPageTabsInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
-    width: 1200px;
+    width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
   @media (768px <= width <= 992px) {
-    width: 1200px;
+    width: ${Constants.TABLET_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
   @media (width >= 993px) {
-    width: 1200px;
+    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;
     justify-content: center;

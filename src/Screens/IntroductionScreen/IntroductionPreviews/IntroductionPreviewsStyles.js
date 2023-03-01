@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const IntroductionPreviewsOuterContainer = styled.div`
   @media (480px <= width <= 767px) {
@@ -23,19 +24,19 @@ const IntroductionPreviewsOuterContainer = styled.div`
 
 const IntroductionPreviewsInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
-    width: 1200px;
+    width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
   @media (768px <= width <= 992px) {
-    width: 1200px;
+    width: ${Constants.TABLET_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
   @media (width >= 993px) {
-    width: 1200px;
+    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;
     justify-content: space-around;

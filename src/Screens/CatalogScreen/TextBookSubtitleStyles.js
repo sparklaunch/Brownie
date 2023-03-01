@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../Utilities/Constants";
 
 const TextBookSubtitleOuterContainer = styled.div`
   @media (768px <= width <= 992px) {
@@ -25,25 +26,25 @@ const TextBookSubtitleOuterContainer = styled.div`
 
 const TextBookSubtitleInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
-    width: 1200px;
+    width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   @media (768px <= width <= 992px) {
-    width: 1200px;
+    width: ${Constants.TABLET_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   @media (993px <= width <= 1279px) {
-    width: 1200px;
+    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   @media (width >= 1280px) {
-    width: 1200px;
+    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const IntroductionTryOuterContainer = styled.div`
   @media (480px <= width <= 767px) {
@@ -29,21 +30,20 @@ const IntroductionTryOuterContainer = styled.div`
 
 const IntroductionTryInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
-    width: 1200px;
+    width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
   }
   @media (768px <= width <= 992px) {
-    width: 1200px;
-    display: flex;
+    width: ${Constants.TABLET_CONTAINER_WIDTH};
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
   }
   @media (width >= 993px) {
-    width: 1200px;
+    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;
     justify-content: space-between;

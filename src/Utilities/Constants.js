@@ -6,6 +6,9 @@ const Constants = {
   GOOD_THRESHOLD: 55,
   WORD_EXCELLENT_THRESHOLD: 75,
   WORD_GOOD_THRESHOLD: 60,
+  DESKTOP_CONTAINER_WIDTH: "1200px",
+  TABLET_CONTAINER_WIDTH: "90%",
+  MOBILE_CONTAINER_WIDTH: "90%",
   MICROPHONE_NOT_FOUND: {
     title: "마이크를 발견할 수 없음",
     text: "마이크를 연결해주세요.",

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const SwiperSlideImage = styled.img`
   @media (480px <= width <= 767px) {
@@ -38,22 +39,22 @@ const SwiperSlideContainer = styled.div`
 
 const SwiperSlideContentsInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
-    width: 1200px;
+    width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
   }
   @media (768px <= width <= 992px) {
-    width: 1200px;
+    width: ${Constants.TABLET_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
   }
   @media (993px <= width <= 1279px) {
-    width: 1200px;
+    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
   }
   @media (width >= 1280px) {
-    width: 1200px;
+    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
   }
