@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const SignInFormOuterContainer = styled.div`
   @media (480px <= width <= 767px) {
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    display: none;
   }
   @media (768px <= width <= 992px) {
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    display: none;
   }
   @media (width >= 993px) {
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));

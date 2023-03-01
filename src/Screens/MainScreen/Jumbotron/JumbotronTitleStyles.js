@@ -24,10 +24,12 @@ const JumbotronTitleContainer = styled.div`
 const TitleContainer = styled.div`
   @media (480px <= width <= 767px) {
     position: relative;
+    width: 80%;
     margin-bottom: 54px;
   }
   @media (768px <= width <= 992px) {
     position: relative;
+    width: 90%;
     margin-bottom: 54px;
   }
   @media (width >= 993px) {
@@ -38,17 +40,17 @@ const TitleContainer = styled.div`
 
 const Title = styled.p`
   @media (480px <= width <= 767px) {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
-    line-height: 48px;
+    line-height: 36px;
     letter-spacing: -0.2px;
     color: white;
     font-family: GmarketSans, sans-serif;
   }
   @media (768px <= width <= 992px) {
-    font-size: 40px;
+    font-size: 36px;
     font-weight: bold;
-    line-height: 48px;
+    line-height: 40px;
     letter-spacing: -0.2px;
     color: white;
     font-family: GmarketSans, sans-serif;
@@ -104,10 +106,9 @@ const DemoButton = styled.button`
 
 const ButtonContainer = styled.div`
   @media (480px <= width <= 767px) {
-    transform: scale(0.8) translateX(-80px);
+    transform: scale(0.8) translateX(-50px);
   }
   @media (768px <= width <= 992px) {
-    transform: scale(0.8) translateX(-80px);
   }
   @media (width >= 993px) {
   }
