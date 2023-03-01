@@ -1,16 +1,29 @@
 import {
   AdministratorSiteText,
   HamburgerMenuContainer,
-  InstructionsText,
   SignInButton
 } from "./HamburgerMenuStyles";
+import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import drawerOpenAtom from "../../../../Stores/Misc/drawerOpen";
 
 const HamburgerMenu = () => {
+  const navigate = useNavigate();
+  const [drawerOpen, setDrawerOpen] = useRecoilState(drawerOpenAtom);
+  const onClickSignIn = () => {
+    setDrawerOpen(false);
+    navigate("/signin");
+  };
+  const onClickAdministrator = () => {
+    setDrawerOpen(false);
+    navigate("/administrator");
+  };
   return (
     <HamburgerMenuContainer>
-      <SignInButton>로그인</SignInButton>
-      <InstructionsText>사용 설명서</InstructionsText>
-      <AdministratorSiteText>관리자 사이트</AdministratorSiteText>
+      <SignInButton onClick={onClickSignIn}>로그인</SignInButton>
+      <AdministratorSiteText onClick={onClickAdministrator}>
+        관리자 사이트
+      </AdministratorSiteText>
     </HamburgerMenuContainer>
   );
 };
