@@ -6,7 +6,7 @@ const FooterContainer = styled.div`
     padding: 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
   @media (768px <= width <= 992px) {
     border-top: 2px solid #dfdfdf;
@@ -27,8 +27,8 @@ const FooterContainer = styled.div`
 const AddressContainer = styled.div`
   @media (480px <= width <= 767px) {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     font-size: 14px;
     color: #707070;
     padding: 4px 0;
@@ -53,8 +53,7 @@ const AddressContainer = styled.div`
 
 const NameText = styled.p`
   @media (480px <= width <= 767px) {
-    padding-right: 8px;
-    border-right: 1px solid #dfdfdf;
+    margin-bottom: 2px;
   }
   @media (768px <= width <= 992px) {
     padding-right: 8px;
@@ -68,7 +67,6 @@ const NameText = styled.p`
 
 const AddressText = styled.p`
   @media (480px <= width <= 767px) {
-    padding-left: 8px;
   }
   @media (768px <= width <= 992px) {
     padding-left: 8px;
@@ -81,8 +79,8 @@ const AddressText = styled.p`
 const DetailContainer = styled.div`
   @media (480px <= width <= 767px) {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     font-size: 14px;
     color: #707070;
     padding: 4px 0;
@@ -107,8 +105,7 @@ const DetailContainer = styled.div`
 
 const OwnerText = styled.p`
   @media (480px <= width <= 767px) {
-    padding-right: 8px;
-    border-right: 1px solid #dfdfdf;
+    margin-bottom: 2px;
   }
   @media (768px <= width <= 992px) {
     padding-right: 8px;
@@ -122,8 +119,7 @@ const OwnerText = styled.p`
 
 const RegistrationNumberText = styled.p`
   @media (480px <= width <= 767px) {
-    padding: 0 12px;
-    border-right: 1px solid #dfdfdf;
+    margin-bottom: 2px;
   }
   @media (768px <= width <= 992px) {
     padding: 0 12px;
@@ -137,7 +133,6 @@ const RegistrationNumberText = styled.p`
 
 const CustomerServiceNumberText = styled.p`
   @media (480px <= width <= 767px) {
-    padding-left: 12px;
   }
   @media (768px <= width <= 992px) {
     padding-left: 12px;

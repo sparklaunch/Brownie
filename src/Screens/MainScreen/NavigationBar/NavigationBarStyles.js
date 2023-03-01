@@ -26,12 +26,11 @@ const NavigationBarInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
     display: flex;
     flex-direction: row;
-    width: ${Constants.MOBILE_CONTAINER_WIDTH};
+    width: 100%;
     height: 56px;
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
   @media (768px <= width <= 992px) {
     display: flex;

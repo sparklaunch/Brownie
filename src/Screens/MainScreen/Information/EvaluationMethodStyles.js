@@ -3,8 +3,8 @@ import styled from "styled-components";
 const EvaluationMethodContainer = styled.div`
   @media (480px <= width <= 767px) {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 30px;
   }
   @media (768px <= width <= 992px) {
@@ -30,6 +30,7 @@ const EvaluationMethodTitle = styled.p`
     background-color: #1ab9c5;
     color: white;
     display: inline-block;
+    margin-bottom: 16px;
   }
   @media (768px <= width <= 992px) {
     font-size: 20px;
@@ -54,7 +55,6 @@ const EvaluationMethodTitle = styled.p`
 const EvaluationMethodDescription = styled.p`
   @media (480px <= width <= 767px) {
     font-size: 18px;
-    margin-left: 16px;
   }
   @media (768px <= width <= 992px) {
     font-size: 18px;

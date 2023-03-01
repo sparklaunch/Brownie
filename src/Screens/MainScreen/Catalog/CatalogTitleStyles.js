@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const CatalogTitleContainer = styled.div`
   @media (480px <= width <= 767px) {
+    margin-top: 8px;
   }
   @media (768px <= width <= 992px) {
   }

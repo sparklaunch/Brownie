@@ -16,7 +16,7 @@ const CatalogHeaderText = styled.p`
   @media (480px <= width <= 767px) {
     text-align: center;
     font-family: Jua, sans-serif;
-    font-size: 44px;
+    font-size: 32px;
   }
   @media (768px <= width <= 992px) {
     text-align: center;

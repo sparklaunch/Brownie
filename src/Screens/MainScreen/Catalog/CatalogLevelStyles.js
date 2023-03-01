@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const CatalogLevelContainer = styled.div`
   @media (480px <= width <= 767px) {
-    margin-bottom: 12px;
+    margin-bottom: 48px;
   }
   @media (768px <= width <= 992px) {
     margin-bottom: 12px;
