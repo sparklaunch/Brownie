@@ -2,6 +2,15 @@ import styled from "styled-components";
 import Constants from "../../../Utilities/Constants";
 
 const IntroductionCatalogOuterContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 120px 0;
+    background-color: #f4feff;
+    border-top: 1px solid #1ab9c5;
+    border-bottom: 1px solid #1ab9c5;
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;

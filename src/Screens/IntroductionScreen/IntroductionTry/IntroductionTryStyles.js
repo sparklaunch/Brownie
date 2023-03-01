@@ -7,7 +7,7 @@ const IntroductionTryOuterContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     background-color: #1ac573;
-    padding: 100px;
+    padding: 100px 0;
     overflow: clip;
   }
   @media (768px <= width <= 992px) {
@@ -32,9 +32,8 @@ const IntroductionTryInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
     width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: center;
   }
   @media (768px <= width <= 992px) {
     width: ${Constants.TABLET_CONTAINER_WIDTH};
@@ -53,7 +52,9 @@ const IntroductionTryInnerContainer = styled.div`
 
 const IntroductionTryLeftContainer = styled.div`
   @media (480px <= width <= 767px) {
-    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
   @media (768px <= width <= 992px) {
     flex-shrink: 0;

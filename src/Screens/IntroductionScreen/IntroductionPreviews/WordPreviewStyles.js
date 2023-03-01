@@ -5,6 +5,7 @@ const WordPreviewContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 64px;
   }
   @media (768px <= width <= 992px) {
     display: flex;
@@ -40,8 +41,9 @@ const WordCornerText = styled.p`
   @media (480px <= width <= 767px) {
     color: #515151;
     font-size: 18px;
+    line-height: 1.5;
     &:last-of-type {
-      margin-bottom: 60px;
+      margin-bottom: 24px;
     }
   }
   @media (768px <= width <= 992px) {

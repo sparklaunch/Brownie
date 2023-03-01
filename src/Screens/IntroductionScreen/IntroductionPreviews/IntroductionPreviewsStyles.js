@@ -6,7 +6,7 @@ const IntroductionPreviewsOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 140px;
+    padding: 140px 0;
   }
   @media (768px <= width <= 992px) {
     display: flex;
@@ -26,8 +26,7 @@ const IntroductionPreviewsInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
     width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
   }
   @media (768px <= width <= 992px) {
     width: ${Constants.TABLET_CONTAINER_WIDTH};

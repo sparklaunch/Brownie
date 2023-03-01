@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 const IntroductionContentFeaturesContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: column;

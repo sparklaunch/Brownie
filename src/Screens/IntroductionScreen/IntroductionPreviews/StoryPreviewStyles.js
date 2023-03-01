@@ -40,8 +40,9 @@ const StoryCornerText = styled.p`
   @media (480px <= width <= 767px) {
     color: #515151;
     font-size: 18px;
+    line-height: 1.5;
     &:last-of-type {
-      margin-bottom: 60px;
+      margin-bottom: 30px;
     }
   }
   @media (768px <= width <= 992px) {
