@@ -68,7 +68,8 @@ const RecordingInstructionsList = styled.ol`
 
 const RecordingInstructionsListItem = styled.li`
   @media (480px <= width <= 767px) {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.5;
     margin: 4px 0;
   }
   @media (768px <= width <= 992px) {

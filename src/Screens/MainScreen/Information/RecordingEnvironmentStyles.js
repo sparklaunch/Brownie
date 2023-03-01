@@ -68,7 +68,8 @@ const RecordingEnvironmentList = styled.ol`
 
 const RecordingEnvironmentListItem = styled.li`
   @media (480px <= width <= 767px) {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.5;
     margin: 4px 0;
     ${({ accented }) => accented && `color: #EC1C47;`}
   }

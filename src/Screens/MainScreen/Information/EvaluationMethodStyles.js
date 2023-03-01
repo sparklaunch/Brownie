@@ -54,7 +54,8 @@ const EvaluationMethodTitle = styled.p`
 
 const EvaluationMethodDescription = styled.p`
   @media (480px <= width <= 767px) {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.5;
   }
   @media (768px <= width <= 992px) {
     font-size: 18px;
