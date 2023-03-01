@@ -16,7 +16,7 @@ const TryTitleContainer = styled.div`
 
 const TryTitleText = styled.p`
   @media (width <= 767px) {
-    font-size: 32px;
+    font-size: 24px;
     font-family: Jua, sans-serif;
     text-align: center;
   }
