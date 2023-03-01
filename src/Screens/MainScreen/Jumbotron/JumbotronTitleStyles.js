@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const JumbotronTitleContainer = styled.div`
   @media (480px <= width <= 767px) {
-    height: 540px;
+    margin: 44px 16px 0 16px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: flex-start;
   }
   @media (768px <= width <= 992px) {
     height: 540px;
@@ -24,8 +24,10 @@ const JumbotronTitleContainer = styled.div`
 const TitleContainer = styled.div`
   @media (480px <= width <= 767px) {
     position: relative;
-    width: 80%;
-    margin-bottom: 54px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   @media (768px <= width <= 992px) {
     position: relative;
@@ -43,6 +45,7 @@ const Title = styled.p`
     font-size: 30px;
     font-weight: bold;
     line-height: 36px;
+    margin-bottom: 50px;
     letter-spacing: -0.2px;
     color: white;
     font-family: GmarketSans, sans-serif;
@@ -106,7 +109,7 @@ const DemoButton = styled.button`
 
 const ButtonContainer = styled.div`
   @media (480px <= width <= 767px) {
-    transform: scale(0.8) translateX(-50px);
+    transform: scale(0.8) translateX(-40px);
   }
   @media (768px <= width <= 992px) {
   }

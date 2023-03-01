@@ -4,9 +4,9 @@ import Constants from "../../../Utilities/Constants";
 const SwiperSlideImage = styled.img`
   @media (480px <= width <= 767px) {
     width: 100%;
-    height: 100%;
+    height: 440px;
     object-fit: cover;
-    object-position: center;
+    object-position: bottom;
   }
   @media (768px <= width <= 992px) {
     width: 100%;
@@ -39,7 +39,6 @@ const SwiperSlideContainer = styled.div`
 
 const SwiperSlideContentsInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
-    width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
   }
@@ -69,7 +68,7 @@ const SwiperSlideContentsOuterContainer = styled.div`
     right: 0;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
   }
   @media (768px <= width <= 992px) {
     position: absolute;
@@ -95,10 +94,7 @@ const SwiperSlideContentsOuterContainer = styled.div`
 
 const SwiperSlideContentsContainer = styled.div`
   @media (480px <= width <= 767px) {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    margin: 44px 16px 0 16px;
   }
   @media (768px <= width <= 992px) {
     height: 100%;
@@ -116,8 +112,7 @@ const SwiperSlideContentsContainer = styled.div`
 
 const PFRLogo = styled.img`
   @media (480px <= width <= 767px) {
-    height: 60px;
-    width: 396px;
+    height: 40px;
   }
   @media (768px <= width <= 992px) {
     height: 60px;
@@ -133,9 +128,9 @@ const SwiperSlideTopText = styled.p`
   @media (480px <= width <= 767px) {
     font-family: GmarketSans, sans-serif;
     color: white;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
-    margin-top: 24px;
+    margin-top: 16px;
   }
   @media (768px <= width <= 992px) {
     font-family: GmarketSans, sans-serif;
@@ -155,6 +150,7 @@ const SwiperSlideTopText = styled.p`
 
 const SwiperSlideTopContents = styled.div`
   @media (480px <= width <= 767px) {
+    margin-bottom: 50px;
   }
   @media (768px <= width <= 992px) {
   }
@@ -164,6 +160,7 @@ const SwiperSlideTopContents = styled.div`
 
 const SwiperSlideBottomContents = styled.div`
   @media (480px <= width <= 767px) {
+    transform: scale(0.8) translateX(-40px);
   }
   @media (768px <= width <= 992px) {
   }

@@ -18,6 +18,7 @@ import { DemoButton } from "./JumbotronTitleStyles";
 import { useNavigate } from "react-router-dom";
 
 const JumbotronSwiper = () => {
+  const mobile = window.innerWidth < 993;
   const navigate = useNavigate();
   return (
     <Swiper
@@ -33,7 +34,11 @@ const JumbotronSwiper = () => {
         <SwiperSlideContainer>
           <SwiperSlideImage
             loading={`lazy`}
-            src={`/assets/images/jumbotron/jumbotron1.png`}
+            src={
+              mobile
+                ? `/assets/images/jumbotron/jumbotron_mobile1.png`
+                : `/assets/images/jumbotron/jumbotron1.png`
+            }
             alt={`Jumbotron 1`}
           />
           <SwiperSlideContentsOuterContainer>
@@ -47,7 +52,11 @@ const JumbotronSwiper = () => {
         <SwiperSlideContainer>
           <SwiperSlideImage
             loading={`lazy`}
-            src={`/assets/images/jumbotron/jumbotron2.png`}
+            src={
+              mobile
+                ? `/assets/images/jumbotron/jumbotron_mobile2.png`
+                : `/assets/images/jumbotron/jumbotron2.png`
+            }
             alt={`Jumbotron 2`}
           />
           <SwiperSlideContentsOuterContainer>
@@ -61,7 +70,11 @@ const JumbotronSwiper = () => {
         <SwiperSlideContainer>
           <SwiperSlideImage
             loading={`lazy`}
-            src={`/assets/images/jumbotron/jumbotron3.png`}
+            src={
+              mobile
+                ? `/assets/images/jumbotron/jumbotron_mobile3.png`
+                : `/assets/images/jumbotron/jumbotron3.png`
+            }
             alt={`Jumbotron 3`}
           />
           <SwiperSlideContentsOuterContainer>

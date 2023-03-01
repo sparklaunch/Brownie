@@ -4,7 +4,8 @@ import Constants from "../../../Utilities/Constants";
 const JumbotronOuterContainer = styled.div`
   @media (480px <= width <= 767px) {
     position: relative;
-    height: 540px;
+    width: 100%;
+    height: 440px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -30,10 +31,7 @@ const JumbotronOuterContainer = styled.div`
 
 const JumbotronInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
-    width: ${Constants.MOBILE_CONTAINER_WIDTH};
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    margin: 0 16px;
   }
   @media (768px <= width <= 992px) {
     width: ${Constants.TABLET_CONTAINER_WIDTH};
