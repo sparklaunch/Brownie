@@ -1,15 +1,19 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { PrivacyLink, TermsContainer, TermsLink } from "./TermsStyles";
 
 const Terms = () => {
+  const navigate = useNavigate();
+  const onClickPrivacy = () => {
+    navigate("/privacy");
+  };
+  const onClickTerms = () => {
+    navigate("/terms");
+  };
   return (
-    <div className={`text-[14px] mt-3`}>
-      <Link className={`pr-3 border-r-2 border-[#DFDFDF]`} to={"/privacy"}>
-        개인정보취급방침
-      </Link>
-      <Link className={`pl-3`} to={"/terms"}>
-        이용약관
-      </Link>
-    </div>
+    <TermsContainer>
+      <PrivacyLink onClick={onClickPrivacy}>개인정보취급방침</PrivacyLink>
+      <TermsLink onClick={onClickTerms}>이용약관</TermsLink>
+    </TermsContainer>
   );
 };
 
