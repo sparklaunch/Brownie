@@ -37,16 +37,19 @@ const CardOuterContainer = styled.div`
 
 const CardInnerContainer = styled.div`
   @media (width <= 767px) {
+    position: relative;
     width: ${(props) => props.textbookSize.width}px;
     height: ${(props) => props.textbookSize.height}px;
     background-color: white;
   }
   @media (768px <= width <= 992px) {
+    position: relative;
     width: ${(props) => props.textbookSize.width}px;
     height: ${(props) => props.textbookSize.height}px;
     background-color: white;
   }
   @media (width >= 993px) {
+    position: relative;
     width: ${(props) => props.textbookSize.width}px;
     height: ${(props) => props.textbookSize.height}px;
     background-color: white;
