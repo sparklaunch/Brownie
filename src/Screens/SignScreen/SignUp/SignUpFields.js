@@ -141,7 +141,7 @@ const SignUpFields = () => {
     } else if (passwordConfirm.length === 0) {
       Swal.fire(Constants.EMPTY_PASSWORD_CONFIRMATION);
     } else if (password !== passwordConfirm) {
-      Swal.fire(Constants.PASSWORDS_NOT_MATCH);
+      Swal.fire(Constants.PASSWORD_NOT_MATCH);
     } else if (phoneNumber.length === 0) {
       Swal.fire(Constants.EMPTY_PHONE_NUMBER);
     } else if (!validPhoneNumber) {
@@ -173,7 +173,6 @@ const SignUpFields = () => {
           variant={"outlined"}
           label={"아이디"}
           size={"medium"}
-          autoComplete={false}
           sx={{
             width: "100%",
             backgroundColor: "white",
