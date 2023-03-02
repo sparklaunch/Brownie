@@ -79,18 +79,21 @@ const WordContainer = styled.div`
 const MegaphoneImage = styled.img`
   @media screen and (max-width: 767px) {
     margin-right: 12px;
-    width: 40px;
+    width: 38px;
+    height: 38px;
     cursor: pointer;
     transform: translateY(3px);
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     margin-right: 12px;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
   }
-
   @media screen and (min-width: 993px) {
     margin-right: 12px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     transform: translateY(3px);
   }
