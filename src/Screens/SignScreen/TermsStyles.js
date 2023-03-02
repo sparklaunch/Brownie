@@ -28,17 +28,14 @@ const PrivacyLink = styled.p`
   @media (480px <= width <= 767px) {
     padding-right: 12px;
     border-right: 2px solid #dfdfdf;
-    cursor: pointer;
   }
   @media (768px <= width <= 992px) {
     padding-right: 12px;
     border-right: 2px solid #dfdfdf;
-    cursor: pointer;
   }
   @media (width >= 993px) {
     padding-right: 12px;
     border-right: 2px solid #dfdfdf;
-    cursor: pointer;
   }
 `;
 
