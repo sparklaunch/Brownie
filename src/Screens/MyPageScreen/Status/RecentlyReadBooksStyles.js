@@ -21,7 +21,16 @@ const RecentlyReadBooksText = styled.div`
   }
 `;
 
-const RecentlyReadBooksContainer = styled.div`
+const RecentlyReadBooksOuterContainer = styled.div`
+  @media (480px <= width <= 767px) {
+  }
+  @media (768px <= width <= 992px) {
+  }
+  @media (width >= 993px) {
+  }
+`;
+
+const RecentlyReadBooksInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
     height: 600px;
   }
@@ -33,4 +42,8 @@ const RecentlyReadBooksContainer = styled.div`
   }
 `;
 
-export { RecentlyReadBooksText, RecentlyReadBooksContainer };
+export {
+  RecentlyReadBooksText,
+  RecentlyReadBooksInnerContainer,
+  RecentlyReadBooksOuterContainer
+};

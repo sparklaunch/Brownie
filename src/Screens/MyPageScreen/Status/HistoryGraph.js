@@ -1,7 +1,11 @@
-import { HistoryGraphTitle } from "./HistoryGraphStyles";
+import { HistoryGraphContainer, HistoryGraphTitle } from "./HistoryGraphStyles";
 
 const HistoryGraph = () => {
-  return <HistoryGraphTitle>최근 월별 독서량</HistoryGraphTitle>;
+  return (
+    <HistoryGraphContainer>
+      <HistoryGraphTitle>최근 월별 독서량</HistoryGraphTitle>
+    </HistoryGraphContainer>
+  );
 };
 
 export default HistoryGraph;

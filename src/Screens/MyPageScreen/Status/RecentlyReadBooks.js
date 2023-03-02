@@ -1,16 +1,17 @@
 import StatusLabels from "./StatusLabels";
 import {
-  RecentlyReadBooksContainer,
+  RecentlyReadBooksInnerContainer,
+  RecentlyReadBooksOuterContainer,
   RecentlyReadBooksText
 } from "./RecentlyReadBooksStyles";
 
 const RecentlyReadBooks = () => {
   return (
-    <>
+    <RecentlyReadBooksOuterContainer>
       <RecentlyReadBooksText>최근 읽은 책</RecentlyReadBooksText>
       <StatusLabels />
-      <RecentlyReadBooksContainer></RecentlyReadBooksContainer>
-    </>
+      <RecentlyReadBooksInnerContainer></RecentlyReadBooksInnerContainer>
+    </RecentlyReadBooksOuterContainer>
   );
 };
 

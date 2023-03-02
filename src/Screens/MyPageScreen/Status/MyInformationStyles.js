@@ -21,7 +21,16 @@ const MyInformationTitle = styled.div`
   }
 `;
 
-const MyInformationContainer = styled.div`
+const MyInformationOuterContainer = styled.div`
+  @media (480px <= width <= 767px) {
+  }
+  @media (768px <= width <= 992px) {
+  }
+  @media (width >= 993px) {
+  }
+`;
+
+const MyInformationInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
     padding: 32px;
     border: 1px solid #dfdfdf;
@@ -71,7 +80,8 @@ const CouponCodeSpan = styled.span`
 
 export {
   MyInformationTitle,
-  MyInformationContainer,
+  MyInformationOuterContainer,
+  MyInformationInnerContainer,
   PlainText,
   CouponCodeSpan
 };
