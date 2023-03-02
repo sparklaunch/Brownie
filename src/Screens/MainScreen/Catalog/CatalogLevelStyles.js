@@ -5,7 +5,7 @@ const CatalogLevelContainer = styled.div`
     margin-bottom: 48px;
   }
   @media (768px <= width <= 992px) {
-    margin-bottom: 12px;
+    margin-bottom: 32px;
   }
   @media (width >= 993px) {
     margin-bottom: 12px;
@@ -63,6 +63,7 @@ const CatalogLevelGridContainer = styled.div`
   @media (768px <= width <= 992px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
     gap: 24px;
   }
   @media (993px <= width <= 1279px) {

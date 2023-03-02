@@ -5,6 +5,7 @@ const CatalogTitleContainer = styled.div`
     margin-top: 8px;
   }
   @media (768px <= width <= 992px) {
+    margin-top: 8px;
   }
   @media (width >= 993px) {
   }
