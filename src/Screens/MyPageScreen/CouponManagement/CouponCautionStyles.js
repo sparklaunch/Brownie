@@ -24,21 +24,24 @@ const CouponCautionOuterContainer = styled.div`
 const CouponCautionInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
     width: 800px;
-    border: 2px solid #f9f9f9;
-    border-radius: 4px;
+    border: 2px solid #dfdfdf;
+    border-radius: 14px;
     padding: 24px;
+    background-color: #f9f9f9;
   }
   @media (768px <= width <= 992px) {
     width: 800px;
-    border: 2px solid #f9f9f9;
-    border-radius: 4px;
+    border: 2px solid #dfdfdf;
+    border-radius: 14px;
     padding: 24px;
+    background-color: #f9f9f9;
   }
   @media (width >= 993px) {
     width: 800px;
-    border: 2px solid #f9f9f9;
-    border-radius: 4px;
+    border: 2px solid #dfdfdf;
+    border-radius: 14px;
     padding: 24px;
+    background-color: #f9f9f9;
   }
 `;
 

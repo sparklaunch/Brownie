@@ -4,19 +4,19 @@ const CouponHistoryItemContainer = styled.div`
   @media (480px <= width <= 767px) {
     position: relative;
     border: 2px solid #dfdfdf;
-    border-radius: 4px;
+    border-radius: 14px;
     overflow: clip;
   }
   @media (768px <= width <= 992px) {
     position: relative;
     border: 2px solid #dfdfdf;
-    border-radius: 4px;
+    border-radius: 14px;
     overflow: clip;
   }
   @media (width >= 993px) {
     position: relative;
     border: 2px solid #dfdfdf;
-    border-radius: 4px;
+    border-radius: 14px;
     overflow: clip;
   }
 `;
@@ -117,7 +117,7 @@ const UsedCouponContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.3;
   }
   @media (768px <= width <= 992px) {
     position: absolute;
@@ -130,7 +130,7 @@ const UsedCouponContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.3;
   }
   @media (width >= 993px) {
     position: absolute;
@@ -143,7 +143,7 @@ const UsedCouponContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.3;
   }
 `;
 
