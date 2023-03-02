@@ -141,6 +141,12 @@ const Constants = {
     text: "쿠폰 코드를 입력해주세요.",
     icon: "warning",
     confirmButtonText: "확인"
+  },
+  INCORRECT_PASSWORD: {
+    title: "비밀번호 에러",
+    text: "비밀번호를 다시 한번 확인해주세요.",
+    icon: "error",
+    confirmButtonText: "확인"
   }
 };
 
