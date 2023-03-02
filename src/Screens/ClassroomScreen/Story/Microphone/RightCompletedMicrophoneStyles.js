@@ -82,33 +82,33 @@ const MyVoiceButtonContainer = styled.div`
 
 const RetryButton = styled.img`
   @media screen and (max-width: 767px) {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     margin-right: 10px;
   }
-
   @media screen and (min-width: 993px) {
+    width: 70px;
+    height: 70px;
   }
 `;
 
 const MyVoiceButton = styled.img`
   @media screen and (max-width: 767px) {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
   }
-
   @media screen and (min-width: 993px) {
+    width: 70px;
+    height: 70px;
   }
 `;
 
