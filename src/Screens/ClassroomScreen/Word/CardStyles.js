@@ -277,8 +277,8 @@ const WordContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     background-color: transparent;
@@ -290,8 +290,8 @@ const WordContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
-
   @media screen and (min-width: 993px) {
     position: absolute;
     background-color: transparent;
@@ -304,6 +304,7 @@ const WordContainer = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    cursor: pointer;
   }
 `;
 

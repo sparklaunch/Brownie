@@ -11,7 +11,6 @@ const WordImageContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
     width: 76%;
@@ -22,7 +21,6 @@ const WordImageContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-
   @media screen and (min-width: 993px) {
     position: relative;
     width: 76%;
