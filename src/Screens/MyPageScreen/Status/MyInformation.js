@@ -7,11 +7,12 @@ import {
 } from "./MyInformationStyles";
 
 const MyInformation = () => {
+  const studentName = sessionStorage.getItem("studentName");
   return (
     <MyInformationOuterContainer>
       <MyInformationTitle>내 정보</MyInformationTitle>
       <MyInformationInnerContainer>
-        <PlainText>이름 : 홍길동</PlainText>
+        <PlainText>이름 : {studentName}</PlainText>
         <PlainText>구매상품 : 패키지 A 상품</PlainText>
         <PlainText>
           이용쿠폰 : <CouponCodeSpan>A001 23 E01 06 0001</CouponCodeSpan>
