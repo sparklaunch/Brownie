@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 const IntroductionCatalogSpecimenContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }

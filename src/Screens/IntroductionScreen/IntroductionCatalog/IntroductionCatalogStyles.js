@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Constants from "../../../Utilities/Constants";
 
 const IntroductionCatalogOuterContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -11,7 +11,7 @@ const IntroductionCatalogOuterContainer = styled.div`
     border-top: 1px solid #1ab9c5;
     border-bottom: 1px solid #1ab9c5;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -20,7 +20,7 @@ const IntroductionCatalogOuterContainer = styled.div`
     border-top: 1px solid #1ab9c5;
     border-bottom: 1px solid #1ab9c5;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -32,25 +32,25 @@ const IntroductionCatalogOuterContainer = styled.div`
 `;
 
 const IntroductionCatalogInnerContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     width: ${Constants.TABLET_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     width: ${Constants.LAPTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;

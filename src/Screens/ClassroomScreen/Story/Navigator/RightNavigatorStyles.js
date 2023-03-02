@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const RightNavigatorContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     background-color: #1ab9c5;
     display: inline-block;
     padding: 16px 12px;
@@ -11,7 +11,7 @@ const RightNavigatorContainer = styled.div`
     margin-left: 12px;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     background-color: #1ab9c5;
     display: inline-block;
     padding: 16px 12px;
@@ -21,7 +21,7 @@ const RightNavigatorContainer = styled.div`
     margin-left: 12px;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     background-color: #1ab9c5;
     display: inline-block;
     padding: 16px 12px;
@@ -33,13 +33,13 @@ const RightNavigatorContainer = styled.div`
 `;
 
 const RightNavigatorImage = styled.img`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
   }
 `;
 

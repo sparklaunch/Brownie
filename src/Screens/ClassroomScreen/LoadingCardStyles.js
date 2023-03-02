@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LoadingCardContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     width: 220px;
     height: 170px;
     border-radius: 20px;
@@ -14,7 +14,7 @@ const LoadingCardContainer = styled.div`
     transform: scale(0.8);
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 220px;
     height: 170px;
     border-radius: 20px;
@@ -27,7 +27,7 @@ const LoadingCardContainer = styled.div`
     transform: scale(0.8);
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     width: 220px;
     height: 170px;
     border-radius: 20px;
@@ -42,7 +42,7 @@ const LoadingCardContainer = styled.div`
 `;
 
 const RotatingDocument = styled.img`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     transform: scale(0.5);
     animation: rotating 1s ease-in-out infinite alternate;
     @keyframes rotating {
@@ -55,7 +55,7 @@ const RotatingDocument = styled.img`
     }
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     transform: scale(0.5);
     animation: rotating 1s ease-in-out infinite alternate;
     @keyframes rotating {
@@ -68,7 +68,7 @@ const RotatingDocument = styled.img`
     }
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     transform: scale(0.5);
     animation: rotating 1s ease-in-out infinite alternate;
     @keyframes rotating {
@@ -83,19 +83,19 @@ const RotatingDocument = styled.img`
 `;
 
 const LoadingText = styled.p`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-weight: bold;
     font-size: 13px;
     margin-top: 20px;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-weight: bold;
     font-size: 13px;
     margin-top: 20px;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-weight: bold;
     font-size: 13px;
     margin-top: 20px;

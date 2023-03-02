@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const AccountDeletionText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-size: 12px;
     color: #acacac;
     cursor: pointer;
@@ -10,7 +10,7 @@ const AccountDeletionText = styled.p`
       text-decoration: underline;
     }
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 12px;
     color: #acacac;
     cursor: pointer;
@@ -19,7 +19,7 @@ const AccountDeletionText = styled.p`
       text-decoration: underline;
     }
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-size: 12px;
     color: #acacac;
     cursor: pointer;

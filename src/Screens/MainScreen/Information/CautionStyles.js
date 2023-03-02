@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 const CautionContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
   }
 `;
 
 const CautionTitle = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     background-color: #1ab9c5;
     display: inline-block;
     color: white;
@@ -18,7 +18,7 @@ const CautionTitle = styled.p`
     padding: 12px 20px;
     border-radius: 8px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     background-color: #1ab9c5;
     display: inline-block;
     color: white;
@@ -26,7 +26,7 @@ const CautionTitle = styled.p`
     padding: 12px 20px;
     border-radius: 8px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     background-color: #1ab9c5;
     display: inline-block;
     color: white;

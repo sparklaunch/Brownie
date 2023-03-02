@@ -44,6 +44,7 @@ const ModificationForm = () => {
     setSecureMode(false);
     navigate(-1);
   };
+  const onClickSubmit = () => {};
   return (
     <ModificationFormOuterContainer>
       <ModificationFormInnerContainer>
@@ -166,6 +167,7 @@ const ModificationForm = () => {
           </Button>
           <Button
             variant={"contained"}
+            onClick={onClickSubmit}
             sx={{
               paddingX: "25px",
               backgroundColor: "#1AB9C5",

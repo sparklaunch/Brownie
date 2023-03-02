@@ -1,22 +1,22 @@
 import styled from "styled-components";
 
 const WordButtonOuterContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 12px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     margin-bottom: 12px;
   }
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     margin-bottom: 12px;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     margin-bottom: 12px;
   }
 `;
 
 const WordButtonInnerContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     background-color: white;
     padding: 7px 12px;
     display: flex;
@@ -32,7 +32,7 @@ const WordButtonInnerContainer = styled.div`
         ? `border: 4px solid #47C7D2;`
         : `border: 4px solid transparent;`}
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     background-color: white;
     padding: 10px 18px;
     display: flex;
@@ -48,7 +48,7 @@ const WordButtonInnerContainer = styled.div`
         ? `border: 4px solid #47C7D2;`
         : `border: 4px solid transparent;`}
   }
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     background-color: white;
     padding: 11px 22px;
     display: flex;
@@ -64,7 +64,7 @@ const WordButtonInnerContainer = styled.div`
         ? `border: 4px solid #47C7D2;`
         : `border: 4px solid transparent;`}
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     background-color: white;
     padding: 12px 28px;
     display: flex;
@@ -83,22 +83,22 @@ const WordButtonInnerContainer = styled.div`
 `;
 
 const WordButtonImage = styled.img`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     width: 19px;
     height: 20px;
     margin-bottom: 2px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 25px;
     height: 26px;
     margin-bottom: 4px;
   }
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     width: 30px;
     height: 32px;
     margin-bottom: 8px;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     width: 42px;
     height: 44px;
     margin-bottom: 8px;
@@ -106,22 +106,22 @@ const WordButtonImage = styled.img`
 `;
 
 const WordButtonText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-family: Jua, sans-serif;
     font-size: 12px;
     ${(props) => props.activated && `color: #1AB9C5;`}
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-family: Jua, sans-serif;
     font-size: 14px;
     ${(props) => props.activated && `color: #1AB9C5;`}
   }
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     font-family: Jua, sans-serif;
     font-size: 18px;
     ${(props) => props.activated && `color: #1AB9C5;`}
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
     ${(props) => props.activated && `color: #1AB9C5;`}

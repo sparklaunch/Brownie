@@ -2,19 +2,19 @@ import styled from "styled-components";
 import Constants from "../../../Utilities/Constants";
 
 const NavigationBarOuterContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -23,7 +23,7 @@ const NavigationBarOuterContainer = styled.div`
 `;
 
 const NavigationBarInnerContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -32,7 +32,7 @@ const NavigationBarInnerContainer = styled.div`
     align-items: center;
     padding: 16px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -41,7 +41,7 @@ const NavigationBarInnerContainer = styled.div`
     align-items: center;
     padding: 16px;
   }
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     display: flex;
     flex-direction: row;
     width: ${Constants.LAPTOP_CONTAINER_WIDTH};
@@ -49,7 +49,7 @@ const NavigationBarInnerContainer = styled.div`
     justify-content: space-between;
     align-items: center;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     display: flex;
     flex-direction: row;
     width: ${Constants.DESKTOP_CONTAINER_WIDTH};

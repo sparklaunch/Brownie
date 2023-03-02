@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LeftPageShade = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -11,7 +11,7 @@ const LeftPageShade = styled.div`
     opacity: 0.5;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -21,7 +21,7 @@ const LeftPageShade = styled.div`
     opacity: 0.5;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     bottom: 0;

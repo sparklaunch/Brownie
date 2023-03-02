@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ThumbnailContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: relative;
     width: 216px;
     height: 144px;
@@ -17,7 +17,7 @@ const ThumbnailContainer = styled.div`
         : `border: 4px solid transparent;`}
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
     width: 216px;
     height: 144px;
@@ -33,7 +33,7 @@ const ThumbnailContainer = styled.div`
         : `border: 4px solid transparent;`}
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: relative;
     width: 216px;
     height: 144px;

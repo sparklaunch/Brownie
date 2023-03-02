@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const BookContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -11,7 +11,7 @@ const BookContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -21,7 +21,7 @@ const BookContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -34,20 +34,20 @@ const BookContainer = styled.div`
 `;
 
 const NavigatorContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
   }
 `;
 
 const BookWrapper = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -58,7 +58,7 @@ const BookWrapper = styled.div`
     align-items: center;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -69,7 +69,7 @@ const BookWrapper = styled.div`
     align-items: center;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -91,22 +91,22 @@ const TextBookContainer = styled.div`
 `;
 
 const ModeSwitcherContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 5px;
     left: -70px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 5px;
     left: -80px;
   }
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     position: absolute;
     top: 5px;
     left: -100px;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     position: absolute;
     top: 0;
     left: -120px;
@@ -114,21 +114,21 @@ const ModeSwitcherContainer = styled.div`
 `;
 
 const TextBookLeftPage = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: relative;
     object-fit: contain;
     object-position: right;
@@ -136,21 +136,21 @@ const TextBookLeftPage = styled.div`
 `;
 
 const TextBookRightPage = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: relative;
     object-fit: contain;
     object-position: right;
@@ -158,19 +158,19 @@ const TextBookRightPage = styled.div`
 `;
 
 const LeftPageImage = styled.img`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     height: 100vh;
     object-fit: cover;
     object-position: center;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     height: 100vh;
     object-fit: cover;
     object-position: center;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -181,7 +181,7 @@ const LeftPageImage = styled.img`
 `;
 
 const LeftPageShade = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     right: 0;
@@ -194,7 +194,7 @@ const LeftPageShade = styled.div`
     );
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     right: 0;
@@ -207,7 +207,7 @@ const LeftPageShade = styled.div`
     );
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     right: 0;
@@ -222,19 +222,19 @@ const LeftPageShade = styled.div`
 `;
 
 const RightPageImage = styled.img`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     height: 100vh;
     object-fit: cover;
     object-position: center;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     height: 100vh;
     object-fit: cover;
     object-position: center;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -245,7 +245,7 @@ const RightPageImage = styled.img`
 `;
 
 const RightPageShade = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -258,7 +258,7 @@ const RightPageShade = styled.div`
     );
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -271,7 +271,7 @@ const RightPageShade = styled.div`
     );
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -286,25 +286,25 @@ const RightPageShade = styled.div`
 `;
 
 const LeftPagerContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     bottom: 30px;
     left: -50px;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 30px;
     left: -60px;
   }
 
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     position: absolute;
     bottom: 0;
     transform: translateY(-50%);
     left: -90px;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -313,25 +313,25 @@ const LeftPagerContainer = styled.div`
 `;
 
 const RightPagerContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     bottom: 30px;
     right: -50px;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 30px;
     right: -60px;
   }
 
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     position: absolute;
     bottom: 0;
     transform: translateY(-50%);
     right: -90px;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -340,15 +340,15 @@ const RightPagerContainer = styled.div`
 `;
 
 const PagerControllersContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: -50px;
     right: 0;
@@ -356,19 +356,19 @@ const PagerControllersContainer = styled.div`
 `;
 
 const HomeContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 20px;
     right: -80px;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
     right: -80px;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     right: -90px;
@@ -376,7 +376,7 @@ const HomeContainer = styled.div`
 `;
 
 const MicContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     right: -80px;
     top: 50%;
@@ -384,7 +384,7 @@ const MicContainer = styled.div`
     z-index: 1;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     right: -80px;
     top: 50%;
@@ -392,7 +392,7 @@ const MicContainer = styled.div`
     z-index: 1;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     left: 50%;
     bottom: -100px;
@@ -402,15 +402,15 @@ const MicContainer = styled.div`
 `;
 
 const UnitInfoContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: -40px;
     left: 0;
@@ -418,7 +418,7 @@ const UnitInfoContainer = styled.div`
 `;
 
 const WaveAnimationContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -426,7 +426,7 @@ const WaveAnimationContainer = styled.div`
     z-index: 1;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -434,7 +434,7 @@ const WaveAnimationContainer = styled.div`
     z-index: 1;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -444,21 +444,21 @@ const WaveAnimationContainer = styled.div`
 `;
 
 const FeedbackBarContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -467,7 +467,7 @@ const FeedbackBarContainer = styled.div`
 `;
 
 const CongratzContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -475,7 +475,7 @@ const CongratzContainer = styled.div`
     bottom: 0;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -483,7 +483,7 @@ const CongratzContainer = styled.div`
     bottom: 0;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -493,14 +493,14 @@ const CongratzContainer = styled.div`
 `;
 
 const ScoreBarContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 10px;
     left: 0;
     right: 0;
     bottom: 0;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
     left: 0;
@@ -508,14 +508,14 @@ const ScoreBarContainer = styled.div`
     bottom: 0;
   }
 
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     position: absolute;
     top: 20px;
     left: 0;
     right: 0;
     bottom: 0;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     position: absolute;
     top: 20px;
     left: 0;
@@ -525,7 +525,7 @@ const ScoreBarContainer = styled.div`
 `;
 
 const LeftCompletedButtonsContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     z-index: 2;
     position: absolute;
     bottom: 0;
@@ -533,7 +533,7 @@ const LeftCompletedButtonsContainer = styled.div`
     transform: translateX(-50%);
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     z-index: 2;
     position: absolute;
     bottom: 0;
@@ -541,7 +541,7 @@ const LeftCompletedButtonsContainer = styled.div`
     transform: translateX(-50%);
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     z-index: 2;
     position: absolute;
     bottom: -80px;
@@ -551,7 +551,7 @@ const LeftCompletedButtonsContainer = styled.div`
 `;
 
 const RightCompletedButtonsContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     z-index: 2;
     position: absolute;
     bottom: 0;
@@ -559,7 +559,7 @@ const RightCompletedButtonsContainer = styled.div`
     transform: translateX(-50%);
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     z-index: 2;
     position: absolute;
     bottom: 0;
@@ -567,7 +567,7 @@ const RightCompletedButtonsContainer = styled.div`
     transform: translateX(-50%);
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     z-index: 2;
     position: absolute;
     bottom: -80px;
@@ -577,7 +577,7 @@ const RightCompletedButtonsContainer = styled.div`
 `;
 
 const GlowBorderContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -585,7 +585,7 @@ const GlowBorderContainer = styled.div`
     left: 0;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -593,7 +593,7 @@ const GlowBorderContainer = styled.div`
     left: 0;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -603,7 +603,7 @@ const GlowBorderContainer = styled.div`
 `;
 
 const GlowBorder = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -612,7 +612,7 @@ const GlowBorder = styled.div`
     z-index: 1;
     box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -621,7 +621,7 @@ const GlowBorder = styled.div`
     z-index: 1;
     box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -633,7 +633,7 @@ const GlowBorder = styled.div`
 `;
 
 const LeftClickable = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -643,7 +643,7 @@ const LeftClickable = styled.div`
     cursor: pointer;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -653,7 +653,7 @@ const LeftClickable = styled.div`
     cursor: pointer;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -665,7 +665,7 @@ const LeftClickable = styled.div`
 `;
 
 const RightClickable = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -675,7 +675,7 @@ const RightClickable = styled.div`
     cursor: pointer;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -685,7 +685,7 @@ const RightClickable = styled.div`
     cursor: pointer;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -697,7 +697,7 @@ const RightClickable = styled.div`
 `;
 
 const LoadingCardWrapper = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     z-index: 1;
     top: 50%;
@@ -705,7 +705,7 @@ const LoadingCardWrapper = styled.div`
     transform: translate(-50%, -50%);
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     z-index: 1;
     top: 50%;
@@ -713,7 +713,7 @@ const LoadingCardWrapper = styled.div`
     transform: translate(-50%, -50%);
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     z-index: 1;
     top: 50%;

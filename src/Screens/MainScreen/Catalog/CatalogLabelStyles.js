@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const CatalogLabelContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     bottom: 40px;
     left: 8px;
@@ -14,7 +14,7 @@ const CatalogLabelContainer = styled.div`
     background-color: #1ab9c5;
     border-radius: 6px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 40px;
     left: 8px;
@@ -27,7 +27,7 @@ const CatalogLabelContainer = styled.div`
     background-color: #1ab9c5;
     border-radius: 6px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     bottom: 40px;
     left: 8px;
@@ -43,15 +43,15 @@ const CatalogLabelContainer = styled.div`
 `;
 
 const CatalogLabelText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     color: white;
     font-size: 14px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     color: white;
     font-size: 14px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     color: white;
     font-size: 14px;
   }

@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
 const CouponLabelContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 4px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 4px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,30 +22,30 @@ const CouponLabelContainer = styled.div`
 `;
 
 const BulletIcon = styled.img`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     width: 8px;
     height: 8px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 8px;
     height: 8px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     width: 8px;
     height: 8px;
   }
 `;
 
 const CouponRegistrationText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     margin-left: 12px;
     font-size: 18px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     margin-left: 12px;
     font-size: 18px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     margin-left: 12px;
     font-size: 18px;
   }

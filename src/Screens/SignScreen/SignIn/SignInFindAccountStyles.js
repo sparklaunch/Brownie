@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
 const SignInFindAccountContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 14px;
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-size: 14px;
     display: flex;
     flex-direction: row;
@@ -22,17 +22,17 @@ const SignInFindAccountContainer = styled.div`
 `;
 
 const FindIDLink = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     padding-right: 12px;
     border-right: 2px solid #dfdfdf;
     cursor: pointer;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-right: 12px;
     border-right: 2px solid #dfdfdf;
     cursor: pointer;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     padding-right: 12px;
     border-right: 2px solid #dfdfdf;
     cursor: pointer;
@@ -40,13 +40,13 @@ const FindIDLink = styled.p`
 `;
 
 const FindPasswordLink = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     padding-left: 12px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-left: 12px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     padding-left: 12px;
   }
 `;

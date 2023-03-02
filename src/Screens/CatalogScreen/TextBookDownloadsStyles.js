@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 const TextBookDownloadsContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 32px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -20,7 +20,7 @@ const TextBookDownloadsContainer = styled.div`
 `;
 
 const TextBookDownloadsTitle = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-weight: bold;
     font-size: 20px;
     color: white;
@@ -28,7 +28,7 @@ const TextBookDownloadsTitle = styled.p`
     background-color: #1ab9c5;
     border-radius: 4px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-weight: bold;
     font-size: 20px;
     color: white;
@@ -36,7 +36,7 @@ const TextBookDownloadsTitle = styled.p`
     background-color: #1ab9c5;
     border-radius: 4px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-weight: bold;
     font-size: 20px;
     color: white;
@@ -47,7 +47,7 @@ const TextBookDownloadsTitle = styled.p`
 `;
 
 const TextBookDownload = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-size: 18px;
     color: #515151;
     font-weight: 400;
@@ -56,7 +56,7 @@ const TextBookDownload = styled.p`
       margin-top: 24px;
     }
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 18px;
     color: #515151;
     font-weight: 400;
@@ -65,7 +65,7 @@ const TextBookDownload = styled.p`
       margin-top: 24px;
     }
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-size: 18px;
     color: #515151;
     font-weight: 400;

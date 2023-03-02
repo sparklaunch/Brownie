@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ExcellentScreenContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -11,7 +11,7 @@ const ExcellentScreenContainer = styled.div`
     padding: 8px;
     z-index: 3;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -21,7 +21,7 @@ const ExcellentScreenContainer = styled.div`
     padding: 8px;
     z-index: 3;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -36,7 +36,7 @@ const ExcellentScreenContainer = styled.div`
 `;
 
 const ExcellentImage = styled.img`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -45,7 +45,7 @@ const ExcellentImage = styled.img`
     object-fit: contain;
     object-position: center;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -54,7 +54,7 @@ const ExcellentImage = styled.img`
     object-fit: contain;
     object-position: center;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -67,19 +67,19 @@ const ExcellentImage = styled.img`
 `;
 
 const ScorePillWrapper = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 50%;
     left: 50%;

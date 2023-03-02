@@ -2,27 +2,27 @@ import styled from "styled-components";
 import Constants from "../../Utilities/Constants";
 
 const TextBookComponentsAndDownloads = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column;
     width: ${Constants.MOBILE_CONTAINER_WIDTH};
     margin: 0 auto;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 0;
     width: ${Constants.TABLET_CONTAINER_WIDTH};
     margin: 0 auto;
   }
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 0;
     width: ${Constants.LAPTOP_CONTAINER_WIDTH};
     margin: 0 auto;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 0;

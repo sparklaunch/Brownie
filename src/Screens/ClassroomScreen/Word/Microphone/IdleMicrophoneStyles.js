@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const OuterCircle = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -19,7 +19,7 @@ const OuterCircle = styled.div`
     }
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -37,7 +37,7 @@ const OuterCircle = styled.div`
     }
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -57,7 +57,7 @@ const OuterCircle = styled.div`
 `;
 
 const InnerCircle = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -75,7 +75,7 @@ const InnerCircle = styled.div`
     }
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -93,7 +93,7 @@ const InnerCircle = styled.div`
     }
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -113,7 +113,7 @@ const InnerCircle = styled.div`
 `;
 
 const Wave = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -133,7 +133,7 @@ const Wave = styled.div`
     }
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -153,7 +153,7 @@ const Wave = styled.div`
     }
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -175,30 +175,30 @@ const Wave = styled.div`
 `;
 
 const IdleMicrophoneContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: relative;
     cursor: pointer;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
     cursor: pointer;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: relative;
     cursor: pointer;
   }
 `;
 
 const IdleMicrophoneImage = styled.img`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
   }
 `;
 

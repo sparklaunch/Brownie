@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const WelcomeOuterContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: relative;
     width: 300px;
     height: 240px;
@@ -17,7 +17,7 @@ const WelcomeOuterContainer = styled.div`
 `;
 
 const WelcomeInnerContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     padding: 16px;
     z-index: 1;
@@ -30,7 +30,7 @@ const WelcomeInnerContainer = styled.div`
     justify-content: center;
     align-items: stretch;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     padding: 16px;
     z-index: 1;
@@ -43,7 +43,7 @@ const WelcomeInnerContainer = styled.div`
     justify-content: center;
     align-items: stretch;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     padding: 16px;
     z-index: 1;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HamburgerItemContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@ const HamburgerItemContainer = styled.div`
       border-bottom: 1px solid #dfdfdf;
     }
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@ const HamburgerItemContainer = styled.div`
       border-bottom: 1px solid #dfdfdf;
     }
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -31,19 +31,19 @@ const HamburgerItemContainer = styled.div`
 `;
 
 const HamburgerItemText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     color: #222222;
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     color: #222222;
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     color: #222222;
     font-weight: bold;
     font-size: 14px;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NavigationBarSignInButton = styled.button`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     background-color: #1ab9c5;
     font-family: Jua, sans-serif;
     font-size: 18px;
@@ -10,7 +10,7 @@ const NavigationBarSignInButton = styled.button`
     border-radius: 8px;
     color: white;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     background-color: #1ab9c5;
     font-family: Jua, sans-serif;
     font-size: 18px;
@@ -19,7 +19,7 @@ const NavigationBarSignInButton = styled.button`
     border-radius: 8px;
     color: white;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     background-color: #1ab9c5;
     font-family: Jua, sans-serif;
     font-size: 18px;
