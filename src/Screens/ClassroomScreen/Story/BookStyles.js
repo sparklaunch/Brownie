@@ -91,21 +91,22 @@ const TextBookContainer = styled.div`
 `;
 
 const ModeSwitcherContainer = styled.div`
-  @media (width <= 767px) {
+  @media (480px <= width <= 767px) {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: scale(0.8) translate(-100px, -10px);
+    top: 5px;
+    left: -70px;
   }
-
   @media (768px <= width <= 992px) {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: scale(0.8) translate(-130px, -12px);
+    top: 5px;
+    left: -80px;
   }
-
-  @media (width >= 993px) {
+  @media (993px <= width <= 1279px) {
+    position: absolute;
+    top: 5px;
+    left: -100px;
+  }
+  @media (width >= 1280px) {
     position: absolute;
     top: 0;
     left: -120px;
