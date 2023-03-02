@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import passwordAtom from "../../../Stores/Auth/password";
 import phoneNumberAtom from "../../../Stores/Auth/phoneNumber";
 import studentNameAtom from "../../../Stores/Auth/studentName";
@@ -18,8 +18,15 @@ import {
 } from "./ModificationFormStyles";
 import { useNavigate } from "react-router-dom";
 import secureModeAtom from "../../../Stores/Auth/secureMode";
+import { useLayoutEffect } from "react";
+import axios from "axios";
+import Constants from "../../../Utilities/Constants";
+import Swal from "sweetalert2";
+import idAtom from "../../../Stores/Auth/id";
+import validPasswordSelector from "../../../Stores/Auth/validPassword";
 
 const ModificationForm = () => {
+  const [id, setID] = useRecoilState(idAtom);
   const [secureMode, setSecureMode] = useRecoilState(secureModeAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
   const [phoneNumber, setPhoneNumber] = useRecoilState(phoneNumberAtom);
@@ -30,6 +37,7 @@ const ModificationForm = () => {
   const [newPasswordConfirm, setNewPasswordConfirm] = useRecoilState(
     newPasswordConfirmAtom
   );
+  const validPassword = useRecoilValue(validPasswordSelector);
   const navigate = useNavigate();
   const clearAllFields = () => {
     setPassword("");
@@ -44,14 +52,57 @@ const ModificationForm = () => {
     setSecureMode(false);
     navigate(-1);
   };
-  const onClickSubmit = () => {};
+  const requestAccountInformation = async () => {
+    const response = await axios.post(
+      `${Constants.AUTH_API_ENDPOINT}/api/ap008`,
+      {
+        user_no: sessionStorage.getItem("userNumber")
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "*"
+        }
+      }
+    );
+    const stringResponse = JSON.stringify(response, null, 2);
+    console.log(stringResponse);
+    switch (response.data.resultCode) {
+      case "100":
+        const { id, name, tel, birth } = response.data;
+        setID(id);
+        setStudentName(name);
+        setPhoneNumber(tel);
+        setStudentBirthDate(birth);
+        break;
+      default:
+        await Swal.fire(Constants.SERVER_ERROR);
+        break;
+    }
+  };
+  useLayoutEffect(() => {
+    requestAccountInformation();
+  }, []);
+  const onClickSubmit = () => {
+    const passwordRegex =
+      /^(?=.*[a-zA-Z])(?=.*[!?@#$%^*+=-])(?=.*[0-9]).{6,24}$/;
+    if (newPassword.length > 0 && !passwordRegex.test(newPassword)) {
+      Swal.fire(Constants.PASSWORD_NOT_VALID);
+    } else if (newPassword !== newPasswordConfirm) {
+      Swal.fire(Constants.PASSWORD_NOT_MATCH);
+    } else {
+      clearAllFields();
+    }
+  };
   return (
     <ModificationFormOuterContainer>
       <ModificationFormInnerContainer>
         <ModificationTitle>회원정보 변경</ModificationTitle>
         <TextField
           id={"id"}
-          value={"Your ID"}
+          value={id}
           variant={"outlined"}
           label={"아이디"}
           disabled={true}
@@ -105,7 +156,6 @@ const ModificationForm = () => {
           onChange={(event) => setPhoneNumber(event.target.value)}
           variant={"outlined"}
           label={"휴대폰 번호 (예: 01012345678)"}
-          required={true}
           size={"medium"}
           type={"phone-number"}
           sx={{
