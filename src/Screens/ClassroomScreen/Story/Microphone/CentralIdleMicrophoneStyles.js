@@ -197,12 +197,16 @@ const Wave = styled.div`
 
 const CentralIdleMicrophoneImage = styled.img`
   @media screen and (max-width: 767px) {
+    width: 40px;
+    height: 40px;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
+    width: 55px;
+    height: 55px;
   }
-
   @media screen and (min-width: 993px) {
+    width: 70px;
+    height: 70px;
   }
 `;
 
