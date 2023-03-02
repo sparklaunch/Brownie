@@ -30,6 +30,7 @@ const AccountButtons = () => {
     console.log(stringResponse);
     switch (response.data.resultCode) {
       case "100":
+        setPassword("");
         setSecureMode(true);
         break;
       case "900":

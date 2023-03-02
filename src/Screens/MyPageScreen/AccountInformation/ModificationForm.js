@@ -12,6 +12,7 @@ import newPasswordConfirmAtom from "../../../Stores/Auth/newPasswordConfirm";
 import {
   ModificationFormInnerContainer,
   ModificationFormOuterContainer,
+  ModificationTitle,
   TextCenterContainer
 } from "./ModificationFormStyles";
 
@@ -28,6 +29,7 @@ const ModificationForm = () => {
   return (
     <ModificationFormOuterContainer>
       <ModificationFormInnerContainer>
+        <ModificationTitle>회원정보 변경</ModificationTitle>
         <TextField
           id={"id"}
           value={"Your ID"}

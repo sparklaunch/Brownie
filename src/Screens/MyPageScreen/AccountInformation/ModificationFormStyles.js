@@ -21,15 +21,36 @@ const ModificationFormOuterContainer = styled.div`
 const ModificationFormInnerContainer = styled.div`
   @media (480px <= width <= 767px) {
     padding-top: 12px;
-    width: 500px;
+    width: 100%;
   }
   @media (768px <= width <= 992px) {
     padding-top: 12px;
-    width: 500px;
+    width: 100%;
   }
   @media (width >= 993px) {
     padding-top: 12px;
     width: 500px;
+  }
+`;
+
+const ModificationTitle = styled.p`
+  @media (480px <= width <= 767px) {
+    text-align: center;
+    font-family: "Jua", sans-serif;
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+  @media (768px <= width <= 992px) {
+    text-align: center;
+    font-family: "Jua", sans-serif;
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+  @media (width >= 993px) {
+    text-align: center;
+    font-family: "Jua", sans-serif;
+    font-size: 32px;
+    margin-bottom: 32px;
   }
 `;
 
@@ -46,6 +67,7 @@ const TextCenterContainer = styled.div`
 `;
 
 export {
+  ModificationTitle,
   ModificationFormOuterContainer,
   ModificationFormInnerContainer,
   TextCenterContainer
