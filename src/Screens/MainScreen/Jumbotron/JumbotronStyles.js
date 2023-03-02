@@ -13,7 +13,8 @@ const JumbotronOuterContainer = styled.div`
   }
   @media (768px <= width <= 992px) {
     position: relative;
-    height: 540px;
+    width: 100%;
+    height: 440px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -34,10 +35,7 @@ const JumbotronInnerContainer = styled.div`
     margin: 0 16px;
   }
   @media (768px <= width <= 992px) {
-    width: ${Constants.TABLET_CONTAINER_WIDTH};
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    margin: 0 16px;
   }
   @media (993px <= width <= 1279px) {
     width: ${Constants.DESKTOP_CONTAINER_WIDTH};

@@ -17,6 +17,9 @@ const HamburgerItemContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     border-top: 1px solid #dfdfdf;
+    &:last-of-type {
+      border-bottom: 1px solid #dfdfdf;
+    }
   }
   @media (width >= 993px) {
     height: 50px;

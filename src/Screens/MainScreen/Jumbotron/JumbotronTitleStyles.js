@@ -8,10 +8,10 @@ const JumbotronTitleContainer = styled.div`
     align-items: flex-start;
   }
   @media (768px <= width <= 992px) {
-    height: 540px;
+    margin: 44px 16px 0 16px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: flex-start;
   }
   @media (width >= 993px) {
     height: 540px;
@@ -31,8 +31,10 @@ const TitleContainer = styled.div`
   }
   @media (768px <= width <= 992px) {
     position: relative;
-    width: 90%;
-    margin-bottom: 54px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   @media (width >= 993px) {
     position: relative;
@@ -51,9 +53,10 @@ const Title = styled.p`
     font-family: GmarketSans, sans-serif;
   }
   @media (768px <= width <= 992px) {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: bold;
-    line-height: 40px;
+    line-height: 36px;
+    margin-bottom: 50px;
     letter-spacing: -0.2px;
     color: white;
     font-family: GmarketSans, sans-serif;
@@ -112,6 +115,7 @@ const ButtonContainer = styled.div`
     transform: scale(0.8) translateX(-40px);
   }
   @media (768px <= width <= 992px) {
+    transform: scale(0.8) translateX(-40px);
   }
   @media (width >= 993px) {
   }

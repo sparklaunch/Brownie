@@ -10,9 +10,9 @@ const SwiperSlideImage = styled.img`
   }
   @media (768px <= width <= 992px) {
     width: 100%;
-    height: 100%;
+    height: 440px;
     object-fit: cover;
-    object-position: center;
+    object-position: bottom;
   }
   @media (width >= 993px) {
     width: 100%;
@@ -43,7 +43,6 @@ const SwiperSlideContentsInnerContainer = styled.div`
     flex-direction: column;
   }
   @media (768px <= width <= 992px) {
-    width: ${Constants.TABLET_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
   }
@@ -78,7 +77,7 @@ const SwiperSlideContentsOuterContainer = styled.div`
     right: 0;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
   }
   @media (width >= 993px) {
     position: absolute;
@@ -97,10 +96,7 @@ const SwiperSlideContentsContainer = styled.div`
     margin: 44px 16px 0 16px;
   }
   @media (768px <= width <= 992px) {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    margin: 44px 16px 0 16px;
   }
   @media (width >= 993px) {
     height: 100%;
@@ -115,8 +111,7 @@ const PFRLogo = styled.img`
     height: 40px;
   }
   @media (768px <= width <= 992px) {
-    height: 60px;
-    width: 396px;
+    height: 40px;
   }
   @media (width >= 993px) {
     height: 60px;
@@ -135,9 +130,9 @@ const SwiperSlideTopText = styled.p`
   @media (768px <= width <= 992px) {
     font-family: GmarketSans, sans-serif;
     color: white;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
-    margin-top: 24px;
+    margin-top: 16px;
   }
   @media (width >= 993px) {
     font-family: GmarketSans, sans-serif;
@@ -153,6 +148,7 @@ const SwiperSlideTopContents = styled.div`
     margin-bottom: 50px;
   }
   @media (768px <= width <= 992px) {
+    margin-bottom: 50px;
   }
   @media (width >= 993px) {
   }
@@ -163,6 +159,7 @@ const SwiperSlideBottomContents = styled.div`
     transform: scale(0.8) translateX(-40px);
   }
   @media (768px <= width <= 992px) {
+    transform: scale(0.8) translateX(-40px);
   }
   @media (width >= 993px) {
   }

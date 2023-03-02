@@ -7,6 +7,9 @@ const HamburgerMenuContainer = styled.div`
     align-items: center;
   }
   @media (768px <= width <= 992px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   @media (width >= 993px) {
   }

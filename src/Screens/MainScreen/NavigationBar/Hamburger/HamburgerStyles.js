@@ -31,6 +31,7 @@ const DrawerContainer = styled.div`
     background-color: white;
   }
   @media (768px <= width <= 992px) {
+    width: 400px;
     height: 100vh;
     background-color: white;
   }
