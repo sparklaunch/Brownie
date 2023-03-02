@@ -2,6 +2,13 @@ import styled from "styled-components";
 import Constants from "../../Utilities/Constants";
 
 const TextBookHeaderOuterContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
@@ -46,6 +53,8 @@ const TextBookHeaderInnerContainer = styled.div`
 `;
 
 const TextBookHeaderRectangle = styled.img`
+  @media (480px <= width <= 767px) {
+  }
   @media (768px <= width <= 992px) {
   }
   @media (width >= 993px) {
@@ -53,6 +62,11 @@ const TextBookHeaderRectangle = styled.img`
 `;
 
 const TextBookHeaderTitle = styled.p`
+  @media (480px <= width <= 767px) {
+    font-family: Jua, sans-serif;
+    font-size: 32px;
+    margin-top: 16px;
+  }
   @media (768px <= width <= 992px) {
     font-family: Jua, sans-serif;
     font-size: 32px;

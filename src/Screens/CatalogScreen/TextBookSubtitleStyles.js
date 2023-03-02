@@ -2,6 +2,16 @@ import styled from "styled-components";
 import Constants from "../../Utilities/Constants";
 
 const TextBookSubtitleOuterContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
@@ -52,6 +62,13 @@ const TextBookSubtitleInnerContainer = styled.div`
 `;
 
 const TextBookSubtitleTitle = styled.p`
+  @media (480px <= width <= 767px) {
+    font-family: Jua, sans-serif;
+    font-size: 28px;
+    color: #3d3d3d;
+    text-align: center;
+    margin-bottom: 24px;
+  }
   @media (768px <= width <= 992px) {
     font-family: Jua, sans-serif;
     font-size: 28px;
@@ -67,6 +84,12 @@ const TextBookSubtitleTitle = styled.p`
 `;
 
 const TextBookSubtitleDescription = styled.p`
+  @media (480px <= width <= 767px) {
+    font-size: 20px;
+    color: #515151;
+    text-align: center;
+    font-weight: lighter;
+  }
   @media (768px <= width <= 992px) {
     font-size: 20px;
     color: #515151;

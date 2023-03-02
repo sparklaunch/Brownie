@@ -3,9 +3,8 @@ import Constants from "../../Utilities/Constants";
 
 const TextBookComponentsAndDownloads = styled.div`
   @media (480px <= width <= 767px) {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 0;
+    display: flex;
+    flex-direction: column;
     width: ${Constants.MOBILE_CONTAINER_WIDTH};
     margin: 0 auto;
   }

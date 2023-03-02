@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 const TextBookDownloadsContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: column;
@@ -14,6 +20,14 @@ const TextBookDownloadsContainer = styled.div`
 `;
 
 const TextBookDownloadsTitle = styled.p`
+  @media (480px <= width <= 767px) {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    padding: 8px 20px;
+    background-color: #1ab9c5;
+    border-radius: 4px;
+  }
   @media (768px <= width <= 992px) {
     font-weight: bold;
     font-size: 20px;
@@ -33,6 +47,15 @@ const TextBookDownloadsTitle = styled.p`
 `;
 
 const TextBookDownload = styled.p`
+  @media (480px <= width <= 767px) {
+    font-size: 18px;
+    color: #515151;
+    font-weight: 400;
+    padding: 3px 0;
+    &:nth-child(2) {
+      margin-top: 24px;
+    }
+  }
   @media (768px <= width <= 992px) {
     font-size: 18px;
     color: #515151;

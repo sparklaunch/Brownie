@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 const TextBookComponentsContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 140px;
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: column;
@@ -16,6 +22,16 @@ const TextBookComponentsContainer = styled.div`
 `;
 
 const TextBookComponentsTitle = styled.p`
+  @media (480px <= width <= 767px) {
+    color: white;
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px 20px;
+    background-color: #1ab9c5;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
   @media (768px <= width <= 992px) {
     color: white;
     font-weight: bold;
@@ -37,6 +53,11 @@ const TextBookComponentsTitle = styled.p`
 `;
 
 const TextBookBundles = styled.div`
+  @media (480px <= width <= 767px) {
+    display: grid;
+    gap: 32px;
+    grid-template-areas: "cd-image" "cd-text" "package-image" "package-text" "combined-image" "combined-text";
+  }
   @media (768px <= width <= 992px) {
     display: grid;
     gap: 60px;
@@ -50,6 +71,9 @@ const TextBookBundles = styled.div`
 `;
 
 const CDImage = styled.img`
+  @media (480px <= width <= 767px) {
+    width: 100%;
+  }
   @media (768px <= width <= 992px) {
   }
   @media (width >= 993px) {
@@ -57,6 +81,9 @@ const CDImage = styled.img`
 `;
 
 const PackageImage = styled.img`
+  @media (480px <= width <= 767px) {
+    width: 100%;
+  }
   @media (768px <= width <= 992px) {
   }
   @media (width >= 993px) {
@@ -64,6 +91,9 @@ const PackageImage = styled.img`
 `;
 
 const CombinedImage = styled.img`
+  @media (480px <= width <= 767px) {
+    width: 100%;
+  }
   @media (768px <= width <= 992px) {
   }
   @media (width >= 993px) {
@@ -71,6 +101,13 @@ const CombinedImage = styled.img`
 `;
 
 const ImageContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: ${(props) => props.area};
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: column;
@@ -88,6 +125,11 @@ const ImageContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: column;
@@ -101,6 +143,12 @@ const TextContainer = styled.div`
 `;
 
 const TextTitle = styled.p`
+  @media (480px <= width <= 767px) {
+    font-weight: bold;
+    font-size: 18px;
+    color: #515151;
+    margin-bottom: 3px;
+  }
   @media (768px <= width <= 992px) {
     font-weight: bold;
     font-size: 18px;
@@ -116,6 +164,11 @@ const TextTitle = styled.p`
 `;
 
 const TextDescription = styled.p`
+  @media (480px <= width <= 767px) {
+    font-size: 18px;
+    font-weight: lighter;
+    color: #515151;
+  }
   @media (768px <= width <= 992px) {
     font-size: 18px;
     font-weight: lighter;

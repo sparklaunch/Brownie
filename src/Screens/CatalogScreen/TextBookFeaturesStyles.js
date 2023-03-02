@@ -2,6 +2,12 @@ import styled from "styled-components";
 import Constants from "../../Utilities/Constants";
 
 const TextBookFeaturesOuterContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 80px auto;
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
@@ -44,6 +50,15 @@ const TextBookFeaturesInnerContainer = styled.div`
 `;
 
 const TextBookFeaturesTitle = styled.p`
+  @media (480px <= width <= 767px) {
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    padding: 8px 20px;
+    background-color: #1ab9c5;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
   @media (768px <= width <= 992px) {
     font-weight: bold;
     color: white;
@@ -65,6 +80,14 @@ const TextBookFeaturesTitle = styled.p`
 `;
 
 const TextBookFeaturesContainer = styled.div`
+  @media (480px <= width <= 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &:first-of-type {
+      margin-bottom: 40px;
+    }
+  }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: column;
