@@ -12,7 +12,6 @@ const SignOutButton = () => {
       onClick={onClickSignOut}
       sx={{
         backgroundColor: "#1AB9C5",
-        filter: "brightness(1.0)",
         fontFamily: "Jua",
         fontSize: 18,
         width: 104,
