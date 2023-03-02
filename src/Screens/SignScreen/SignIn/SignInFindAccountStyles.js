@@ -9,11 +9,15 @@ const SignInFindAccountContainer = styled.div`
   }
   @media (768px <= width <= 992px) {
     font-size: 14px;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   @media (width >= 993px) {
     font-size: 14px;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 `;
 

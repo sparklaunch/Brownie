@@ -12,7 +12,7 @@ const IntroductionPreviewsOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 140px;
+    padding: 140px 0;
   }
   @media (width >= 993px) {
     display: flex;

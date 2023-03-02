@@ -5,9 +5,7 @@ const IntroductionTryDevicesContainer = styled.div`
     margin-top: 32px;
   }
   @media (768px <= width <= 992px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    margin-top: 48px;
   }
   @media (width >= 993px) {
     display: flex;
@@ -22,7 +20,7 @@ const IntroductionTryDevicesImage = styled.img`
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
   }
   @media (768px <= width <= 992px) {
-    transform: scale(1.3) translateY(-25px) translateX(-30px);
+    width: 100%;
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
   }
   @media (width >= 993px) {

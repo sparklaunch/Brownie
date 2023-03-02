@@ -26,18 +26,21 @@ const NavigationLink = styled.p`
     margin-right: 24px;
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
     color: ${(props) => (props.accented ? "#1ab9c5" : "#222222")};
   }
   @media (768px <= width <= 992px) {
     margin-right: 24px;
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
     color: ${(props) => (props.accented ? "#1ab9c5" : "#222222")};
   }
   @media (width >= 993px) {
     margin-right: 24px;
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
     color: ${(props) => (props.accented ? "#1ab9c5" : "#222222")};
   }
 `;

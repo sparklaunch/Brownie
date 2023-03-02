@@ -26,16 +26,19 @@ const NavigationContentTopContainer = styled.div`
 
 const NavigationLink = styled.p`
   @media (480px <= width <= 767px) {
+    cursor: pointer;
     margin-right: 24px;
     color: #3d3d3d;
     font-size: 18px;
   }
   @media (768px <= width <= 992px) {
+    cursor: pointer;
     margin-right: 24px;
     color: #3d3d3d;
     font-size: 18px;
   }
   @media (width >= 993px) {
+    cursor: pointer;
     margin-right: 24px;
     color: #3d3d3d;
     font-size: 18px;

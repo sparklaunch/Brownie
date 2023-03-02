@@ -37,9 +37,9 @@ const IntroductionTryInnerContainer = styled.div`
   }
   @media (768px <= width <= 992px) {
     width: ${Constants.TABLET_CONTAINER_WIDTH};
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   @media (width >= 993px) {
     width: ${Constants.DESKTOP_CONTAINER_WIDTH};
@@ -57,7 +57,9 @@ const IntroductionTryLeftContainer = styled.div`
     align-items: stretch;
   }
   @media (768px <= width <= 992px) {
-    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
   @media (width >= 993px) {
     flex-shrink: 0;

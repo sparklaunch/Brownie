@@ -15,7 +15,7 @@ const IntroductionCatalogOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 120px;
+    padding: 120px 0;
     background-color: #f4feff;
     border-top: 1px solid #1ab9c5;
     border-bottom: 1px solid #1ab9c5;

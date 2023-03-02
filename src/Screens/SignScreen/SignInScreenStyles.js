@@ -9,15 +9,15 @@ const SignInScreenOuterContainer = styled.div`
   }
   @media (768px <= width <= 992px) {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    height: 100vh;
+    margin: 32px 0;
   }
   @media (width >= 993px) {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    height: 100vh;
+    margin: 64px 0;
   }
 `;
 

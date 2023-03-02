@@ -17,7 +17,8 @@ const IntroductionTryButtonContainer = styled.p`
     color: white;
     font-family: "Jua", sans-serif;
     font-size: 24px;
-    padding: 20px 100px;
+    padding: 16px;
+    text-align: center;
     border: 2px solid white;
     border-radius: 10px;
     cursor: pointer;

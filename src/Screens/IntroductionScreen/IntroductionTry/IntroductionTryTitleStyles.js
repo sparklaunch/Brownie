@@ -5,7 +5,7 @@ const IntroductionTryTitleContainer = styled.div`
     margin-bottom: 64px;
   }
   @media (768px <= width <= 992px) {
-    margin-bottom: 130px;
+    margin-bottom: 64px;
   }
   @media (width >= 993px) {
     margin-bottom: 130px;
@@ -22,7 +22,8 @@ const IntroductionTryTitleText = styled.p`
   @media (768px <= width <= 992px) {
     color: white;
     font-family: "Jua", sans-serif;
-    font-size: 44px;
+    font-size: 32px;
+    text-align: center;
   }
   @media (width >= 993px) {
     color: white;
