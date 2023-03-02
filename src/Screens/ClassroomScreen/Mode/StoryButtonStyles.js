@@ -14,8 +14,8 @@ const StoryButtonContainer = styled.div`
     ${(props) => props.enabled && `cursor: pointer;`}
     ${(props) =>
       props.activated
-        ? `border: 4px solid #47C7D2;`
-        : `border: 4px solid transparent;`}
+        ? `outline: 4px solid #47C7D2;`
+        : `outline: 4px solid transparent;`}
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     background-color: white;
@@ -30,8 +30,8 @@ const StoryButtonContainer = styled.div`
     ${(props) => props.enabled && `cursor: pointer;`}
     ${(props) =>
       props.activated
-        ? `border: 4px solid #47C7D2;`
-        : `border: 4px solid transparent;`}
+        ? `outline: 4px solid #47C7D2;`
+        : `outline: 4px solid transparent;`}
   }
   @media screen and (min-width: 993px) and (max-width: 1279px) {
     background-color: white;
@@ -46,8 +46,8 @@ const StoryButtonContainer = styled.div`
     ${(props) => props.enabled && `cursor: pointer;`}
     ${(props) =>
       props.activated
-        ? `border: 4px solid #47C7D2;`
-        : `border: 4px solid transparent;`}
+        ? `outline: 4px solid #47C7D2;`
+        : `outline: 4px solid transparent;`}
   }
   @media screen and (min-width: 1280px) {
     background-color: white;
@@ -62,8 +62,8 @@ const StoryButtonContainer = styled.div`
     ${(props) => props.enabled && `cursor: pointer;`}
     ${(props) =>
       props.activated
-        ? `border: 4px solid #47C7D2;`
-        : `border: 4px solid transparent;`}
+        ? `outline: 4px solid #47C7D2;`
+        : `outline: 4px solid transparent;`}
   }
 `;
 
