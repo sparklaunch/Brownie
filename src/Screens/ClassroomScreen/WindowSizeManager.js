@@ -24,7 +24,7 @@ const WindowSizeManager = () => {
         height: (width * 0.54) / 1.5
       });
     }
-  }, [windowSize]);
+  }, [windowSize, height, width]);
   return <></>;
 };
 

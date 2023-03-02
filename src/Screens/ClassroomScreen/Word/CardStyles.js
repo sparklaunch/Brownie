@@ -11,7 +11,6 @@ const CardOuterContainer = styled.div`
     flex-direction: row;
     justify-content: center;
   }
-
   @media (768px <= width <= 992px) {
     position: absolute;
     top: 0;
@@ -23,7 +22,6 @@ const CardOuterContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-
   @media (width >= 993px) {
     position: absolute;
     top: 0;
@@ -64,7 +62,6 @@ const InsetBorderContainer = styled.div`
     right: 0;
     bottom: 0;
   }
-
   @media (768px <= width <= 992px) {
     position: absolute;
     top: 0;
@@ -72,7 +69,6 @@ const InsetBorderContainer = styled.div`
     right: 0;
     bottom: 0;
   }
-
   @media (width >= 993px) {
     position: absolute;
     top: 0;
