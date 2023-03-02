@@ -18,12 +18,12 @@ const AccountTitleContainer = styled.div`
 const PasswordConfirmationTitle = styled.p`
   @media (480px <= width <= 767px) {
     font-family: "Jua", sans-serif;
-    font-size: 32px;
+    font-size: 24px;
     margin-bottom: 8px;
   }
   @media (768px <= width <= 992px) {
     font-family: "Jua", sans-serif;
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 8px;
   }
   @media (width >= 993px) {
@@ -35,11 +35,12 @@ const PasswordConfirmationTitle = styled.p`
 
 const PasswordConfirmationText = styled.p`
   @media (480px <= width <= 767px) {
-    font-size: 18px;
+    font-size: 14px;
+    line-height: 1.5;
     color: #707070;
   }
   @media (768px <= width <= 992px) {
-    font-size: 18px;
+    font-size: 16px;
     color: #707070;
   }
   @media (width >= 993px) {
