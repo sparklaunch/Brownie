@@ -18,7 +18,7 @@ import {
 } from "./ModificationFormStyles";
 import { useNavigate } from "react-router-dom";
 import secureModeAtom from "../../../Stores/Auth/secureMode";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import axios from "axios";
 import Constants from "../../../Utilities/Constants";
 import Swal from "sweetalert2";
@@ -52,6 +52,12 @@ const ModificationForm = () => {
     setSecureMode(false);
     navigate(-1);
   };
+  useEffect(() => {
+    return () => {
+      clearAllFields();
+      setSecureMode(false);
+    };
+  }, []);
   const requestAccountInformation = async () => {
     const response = await axios.post(
       `${Constants.AUTH_API_ENDPOINT}/api/ap008`,
