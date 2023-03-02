@@ -291,13 +291,11 @@ const LeftPagerContainer = styled.div`
     bottom: 30px;
     left: -50px;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 30px;
     left: -60px;
   }
-
   @media screen and (min-width: 993px) and (max-width: 1279px) {
     position: absolute;
     bottom: 0;
@@ -307,7 +305,6 @@ const LeftPagerContainer = styled.div`
   @media screen and (min-width: 1280px) {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     left: -90px;
   }
 `;
@@ -318,13 +315,11 @@ const RightPagerContainer = styled.div`
     bottom: 30px;
     right: -50px;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 30px;
     right: -60px;
   }
-
   @media screen and (min-width: 993px) and (max-width: 1279px) {
     position: absolute;
     bottom: 0;
@@ -334,7 +329,6 @@ const RightPagerContainer = styled.div`
   @media screen and (min-width: 1280px) {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     right: -90px;
   }
 `;

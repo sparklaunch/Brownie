@@ -155,13 +155,11 @@ const WordLeftPageTurnerContainer = styled.div`
     left: -50px;
     bottom: 30px;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     left: -60px;
     bottom: 30px;
   }
-
   @media screen and (min-width: 993px) and (max-width: 1279px) {
     position: absolute;
     left: -90px;
@@ -172,7 +170,6 @@ const WordLeftPageTurnerContainer = styled.div`
     position: absolute;
     left: -90px;
     top: 50%;
-    transform: translateY(-50%);
   }
 `;
 
@@ -182,13 +179,11 @@ const WordRightPageTurnerContainer = styled.div`
     right: -50px;
     bottom: 30px;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     right: -60px;
     bottom: 30px;
   }
-
   @media screen and (min-width: 993px) and (max-width: 1279px) {
     position: absolute;
     right: -90px;
@@ -199,7 +194,6 @@ const WordRightPageTurnerContainer = styled.div`
     position: absolute;
     right: -90px;
     top: 50%;
-    transform: translateY(-50%);
   }
 `;
 
