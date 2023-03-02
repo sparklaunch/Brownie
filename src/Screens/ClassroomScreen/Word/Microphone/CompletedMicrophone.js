@@ -114,6 +114,7 @@ const CompletedMicrophone = () => {
   };
   const onClickRetry = () => {
     Howler.unload();
+    setResultsScreenShown(false);
     setWordScores((previousScores) => {
       return {
         ...previousScores,

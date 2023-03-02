@@ -4,13 +4,6 @@ import Constants from "../../../Utilities/Constants";
 import axios from "axios";
 
 const AccountDeletion = () => {
-  const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-      confirmButton: "btn btn-success",
-      cancelButton: "btn btn-danger"
-    },
-    buttonsStyling: false
-  });
   const requestAccountDeletion = async () => {
     const response = await axios.post(
       `${Constants.AUTH_API_ENDPOINT}/api/ap003`,
@@ -30,6 +23,9 @@ const AccountDeletion = () => {
     console.log(stringResponse);
     switch (response.data.resultCode) {
       case "100":
+        await Swal.fire(Constants.ACCOUNT_DELETION_SUCCESS);
+        sessionStorage.clear();
+        window.location.href = "/";
         break;
       default:
         await Swal.fire(Constants.SERVER_ERROR);
@@ -37,16 +33,15 @@ const AccountDeletion = () => {
     }
   };
   const onClickAccountDeletion = () => {
-    swalWithBootstrapButtons
-      .fire({
-        title: "회원 탈퇴",
-        text: "정말로 회원 탈퇴를 하시겠습니까?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "탈퇴",
-        cancelButtonText: "취소",
-        reverseButtons: true
-      })
+    Swal.fire({
+      title: "회원 탈퇴",
+      text: "정말로 회원 탈퇴를 하시겠습니까?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "탈퇴",
+      cancelButtonText: "취소",
+      reverseButtons: true
+    })
       .then((result) => {
         if (result.isConfirmed) {
           requestAccountDeletion();

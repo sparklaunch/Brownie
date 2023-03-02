@@ -171,6 +171,12 @@ const Constants = {
     text: "회원 정보가 존재하지 않습니다.",
     icon: "error",
     confirmButtonText: "확인"
+  },
+  ACCOUNT_DELETION_SUCCESS: {
+    title: "회원 탈퇴 성공",
+    text: "회원 탈퇴에 성공하였습니다.",
+    icon: "success",
+    confirmButtonText: "확인"
   }
 };
 
