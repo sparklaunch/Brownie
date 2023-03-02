@@ -1,6 +1,7 @@
 const isLoggedIn = () => {
   const userNumber = sessionStorage.getItem("userNumber");
-  if (userNumber === null) {
+  const studentName = sessionStorage.getItem("studentName");
+  if (userNumber === null || studentName === null) {
     return false;
   } else {
     return userNumber;

@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 const SignOutButton = () => {
   const onClickSignOut = () => {
     sessionStorage.removeItem("userNumber");
+    sessionStorage.removeItem("studentName");
     window.location.reload();
   };
   return (

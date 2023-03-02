@@ -5,6 +5,7 @@ const WelcomeButtons = () => {
   const navigate = useNavigate();
   const onClickLogOutButton = () => {
     sessionStorage.removeItem("userNumber");
+    sessionStorage.removeItem("studentName");
     window.location.reload();
   };
   return (
