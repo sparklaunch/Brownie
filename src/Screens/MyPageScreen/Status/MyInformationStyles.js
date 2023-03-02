@@ -23,8 +23,10 @@ const MyInformationTitle = styled.div`
 
 const MyInformationOuterContainer = styled.div`
   @media (480px <= width <= 767px) {
+    margin-bottom: 32px;
   }
   @media (768px <= width <= 992px) {
+    margin-bottom: 32px;
   }
   @media (width >= 993px) {
   }
