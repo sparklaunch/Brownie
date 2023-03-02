@@ -27,16 +27,25 @@ const TryContentsInnerContainer = styled.div`
     width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 32px;
   }
   @media (768px <= width <= 992px) {
     width: ${Constants.TABLET_CONTAINER_WIDTH};
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
   @media (993px <= width <= 1279px) {
     width: ${Constants.LAPTOP_CONTAINER_WIDTH};
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
   @media (width >= 1280px) {
     width: ${Constants.DESKTOP_CONTAINER_WIDTH};
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 `;
 
