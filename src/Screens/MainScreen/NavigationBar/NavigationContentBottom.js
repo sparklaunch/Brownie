@@ -43,7 +43,10 @@ const NavigationContentBottom = () => {
         교재 구성
       </NavigationLink>
       {isLoggedIn() && (
-        <NavigationLink onClick={onClickMyPage} accented={false}>
+        <NavigationLink
+          onClick={onClickMyPage}
+          accented={pathname === "/mypage"}
+        >
           마이페이지
         </NavigationLink>
       )}
