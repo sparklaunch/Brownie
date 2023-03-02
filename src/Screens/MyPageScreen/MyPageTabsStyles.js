@@ -35,7 +35,13 @@ const MyPageTabsInnerContainer = styled.div`
     flex-direction: row;
     justify-content: center;
   }
-  @media (width >= 993px) {
+  @media (993px <= width <= 1279px) {
+    width: ${Constants.LAPTOP_CONTAINER_WIDTH};
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  @media (width >= 1280px) {
     width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;

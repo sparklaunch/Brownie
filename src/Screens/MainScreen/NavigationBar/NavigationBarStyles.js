@@ -44,7 +44,7 @@ const NavigationBarInnerContainer = styled.div`
   @media (993px <= width <= 1279px) {
     display: flex;
     flex-direction: row;
-    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
+    width: ${Constants.LAPTOP_CONTAINER_WIDTH};
     height: 140px;
     justify-content: space-between;
     align-items: center;

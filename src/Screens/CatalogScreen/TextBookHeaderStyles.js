@@ -39,7 +39,7 @@ const TextBookHeaderInnerContainer = styled.div`
     align-items: center;
   }
   @media (993px <= width <= 1279px) {
-    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
+    width: ${Constants.LAPTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
     align-items: center;

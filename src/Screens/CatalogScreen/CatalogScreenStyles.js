@@ -19,7 +19,7 @@ const TextBookComponentsAndDownloads = styled.div`
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 0;
-    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
+    width: ${Constants.LAPTOP_CONTAINER_WIDTH};
     margin: 0 auto;
   }
   @media (width >= 1280px) {

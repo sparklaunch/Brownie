@@ -38,7 +38,7 @@ const JumbotronInnerContainer = styled.div`
     margin: 0 16px;
   }
   @media (993px <= width <= 1279px) {
-    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
+    width: ${Constants.LAPTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

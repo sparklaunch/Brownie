@@ -29,7 +29,7 @@ const InformationInnerContainer = styled.div`
     margin: 40px 0;
   }
   @media (993px <= width <= 1279px) {
-    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
+    width: ${Constants.LAPTOP_CONTAINER_WIDTH};
     margin: 50px 0;
   }
   @media (width >= 1280px) {
