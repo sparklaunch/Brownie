@@ -6,19 +6,16 @@ const NavigationBarOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
   @media (width >= 993px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
 `;
 

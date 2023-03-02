@@ -42,22 +42,17 @@ const CardInnerContainer = styled.div`
     width: ${(props) => props.textbookSize.width}px;
     height: ${(props) => props.textbookSize.height}px;
     background-color: white;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-
   @media (768px <= width <= 992px) {
     width: ${(props) => props.textbookSize.width}px;
     height: ${(props) => props.textbookSize.height}px;
     background-color: white;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-
   @media (width >= 993px) {
-    background-color: white;
-    border-radius: 20px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     width: ${(props) => props.textbookSize.width}px;
     height: ${(props) => props.textbookSize.height}px;
+    background-color: white;
+    border-radius: 20px;
   }
 `;
 

@@ -10,9 +10,7 @@ const BookContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-
   @media (768px <= width <= 992px) {
     position: absolute;
     top: 0;
@@ -22,9 +20,7 @@ const BookContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-
   @media (width >= 993px) {
     position: absolute;
     top: 0;
@@ -34,7 +30,6 @@ const BookContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
 
@@ -616,7 +611,6 @@ const GlowBorder = styled.div`
     z-index: 1;
     box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
   }
-
   @media (768px <= width <= 992px) {
     position: absolute;
     top: 0;
@@ -626,7 +620,6 @@ const GlowBorder = styled.div`
     z-index: 1;
     box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
   }
-
   @media (width >= 993px) {
     position: absolute;
     top: 0;
