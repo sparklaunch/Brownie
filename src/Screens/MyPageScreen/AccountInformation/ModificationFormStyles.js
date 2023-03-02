@@ -66,7 +66,29 @@ const TextCenterContainer = styled.div`
   }
 `;
 
+const PasswordNoticeText = styled.p`
+  @media (480px <= width <= 767px) {
+    margin-left: 23px;
+    font-size: 13px;
+    margin-bottom: 3px;
+    color: #acacac;
+  }
+  @media (768px <= width <= 992px) {
+    margin-left: 23px;
+    font-size: 13px;
+    margin-bottom: 3px;
+    color: #acacac;
+  }
+  @media (width >= 993px) {
+    margin-left: 23px;
+    font-size: 13px;
+    margin-bottom: 3px;
+    color: #acacac;
+  }
+`;
+
 export {
+  PasswordNoticeText,
   ModificationTitle,
   ModificationFormOuterContainer,
   ModificationFormInnerContainer,

@@ -13,10 +13,14 @@ import {
   ModificationFormInnerContainer,
   ModificationFormOuterContainer,
   ModificationTitle,
+  PasswordNoticeText,
   TextCenterContainer
 } from "./ModificationFormStyles";
+import { useNavigate } from "react-router-dom";
+import secureModeAtom from "../../../Stores/Auth/secureMode";
 
 const ModificationForm = () => {
+  const [secureMode, setSecureMode] = useRecoilState(secureModeAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
   const [phoneNumber, setPhoneNumber] = useRecoilState(phoneNumberAtom);
   const [studentName, setStudentName] = useRecoilState(studentNameAtom);
@@ -26,6 +30,20 @@ const ModificationForm = () => {
   const [newPasswordConfirm, setNewPasswordConfirm] = useRecoilState(
     newPasswordConfirmAtom
   );
+  const navigate = useNavigate();
+  const clearAllFields = () => {
+    setPassword("");
+    setPhoneNumber("");
+    setStudentName("");
+    setStudentBirthDate("");
+    setNewPassword("");
+    setNewPasswordConfirm("");
+  };
+  const onClickCancel = () => {
+    clearAllFields();
+    setSecureMode(false);
+    navigate(-1);
+  };
   return (
     <ModificationFormOuterContainer>
       <ModificationFormInnerContainer>
@@ -61,6 +79,9 @@ const ModificationForm = () => {
           }}
         />
         <PasswordInfo />
+        <PasswordNoticeText>
+          비밀번호를 변경하지 않을 시에는 비워두세요.
+        </PasswordNoticeText>
         <TextField
           id={"new-password"}
           value={newPassword}
@@ -143,6 +164,7 @@ const ModificationForm = () => {
         <AccountDeletion />
         <TextCenterContainer>
           <Button
+            onClick={onClickCancel}
             variant={"outlined"}
             sx={{
               marginRight: "15px",
