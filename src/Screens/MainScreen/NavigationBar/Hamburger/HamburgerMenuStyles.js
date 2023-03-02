@@ -48,22 +48,34 @@ const SignInButton = styled.p`
   }
 `;
 
-const InstructionsText = styled.p`
+const SignOutButton = styled.p`
   @media (480px <= width <= 767px) {
+    font-family: Jua, sans-serif;
     font-size: 14px;
-    color: #3d3d3d;
+    color: white;
+    padding: 8px 20px;
+    background-color: #1ab9c5;
+    border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
   }
   @media (768px <= width <= 992px) {
+    font-family: Jua, sans-serif;
     font-size: 14px;
-    color: #3d3d3d;
+    color: white;
+    padding: 8px 20px;
+    background-color: #1ab9c5;
+    border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
   }
   @media (width >= 993px) {
+    font-family: Jua, sans-serif;
     font-size: 14px;
-    color: #3d3d3d;
+    color: white;
+    padding: 8px 20px;
+    background-color: #1ab9c5;
+    border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
   }
@@ -90,6 +102,6 @@ const AdministratorSiteText = styled.p`
 export {
   HamburgerMenuContainer,
   SignInButton,
-  InstructionsText,
+  SignOutButton,
   AdministratorSiteText
 };
