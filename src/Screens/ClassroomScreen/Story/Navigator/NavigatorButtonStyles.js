@@ -38,10 +38,8 @@ const NavigatorButtonInnerContainer = styled.div`
     padding: 8px 40px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
     cursor: pointer;
   }
-
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
@@ -50,10 +48,8 @@ const NavigatorButtonInnerContainer = styled.div`
     padding: 8px 40px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
     cursor: pointer;
   }
-
   @media (width >= 993px) {
     display: flex;
     flex-direction: row;
@@ -62,7 +58,6 @@ const NavigatorButtonInnerContainer = styled.div`
     padding: 8px 40px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
     cursor: pointer;
   }
 `;

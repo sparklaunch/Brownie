@@ -22,17 +22,14 @@ const FeatureSpecimenImage = styled.img`
   @media (480px <= width <= 767px) {
     margin-bottom: 36px;
     width: 600px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   @media (768px <= width <= 992px) {
     margin-bottom: 36px;
     width: 600px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   @media (width >= 993px) {
     margin-bottom: 36px;
     width: 600px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
 

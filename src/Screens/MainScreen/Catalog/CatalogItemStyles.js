@@ -18,7 +18,6 @@ const CatalogItemImage = styled.img`
     width: 100%;
     object-fit: cover;
     cursor: pointer;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border: 8px solid transparent;
     border-radius: 16px;
     transform: scale(1.04);
@@ -28,7 +27,6 @@ const CatalogItemImage = styled.img`
     width: 100%;
     object-fit: cover;
     cursor: pointer;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border: 8px solid transparent;
     border-radius: 16px;
     transform: scale(1.04);
@@ -38,7 +36,6 @@ const CatalogItemImage = styled.img`
     width: 100%;
     object-fit: cover;
     cursor: pointer;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border: 8px solid transparent;
     border-radius: 16px;
     transform: scale(1.04);
@@ -51,7 +48,6 @@ const DemoRibbon = styled.img`
     top: 36%;
     width: 100%;
     transform: scale(1.04);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     cursor: pointer;
   }
   @media (768px <= width <= 992px) {
@@ -59,7 +55,6 @@ const DemoRibbon = styled.img`
     top: 36%;
     width: 100%;
     transform: scale(1.04);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     cursor: pointer;
   }
   @media (width >= 993px) {
@@ -67,7 +62,6 @@ const DemoRibbon = styled.img`
     top: 36%;
     width: 100%;
     transform: scale(1.04);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     cursor: pointer;
   }
 `;

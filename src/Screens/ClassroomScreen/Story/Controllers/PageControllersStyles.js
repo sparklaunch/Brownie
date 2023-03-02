@@ -28,11 +28,9 @@ const FirstPageText = styled.p`
     padding: 10px 20px;
     background-color: #1ab9c5;
     border-radius: 50px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-right: 20px;
     ${(props) => props.available && `cursor: pointer;`}
   }
-
   @media (768px <= width <= 992px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
@@ -40,11 +38,9 @@ const FirstPageText = styled.p`
     padding: 10px 20px;
     background-color: #1ab9c5;
     border-radius: 50px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-right: 20px;
     ${(props) => props.available && `cursor: pointer;`}
   }
-
   @media (width >= 993px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
@@ -52,7 +48,6 @@ const FirstPageText = styled.p`
     padding: 10px 20px;
     background-color: #1ab9c5;
     border-radius: 50px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-right: 20px;
     ${(props) => props.available && `cursor: pointer;`}
   }
@@ -63,12 +58,10 @@ const PageAnglesContainer = styled.div`
     display: flex;
     flex-direction: row;
   }
-
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
   }
-
   @media (width >= 993px) {
     display: flex;
     flex-direction: row;
@@ -78,10 +71,8 @@ const PageAnglesContainer = styled.div`
 const LeftPageAngleWrapper = styled.div`
   @media (width <= 767px) {
   }
-
   @media (768px <= width <= 992px) {
   }
-
   @media (width >= 993px) {
   }
 `;

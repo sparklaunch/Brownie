@@ -47,19 +47,16 @@ const SignInScreenContainer = styled.div`
     width: 500px;
     border: 2px solid #dfdfdf;
     border-radius: 5px;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
   }
   @media (768px <= width <= 992px) {
     width: 500px;
     border: 2px solid #dfdfdf;
     border-radius: 5px;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
   }
   @media (width >= 993px) {
     width: 500px;
     border: 2px solid #dfdfdf;
     border-radius: 5px;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
   }
 `;
 

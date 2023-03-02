@@ -8,7 +8,6 @@ const NavigationContainer = styled.div`
     background-color: #0c4a4e;
     z-index: 10;
     height: 216px;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
     transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: row;
@@ -16,7 +15,6 @@ const NavigationContainer = styled.div`
     align-items: center;
     ${(props) => (props.open ? `top: 0;` : `top: -216px;`)}
   }
-
   @media (768px <= width <= 992px) {
     position: fixed;
     width: 100%;
@@ -24,7 +22,6 @@ const NavigationContainer = styled.div`
     background-color: #0c4a4e;
     z-index: 10;
     height: 216px;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
     transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: row;
@@ -32,7 +29,6 @@ const NavigationContainer = styled.div`
     align-items: center;
     ${(props) => (props.open ? `top: 0;` : `top: -216px;`)}
   }
-
   @media (width >= 993px) {
     position: fixed;
     width: 100%;
@@ -40,7 +36,6 @@ const NavigationContainer = styled.div`
     background-color: #0c4a4e;
     z-index: 10;
     height: 216px;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
     transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: row;

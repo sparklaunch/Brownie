@@ -106,15 +106,10 @@ const CompletedBadgeContainer = styled.div`
 
 const CompletedBadgeImage = styled.img`
   @media (width <= 767px) {
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
   }
-
   @media (768px <= width <= 992px) {
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
   }
-
   @media (width >= 993px) {
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
   }
 `;
 

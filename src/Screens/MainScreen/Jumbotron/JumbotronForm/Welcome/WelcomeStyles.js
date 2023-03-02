@@ -12,7 +12,6 @@ const WelcomeOuterContainer = styled.div`
     width: 300px;
     height: 240px;
     border-radius: 8px;
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
     overflow: clip;
   }
 `;
