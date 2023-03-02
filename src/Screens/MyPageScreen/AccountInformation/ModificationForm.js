@@ -91,15 +91,65 @@ const ModificationForm = () => {
   useLayoutEffect(() => {
     requestAccountInformation();
   }, []);
+  const requestAccountModification = async () => {
+    const response = await axios.post(
+      `${Constants.AUTH_API_ENDPOINT}/api/ap009`,
+      {
+        user_no: sessionStorage.getItem("userNumber"),
+        pwd: newPassword,
+        pwd_chk: newPasswordConfirm,
+        tel: phoneNumber,
+        name: studentName,
+        birth: studentBirthDate
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "*"
+        }
+      }
+    );
+    const stringResponse = JSON.stringify(response, null, 2);
+    console.log(stringResponse);
+    switch (response.data.resultCode) {
+      case "100":
+        await Swal.fire(Constants.ACCOUNT_MODIFICATION_SUCCESS);
+        sessionStorage.setItem("studentName", studentName);
+        clearAllFields();
+        navigate("/");
+        break;
+      case "900":
+        await Swal.fire(Constants.ACCOUNT_MODIFICATION_FAILED);
+        break;
+      case "901":
+        await Swal.fire(Constants.ACCOUNT_NOT_FOUND);
+        break;
+      case "902":
+        await Swal.fire(Constants.PASSWORD_NOT_VALID);
+        break;
+      default:
+        await Swal.fire(Constants.SERVER_ERROR);
+        break;
+    }
+  };
   const onClickSubmit = () => {
     const passwordRegex =
       /^(?=.*[a-zA-Z])(?=.*[!?@#$%^*+=-])(?=.*[0-9]).{6,24}$/;
+    const phoneNumberRegex = /^\d{3}-?\d{3,4}-?\d{4}$/;
     if (newPassword.length > 0 && !passwordRegex.test(newPassword)) {
       Swal.fire(Constants.PASSWORD_NOT_VALID);
     } else if (newPassword !== newPasswordConfirm) {
       Swal.fire(Constants.PASSWORD_NOT_MATCH);
+    } else if (phoneNumber.length === 0) {
+      Swal.fire(Constants.EMPTY_PHONE_NUMBER);
+    } else if (!phoneNumberRegex.test(phoneNumber)) {
+      Swal.fire(Constants.PHONE_NUMBER_NOT_VALID);
+    } else if (studentBirthDate.length === 0) {
+      Swal.fire(Constants.EMPTY_BIRTH_DATE);
     } else {
-      clearAllFields();
+      requestAccountModification();
     }
   };
   return (
@@ -164,6 +214,7 @@ const ModificationForm = () => {
           label={"휴대폰 번호 (예: 01012345678)"}
           size={"medium"}
           type={"phone-number"}
+          required={true}
           sx={{
             width: "100%",
             backgroundColor: "white",

@@ -147,6 +147,30 @@ const Constants = {
     text: "비밀번호를 다시 한번 확인해주세요.",
     icon: "error",
     confirmButtonText: "확인"
+  },
+  EMPTY_BIRTH_DATE: {
+    title: "생년월일 에러",
+    text: "생년월일을 입력해주세요.",
+    icon: "warning",
+    confirmButtonText: "확인"
+  },
+  ACCOUNT_MODIFICATION_SUCCESS: {
+    title: "회원 정보 변경 성공",
+    text: "회원 정보 변경에 성공하였습니다.",
+    icon: "success",
+    confirmButtonText: "확인"
+  },
+  ACCOUNT_MODIFICATION_FAILED: {
+    title: "회원 정보 변경 실패",
+    text: "회원 정보 변경에 필요한 정보를 확인해주세요.",
+    icon: "error",
+    confirmButtonText: "확인"
+  },
+  ACCOUNT_NOT_FOUND: {
+    title: "회원 정보 없음",
+    text: "회원 정보가 존재하지 않습니다.",
+    icon: "error",
+    confirmButtonText: "확인"
   }
 };
 
