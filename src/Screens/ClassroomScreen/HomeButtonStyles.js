@@ -14,12 +14,12 @@ const HomeButtonContainer = styled.div`
 
 const HomeButtonImage = styled.img`
   @media screen and (max-width: 767px) {
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
   }
   @media screen and (min-width: 993px) {
     width: 48px;
