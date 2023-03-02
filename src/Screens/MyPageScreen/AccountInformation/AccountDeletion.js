@@ -32,6 +32,7 @@ const AccountDeletion = () => {
       case "100":
         break;
       default:
+        await Swal.fire(Constants.SERVER_ERROR);
         break;
     }
   };
