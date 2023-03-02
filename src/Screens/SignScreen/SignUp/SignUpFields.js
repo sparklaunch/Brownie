@@ -117,14 +117,24 @@ const SignUpFields = () => {
       );
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
-      if (response.data.resultCode === "100") {
-        await Swal.fire(Constants.SIGN_UP_SUCCEEDED);
-        clearAllFields();
-        signIn();
-      } else if (response.data.resultCode === "900") {
-        await Swal.fire(Constants.SIGN_UP_FAILED);
-      } else {
-        await Swal.fire(Constants.SERVER_ERROR);
+      switch (response.data.resultCode) {
+        case "100":
+          await Swal.fire(Constants.SIGN_UP_SUCCEEDED);
+          clearAllFields();
+          signIn();
+          break;
+        case "900":
+          await Swal.fire(Constants.SIGN_UP_FAILED);
+          break;
+        case "901":
+          await Swal.fire(Constants.ID_ALREADY_EXISTS);
+          break;
+        case "902":
+          await Swal.fire(Constants.PASSWORD_NOT_VALID);
+          break;
+        default:
+          await Swal.fire(Constants.SERVER_ERROR);
+          break;
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);

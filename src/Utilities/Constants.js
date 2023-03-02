@@ -42,7 +42,7 @@ const Constants = {
   },
   SIGN_IN_FAILED: {
     title: "로그인 실패",
-    text: "로그인에 실패하였습니다.",
+    text: "필요한 정보를 모두 입력해주세요.",
     icon: "error",
     confirmButtonText: "확인"
   },
@@ -84,7 +84,13 @@ const Constants = {
   },
   SIGN_UP_FAILED: {
     title: "회원가입 실패",
-    text: "회원가입에 실패하였습니다.",
+    text: "필요한 정보를 모두 입력해주세요.",
+    icon: "error",
+    confirmButtonText: "확인"
+  },
+  ID_ALREADY_EXISTS: {
+    title: "아이디 중복",
+    text: "이미 존재하는 아이디입니다.",
     icon: "error",
     confirmButtonText: "확인"
   },

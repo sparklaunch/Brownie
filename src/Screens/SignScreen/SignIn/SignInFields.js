@@ -42,18 +42,26 @@ const SignInFields = () => {
       );
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
-      if (response.data.resultCode === "100") {
-        await Swal.fire(Constants.SIGN_IN_SUCCEEDED);
-        clearAllFields();
-        sessionStorage.setItem("userNumber", response.data.user_no);
-        sessionStorage.setItem("studentName", response.data.name);
-        navigate("/");
-      } else if (response.data.resultCode === "200") {
-        await Swal.fire(Constants.INVALID_PASSWORD);
-      } else if (response.data.resultCode === "900") {
-        await Swal.fire(Constants.SIGN_IN_FAILED);
-      } else {
-        await Swal.fire(Constants.SERVER_ERROR);
+      switch (response.data.resultCode) {
+        case "100":
+          await Swal.fire(Constants.SIGN_IN_SUCCEEDED);
+          clearAllFields();
+          sessionStorage.setItem("userNumber", response.data.user_no);
+          sessionStorage.setItem("studentName", response.data.name);
+          navigate("/");
+          break;
+        case "900":
+          await Swal.fire(Constants.SIGN_IN_FAILED);
+          break;
+        case "901":
+          await Swal.fire(Constants.INVALID_ACCOUNT);
+          break;
+        case "902":
+          await Swal.fire(Constants.INVALID_PASSWORD);
+          break;
+        default:
+          await Swal.fire(Constants.SERVER_ERROR);
+          break;
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
