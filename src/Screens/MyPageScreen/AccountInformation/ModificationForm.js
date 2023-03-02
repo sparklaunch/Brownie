@@ -62,22 +62,6 @@ const ModificationForm = () => {
             marginBottom: 1.5
           }}
         />
-        <TextField
-          id={"password"}
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-          variant={"outlined"}
-          label={"현재 비밀번호"}
-          required={true}
-          size={"medium"}
-          type={"password"}
-          sx={{
-            width: "100%",
-            backgroundColor: "white",
-            borderRadius: 2,
-            marginBottom: 1.5
-          }}
-        />
         <PasswordInfo />
         <PasswordNoticeText>
           비밀번호를 변경하지 않을 시에는 비워두세요.
@@ -133,11 +117,11 @@ const ModificationForm = () => {
         <StudentLabel />
         <TextField
           id={"student-name"}
-          value={studentName}
+          value={sessionStorage.getItem("studentName")}
           onChange={(event) => setStudentName(event.target.value)}
           variant={"outlined"}
           label={"학생(자녀) 이름"}
-          required={true}
+          disabled={true}
           size={"medium"}
           sx={{
             width: "100%",
