@@ -11,7 +11,6 @@ const NiceTryScreenContainer = styled.div`
     padding: 8px;
     z-index: 3;
   }
-
   @media (768px <= width <= 992px) {
     position: absolute;
     bottom: 0;
@@ -22,7 +21,6 @@ const NiceTryScreenContainer = styled.div`
     padding: 8px;
     z-index: 3;
   }
-
   @media (width >= 993px) {
     position: absolute;
     bottom: 0;
@@ -42,25 +40,29 @@ const NiceTryImage = styled.img`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 5%;
-    height: 80px;
+    right: 15%;
+    height: 80%;
+    object-fit: contain;
+    object-position: center;
   }
-
   @media (768px <= width <= 992px) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 5%;
-    height: 200px;
+    right: 15%;
+    height: 80%;
+    object-fit: contain;
+    object-position: center;
   }
-
   @media (width >= 993px) {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateX(360px);
+    transform: translateY(-50%);
+    right: 15%;
     padding: 20px 0;
-    height: 200px;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 `;
 
@@ -70,17 +72,15 @@ const ScorePillWrapper = styled.div`
     top: 50%;
     left: 50%;
     width: 100vw;
-    transform: translate(-50%, -50%) scale(0.6);
+    transform: translate(-50%, -50%);
   }
-
   @media (768px <= width <= 992px) {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100vw;
-    transform: translate(-50%, -50%) scale(0.6);
+    transform: translate(-50%, -50%);
   }
-
   @media (width >= 993px) {
     position: absolute;
     top: 50%;

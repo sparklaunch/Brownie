@@ -84,7 +84,7 @@ const ResultsScreen = () => {
         audio.play();
         setYouDidItShown(true);
       }
-    }, 3000);
+    }, 300000000);
   }, []);
   if (resultsScreenShown) {
     switch (mode) {
