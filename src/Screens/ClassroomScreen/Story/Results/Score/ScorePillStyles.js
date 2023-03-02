@@ -7,14 +7,12 @@ const ScorePillOuterContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-
   @media (768px <= width <= 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
   }
-
   @media (width >= 993px) {
     display: flex;
     flex-direction: row;
@@ -30,8 +28,8 @@ const ScorePillInnerContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: white;
-    border: 1px solid ${(props) => props.borderColor};
-    padding: 5px 15px;
+    border: 2px solid ${(props) => props.borderColor};
+    padding: 10px 16px;
     border-radius: 999px;
   }
   @media (768px <= width <= 992px) {
@@ -40,8 +38,8 @@ const ScorePillInnerContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: white;
-    border: 1px solid ${(props) => props.borderColor};
-    padding: 6px 18px;
+    border: 2px solid ${(props) => props.borderColor};
+    padding: 12px 20px;
     border-radius: 999px;
   }
   @media (993px <= width <= 1279px) {
@@ -50,8 +48,8 @@ const ScorePillInnerContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: white;
-    border: 1px solid ${(props) => props.borderColor};
-    padding: 7px 20px;
+    border: 2px solid ${(props) => props.borderColor};
+    padding: 12px 22px;
     border-radius: 999px;
   }
   @media (width >= 1280px) {
@@ -60,8 +58,8 @@ const ScorePillInnerContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: white;
-    border: 1px solid ${(props) => props.borderColor};
-    padding: 8px 24px;
+    border: 2px solid ${(props) => props.borderColor};
+    padding: 14px 26px;
     border-radius: 999px;
   }
 `;
