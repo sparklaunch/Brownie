@@ -6,7 +6,7 @@ const TryInformationContainer = styled.div`
     width: 90%;
     padding: 30px;
     background-color: ${Constants.WHITE};
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 20px;
     margin: 0 auto 32px auto;
   }
@@ -14,7 +14,7 @@ const TryInformationContainer = styled.div`
     width: 100%;
     padding: 30px;
     background-color: ${Constants.WHITE};
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 20px;
     margin: 12px 0;
   }
@@ -22,7 +22,7 @@ const TryInformationContainer = styled.div`
     width: 100%;
     padding: 30px;
     background-color: ${Constants.WHITE};
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 20px;
     margin: 36px 0;
   }

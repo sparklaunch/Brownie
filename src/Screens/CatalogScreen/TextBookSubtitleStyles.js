@@ -9,8 +9,8 @@ const TextBookSubtitleOuterContainer = styled.div`
     align-items: center;
     padding: 40px 0;
     background-color: ${Constants.WHITE};
-    border-top: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
+    border-bottom: 1px solid ${Constants.LIGHT_GRAY};
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
@@ -19,8 +19,8 @@ const TextBookSubtitleOuterContainer = styled.div`
     align-items: center;
     padding: 40px;
     background-color: ${Constants.WHITE};
-    border-top: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
+    border-bottom: 1px solid ${Constants.LIGHT_GRAY};
   }
   @media screen and (min-width: 993px) {
     display: flex;
@@ -29,8 +29,8 @@ const TextBookSubtitleOuterContainer = styled.div`
     align-items: center;
     padding: 40px;
     background-color: ${Constants.WHITE};
-    border-top: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
+    border-bottom: 1px solid ${Constants.LIGHT_GRAY};
   }
 `;
 

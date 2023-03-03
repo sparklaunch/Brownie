@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../Utilities/Constants";
 
 const SignInScreenOuterContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -47,17 +48,17 @@ const SignInScreenInnerContainer = styled.div`
 const SignInScreenContainer = styled.div`
   @media screen and (max-width: 767px) {
     width: 100%;
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 5px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 500px;
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 5px;
   }
   @media screen and (min-width: 993px) {
     width: 500px;
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 5px;
   }
 `;

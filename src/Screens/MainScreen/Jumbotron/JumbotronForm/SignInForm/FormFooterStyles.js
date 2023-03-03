@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../../../Utilities/Constants";
 
 const FormFooterContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -26,19 +27,19 @@ const FormFooterContainer = styled.div`
 
 const SignUpButton = styled.p`
   @media screen and (max-width: 767px) {
-    color: #dfdfdf;
+    color: ${Constants.LIGHT_GRAY};
     font-weight: lighter;
     font-size: 14px;
     cursor: pointer;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    color: #dfdfdf;
+    color: ${Constants.LIGHT_GRAY};
     font-weight: lighter;
     font-size: 14px;
     cursor: pointer;
   }
   @media screen and (min-width: 993px) {
-    color: #dfdfdf;
+    color: ${Constants.LIGHT_GRAY};
     font-weight: lighter;
     font-size: 14px;
     cursor: pointer;

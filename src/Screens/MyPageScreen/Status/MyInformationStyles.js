@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const MyInformationTitle = styled.div`
   @media screen and (max-width: 767px) {
@@ -35,7 +36,7 @@ const MyInformationOuterContainer = styled.div`
 const MyInformationInnerContainer = styled.div`
   @media screen and (max-width: 767px) {
     padding: 32px;
-    border: 1px solid #dfdfdf;
+    border: 1px solid ${Constants.LIGHT_GRAY};
     border-radius: 4px;
     font-size: 18px;
     display: grid;
@@ -43,7 +44,7 @@ const MyInformationInnerContainer = styled.div`
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     padding: 32px;
-    border: 1px solid #dfdfdf;
+    border: 1px solid ${Constants.LIGHT_GRAY};
     border-radius: 4px;
     font-size: 18px;
     display: grid;
@@ -51,7 +52,7 @@ const MyInformationInnerContainer = styled.div`
   }
   @media screen and (min-width: 993px) {
     padding: 32px;
-    border: 1px solid #dfdfdf;
+    border: 1px solid ${Constants.LIGHT_GRAY};
     border-radius: 4px;
     font-size: 18px;
     display: grid;

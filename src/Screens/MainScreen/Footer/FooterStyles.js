@@ -1,22 +1,23 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const FooterContainer = styled.div`
   @media screen and (max-width: 767px) {
-    border-top: 2px solid #dfdfdf;
+    border-top: 2px solid ${Constants.LIGHT_GRAY};
     padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    border-top: 2px solid #dfdfdf;
+    border-top: 2px solid ${Constants.LIGHT_GRAY};
     padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   @media screen and (min-width: 993px) {
-    border-top: 2px solid #dfdfdf;
+    border-top: 2px solid ${Constants.LIGHT_GRAY};
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -57,11 +58,11 @@ const NameText = styled.p`
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-right: 8px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
   @media screen and (min-width: 993px) {
     padding-right: 8px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
 `;
 
@@ -109,11 +110,11 @@ const OwnerText = styled.p`
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-right: 8px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
   @media screen and (min-width: 993px) {
     padding-right: 8px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
 `;
 
@@ -123,11 +124,11 @@ const RegistrationNumberText = styled.p`
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     padding: 0 12px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
   @media screen and (min-width: 993px) {
     padding: 0 12px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
 `;
 

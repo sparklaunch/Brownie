@@ -7,9 +7,9 @@ const HamburgerItemContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-top: 1px solid #dfdfdf;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
     &:last-of-type {
-      border-bottom: 1px solid #dfdfdf;
+      border-bottom: 1px solid ${Constants.LIGHT_GRAY};
     }
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -17,9 +17,9 @@ const HamburgerItemContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-top: 1px solid #dfdfdf;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
     &:last-of-type {
-      border-bottom: 1px solid #dfdfdf;
+      border-bottom: 1px solid ${Constants.LIGHT_GRAY};
     }
   }
   @media screen and (min-width: 993px) {
@@ -27,7 +27,7 @@ const HamburgerItemContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-top: 1px solid #dfdfdf;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
   }
 `;
 

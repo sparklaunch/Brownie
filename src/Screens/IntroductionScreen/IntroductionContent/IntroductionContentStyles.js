@@ -8,8 +8,8 @@ const IntroductionContentOuterContainer = styled.div`
     justify-content: center;
     background-color: ${Constants.WHITE};
     padding: 80px 0;
-    border-top: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
+    border-bottom: 1px solid ${Constants.LIGHT_GRAY};
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
@@ -17,8 +17,8 @@ const IntroductionContentOuterContainer = styled.div`
     justify-content: center;
     background-color: ${Constants.WHITE};
     padding: 80px 0;
-    border-top: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
+    border-bottom: 1px solid ${Constants.LIGHT_GRAY};
   }
   @media screen and (min-width: 993px) {
     display: flex;
@@ -26,8 +26,8 @@ const IntroductionContentOuterContainer = styled.div`
     justify-content: center;
     background-color: ${Constants.WHITE};
     padding: 80px;
-    border-top: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
+    border-bottom: 1px solid ${Constants.LIGHT_GRAY};
   }
 `;
 

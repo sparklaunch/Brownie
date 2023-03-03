@@ -4,19 +4,19 @@ import Constants from "../../../../Utilities/Constants";
 const CouponHistoryItemContainer = styled.div`
   @media screen and (max-width: 767px) {
     position: relative;
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 14px;
     overflow: clip;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 14px;
     overflow: clip;
   }
   @media screen and (min-width: 993px) {
     position: relative;
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 14px;
     overflow: clip;
   }

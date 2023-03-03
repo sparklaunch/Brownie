@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const SignInFindAccountContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -24,15 +25,15 @@ const SignInFindAccountContainer = styled.div`
 const FindIDLink = styled.p`
   @media screen and (max-width: 767px) {
     padding-right: 12px;
-    border-right: 2px solid #dfdfdf;
+    border-right: 2px solid ${Constants.LIGHT_GRAY};
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-right: 12px;
-    border-right: 2px solid #dfdfdf;
+    border-right: 2px solid ${Constants.LIGHT_GRAY};
   }
   @media screen and (min-width: 993px) {
     padding-right: 12px;
-    border-right: 2px solid #dfdfdf;
+    border-right: 2px solid ${Constants.LIGHT_GRAY};
   }
 `;
 

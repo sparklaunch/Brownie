@@ -25,21 +25,21 @@ const CouponCautionOuterContainer = styled.div`
 const CouponCautionInnerContainer = styled.div`
   @media screen and (max-width: 767px) {
     width: 800px;
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 14px;
     padding: 24px;
     background-color: ${Constants.WHITE};
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 800px;
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 14px;
     padding: 24px;
     background-color: ${Constants.WHITE};
   }
   @media screen and (min-width: 993px) {
     width: 800px;
-    border: 2px solid #dfdfdf;
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 14px;
     padding: 24px;
     background-color: ${Constants.WHITE};
