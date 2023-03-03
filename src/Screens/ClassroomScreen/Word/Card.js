@@ -44,6 +44,7 @@ import textbookSizeAtom from "../../../Stores/Misc/textbookSize";
 import mediaRecorderAtom from "../../../Stores/Misc/mediaRecorder";
 import useData from "../../../Hooks/useData";
 import { Howl } from "howler";
+import _ from "lodash";
 
 const Card = () => {
   const { level } = useParams();
@@ -70,11 +71,14 @@ const Card = () => {
     }
   };
   const words = useData("words");
-  const onClickWord = () => {
-    const wordAudio = new Howl({
-      src: `/assets/audio/words/${words[currentWordPage - 1]}.wav`
+  const playWordAudio = () => {
+    const audio = new Howl({
+      src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`]
     });
-    wordAudio.play();
+    audio.play();
+  };
+  const onClickWord = () => {
+    return _.throttle(playWordAudio, 1000, { leading: true, trailing: true });
   };
   return (
     <CardOuterContainer>
@@ -82,7 +86,7 @@ const Card = () => {
         <InsetBorderContainer>
           <InsetBorder />
         </InsetBorderContainer>
-        <WordContainer onClick={onClickWord}>
+        <WordContainer onClick={onClickWord()}>
           {wordMicrophoneState === "completed" ? <WordImage /> : <WordCard />}
         </WordContainer>
         <InstructionsContainer>
