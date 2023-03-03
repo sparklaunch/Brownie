@@ -22,9 +22,15 @@ const JumbotronTitleContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 479px) {
     position: relative;
-    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    position: relative;
+    margin-right: 80px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -43,12 +49,21 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.p`
-  @media screen and (max-width: 767px) {
-    font-size: 30px;
+  @media screen and (max-width: 479px) {
+    font-size: 24px;
     font-weight: bold;
     line-height: 36px;
     margin-bottom: 50px;
-    letter-spacing: -0.2px;
+    letter-spacing: -1px;
+    color: white;
+    font-family: GmarketSans, sans-serif;
+  }
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 36px;
+    margin-bottom: 50px;
+    letter-spacing: -1px;
     color: white;
     font-family: GmarketSans, sans-serif;
   }

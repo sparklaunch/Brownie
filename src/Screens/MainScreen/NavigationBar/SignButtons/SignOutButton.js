@@ -1,10 +1,12 @@
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const SignOutButton = () => {
+  const navigate = useNavigate();
   const onClickSignOut = () => {
     sessionStorage.removeItem("userNumber");
     sessionStorage.removeItem("studentName");
-    window.location.reload();
+    navigate("/");
   };
   return (
     <Button

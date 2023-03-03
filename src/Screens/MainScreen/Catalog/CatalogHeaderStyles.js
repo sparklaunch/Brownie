@@ -16,12 +16,12 @@ const CatalogHeaderText = styled.p`
   @media screen and (max-width: 767px) {
     text-align: center;
     font-family: Jua, sans-serif;
-    font-size: 32px;
+    font-size: 28px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     text-align: center;
     font-family: Jua, sans-serif;
-    font-size: 44px;
+    font-size: 32px;
   }
   @media screen and (min-width: 993px) {
     text-align: center;

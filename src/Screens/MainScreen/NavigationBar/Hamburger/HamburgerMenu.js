@@ -24,7 +24,7 @@ const HamburgerMenu = () => {
     setDrawerOpen(false);
     sessionStorage.removeItem("userNumber");
     sessionStorage.removeItem("studentName");
-    window.location.reload();
+    navigate("/");
   };
   return (
     <HamburgerMenuContainer>
