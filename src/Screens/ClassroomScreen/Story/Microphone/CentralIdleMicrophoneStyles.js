@@ -4,18 +4,12 @@ import Constants from "../../../../Utilities/Constants";
 const CentralIdleMicrophoneContainer = styled.div`
   @media screen and (max-width: 767px) {
     position: relative;
-    width: 52px;
-    height: 52px;
     cursor: pointer;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
-    width: 52px;
-    height: 52px;
     cursor: pointer;
   }
-
   @media screen and (min-width: 993px) {
     position: relative;
     cursor: pointer;

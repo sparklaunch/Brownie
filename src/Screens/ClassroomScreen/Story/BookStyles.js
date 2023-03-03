@@ -354,15 +354,13 @@ const HomeContainer = styled.div`
   @media screen and (max-width: 767px) {
     position: absolute;
     top: 20px;
-    right: -80px;
+    right: -60px;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
-    right: -80px;
+    right: -70px;
   }
-
   @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
@@ -373,12 +371,11 @@ const HomeContainer = styled.div`
 const MicContainer = styled.div`
   @media screen and (max-width: 767px) {
     position: absolute;
-    right: -80px;
+    right: -65px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     right: -80px;
@@ -386,7 +383,6 @@ const MicContainer = styled.div`
     transform: translateY(-50%);
     z-index: 1;
   }
-
   @media screen and (min-width: 993px) {
     position: absolute;
     left: 50%;

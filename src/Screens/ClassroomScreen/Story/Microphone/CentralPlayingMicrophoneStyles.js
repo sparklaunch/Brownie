@@ -5,17 +5,11 @@ const CentralPlayingMicrophoneContainer = styled.div`
   @media screen and (max-width: 767px) {
     position: relative;
     cursor: pointer;
-    width: 52px;
-    height: 52px;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
     cursor: pointer;
-    width: 52px;
-    height: 52px;
   }
-
   @media screen and (min-width: 993px) {
     position: relative;
     cursor: pointer;
