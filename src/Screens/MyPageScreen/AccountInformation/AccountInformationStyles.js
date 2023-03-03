@@ -6,21 +6,21 @@ const AccountInformationOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: ${Constants.WHITE};
     padding: 32px 0;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: ${Constants.WHITE};
     padding: 64px 0;
   }
   @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: ${Constants.WHITE};
     padding: 100px;
   }
 `;

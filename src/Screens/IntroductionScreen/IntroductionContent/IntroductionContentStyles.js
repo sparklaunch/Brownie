@@ -6,7 +6,7 @@ const IntroductionContentOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: ${Constants.WHITE};
     padding: 80px 0;
     border-top: 1px solid #dfdfdf;
     border-bottom: 1px solid #dfdfdf;
@@ -15,7 +15,7 @@ const IntroductionContentOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: ${Constants.WHITE};
     padding: 80px 0;
     border-top: 1px solid #dfdfdf;
     border-bottom: 1px solid #dfdfdf;
@@ -24,7 +24,7 @@ const IntroductionContentOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: ${Constants.WHITE};
     padding: 80px;
     border-top: 1px solid #dfdfdf;
     border-bottom: 1px solid #dfdfdf;

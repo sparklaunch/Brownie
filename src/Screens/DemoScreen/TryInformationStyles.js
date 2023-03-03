@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import Constants from "../../Utilities/Constants";
 
 const TryInformationContainer = styled.div`
   @media screen and (max-width: 767px) {
     width: 90%;
     padding: 30px;
-    background-color: #f9f9f9;
+    background-color: ${Constants.WHITE};
     border: 2px solid #dfdfdf;
     border-radius: 20px;
     margin: 0 auto 32px auto;
@@ -12,7 +13,7 @@ const TryInformationContainer = styled.div`
   @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 100%;
     padding: 30px;
-    background-color: #f9f9f9;
+    background-color: ${Constants.WHITE};
     border: 2px solid #dfdfdf;
     border-radius: 20px;
     margin: 12px 0;
@@ -20,7 +21,7 @@ const TryInformationContainer = styled.div`
   @media screen and (min-width: 993px) {
     width: 100%;
     padding: 30px;
-    background-color: #f9f9f9;
+    background-color: ${Constants.WHITE};
     border: 2px solid #dfdfdf;
     border-radius: 20px;
     margin: 36px 0;
