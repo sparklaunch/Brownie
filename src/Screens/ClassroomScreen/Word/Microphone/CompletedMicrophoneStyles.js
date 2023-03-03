@@ -7,14 +7,12 @@ const CompletedMicrophoneContainer = styled.div`
     justify-content: center;
     transform: translateY(-20%);
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     transform: translateY(-20%);
   }
-
   @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;

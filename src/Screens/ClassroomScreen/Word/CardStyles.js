@@ -234,24 +234,18 @@ const HomeButtonContainer = styled.div`
 const MicrophoneContainer = styled.div`
   @media screen and (max-width: 767px) {
     position: absolute;
-    width: 40px;
-    height: 40px;
     top: 50%;
     transform: translateY(-50%);
     right: -65px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
-    width: 55px;
-    height: 55px;
     top: 50%;
     transform: translateY(-50%);
     right: -80px;
   }
   @media screen and (min-width: 993px) {
     position: absolute;
-    width: 70px;
-    height: 70px;
     bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
