@@ -7,7 +7,7 @@ const IntroductionCatalogOuterContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     padding: 120px 0;
-    background-color: #f4feff;
+    background-color: ${Constants.LIGHTER_GRAY};
     border-top: 1px solid ${Constants.ACCENT_COLOR};
     border-bottom: 1px solid ${Constants.ACCENT_COLOR};
   }
@@ -16,7 +16,7 @@ const IntroductionCatalogOuterContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     padding: 120px 0;
-    background-color: #f4feff;
+    background-color: ${Constants.LIGHTER_GRAY};
     border-top: 1px solid ${Constants.ACCENT_COLOR};
     border-bottom: 1px solid ${Constants.ACCENT_COLOR};
   }
@@ -25,7 +25,7 @@ const IntroductionCatalogOuterContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     padding: 120px;
-    background-color: #f4feff;
+    background-color: ${Constants.LIGHTER_GRAY};
     border-top: 1px solid ${Constants.ACCENT_COLOR};
     border-bottom: 1px solid ${Constants.ACCENT_COLOR};
   }
