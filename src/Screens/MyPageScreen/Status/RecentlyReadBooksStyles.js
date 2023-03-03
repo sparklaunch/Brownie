@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const RecentlyReadBooksText = styled.div`
   @media screen and (max-width: 767px) {
@@ -32,18 +33,46 @@ const RecentlyReadBooksOuterContainer = styled.div`
 
 const RecentlyReadBooksInnerContainer = styled.div`
   @media screen and (max-width: 767px) {
-    height: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    height: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   @media screen and (min-width: 993px) {
-    height: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+const RecentlyReadBooksPlaceholder = styled.p`
+  @media screen and (max-width: 767px) {
+    color: ${Constants.GRAY};
+    font-size: 24px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    color: ${Constants.GRAY};
+    font-size: 24px;
+  }
+  @media screen and (min-width: 993px) {
+    color: ${Constants.GRAY};
+    font-size: 24px;
   }
 `;
 
 export {
   RecentlyReadBooksText,
+  RecentlyReadBooksPlaceholder,
   RecentlyReadBooksInnerContainer,
   RecentlyReadBooksOuterContainer
 };
