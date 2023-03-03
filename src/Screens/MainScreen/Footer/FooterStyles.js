@@ -159,15 +159,15 @@ const CopyrightText = styled.p`
   @media screen and (max-width: 767px) {
     letter-spacing: -1px;
     font-size: 14px;
-    color: #acacac;
+    color: ${Constants.GRAY};
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 14px;
-    color: #acacac;
+    color: ${Constants.GRAY};
   }
   @media screen and (min-width: 993px) {
     font-size: 14px;
-    color: #acacac;
+    color: ${Constants.GRAY};
   }
 `;
 

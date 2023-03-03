@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const ModificationFormOuterContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -71,19 +72,19 @@ const PasswordNoticeText = styled.p`
     margin-left: 23px;
     font-size: 13px;
     margin-bottom: 3px;
-    color: #acacac;
+    color: ${Constants.GRAY};
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     margin-left: 23px;
     font-size: 13px;
     margin-bottom: 3px;
-    color: #acacac;
+    color: ${Constants.GRAY};
   }
   @media screen and (min-width: 993px) {
     margin-left: 23px;
     font-size: 13px;
     margin-bottom: 3px;
-    color: #acacac;
+    color: ${Constants.GRAY};
   }
 `;
 

@@ -16,6 +16,7 @@ const Constants = {
   LIGHT_SKYBLUE: "#E8F6F8",
   LIGHTER_GRAY: "#F4FEFF",
   LIGHT_GRAY: "#DFDFDF",
+  GRAY: "#ACACAC",
   ASH: "#999999",
   SOOT: "#707070",
   DARK_GRAY: "#515151",
