@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const TextbooksSpecimenContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -39,19 +40,19 @@ const TextbooksImage = styled.img`
 
 const TextbooksTitleText = styled.p`
   @media screen and (max-width: 767px) {
-    color: #999999;
+    color: ${Constants.ASH};
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 12px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    color: #999999;
+    color: ${Constants.ASH};
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 12px;
   }
   @media screen and (min-width: 993px) {
-    color: #999999;
+    color: ${Constants.ASH};
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 12px;
@@ -72,16 +73,16 @@ const TextbooksTextContainer = styled.div`
 
 const TextbooksText = styled.p`
   @media screen and (max-width: 767px) {
-    color: #999999;
+    color: ${Constants.ASH};
     line-height: 1.5;
     font-size: 14px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    color: #999999;
+    color: ${Constants.ASH};
     font-size: 15px;
   }
   @media screen and (min-width: 993px) {
-    color: #999999;
+    color: ${Constants.ASH};
     font-size: 16px;
   }
 `;
