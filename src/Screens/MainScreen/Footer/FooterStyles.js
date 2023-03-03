@@ -53,7 +53,7 @@ const AddressContainer = styled.div`
 
 const NameText = styled.p`
   @media screen and (max-width: 767px) {
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-right: 8px;
@@ -105,7 +105,7 @@ const DetailContainer = styled.div`
 
 const OwnerText = styled.p`
   @media screen and (max-width: 767px) {
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-right: 8px;
@@ -119,7 +119,7 @@ const OwnerText = styled.p`
 
 const RegistrationNumberText = styled.p`
   @media screen and (max-width: 767px) {
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     padding: 0 12px;
@@ -156,6 +156,7 @@ const CopyrightContainer = styled.div`
 
 const CopyrightText = styled.p`
   @media screen and (max-width: 767px) {
+    letter-spacing: -1px;
     font-size: 14px;
     color: #acacac;
   }

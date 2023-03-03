@@ -132,11 +132,12 @@ const TermsContainer = styled.div`
 const TermsText = styled.p`
   @media screen and (max-width: 767px) {
     font-weight: lighter;
-    font-size: 16px;
+    letter-spacing: -1px;
+    font-size: 13px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     font-weight: lighter;
-    font-size: 16px;
+    font-size: 14px;
   }
   @media screen and (min-width: 993px) {
     font-weight: lighter;
