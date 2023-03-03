@@ -85,7 +85,11 @@ const SignInFields = () => {
   return (
     <SignInFieldsContainer>
       <TextField
-        id={"id"}
+        id={"username"}
+        name={"username"}
+        inputProps={{
+          autoComplete: "username"
+        }}
         value={id}
         onChange={(event) => setID(event.target.value.replace(/ /g, ""))}
         variant={"outlined"}
@@ -100,7 +104,11 @@ const SignInFields = () => {
         }}
       />
       <TextField
-        id={"password"}
+        id={"current-password"}
+        name={"current-password"}
+        inputProps={{
+          autoComplete: "current-password"
+        }}
         error={!validPassword}
         value={password}
         onChange={(event) => setPassword(event.target.value.replace(/ /g, ""))}

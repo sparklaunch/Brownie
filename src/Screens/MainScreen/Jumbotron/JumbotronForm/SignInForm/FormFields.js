@@ -68,7 +68,9 @@ const FormFields = () => {
   return (
     <>
       <TextField
-        id={"id"}
+        id={"username"}
+        name={"username"}
+        inputProps={{ autoComplete: "username" }}
         variant={"filled"}
         label={"아이디"}
         size={"small"}
@@ -82,7 +84,11 @@ const FormFields = () => {
         }}
       />
       <TextField
-        id={"password"}
+        id={"current-password"}
+        name={"current-password"}
+        inputProps={{
+          autoComplete: "current-password"
+        }}
         variant={"filled"}
         label={"비밀번호"}
         size={"small"}
