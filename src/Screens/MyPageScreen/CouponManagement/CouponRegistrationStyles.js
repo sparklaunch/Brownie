@@ -62,6 +62,7 @@ const CouponRegistrationContainer = styled.div`
 
 const CouponMessageText = styled.p`
   @media screen and (max-width: 767px) {
+    margin-top: 6px;
     color: #ec1c47;
     font-size: 13px;
   }

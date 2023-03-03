@@ -49,6 +49,7 @@ const CouponRegistration = () => {
               marginLeft: "10px",
               paddingX: "30px",
               backgroundColor: "#222222",
+              flexShrink: 0,
               "&:hover": {
                 backgroundColor: "#222222"
               }

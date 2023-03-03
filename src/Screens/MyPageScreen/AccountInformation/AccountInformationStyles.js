@@ -7,14 +7,14 @@ const AccountInformationOuterContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     background-color: #f9f9f9;
-    padding: 100px 0;
+    padding: 32px 0;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: #f9f9f9;
-    padding: 100px 0;
+    padding: 64px 0;
   }
   @media screen and (min-width: 993px) {
     display: flex;

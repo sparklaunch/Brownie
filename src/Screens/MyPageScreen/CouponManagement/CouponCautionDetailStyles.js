@@ -26,8 +26,10 @@ const CouponCautionDetailContainer = styled.div`
 
 const CheckIcon = styled.img`
   @media screen and (max-width: 767px) {
+    height: 14px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
+    height: 16px;
   }
   @media screen and (min-width: 993px) {
   }
@@ -35,14 +37,14 @@ const CheckIcon = styled.img`
 
 const CouponCautionDetailText = styled.p`
   @media screen and (max-width: 767px) {
-    font-size: 16px;
+    font-size: 13px;
     color: #707070;
-    margin-left: 12px;
+    margin-left: 8px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    font-size: 16px;
+    font-size: 14px;
     color: #707070;
-    margin-left: 12px;
+    margin-left: 10px;
   }
   @media screen and (min-width: 993px) {
     font-size: 16px;
