@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const ContactContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -33,17 +34,17 @@ const PhoneIcon = styled.img`
 const ContactNumberText = styled.p`
   @media screen and (max-width: 767px) {
     margin-left: 12px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     font-size: 18px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     margin-left: 12px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     font-size: 18px;
   }
   @media screen and (min-width: 993px) {
     margin-left: 12px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     font-size: 18px;
   }
 `;

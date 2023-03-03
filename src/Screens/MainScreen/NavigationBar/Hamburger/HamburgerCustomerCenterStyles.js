@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const HamburgerCustomerCenterContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -68,15 +69,15 @@ const PhoneIconImage = styled.img`
 
 const ContactText = styled.p`
   @media screen and (max-width: 767px) {
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     font-size: 14px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     font-size: 14px;
   }
   @media screen and (min-width: 993px) {
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     font-size: 14px;
   }
 `;

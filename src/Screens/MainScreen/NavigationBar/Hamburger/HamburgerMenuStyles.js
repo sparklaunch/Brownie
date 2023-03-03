@@ -85,17 +85,17 @@ const SignOutButton = styled.p`
 const AdministratorSiteText = styled.p`
   @media screen and (max-width: 767px) {
     font-size: 14px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     cursor: pointer;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 14px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     cursor: pointer;
   }
   @media screen and (min-width: 993px) {
     font-size: 14px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     cursor: pointer;
   }
 `;

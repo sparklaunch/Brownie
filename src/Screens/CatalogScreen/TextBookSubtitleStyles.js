@@ -65,20 +65,20 @@ const TextBookSubtitleTitle = styled.p`
   @media screen and (max-width: 767px) {
     font-family: Jua, sans-serif;
     font-size: 28px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     text-align: center;
     margin-bottom: 24px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     font-family: Jua, sans-serif;
     font-size: 28px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     margin-bottom: 24px;
   }
   @media screen and (min-width: 993px) {
     font-family: Jua, sans-serif;
     font-size: 28px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     margin-bottom: 24px;
   }
 `;
