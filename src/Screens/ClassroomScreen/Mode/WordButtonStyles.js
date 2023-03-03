@@ -30,7 +30,7 @@ const WordButtonInnerContainer = styled.div`
     ${(props) => props.enabled && `cursor: pointer;`}
     ${(props) =>
       props.activated
-        ? `outline: 4px solid #47C7D2;`
+        ? `outline: 4px solid ${Constants.ACCENT_COLOR};`
         : `outline: 4px solid transparent;`}
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -46,7 +46,7 @@ const WordButtonInnerContainer = styled.div`
     ${(props) => props.enabled && `cursor: pointer;`}
     ${(props) =>
       props.activated
-        ? `outline: 4px solid #47C7D2;`
+        ? `outline: 4px solid ${Constants.ACCENT_COLOR};`
         : `outline: 4px solid transparent;`}
   }
   @media screen and (min-width: 993px) and (max-width: 1279px) {
@@ -62,7 +62,7 @@ const WordButtonInnerContainer = styled.div`
     ${(props) => props.enabled && `cursor: pointer;`}
     ${(props) =>
       props.activated
-        ? `outline: 4px solid #47C7D2;`
+        ? `outline: 4px solid ${Constants.ACCENT_COLOR};`
         : `outline: 4px solid transparent;`}
   }
   @media screen and (min-width: 1280px) {
@@ -78,7 +78,7 @@ const WordButtonInnerContainer = styled.div`
     ${(props) => props.enabled && `cursor: pointer;`}
     ${(props) =>
       props.activated
-        ? `outline: 4px solid #47C7D2;`
+        ? `outline: 4px solid ${Constants.ACCENT_COLOR};`
         : `outline: 4px solid transparent;`}
   }
 `;
