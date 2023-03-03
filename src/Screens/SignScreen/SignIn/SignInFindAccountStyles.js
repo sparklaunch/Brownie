@@ -25,17 +25,14 @@ const FindIDLink = styled.p`
   @media screen and (max-width: 767px) {
     padding-right: 12px;
     border-right: 2px solid #dfdfdf;
-    cursor: pointer;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-right: 12px;
     border-right: 2px solid #dfdfdf;
-    cursor: pointer;
   }
   @media screen and (min-width: 993px) {
     padding-right: 12px;
     border-right: 2px solid #dfdfdf;
-    cursor: pointer;
   }
 `;
 
