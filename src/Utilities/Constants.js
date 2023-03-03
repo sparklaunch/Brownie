@@ -8,6 +8,7 @@ const Constants = {
   NEON: "#1AC573",
   SEAWEED: "#0C4A4E",
   RED: "#FF2442",
+  LIGHT_PINK: "#FF92AC",
   ORANGE: "#FFA63D",
   TANGERINE: "#FF8200",
   YELLOW: "#FFD53D",

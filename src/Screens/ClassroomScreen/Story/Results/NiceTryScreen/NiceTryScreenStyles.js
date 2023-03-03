@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../../../Utilities/Constants";
 
 const NiceTryScreenContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -7,7 +8,7 @@ const NiceTryScreenContainer = styled.div`
     left: 0;
     right: 0;
     height: 30vh;
-    background-color: #ff92ac;
+    background-color: ${Constants.LIGHT_PINK};
     padding: 8px;
     z-index: 3;
   }
@@ -17,7 +18,7 @@ const NiceTryScreenContainer = styled.div`
     left: 0;
     right: 0;
     height: 30vh;
-    background-color: #ff92ac;
+    background-color: ${Constants.LIGHT_PINK};
     padding: 8px;
     z-index: 3;
   }
@@ -27,7 +28,7 @@ const NiceTryScreenContainer = styled.div`
     left: 0;
     right: 0;
     height: 200px;
-    background-color: #ff92ac;
+    background-color: ${Constants.LIGHT_PINK};
     padding: 8px;
     z-index: 3;
     border-bottom-left-radius: 20px;
