@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const RecordingEnvironmentContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -71,17 +72,17 @@ const RecordingEnvironmentListItem = styled.li`
     font-size: 16px;
     line-height: 1.5;
     margin: 4px 0;
-    ${({ accented }) => accented && `color: #EC1C47;`}
+    ${({ accented }) => accented && `color: ${Constants.RED};`}
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 18px;
     margin: 4px 0;
-    ${({ accented }) => accented && `color: #EC1C47;`}
+    ${({ accented }) => accented && `color: ${Constants.RED};`}
   }
   @media screen and (min-width: 993px) {
     font-size: 18px;
     margin: 4px 0;
-    ${({ accented }) => accented && `color: #EC1C47;`}
+    ${({ accented }) => accented && `color: ${Constants.RED};`}
   }
 `;
 
