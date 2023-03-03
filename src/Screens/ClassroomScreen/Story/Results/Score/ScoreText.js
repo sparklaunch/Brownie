@@ -9,7 +9,9 @@ const ScoreText = ({ score }) => {
     case "story":
       if (score >= Constants.EXCELLENT_THRESHOLD) {
         return (
-          <ScoreTextString textColor={`#15B58F`}>Excellent!</ScoreTextString>
+          <ScoreTextString textColor={Constants.TURQUOISE}>
+            Excellent!
+          </ScoreTextString>
         );
       } else if (score >= Constants.GOOD_THRESHOLD) {
         return <ScoreTextString textColor={`#FF8200`}>Good!</ScoreTextString>;
@@ -21,7 +23,9 @@ const ScoreText = ({ score }) => {
     case "word":
       if (score >= Constants.WORD_EXCELLENT_THRESHOLD) {
         return (
-          <ScoreTextString textColor={`#15B58F`}>Excellent!</ScoreTextString>
+          <ScoreTextString textColor={Constants.TURQUOISE}>
+            Excellent!
+          </ScoreTextString>
         );
       } else if (score >= Constants.WORD_GOOD_THRESHOLD) {
         return <ScoreTextString textColor={`#FF8200`}>Good!</ScoreTextString>;

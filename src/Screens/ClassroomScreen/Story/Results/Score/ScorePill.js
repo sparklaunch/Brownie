@@ -14,7 +14,7 @@ const ScorePill = ({ score }) => {
   switch (mode) {
     case "story":
       if (score >= Constants.EXCELLENT_THRESHOLD) {
-        borderColor = `#15B58F`;
+        borderColor = Constants.TURQUOISE;
       } else if (score >= Constants.GOOD_THRESHOLD) {
         borderColor = `#FF8200`;
       } else {
@@ -23,7 +23,7 @@ const ScorePill = ({ score }) => {
       break;
     case "word":
       if (score >= Constants.WORD_EXCELLENT_THRESHOLD) {
-        borderColor = `#15B58F`;
+        borderColor = Constants.TURQUOISE;
       } else if (score >= Constants.WORD_GOOD_THRESHOLD) {
         borderColor = `#FF8200`;
       } else {
