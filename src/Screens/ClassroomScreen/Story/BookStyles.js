@@ -399,15 +399,15 @@ const UnitInfoContainer = styled.div`
   @media screen and (max-width: 767px) {
     display: none;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
-
-  @media screen and (min-width: 993px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
+    display: none;
+  }
+  @media screen and (min-width: 1280px) {
     position: absolute;
     top: -40px;
-    left: 0;
   }
 `;
 

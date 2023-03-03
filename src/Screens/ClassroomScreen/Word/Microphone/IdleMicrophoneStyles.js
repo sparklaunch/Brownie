@@ -18,7 +18,6 @@ const OuterCircle = styled.div`
       }
     }
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     width: 100%;
@@ -36,7 +35,6 @@ const OuterCircle = styled.div`
       }
     }
   }
-
   @media screen and (min-width: 993px) {
     position: absolute;
     width: 100%;

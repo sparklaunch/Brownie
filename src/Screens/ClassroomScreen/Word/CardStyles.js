@@ -216,15 +216,13 @@ const HomeButtonContainer = styled.div`
   @media screen and (max-width: 767px) {
     position: absolute;
     top: 20px;
-    right: -80px;
+    right: -60px;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
-    right: -80px;
+    right: -70px;
   }
-
   @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
@@ -235,24 +233,24 @@ const HomeButtonContainer = styled.div`
 const MicrophoneContainer = styled.div`
   @media screen and (max-width: 767px) {
     position: absolute;
-    width: 52px;
-    height: 52px;
+    width: 40px;
+    height: 40px;
     top: 50%;
     transform: translateY(-50%);
-    right: -80px;
+    right: -65px;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
-    width: 52px;
-    height: 52px;
+    width: 55px;
+    height: 55px;
     top: 50%;
     transform: translateY(-50%);
     right: -80px;
   }
-
   @media screen and (min-width: 993px) {
     position: absolute;
+    width: 70px;
+    height: 70px;
     bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
