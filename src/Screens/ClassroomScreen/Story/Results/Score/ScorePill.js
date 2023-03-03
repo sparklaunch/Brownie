@@ -18,7 +18,7 @@ const ScorePill = ({ score }) => {
       } else if (score >= Constants.GOOD_THRESHOLD) {
         borderColor = Constants.TANGERINE;
       } else {
-        borderColor = `#FF2442`;
+        borderColor = Constants.RED;
       }
       break;
     case "word":
@@ -27,7 +27,7 @@ const ScorePill = ({ score }) => {
       } else if (score >= Constants.WORD_GOOD_THRESHOLD) {
         borderColor = Constants.TANGERINE;
       } else {
-        borderColor = `#FF2442`;
+        borderColor = Constants.RED;
       }
       break;
   }

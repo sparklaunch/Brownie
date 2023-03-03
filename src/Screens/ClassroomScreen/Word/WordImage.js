@@ -34,7 +34,7 @@ const WordImage = () => {
   } else if (totalScore.score >= Constants.WORD_GOOD_THRESHOLD) {
     textColor = Constants.TANGERINE;
   } else {
-    textColor = "#FF2442";
+    textColor = Constants.RED;
   }
   return (
     <WordImageContainer>

@@ -21,7 +21,7 @@ const ScoreText = ({ score }) => {
         );
       } else {
         return (
-          <ScoreTextString textColor={`#FF2442`}>Nice Try!</ScoreTextString>
+          <ScoreTextString textColor={Constants.RED}>Nice Try!</ScoreTextString>
         );
       }
     case "word":
@@ -39,7 +39,7 @@ const ScoreText = ({ score }) => {
         );
       } else {
         return (
-          <ScoreTextString textColor={`#FF2442`}>Nice Try!</ScoreTextString>
+          <ScoreTextString textColor={Constants.RED}>Nice Try!</ScoreTextString>
         );
       }
   }
