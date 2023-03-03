@@ -13,7 +13,6 @@ const LoadingCardContainer = styled.div`
     align-items: center;
     transform: scale(0.8);
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 220px;
     height: 170px;
@@ -26,7 +25,6 @@ const LoadingCardContainer = styled.div`
     align-items: center;
     transform: scale(0.8);
   }
-
   @media screen and (min-width: 993px) {
     width: 220px;
     height: 170px;
@@ -47,36 +45,34 @@ const RotatingDocument = styled.img`
     animation: rotating 1s ease-in-out infinite alternate;
     @keyframes rotating {
       from {
-        transform: rotate(-60deg);
+        transform: rotate(-10deg);
       }
       to {
-        transform: rotate(60deg);
+        transform: rotate(10deg);
       }
     }
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     transform: scale(0.5);
     animation: rotating 1s ease-in-out infinite alternate;
     @keyframes rotating {
       from {
-        transform: rotate(-60deg);
+        transform: rotate(-10deg);
       }
       to {
-        transform: rotate(60deg);
+        transform: rotate(10deg);
       }
     }
   }
-
   @media screen and (min-width: 993px) {
     transform: scale(0.5);
     animation: rotating 1s ease-in-out infinite alternate;
     @keyframes rotating {
       from {
-        transform: rotate(-60deg);
+        transform: rotate(-10deg);
       }
       to {
-        transform: rotate(60deg);
+        transform: rotate(10deg);
       }
     }
   }
