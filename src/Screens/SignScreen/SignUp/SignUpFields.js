@@ -341,7 +341,7 @@ const SignUpFields = () => {
         variant={"contained"}
         onClick={onClickSignUp}
         sx={{
-          backgroundColor: "#1AB9C5",
+          backgroundColor: Constants.ACCENT_COLOR,
           filter: "brightness(1.0)",
           fontFamily: "Jua",
           fontSize: 18,
@@ -349,7 +349,7 @@ const SignUpFields = () => {
           height: 44,
           marginTop: 1.5,
           ":hover": {
-            backgroundColor: "#1AB9C5"
+            backgroundColor: Constants.ACCENT_COLOR
           }
         }}
       >

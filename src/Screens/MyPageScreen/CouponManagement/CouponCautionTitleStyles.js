@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const CouponCautionTitleContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -36,19 +37,19 @@ const InfoIcon = styled.img`
 const CouponCautionText = styled.p`
   @media screen and (max-width: 767px) {
     font-family: "Jua", sans-serif;
-    color: #1ab9c5;
+    color: ${Constants.ACCENT_COLOR};
     font-size: 22px;
     margin-left: 8px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     font-family: "Jua", sans-serif;
-    color: #1ab9c5;
+    color: ${Constants.ACCENT_COLOR};
     font-size: 22px;
     margin-left: 8px;
   }
   @media screen and (min-width: 993px) {
     font-family: "Jua", sans-serif;
-    color: #1ab9c5;
+    color: ${Constants.ACCENT_COLOR};
     font-size: 22px;
     margin-left: 8px;
   }

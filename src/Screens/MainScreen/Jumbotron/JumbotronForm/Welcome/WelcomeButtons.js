@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Constants from "../../../../../Utilities/Constants";
 
 const WelcomeButtons = () => {
   const navigate = useNavigate();
@@ -14,12 +15,12 @@ const WelcomeButtons = () => {
         variant={"contained"}
         size={"large"}
         sx={{
-          backgroundColor: "#1AB9C5",
+          backgroundColor: Constants.ACCENT_COLOR,
           width: "100%",
           fontSize: 18,
           marginBottom: "10px",
           "&:hover": {
-            backgroundColor: "#1AB9C5"
+            backgroundColor: Constants.ACCENT_COLOR
           }
         }}
         onClick={() => navigate("/mypage")}

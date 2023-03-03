@@ -8,8 +8,8 @@ const IntroductionCatalogOuterContainer = styled.div`
     justify-content: center;
     padding: 120px 0;
     background-color: #f4feff;
-    border-top: 1px solid #1ab9c5;
-    border-bottom: 1px solid #1ab9c5;
+    border-top: 1px solid ${Constants.ACCENT_COLOR};
+    border-bottom: 1px solid ${Constants.ACCENT_COLOR};
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
@@ -17,8 +17,8 @@ const IntroductionCatalogOuterContainer = styled.div`
     justify-content: center;
     padding: 120px 0;
     background-color: #f4feff;
-    border-top: 1px solid #1ab9c5;
-    border-bottom: 1px solid #1ab9c5;
+    border-top: 1px solid ${Constants.ACCENT_COLOR};
+    border-bottom: 1px solid ${Constants.ACCENT_COLOR};
   }
   @media screen and (min-width: 993px) {
     display: flex;
@@ -26,8 +26,8 @@ const IntroductionCatalogOuterContainer = styled.div`
     justify-content: center;
     padding: 120px;
     background-color: #f4feff;
-    border-top: 1px solid #1ab9c5;
-    border-bottom: 1px solid #1ab9c5;
+    border-top: 1px solid ${Constants.ACCENT_COLOR};
+    border-bottom: 1px solid ${Constants.ACCENT_COLOR};
   }
 `;
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../Utilities/Constants";
 
 const TextBookComponentsContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -28,7 +29,7 @@ const TextBookComponentsTitle = styled.p`
     font-weight: bold;
     font-size: 20px;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 4px;
     margin-bottom: 24px;
   }
@@ -37,7 +38,7 @@ const TextBookComponentsTitle = styled.p`
     font-weight: bold;
     font-size: 20px;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 4px;
     margin-bottom: 24px;
   }
@@ -46,7 +47,7 @@ const TextBookComponentsTitle = styled.p`
     font-weight: bold;
     font-size: 20px;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 4px;
     margin-bottom: 24px;
   }

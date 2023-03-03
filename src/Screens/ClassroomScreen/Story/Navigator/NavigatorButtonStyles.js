@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const NavigatorButtonOuterContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -34,7 +35,7 @@ const NavigatorButtonInnerContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     padding: 8px 40px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -44,7 +45,7 @@ const NavigatorButtonInnerContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     padding: 8px 40px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -54,7 +55,7 @@ const NavigatorButtonInnerContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     padding: 8px 40px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;

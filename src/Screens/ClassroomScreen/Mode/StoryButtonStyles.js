@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const StoryButtonContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -94,22 +95,22 @@ const StoryButtonText = styled.p`
   @media screen and (max-width: 767px) {
     font-family: Jua, sans-serif;
     font-size: 12px;
-    ${(props) => props.activated && `color: #1AB9C5;`}
+    ${(props) => props.activated && `color: ${Constants.ACCENT_COLOR};`}
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     font-family: Jua, sans-serif;
     font-size: 14px;
-    ${(props) => props.activated && `color: #1AB9C5;`}
+    ${(props) => props.activated && `color: ${Constants.ACCENT_COLOR};`}
   }
   @media screen and (min-width: 993px) and (max-width: 1279px) {
     font-family: Jua, sans-serif;
     font-size: 18px;
-    ${(props) => props.activated && `color: #1AB9C5;`}
+    ${(props) => props.activated && `color: ${Constants.ACCENT_COLOR};`}
   }
   @media screen and (min-width: 1280px) {
     font-family: Jua, sans-serif;
     font-size: 20px;
-    ${(props) => props.activated && `color: #1AB9C5;`}
+    ${(props) => props.activated && `color: ${Constants.ACCENT_COLOR};`}
   }
 `;
 

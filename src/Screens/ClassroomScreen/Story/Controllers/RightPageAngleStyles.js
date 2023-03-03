@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const RightPageAngleContainer = styled.div`
   @media screen and (max-width: 767px) {
     width: 47px;
     height: 47px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -16,7 +17,7 @@ const RightPageAngleContainer = styled.div`
   @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 47px;
     height: 47px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -28,7 +29,7 @@ const RightPageAngleContainer = styled.div`
   @media screen and (min-width: 993px) {
     width: 47px;
     height: 47px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 50%;
     display: flex;
     justify-content: center;

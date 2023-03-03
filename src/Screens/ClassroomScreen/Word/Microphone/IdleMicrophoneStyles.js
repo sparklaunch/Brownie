@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const OuterCircle = styled.div`
   @media screen and (max-width: 767px) {
@@ -7,7 +8,7 @@ const OuterCircle = styled.div`
     height: 100%;
     border-radius: 100%;
     transform: scale(1.2);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -24,7 +25,7 @@ const OuterCircle = styled.div`
     height: 100%;
     border-radius: 100%;
     transform: scale(1.2);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -41,7 +42,7 @@ const OuterCircle = styled.div`
     height: 100%;
     border-radius: 100%;
     transform: scale(1.2);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -61,7 +62,7 @@ const InnerCircle = styled.div`
     height: 100%;
     border-radius: 100%;
     transform: scale(1.1);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -79,7 +80,7 @@ const InnerCircle = styled.div`
     height: 100%;
     border-radius: 100%;
     transform: scale(1.1);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -97,7 +98,7 @@ const InnerCircle = styled.div`
     height: 100%;
     border-radius: 100%;
     transform: scale(1.1);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -117,7 +118,7 @@ const Wave = styled.div`
     height: 100%;
     border-radius: 100%;
     transform: scale(1);
-    border: 5px solid #1ab9c5;
+    border: 5px solid ${Constants.ACCENT_COLOR};
     animation: wave 1.3s infinite;
     @keyframes wave {
       0% {
@@ -137,7 +138,7 @@ const Wave = styled.div`
     height: 100%;
     border-radius: 100%;
     transform: scale(1);
-    border: 5px solid #1ab9c5;
+    border: 5px solid ${Constants.ACCENT_COLOR};
     animation: wave 1.3s infinite;
     @keyframes wave {
       0% {
@@ -157,7 +158,7 @@ const Wave = styled.div`
     height: 100%;
     border-radius: 100%;
     transform: scale(1);
-    border: 5px solid #1ab9c5;
+    border: 5px solid ${Constants.ACCENT_COLOR};
     animation: wave 1.3s infinite;
     @keyframes wave {
       0% {

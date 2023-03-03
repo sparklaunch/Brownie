@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const HamburgerMenuContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -21,7 +22,7 @@ const SignInButton = styled.p`
     font-size: 14px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
@@ -31,7 +32,7 @@ const SignInButton = styled.p`
     font-size: 14px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
@@ -41,7 +42,7 @@ const SignInButton = styled.p`
     font-size: 14px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
@@ -54,7 +55,7 @@ const SignOutButton = styled.p`
     font-size: 14px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
@@ -64,7 +65,7 @@ const SignOutButton = styled.p`
     font-size: 14px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
@@ -74,7 +75,7 @@ const SignOutButton = styled.p`
     font-size: 14px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;

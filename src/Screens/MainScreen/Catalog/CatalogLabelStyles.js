@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const CatalogLabelContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -11,7 +12,7 @@ const CatalogLabelContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -24,7 +25,7 @@ const CatalogLabelContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
   }
   @media screen and (min-width: 993px) {
@@ -37,7 +38,7 @@ const CatalogLabelContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
   }
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const EvaluationMethodContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -27,7 +28,7 @@ const EvaluationMethodTitle = styled.p`
     flex-shrink: 0;
     padding: 12px 20px;
     border-radius: 8px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     color: white;
     display: inline-block;
     margin-bottom: 16px;
@@ -37,7 +38,7 @@ const EvaluationMethodTitle = styled.p`
     flex-shrink: 0;
     padding: 12px 20px;
     border-radius: 8px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     color: white;
     display: inline-block;
   }
@@ -46,7 +47,7 @@ const EvaluationMethodTitle = styled.p`
     flex-shrink: 0;
     padding: 12px 20px;
     border-radius: 8px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     color: white;
     display: inline-block;
   }
@@ -69,13 +70,13 @@ const EvaluationMethodDescription = styled.p`
 
 const EvaluationMethodDescriptionSpan = styled.span`
   @media screen and (max-width: 767px) {
-    color: #1ab9c5;
+    color: ${Constants.ACCENT_COLOR};
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    color: #1ab9c5;
+    color: ${Constants.ACCENT_COLOR};
   }
   @media screen and (min-width: 993px) {
-    color: #1ab9c5;
+    color: ${Constants.ACCENT_COLOR};
   }
 `;
 

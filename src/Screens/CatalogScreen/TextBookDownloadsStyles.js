@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../Utilities/Constants";
 
 const TextBookDownloadsContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -25,7 +26,7 @@ const TextBookDownloadsTitle = styled.p`
     font-size: 20px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 4px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -33,7 +34,7 @@ const TextBookDownloadsTitle = styled.p`
     font-size: 20px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 4px;
   }
   @media screen and (min-width: 993px) {
@@ -41,7 +42,7 @@ const TextBookDownloadsTitle = styled.p`
     font-size: 20px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 4px;
   }
 `;

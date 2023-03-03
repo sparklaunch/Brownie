@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Constants from "../../../../Utilities/Constants";
 
 const SignOutButton = () => {
   const navigate = useNavigate();
@@ -13,13 +14,13 @@ const SignOutButton = () => {
       variant={"contained"}
       onClick={onClickSignOut}
       sx={{
-        backgroundColor: "#1AB9C5",
+        backgroundColor: Constants.ACCENT_COLOR,
         fontFamily: "Jua",
         fontSize: 18,
         width: 104,
         height: 44,
         ":hover": {
-          backgroundColor: "#1AB9C5"
+          backgroundColor: Constants.ACCENT_COLOR
         }
       }}
     >

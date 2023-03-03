@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const PageControllersContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -26,7 +27,7 @@ const FirstPageText = styled.p`
     font-size: 20px;
     color: white;
     padding: 10px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 50px;
     margin-right: 20px;
     ${(props) => props.available && `cursor: pointer;`}
@@ -36,7 +37,7 @@ const FirstPageText = styled.p`
     font-size: 20px;
     color: white;
     padding: 10px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 50px;
     margin-right: 20px;
     ${(props) => props.available && `cursor: pointer;`}
@@ -46,7 +47,7 @@ const FirstPageText = styled.p`
     font-size: 20px;
     color: white;
     padding: 10px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 50px;
     margin-right: 20px;
     ${(props) => props.available && `cursor: pointer;`}
@@ -80,7 +81,7 @@ const LeftPageAngleWrapper = styled.div`
 const CurrentPageText = styled.p`
   @media screen and (max-width: 767px) {
     background-color: white;
-    border: 1px solid #1ab9c5;
+    border: 1px solid ${Constants.ACCENT_COLOR};
     border-radius: 50px;
     width: 120px;
     display: flex;
@@ -92,7 +93,7 @@ const CurrentPageText = styled.p`
 
   @media screen and (min-width: 768px) and (max-width: 992px) {
     background-color: white;
-    border: 1px solid #1ab9c5;
+    border: 1px solid ${Constants.ACCENT_COLOR};
     border-radius: 50px;
     width: 120px;
     display: flex;
@@ -104,7 +105,7 @@ const CurrentPageText = styled.p`
 
   @media screen and (min-width: 993px) {
     background-color: white;
-    border: 1px solid #1ab9c5;
+    border: 1px solid ${Constants.ACCENT_COLOR};
     border-radius: 50px;
     width: 120px;
     display: flex;

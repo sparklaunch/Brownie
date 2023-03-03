@@ -100,7 +100,7 @@ const FormFields = () => {
         onClick={onLogInButtonClicked}
         disableTouchRipple={true}
         sx={{
-          backgroundColor: "#1AB9C5",
+          backgroundColor: Constants.ACCENT_COLOR,
           lineHeight: 1.2,
           boxShadow: "none",
           letterSpacing: 0,
@@ -111,7 +111,7 @@ const FormFields = () => {
           borderRadius: 2,
           marginTop: 2,
           ":hover": {
-            backgroundColor: "#1AB9C5"
+            backgroundColor: Constants.ACCENT_COLOR
           }
         }}
       >

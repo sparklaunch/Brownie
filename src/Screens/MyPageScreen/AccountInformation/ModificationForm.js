@@ -277,9 +277,9 @@ const ModificationForm = () => {
             onClick={onClickSubmit}
             sx={{
               paddingX: "25px",
-              backgroundColor: "#1AB9C5",
+              backgroundColor: Constants.ACCENT_COLOR,
               "&:hover": {
-                backgroundColor: "#1AB9C5"
+                backgroundColor: Constants.ACCENT_COLOR
               }
             }}
           >
