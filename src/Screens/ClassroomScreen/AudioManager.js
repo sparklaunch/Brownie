@@ -22,6 +22,7 @@ import highlightVisibleAtom from "../../Stores/Classroom/Story/highlightVisible"
 import scoresAtom from "../../Stores/Classroom/Story/scores";
 import wordScoresAtom from "../../Stores/Classroom/Word/wordScores";
 import temporaryGlowBorderShownAtom from "../../Stores/Classroom/Story/temporaryGlowBorderShown";
+import setScreenSize from "../../Utilities/setScreenSize";
 
 const AudioManager = () => {
   const { level } = useParams();
@@ -98,6 +99,9 @@ const AudioManager = () => {
   const [temporaryGlowBorderShown, setTemporaryGlowBorderShown] =
     useRecoilState(temporaryGlowBorderShownAtom);
   const bookID = useData("id");
+  useEffect(() => {
+    setScreenSize();
+  });
   useEffect(() => {
     setTemporaryGlowBorderShown(false);
     setHighlightVisible(true);

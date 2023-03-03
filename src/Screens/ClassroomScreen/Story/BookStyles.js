@@ -160,17 +160,15 @@ const TextBookRightPage = styled.div`
 
 const LeftPageImage = styled.img`
   @media screen and (max-width: 767px) {
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     object-fit: cover;
     object-position: center;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     object-fit: cover;
     object-position: center;
   }
-
   @media screen and (min-width: 993px) {
     width: 100%;
     height: 100%;
@@ -224,13 +222,13 @@ const LeftPageShade = styled.div`
 
 const RightPageImage = styled.img`
   @media screen and (max-width: 767px) {
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     object-fit: cover;
     object-position: center;
   }
 
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     object-fit: cover;
     object-position: center;
   }

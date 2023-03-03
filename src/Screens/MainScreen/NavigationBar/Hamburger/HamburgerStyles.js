@@ -27,12 +27,12 @@ const HamburgerIcon = styled.img`
 const DrawerContainer = styled.div`
   @media screen and (max-width: 767px) {
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     background-color: white;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 400px;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     background-color: white;
   }
   @media screen and (min-width: 993px) {
