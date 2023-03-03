@@ -74,11 +74,11 @@ const TextbooksText = styled.p`
   @media screen and (max-width: 767px) {
     color: #999999;
     line-height: 1.5;
-    font-size: 16px;
+    font-size: 14px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     color: #999999;
-    font-size: 16px;
+    font-size: 15px;
   }
   @media screen and (min-width: 993px) {
     color: #999999;

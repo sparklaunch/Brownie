@@ -23,11 +23,11 @@ const IntroductionContentFeatureContainer = styled.div`
 
 const IntroductionContentFeatureIcon = styled.img`
   @media screen and (max-width: 767px) {
-    height: 36px;
-    margin-right: 16px;
+    height: 24px;
+    margin-right: 10px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    margin-right: 16px;
+    margin-right: 12px;
   }
   @media screen and (min-width: 993px) {
     margin-right: 16px;
@@ -37,7 +37,7 @@ const IntroductionContentFeatureIcon = styled.img`
 const IntroductionContentText = styled.p`
   @media screen and (max-width: 767px) {
     font-size: 16px;
-    line-height: 1.5;
+    letter-spacing: -1px;
     text-align: center;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {

@@ -16,7 +16,7 @@ const IntroductionTryTitleText = styled.p`
   @media screen and (max-width: 767px) {
     color: white;
     font-family: "Jua", sans-serif;
-    font-size: 32px;
+    font-size: 24px;
     text-align: center;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
