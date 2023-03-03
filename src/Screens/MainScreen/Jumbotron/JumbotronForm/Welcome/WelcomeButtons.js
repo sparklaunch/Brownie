@@ -31,11 +31,11 @@ const WelcomeButtons = () => {
         variant={"contained"}
         size={"large"}
         sx={{
-          backgroundColor: "#1AC573",
+          backgroundColor: Constants.NEON,
           width: "100%",
           fontSize: 18,
           "&:hover": {
-            backgroundColor: "#1AC573"
+            backgroundColor: Constants.NEON
           }
         }}
         onClick={onClickLogOutButton}

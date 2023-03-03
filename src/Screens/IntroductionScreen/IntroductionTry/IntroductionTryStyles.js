@@ -6,7 +6,7 @@ const IntroductionTryOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #1ac573;
+    background-color: ${Constants.NEON};
     padding: 100px 0;
     overflow: clip;
   }
@@ -14,7 +14,7 @@ const IntroductionTryOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #1ac573;
+    background-color: ${Constants.NEON};
     padding: 100px;
     overflow: clip;
   }
@@ -22,7 +22,7 @@ const IntroductionTryOuterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #1ac573;
+    background-color: ${Constants.NEON};
     padding: 100px;
     overflow: clip;
   }

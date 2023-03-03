@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../../../Utilities/Constants";
 
 const GoodScreenContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -7,7 +8,7 @@ const GoodScreenContainer = styled.div`
     left: 0;
     right: 0;
     height: 30vh;
-    background-color: #ffc767;
+    background-color: ${Constants.ORANGE};
     padding: 8px;
     z-index: 3;
   }
@@ -17,7 +18,7 @@ const GoodScreenContainer = styled.div`
     left: 0;
     right: 0;
     height: 30vh;
-    background-color: #ffc767;
+    background-color: ${Constants.ORANGE};
     padding: 8px;
     z-index: 3;
   }
@@ -27,7 +28,7 @@ const GoodScreenContainer = styled.div`
     left: 0;
     right: 0;
     height: 200px;
-    background-color: #ffc767;
+    background-color: ${Constants.ORANGE};
     padding: 8px;
     z-index: 3;
     border-bottom-left-radius: 20px;
