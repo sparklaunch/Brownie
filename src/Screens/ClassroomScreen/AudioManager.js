@@ -24,6 +24,7 @@ import wordScoresAtom from "../../Stores/Classroom/Word/wordScores";
 import temporaryGlowBorderShownAtom from "../../Stores/Classroom/Story/temporaryGlowBorderShown";
 import setScreenSize from "../../Utilities/setScreenSize";
 import storyPageHistoryAtom from "../../Stores/Classroom/Story/storyPageHistory";
+import useFindFirstEmptyWordPage from "../../Hooks/useFindFirstEmptyWordPage";
 
 const AudioManager = () => {
   const { level } = useParams();
@@ -102,11 +103,14 @@ const AudioManager = () => {
   const [storyPageHistory, setStoryPageHistory] =
     useRecoilState(storyPageHistoryAtom);
   const bookID = useData("id");
+  const findFirstEmptyWordPage = useFindFirstEmptyWordPage();
   useEffect(() => {
     setScreenSize();
   });
   useEffect(() => {
+    Howler.unload();
     if (mode === "word") {
+      setCurrentWordPage(findFirstEmptyWordPage());
       setStoryPageHistory(currentPage);
     } else {
       setCurrentPage(storyPageHistory);
