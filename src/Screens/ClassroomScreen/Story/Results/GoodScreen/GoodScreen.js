@@ -19,7 +19,6 @@ const GoodScreen = () => {
         <ScorePillWrapper>
           <ScorePill score={totalScore.score} />
         </ScorePillWrapper>
-        <p>{totalScore.score}</p>
       </GoodScreenContainer>
     </Fade>
   );

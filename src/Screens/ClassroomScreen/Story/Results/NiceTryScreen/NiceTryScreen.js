@@ -22,7 +22,6 @@ const NiceTryScreen = () => {
         <ScorePillWrapper>
           <ScorePill score={totalScore.score} />
         </ScorePillWrapper>
-        <p>{totalScore.score}</p>
       </NiceTryScreenContainer>
     </Fade>
   );
