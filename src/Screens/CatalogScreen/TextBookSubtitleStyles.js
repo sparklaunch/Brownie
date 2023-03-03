@@ -7,7 +7,7 @@ const TextBookSubtitleOuterContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 40px 0;
     background-color: #f9f9f9;
     border-top: 1px solid #dfdfdf;
     border-bottom: 1px solid #dfdfdf;
@@ -85,7 +85,7 @@ const TextBookSubtitleTitle = styled.p`
 
 const TextBookSubtitleDescription = styled.p`
   @media screen and (max-width: 767px) {
-    font-size: 20px;
+    font-size: 16px;
     color: #515151;
     text-align: center;
     font-weight: lighter;

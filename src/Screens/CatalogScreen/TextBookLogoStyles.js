@@ -57,11 +57,14 @@ const TextBookLogoDescriptions = styled.div`
 
 const TextBookLogoDescription = styled.p`
   @media screen and (max-width: 767px) {
+    font-size: 13px;
+    letter-spacing: -1px;
     &:first-child {
       margin-bottom: 8px;
     }
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
+    font-size: 14px;
     &:first-child {
       margin-right: 24px;
     }
