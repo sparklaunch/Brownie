@@ -59,6 +59,7 @@ import textbookSizeAtom from "../../../Stores/Misc/textbookSize";
 import temporaryGlowBorderShownAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderShown";
 import temporaryGlowBorderDirectionAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderDirection";
 import mediaRecorderAtom from "../../../Stores/Misc/mediaRecorder";
+import shouldAudioPlayAtom from "../../../Stores/Classroom/shouldAudioPlay";
 
 const Book = () => {
   const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
@@ -80,33 +81,39 @@ const Book = () => {
     useRecoilState(temporaryGlowBorderShownAtom);
   const [temporaryGlowBorderDirection, setTemporaryGlowBorderDirection] =
     useRecoilState(temporaryGlowBorderDirectionAtom);
+  const [shouldAudioPlay, setShouldAudioPlay] =
+    useRecoilState(shouldAudioPlayAtom);
   const { level } = useParams();
   const bookID = useData("id");
   const playLeftPageAudio = () => {
-    Howler.unload();
-    setHighlightVisible(false);
-    setTemporaryGlowBorderShown(true);
-    setTemporaryGlowBorderDirection(`left`);
-    new Howl({
-      src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
-      onend: () => {
-        setHighlightVisible(true);
-        setTemporaryGlowBorderShown(false);
-      }
-    }).play();
+    if (shouldAudioPlay) {
+      Howler.unload();
+      setHighlightVisible(false);
+      setTemporaryGlowBorderShown(true);
+      setTemporaryGlowBorderDirection(`left`);
+      new Howl({
+        src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
+        onend: () => {
+          setHighlightVisible(true);
+          setTemporaryGlowBorderShown(false);
+        }
+      }).play();
+    }
   };
   const playRightPageAudio = () => {
-    Howler.unload();
-    setHighlightVisible(false);
-    setTemporaryGlowBorderShown(true);
-    setTemporaryGlowBorderDirection(`right`);
-    new Howl({
-      src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
-      onend: () => {
-        setHighlightVisible(true);
-        setTemporaryGlowBorderShown(false);
-      }
-    }).play();
+    if (shouldAudioPlay) {
+      Howler.unload();
+      setHighlightVisible(false);
+      setTemporaryGlowBorderShown(true);
+      setTemporaryGlowBorderDirection(`right`);
+      new Howl({
+        src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
+        onend: () => {
+          setHighlightVisible(true);
+          setTemporaryGlowBorderShown(false);
+        }
+      }).play();
+    }
   };
   const onClickWave = async () => {
     try {

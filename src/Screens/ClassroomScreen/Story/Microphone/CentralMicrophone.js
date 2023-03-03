@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 import scoresAtom from "../../../../Stores/Classroom/Story/scores";
 import { useParams } from "react-router-dom";
+import shouldAudioPlayAtom from "../../../../Stores/Classroom/shouldAudioPlay";
 
 const CentralMicrophone = () => {
   const { level } = useParams();
@@ -14,6 +15,8 @@ const CentralMicrophone = () => {
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
+  const [shouldAudioPlay, setShouldAudioPlay] =
+    useRecoilState(shouldAudioPlayAtom);
   const [scores, setScores] = useRecoilState(scoresAtom);
   useEffect(() => {
     if (currentPage === 10 && scores[`${level}-10`] !== undefined) {
@@ -29,6 +32,31 @@ const CentralMicrophone = () => {
       setCentralMicrophoneState("idle");
     }
   }, [currentPage]);
+  useEffect(() => {
+    switch (centralMicrophoneState) {
+      case "idle":
+        setShouldAudioPlay(true);
+        break;
+      case "disabled":
+        setShouldAudioPlay(false);
+        break;
+      case "invisible":
+        setShouldAudioPlay(false);
+        break;
+      case "loading":
+        setShouldAudioPlay(false);
+        break;
+      case "completed":
+        setShouldAudioPlay(true);
+        break;
+      case "resultsShowing":
+        setShouldAudioPlay(false);
+        break;
+      default:
+        setShouldAudioPlay(true);
+        break;
+    }
+  }, [centralMicrophoneState]);
   switch (centralMicrophoneState) {
     case "idle":
       return <CentralIdleMicrophone />;

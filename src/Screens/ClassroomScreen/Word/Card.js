@@ -45,6 +45,7 @@ import mediaRecorderAtom from "../../../Stores/Misc/mediaRecorder";
 import useData from "../../../Hooks/useData";
 import { Howl } from "howler";
 import _ from "lodash";
+import shouldAudioPlayAtom from "../../../Stores/Classroom/shouldAudioPlay";
 
 const Card = () => {
   const { level } = useParams();
@@ -62,6 +63,8 @@ const Card = () => {
   const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
   const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
   const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
+  const [shouldAudioPlay, setShouldAudioPlay] =
+    useRecoilState(shouldAudioPlayAtom);
   const onClickWave = async () => {
     try {
       setWordMicrophoneState(`loading`);
@@ -72,10 +75,12 @@ const Card = () => {
   };
   const words = useData("words");
   const playWordAudio = () => {
-    const audio = new Howl({
-      src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`]
-    });
-    audio.play();
+    if (shouldAudioPlay) {
+      const audio = new Howl({
+        src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`]
+      });
+      audio.play();
+    }
   };
   const onClickWord = () => {
     return _.throttle(playWordAudio, 1000, { leading: true, trailing: true });
