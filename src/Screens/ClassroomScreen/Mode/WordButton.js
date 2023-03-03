@@ -33,8 +33,6 @@ const WordButton = () => {
   const onClickWordButton = () => {
     if (shouldWordButtonEnabled) {
       setYouDidItShown(false);
-      setCurrentPage(0);
-      setCurrentWordPage(1);
       setMode("word");
     }
   };

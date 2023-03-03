@@ -32,8 +32,6 @@ const StoryButton = () => {
   const onClickStoryButton = () => {
     if (shouldStoryButtonEnabled) {
       setYouDidItShown(false);
-      setCurrentPage(0);
-      setCurrentWordPage(1);
       setMode("story");
     }
   };

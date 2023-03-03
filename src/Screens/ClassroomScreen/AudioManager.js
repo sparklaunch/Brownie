@@ -23,6 +23,7 @@ import scoresAtom from "../../Stores/Classroom/Story/scores";
 import wordScoresAtom from "../../Stores/Classroom/Word/wordScores";
 import temporaryGlowBorderShownAtom from "../../Stores/Classroom/Story/temporaryGlowBorderShown";
 import setScreenSize from "../../Utilities/setScreenSize";
+import storyPageHistoryAtom from "../../Stores/Classroom/Story/storyPageHistory";
 
 const AudioManager = () => {
   const { level } = useParams();
@@ -98,10 +99,19 @@ const AudioManager = () => {
     useRecoilState(highlightVisibleAtom);
   const [temporaryGlowBorderShown, setTemporaryGlowBorderShown] =
     useRecoilState(temporaryGlowBorderShownAtom);
+  const [storyPageHistory, setStoryPageHistory] =
+    useRecoilState(storyPageHistoryAtom);
   const bookID = useData("id");
   useEffect(() => {
     setScreenSize();
   });
+  useEffect(() => {
+    if (mode === "word") {
+      setStoryPageHistory(currentPage);
+    } else {
+      setCurrentPage(storyPageHistory);
+    }
+  }, [mode]);
   useEffect(() => {
     setTemporaryGlowBorderShown(false);
     setHighlightVisible(true);
