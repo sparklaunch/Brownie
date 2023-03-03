@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const ThumbnailPageContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -46,10 +47,10 @@ const ThumbnailPageGradient = styled.div`
     right: 0;
     ${(props) =>
       props.direction === "left" &&
-      `background-image: linear-gradient(to right, #0c4a4e 0%, transparent 100%);`}
+      `background-image: linear-gradient(to right, ${Constants.SEAWEED} 0%, transparent 100%);`}
     ${(props) =>
       props.direction === "right" &&
-      `background-image: linear-gradient(to right, transparent 0%, #0c4a4e 100%);`}
+      `background-image: linear-gradient(to right, transparent 0%, ${Constants.SEAWEED} 100%);`}
   }
 
   @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -60,10 +61,10 @@ const ThumbnailPageGradient = styled.div`
     right: 0;
     ${(props) =>
       props.direction === "left" &&
-      `background-image: linear-gradient(to right, #0c4a4e 0%, transparent 100%);`}
+      `background-image: linear-gradient(to right, ${Constants.SEAWEED} 0%, transparent 100%);`}
     ${(props) =>
       props.direction === "right" &&
-      `background-image: linear-gradient(to right, transparent 0%, #0c4a4e 100%);`}
+      `background-image: linear-gradient(to right, transparent 0%, ${Constants.SEAWEED} 100%);`}
   }
 
   @media screen and (min-width: 993px) {
@@ -74,10 +75,10 @@ const ThumbnailPageGradient = styled.div`
     right: 0;
     ${(props) =>
       props.direction === "left" &&
-      `background-image: linear-gradient(to right, #0c4a4e 0%, transparent 100%);`}
+      `background-image: linear-gradient(to right, ${Constants.SEAWEED} 0%, transparent 100%);`}
     ${(props) =>
       props.direction === "right" &&
-      `background-image: linear-gradient(to right, transparent 0%, #0c4a4e 100%);`}
+      `background-image: linear-gradient(to right, transparent 0%, ${Constants.SEAWEED} 100%);`}
   }
 `;
 

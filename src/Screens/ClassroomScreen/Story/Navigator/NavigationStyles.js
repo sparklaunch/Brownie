@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const NavigationContainer = styled.div`
   @media screen and (max-width: 767px) {
     position: fixed;
     width: 100%;
     left: 0;
-    background-color: #0c4a4e;
+    background-color: ${Constants.SEAWEED};
     z-index: 10;
     height: 216px;
     transition: all 0.5s ease-in-out;
@@ -19,7 +20,7 @@ const NavigationContainer = styled.div`
     position: fixed;
     width: 100%;
     left: 0;
-    background-color: #0c4a4e;
+    background-color: ${Constants.SEAWEED};
     z-index: 10;
     height: 216px;
     transition: all 0.5s ease-in-out;
@@ -33,7 +34,7 @@ const NavigationContainer = styled.div`
     position: fixed;
     width: 100%;
     left: 0;
-    background-color: #0c4a4e;
+    background-color: ${Constants.SEAWEED};
     z-index: 10;
     height: 216px;
     transition: all 0.5s ease-in-out;
