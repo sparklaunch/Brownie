@@ -168,17 +168,19 @@ const AudioManager = () => {
     }
   }, [currentPage, currentWordPage, mode]);
   useEffect(() => {
-    if (leftPageCompleted && !leftFinished) {
-      if (scores[`${level}-${currentPage + 1}`] === undefined) {
-        const howler = new Howl({
-          src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
-          onload: () => {
-            setAudioDuration(howler.duration() * 1000 + 2000);
-          },
-          onplay: onRightPlay,
-          onend: onRightEnd
-        });
-        howler.play();
+    if (mode === "story") {
+      if (leftPageCompleted && !leftFinished) {
+        if (scores[`${level}-${currentPage + 1}`] === undefined) {
+          const howler = new Howl({
+            src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
+            onload: () => {
+              setAudioDuration(howler.duration() * 1000 + 2000);
+            },
+            onplay: onRightPlay,
+            onend: onRightEnd
+          });
+          howler.play();
+        }
       }
     }
   }, [leftPageCompleted]);
