@@ -76,12 +76,6 @@ const SignUpFields = () => {
       if (response.data.resultCode === "100") {
         sessionStorage.setItem("userNumber", response.data.user_no);
         sessionStorage.setItem("studentName", response.data.name);
-        await Swal.fire({
-          title: `회원가입 성공`,
-          text: `${studentName}님, 환영합니다!`,
-          icon: "success",
-          confirmButtonText: "확인"
-        });
         navigate("/");
       } else if (response.data.resultCode === "200") {
         await Swal.fire(Constants.INVALID_ACCOUNT);
