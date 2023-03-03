@@ -13,7 +13,6 @@ import {
   ModificationFormInnerContainer,
   ModificationFormOuterContainer,
   ModificationTitle,
-  PasswordNoticeText,
   TextCenterContainer
 } from "./ModificationFormStyles";
 import { useNavigate } from "react-router-dom";
@@ -171,9 +170,6 @@ const ModificationForm = () => {
           }}
         />
         <PasswordInfo />
-        <PasswordNoticeText>
-          비밀번호를 변경하지 않을 시에는 비워두세요.
-        </PasswordNoticeText>
         <TextField
           id={"new-password"}
           value={newPassword}

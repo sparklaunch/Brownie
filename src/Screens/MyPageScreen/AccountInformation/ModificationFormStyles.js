@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Constants from "../../../Utilities/Constants";
 
 const ModificationFormOuterContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -67,29 +66,7 @@ const TextCenterContainer = styled.div`
   }
 `;
 
-const PasswordNoticeText = styled.p`
-  @media screen and (max-width: 767px) {
-    margin-left: 23px;
-    font-size: 13px;
-    margin-bottom: 3px;
-    color: ${Constants.GRAY};
-  }
-  @media screen and (min-width: 768px) and (max-width: 992px) {
-    margin-left: 23px;
-    font-size: 13px;
-    margin-bottom: 3px;
-    color: ${Constants.GRAY};
-  }
-  @media screen and (min-width: 993px) {
-    margin-left: 23px;
-    font-size: 13px;
-    margin-bottom: 3px;
-    color: ${Constants.GRAY};
-  }
-`;
-
 export {
-  PasswordNoticeText,
   ModificationTitle,
   ModificationFormOuterContainer,
   ModificationFormInnerContainer,
