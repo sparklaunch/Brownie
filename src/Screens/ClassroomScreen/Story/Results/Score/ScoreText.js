@@ -14,7 +14,11 @@ const ScoreText = ({ score }) => {
           </ScoreTextString>
         );
       } else if (score >= Constants.GOOD_THRESHOLD) {
-        return <ScoreTextString textColor={`#FF8200`}>Good!</ScoreTextString>;
+        return (
+          <ScoreTextString textColor={Constants.TANGERINE}>
+            Good!
+          </ScoreTextString>
+        );
       } else {
         return (
           <ScoreTextString textColor={`#FF2442`}>Nice Try!</ScoreTextString>
@@ -28,7 +32,11 @@ const ScoreText = ({ score }) => {
           </ScoreTextString>
         );
       } else if (score >= Constants.WORD_GOOD_THRESHOLD) {
-        return <ScoreTextString textColor={`#FF8200`}>Good!</ScoreTextString>;
+        return (
+          <ScoreTextString textColor={Constants.TANGERINE}>
+            Good!
+          </ScoreTextString>
+        );
       } else {
         return (
           <ScoreTextString textColor={`#FF2442`}>Nice Try!</ScoreTextString>

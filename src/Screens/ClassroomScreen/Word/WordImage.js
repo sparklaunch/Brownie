@@ -32,7 +32,7 @@ const WordImage = () => {
   if (totalScore.score >= Constants.WORD_EXCELLENT_THRESHOLD) {
     textColor = Constants.TURQUOISE;
   } else if (totalScore.score >= Constants.WORD_GOOD_THRESHOLD) {
-    textColor = "#FF8200";
+    textColor = Constants.TANGERINE;
   } else {
     textColor = "#FF2442";
   }
