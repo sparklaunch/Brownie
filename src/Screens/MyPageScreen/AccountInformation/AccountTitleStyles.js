@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const AccountTitleContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -37,15 +38,15 @@ const PasswordConfirmationText = styled.p`
   @media screen and (max-width: 767px) {
     font-size: 14px;
     line-height: 1.5;
-    color: #707070;
+    color: ${Constants.SOOT};
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 16px;
-    color: #707070;
+    color: ${Constants.SOOT};
   }
   @media screen and (min-width: 993px) {
     font-size: 18px;
-    color: #707070;
+    color: ${Constants.SOOT};
   }
 `;
 

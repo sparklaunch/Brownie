@@ -31,7 +31,7 @@ const AddressContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -39,7 +39,7 @@ const AddressContainer = styled.div`
     flex-direction: row;
     align-items: center;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
   @media screen and (min-width: 993px) {
@@ -47,7 +47,7 @@ const AddressContainer = styled.div`
     flex-direction: row;
     align-items: center;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
 `;
@@ -83,7 +83,7 @@ const DetailContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -91,7 +91,7 @@ const DetailContainer = styled.div`
     flex-direction: row;
     align-items: center;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
   @media screen and (min-width: 993px) {
@@ -99,7 +99,7 @@ const DetailContainer = styled.div`
     flex-direction: row;
     align-items: center;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
 `;

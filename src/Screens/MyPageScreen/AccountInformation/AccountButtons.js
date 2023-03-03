@@ -54,12 +54,12 @@ const AccountButtons = () => {
         sx={{
           marginRight: "15px",
           paddingX: "25px",
-          color: "#707070",
-          borderColor: "#707070",
+          color: Constants.SOOT,
+          borderColor: Constants.SOOT,
           backgroundColor: "white",
           "&:hover": {
             backgroundColor: "white",
-            borderColor: "#707070"
+            borderColor: Constants.SOOT
           }
         }}
       >
