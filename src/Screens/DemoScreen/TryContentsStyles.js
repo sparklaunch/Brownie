@@ -26,7 +26,7 @@ const TryContentsInnerContainer = styled.div`
   @media screen and (max-width: 767px) {
     width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 32px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
