@@ -16,9 +16,24 @@ const MyPageTabs = () => {
           value={myPageTabValue}
           onChange={(event, newValue) => setMyPageTabValue(newValue)}
         >
-          <Tab label={"학습 현황"} />
-          <Tab label={"회원 정보"} />
-          <Tab label={"쿠폰 등록 / 확인"} />
+          <Tab
+            label={"학습 현황"}
+            sx={{
+              fontFamily: "NanumSquareNeo"
+            }}
+          />
+          <Tab
+            label={"회원 정보"}
+            sx={{
+              fontFamily: "NanumSquareNeo"
+            }}
+          />
+          <Tab
+            label={"쿠폰 등록 / 확인"}
+            sx={{
+              fontFamily: "NanumSquareNeo"
+            }}
+          />
         </Tabs>
       </MyPageTabsInnerContainer>
     </MyPageTabsOuterContainer>
