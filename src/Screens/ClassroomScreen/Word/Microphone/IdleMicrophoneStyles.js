@@ -73,7 +73,6 @@ const InnerCircle = styled.div`
       }
     }
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     width: 100%;
@@ -91,7 +90,6 @@ const InnerCircle = styled.div`
       }
     }
   }
-
   @media screen and (min-width: 993px) {
     position: absolute;
     width: 100%;
@@ -131,7 +129,6 @@ const Wave = styled.div`
       }
     }
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     width: 100%;
@@ -151,7 +148,6 @@ const Wave = styled.div`
       }
     }
   }
-
   @media screen and (min-width: 993px) {
     position: absolute;
     width: 100%;
@@ -178,12 +174,10 @@ const IdleMicrophoneContainer = styled.div`
     position: relative;
     cursor: pointer;
   }
-
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
     cursor: pointer;
   }
-
   @media screen and (min-width: 993px) {
     position: relative;
     cursor: pointer;
@@ -192,14 +186,17 @@ const IdleMicrophoneContainer = styled.div`
 
 const IdleMicrophoneImage = styled.img`
   @media screen and (max-width: 767px) {
+    position: relative;
     width: 40px;
     height: 40px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
+    position: relative;
     width: 55px;
     height: 55px;
   }
   @media screen and (min-width: 993px) {
+    position: relative;
     width: 70px;
     height: 70px;
   }
