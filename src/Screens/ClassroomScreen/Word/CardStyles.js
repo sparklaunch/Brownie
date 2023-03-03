@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const CardOuterContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -127,7 +128,7 @@ const PaginationContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #ffa63d;
+    background-color: ${Constants.ORANGE};
     border-bottom-right-radius: 20px;
   }
 
@@ -135,7 +136,7 @@ const PaginationContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #ffa63d;
+    background-color: ${Constants.ORANGE};
     border-bottom-right-radius: 20px;
   }
 
@@ -143,7 +144,7 @@ const PaginationContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #ffa63d;
+    background-color: ${Constants.ORANGE};
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
