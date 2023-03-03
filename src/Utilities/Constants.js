@@ -3,6 +3,7 @@ const Constants = {
   ELA_API_ENDPOINT: "https://api.elasolution.com",
   API_KEY: "afef8c94d1094b58a3fc58e743eb9913",
   ACCENT_COLOR: "#1AB9C5",
+  DARK_GRAY: "#515151",
   EXCELLENT_THRESHOLD: 75,
   GOOD_THRESHOLD: 55,
   WORD_EXCELLENT_THRESHOLD: 75,

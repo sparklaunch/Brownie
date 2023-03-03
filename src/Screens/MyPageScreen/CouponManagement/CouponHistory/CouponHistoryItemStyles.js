@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const CouponHistoryItemContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -35,17 +36,17 @@ const CouponBoxContainer = styled.div`
 
 const CouponBoxTitle = styled.p`
   @media screen and (max-width: 767px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 16px;
     margin-bottom: 4px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 16px;
     margin-bottom: 4px;
   }
   @media screen and (min-width: 993px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 16px;
     margin-bottom: 4px;
   }
@@ -74,32 +75,32 @@ const CouponCodeText = styled.p`
 
 const CouponDateFromText = styled.p`
   @media screen and (max-width: 767px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
   }
   @media screen and (min-width: 993px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
   }
 `;
 
 const CouponDateToText = styled.p`
   @media screen and (max-width: 767px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
     font-weight: bold;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
     font-weight: bold;
   }
   @media screen and (min-width: 993px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
     font-weight: bold;
   }

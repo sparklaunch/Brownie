@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const FeatureSpecimenContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -47,16 +48,16 @@ const FeatureSpecimenTextContainer = styled.div`
 
 const FeatureSpecimenText = styled.p`
   @media screen and (max-width: 767px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 16px;
     line-height: 1.5;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 20px;
   }
   @media screen and (min-width: 993px) {
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
     font-size: 20px;
   }
 `;
