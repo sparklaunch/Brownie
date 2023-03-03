@@ -5,6 +5,7 @@ const SignInScreenOuterContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: stretch;
     margin-bottom: 30px;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -26,6 +27,7 @@ const SignInScreenInnerContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: stretch;
     overflow: clip;
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -44,7 +46,7 @@ const SignInScreenInnerContainer = styled.div`
 
 const SignInScreenContainer = styled.div`
   @media screen and (max-width: 767px) {
-    width: 500px;
+    width: 100%;
     border: 2px solid #dfdfdf;
     border-radius: 5px;
   }
