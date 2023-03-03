@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const ThumbnailContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -13,7 +14,7 @@ const ThumbnailContainer = styled.div`
     margin: 0 12px;
     ${(props) =>
       props.bordered
-        ? `border: 4px solid #ffd53d;`
+        ? `border: 4px solid ${Constants.YELLOW};`
         : `border: 4px solid transparent;`}
   }
 
@@ -29,7 +30,7 @@ const ThumbnailContainer = styled.div`
     margin: 0 12px;
     ${(props) =>
       props.bordered
-        ? `border: 4px solid #ffd53d;`
+        ? `border: 4px solid ${Constants.YELLOW};`
         : `border: 4px solid transparent;`}
   }
 
@@ -45,7 +46,7 @@ const ThumbnailContainer = styled.div`
     margin: 0 12px;
     ${(props) =>
       props.bordered
-        ? `border: 4px solid #ffd53d;`
+        ? `border: 4px solid ${Constants.YELLOW};`
         : `border: 4px solid transparent;`}
   }
 `;

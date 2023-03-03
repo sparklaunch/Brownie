@@ -4,6 +4,7 @@ const Constants = {
   API_KEY: "afef8c94d1094b58a3fc58e743eb9913",
   ACCENT_COLOR: "#1AB9C5",
   ORANGE: "#FFA63D",
+  YELLOW: "#FFD53D",
   WHITE: "#F9F9F9",
   LIGHT_SKYBLUE: "#E8F6F8",
   LIGHT_GRAY: "#DFDFDF",

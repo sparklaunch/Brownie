@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const BookContainer = styled.div`
   @media screen and (max-width: 767px) {
@@ -604,7 +605,8 @@ const GlowBorder = styled.div`
     right: 0;
     left: 0;
     z-index: 1;
-    box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
+    box-shadow: 0 0 5px 5px ${Constants.YELLOW},
+      inset 0 0 5px 5px ${Constants.YELLOW};
   }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
@@ -613,7 +615,8 @@ const GlowBorder = styled.div`
     right: 0;
     left: 0;
     z-index: 1;
-    box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
+    box-shadow: 0 0 5px 5px ${Constants.YELLOW},
+      inset 0 0 5px 5px ${Constants.YELLOW};
   }
   @media screen and (min-width: 993px) {
     position: absolute;
@@ -622,7 +625,8 @@ const GlowBorder = styled.div`
     bottom: 0;
     right: 0;
     z-index: 1;
-    box-shadow: 0 0 5px 5px #ffd53d, inset 0 0 5px 5px #ffd53d;
+    box-shadow: 0 0 5px 5px ${Constants.YELLOW},
+      inset 0 0 5px 5px ${Constants.YELLOW};
   }
 `;
 
