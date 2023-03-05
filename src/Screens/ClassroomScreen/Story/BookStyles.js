@@ -621,6 +621,16 @@ const GlowBorder = styled.div`
     z-index: 1;
     box-shadow: 0 0 5px 5px ${Constants.YELLOW},
       inset 0 0 5px 5px ${Constants.YELLOW};
+    ${(props) =>
+      props.direction === `left`
+        ? `
+      border-top-left-radius: 16px;
+      border-bottom-left-radius: 16px;
+    `
+        : `
+      border-top-right-radius: 16px;
+      border-bottom-right-radius: 16px;
+    `}
   }
 `;
 
