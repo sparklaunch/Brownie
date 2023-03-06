@@ -1,7 +1,4 @@
 const Constants = {
-  AUTH_API_ENDPOINT: "https://funphonics.ai:8443",
-  ELA_API_ENDPOINT: "https://api.elasolution.com",
-  API_KEY: "afef8c94d1094b58a3fc58e743eb9913",
   ACCENT_COLOR: "#1AB9C5",
   TURQUOISE: "#15B58F",
   LIGHT_GREEN: "#80E6AC",

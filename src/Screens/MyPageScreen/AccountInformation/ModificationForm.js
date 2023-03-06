@@ -18,11 +18,11 @@ import {
 import { useNavigate } from "react-router-dom";
 import secureModeAtom from "../../../Stores/Auth/secureMode";
 import { useEffect, useLayoutEffect } from "react";
-import axios from "axios";
 import Constants from "../../../Utilities/Constants";
 import Swal from "sweetalert2";
 import idAtom from "../../../Stores/Auth/id";
 import validPasswordSelector from "../../../Stores/Auth/validPassword";
+import { authPost } from "../../../Utilities/AxiosInstances";
 
 const ModificationForm = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -58,20 +58,9 @@ const ModificationForm = () => {
     };
   }, []);
   const requestAccountInformation = async () => {
-    const response = await axios.post(
-      `${Constants.AUTH_API_ENDPOINT}/api/ap008`,
-      {
-        user_no: sessionStorage.getItem("userNumber")
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "*",
-          "Access-Control-Allow-Headers": "*"
-        }
-      }
-    );
+    const response = await authPost("/api/ap008", {
+      user_no: sessionStorage.getItem("userNumber")
+    });
     const stringResponse = JSON.stringify(response, null, 2);
     console.log(stringResponse);
     switch (response.data.resultCode) {
@@ -91,25 +80,14 @@ const ModificationForm = () => {
     requestAccountInformation();
   }, []);
   const requestAccountModification = async () => {
-    const response = await axios.post(
-      `${Constants.AUTH_API_ENDPOINT}/api/ap009`,
-      {
-        user_no: sessionStorage.getItem("userNumber"),
-        pwd: newPassword,
-        pwd_chk: newPasswordConfirm,
-        tel: phoneNumber,
-        name: studentName,
-        birth: studentBirthDate
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "*",
-          "Access-Control-Allow-Headers": "*"
-        }
-      }
-    );
+    const response = await authPost("/api/ap009", {
+      user_no: sessionStorage.getItem("userNumber"),
+      pwd: newPassword,
+      pwd_chk: newPasswordConfirm,
+      tel: phoneNumber,
+      name: studentName,
+      birth: studentBirthDate
+    });
     const stringResponse = JSON.stringify(response, null, 2);
     console.log(stringResponse);
     switch (response.data.resultCode) {

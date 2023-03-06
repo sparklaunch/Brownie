@@ -1,31 +1,20 @@
 import { Button } from "@mui/material";
 import { AccountButtonsContainer } from "./AccountButtonsStyles";
-import axios from "axios";
 import Constants from "../../../Utilities/Constants";
 import { useRecoilState } from "recoil";
 import passwordAtom from "../../../Stores/Auth/password";
 import Swal from "sweetalert2";
 import secureModeAtom from "../../../Stores/Auth/secureMode";
+import { authPost } from "../../../Utilities/AxiosInstances";
 
 const AccountButtons = () => {
   const [secureMode, setSecureMode] = useRecoilState(secureModeAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
   const requestPasswordMatch = async () => {
-    const response = await axios.post(
-      `${Constants.AUTH_API_ENDPOINT}/api/ap007`,
-      {
-        user_no: sessionStorage.getItem("userNumber"),
-        pwd: password
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "*",
-          "Access-Control-Allow-Headers": "*"
-        }
-      }
-    );
+    const response = await authPost("/api/ap007", {
+      user_no: sessionStorage.getItem("userNumber"),
+      pwd: password
+    });
     const stringResponse = JSON.stringify(response, null, 2);
     console.log(stringResponse);
     switch (response.data.resultCode) {

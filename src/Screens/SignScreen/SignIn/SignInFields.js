@@ -5,11 +5,11 @@ import passwordAtom from "../../../Stores/Auth/password";
 import SignInErrorMessage from "./SignInErrorMessage";
 import signInErrorMessageAtom from "../../../Stores/Auth/signInErrorMessage";
 import validPasswordSelector from "../../../Stores/Auth/validPassword";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Constants from "../../../Utilities/Constants";
 import Swal from "sweetalert2";
 import { SignInFieldsContainer } from "./SignInFieldsStyles";
+import { authPost } from "../../../Utilities/AxiosInstances";
 
 const SignInFields = () => {
   const validPassword = useRecoilValue(validPasswordSelector);
@@ -25,21 +25,10 @@ const SignInFields = () => {
   const navigate = useNavigate();
   const signIn = async () => {
     try {
-      const response = await axios.post(
-        `${Constants.AUTH_API_ENDPOINT}/api/ap002`,
-        {
-          id: id,
-          pwd: password
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*",
-            "Access-Control-Allow-Headers": "*"
-          }
-        }
-      );
+      const response = await authPost("/api/ap002", {
+        id: id,
+        pwd: password
+      });
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       switch (response.data.resultCode) {

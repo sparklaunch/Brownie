@@ -1,24 +1,13 @@
 import { AccountDeletionText } from "./AccountDeletionStyles";
 import Swal from "sweetalert2";
 import Constants from "../../../Utilities/Constants";
-import axios from "axios";
+import { authPost } from "../../../Utilities/AxiosInstances";
 
 const AccountDeletion = () => {
   const requestAccountDeletion = async () => {
-    const response = await axios.post(
-      `${Constants.AUTH_API_ENDPOINT}/api/ap003`,
-      {
-        user_no: sessionStorage.getItem("userNumber")
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "*",
-          "Access-Control-Allow-Headers": "*"
-        }
-      }
-    );
+    const response = await authPost("/api/ap003", {
+      user_no: sessionStorage.getItem("userNumber")
+    });
     const stringResponse = JSON.stringify(response, null, 2);
     console.log(stringResponse);
     switch (response.data.resultCode) {

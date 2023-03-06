@@ -2,9 +2,9 @@ import { Button, TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
 import idAtom from "../../../../../Stores/Auth/id";
 import passwordAtom from "../../../../../Stores/Auth/password";
-import axios from "axios";
 import Constants from "../../../../../Utilities/Constants";
 import Swal from "sweetalert2";
+import { authPost } from "../../../../../Utilities/AxiosInstances";
 
 const FormFields = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -15,19 +15,10 @@ const FormFields = () => {
   };
   const signIn = async () => {
     try {
-      const response = await axios.post(
-        `${Constants.AUTH_API_ENDPOINT}/api/ap002`,
-        {
-          id: id,
-          pwd: password
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*"
-          }
-        }
-      );
+      const response = await authPost("/api/ap002", {
+        id: id,
+        pwd: password
+      });
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       switch (response.data.resultCode) {

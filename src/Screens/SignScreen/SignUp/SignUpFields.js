@@ -14,7 +14,6 @@ import agreeStatusAtom from "../../../Stores/Auth/agreeStatus";
 import validPasswordSelector from "../../../Stores/Auth/validPassword";
 import validPhoneNumberSelector from "../../../Stores/Auth/validPhoneNumber";
 import couponMessageAtom from "../../../Stores/Auth/couponMessage";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Constants from "../../../Utilities/Constants";
 import Swal from "sweetalert2";
@@ -28,6 +27,7 @@ import {
   TermsContainer,
   TermsText
 } from "./SignUpFieldsStyles";
+import { authPost } from "../../../Utilities/AxiosInstances";
 
 const SignUpFields = () => {
   const validPhoneNumber = useRecoilValue(validPhoneNumberSelector);
@@ -56,21 +56,10 @@ const SignUpFields = () => {
   const navigate = useNavigate();
   const signIn = async () => {
     try {
-      const response = await axios.post(
-        `${Constants.AUTH_API_ENDPOINT}/api/ap002`,
-        {
-          id: id,
-          pwd: password
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*",
-            "Access-Control-Allow-Headers": "*"
-          }
-        }
-      );
+      const response = await authPost("/api/ap002", {
+        id: id,
+        pwd: password
+      });
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
@@ -91,24 +80,13 @@ const SignUpFields = () => {
   };
   const signUp = async () => {
     try {
-      const response = await axios.post(
-        `${Constants.AUTH_API_ENDPOINT}/api/ap001`,
-        {
-          id: id,
-          pwd: password,
-          name: studentName,
-          tel: phoneNumber,
-          birth: studentBirthDate
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*",
-            "Access-Control-Allow-Headers": "*"
-          }
-        }
-      );
+      const response = await authPost("/api/ap001", {
+        id: id,
+        pwd: password,
+        name: studentName,
+        tel: phoneNumber,
+        birth: studentBirthDate
+      });
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       switch (response.data.resultCode) {
