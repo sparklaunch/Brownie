@@ -90,10 +90,10 @@ const Constants = {
     confirmButtonColor: "#1AB9C5"
   },
   SIGN_IN_SUCCEEDED: {
-    title: "로그인 성공",
-    text: "로그인에 성공하였습니다.",
+    title: "환영합니다!",
+    text: "Phonics Fun Readers에 오신 것을 환영합니다.",
     icon: "success",
-    confirmButtonText: "확인",
+    confirmButtonText: "시작하기",
     confirmButtonColor: "#1AB9C5"
   },
   INVALID_PASSWORD: {
