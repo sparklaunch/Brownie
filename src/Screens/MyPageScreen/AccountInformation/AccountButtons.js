@@ -5,13 +5,13 @@ import { useRecoilState } from "recoil";
 import passwordAtom from "../../../Stores/Auth/password";
 import Swal from "sweetalert2";
 import secureModeAtom from "../../../Stores/Auth/secureMode";
-import { authPost } from "../../../Utilities/AxiosInstances";
+import { authAxios } from "../../../Utilities/AxiosInstances";
 
 const AccountButtons = () => {
   const [secureMode, setSecureMode] = useRecoilState(secureModeAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
   const requestPasswordMatch = async () => {
-    const response = await authPost("/api/ap007", {
+    const response = await authAxios.post("/api/ap007", {
       user_no: sessionStorage.getItem("userNumber"),
       pwd: password
     });

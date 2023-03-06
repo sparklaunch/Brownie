@@ -22,7 +22,7 @@ import Constants from "../../../Utilities/Constants";
 import Swal from "sweetalert2";
 import idAtom from "../../../Stores/Auth/id";
 import validPasswordSelector from "../../../Stores/Auth/validPassword";
-import { authPost } from "../../../Utilities/AxiosInstances";
+import { authAxios } from "../../../Utilities/AxiosInstances";
 
 const ModificationForm = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -58,7 +58,7 @@ const ModificationForm = () => {
     };
   }, []);
   const requestAccountInformation = async () => {
-    const response = await authPost("/api/ap008", {
+    const response = await authAxios.post("/api/ap008", {
       user_no: sessionStorage.getItem("userNumber")
     });
     const stringResponse = JSON.stringify(response, null, 2);
@@ -80,7 +80,7 @@ const ModificationForm = () => {
     requestAccountInformation();
   }, []);
   const requestAccountModification = async () => {
-    const response = await authPost("/api/ap009", {
+    const response = await authAxios.post("/api/ap009", {
       user_no: sessionStorage.getItem("userNumber"),
       pwd: newPassword,
       pwd_chk: newPasswordConfirm,

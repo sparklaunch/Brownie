@@ -8,7 +8,6 @@ import {
   OuterCircle,
   Wave
 } from "./CentralPlayingMicrophoneStyles";
-import axios from "axios";
 import Constants from "../../../../Utilities/Constants";
 import uuid from "react-uuid";
 import Swal from "sweetalert2";
@@ -23,6 +22,7 @@ import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsSc
 import audioDurationAtom from "../../../../Stores/Classroom/audioDuration";
 import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
 import playMicrophoneOnAudio from "../../../../Utilities/playMicrophoneOnAudio";
+import { elaAxios } from "../../../../Utilities/AxiosInstances";
 
 const CentralPlayingMicrophone = () => {
   const [highlightedPage, setHighlightedPage] =
@@ -48,7 +48,7 @@ const CentralPlayingMicrophone = () => {
       await playMicrophoneOnAudio();
       mediaRecorder.start();
       setCentralMicrophoneState("invisible");
-      mediaRecorder.ondataavailable = (event) => {
+      mediaRecorder.ondataavailable = async (event) => {
         const blob = new Blob([event.data], { type: "audio/wav" });
         const reader = new FileReader();
         reader.readAsDataURL(blob);
@@ -67,47 +67,34 @@ const CentralPlayingMicrophone = () => {
           formData.append("text", sentences[currentPage - 1]);
         }
         formData.append("student_audio", event.data);
-        axios
-          .post(`${Constants.ELA_API_ENDPOINT}/pron_v2/`, formData, {
-            headers: {
-              "Content-Type": "multipart/form-data",
-              "Access-Control-Allow-Headers": "*",
-              "X-API-KEY": Constants.API_KEY
-            }
-          })
-          .then((response) => {
-            setHighlightVisible(false);
-            const stringResponse = JSON.stringify(response, null, 2);
-            console.log(stringResponse);
-            const totalScore = response.data.total_score;
-            setTotalScore({
-              score: totalScore,
-              id: uuid()
-            });
-            if (highlightedPage !== currentPage) {
-              setScores((previous) => {
-                return {
-                  ...previous,
-                  [`${level}-${currentPage + 1}`]: totalScore
-                };
-              });
-            } else {
-              setScores((previous) => {
-                return {
-                  ...previous,
-                  [`${level}-${currentPage}`]: totalScore
-                };
-              });
-            }
-            if (highlightedPage !== currentPage) {
-              setCentralMicrophoneState("completed");
-            }
-            setResultsScreenShown(true);
-          })
-          .catch((error) => {
-            const stringError = JSON.stringify(error, null, 2);
-            console.log(stringError);
+        const response = await elaAxios.post("/pron_v2/", formData);
+        setHighlightVisible(false);
+        const stringResponse = JSON.stringify(response, null, 2);
+        console.log(stringResponse);
+        const totalScore = response.total_score;
+        setTotalScore({
+          score: totalScore,
+          id: uuid()
+        });
+        if (highlightedPage !== currentPage) {
+          setScores((previous) => {
+            return {
+              ...previous,
+              [`${level}-${currentPage + 1}`]: totalScore
+            };
           });
+        } else {
+          setScores((previous) => {
+            return {
+              ...previous,
+              [`${level}-${currentPage}`]: totalScore
+            };
+          });
+        }
+        if (highlightedPage !== currentPage) {
+          setCentralMicrophoneState("completed");
+        }
+        setResultsScreenShown(true);
       };
       setTimeout(() => {
         mediaRecorder.stop();

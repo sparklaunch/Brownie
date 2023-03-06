@@ -1,11 +1,11 @@
 import { AccountDeletionText } from "./AccountDeletionStyles";
 import Swal from "sweetalert2";
 import Constants from "../../../Utilities/Constants";
-import { authPost } from "../../../Utilities/AxiosInstances";
+import { authAxios } from "../../../Utilities/AxiosInstances";
 
 const AccountDeletion = () => {
   const requestAccountDeletion = async () => {
-    const response = await authPost("/api/ap003", {
+    const response = await authAxios.post("/api/ap003", {
       user_no: sessionStorage.getItem("userNumber")
     });
     const stringResponse = JSON.stringify(response, null, 2);

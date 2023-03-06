@@ -27,7 +27,7 @@ import {
   TermsContainer,
   TermsText
 } from "./SignUpFieldsStyles";
-import { authPost } from "../../../Utilities/AxiosInstances";
+import { authAxios } from "../../../Utilities/AxiosInstances";
 
 const SignUpFields = () => {
   const validPhoneNumber = useRecoilValue(validPhoneNumberSelector);
@@ -56,7 +56,7 @@ const SignUpFields = () => {
   const navigate = useNavigate();
   const signIn = async () => {
     try {
-      const response = await authPost("/api/ap002", {
+      const response = await authAxios.post("/api/ap002", {
         id: id,
         pwd: password
       });
@@ -80,7 +80,7 @@ const SignUpFields = () => {
   };
   const signUp = async () => {
     try {
-      const response = await authPost("/api/ap001", {
+      const response = await authAxios.post("/api/ap001", {
         id: id,
         pwd: password,
         name: studentName,

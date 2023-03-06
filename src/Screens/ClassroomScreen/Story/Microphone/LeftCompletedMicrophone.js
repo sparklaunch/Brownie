@@ -1,7 +1,6 @@
 import { useRecoilState } from "recoil";
 import highlightedPageAtom from "../../../../Stores/Classroom/Story/highlightedPage";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
-import axios from "axios";
 import uuid from "react-uuid";
 import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import useData from "../../../../Hooks/useData";
@@ -23,6 +22,7 @@ import Swal from "sweetalert2";
 import { Howl, Howler } from "howler";
 import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
 import playMicrophoneOnAudio from "../../../../Utilities/playMicrophoneOnAudio";
+import { elaAxios } from "../../../../Utilities/AxiosInstances";
 
 const LeftCompletedMicrophone = () => {
   const { level } = useParams();
@@ -47,7 +47,7 @@ const LeftCompletedMicrophone = () => {
       await playMicrophoneOnAudio();
       mediaRecorder.start();
       setCentralMicrophoneState("invisible");
-      mediaRecorder.ondataavailable = (event) => {
+      mediaRecorder.ondataavailable = async (event) => {
         const blob = new Blob([event.data], { type: "audio/wav" });
         const reader = new FileReader();
         reader.readAsDataURL(blob);
@@ -58,42 +58,27 @@ const LeftCompletedMicrophone = () => {
         const formData = new FormData();
         formData.append("text", sentences[currentPage - 1]);
         formData.append("student_audio", event.data);
-        axios
-          .post(`${Constants.ELA_API_ENDPOINT}/pron_v2/`, formData, {
-            headers: {
-              "Content-Type": "multipart/form-data",
-              "x-cors-api-key": "temp_e4ec220dbf44f09c113217921d9d34d6",
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-              "X-API-KEY": Constants.API_KEY
-            }
-          })
-          .then((response) => {
-            setHighlightVisible(false);
-            const record = localStorage.getItem("left_record");
-            const leftRecord = new Howl({
-              src: [record]
-            });
-            leftRecord.play();
-            const stringResponse = JSON.stringify(response, null, 2);
-            console.log(stringResponse);
-            const totalScore = response.data.total_score;
-            setTotalScore({
-              score: totalScore,
-              id: uuid()
-            });
-            setScores((previous) => {
-              return {
-                ...previous,
-                [`${level}-${currentPage}`]: totalScore
-              };
-            });
-            setResultsScreenShown(true);
-          })
-          .catch((error) => {
-            const stringError = JSON.stringify(error, null, 2);
-            console.log(stringError);
-          });
+        const response = await elaAxios.post("/pron_v2/", formData);
+        setHighlightVisible(false);
+        const record = localStorage.getItem("left_record");
+        const leftRecord = new Howl({
+          src: [record]
+        });
+        leftRecord.play();
+        const stringResponse = JSON.stringify(response, null, 2);
+        console.log(stringResponse);
+        const totalScore = response.total_score;
+        setTotalScore({
+          score: totalScore,
+          id: uuid()
+        });
+        setScores((previous) => {
+          return {
+            ...previous,
+            [`${level}-${currentPage}`]: totalScore
+          };
+        });
+        setResultsScreenShown(true);
       };
       setTimeout(() => {
         mediaRecorder.stop();

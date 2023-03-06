@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Constants from "../../../Utilities/Constants";
 import Swal from "sweetalert2";
 import { SignInFieldsContainer } from "./SignInFieldsStyles";
-import { authPost } from "../../../Utilities/AxiosInstances";
+import { authAxios } from "../../../Utilities/AxiosInstances";
 
 const SignInFields = () => {
   const validPassword = useRecoilValue(validPasswordSelector);
@@ -25,7 +25,7 @@ const SignInFields = () => {
   const navigate = useNavigate();
   const signIn = async () => {
     try {
-      const response = await authPost("/api/ap002", {
+      const response = await authAxios.post("/api/ap002", {
         id: id,
         pwd: password
       });

@@ -1,4 +1,3 @@
-import axios from "axios";
 import uuid from "react-uuid";
 import { useRecoilState } from "recoil";
 import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
@@ -24,6 +23,7 @@ import { Howler } from "howler";
 import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
 import currentActivePageAtom from "../../../../Stores/Classroom/Story/currentActivePage";
 import playMicrophoneOnAudio from "../../../../Utilities/playMicrophoneOnAudio";
+import { elaAxios } from "../../../../Utilities/AxiosInstances";
 
 const CentralIdleMicrophone = () => {
   const { level } = useParams();
@@ -52,7 +52,7 @@ const CentralIdleMicrophone = () => {
       await playMicrophoneOnAudio();
       mediaRecorder.start();
       setCentralMicrophoneState("invisible");
-      mediaRecorder.ondataavailable = (event) => {
+      mediaRecorder.ondataavailable = async (event) => {
         const blob = new Blob([event.data], { type: "audio/wav" });
         const reader = new FileReader();
         reader.readAsDataURL(blob);
@@ -77,50 +77,37 @@ const CentralIdleMicrophone = () => {
             break;
         }
         formData.append("student_audio", event.data);
-        axios
-          .post(`${Constants.ELA_API_ENDPOINT}/pron_v2/`, formData, {
-            headers: {
-              "Content-Type": "multipart/form-data",
-              "Access-Control-Allow-Headers": "*",
-              "X-API-KEY": Constants.API_KEY
-            }
-          })
-          .then((response) => {
-            setHighlightVisible(false);
-            const stringResponse = JSON.stringify(response, null, 2);
-            console.log(stringResponse);
-            const totalScore = response.data.total_score;
-            setTotalScore({
-              score: totalScore,
-              id: uuid()
+        const response = await elaAxios.post("/pron_v2/", formData);
+        setHighlightVisible(false);
+        const stringResponse = JSON.stringify(response, null, 2);
+        console.log(stringResponse);
+        const totalScore = response.total_score;
+        setTotalScore({
+          score: totalScore,
+          id: uuid()
+        });
+        switch (currentActivePage) {
+          case "left":
+            setScores((previous) => {
+              return {
+                ...previous,
+                [`${level}-${currentPage}`]: totalScore
+              };
             });
-            switch (currentActivePage) {
-              case "left":
-                setScores((previous) => {
-                  return {
-                    ...previous,
-                    [`${level}-${currentPage}`]: totalScore
-                  };
-                });
-                break;
-              case "right":
-                setScores((previous) => {
-                  return {
-                    ...previous,
-                    [`${level}-${currentPage + 1}`]: totalScore
-                  };
-                });
-                break;
-            }
-            if (currentActivePage === "right") {
-              setCentralMicrophoneState("completed");
-            }
-            setResultsScreenShown(true);
-          })
-          .catch((error) => {
-            const stringError = JSON.stringify(error, null, 2);
-            console.log(stringError);
-          });
+            break;
+          case "right":
+            setScores((previous) => {
+              return {
+                ...previous,
+                [`${level}-${currentPage + 1}`]: totalScore
+              };
+            });
+            break;
+        }
+        if (currentActivePage === "right") {
+          setCentralMicrophoneState("completed");
+        }
+        setResultsScreenShown(true);
       };
       setTimeout(() => {
         mediaRecorder.stop();

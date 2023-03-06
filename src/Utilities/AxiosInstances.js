@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const authPost = axios.create({
+const authAxios = axios.create({
   baseURL: "https://funphonics.ai:8443/",
   headers: {
     "Content-Type": "application/json",
@@ -10,7 +10,7 @@ const authPost = axios.create({
   }
 });
 
-const elaPost = axios.create({
+const elaAxios = axios.create({
   baseURL: "https://api.elasolution.com/",
   headers: {
     "Content-Type": "multipart/form-data",
@@ -21,4 +21,4 @@ const elaPost = axios.create({
   }
 });
 
-export { authPost, elaPost };
+export { authAxios, elaAxios };

@@ -1,5 +1,4 @@
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
-import axios from "axios";
 import uuid from "react-uuid";
 import { useRecoilState } from "recoil";
 import audioDurationAtom from "../../../../Stores/Classroom/audioDuration";
@@ -20,6 +19,7 @@ import Swal from "sweetalert2";
 import { Howl, Howler } from "howler";
 import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
 import playMicrophoneOnAudio from "../../../../Utilities/playMicrophoneOnAudio";
+import { elaAxios } from "../../../../Utilities/AxiosInstances";
 
 const CompletedMicrophone = () => {
   const { level } = useParams();
@@ -43,7 +43,7 @@ const CompletedMicrophone = () => {
       await playMicrophoneOnAudio();
       mediaRecorder.start();
       setWordMicrophoneState("recording");
-      mediaRecorder.ondataavailable = (event) => {
+      mediaRecorder.ondataavailable = async (event) => {
         const blob = new Blob([event.data], { type: "audio/wav" });
         const reader = new FileReader();
         reader.readAsDataURL(blob);
@@ -54,43 +54,28 @@ const CompletedMicrophone = () => {
         const formData = new FormData();
         formData.append("text", words[currentWordPage - 1]);
         formData.append("student_audio", event.data);
-        axios
-          .post(`${Constants.ELA_API_ENDPOINT}/pron_v2/`, formData, {
-            headers: {
-              "Content-Type": "multipart/form-data",
-              "x-cors-api-key": "temp_e4ec220dbf44f09c113217921d9d34d6",
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-              "X-API-KEY": Constants.API_KEY
-            }
-          })
-          .then((response) => {
-            const stringResponse = JSON.stringify(response, null, 2);
-            console.log(stringResponse);
-            const totalScore = response.data.total_score;
-            setTotalScore({
-              score: totalScore,
-              id: uuid()
-            });
-            setWordScores((previous) => {
-              return {
-                ...previous,
-                [`${level}-${currentWordPage}`]: totalScore
-              };
-            });
-            const userRecord = localStorage.getItem("record");
-            const userRecordAudio = new Howl({
-              src: [userRecord]
-            });
-            userRecordAudio.play();
-            setResultsScreenShown(true);
-            setWordResultsShown(true);
-            setWordMicrophoneState("completed");
-          })
-          .catch((error) => {
-            const stringError = JSON.stringify(error, null, 2);
-            console.log(stringError);
-          });
+        const response = await elaAxios.post("/pron_v2/", formData);
+        const stringResponse = JSON.stringify(response, null, 2);
+        console.log(stringResponse);
+        const totalScore = response.total_score;
+        setTotalScore({
+          score: totalScore,
+          id: uuid()
+        });
+        setWordScores((previous) => {
+          return {
+            ...previous,
+            [`${level}-${currentWordPage}`]: totalScore
+          };
+        });
+        const userRecord = localStorage.getItem("record");
+        const userRecordAudio = new Howl({
+          src: [userRecord]
+        });
+        userRecordAudio.play();
+        setResultsScreenShown(true);
+        setWordResultsShown(true);
+        setWordMicrophoneState("completed");
       };
       setTimeout(() => {
         mediaRecorder.stop();
