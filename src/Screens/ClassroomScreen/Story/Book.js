@@ -100,6 +100,22 @@ const Book = () => {
   };
   const onClickLeftPage = () => {
     Howler.unload();
+    setHighlightedPage(currentPage);
+    setCurrentActivePage("left");
+    const leftPageAudio = new Howl({
+      src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
+      onload: () => {
+        const duration = leftPageAudio.duration() * 1000 + 2000;
+        setAudioDuration(duration);
+      },
+      onplay: () => {
+        setCentralMicrophoneState("disabled");
+      },
+      onend: () => {
+        setCentralMicrophoneState("idle");
+      }
+    });
+    leftPageAudio.play();
   };
   const onClickRightPage = () => {
     Howler.unload();
