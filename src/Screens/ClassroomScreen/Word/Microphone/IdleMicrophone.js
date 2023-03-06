@@ -97,8 +97,8 @@ const IdleMicrophone = () => {
       }
     }
   };
-  const onClickMicrophone = () => {
-    recordVoice();
+  const onClickMicrophone = async () => {
+    await recordVoice();
   };
   return (
     <IdleMicrophoneContainer onClick={onClickMicrophone}>

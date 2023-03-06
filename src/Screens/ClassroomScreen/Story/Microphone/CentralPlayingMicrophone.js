@@ -114,8 +114,8 @@ const CentralPlayingMicrophone = () => {
       }
     }
   };
-  const onClickPlayingMicrophone = () => {
-    recordVoice();
+  const onClickPlayingMicrophone = async () => {
+    await recordVoice();
   };
   return (
     <CentralPlayingMicrophoneContainer onClick={onClickPlayingMicrophone}>

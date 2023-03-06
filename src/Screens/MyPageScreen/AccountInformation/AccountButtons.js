@@ -33,8 +33,8 @@ const AccountButtons = () => {
         break;
     }
   };
-  const onClickSubmitButton = () => {
-    requestPasswordMatch();
+  const onClickSubmitButton = async () => {
+    await requestPasswordMatch();
   };
   return (
     <AccountButtonsContainer>

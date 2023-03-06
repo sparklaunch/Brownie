@@ -77,7 +77,9 @@ const ModificationForm = () => {
     }
   };
   useLayoutEffect(() => {
-    requestAccountInformation();
+    (async () => {
+      await requestAccountInformation();
+    })();
   }, []);
   const requestAccountModification = async () => {
     const response = await authAxios.post("/api/ap009", {
@@ -111,22 +113,22 @@ const ModificationForm = () => {
         break;
     }
   };
-  const onClickSubmit = () => {
+  const onClickSubmit = async () => {
     const passwordRegex =
       /^(?=.*[a-zA-Z])(?=.*[!?@#$%^*+=-])(?=.*[0-9]).{6,24}$/;
     const phoneNumberRegex = /^\d{3}-?\d{3,4}-?\d{4}$/;
     if (newPassword.length > 0 && !passwordRegex.test(newPassword)) {
-      Swal.fire(Constants.PASSWORD_NOT_VALID);
+      await Swal.fire(Constants.PASSWORD_NOT_VALID);
     } else if (newPassword !== newPasswordConfirm) {
-      Swal.fire(Constants.PASSWORD_NOT_MATCH);
+      await Swal.fire(Constants.PASSWORD_NOT_MATCH);
     } else if (phoneNumber.length === 0) {
-      Swal.fire(Constants.EMPTY_PHONE_NUMBER);
+      await Swal.fire(Constants.EMPTY_PHONE_NUMBER);
     } else if (!phoneNumberRegex.test(phoneNumber)) {
-      Swal.fire(Constants.PHONE_NUMBER_NOT_VALID);
+      await Swal.fire(Constants.PHONE_NUMBER_NOT_VALID);
     } else if (studentBirthDate.length === 0) {
-      Swal.fire(Constants.EMPTY_BIRTH_DATE);
+      await Swal.fire(Constants.EMPTY_BIRTH_DATE);
     } else {
-      requestAccountModification();
+      await requestAccountModification();
     }
   };
   return (

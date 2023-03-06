@@ -95,7 +95,7 @@ const CompletedMicrophone = () => {
       }
     }
   };
-  const onClickRetry = () => {
+  const onClickRetry = async () => {
     Howler.unload();
     setResultsScreenShown(false);
     setWordScores((previousScores) => {
@@ -104,7 +104,7 @@ const CompletedMicrophone = () => {
         [`${level}-${currentWordPage}`]: undefined
       };
     });
-    recordVoice();
+    await recordVoice();
   };
   const onClickMyVoice = () => {
     Howler.unload();

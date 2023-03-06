@@ -32,9 +32,9 @@ const AccountDeletion = () => {
       cancelButtonText: "취소",
       reverseButtons: true
     })
-      .then((result) => {
+      .then(async (result) => {
         if (result.isConfirmed) {
-          requestAccountDeletion();
+          await requestAccountDeletion();
         }
       })
       .catch((error) => {

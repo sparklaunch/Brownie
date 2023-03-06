@@ -12,7 +12,9 @@ const MediaRecorderManager = () => {
     setMediaRecorder(mediaRecorder);
   };
   useEffect(() => {
-    getMediaRecorder();
+    (async () => {
+      await getMediaRecorder();
+    })();
   }, []);
   return <></>;
 };

@@ -98,7 +98,7 @@ const SignUpFields = () => {
             confirmButtonText: "확인"
           });
           clearAllFields();
-          signIn();
+          await signIn();
           break;
         case "900":
           await Swal.fire(Constants.SIGN_UP_FAILED);
@@ -118,32 +118,32 @@ const SignUpFields = () => {
       console.log(errorString);
     }
   };
-  const onClickSignUp = () => {
+  const onClickSignUp = async () => {
     if (id.length === 0) {
-      Swal.fire(Constants.EMPTY_ID);
+      await Swal.fire(Constants.EMPTY_ID);
     } else if (password.length === 0) {
-      Swal.fire(Constants.EMPTY_PASSWORD);
+      await Swal.fire(Constants.EMPTY_PASSWORD);
     } else if (!validPassword) {
-      Swal.fire(Constants.PASSWORD_NOT_VALID);
+      await Swal.fire(Constants.PASSWORD_NOT_VALID);
     } else if (passwordConfirm.length === 0) {
-      Swal.fire(Constants.EMPTY_PASSWORD_CONFIRMATION);
+      await Swal.fire(Constants.EMPTY_PASSWORD_CONFIRMATION);
     } else if (password !== passwordConfirm) {
-      Swal.fire(Constants.PASSWORD_NOT_MATCH);
+      await Swal.fire(Constants.PASSWORD_NOT_MATCH);
     } else if (phoneNumber.length === 0) {
-      Swal.fire(Constants.EMPTY_PHONE_NUMBER);
+      await Swal.fire(Constants.EMPTY_PHONE_NUMBER);
     } else if (!validPhoneNumber) {
-      Swal.fire(Constants.PHONE_NUMBER_NOT_VALID);
+      await Swal.fire(Constants.PHONE_NUMBER_NOT_VALID);
     } else if (studentName.length === 0) {
-      Swal.fire(Constants.EMPTY_STUDENT_NAME);
+      await Swal.fire(Constants.EMPTY_STUDENT_NAME);
     } else if (agreeStatus === false) {
-      Swal.fire(Constants.TERMS_UNCHECKED);
+      await Swal.fire(Constants.TERMS_UNCHECKED);
     } else {
-      signUp();
+      await signUp();
     }
   };
-  const onClickRegisterCoupon = () => {
+  const onClickRegisterCoupon = async () => {
     if (coupon.length === 0) {
-      Swal.fire(Constants.EMPTY_COUPON_CODE);
+      await Swal.fire(Constants.EMPTY_COUPON_CODE);
     } else {
       setCouponMessage("쿠폰이 등록되었습니다.");
       setCoupon("");

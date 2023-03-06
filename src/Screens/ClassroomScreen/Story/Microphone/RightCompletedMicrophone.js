@@ -98,7 +98,7 @@ const RightCompletedMicrophone = () => {
       }
     }
   };
-  const onClickRetry = () => {
+  const onClickRetry = async () => {
     Howler.unload();
     setHighlightedPage(currentPage + 1);
     setResultsScreenShown(false);
@@ -108,7 +108,7 @@ const RightCompletedMicrophone = () => {
         [`${level}-${currentPage + 1}`]: undefined
       };
     });
-    recordVoice();
+    await recordVoice();
   };
   const onClickMyVoice = () => {
     Howler.unload();

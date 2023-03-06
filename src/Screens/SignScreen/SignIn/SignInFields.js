@@ -57,7 +57,7 @@ const SignInFields = () => {
       console.log(errorString);
     }
   };
-  const onClickLogin = () => {
+  const onClickLogin = async () => {
     if (id.length === 0) {
       setSignInErrorMessage("아이디를 입력해주세요.");
     } else if (password.length === 0) {
@@ -68,7 +68,7 @@ const SignInFields = () => {
       );
     } else {
       setSignInErrorMessage("");
-      signIn();
+      await signIn();
     }
   };
   return (

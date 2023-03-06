@@ -47,13 +47,13 @@ const FormFields = () => {
       console.log(errorString);
     }
   };
-  const onLogInButtonClicked = () => {
+  const onLogInButtonClicked = async () => {
     if (id.length === 0) {
-      Swal.fire(Constants.EMPTY_ID);
+      await Swal.fire(Constants.EMPTY_ID);
     } else if (password.length === 0) {
-      Swal.fire(Constants.EMPTY_PASSWORD);
+      await Swal.fire(Constants.EMPTY_PASSWORD);
     } else {
-      signIn();
+      await signIn();
     }
   };
   return (
