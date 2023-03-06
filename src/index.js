@@ -12,6 +12,7 @@ import TrialScreen from "./Screens/TrialScreen/TrialScreen";
 import IntroductionScreen from "./Screens/IntroductionScreen/IntroductionScreen";
 import CatalogScreen from "./Screens/CatalogScreen/CatalogScreen";
 import AdministratorSignInScreen from "./Screens/AdministratorSignInScreen/AdministratorSignInScreen";
+import TermsScreen from "./Screens/TermsScreen/TermsScreen";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -29,6 +30,7 @@ root.render(
           path={"/administrator"}
           element={<AdministratorSignInScreen />}
         />
+        <Route path={"/terms"} element={<TermsScreen />} />
         <Route path={"/demo/:level"} element={<TrialScreen />} />
         <Route path={"*"} element={<NotFoundScreen />} />
       </Routes>
