@@ -59,7 +59,7 @@ const IdleMicrophone = () => {
         const response = await elaAxios.post(`/pron_v2/`, formData);
         const stringResponse = JSON.stringify(response, null, 2);
         console.log(stringResponse);
-        const totalScore = response.total_score;
+        const totalScore = response.data.total_score;
         setTotalScore({
           score: totalScore,
           id: uuid()

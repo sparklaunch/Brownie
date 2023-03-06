@@ -71,7 +71,7 @@ const CentralPlayingMicrophone = () => {
         setHighlightVisible(false);
         const stringResponse = JSON.stringify(response, null, 2);
         console.log(stringResponse);
-        const totalScore = response.total_score;
+        const totalScore = response.data.total_score;
         setTotalScore({
           score: totalScore,
           id: uuid()
