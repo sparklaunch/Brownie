@@ -28,6 +28,7 @@ const AccountDeletion = () => {
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "탈퇴",
+      confirmButtonColor: Constants.ACCENT_COLOR,
       cancelButtonText: "취소",
       reverseButtons: true
     })
