@@ -76,10 +76,10 @@ const Card = () => {
   const words = useData("words");
   const playWordAudio = () => {
     if (shouldAudioPlay) {
-      const audio = new Howl({
+      const wordAudio = new Howl({
         src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`]
       });
-      audio.play();
+      wordAudio.play();
     }
   };
   const onClickWord = () => {

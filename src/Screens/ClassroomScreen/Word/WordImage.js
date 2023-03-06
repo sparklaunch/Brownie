@@ -19,10 +19,10 @@ const WordImage = () => {
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const playWordAudio = () => {
-    const audio = new Howl({
+    const wordAudio = new Howl({
       src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`]
     });
-    audio.play();
+    wordAudio.play();
   };
   const onClickMegaphone = () => {
     return _.throttle(playWordAudio, 1000, { leading: true, trailing: true });

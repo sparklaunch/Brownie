@@ -25,6 +25,7 @@ import temporaryGlowBorderShownAtom from "../../Stores/Classroom/Story/temporary
 import setScreenSize from "../../Utilities/setScreenSize";
 import storyPageHistoryAtom from "../../Stores/Classroom/Story/storyPageHistory";
 import useFindFirstEmptyWordPage from "../../Hooks/useFindFirstEmptyWordPage";
+import currentActivePageAtom from "../../Stores/Classroom/Story/currentActivePage";
 
 const AudioManager = () => {
   const { level } = useParams();
@@ -102,6 +103,9 @@ const AudioManager = () => {
     useRecoilState(temporaryGlowBorderShownAtom);
   const [storyPageHistory, setStoryPageHistory] =
     useRecoilState(storyPageHistoryAtom);
+  const [currentActivePage, setCurrentActivePage] = useRecoilState(
+    currentActivePageAtom
+  );
   const bookID = useData("id");
   const findFirstEmptyWordPage = useFindFirstEmptyWordPage();
   useEffect(() => {
@@ -128,49 +132,49 @@ const AudioManager = () => {
     setRightPagePlaying(false);
     Howler.unload();
     if (mode === "story") {
-      if (currentPage === 0) {
-        if (scores[`${level}-${currentPage + 1}`] === undefined) {
-          const howler = new Howl({
-            src: [`/assets/audio/pages/${bookID}_1.mp3`],
-            onload: () => {
-              setAudioDuration(howler.duration() * 1000 + 2000);
-            },
-            onplay: onFirstPagePlay,
-            onend: onFirstPageEnd
-          });
-          howler.play();
-        }
-      } else {
-        if (scores[`${level}-${currentPage}`] === undefined) {
-          const howler = new Howl({
-            src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
-            onload: () => {
-              setAudioDuration(howler.duration() * 1000 + 2000);
-            },
-            onplay: onLeftPlay,
-            onend: onLeftEnd
-          });
-          howler.play();
-        }
-      }
-    } else {
-      if (wordScores[`${level}-${currentWordPage}`] === undefined) {
+      if (
+        currentPage === 0 &&
+        scores[`${level}-${currentPage + 1}`] === undefined
+      ) {
+        setCurrentActivePage("right");
         const howler = new Howl({
-          src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`],
+          src: [`/assets/audio/pages/${bookID}_1.mp3`],
           onload: () => {
             setAudioDuration(howler.duration() * 1000 + 2000);
           },
-          onplay: onWordPlay,
-          onend: onWordEnd
+          onplay: onFirstPagePlay,
+          onend: onFirstPageEnd
+        });
+        howler.play();
+      } else if (scores[`${level}-${currentPage}`] === undefined) {
+        setCurrentActivePage("left");
+        const howler = new Howl({
+          src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
+          onload: () => {
+            setAudioDuration(howler.duration() * 1000 + 2000);
+          },
+          onplay: onLeftPlay,
+          onend: onLeftEnd
         });
         howler.play();
       }
+    } else if (wordScores[`${level}-${currentWordPage}`] === undefined) {
+      const howler = new Howl({
+        src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`],
+        onload: () => {
+          setAudioDuration(howler.duration() * 1000 + 2000);
+        },
+        onplay: onWordPlay,
+        onend: onWordEnd
+      });
+      howler.play();
     }
   }, [currentPage, currentWordPage, mode]);
   useEffect(() => {
     if (mode === "story") {
       if (leftPageCompleted && !leftFinished) {
         if (scores[`${level}-${currentPage + 1}`] === undefined) {
+          setCurrentActivePage("right");
           const howler = new Howl({
             src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
             onload: () => {

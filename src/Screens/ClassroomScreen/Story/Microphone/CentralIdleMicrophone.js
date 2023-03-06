@@ -22,6 +22,7 @@ import {
 } from "./CentralIdleMicrophoneStyles";
 import { Howl, Howler } from "howler";
 import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
+import currentActivePageAtom from "../../../../Stores/Classroom/Story/currentActivePage";
 
 const CentralIdleMicrophone = () => {
   const { level } = useParams();
@@ -41,13 +42,16 @@ const CentralIdleMicrophone = () => {
   const [highlightedPage, setHighlightedPage] =
     useRecoilState(highlightedPageAtom);
   const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
+  const [currentActivePage, setCurrentActivePage] = useRecoilState(
+    currentActivePageAtom
+  );
   const recordVoice = async () => {
     try {
       Howler.unload();
-      const audio = new Howl({
+      const microphoneOnAudio = new Howl({
         src: ["/assets/audio/microphone_on.wav"]
       });
-      audio.play();
+      microphoneOnAudio.play();
       mediaRecorder.start();
       setCentralMicrophoneState("invisible");
       mediaRecorder.ondataavailable = (event) => {
@@ -56,17 +60,23 @@ const CentralIdleMicrophone = () => {
         reader.readAsDataURL(blob);
         reader.onloadend = () => {
           const base64Record = reader.result;
-          if (highlightedPage !== currentPage) {
-            localStorage.setItem("right_record", base64Record);
-          } else {
-            localStorage.setItem("left_record", base64Record);
+          switch (currentActivePage) {
+            case "left":
+              localStorage.setItem("left_record", base64Record);
+              break;
+            case "right":
+              localStorage.setItem("right_record", base64Record);
+              break;
           }
         };
         const formData = new FormData();
-        if (highlightedPage !== currentPage) {
-          formData.append("text", sentences[currentPage]);
-        } else {
-          formData.append("text", sentences[currentPage - 1]);
+        switch (currentActivePage) {
+          case "left":
+            formData.append("text", sentences[currentPage - 1]);
+            break;
+          case "right":
+            formData.append("text", sentences[currentPage]);
+            break;
         }
         formData.append("student_audio", event.data);
         axios
@@ -86,22 +96,25 @@ const CentralIdleMicrophone = () => {
               score: totalScore,
               id: uuid()
             });
-            if (highlightedPage !== currentPage) {
-              setScores((previous) => {
-                return {
-                  ...previous,
-                  [`${level}-${currentPage + 1}`]: totalScore
-                };
-              });
-            } else {
-              setScores((previous) => {
-                return {
-                  ...previous,
-                  [`${level}-${currentPage}`]: totalScore
-                };
-              });
+            switch (currentActivePage) {
+              case "left":
+                setScores((previous) => {
+                  return {
+                    ...previous,
+                    [`${level}-${currentPage}`]: totalScore
+                  };
+                });
+                break;
+              case "right":
+                setScores((previous) => {
+                  return {
+                    ...previous,
+                    [`${level}-${currentPage + 1}`]: totalScore
+                  };
+                });
+                break;
             }
-            if (highlightedPage !== currentPage) {
+            if (currentActivePage === "right") {
               setCentralMicrophoneState("completed");
             }
             setResultsScreenShown(true);

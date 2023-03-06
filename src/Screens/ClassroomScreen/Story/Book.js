@@ -54,12 +54,13 @@ import highlightVisibleAtom from "../../../Stores/Classroom/Story/highlightVisib
 import { Howl, Howler } from "howler";
 import LoadingCard from "../LoadingCard";
 import ScorePill from "./Results/Score/ScorePill";
-import _ from "lodash";
 import textbookSizeAtom from "../../../Stores/Misc/textbookSize";
 import temporaryGlowBorderShownAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderShown";
 import temporaryGlowBorderDirectionAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderDirection";
 import mediaRecorderAtom from "../../../Stores/Misc/mediaRecorder";
 import shouldAudioPlayAtom from "../../../Stores/Classroom/shouldAudioPlay";
+import currentActivePageAtom from "../../../Stores/Classroom/Story/currentActivePage";
+import audioDurationAtom from "../../../Stores/Classroom/audioDuration";
 
 const Book = () => {
   const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
@@ -83,38 +84,12 @@ const Book = () => {
     useRecoilState(temporaryGlowBorderDirectionAtom);
   const [shouldAudioPlay, setShouldAudioPlay] =
     useRecoilState(shouldAudioPlayAtom);
+  const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
+  const [currentActivePage, setCurrentActivePage] = useRecoilState(
+    currentActivePageAtom
+  );
   const { level } = useParams();
   const bookID = useData("id");
-  const playLeftPageAudio = () => {
-    if (shouldAudioPlay) {
-      Howler.unload();
-      setHighlightVisible(false);
-      setTemporaryGlowBorderShown(true);
-      setTemporaryGlowBorderDirection(`left`);
-      new Howl({
-        src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
-        onend: () => {
-          setHighlightVisible(true);
-          setTemporaryGlowBorderShown(false);
-        }
-      }).play();
-    }
-  };
-  const playRightPageAudio = () => {
-    if (shouldAudioPlay) {
-      Howler.unload();
-      setHighlightVisible(false);
-      setTemporaryGlowBorderShown(true);
-      setTemporaryGlowBorderDirection(`right`);
-      new Howl({
-        src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
-        onend: () => {
-          setHighlightVisible(true);
-          setTemporaryGlowBorderShown(false);
-        }
-      }).play();
-    }
-  };
   const onClickWave = async () => {
     try {
       setCentralMicrophoneState(`loading`);
@@ -124,16 +99,26 @@ const Book = () => {
     }
   };
   const onClickLeftPage = () => {
-    return _.throttle(playLeftPageAudio, 1000, {
-      leading: true,
-      trailing: true
-    });
+    Howler.unload();
   };
   const onClickRightPage = () => {
-    return _.throttle(playRightPageAudio, 1000, {
-      leading: true,
-      trailing: true
+    Howler.unload();
+    setHighlightedPage(currentPage + 1);
+    setCurrentActivePage("right");
+    const rightPageAudio = new Howl({
+      src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
+      onload: () => {
+        const duration = rightPageAudio.duration() * 1000 + 2000;
+        setAudioDuration(duration);
+      },
+      onplay: () => {
+        setCentralMicrophoneState("disabled");
+      },
+      onend: () => {
+        setCentralMicrophoneState("idle");
+      }
     });
+    rightPageAudio.play();
   };
   return (
     <BookContainer>
@@ -170,7 +155,7 @@ const Book = () => {
                   <GlowBorder direction={`left`} />
                 )}
             </GlowBorderContainer>
-            {currentPage !== 0 && <LeftClickable onClick={onClickLeftPage()} />}
+            {currentPage !== 0 && <LeftClickable onClick={onClickLeftPage} />}
           </TextBookLeftPage>
           <TextBookRightPage>
             {currentPage === 10 ? (
@@ -199,7 +184,7 @@ const Book = () => {
                 <GlowBorder direction={`right`} />
               )}
             {currentPage !== 10 && (
-              <RightClickable onClick={onClickRightPage()} />
+              <RightClickable onClick={onClickRightPage} />
             )}
           </TextBookRightPage>
           <ModeSwitcherContainer>

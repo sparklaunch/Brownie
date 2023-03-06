@@ -55,10 +55,10 @@ const ResultsScreen = () => {
     if (rightScoreExists) {
       setCentralMicrophoneState("completed");
     }
-    const audio = new Howl({
+    const resultsShownAudio = new Howl({
       src: [`/assets/audio/results_shown.mp3`]
     });
-    audio.play();
+    resultsShownAudio.play();
     setTimeout(() => {
       setResultsScreenShown(false);
       if (currentPage === 0) {
@@ -78,10 +78,10 @@ const ResultsScreen = () => {
         }
       }
       if (currentPage === 10 || currentWordPage === words.length) {
-        const audio = new Howl({
+        const youDidItAudio = new Howl({
           src: [`/assets/audio/you_did_it.mp3`]
         });
-        audio.play();
+        youDidItAudio.play();
         setYouDidItShown(true);
       }
     }, 3000);

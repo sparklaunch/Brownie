@@ -39,10 +39,10 @@ const CompletedMicrophone = () => {
   const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
   const recordVoice = async () => {
     try {
-      const audio = new Howl({
+      const microphoneOnAudio = new Howl({
         src: ["/assets/audio/microphone_on.wav"]
       });
-      audio.play();
+      microphoneOnAudio.play();
       mediaRecorder.start();
       setWordMicrophoneState("recording");
       mediaRecorder.ondataavailable = (event) => {

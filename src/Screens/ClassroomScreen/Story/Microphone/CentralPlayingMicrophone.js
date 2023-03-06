@@ -44,10 +44,10 @@ const CentralPlayingMicrophone = () => {
   const recordVoice = async () => {
     try {
       Howler.unload();
-      const audio = new Howl({
+      const microphoneOnAudio = new Howl({
         src: ["/assets/audio/microphone_on.wav"]
       });
-      audio.play();
+      microphoneOnAudio.play();
       mediaRecorder.start();
       setCentralMicrophoneState("invisible");
       mediaRecorder.ondataavailable = (event) => {
