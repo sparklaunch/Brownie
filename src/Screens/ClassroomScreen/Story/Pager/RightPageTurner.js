@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import {
@@ -12,9 +12,7 @@ const RightPageTurner = () => {
   const onClickRightPageTurner = () => {
     setCurrentPage(Math.min(currentPage + 2, 10));
   };
-  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
-    centralMicrophoneStateAtom
-  );
+  const centralMicrophoneState = useRecoilValue(centralMicrophoneStateAtom);
   if (
     currentPage !== 10 &&
     centralMicrophoneState !== "invisible" &&

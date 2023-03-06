@@ -1,12 +1,12 @@
 import navigatorOpenAtom from "../../../../Stores/Classroom/Story/navigatorOpen";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import LeftNavigator from "./LeftNavigator";
 import Thumbnails from "./Thumbnails";
 import RightNavigator from "./RightNavigator";
 import { NavigationContainer } from "./NavigationStyles";
 
 const Navigation = () => {
-  const [navigatorOpen, setNavigatorOpen] = useRecoilState(navigatorOpenAtom);
+  const navigatorOpen = useRecoilValue(navigatorOpenAtom);
   return (
     <NavigationContainer open={navigatorOpen}>
       <LeftNavigator />

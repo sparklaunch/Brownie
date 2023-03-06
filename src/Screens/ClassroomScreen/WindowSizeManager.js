@@ -1,10 +1,10 @@
 import useWindowSize from "../../Hooks/useWindowSize";
 import { useLayoutEffect } from "react";
 import textbookSizeAtom from "../../Stores/Misc/textbookSize";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 
 const WindowSizeManager = () => {
-  const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
+  const setTextbookSize = useSetRecoilState(textbookSizeAtom);
   const windowSize = useWindowSize();
   const [width, height] = windowSize;
   useLayoutEffect(() => {

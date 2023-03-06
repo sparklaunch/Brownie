@@ -8,7 +8,7 @@ import {
   ThumbnailPageGradient,
   ThumbnailPageImage
 } from "./ThumbnailPageStyles";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import scoresAtom from "../../../../Stores/Classroom/Story/scores";
 import { useParams } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const ThumbnailPage = ({
   isRightEdge = false
 }) => {
   const { level } = useParams();
-  const [scores, setScores] = useRecoilState(scoresAtom);
+  const scores = useRecoilValue(scoresAtom);
   const bookID = useData("id");
   const pageCompleted = scores[`${level}-${page}`] !== undefined;
   if (page <= 0 || page > 10) {

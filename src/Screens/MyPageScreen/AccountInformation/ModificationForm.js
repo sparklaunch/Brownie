@@ -1,4 +1,4 @@
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import passwordAtom from "../../../Stores/Auth/password";
 import phoneNumberAtom from "../../../Stores/Auth/phoneNumber";
 import studentNameAtom from "../../../Stores/Auth/studentName";
@@ -21,13 +21,12 @@ import { useEffect, useLayoutEffect } from "react";
 import Constants from "../../../Utilities/Constants";
 import Swal from "sweetalert2";
 import idAtom from "../../../Stores/Auth/id";
-import validPasswordSelector from "../../../Stores/Auth/validPassword";
 import { authAxios } from "../../../Utilities/AxiosInstances";
 
 const ModificationForm = () => {
   const [id, setID] = useRecoilState(idAtom);
-  const [secureMode, setSecureMode] = useRecoilState(secureModeAtom);
-  const [password, setPassword] = useRecoilState(passwordAtom);
+  const setSecureMode = useSetRecoilState(secureModeAtom);
+  const setPassword = useSetRecoilState(passwordAtom);
   const [phoneNumber, setPhoneNumber] = useRecoilState(phoneNumberAtom);
   const [studentName, setStudentName] = useRecoilState(studentNameAtom);
   const [studentBirthDate, setStudentBirthDate] =
@@ -36,7 +35,6 @@ const ModificationForm = () => {
   const [newPasswordConfirm, setNewPasswordConfirm] = useRecoilState(
     newPasswordConfirmAtom
   );
-  const validPassword = useRecoilValue(validPasswordSelector);
   const navigate = useNavigate();
   const clearAllFields = () => {
     setPassword("");

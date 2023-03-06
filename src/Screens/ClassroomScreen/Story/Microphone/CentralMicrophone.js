@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import CentralIdleMicrophone from "./CentralIdleMicrophone";
 import CentralInvisibleMicrophone from "./CentralInvisibleMicrophone";
@@ -11,13 +11,12 @@ import shouldAudioPlayAtom from "../../../../Stores/Classroom/shouldAudioPlay";
 
 const CentralMicrophone = () => {
   const { level } = useParams();
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  const currentPage = useRecoilValue(currentPageAtom);
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
-  const [shouldAudioPlay, setShouldAudioPlay] =
-    useRecoilState(shouldAudioPlayAtom);
-  const [scores, setScores] = useRecoilState(scoresAtom);
+  const setShouldAudioPlay = useSetRecoilState(shouldAudioPlayAtom);
+  const scores = useRecoilValue(scoresAtom);
   useEffect(() => {
     if (currentPage === 10 && scores[`${level}-10`] !== undefined) {
       setCentralMicrophoneState("completed");

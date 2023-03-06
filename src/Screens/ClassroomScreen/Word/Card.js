@@ -1,5 +1,4 @@
-import wordResultsShownAtom from "../../../Stores/Classroom/Word/wordResultsShown";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import wordMicrophoneStateAtom from "../../../Stores/Classroom/Word/wordMicrophoneState";
 import resultsScreenShownAtom from "../../../Stores/Classroom/Story/resultsScreenShown";
 import wordScoresAtom from "../../../Stores/Classroom/Word/wordScores";
@@ -49,22 +48,16 @@ import shouldAudioPlayAtom from "../../../Stores/Classroom/shouldAudioPlay";
 
 const Card = () => {
   const { level } = useParams();
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
-  const [wordResultsShown, setWordResultsShown] =
-    useRecoilState(wordResultsShownAtom);
+  const currentWordPage = useRecoilValue(currentWordPageAtom);
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
     wordMicrophoneStateAtom
   );
-  const [wordScores, setWordScores] = useRecoilState(wordScoresAtom);
-  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
-    resultsScreenShownAtom
-  );
-  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
-  const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
-  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
-  const [shouldAudioPlay, setShouldAudioPlay] =
-    useRecoilState(shouldAudioPlayAtom);
+  const wordScores = useRecoilValue(wordScoresAtom);
+  const resultsScreenShown = useRecoilValue(resultsScreenShownAtom);
+  const youDidItShown = useRecoilValue(youDidItShownAtom);
+  const textbookSize = useRecoilValue(textbookSizeAtom);
+  const mediaRecorder = useRecoilValue(mediaRecorderAtom);
+  const shouldAudioPlay = useRecoilValue(shouldAudioPlayAtom);
   const onClickWave = async () => {
     try {
       setWordMicrophoneState(`loading`);

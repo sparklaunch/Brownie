@@ -8,11 +8,11 @@ import {
   AccountInformationOuterContainer
 } from "./AccountInformationStyles";
 import secureModeAtom from "../../../Stores/Auth/secureMode";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import ModificationForm from "./ModificationForm";
 
 const AccountInformation = () => {
-  const [secureMode, setSecureMode] = useRecoilState(secureModeAtom);
+  const secureMode = useRecoilValue(secureModeAtom);
   return (
     <>
       <AccountInformationOuterContainer>

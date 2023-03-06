@@ -1,5 +1,5 @@
 import StoryScreen from "../ClassroomScreen/Story/StoryScreen";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import modeAtom from "../../Stores/Classroom/mode";
 import WordScreen from "../ClassroomScreen/Word/WordScreen";
 import AudioManager from "../ClassroomScreen/AudioManager";
@@ -7,7 +7,7 @@ import WindowSizeManager from "../ClassroomScreen/WindowSizeManager";
 import MediaRecorderManager from "../ClassroomScreen/MediaRecorderManager";
 
 const TrialScreen = () => {
-  const [mode, setMode] = useRecoilState(modeAtom);
+  const mode = useRecoilValue(modeAtom);
   let content;
   switch (mode) {
     case "story":

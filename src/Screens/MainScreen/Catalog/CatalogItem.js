@@ -1,7 +1,7 @@
 import CatalogLabel from "./CatalogLabel";
 import CatalogTitle from "./CatalogTitle";
 import { useNavigate } from "react-router-dom";
-import { useRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
 import modeAtom from "../../../Stores/Classroom/mode";
@@ -19,12 +19,10 @@ const CatalogItem = ({
   clickable = true,
   forDemo = false
 }) => {
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [mode, setMode] = useRecoilState(modeAtom);
-  const [completedLevels, setCompletedLevels] =
-    useRecoilState(completedLevelsAtom);
+  const setCurrentWordPage = useSetRecoilState(currentWordPageAtom);
+  const setCurrentPage = useSetRecoilState(currentPageAtom);
+  const setMode = useSetRecoilState(modeAtom);
+  const completedLevels = useRecoilValue(completedLevelsAtom);
   const navigate = useNavigate();
   const onClickCatalogItem = () => {
     if (forDemo) {

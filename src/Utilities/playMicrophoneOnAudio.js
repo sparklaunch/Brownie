@@ -1,7 +1,7 @@
 import { Howl } from "howler";
 
 const playMicrophoneOnAudio = () => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, _) => {
     const microphoneOnAudio = new Howl({
       src: ["/assets/audio/microphone_on.wav"],
       onend: () => {

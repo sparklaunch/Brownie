@@ -1,5 +1,5 @@
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import useData from "../../../Hooks/useData";
 import totalScoreAtom from "../../../Stores/Classroom/Story/totalScore";
 import Constants from "../../../Utilities/Constants";
@@ -16,8 +16,7 @@ import { Howl } from "howler";
 const WordImage = () => {
   const words = useData("words");
   const bookID = useData("id");
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
+  const currentWordPage = useRecoilValue(currentWordPageAtom);
   const playWordAudio = () => {
     const wordAudio = new Howl({
       src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`]
@@ -27,7 +26,7 @@ const WordImage = () => {
   const onClickMegaphone = () => {
     return _.throttle(playWordAudio, 1000, { leading: true, trailing: true });
   };
-  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
+  const totalScore = useRecoilValue(totalScoreAtom);
   let textColor;
   if (totalScore.score >= Constants.WORD_EXCELLENT_THRESHOLD) {
     textColor = Constants.TURQUOISE;

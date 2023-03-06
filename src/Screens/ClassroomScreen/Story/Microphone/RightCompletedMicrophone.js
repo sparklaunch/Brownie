@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import highlightedPageAtom from "../../../../Stores/Classroom/Story/highlightedPage";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 import uuid from "react-uuid";
@@ -26,22 +26,18 @@ import { elaAxios } from "../../../../Utilities/AxiosInstances";
 
 const RightCompletedMicrophone = () => {
   const { level } = useParams();
-  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
-    resultsScreenShownAtom
-  );
-  const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
-  const [highlightedPage, setHighlightedPage] =
-    useRecoilState(highlightedPageAtom);
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+  const setResultsScreenShown = useSetRecoilState(resultsScreenShownAtom);
+  const audioDuration = useRecoilValue(audioDurationAtom);
+  const setHighlightedPage = useSetRecoilState(highlightedPageAtom);
+  const currentPage = useRecoilValue(currentPageAtom);
+  const setCentralMicrophoneState = useSetRecoilState(
     centralMicrophoneStateAtom
   );
-  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
-  const [scores, setScores] = useRecoilState(scoresAtom);
+  const setTotalScore = useSetRecoilState(totalScoreAtom);
+  const setScores = useSetRecoilState(scoresAtom);
   const sentences = useData("sentences");
-  const [highlightVisible, setHighlightVisible] =
-    useRecoilState(highlightVisibleAtom);
-  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
+  const setHighlightVisible = useSetRecoilState(highlightVisibleAtom);
+  const mediaRecorder = useRecoilValue(mediaRecorderAtom);
   const recordVoice = async () => {
     try {
       await playMicrophoneOnAudio();

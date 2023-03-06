@@ -1,11 +1,10 @@
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import useData from "../../../Hooks/useData";
 import { WordCardContainer, WordCardText } from "./WordCardStyles";
 
 const WordCard = () => {
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
+  const currentWordPage = useRecoilValue(currentWordPageAtom);
   const words = useData("words");
   return (
     <WordCardContainer>

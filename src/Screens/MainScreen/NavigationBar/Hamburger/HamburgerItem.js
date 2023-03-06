@@ -3,13 +3,13 @@ import {
   HamburgerItemText
 } from "./HamburgerItemStyles";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import drawerOpenAtom from "../../../../Stores/Misc/drawerOpen";
 
 const HamburgerItem = ({ text, link }) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [drawerOpen, setDrawerOpen] = useRecoilState(drawerOpenAtom);
+  const setDrawerOpen = useSetRecoilState(drawerOpenAtom);
   const onClickHamburgerItem = () => {
     setDrawerOpen(false);
     navigate(link);

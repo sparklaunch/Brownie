@@ -5,13 +5,13 @@ import {
   SignOutButton
 } from "./HamburgerMenuStyles";
 import { useNavigate } from "react-router-dom";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import drawerOpenAtom from "../../../../Stores/Misc/drawerOpen";
 import isLoggedIn from "../../../../Utilities/isLoggedIn";
 
 const HamburgerMenu = () => {
   const navigate = useNavigate();
-  const [drawerOpen, setDrawerOpen] = useRecoilState(drawerOpenAtom);
+  const setDrawerOpen = useSetRecoilState(drawerOpenAtom);
   const onClickSignIn = () => {
     setDrawerOpen(false);
     navigate("/signin");

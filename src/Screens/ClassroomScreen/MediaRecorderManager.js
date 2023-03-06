@@ -1,9 +1,9 @@
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import mediaRecorderAtom from "../../Stores/Misc/mediaRecorder";
 import { useEffect } from "react";
 
 const MediaRecorderManager = () => {
-  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
+  const setMediaRecorder = useSetRecoilState(mediaRecorderAtom);
   const getMediaRecorder = async () => {
     const device = await navigator.mediaDevices.getUserMedia({
       audio: true

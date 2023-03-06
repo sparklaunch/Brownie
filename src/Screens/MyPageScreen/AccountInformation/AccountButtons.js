@@ -1,14 +1,14 @@
 import { Button } from "@mui/material";
 import { AccountButtonsContainer } from "./AccountButtonsStyles";
 import Constants from "../../../Utilities/Constants";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import passwordAtom from "../../../Stores/Auth/password";
 import Swal from "sweetalert2";
 import secureModeAtom from "../../../Stores/Auth/secureMode";
 import { authAxios } from "../../../Utilities/AxiosInstances";
 
 const AccountButtons = () => {
-  const [secureMode, setSecureMode] = useRecoilState(secureModeAtom);
+  const setSecureMode = useSetRecoilState(secureModeAtom);
   const [password, setPassword] = useRecoilState(passwordAtom);
   const requestPasswordMatch = async () => {
     const response = await authAxios.post("/api/ap007", {

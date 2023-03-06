@@ -2,10 +2,10 @@ import ScoreStar from "./ScoreStar";
 import Constants from "../../../../../Utilities/Constants";
 import { ScoreStarsContainer } from "./ScoreStarsStyles";
 import modeAtom from "../../../../../Stores/Classroom/mode";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 
 const ScoreStars = ({ score }) => {
-  const [mode, setMode] = useRecoilState(modeAtom);
+  const mode = useRecoilValue(modeAtom);
   switch (mode) {
     case "story":
       return (

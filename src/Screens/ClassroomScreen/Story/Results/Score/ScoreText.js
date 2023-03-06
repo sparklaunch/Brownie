@@ -1,10 +1,10 @@
 import Constants from "../../../../../Utilities/Constants";
 import { ScoreTextString } from "./ScoreTextStyles";
 import modeAtom from "../../../../../Stores/Classroom/mode";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 
 const ScoreText = ({ score }) => {
-  const [mode, setMode] = useRecoilState(modeAtom);
+  const mode = useRecoilValue(modeAtom);
   switch (mode) {
     case "story":
       if (score >= Constants.EXCELLENT_THRESHOLD) {

@@ -1,5 +1,5 @@
 import uuid from "react-uuid";
-import { useRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import useData from "../../../../Hooks/useData";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
@@ -8,7 +8,6 @@ import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsSc
 import audioDurationAtom from "../../../../Stores/Classroom/audioDuration";
 import { useParams } from "react-router-dom";
 import scoresAtom from "../../../../Stores/Classroom/Story/scores";
-import highlightedPageAtom from "../../../../Stores/Classroom/Story/highlightedPage";
 import highlightVisibleAtom from "../../../../Stores/Classroom/Story/highlightVisible";
 import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
@@ -27,25 +26,18 @@ import { elaAxios } from "../../../../Utilities/AxiosInstances";
 
 const CentralIdleMicrophone = () => {
   const { level } = useParams();
-  const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
-  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
-    resultsScreenShownAtom
-  );
-  const [scores, setScores] = useRecoilState(scoresAtom);
-  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  const audioDuration = useRecoilValue(audioDurationAtom);
+  const setResultsScreenShown = useSetRecoilState(resultsScreenShownAtom);
+  const setScores = useSetRecoilState(scoresAtom);
+  const setTotalScore = useSetRecoilState(totalScoreAtom);
+  const currentPage = useRecoilValue(currentPageAtom);
   const sentences = useData("sentences");
-  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+  const setCentralMicrophoneState = useSetRecoilState(
     centralMicrophoneStateAtom
   );
-  const [highlightVisible, setHighlightVisible] =
-    useRecoilState(highlightVisibleAtom);
-  const [highlightedPage, setHighlightedPage] =
-    useRecoilState(highlightedPageAtom);
-  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
-  const [currentActivePage, setCurrentActivePage] = useRecoilState(
-    currentActivePageAtom
-  );
+  const setHighlightVisible = useSetRecoilState(highlightVisibleAtom);
+  const mediaRecorder = useRecoilValue(mediaRecorderAtom);
+  const currentActivePage = useRecoilValue(currentActivePageAtom);
   const recordVoice = async () => {
     try {
       Howler.unload();

@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 import LeftPageAngle from "./LeftPageAngle";
 import RightPageAngle from "./RightPageAngle";
@@ -15,9 +15,7 @@ import {
 
 const PageControllers = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
-    centralMicrophoneStateAtom
-  );
+  const centralMicrophoneState = useRecoilValue(centralMicrophoneStateAtom);
   const centralMicrophoneAvailable =
     centralMicrophoneState !== "invisible" &&
     centralMicrophoneState !== "loading";

@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import {
@@ -58,36 +58,28 @@ import textbookSizeAtom from "../../../Stores/Misc/textbookSize";
 import temporaryGlowBorderShownAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderShown";
 import temporaryGlowBorderDirectionAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderDirection";
 import mediaRecorderAtom from "../../../Stores/Misc/mediaRecorder";
-import shouldAudioPlayAtom from "../../../Stores/Classroom/shouldAudioPlay";
 import currentActivePageAtom from "../../../Stores/Classroom/Story/currentActivePage";
 import audioDurationAtom from "../../../Stores/Classroom/audioDuration";
 
 const Book = () => {
-  const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
+  const textbookSize = useRecoilValue(textbookSizeAtom);
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
-  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
-  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
-    resultsScreenShownAtom
-  );
-  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [scores, setScores] = useRecoilState(scoresAtom);
+  const mediaRecorder = useRecoilValue(mediaRecorderAtom);
+  const resultsScreenShown = useRecoilValue(resultsScreenShownAtom);
+  const youDidItShown = useRecoilValue(youDidItShownAtom);
+  const currentPage = useRecoilValue(currentPageAtom);
+  const scores = useRecoilValue(scoresAtom);
   const [highlightedPage, setHighlightedPage] =
     useRecoilState(highlightedPageAtom);
-  const [highlightVisible, setHighlightVisible] =
-    useRecoilState(highlightVisibleAtom);
-  const [temporaryGlowBorderShown, setTemporaryGlowBorderShown] =
-    useRecoilState(temporaryGlowBorderShownAtom);
-  const [temporaryGlowBorderDirection, setTemporaryGlowBorderDirection] =
-    useRecoilState(temporaryGlowBorderDirectionAtom);
-  const [shouldAudioPlay, setShouldAudioPlay] =
-    useRecoilState(shouldAudioPlayAtom);
-  const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
-  const [currentActivePage, setCurrentActivePage] = useRecoilState(
-    currentActivePageAtom
+  const highlightVisible = useRecoilValue(highlightVisibleAtom);
+  const temporaryGlowBorderShown = useRecoilValue(temporaryGlowBorderShownAtom);
+  const temporaryGlowBorderDirection = useRecoilValue(
+    temporaryGlowBorderDirectionAtom
   );
+  const setAudioDuration = useSetRecoilState(audioDurationAtom);
+  const setCurrentActivePage = useSetRecoilState(currentActivePageAtom);
   const { level } = useParams();
   const bookID = useData("id");
   const onClickWave = async () => {

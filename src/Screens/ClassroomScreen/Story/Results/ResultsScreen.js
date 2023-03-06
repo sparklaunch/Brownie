@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
 import ExcellentScreen from "./ExcellentScreen/ExcellentScreen";
 import GoodScreen from "./GoodScreen/GoodScreen";
@@ -22,33 +22,23 @@ import modeAtom from "../../../../Stores/Classroom/mode";
 
 const ResultsScreen = () => {
   const { level } = useParams();
-  const [mode, setMode] = useRecoilState(modeAtom);
+  const mode = useRecoilValue(modeAtom);
   const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
     resultsScreenShownAtom
   );
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
-    leftMicrophoneStateAtom
-  );
-  const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
-    leftPageCompletedAtom
-  );
-  const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
-    rightMicrophoneStateAtom
-  );
-  const [rightFinishedRecording, setRightFinishedRecording] = useRecoilState(
-    rightFinishedRecordingAtom
-  );
-  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
-  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+  const currentPage = useRecoilValue(currentPageAtom);
+  const setLeftMicrophoneState = useSetRecoilState(leftMicrophoneStateAtom);
+  const setLeftPageCompleted = useSetRecoilState(leftPageCompletedAtom);
+  const setRightMicrophoneState = useSetRecoilState(rightMicrophoneStateAtom);
+  const rightFinishedRecording = useRecoilValue(rightFinishedRecordingAtom);
+  const totalScore = useRecoilValue(totalScoreAtom);
+  const setCentralMicrophoneState = useSetRecoilState(
     centralMicrophoneStateAtom
   );
-  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
-  const [scores, setScores] = useRecoilState(scoresAtom);
+  const setYouDidItShown = useSetRecoilState(youDidItShownAtom);
+  const currentWordPage = useRecoilValue(currentWordPageAtom);
+  const scores = useRecoilValue(scoresAtom);
   const words = useData("words");
-  const bookID = useData("id");
   const rightScoreExists = scores[`${level}-${currentPage + 1}`] !== undefined;
   useEffect(() => {
     setCentralMicrophoneState("resultsShowing");

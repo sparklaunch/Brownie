@@ -1,5 +1,5 @@
 import IdleMicrophone from "./IdleMicrophone";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicrophoneState";
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
 import { useEffect } from "react";
@@ -10,14 +10,12 @@ import shouldAudioPlayAtom from "../../../../Stores/Classroom/shouldAudioPlay";
 
 const Microphone = () => {
   const { level } = useParams();
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
+  const currentWordPage = useRecoilValue(currentWordPageAtom);
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
     wordMicrophoneStateAtom
   );
-  const [wordScores, setWordScores] = useRecoilState(wordScoresAtom);
-  const [shouldAudioPlay, setShouldAudioPlay] =
-    useRecoilState(shouldAudioPlayAtom);
+  const wordScores = useRecoilValue(wordScoresAtom);
+  const setShouldAudioPlay = useSetRecoilState(shouldAudioPlayAtom);
   useEffect(() => {
     if (wordScores[`${level}-${currentWordPage}`] !== undefined) {
       setWordMicrophoneState("completed");

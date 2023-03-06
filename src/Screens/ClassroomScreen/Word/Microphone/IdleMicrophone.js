@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicrophoneState";
 import uuid from "react-uuid";
 import totalScoreAtom from "../../../../Stores/Classroom/Story/totalScore";
@@ -25,21 +25,15 @@ import { elaAxios } from "../../../../Utilities/AxiosInstances";
 
 const IdleMicrophone = () => {
   const { level } = useParams();
-  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
-  const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
-    wordMicrophoneStateAtom
-  );
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
-  const [wordResultsShown, setWordResultsShown] =
-    useRecoilState(wordResultsShownAtom);
-  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
-    resultsScreenShownAtom
-  );
-  const [wordScores, setWordScores] = useRecoilState(wordScoresAtom);
-  const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
+  const setTotalScore = useSetRecoilState(totalScoreAtom);
+  const setWordMicrophoneState = useSetRecoilState(wordMicrophoneStateAtom);
+  const currentWordPage = useRecoilValue(currentWordPageAtom);
+  const setWordResultsShown = useSetRecoilState(wordResultsShownAtom);
+  const setResultsScreenShown = useSetRecoilState(resultsScreenShownAtom);
+  const setWordScores = useSetRecoilState(wordScoresAtom);
+  const audioDuration = useRecoilValue(audioDurationAtom);
   const words = useData("words");
-  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
+  const mediaRecorder = useRecoilValue(mediaRecorderAtom);
   const recordVoice = async () => {
     try {
       await playMicrophoneOnAudio();

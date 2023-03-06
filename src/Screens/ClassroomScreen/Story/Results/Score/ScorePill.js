@@ -5,11 +5,11 @@ import {
   ScorePillInnerContainer,
   ScorePillOuterContainer
 } from "./ScorePillStyles";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import modeAtom from "../../../../../Stores/Classroom/mode";
 
 const ScorePill = ({ score }) => {
-  const [mode, setMode] = useRecoilState(modeAtom);
+  const mode = useRecoilValue(modeAtom);
   let borderColor;
   switch (mode) {
     case "story":

@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import tabValueAtom from "../../../../../Stores/Auth/tabValue";
 import { FormFooterContainer, SignUpButton } from "./FormFooterStyles";
 
 const FormFooter = () => {
   const navigate = useNavigate();
-  const [tabValue, setTabValue] = useRecoilState(tabValueAtom);
+  const setTabValue = useSetRecoilState(tabValueAtom);
   const onClickSignUp = () => {
     setTabValue(1);
     navigate("/signin");

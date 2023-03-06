@@ -1,5 +1,5 @@
 import { Howler } from "howler";
-import { useRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import {
   CentralPlayingMicrophoneContainer,
@@ -25,23 +25,19 @@ import playMicrophoneOnAudio from "../../../../Utilities/playMicrophoneOnAudio";
 import { elaAxios } from "../../../../Utilities/AxiosInstances";
 
 const CentralPlayingMicrophone = () => {
-  const [highlightedPage, setHighlightedPage] =
-    useRecoilState(highlightedPageAtom);
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const sentences = useData("sentences");
-  const [highlightVisible, setHighlightVisible] =
-    useRecoilState(highlightVisibleAtom);
-  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
-  const [scores, setScores] = useRecoilState(scoresAtom);
   const { level } = useParams();
-  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
-    resultsScreenShownAtom
-  );
-  const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
-  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+  const highlightedPage = useRecoilValue(highlightedPageAtom);
+  const currentPage = useRecoilValue(currentPageAtom);
+  const sentences = useData("sentences");
+  const setHighlightVisible = useSetRecoilState(highlightVisibleAtom);
+  const setTotalScore = useSetRecoilState(totalScoreAtom);
+  const setScores = useSetRecoilState(scoresAtom);
+  const setResultsScreenShown = useSetRecoilState(resultsScreenShownAtom);
+  const audioDuration = useRecoilValue(audioDurationAtom);
+  const setCentralMicrophoneState = useSetRecoilState(
     centralMicrophoneStateAtom
   );
-  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
+  const mediaRecorder = useRecoilValue(mediaRecorderAtom);
   const recordVoice = async () => {
     try {
       Howler.unload();

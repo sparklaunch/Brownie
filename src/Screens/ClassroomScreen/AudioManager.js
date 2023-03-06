@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import currentPageAtom from "../../Stores/Classroom/Story/currentPage";
 import { useEffect } from "react";
 import { Howl, Howler } from "howler";
@@ -29,19 +29,15 @@ import currentActivePageAtom from "../../Stores/Classroom/Story/currentActivePag
 
 const AudioManager = () => {
   const { level } = useParams();
-  const [scores, setScores] = useRecoilState(scoresAtom);
-  const [wordScores, setWordScores] = useRecoilState(wordScoresAtom);
+  const scores = useRecoilValue(scoresAtom);
+  const wordScores = useRecoilValue(wordScoresAtom);
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
   const words = useData(`words`);
-  const [leftMicrophoneState, setLeftMicrophoneState] = useRecoilState(
-    leftMicrophoneStateAtom
-  );
-  const [rightMicrophoneState, setRightMicrophoneState] = useRecoilState(
-    rightMicrophoneStateAtom
-  );
+  const setLeftMicrophoneState = useSetRecoilState(leftMicrophoneStateAtom);
+  const setRightMicrophoneState = useSetRecoilState(rightMicrophoneStateAtom);
   const [leftFinished, setLeftFinished] = useRecoilState(leftFinishedAtom);
-  const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
+  const setAudioDuration = useSetRecoilState(audioDurationAtom);
   const onFirstPagePlay = () => {
     setRightMicrophoneState("disabled");
     setCentralMicrophoneState("disabled");
@@ -76,36 +72,29 @@ const AudioManager = () => {
   };
   const onWordPlay = () => {};
   const onWordEnd = () => {};
-  const [rightFinishedRecording, setRightFinishedRecording] = useRecoilState(
+  const setRightFinishedRecording = useSetRecoilState(
     rightFinishedRecordingAtom
   );
   const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [mode, setMode] = useRecoilState(modeAtom);
+  const mode = useRecoilValue(modeAtom);
   const [leftPageCompleted, setLeftPageCompleted] = useRecoilState(
     leftPageCompletedAtom
   );
-  const [leftPagePlaying, setLeftPagePlaying] =
-    useRecoilState(leftPagePlayingAtom);
-  const [rightPagePlaying, setRightPagePlaying] =
-    useRecoilState(rightPagePlayingAtom);
-  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
-    resultsScreenShownAtom
-  );
-  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+  const setLeftPagePlaying = useSetRecoilState(leftPagePlayingAtom);
+  const setRightPagePlaying = useSetRecoilState(rightPagePlayingAtom);
+  const setResultsScreenShown = useSetRecoilState(resultsScreenShownAtom);
+  const setCentralMicrophoneState = useSetRecoilState(
     centralMicrophoneStateAtom
   );
-  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
-  const [highlightedPage, setHighlightedPage] =
-    useRecoilState(highlightedPageAtom);
-  const [highlightVisible, setHighlightVisible] =
-    useRecoilState(highlightVisibleAtom);
-  const [temporaryGlowBorderShown, setTemporaryGlowBorderShown] =
-    useRecoilState(temporaryGlowBorderShownAtom);
+  const setYouDidItShown = useSetRecoilState(youDidItShownAtom);
+  const setHighlightedPage = useSetRecoilState(highlightedPageAtom);
+  const setHighlightVisible = useSetRecoilState(highlightVisibleAtom);
+  const setTemporaryGlowBorderShown = useSetRecoilState(
+    temporaryGlowBorderShownAtom
+  );
   const [storyPageHistory, setStoryPageHistory] =
     useRecoilState(storyPageHistoryAtom);
-  const [currentActivePage, setCurrentActivePage] = useRecoilState(
-    currentActivePageAtom
-  );
+  const setCurrentActivePage = useSetRecoilState(currentActivePageAtom);
   const bookID = useData("id");
   const findFirstEmptyWordPage = useFindFirstEmptyWordPage();
   useEffect(() => {

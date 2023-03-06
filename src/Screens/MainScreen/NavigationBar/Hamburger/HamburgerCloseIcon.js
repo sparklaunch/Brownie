@@ -1,9 +1,9 @@
 import { HamburgerCloseIconImage } from "./HamburgerCloseIconStyles";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import drawerOpenAtom from "../../../../Stores/Misc/drawerOpen";
 
 const HamburgerCloseIcon = () => {
-  const [drawerOpen, setDrawerOpen] = useRecoilState(drawerOpenAtom);
+  const setDrawerOpen = useSetRecoilState(drawerOpenAtom);
   const onClickHamburgerCloseIcon = () => {
     setDrawerOpen(false);
   };

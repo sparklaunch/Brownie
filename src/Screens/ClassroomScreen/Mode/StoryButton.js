@@ -1,9 +1,7 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import modeAtom from "../../../Stores/Classroom/mode";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import wordMicrophoneStateAtom from "../../../Stores/Classroom/Word/wordMicrophoneState";
-import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
-import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import {
   StoryButtonContainer,
@@ -13,16 +11,9 @@ import {
 
 const StoryButton = () => {
   const [mode, setMode] = useRecoilState(modeAtom);
-  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
-    centralMicrophoneStateAtom
-  );
-  const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
-    wordMicrophoneStateAtom
-  );
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
-  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
+  const centralMicrophoneState = useRecoilValue(centralMicrophoneStateAtom);
+  const wordMicrophoneState = useRecoilValue(wordMicrophoneStateAtom);
+  const setYouDidItShown = useSetRecoilState(youDidItShownAtom);
   const shouldStoryButtonEnabled =
     centralMicrophoneState !== "invisible" &&
     centralMicrophoneState !== "loading" &&
