@@ -11,7 +11,7 @@ const TermsContentsContainer = styled.div`
     background-color: ${Constants.LIGHT_GRAY};
     border-radius: 8px;
     padding: 32px;
-    margin: auto;
+    margin: 32px auto;
   }
 `;
 
@@ -22,6 +22,16 @@ const TermsItem = styled.div`
   }
   @media screen and (min-width: 993px) {
     margin: 16px 0;
+  }
+`;
+
+const TermsSubtitle = styled.p`
+  @media screen and (max-width: 767px) {
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+  }
+  @media screen and (min-width: 993px) {
+    font-weight: bold;
   }
 `;
 
@@ -48,4 +58,10 @@ const TermsTitle = styled.p`
   }
 `;
 
-export { TermsItem, TermsContentsContainer, TermsText, TermsTitle };
+export {
+  TermsSubtitle,
+  TermsItem,
+  TermsContentsContainer,
+  TermsText,
+  TermsTitle
+};
