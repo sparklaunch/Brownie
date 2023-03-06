@@ -21,6 +21,7 @@ import {
 } from "./IdleMicrophoneStyles";
 import { Howl } from "howler";
 import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
+import playMicrophoneOnAudio from "../../../../Utilities/playMicrophoneOnAudio";
 
 const IdleMicrophone = () => {
   const { level } = useParams();
@@ -41,10 +42,7 @@ const IdleMicrophone = () => {
   const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
   const recordVoice = async () => {
     try {
-      const microphoneOnAudio = new Howl({
-        src: ["/assets/audio/microphone_on.wav"]
-      });
-      microphoneOnAudio.play();
+      await playMicrophoneOnAudio();
       mediaRecorder.start();
       setWordMicrophoneState("recording");
       mediaRecorder.ondataavailable = (event) => {

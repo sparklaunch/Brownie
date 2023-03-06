@@ -22,6 +22,7 @@ import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
 import { Howl, Howler } from "howler";
 import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
+import playMicrophoneOnAudio from "../../../../Utilities/playMicrophoneOnAudio";
 
 const RightCompletedMicrophone = () => {
   const { level } = useParams();
@@ -43,10 +44,7 @@ const RightCompletedMicrophone = () => {
   const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
   const recordVoice = async () => {
     try {
-      const microphoneOnAudio = new Howl({
-        src: ["/assets/audio/microphone_on.wav"]
-      });
-      microphoneOnAudio.play();
+      await playMicrophoneOnAudio();
       mediaRecorder.start();
       setCentralMicrophoneState("invisible");
       mediaRecorder.ondataavailable = (event) => {

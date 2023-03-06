@@ -20,9 +20,10 @@ import {
   OuterCircle,
   Wave
 } from "./CentralIdleMicrophoneStyles";
-import { Howl, Howler } from "howler";
+import { Howler } from "howler";
 import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
 import currentActivePageAtom from "../../../../Stores/Classroom/Story/currentActivePage";
+import playMicrophoneOnAudio from "../../../../Utilities/playMicrophoneOnAudio";
 
 const CentralIdleMicrophone = () => {
   const { level } = useParams();
@@ -48,10 +49,7 @@ const CentralIdleMicrophone = () => {
   const recordVoice = async () => {
     try {
       Howler.unload();
-      const microphoneOnAudio = new Howl({
-        src: ["/assets/audio/microphone_on.wav"]
-      });
-      microphoneOnAudio.play();
+      await playMicrophoneOnAudio();
       mediaRecorder.start();
       setCentralMicrophoneState("invisible");
       mediaRecorder.ondataavailable = (event) => {

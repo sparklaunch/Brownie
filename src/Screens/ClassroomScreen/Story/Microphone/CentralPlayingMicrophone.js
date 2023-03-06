@@ -1,4 +1,4 @@
-import { Howl, Howler } from "howler";
+import { Howler } from "howler";
 import { useRecoilState } from "recoil";
 import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import {
@@ -22,6 +22,7 @@ import scoresAtom from "../../../../Stores/Classroom/Story/scores";
 import resultsScreenShownAtom from "../../../../Stores/Classroom/Story/resultsScreenShown";
 import audioDurationAtom from "../../../../Stores/Classroom/audioDuration";
 import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
+import playMicrophoneOnAudio from "../../../../Utilities/playMicrophoneOnAudio";
 
 const CentralPlayingMicrophone = () => {
   const [highlightedPage, setHighlightedPage] =
@@ -44,10 +45,7 @@ const CentralPlayingMicrophone = () => {
   const recordVoice = async () => {
     try {
       Howler.unload();
-      const microphoneOnAudio = new Howl({
-        src: ["/assets/audio/microphone_on.wav"]
-      });
-      microphoneOnAudio.play();
+      await playMicrophoneOnAudio();
       mediaRecorder.start();
       setCentralMicrophoneState("invisible");
       mediaRecorder.ondataavailable = (event) => {
