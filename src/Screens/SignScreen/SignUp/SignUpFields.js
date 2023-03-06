@@ -91,7 +91,12 @@ const SignUpFields = () => {
       console.log(stringResponse);
       switch (response.data.resultCode) {
         case "100":
-          await Swal.fire(Constants.SIGN_UP_SUCCEEDED);
+          await Swal.fire({
+            title: "환영합니다",
+            text: `${studentName}님, 환영합니다!.`,
+            icon: "success",
+            confirmButtonText: "확인"
+          });
           clearAllFields();
           signIn();
           break;

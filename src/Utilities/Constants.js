@@ -103,13 +103,6 @@ const Constants = {
     confirmButtonText: "확인",
     confirmButtonColor: "#1AB9C5"
   },
-  SIGN_UP_SUCCEEDED: {
-    title: "회원가입 성공",
-    text: "회원가입에 성공하였습니다.",
-    icon: "success",
-    confirmButtonText: "확인",
-    confirmButtonColor: "#1AB9C5"
-  },
   SIGN_UP_FAILED: {
     title: "회원가입 실패",
     text: "필요한 정보를 모두 입력해주세요.",
