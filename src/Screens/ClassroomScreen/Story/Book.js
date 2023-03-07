@@ -73,7 +73,8 @@ const Book = () => {
   const scores = useRecoilValue(scoresAtom);
   const [highlightedPage, setHighlightedPage] =
     useRecoilState(highlightedPageAtom);
-  const highlightVisible = useRecoilValue(highlightVisibleAtom);
+  const [highlightVisible, setHighlightVisible] =
+    useRecoilState(highlightVisibleAtom);
   const temporaryGlowBorderShown = useRecoilValue(temporaryGlowBorderShownAtom);
   const temporaryGlowBorderDirection = useRecoilValue(
     temporaryGlowBorderDirectionAtom
@@ -95,6 +96,7 @@ const Book = () => {
   const onClickLeftPage = () => {
     Howler.unload();
     setHighlightedPage(currentPage);
+    setHighlightVisible(true);
     setCurrentActivePage("left");
     const leftPageAudio = new Howl({
       src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
@@ -114,6 +116,7 @@ const Book = () => {
   const onClickRightPage = () => {
     Howler.unload();
     setHighlightedPage(currentPage + 1);
+    setHighlightVisible(true);
     setCurrentActivePage("right");
     const rightPageAudio = new Howl({
       src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],

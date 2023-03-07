@@ -97,6 +97,7 @@ const RightCompletedMicrophone = () => {
   const onClickRetry = async () => {
     Howler.unload();
     setHighlightedPage(currentPage + 1);
+    setHighlightVisible(true);
     setResultsScreenShown(false);
     setScores((previousScores) => {
       return {
