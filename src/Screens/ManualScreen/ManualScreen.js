@@ -29,6 +29,7 @@ const ManualScreen = () => {
     if (manualOpen) {
       document.body.style.overflow = "hidden";
     } else {
+      setManualPageNumber(1);
       document.body.style.overflow = "unset";
     }
   }, [manualOpen]);

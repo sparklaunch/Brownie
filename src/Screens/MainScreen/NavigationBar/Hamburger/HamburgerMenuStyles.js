@@ -100,9 +100,31 @@ const AdministratorSiteText = styled.p`
   }
 `;
 
+const ManualText = styled.p`
+  @media screen and (max-width: 767px) {
+    margin-left: 12px;
+    font-size: 14px;
+    color: ${Constants.CHARCOAL};
+    cursor: pointer;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    margin-left: 12px;
+    font-size: 14px;
+    color: ${Constants.CHARCOAL};
+    cursor: pointer;
+  }
+  @media screen and (min-width: 993px) {
+    margin-left: 12px;
+    font-size: 14px;
+    color: ${Constants.CHARCOAL};
+    cursor: pointer;
+  }
+`;
+
 export {
   HamburgerMenuContainer,
   SignInButton,
   SignOutButton,
-  AdministratorSiteText
+  AdministratorSiteText,
+  ManualText
 };
