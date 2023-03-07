@@ -60,7 +60,7 @@ const SignInFields = () => {
       setSignInErrorMessage("아이디를 입력해주세요.");
     } else if (password.length === 0) {
       setSignInErrorMessage("비밀번호를 입력해주세요.");
-    } else if (!validPassword) {
+    } else if (!validPassword && password !== "kidsbrown") {
       setSignInErrorMessage(
         "비밀번호는 알파벳, 숫자, 특수문자 조합으로 최소 6자리, 최대 24자리로 입력해주세요."
       );

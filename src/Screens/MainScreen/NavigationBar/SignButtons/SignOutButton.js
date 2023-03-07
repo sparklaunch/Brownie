@@ -7,7 +7,7 @@ const SignOutButton = () => {
   const onClickSignOut = () => {
     sessionStorage.removeItem("userNumber");
     sessionStorage.removeItem("studentName");
-    navigate("/");
+    window.location.reload();
   };
   return (
     <Button
