@@ -281,7 +281,7 @@ const SignUpFields = () => {
           onChange={(event) => setCoupon(event.target.value)}
           variant={"outlined"}
           label={"예) ########"}
-          size={"small"}
+          size={"medium"}
           sx={{
             backgroundColor: "white",
             borderRadius: 2,
@@ -296,6 +296,7 @@ const SignUpFields = () => {
           onClick={onClickRegisterCoupon}
           sx={{
             backgroundColor: "#222",
+            height: 57,
             ":hover": {
               backgroundColor: "#222"
             }
