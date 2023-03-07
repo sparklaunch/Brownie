@@ -7,14 +7,22 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "reactjs-popup/dist/index.css";
 import { useRecoilState } from "recoil";
 import manualOpenAtom from "../../Stores/Misc/manualOpen";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const ManualScreen = () => {
+  const [manualPageNumber, setManualPageNumber] = useState(1);
   const onWheelManualContainer = (event) => {
     const wheelDirection = event.deltaY > 0 ? "down" : "up";
-    console.log(wheelDirection);
+    switch (wheelDirection) {
+      case "down":
+        setManualPageNumber(Math.min(manualPageNumber + 1, 6));
+        break;
+      case "up":
+        setManualPageNumber(Math.max(manualPageNumber - 1, 1));
+        break;
+    }
   };
   const [manualOpen, setManualOpen] = useRecoilState(manualOpenAtom);
   useEffect(() => {
@@ -26,14 +34,17 @@ const ManualScreen = () => {
   }, [manualOpen]);
   return (
     <Popup
-      position={"right center"}
+      position={"center center"}
       open={manualOpen}
       onClose={() => setManualOpen(false)}
       closeOnDocumentClick={true}
     >
       <ManualContainer onWheel={onWheelManualContainer}>
         <Document file={manualPDF}>
-          <Page pageNumber={1} />
+          <Page
+            pageNumber={manualPageNumber}
+            loading={`페이지를 로딩 중입니다...`}
+          />
         </Document>
       </ManualContainer>
     </Popup>
