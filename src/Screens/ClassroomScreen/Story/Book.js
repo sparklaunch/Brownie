@@ -79,7 +79,9 @@ const Book = () => {
     temporaryGlowBorderDirectionAtom
   );
   const setAudioDuration = useSetRecoilState(audioDurationAtom);
-  const setCurrentActivePage = useSetRecoilState(currentActivePageAtom);
+  const [currentActivePage, setCurrentActivePage] = useRecoilState(
+    currentActivePageAtom
+  );
   const { level } = useParams();
   const bookID = useData("id");
   const onClickWave = async () => {
@@ -163,7 +165,12 @@ const Book = () => {
                   <GlowBorder direction={`left`} />
                 )}
             </GlowBorderContainer>
-            {currentPage !== 0 && <LeftClickable onClick={onClickLeftPage} />}
+            {currentPage !== 0 && (
+              <LeftClickable
+                onClick={onClickLeftPage}
+                dimmed={currentActivePage === `right`}
+              />
+            )}
           </TextBookLeftPage>
           <TextBookRightPage>
             {currentPage === 10 ? (
@@ -192,7 +199,10 @@ const Book = () => {
                 <GlowBorder direction={`right`} />
               )}
             {currentPage !== 10 && (
-              <RightClickable onClick={onClickRightPage} />
+              <RightClickable
+                onClick={onClickRightPage}
+                dimmed={currentActivePage === `left`}
+              />
             )}
           </TextBookRightPage>
           <ModeSwitcherContainer>
