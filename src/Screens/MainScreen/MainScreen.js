@@ -9,7 +9,6 @@ const MainScreen = () => {
       <NavigationBar />
       <Jumbotron />
       <Catalog />
-      {/*<Information />*/}
       <Footer />
     </>
   );
