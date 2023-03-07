@@ -168,7 +168,10 @@ const Book = () => {
             {currentPage !== 0 && (
               <LeftClickable
                 onClick={onClickLeftPage}
-                dimmed={currentActivePage === `right`}
+                dimmed={
+                  currentActivePage === `right` &&
+                  scores[`${level}-${currentPage}`] === undefined
+                }
               />
             )}
           </TextBookLeftPage>
@@ -201,7 +204,10 @@ const Book = () => {
             {currentPage !== 10 && (
               <RightClickable
                 onClick={onClickRightPage}
-                dimmed={currentActivePage === `left`}
+                dimmed={
+                  currentActivePage === `left` &&
+                  scores[`${level}-${currentPage + 1}`] === undefined
+                }
               />
             )}
           </TextBookRightPage>
