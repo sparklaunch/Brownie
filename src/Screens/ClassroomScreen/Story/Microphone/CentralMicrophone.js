@@ -19,15 +19,19 @@ const CentralMicrophone = () => {
   const scores = useRecoilValue(scoresAtom);
   useEffect(() => {
     if (currentPage === 10 && scores[`${level}-10`] !== undefined) {
+      // 10페이지가 완료되었고, 10페이지의 점수가 undefined가 아니라면,
       setCentralMicrophoneState("completed");
     } else if (currentPage === 0 && scores[`${level}-1`] !== undefined) {
+      // 1페이지가 완료되었고, 1페이지의 점수가 undefined가 아니라면,
       setCentralMicrophoneState("completed");
     } else if (
+      // 현재 페이지가 완료되었고, 현재의 오른쪽 페이지의 점수가 undefined가 아니라면,
       scores[`${level}-${currentPage}`] !== undefined &&
       scores[`${level}-${currentPage + 1}`] !== undefined
     ) {
       setCentralMicrophoneState("completed");
     } else {
+      // 그 외의 경우에는,
       setCentralMicrophoneState("idle");
     }
   }, [currentPage]);

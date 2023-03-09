@@ -18,14 +18,14 @@ const Constants = {
   SOOT: "#707070",
   DARK_GRAY: "#515151",
   CHARCOAL: "#3D3D3D",
-  EXCELLENT_THRESHOLD: 75,
-  GOOD_THRESHOLD: 55,
-  WORD_EXCELLENT_THRESHOLD: 75,
-  WORD_GOOD_THRESHOLD: 60,
-  LAPTOP_CONTAINER_WIDTH: "900px",
-  DESKTOP_CONTAINER_WIDTH: "1200px",
-  TABLET_CONTAINER_WIDTH: "90%",
-  MOBILE_CONTAINER_WIDTH: "90%",
+  EXCELLENT_THRESHOLD: 75, // 스토리 모드에서 75점 이상이면 Excellent
+  GOOD_THRESHOLD: 55, // 스토리 모드에서 55점 이상이면 Good
+  WORD_EXCELLENT_THRESHOLD: 75, // 워드 모드에서 75점 이상이면 Excellent
+  WORD_GOOD_THRESHOLD: 60, // 워드 모드에서 60점 이상이면 Good
+  LAPTOP_CONTAINER_WIDTH: "900px", // 랩탑 모드에서 컨테이너의 최대 너비
+  DESKTOP_CONTAINER_WIDTH: "1200px", // 데스크탑 모드에서 컨테이너의 최대 너비
+  TABLET_CONTAINER_WIDTH: "90%", // 태블릿 모드에서 컨테이너의 최대 너비
+  MOBILE_CONTAINER_WIDTH: "90%", // 모바일 모드에서 컨테이너의 최대 너비
   MICROPHONE_NOT_FOUND: {
     title: "마이크를 발견할 수 없음",
     text: "마이크를 연결해주세요.",

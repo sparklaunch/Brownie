@@ -59,6 +59,7 @@ const Card = () => {
   const mediaRecorder = useRecoilValue(mediaRecorderAtom);
   const shouldAudioPlay = useRecoilValue(shouldAudioPlayAtom);
   const onClickWave = async () => {
+    // 웨이브 애니메이션을 누르면,
     try {
       setWordMicrophoneState(`loading`);
       mediaRecorder.stop();
@@ -76,7 +77,7 @@ const Card = () => {
     }
   };
   const onClickWord = () => {
-    return _.throttle(playWordAudio, 1000, { leading: true, trailing: true });
+    return _.throttle(playWordAudio, 1000, { leading: true, trailing: true }); // 1초에 한번씩만 실행되도록
   };
   return (
     <CardOuterContainer>
@@ -109,7 +110,7 @@ const Card = () => {
           <HomeButton />
         </HomeButtonContainer>
         {resultsScreenShown && <ResultsScreen />}
-        {wordScores[`${level}-${currentWordPage}`] !== undefined && (
+        {wordScores[`${level}-${currentWordPage}`] !== undefined && ( // 점수가 있으면
           <WordResultsContainer>
             <ScorePill score={wordScores[`${level}-${currentWordPage}`]} />
           </WordResultsContainer>

@@ -86,6 +86,7 @@ const Book = () => {
   const { level } = useParams();
   const bookID = useData("id");
   const onClickWave = async () => {
+    // 뭬이브 애니메이션 클릭 시,
     try {
       setCentralMicrophoneState(`loading`);
       mediaRecorder.stop();
@@ -102,7 +103,6 @@ const Book = () => {
       src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
       onload: () => {
         const duration = leftPageAudio.duration() * 1000 + 2000;
-        setAudioDuration(duration);
       },
       onplay: () => {
         setCentralMicrophoneState("disabled");
@@ -149,20 +149,22 @@ const Book = () => {
               />
             )}
             <LeftPageShade />
-            {scores[`${level}-${currentPage}`] !== undefined && (
+            {scores[`${level}-${currentPage}`] !== undefined && ( // 점수가 있으면
               <ScoreBarContainer>
                 <ScorePill score={scores[`${level}-${currentPage}`]} />
               </ScoreBarContainer>
             )}
-            {centralMicrophoneState === "completed" && currentPage !== 0 && (
-              <LeftCompletedButtonsContainer>
-                <LeftCompletedMicrophone />
-              </LeftCompletedButtonsContainer>
-            )}
-            <GlowBorderContainer textbookSize={textbookSize}>
-              {highlightedPage === currentPage && highlightVisible && (
-                <GlowBorder direction={`left`} />
+            {centralMicrophoneState === "completed" &&
+              currentPage !== 0 && ( // 마이크가 완료되었으면
+                <LeftCompletedButtonsContainer>
+                  <LeftCompletedMicrophone />
+                </LeftCompletedButtonsContainer>
               )}
+            <GlowBorderContainer textbookSize={textbookSize}>
+              {highlightedPage === currentPage &&
+                highlightVisible && ( // 하이라이트가 있으면
+                  <GlowBorder direction={`left`} />
+                )}
               {temporaryGlowBorderShown &&
                 temporaryGlowBorderDirection === `left` && (
                   <GlowBorder direction={`left`} />
@@ -174,7 +176,7 @@ const Book = () => {
                 dimmed={
                   currentActivePage === `right` &&
                   scores[`${level}-${currentPage}`] === undefined
-                }
+                } // 오른쪽 페이지가 활성화되어있고, 점수가 없으면 딤드 처리
               />
             )}
           </TextBookLeftPage>
@@ -187,19 +189,21 @@ const Book = () => {
               />
             )}
             <RightPageShade />
-            {scores[`${level}-${currentPage + 1}`] !== undefined && (
+            {scores[`${level}-${currentPage + 1}`] !== undefined && ( // 점수가 있으면
               <ScoreBarContainer>
                 <ScorePill score={scores[`${level}-${currentPage + 1}`]} />
               </ScoreBarContainer>
             )}
-            {centralMicrophoneState === "completed" && currentPage !== 10 && (
-              <RightCompletedButtonsContainer>
-                <RightCompletedMicrophone />
-              </RightCompletedButtonsContainer>
-            )}
-            {highlightedPage === currentPage + 1 && highlightVisible && (
-              <GlowBorder direction={`right`} />
-            )}
+            {centralMicrophoneState === "completed" &&
+              currentPage !== 10 && ( // 마이크가 완료되었으면
+                <RightCompletedButtonsContainer>
+                  <RightCompletedMicrophone />
+                </RightCompletedButtonsContainer>
+              )}
+            {highlightedPage === currentPage + 1 &&
+              highlightVisible && ( // 하이라이트가 있으면
+                <GlowBorder direction={`right`} />
+              )}
             {temporaryGlowBorderShown &&
               temporaryGlowBorderDirection === `right` && (
                 <GlowBorder direction={`right`} />
@@ -210,7 +214,7 @@ const Book = () => {
                 dimmed={
                   currentActivePage === `left` &&
                   scores[`${level}-${currentPage + 1}`] === undefined
-                }
+                } // 왼쪽 페이지가 활성화되어있고, 오른쪽 페이지의 점수가 없으면 딤드 처리
               />
             )}
           </TextBookRightPage>

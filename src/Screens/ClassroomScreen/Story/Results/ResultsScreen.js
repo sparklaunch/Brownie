@@ -39,7 +39,7 @@ const ResultsScreen = () => {
   const currentWordPage = useRecoilValue(currentWordPageAtom);
   const scores = useRecoilValue(scoresAtom);
   const words = useData("words");
-  const rightScoreExists = scores[`${level}-${currentPage + 1}`] !== undefined;
+  const rightScoreExists = scores[`${level}-${currentPage + 1}`] !== undefined; // 오른쪽 페이지의 점수가 존재한다면, 즉, 오른쪽 페이지를 완료했다면,
   useEffect(() => {
     setCentralMicrophoneState("resultsShowing");
     if (rightScoreExists) {
@@ -48,7 +48,7 @@ const ResultsScreen = () => {
     const resultsShownAudio = new Howl({
       src: [`/assets/audio/results_shown.mp3`]
     });
-    resultsShownAudio.play();
+    resultsShownAudio.play(); // 결과 화면 음원을 재생합니다.
     setTimeout(() => {
       setResultsScreenShown(false);
       if (currentPage === 0) {
@@ -68,13 +68,14 @@ const ResultsScreen = () => {
         }
       }
       if (currentPage === 10 || currentWordPage === words.length) {
+        // 스토리 모드의 10페이지 (마지막 페이지)가 완료되었거나, 단어 학습이 완료되었다면,
         const youDidItAudio = new Howl({
           src: [`/assets/audio/you_did_it.mp3`]
         });
         youDidItAudio.play();
         setYouDidItShown(true);
       }
-    }, 3000);
+    }, 3000); // 3초 후에 결과 화면을 닫습니다.
   }, []);
   if (resultsScreenShown) {
     switch (mode) {

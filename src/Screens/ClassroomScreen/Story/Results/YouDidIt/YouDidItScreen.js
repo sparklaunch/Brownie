@@ -12,8 +12,8 @@ const YouDidItScreen = () => {
   const setCompletedLevels = useSetRecoilState(completedLevelsAtom);
   useEffect(() => {
     setCompletedLevels((previousCompletedLevels) => {
-      const newCompletedLevels = [...previousCompletedLevels, level];
-      return [...new Set(newCompletedLevels)];
+      const newCompletedLevels = [...previousCompletedLevels, level]; // 새로운 완료 레벨
+      return [...new Set(newCompletedLevels)]; // 중복 제거
     });
   }, []);
   return (

@@ -18,11 +18,13 @@ const Microphone = () => {
   const setShouldAudioPlay = useSetRecoilState(shouldAudioPlayAtom);
   useEffect(() => {
     if (wordScores[`${level}-${currentWordPage}`] !== undefined) {
+      // 점수가 있으면
       setWordMicrophoneState("completed");
     } else {
+      // 점수가 없으면
       setWordMicrophoneState("idle");
     }
-  }, [currentWordPage]);
+  }, [currentWordPage]); // 페이지가 바뀔 때마다 마이크 상태를 바꿔줍니다.
   useEffect(() => {
     switch (wordMicrophoneState) {
       case "idle":

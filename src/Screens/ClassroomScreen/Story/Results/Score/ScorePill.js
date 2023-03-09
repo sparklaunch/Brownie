@@ -10,7 +10,7 @@ import modeAtom from "../../../../../Stores/Classroom/mode";
 
 const ScorePill = ({ score }) => {
   const mode = useRecoilValue(modeAtom);
-  let borderColor;
+  let borderColor; // 점수에 따른 테두리 색상
   switch (mode) {
     case "story":
       if (score >= Constants.EXCELLENT_THRESHOLD) {

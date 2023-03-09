@@ -34,56 +34,59 @@ const CompletedMicrophone = () => {
   const mediaRecorder = useRecoilValue(mediaRecorderAtom);
   const recordVoice = async () => {
     try {
-      await playMicrophoneOnAudio();
-      mediaRecorder.start();
+      await playMicrophoneOnAudio(); // 마이크 온 효과음을 재생합니다.
+      mediaRecorder.start(); // 녹음을 시작합니다.
       setWordMicrophoneState("recording");
       mediaRecorder.ondataavailable = async (event) => {
-        const blob = new Blob([event.data], { type: "audio/wav" });
-        const reader = new FileReader();
-        reader.readAsDataURL(blob);
+        // 녹음이 끝나면 실행됩니다.
+        const blob = new Blob([event.data], { type: "audio/wav" }); // 녹음한 데이터를 blob으로 변환합니다.
+        const reader = new FileReader(); // blob을 base64로 변환합니다.
+        reader.readAsDataURL(blob); // base64로 변환합니다.
         reader.onloadend = () => {
+          // base64로 변환한 데이터를 로컬 스토리지에 저장합니다.
           const base64Record = reader.result;
           localStorage.setItem("record", base64Record);
         };
         const formData = new FormData();
-        formData.append("text", words[currentWordPage - 1]);
-        formData.append("student_audio", event.data);
-        const response = await elaAxios.post("/pron_v2/", formData);
+        formData.append("text", words[currentWordPage - 1]); // 단어를 FormData에 추가합니다.
+        formData.append("student_audio", event.data); // 녹음한 데이터를 FormData에 추가합니다.
+        const response = await elaAxios.post("/pron_v2/", formData); // 서버에 데이터를 전송합니다.
         const stringResponse = JSON.stringify(response, null, 2);
         console.log(stringResponse);
         const totalScore = response.data.total_score;
         setTotalScore({
           score: totalScore,
           id: uuid()
-        });
+        }); // 점수를 저장합니다.
         setWordScores((previous) => {
           return {
             ...previous,
             [`${level}-${currentWordPage}`]: totalScore
           };
-        });
+        }); // 점수를 저장합니다.
         const userRecord = localStorage.getItem("record");
         const userRecordAudio = new Howl({
           src: [userRecord]
         });
-        userRecordAudio.play();
+        userRecordAudio.play(); // 사용자의 녹음을 재생합니다.
         setResultsScreenShown(true);
         setWordResultsShown(true);
         setWordMicrophoneState("completed");
       };
       setTimeout(() => {
+        // 녹음이 끝나면 실행됩니다.
         mediaRecorder.stop();
         setWordMicrophoneState("loading");
       }, audioDuration);
     } catch (error) {
       switch (error.message) {
-        case "Requested device not found":
+        case "Requested device not found": // 마이크를 찾을 수 없을 때 실행됩니다.
           await Swal.fire(Constants.MICROPHONE_NOT_FOUND);
           break;
-        case "Permission denied":
+        case "Permission denied": // 마이크 사용 권한이 없을 때 실행됩니다.
           await Swal.fire(Constants.MICROPHONE_PERMISSION_DENIED);
           break;
-        default:
+        default: // 그 외의 오류가 발생했을 때 실행됩니다.
           await Swal.fire(Constants.MICROPHONE_EXCEPTION);
           break;
       }
@@ -97,8 +100,8 @@ const CompletedMicrophone = () => {
         ...previousScores,
         [`${level}-${currentWordPage}`]: undefined
       };
-    });
-    await recordVoice();
+    }); // 점수를 초기화합니다.
+    await recordVoice(); // 녹음을 다시 시작합니다.
   };
   const onClickMyVoice = () => {
     Howler.unload();
@@ -106,7 +109,7 @@ const CompletedMicrophone = () => {
     const myVoiceAudio = new Howl({
       src: [myVoice]
     });
-    myVoiceAudio.play();
+    myVoiceAudio.play(); // 사용자의 녹음을 재생합니다.
   };
   return (
     <CompletedMicrophoneContainer>

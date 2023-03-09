@@ -24,10 +24,10 @@ const WordImage = () => {
     wordAudio.play();
   };
   const onClickMegaphone = () => {
-    return _.throttle(playWordAudio, 1000, { leading: true, trailing: true });
+    return _.throttle(playWordAudio, 1000, { leading: true, trailing: true }); // 1초에 한번씩만 실행되도록
   };
   const totalScore = useRecoilValue(totalScoreAtom);
-  let textColor;
+  let textColor; // 점수에 따라 단어 색깔을 다르게 표시
   if (totalScore.score >= Constants.WORD_EXCELLENT_THRESHOLD) {
     textColor = Constants.TURQUOISE;
   } else if (totalScore.score >= Constants.WORD_GOOD_THRESHOLD) {
@@ -40,7 +40,7 @@ const WordImage = () => {
       <WordIllustration
         src={`/assets/images/words/${bookID}_${words[currentWordPage - 1]
           .toLowerCase()
-          .replace(" ", "")}.png`}
+          .replace(" ", "")}.png`} // 단어 이미지 불러오기
         alt={words[currentWordPage - 1]}
       />
       <WordContainer>

@@ -19,8 +19,8 @@ const WordButton = () => {
     centralMicrophoneState !== "invisible" &&
     centralMicrophoneState !== "loading" &&
     wordMicrophoneState !== "recording" &&
-    wordMicrophoneState !== "loading";
-  const shouldWordButtonActivated = mode === "word";
+    wordMicrophoneState !== "loading"; // 단어 모드로 전환할 수 있는지를 판단합니다.
+  const shouldWordButtonActivated = mode === "word"; // 단어 모드가 활성화되어 있는지를 판단합니다.
   const onClickWordButton = () => {
     if (shouldWordButtonEnabled) {
       setYouDidItShown(false);
@@ -30,8 +30,8 @@ const WordButton = () => {
   return (
     <WordButtonOuterContainer>
       <WordButtonInnerContainer
-        enabled={shouldWordButtonEnabled}
-        activated={shouldWordButtonActivated}
+        enabled={shouldWordButtonEnabled} // 단어 모드로 전환할 수 있는지를 판단합니다.
+        activated={shouldWordButtonActivated} // 단어 모드가 활성화되어 있는지를 판단합니다.
         onClick={onClickWordButton}
       >
         <WordButtonImage

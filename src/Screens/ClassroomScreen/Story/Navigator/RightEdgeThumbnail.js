@@ -7,6 +7,7 @@ import {
 
 const RightEdgeThumbnail = ({ leftPage, rightPage }) => {
   if (rightPage >= 12) {
+    // rightPage가 12보다 크거나 같다면, 즉, 마지막 페이지일 경우,
     return (
       <RightEmptyThumbnailContainer>
         <EmptyThumbnail />

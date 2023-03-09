@@ -18,8 +18,8 @@ const StoryButton = () => {
     centralMicrophoneState !== "invisible" &&
     centralMicrophoneState !== "loading" &&
     wordMicrophoneState !== "recording" &&
-    wordMicrophoneState !== "loading";
-  const shouldStoryButtonActivated = mode === "story";
+    wordMicrophoneState !== "loading"; // 스토리 모드로 전환할 수 있는지를 판단합니다.
+  const shouldStoryButtonActivated = mode === "story"; // 스토리 모드가 활성화되어 있는지를 판단합니다.
   const onClickStoryButton = () => {
     if (shouldStoryButtonEnabled) {
       setYouDidItShown(false);
@@ -28,8 +28,8 @@ const StoryButton = () => {
   };
   return (
     <StoryButtonContainer
-      enabled={shouldStoryButtonEnabled}
-      activated={shouldStoryButtonActivated}
+      enabled={shouldStoryButtonEnabled} // 스토리 모드로 전환할 수 있는지를 판단합니다.
+      activated={shouldStoryButtonActivated} // 스토리 모드가 활성화되어 있는지를 판단합니다.
       onClick={onClickStoryButton}
     >
       <StoryButtonImage

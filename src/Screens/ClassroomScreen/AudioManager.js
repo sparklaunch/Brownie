@@ -39,26 +39,31 @@ const AudioManager = () => {
   const [leftFinished, setLeftFinished] = useRecoilState(leftFinishedAtom);
   const setAudioDuration = useSetRecoilState(audioDurationAtom);
   const onFirstPagePlay = () => {
+    // 첫 페이지 재생 시,
     setRightMicrophoneState("disabled");
     setCentralMicrophoneState("disabled");
     setHighlightedPage(1);
   };
   const onFirstPageEnd = () => {
+    // 첫 페이지 재생 종료 시,
     setRightMicrophoneState("idle");
     setCentralMicrophoneState("idle");
   };
   const onLeftPlay = () => {
+    // 왼쪽 페이지 재생 시,
     setHighlightedPage(currentPage);
     setLeftMicrophoneState("disabled");
     setRightMicrophoneState("disabled");
     setCentralMicrophoneState("disabled");
   };
   const onLeftEnd = () => {
+    // 왼쪽 페이지 재생 종료 시,
     setLeftMicrophoneState("idle");
     setRightMicrophoneState("idle");
     setCentralMicrophoneState("idle");
   };
   const onRightPlay = () => {
+    // 오른쪽 페이지 재생 시,
     setHighlightedPage(currentPage + 1);
     setHighlightVisible(true);
     setLeftMicrophoneState("disabled");
@@ -66,6 +71,7 @@ const AudioManager = () => {
     setCentralMicrophoneState("disabled");
   };
   const onRightEnd = () => {
+    // 오른쪽 페이지 재생 종료 시,
     setLeftMicrophoneState("completed");
     setRightMicrophoneState("idle");
     setCentralMicrophoneState("idle");
@@ -99,7 +105,7 @@ const AudioManager = () => {
   const findFirstEmptyWordPage = useFindFirstEmptyWordPage();
   useEffect(() => {
     setScreenSize();
-  });
+  }); // 화면 크기 설정
   useEffect(() => {
     Howler.unload();
     if (mode === "word") {
@@ -108,7 +114,7 @@ const AudioManager = () => {
     } else {
       setCurrentPage(storyPageHistory);
     }
-  }, [mode]);
+  }, [mode]); // 모드 변경 시, 페이지 초기화
   useEffect(() => {
     setTemporaryGlowBorderShown(false);
     setHighlightVisible(true);
@@ -176,7 +182,7 @@ const AudioManager = () => {
         }
       }
     }
-  }, [leftPageCompleted]);
+  }, [leftPageCompleted]); // 왼쪽 페이지 완료 시, 오른쪽 페이지 재생
   return <></>;
 };
 

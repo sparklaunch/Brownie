@@ -40,16 +40,18 @@ const CentralIdleMicrophone = () => {
   const currentActivePage = useRecoilValue(currentActivePageAtom);
   const recordVoice = async () => {
     try {
-      Howler.unload();
-      await playMicrophoneOnAudio();
+      Howler.unload(); // Howler의 모든 사운드를 unload합니다.
+      await playMicrophoneOnAudio(); // 마이크를 켜는 사운드를 재생합니다.
       mediaRecorder.start();
       setCentralMicrophoneState("invisible");
       mediaRecorder.ondataavailable = async (event) => {
-        const blob = new Blob([event.data], { type: "audio/wav" });
-        const reader = new FileReader();
-        reader.readAsDataURL(blob);
+        // 녹음 음원 데이터가 사용 가능하다면,
+        const blob = new Blob([event.data], { type: "audio/wav" }); // 녹음 음원 데이터를 blob으로 변환합니다.
+        const reader = new FileReader(); // blob을 base64로 변환하기 위해 FileReader를 생성합니다.
+        reader.readAsDataURL(blob); // blob을 base64로 변환합니다.
         reader.onloadend = () => {
-          const base64Record = reader.result;
+          // base64로 변환이 완료되면,
+          const base64Record = reader.result; // base64로 변환된 녹음 음원 데이터를 저장합니다.
           switch (currentActivePage) {
             case "left":
               localStorage.setItem("left_record", base64Record);
@@ -59,7 +61,7 @@ const CentralIdleMicrophone = () => {
               break;
           }
         };
-        const formData = new FormData();
+        const formData = new FormData(); // 녹음 음원 데이터를 서버로 전송하기 위해 FormData를 생성합니다.
         switch (currentActivePage) {
           case "left":
             formData.append("text", sentences[currentPage - 1]);
@@ -68,12 +70,12 @@ const CentralIdleMicrophone = () => {
             formData.append("text", sentences[currentPage]);
             break;
         }
-        formData.append("student_audio", event.data);
-        const response = await elaAxios.post("/pron_v2/", formData);
+        formData.append("student_audio", event.data); // 녹음 음원 데이터를 formData에 추가합니다.
+        const response = await elaAxios.post("/pron_v2/", formData); // 녹음 음원 데이터를 서버로 전송합니다.
         setHighlightVisible(false);
         const stringResponse = JSON.stringify(response, null, 2);
         console.log(stringResponse);
-        const totalScore = response.data.total_score;
+        const totalScore = response.data.total_score; // 서버로부터 받은 응답에서 총 점수를 추출합니다.
         setTotalScore({
           score: totalScore,
           id: uuid()
@@ -84,7 +86,7 @@ const CentralIdleMicrophone = () => {
               return {
                 ...previous,
                 [`${level}-${currentPage}`]: totalScore
-              };
+              }; // 총 점수를 scores에 저장합니다.
             });
             break;
           case "right":
@@ -93,7 +95,7 @@ const CentralIdleMicrophone = () => {
                 ...previous,
                 [`${level}-${currentPage + 1}`]: totalScore
               };
-            });
+            }); // 총 점수를 scores에 저장합니다.
             break;
         }
         if (currentActivePage === "right") {
@@ -102,18 +104,19 @@ const CentralIdleMicrophone = () => {
         setResultsScreenShown(true);
       };
       setTimeout(() => {
+        // audioDuration 이후에 녹음을 중지합니다.
         mediaRecorder.stop();
         setCentralMicrophoneState("loading");
       }, audioDuration);
     } catch (error) {
       switch (error.message) {
-        case "Requested device not found":
+        case "Requested device not found": // 마이크를 찾을 수 없을 때,
           await Swal.fire(Constants.MICROPHONE_NOT_FOUND);
           break;
-        case "Permission denied":
+        case "Permission denied": // 마이크 사용 권한이 없을 때,
           await Swal.fire(Constants.MICROPHONE_PERMISSION_DENIED);
           break;
-        default:
+        default: // 그 외의 오류가 발생했을 때,
           await Swal.fire(Constants.MICROPHONE_EXCEPTION);
           break;
       }

@@ -17,17 +17,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const ManualScreen = () => {
   const [manualPageNumber, setManualPageNumber] = useState(1);
-  // const onWheelManualContainer = (event) => {
-  //   const wheelDirection = event.deltaY > 0 ? "down" : "up";
-  //   switch (wheelDirection) {
-  //     case "down":
-  //       setManualPageNumber(Math.min(manualPageNumber + 1, 6));
-  //       break;
-  //     case "up":
-  //       setManualPageNumber(Math.max(manualPageNumber - 1, 1));
-  //       break;
-  //   }
-  // };
   const [manualOpen, setManualOpen] = useRecoilState(manualOpenAtom);
   const onClickLeftPager = () => {
     setManualPageNumber(Math.max(1, manualPageNumber - 1));

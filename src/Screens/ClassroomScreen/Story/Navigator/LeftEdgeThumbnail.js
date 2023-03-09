@@ -7,6 +7,7 @@ import {
 
 const LeftEdgeThumbnail = ({ leftPage, rightPage }) => {
   if (leftPage < 0) {
+    // leftPage가 0보다 작다면,
     return (
       <LeftEmptyThumbnailContainer>
         <EmptyThumbnail />

@@ -5,7 +5,7 @@ const playMicrophoneOnAudio = () => {
     const microphoneOnAudio = new Howl({
       src: ["/assets/audio/microphone_on.wav"],
       onend: () => {
-        resolve("Microphone-on audio finished playing.");
+        resolve("Microphone-on audio finished playing."); // Promise를 resolve
       }
     });
     microphoneOnAudio.play();
