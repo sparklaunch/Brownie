@@ -18,7 +18,7 @@ const HamburgerItem = ({ text, link }) => {
     <HamburgerItemContainer>
       <HamburgerItemText
         onClick={onClickHamburgerItem}
-        accented={pathname === link}
+        accented={pathname === link} // 현재 경로가 link와 같은지 확인합니다.
       >
         {text}
       </HamburgerItemText>

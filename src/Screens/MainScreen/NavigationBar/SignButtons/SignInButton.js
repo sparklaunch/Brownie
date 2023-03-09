@@ -7,7 +7,7 @@ const SignInButton = () => {
   const setTabValue = useSetRecoilState(tabValueAtom);
   const navigate = useNavigate();
   const onClickSignIn = () => {
-    setTabValue(0);
+    setTabValue(0); // 탭을 로그인 탭으로 변경합니다.
     navigate("/signin");
   };
   return (

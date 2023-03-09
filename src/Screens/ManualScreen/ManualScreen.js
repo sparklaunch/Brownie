@@ -13,7 +13,7 @@ import { useRecoilState } from "recoil";
 import manualOpenAtom from "../../Stores/Misc/manualOpen";
 import { useEffect, useState } from "react";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`; // PDF.js를 사용하기 위한 설정입니다.
 
 const ManualScreen = () => {
   const [manualPageNumber, setManualPageNumber] = useState(1);
@@ -26,10 +26,10 @@ const ManualScreen = () => {
   };
   useEffect(() => {
     if (manualOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden"; // 매뉴얼 바깥 부분의 스크롤을 막습니다.
     } else {
       setManualPageNumber(1);
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "unset"; // 스크롤을 풀어줍니다.
     }
   }, [manualOpen]);
   return (

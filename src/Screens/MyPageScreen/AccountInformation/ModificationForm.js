@@ -46,30 +46,33 @@ const ModificationForm = () => {
   };
   const onClickCancel = () => {
     clearAllFields();
-    setSecureMode(false);
-    navigate(-1);
+    setSecureMode(false); // 보안 모드를 해제합니다.
+    navigate(-1); // 이전 페이지로 이동합니다.
   };
   useEffect(() => {
     return () => {
       clearAllFields();
       setSecureMode(false);
     };
-  }, []);
+  }, []); // 컴포넌트가 언마운트되면, 즉, 페이지를 벗어나면, 모든 필드를 초기화하고 보안 모드를 해제합니다.
   const requestAccountInformation = async () => {
     const response = await authAxios.post("/api/ap008", {
+      // 계정 정보를 요청합니다.
       user_no: sessionStorage.getItem("userNumber")
     });
     const stringResponse = JSON.stringify(response, null, 2);
     console.log(stringResponse);
-    switch (response.data.resultCode) {
-      case "100":
+    switch (
+      response.data.resultCode // 응답 코드에 따라 분기합니다.
+    ) {
+      case "100": // 성공
         const { id, name, tel, birth } = response.data;
         setID(id);
         setStudentName(name);
         setPhoneNumber(tel);
         setStudentBirthDate(birth);
         break;
-      default:
+      default: // 실패
         await Swal.fire(Constants.SERVER_ERROR);
         break;
     }
@@ -77,10 +80,11 @@ const ModificationForm = () => {
   useLayoutEffect(() => {
     (async () => {
       await requestAccountInformation();
-    })();
+    })(); // 페이지가 로드되면, 즉, 렌더링되면, 계정 정보를 요청합니다.
   }, []);
   const requestAccountModification = async () => {
     const response = await authAxios.post("/api/ap009", {
+      // 계정 정보를 수정합니다.
       user_no: sessionStorage.getItem("userNumber"),
       pwd: newPassword,
       pwd_chk: newPasswordConfirm,
@@ -90,42 +94,50 @@ const ModificationForm = () => {
     });
     const stringResponse = JSON.stringify(response, null, 2);
     console.log(stringResponse);
-    switch (response.data.resultCode) {
-      case "100":
+    switch (
+      response.data.resultCode // 응답 코드에 따라 분기합니다.
+    ) {
+      case "100": // 성공
         await Swal.fire(Constants.ACCOUNT_MODIFICATION_SUCCESS);
         sessionStorage.setItem("studentName", studentName);
         clearAllFields();
         navigate("/");
         break;
-      case "900":
+      case "900": // 실패
         await Swal.fire(Constants.ACCOUNT_MODIFICATION_FAILED);
         break;
-      case "901":
+      case "901": // 존재하지 않는 회원
         await Swal.fire(Constants.ACCOUNT_NOT_FOUND);
         break;
-      case "902":
+      case "902": // 비밀번호가 일치하지 않음
         await Swal.fire(Constants.PASSWORD_NOT_VALID);
         break;
-      default:
+      default: // 서버 오류
         await Swal.fire(Constants.SERVER_ERROR);
         break;
     }
   };
   const onClickSubmit = async () => {
     const passwordRegex =
-      /^(?=.*[a-zA-Z])(?=.*[!?@#$%^*+=-])(?=.*[0-9]).{6,24}$/;
-    const phoneNumberRegex = /^\d{3}-?\d{3,4}-?\d{4}$/;
+      /^(?=.*[a-zA-Z])(?=.*[!?@#$%^*+=-])(?=.*[0-9]).{6,24}$/; // 비밀번호 정규식
+    const phoneNumberRegex = /^\d{3}-?\d{3,4}-?\d{4}$/; // 전화번호 정규식
     if (newPassword.length > 0 && !passwordRegex.test(newPassword)) {
+      // 비밀번호가 입력되었고, 비밀번호가 유효하지 않다면
       await Swal.fire(Constants.PASSWORD_NOT_VALID);
     } else if (newPassword !== newPasswordConfirm) {
+      // 비밀번호와 비밀번호 확인이 일치하지 않다면
       await Swal.fire(Constants.PASSWORD_NOT_MATCH);
     } else if (phoneNumber.length === 0) {
+      // 전화번호가 입력되지 않았다면
       await Swal.fire(Constants.EMPTY_PHONE_NUMBER);
     } else if (!phoneNumberRegex.test(phoneNumber)) {
+      // 전화번호가 유효하지 않다면
       await Swal.fire(Constants.PHONE_NUMBER_NOT_VALID);
     } else if (studentBirthDate.length === 0) {
+      // 생년월일이 입력되지 않았다면
       await Swal.fire(Constants.EMPTY_BIRTH_DATE);
     } else {
+      // 모든 조건을 만족한다면
       await requestAccountModification();
     }
   };

@@ -1,13 +1,11 @@
 import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import Constants from "../../../../Utilities/Constants";
 
 const SignOutButton = () => {
-  const navigate = useNavigate();
   const onClickSignOut = () => {
     sessionStorage.removeItem("userNumber");
     sessionStorage.removeItem("studentName");
-    window.location.reload();
+    window.location.reload(); // 페이지를 강제 새로고침합니다.
   };
   return (
     <Button

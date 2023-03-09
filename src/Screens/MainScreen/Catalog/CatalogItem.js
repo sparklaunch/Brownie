@@ -37,7 +37,7 @@ const CatalogItem = ({
     setCurrentPage(0);
     navigate(`/demo/${data.level}`);
   };
-  const isCompleted = completedLevels.includes(data.level);
+  const isCompleted = completedLevels.includes(data.level); // 해당 레벨이 완료되었는지 확인합니다.
   return (
     <CatalogItemContainer>
       <CatalogItemImage

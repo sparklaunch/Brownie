@@ -6,7 +6,7 @@ import { PasswordFieldContainer } from "./PasswordFieldStyles";
 const PasswordField = () => {
   const [password, setPassword] = useRecoilState(passwordAtom);
   const onChangePassword = (event) => {
-    setPassword(event.target.value.replace(/\s/g, ""));
+    setPassword(event.target.value.replace(/\s/g, "")); // 공백 제거
   };
   return (
     <PasswordFieldContainer>

@@ -12,23 +12,26 @@ const AccountButtons = () => {
   const [password, setPassword] = useRecoilState(passwordAtom);
   const requestPasswordMatch = async () => {
     const response = await authAxios.post("/api/ap007", {
+      // 비밀번호 확인 API를 호출합니다.
       user_no: sessionStorage.getItem("userNumber"),
       pwd: password
     });
     const stringResponse = JSON.stringify(response, null, 2);
     console.log(stringResponse);
-    switch (response.data.resultCode) {
-      case "100":
+    switch (
+      response.data.resultCode // 결과 코드에 따라서 다른 동작을 합니다.
+    ) {
+      case "100": // 비밀번호가 일치합니다.
         setPassword("");
         setSecureMode(true);
         break;
-      case "900":
+      case "900": // 비밀번호가 비어있습니다.
         await Swal.fire(Constants.EMPTY_PASSWORD);
         break;
-      case "901":
+      case "901": // 비밀번호가 일치하지 않습니다.
         await Swal.fire(Constants.INCORRECT_PASSWORD);
         break;
-      default:
+      default: // 서버 오류
         await Swal.fire(Constants.SERVER_ERROR);
         break;
     }

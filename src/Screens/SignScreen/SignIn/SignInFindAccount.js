@@ -5,13 +5,6 @@ import {
 } from "./SignInFindAccountStyles";
 
 const SignInFindAccount = () => {
-  // const navigate = useNavigate();
-  // const onClickFindID = () => {
-  //   navigate("/find-id");
-  // };
-  // const onClickFindPassword = () => {
-  //   navigate("/find-password");
-  // };
   return (
     <SignInFindAccountContainer>
       <FindIDLink>아이디 찾기</FindIDLink>

@@ -25,7 +25,7 @@ const CouponRegistration = () => {
     }
   };
   const onCouponTextFieldChange = (event) => {
-    setCoupon(event.target.value.replace(/\s/g, ""));
+    setCoupon(event.target.value.replace(/\s/g, "")); // 공백 제거
   };
   return (
     <CouponRegistrationOuterContainer>

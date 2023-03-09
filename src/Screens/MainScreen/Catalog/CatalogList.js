@@ -6,10 +6,11 @@ const CatalogList = () => {
   const titles = JSON.parse(JSON.stringify(bookTitles));
   let titlesByLevel = [];
   for (const level of Array(5).keys()) {
+    // Array(5).keys()는 [0, 1, 2, 3, 4]와 같은 배열을 만듭니다. 노가다나 하드코딩을 꺼릴 때 자주 사용되는 코드 스니핏입니다.
     const filteredTitles = titles.filter((title) => {
       return title.level[0] === `${level + 1}`;
-    });
-    titlesByLevel.push(filteredTitles);
+    }); // 레벨 1, 2, 3, 4, 5에 해당하는 책들을 각각 필터링합니다.
+    titlesByLevel.push(filteredTitles); // 각 레벨에 해당하는 책들을 배열에 담습니다.
   }
   return (
     <CatalogListContainer>

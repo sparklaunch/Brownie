@@ -7,7 +7,7 @@ const WelcomeButtons = () => {
   const onClickLogOutButton = () => {
     sessionStorage.removeItem("userNumber");
     sessionStorage.removeItem("studentName");
-    window.location.reload();
+    window.location.reload(); // 페이지를 강제 새로고침합니다.
   };
   return (
     <>
