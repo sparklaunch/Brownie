@@ -1,21 +1,22 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const CouponCautionTitleContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-bottom: 16px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-bottom: 16px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,30 +26,30 @@ const CouponCautionTitleContainer = styled.div`
 `;
 
 const InfoIcon = styled.img`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
   }
 `;
 
 const CouponCautionText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-family: "Jua", sans-serif;
-    color: #1ab9c5;
+    color: ${Constants.ACCENT_COLOR};
     font-size: 22px;
     margin-left: 8px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-family: "Jua", sans-serif;
-    color: #1ab9c5;
+    color: ${Constants.ACCENT_COLOR};
     font-size: 22px;
     margin-left: 8px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-family: "Jua", sans-serif;
-    color: #1ab9c5;
+    color: ${Constants.ACCENT_COLOR};
     font-size: 22px;
     margin-left: 8px;
   }

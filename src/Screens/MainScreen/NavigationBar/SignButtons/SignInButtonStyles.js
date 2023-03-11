@@ -1,9 +1,9 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const NavigationBarSignInButton = styled.button`
-  @media (480px <= width <= 767px) {
-    background-color: #1ab9c5;
-    filter: brightness(1) drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  @media screen and (max-width: 767px) {
+    background-color: ${Constants.ACCENT_COLOR};
     font-family: Jua, sans-serif;
     font-size: 18px;
     width: 104px;
@@ -11,9 +11,8 @@ const NavigationBarSignInButton = styled.button`
     border-radius: 8px;
     color: white;
   }
-  @media (768px <= width <= 992px) {
-    background-color: #1ab9c5;
-    filter: brightness(1) drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    background-color: ${Constants.ACCENT_COLOR};
     font-family: Jua, sans-serif;
     font-size: 18px;
     width: 104px;
@@ -21,9 +20,8 @@ const NavigationBarSignInButton = styled.button`
     border-radius: 8px;
     color: white;
   }
-  @media (width >= 993px) {
-    background-color: #1ab9c5;
-    filter: brightness(1) drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  @media screen and (min-width: 993px) {
+    background-color: ${Constants.ACCENT_COLOR};
     font-family: Jua, sans-serif;
     font-size: 18px;
     width: 104px;

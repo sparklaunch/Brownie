@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const HamburgerCloseIconImage = styled.img`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     cursor: pointer;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     cursor: pointer;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     cursor: pointer;
   }
 `;

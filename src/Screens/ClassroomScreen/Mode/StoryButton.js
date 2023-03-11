@@ -1,9 +1,7 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import modeAtom from "../../../Stores/Classroom/mode";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import wordMicrophoneStateAtom from "../../../Stores/Classroom/Word/wordMicrophoneState";
-import currentPageAtom from "../../../Stores/Classroom/Story/currentPage";
-import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
 import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import {
   StoryButtonContainer,
@@ -13,34 +11,25 @@ import {
 
 const StoryButton = () => {
   const [mode, setMode] = useRecoilState(modeAtom);
-  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
-    centralMicrophoneStateAtom
-  );
-  const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
-    wordMicrophoneStateAtom
-  );
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
-  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
+  const centralMicrophoneState = useRecoilValue(centralMicrophoneStateAtom);
+  const wordMicrophoneState = useRecoilValue(wordMicrophoneStateAtom);
+  const setYouDidItShown = useSetRecoilState(youDidItShownAtom);
   const shouldStoryButtonEnabled =
     centralMicrophoneState !== "invisible" &&
     centralMicrophoneState !== "loading" &&
     wordMicrophoneState !== "recording" &&
-    wordMicrophoneState !== "loading";
-  const shouldStoryButtonActivated = mode === "story";
+    wordMicrophoneState !== "loading"; // 스토리 모드로 전환할 수 있는지를 판단합니다.
+  const shouldStoryButtonActivated = mode === "story"; // 스토리 모드가 활성화되어 있는지를 판단합니다.
   const onClickStoryButton = () => {
     if (shouldStoryButtonEnabled) {
       setYouDidItShown(false);
-      setCurrentPage(0);
-      setCurrentWordPage(1);
       setMode("story");
     }
   };
   return (
     <StoryButtonContainer
-      enabled={shouldStoryButtonEnabled}
-      activated={shouldStoryButtonActivated}
+      enabled={shouldStoryButtonEnabled} // 스토리 모드로 전환할 수 있는지를 판단합니다.
+      activated={shouldStoryButtonActivated} // 스토리 모드가 활성화되어 있는지를 판단합니다.
       onClick={onClickStoryButton}
     >
       <StoryButtonImage

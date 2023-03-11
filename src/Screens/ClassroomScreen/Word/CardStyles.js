@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const CardOuterContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -11,8 +12,7 @@ const CardOuterContainer = styled.div`
     flex-direction: row;
     justify-content: center;
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -23,8 +23,7 @@ const CardOuterContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -38,47 +37,43 @@ const CardOuterContainer = styled.div`
 `;
 
 const CardInnerContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
+    position: relative;
     width: ${(props) => props.textbookSize.width}px;
     height: ${(props) => props.textbookSize.height}px;
     background-color: white;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    position: relative;
     width: ${(props) => props.textbookSize.width}px;
     height: ${(props) => props.textbookSize.height}px;
     background-color: white;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
+    position: relative;
+    width: ${(props) => props.textbookSize.width}px;
+    height: ${(props) => props.textbookSize.height}px;
     background-color: white;
     border-radius: 20px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    width: ${(props) => props.textbookSize.width}px;
-    height: ${(props) => props.textbookSize.height}px;
   }
 `;
 
 const InsetBorderContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
   }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -88,17 +83,17 @@ const InsetBorderContainer = styled.div`
 `;
 
 const InstructionsContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
     left: 140px;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 20px;
     left: 140px;
@@ -106,136 +101,130 @@ const InstructionsContainer = styled.div`
 `;
 
 const ModeButtonsContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    top: 5px;
+    left: -70px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    position: absolute;
+    top: 5px;
+    left: -80px;
+  }
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
+    position: absolute;
+    top: 5px;
+    left: -100px;
+  }
+  @media screen and (min-width: 1280px) {
     position: absolute;
     top: 0;
-    left: 0;
-    transform: scale(0.8) translate(-100px, -10px);
-  }
-
-  @media (768px <= width <= 992px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scale(0.8) translate(-130px, -12px);
-  }
-
-  @media (width >= 993px) {
-    position: absolute;
     left: -120px;
   }
 `;
 
 const PaginationContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #ffa63d;
+    background-color: ${Constants.ORANGE};
     border-bottom-right-radius: 20px;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #ffa63d;
+    background-color: ${Constants.ORANGE};
     border-bottom-right-radius: 20px;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #ffa63d;
+    background-color: ${Constants.ORANGE};
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
 `;
 
 const WordLeftPageTurnerContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     left: -50px;
     bottom: 30px;
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     left: -60px;
     bottom: 30px;
   }
-
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     position: absolute;
     left: -90px;
     bottom: 0;
     transform: translateY(-50%);
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     position: absolute;
     left: -90px;
     top: 50%;
-    transform: translateY(-50%);
   }
 `;
 
 const WordRightPageTurnerContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     right: -50px;
     bottom: 30px;
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     right: -60px;
     bottom: 30px;
   }
-
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     position: absolute;
     right: -90px;
     bottom: 0;
     transform: translateY(-50%);
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     position: absolute;
     right: -90px;
     top: 50%;
-    transform: translateY(-50%);
   }
 `;
 
 const CardTitleContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: -40px;
   }
 `;
 
 const HomeButtonContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 20px;
-    right: -80px;
+    right: -60px;
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
-    right: -80px;
+    right: -70px;
   }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     right: -90px;
@@ -243,25 +232,19 @@ const HomeButtonContainer = styled.div`
 `;
 
 const MicrophoneContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
-    width: 52px;
-    height: 52px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -65px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: -80px;
   }
-
-  @media (768px <= width <= 992px) {
-    position: absolute;
-    width: 52px;
-    height: 52px;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -80px;
-  }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     bottom: -100px;
     left: 50%;
@@ -270,7 +253,7 @@ const MicrophoneContainer = styled.div`
 `;
 
 const WordContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     background-color: transparent;
     top: 0;
@@ -281,9 +264,9 @@ const WordContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     background-color: transparent;
     top: 0;
@@ -294,9 +277,9 @@ const WordContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     background-color: transparent;
     top: 0;
@@ -308,25 +291,26 @@ const WordContainer = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    cursor: pointer;
   }
 `;
 
 const WordWaveContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -335,25 +319,25 @@ const WordWaveContainer = styled.div`
 `;
 
 const WordResultsContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 20px;
     right: 20px;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 20px;
     right: 20px;
   }
 
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     position: absolute;
     left: 0;
     right: 0;
     top: 20px;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     position: absolute;
     left: 0;
     right: 0;
@@ -362,7 +346,7 @@ const WordResultsContainer = styled.div`
 `;
 
 const YouDidItScreenContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -370,7 +354,7 @@ const YouDidItScreenContainer = styled.div`
     bottom: 0;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -378,7 +362,7 @@ const YouDidItScreenContainer = styled.div`
     bottom: 0;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     left: 0;
@@ -388,21 +372,21 @@ const YouDidItScreenContainer = styled.div`
 `;
 
 const LoadingIndicatorContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 50%;
     left: 50%;

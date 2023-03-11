@@ -1,22 +1,21 @@
 import styled from "styled-components";
+import Constants from "../../Utilities/Constants";
 
 const BackgroundPlaceholder = styled.div`
-  @media (width <= 767px) {
-    background-color: #e8f6f8;
+  @media screen and (max-width: 767px) {
+    background-color: ${Constants.LIGHT_SKYBLUE};
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
   }
-
-  @media (768px <= width <= 992px) {
-    background-color: #e8f6f8;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    background-color: ${Constants.LIGHT_SKYBLUE};
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
   }
-
-  @media (width >= 993px) {
-    background-color: #e8f6f8;
+  @media screen and (min-width: 993px) {
+    background-color: ${Constants.LIGHT_SKYBLUE};
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
   }
 `;
 

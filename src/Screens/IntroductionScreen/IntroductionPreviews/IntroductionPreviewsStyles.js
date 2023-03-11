@@ -2,19 +2,19 @@ import styled from "styled-components";
 import Constants from "../../../Utilities/Constants";
 
 const IntroductionPreviewsOuterContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 140px;
+    padding: 140px 0;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 140px;
+    padding: 140px 0;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -23,19 +23,24 @@ const IntroductionPreviewsOuterContainer = styled.div`
 `;
 
 const IntroductionPreviewsInnerContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     width: ${Constants.TABLET_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
+    width: ${Constants.LAPTOP_CONTAINER_WIDTH};
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  @media screen and (min-width: 1280px) {
     width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: row;

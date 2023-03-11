@@ -1,70 +1,71 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const CouponHistoryItemContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: relative;
-    border: 2px solid #dfdfdf;
-    border-radius: 4px;
+    border: 2px solid ${Constants.LIGHT_GRAY};
+    border-radius: 14px;
     overflow: clip;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
-    border: 2px solid #dfdfdf;
-    border-radius: 4px;
+    border: 2px solid ${Constants.LIGHT_GRAY};
+    border-radius: 14px;
     overflow: clip;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: relative;
-    border: 2px solid #dfdfdf;
-    border-radius: 4px;
+    border: 2px solid ${Constants.LIGHT_GRAY};
+    border-radius: 14px;
     overflow: clip;
   }
 `;
 
 const CouponBoxContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     padding: 24px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     padding: 24px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     padding: 24px;
   }
 `;
 
 const CouponBoxTitle = styled.p`
-  @media (480px <= width <= 767px) {
-    color: #515151;
+  @media screen and (max-width: 767px) {
+    color: ${Constants.DARK_GRAY};
     font-size: 16px;
     margin-bottom: 4px;
   }
-  @media (768px <= width <= 992px) {
-    color: #515151;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    color: ${Constants.DARK_GRAY};
     font-size: 16px;
     margin-bottom: 4px;
   }
-  @media (width >= 993px) {
-    color: #515151;
+  @media screen and (min-width: 993px) {
+    color: ${Constants.DARK_GRAY};
     font-size: 16px;
     margin-bottom: 4px;
   }
 `;
 
 const CouponCodeText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-size: 22px;
     color: #f34d7e;
     font-weight: bold;
     margin-bottom: 20px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 22px;
     color: #f34d7e;
     font-weight: bold;
     margin-bottom: 20px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-size: 22px;
     color: #f34d7e;
     font-weight: bold;
@@ -73,40 +74,40 @@ const CouponCodeText = styled.p`
 `;
 
 const CouponDateFromText = styled.p`
-  @media (480px <= width <= 767px) {
-    color: #515151;
+  @media screen and (max-width: 767px) {
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
   }
-  @media (768px <= width <= 992px) {
-    color: #515151;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
   }
-  @media (width >= 993px) {
-    color: #515151;
+  @media screen and (min-width: 993px) {
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
   }
 `;
 
 const CouponDateToText = styled.p`
-  @media (480px <= width <= 767px) {
-    color: #515151;
+  @media screen and (max-width: 767px) {
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
     font-weight: bold;
   }
-  @media (768px <= width <= 992px) {
-    color: #515151;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
     font-weight: bold;
   }
-  @media (width >= 993px) {
-    color: #515151;
+  @media screen and (min-width: 993px) {
+    color: ${Constants.DARK_GRAY};
     font-size: 13px;
     font-weight: bold;
   }
 `;
 
 const UsedCouponContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
     right: 0;
@@ -117,9 +118,9 @@ const UsedCouponContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.3;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     right: 0;
@@ -130,9 +131,9 @@ const UsedCouponContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.3;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
     right: 0;
@@ -143,22 +144,22 @@ const UsedCouponContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.3;
   }
 `;
 
 const UsedCouponText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     color: white;
     font-family: "Jua", sans-serif;
     font-size: 28px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     color: white;
     font-family: "Jua", sans-serif;
     font-size: 28px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     color: white;
     font-family: "Jua", sans-serif;
     font-size: 28px;

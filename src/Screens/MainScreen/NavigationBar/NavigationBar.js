@@ -4,15 +4,19 @@ import {
   NavigationBarInnerContainer,
   NavigationBarOuterContainer
 } from "./NavigationBarStyles";
+import ManualScreen from "../../ManualScreen/ManualScreen";
 
 const NavigationBar = () => {
   return (
-    <NavigationBarOuterContainer>
-      <NavigationBarInnerContainer>
-        <Logo />
-        <NavigationContent />
-      </NavigationBarInnerContainer>
-    </NavigationBarOuterContainer>
+    <>
+      <NavigationBarOuterContainer>
+        <NavigationBarInnerContainer>
+          <Logo />
+          <NavigationContent />
+        </NavigationBarInnerContainer>
+      </NavigationBarOuterContainer>
+      <ManualScreen />
+    </>
   );
 };
 

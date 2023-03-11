@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const HamburgerWrapper = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     padding: 20px 30px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     padding: 20px 30px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     padding: 20px 30px;
   }
 `;

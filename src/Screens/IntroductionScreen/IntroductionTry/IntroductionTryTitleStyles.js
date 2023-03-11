@@ -1,29 +1,31 @@
 import styled from "styled-components";
 
 const IntroductionTryTitleContainer = styled.div`
-  @media (480px <= width <= 767px) {
-    margin-bottom: 130px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 64px;
   }
-  @media (768px <= width <= 992px) {
-    margin-bottom: 130px;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    margin-bottom: 64px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     margin-bottom: 130px;
   }
 `;
 
 const IntroductionTryTitleText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     color: white;
     font-family: "Jua", sans-serif;
-    font-size: 44px;
+    font-size: 24px;
+    text-align: center;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     color: white;
     font-family: "Jua", sans-serif;
-    font-size: 44px;
+    font-size: 32px;
+    text-align: center;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     color: white;
     font-family: "Jua", sans-serif;
     font-size: 44px;

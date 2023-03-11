@@ -3,6 +3,7 @@ import {
   AdministratorSignInFormContainer,
   AdministratorSignInTitle
 } from "./AdministratorSignInFormStyles";
+import Constants from "../../Utilities/Constants";
 
 const AdministratorSignInForm = () => {
   return (
@@ -38,7 +39,7 @@ const AdministratorSignInForm = () => {
       <Button
         variant={"contained"}
         sx={{
-          backgroundColor: "#1AB9C5",
+          backgroundColor: Constants.ACCENT_COLOR,
           filter: "brightness(1.0)",
           fontFamily: "Jua",
           fontSize: 18,
@@ -46,7 +47,7 @@ const AdministratorSignInForm = () => {
           height: 44,
           marginTop: 1.5,
           ":hover": {
-            backgroundColor: "#1AB9C5"
+            backgroundColor: Constants.ACCENT_COLOR
           }
         }}
       >

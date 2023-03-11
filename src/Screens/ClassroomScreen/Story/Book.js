@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import centralMicrophoneStateAtom from "../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import youDidItShownAtom from "../../../Stores/Classroom/youDidItShown";
 import {
@@ -54,61 +54,39 @@ import highlightVisibleAtom from "../../../Stores/Classroom/Story/highlightVisib
 import { Howl, Howler } from "howler";
 import LoadingCard from "../LoadingCard";
 import ScorePill from "./Results/Score/ScorePill";
-import _ from "lodash";
 import textbookSizeAtom from "../../../Stores/Misc/textbookSize";
 import temporaryGlowBorderShownAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderShown";
 import temporaryGlowBorderDirectionAtom from "../../../Stores/Classroom/Story/temporaryGlowBorderDirection";
 import mediaRecorderAtom from "../../../Stores/Misc/mediaRecorder";
+import currentActivePageAtom from "../../../Stores/Classroom/Story/currentActivePage";
+import audioDurationAtom from "../../../Stores/Classroom/audioDuration";
 
 const Book = () => {
-  const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
+  const textbookSize = useRecoilValue(textbookSizeAtom);
   const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
     centralMicrophoneStateAtom
   );
-  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
-  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
-    resultsScreenShownAtom
-  );
-  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [scores, setScores] = useRecoilState(scoresAtom);
+  const mediaRecorder = useRecoilValue(mediaRecorderAtom);
+  const resultsScreenShown = useRecoilValue(resultsScreenShownAtom);
+  const youDidItShown = useRecoilValue(youDidItShownAtom);
+  const currentPage = useRecoilValue(currentPageAtom);
+  const scores = useRecoilValue(scoresAtom);
   const [highlightedPage, setHighlightedPage] =
     useRecoilState(highlightedPageAtom);
   const [highlightVisible, setHighlightVisible] =
     useRecoilState(highlightVisibleAtom);
-  const [temporaryGlowBorderShown, setTemporaryGlowBorderShown] =
-    useRecoilState(temporaryGlowBorderShownAtom);
-  const [temporaryGlowBorderDirection, setTemporaryGlowBorderDirection] =
-    useRecoilState(temporaryGlowBorderDirectionAtom);
+  const temporaryGlowBorderShown = useRecoilValue(temporaryGlowBorderShownAtom);
+  const temporaryGlowBorderDirection = useRecoilValue(
+    temporaryGlowBorderDirectionAtom
+  );
+  const setAudioDuration = useSetRecoilState(audioDurationAtom);
+  const [currentActivePage, setCurrentActivePage] = useRecoilState(
+    currentActivePageAtom
+  );
   const { level } = useParams();
   const bookID = useData("id");
-  const playLeftPageAudio = () => {
-    Howler.unload();
-    setHighlightVisible(false);
-    setTemporaryGlowBorderShown(true);
-    setTemporaryGlowBorderDirection(`left`);
-    new Howl({
-      src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
-      onend: () => {
-        setHighlightVisible(true);
-        setTemporaryGlowBorderShown(false);
-      }
-    }).play();
-  };
-  const playRightPageAudio = () => {
-    Howler.unload();
-    setHighlightVisible(false);
-    setTemporaryGlowBorderShown(true);
-    setTemporaryGlowBorderDirection(`right`);
-    new Howl({
-      src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
-      onend: () => {
-        setHighlightVisible(true);
-        setTemporaryGlowBorderShown(false);
-      }
-    }).play();
-  };
   const onClickWave = async () => {
+    // 뭬이브 애니메이션 클릭 시,
     try {
       setCentralMicrophoneState(`loading`);
       mediaRecorder.stop();
@@ -117,16 +95,43 @@ const Book = () => {
     }
   };
   const onClickLeftPage = () => {
-    return _.throttle(playLeftPageAudio, 1000, {
-      leading: true,
-      trailing: true
+    Howler.unload();
+    setHighlightedPage(currentPage);
+    setHighlightVisible(true);
+    setCurrentActivePage("left");
+    const leftPageAudio = new Howl({
+      src: [`/assets/audio/pages/${bookID}_${currentPage}.mp3`],
+      onload: () => {
+        const duration = leftPageAudio.duration() * 1000 + 2000;
+      },
+      onplay: () => {
+        setCentralMicrophoneState("disabled");
+      },
+      onend: () => {
+        setCentralMicrophoneState("idle");
+      }
     });
+    leftPageAudio.play();
   };
   const onClickRightPage = () => {
-    return _.throttle(playRightPageAudio, 1000, {
-      leading: true,
-      trailing: true
+    Howler.unload();
+    setHighlightedPage(currentPage + 1);
+    setHighlightVisible(true);
+    setCurrentActivePage("right");
+    const rightPageAudio = new Howl({
+      src: [`/assets/audio/pages/${bookID}_${currentPage + 1}.mp3`],
+      onload: () => {
+        const duration = rightPageAudio.duration() * 1000 + 2000;
+        setAudioDuration(duration);
+      },
+      onplay: () => {
+        setCentralMicrophoneState("disabled");
+      },
+      onend: () => {
+        setCentralMicrophoneState("idle");
+      }
     });
+    rightPageAudio.play();
   };
   return (
     <BookContainer>
@@ -144,26 +149,36 @@ const Book = () => {
               />
             )}
             <LeftPageShade />
-            {scores[`${level}-${currentPage}`] !== undefined && (
+            {scores[`${level}-${currentPage}`] !== undefined && ( // 점수가 있으면
               <ScoreBarContainer>
                 <ScorePill score={scores[`${level}-${currentPage}`]} />
               </ScoreBarContainer>
             )}
-            {centralMicrophoneState === "completed" && currentPage !== 0 && (
-              <LeftCompletedButtonsContainer>
-                <LeftCompletedMicrophone />
-              </LeftCompletedButtonsContainer>
-            )}
-            <GlowBorderContainer textbookSize={textbookSize}>
-              {highlightedPage === currentPage && highlightVisible && (
-                <GlowBorder direction={`left`} />
+            {centralMicrophoneState === "completed" &&
+              currentPage !== 0 && ( // 마이크가 완료되었으면
+                <LeftCompletedButtonsContainer>
+                  <LeftCompletedMicrophone />
+                </LeftCompletedButtonsContainer>
               )}
+            <GlowBorderContainer textbookSize={textbookSize}>
+              {highlightedPage === currentPage &&
+                highlightVisible && ( // 하이라이트가 있으면
+                  <GlowBorder direction={`left`} />
+                )}
               {temporaryGlowBorderShown &&
                 temporaryGlowBorderDirection === `left` && (
                   <GlowBorder direction={`left`} />
                 )}
             </GlowBorderContainer>
-            {currentPage !== 0 && <LeftClickable onClick={onClickLeftPage()} />}
+            {currentPage !== 0 && (
+              <LeftClickable
+                onClick={onClickLeftPage}
+                dimmed={
+                  currentActivePage === `right` &&
+                  scores[`${level}-${currentPage}`] === undefined
+                } // 오른쪽 페이지가 활성화되어있고, 점수가 없으면 딤드 처리
+              />
+            )}
           </TextBookLeftPage>
           <TextBookRightPage>
             {currentPage === 10 ? (
@@ -174,25 +189,33 @@ const Book = () => {
               />
             )}
             <RightPageShade />
-            {scores[`${level}-${currentPage + 1}`] !== undefined && (
+            {scores[`${level}-${currentPage + 1}`] !== undefined && ( // 점수가 있으면
               <ScoreBarContainer>
                 <ScorePill score={scores[`${level}-${currentPage + 1}`]} />
               </ScoreBarContainer>
             )}
-            {centralMicrophoneState === "completed" && currentPage !== 10 && (
-              <RightCompletedButtonsContainer>
-                <RightCompletedMicrophone />
-              </RightCompletedButtonsContainer>
-            )}
-            {highlightedPage === currentPage + 1 && highlightVisible && (
-              <GlowBorder direction={`right`} />
-            )}
+            {centralMicrophoneState === "completed" &&
+              currentPage !== 10 && ( // 마이크가 완료되었으면
+                <RightCompletedButtonsContainer>
+                  <RightCompletedMicrophone />
+                </RightCompletedButtonsContainer>
+              )}
+            {highlightedPage === currentPage + 1 &&
+              highlightVisible && ( // 하이라이트가 있으면
+                <GlowBorder direction={`right`} />
+              )}
             {temporaryGlowBorderShown &&
               temporaryGlowBorderDirection === `right` && (
                 <GlowBorder direction={`right`} />
               )}
             {currentPage !== 10 && (
-              <RightClickable onClick={onClickRightPage()} />
+              <RightClickable
+                onClick={onClickRightPage}
+                dimmed={
+                  currentActivePage === `left` &&
+                  scores[`${level}-${currentPage + 1}`] === undefined
+                } // 왼쪽 페이지가 활성화되어있고, 오른쪽 페이지의 점수가 없으면 딤드 처리
+              />
             )}
           </TextBookRightPage>
           <ModeSwitcherContainer>

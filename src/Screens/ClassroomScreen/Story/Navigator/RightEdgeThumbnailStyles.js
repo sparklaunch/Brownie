@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const RightEdgeThumbnailContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: relative;
     width: 216px;
     height: 144px;
@@ -14,7 +14,7 @@ const RightEdgeThumbnailContainer = styled.div`
     cursor: pointer;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
     width: 216px;
     height: 144px;
@@ -27,7 +27,7 @@ const RightEdgeThumbnailContainer = styled.div`
     cursor: pointer;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: relative;
     width: 216px;
     height: 144px;
@@ -42,7 +42,7 @@ const RightEdgeThumbnailContainer = styled.div`
 `;
 
 const RightEmptyThumbnailContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     width: 216px;
     height: 144px;
     display: grid;
@@ -53,7 +53,7 @@ const RightEmptyThumbnailContainer = styled.div`
     border: 4px solid transparent;
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 216px;
     height: 144px;
     display: grid;
@@ -64,7 +64,7 @@ const RightEmptyThumbnailContainer = styled.div`
     border: 4px solid transparent;
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     width: 216px;
     height: 144px;
     display: grid;

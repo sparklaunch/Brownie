@@ -1,11 +1,13 @@
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Constants from "../../../../../Utilities/Constants";
 
 const WelcomeButtons = () => {
   const navigate = useNavigate();
   const onClickLogOutButton = () => {
     sessionStorage.removeItem("userNumber");
-    window.location.reload();
+    sessionStorage.removeItem("studentName");
+    window.location.reload(); // 페이지를 강제 새로고침합니다.
   };
   return (
     <>
@@ -13,12 +15,12 @@ const WelcomeButtons = () => {
         variant={"contained"}
         size={"large"}
         sx={{
-          backgroundColor: "#1AB9C5",
+          backgroundColor: Constants.ACCENT_COLOR,
           width: "100%",
           fontSize: 18,
           marginBottom: "10px",
           "&:hover": {
-            backgroundColor: "#1AB9C5"
+            backgroundColor: Constants.ACCENT_COLOR
           }
         }}
         onClick={() => navigate("/mypage")}
@@ -29,11 +31,11 @@ const WelcomeButtons = () => {
         variant={"contained"}
         size={"large"}
         sx={{
-          backgroundColor: "#1AC573",
+          backgroundColor: Constants.NEON,
           width: "100%",
           fontSize: 18,
           "&:hover": {
-            backgroundColor: "#1AC573"
+            backgroundColor: Constants.NEON
           }
         }}
         onClick={onClickLogOutButton}

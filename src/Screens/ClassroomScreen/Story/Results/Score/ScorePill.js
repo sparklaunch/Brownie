@@ -5,29 +5,29 @@ import {
   ScorePillInnerContainer,
   ScorePillOuterContainer
 } from "./ScorePillStyles";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import modeAtom from "../../../../../Stores/Classroom/mode";
 
 const ScorePill = ({ score }) => {
-  const [mode, setMode] = useRecoilState(modeAtom);
-  let borderColor;
+  const mode = useRecoilValue(modeAtom);
+  let borderColor; // 점수에 따른 테두리 색상
   switch (mode) {
     case "story":
       if (score >= Constants.EXCELLENT_THRESHOLD) {
-        borderColor = `#15B58F`;
+        borderColor = Constants.TURQUOISE;
       } else if (score >= Constants.GOOD_THRESHOLD) {
-        borderColor = `#FF8200`;
+        borderColor = Constants.TANGERINE;
       } else {
-        borderColor = `#FF2442`;
+        borderColor = Constants.RED;
       }
       break;
     case "word":
       if (score >= Constants.WORD_EXCELLENT_THRESHOLD) {
-        borderColor = `#15B58F`;
+        borderColor = Constants.TURQUOISE;
       } else if (score >= Constants.WORD_GOOD_THRESHOLD) {
-        borderColor = `#FF8200`;
+        borderColor = Constants.TANGERINE;
       } else {
-        borderColor = `#FF2442`;
+        borderColor = Constants.RED;
       }
       break;
   }

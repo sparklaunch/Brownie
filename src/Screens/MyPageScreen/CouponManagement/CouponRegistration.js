@@ -25,7 +25,7 @@ const CouponRegistration = () => {
     }
   };
   const onCouponTextFieldChange = (event) => {
-    setCoupon(event.target.value.replace(/\s/g, ""));
+    setCoupon(event.target.value.replace(/\s/g, "")); // 공백 제거
   };
   return (
     <CouponRegistrationOuterContainer>
@@ -49,6 +49,7 @@ const CouponRegistration = () => {
               marginLeft: "10px",
               paddingX: "30px",
               backgroundColor: "#222222",
+              flexShrink: 0,
               "&:hover": {
                 backgroundColor: "#222222"
               }

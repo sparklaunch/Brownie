@@ -14,7 +14,6 @@ import agreeStatusAtom from "../../../Stores/Auth/agreeStatus";
 import validPasswordSelector from "../../../Stores/Auth/validPassword";
 import validPhoneNumberSelector from "../../../Stores/Auth/validPhoneNumber";
 import couponMessageAtom from "../../../Stores/Auth/couponMessage";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Constants from "../../../Utilities/Constants";
 import Swal from "sweetalert2";
@@ -28,6 +27,7 @@ import {
   TermsContainer,
   TermsText
 } from "./SignUpFieldsStyles";
+import { authAxios } from "../../../Utilities/AxiosInstances";
 
 const SignUpFields = () => {
   const validPhoneNumber = useRecoilValue(validPhoneNumberSelector);
@@ -44,6 +44,7 @@ const SignUpFields = () => {
   const [couponMessage, setCouponMessage] = useRecoilState(couponMessageAtom);
   const [agreeStatus, setAgreeStatus] = useRecoilState(agreeStatusAtom);
   const clearAllFields = () => {
+    // 모든 필드를 초기화합니다.
     setID("");
     setPassword("");
     setPasswordConfirm("");
@@ -56,38 +57,26 @@ const SignUpFields = () => {
   const navigate = useNavigate();
   const signIn = async () => {
     try {
-      const response = await axios.post(
-        `${Constants.AUTH_API_ENDPOINT}/api/ap002`,
-        {
-          id: id,
-          pwd: password
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*",
-            "Access-Control-Allow-Headers": "*"
-          }
-        }
-      );
+      const response = await authAxios.post("/api/ap002", {
+        // 로그인 API를 호출합니다.
+        id: id,
+        pwd: password
+      });
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
       if (response.data.resultCode === "100") {
+        // 로그인 성공
         sessionStorage.setItem("userNumber", response.data.user_no);
         sessionStorage.setItem("studentName", response.data.name);
-        await Swal.fire({
-          title: `회원가입 성공`,
-          text: `${studentName}님, 환영합니다!`,
-          icon: "success",
-          confirmButtonText: "확인"
-        });
         navigate("/");
       } else if (response.data.resultCode === "200") {
+        // 아이디가 없음
         await Swal.fire(Constants.INVALID_ACCOUNT);
       } else if (response.data.resultCode === "900") {
+        // 비밀번호가 틀림
         await Swal.fire(Constants.SIGN_IN_FAILED);
       } else {
+        // 서버 에러
         await Swal.fire(Constants.SERVER_ERROR);
       }
     } catch (error) {
@@ -97,67 +86,86 @@ const SignUpFields = () => {
   };
   const signUp = async () => {
     try {
-      const response = await axios.post(
-        `${Constants.AUTH_API_ENDPOINT}/api/ap001`,
-        {
-          id: id,
-          pwd: password,
-          name: studentName,
-          tel: phoneNumber,
-          birth: studentBirthDate
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*",
-            "Access-Control-Allow-Headers": "*"
-          }
-        }
-      );
+      const response = await authAxios.post("/api/ap001", {
+        // 회원가입 API를 호출합니다.
+        id: id,
+        pwd: password,
+        name: studentName,
+        tel: phoneNumber,
+        birth: studentBirthDate
+      });
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
-      if (response.data.resultCode === "100") {
-        await Swal.fire(Constants.SIGN_UP_SUCCEEDED);
-        clearAllFields();
-        signIn();
-      } else if (response.data.resultCode === "900") {
-        await Swal.fire(Constants.SIGN_UP_FAILED);
-      } else {
-        await Swal.fire(Constants.SERVER_ERROR);
+      switch (
+        response.data.resultCode // 회원가입 결과에 따라 다른 메시지를 띄웁니다.
+      ) {
+        case "100": // 회원가입 성공
+          await Swal.fire({
+            title: "환영합니다",
+            text: `${studentName}님, 환영합니다!.`,
+            icon: "success",
+            confirmButtonText: "확인"
+          });
+          clearAllFields();
+          await signIn();
+          break;
+        case "900": // 회원가입 실패
+          await Swal.fire(Constants.SIGN_UP_FAILED);
+          break;
+        case "901": // 아이디 중복
+          await Swal.fire(Constants.ID_ALREADY_EXISTS);
+          break;
+        case "902": // 비밀번호 형식 오류
+          await Swal.fire(Constants.PASSWORD_NOT_VALID);
+          break;
+        default: // 서버 에러
+          await Swal.fire(Constants.SERVER_ERROR);
+          break;
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
       console.log(errorString);
     }
   };
-  const onClickSignUp = () => {
+  const onClickSignUp = async () => {
     if (id.length === 0) {
-      Swal.fire(Constants.EMPTY_ID);
+      // 아이디가 비어있는 경우
+      await Swal.fire(Constants.EMPTY_ID);
     } else if (password.length === 0) {
-      Swal.fire(Constants.EMPTY_PASSWORD);
+      // 비밀번호가 비어있는 경우
+      await Swal.fire(Constants.EMPTY_PASSWORD);
     } else if (!validPassword) {
-      Swal.fire(Constants.PASSWORD_NOT_VALID);
+      // 비밀번호 형식이 올바르지 않은 경우
+      await Swal.fire(Constants.PASSWORD_NOT_VALID);
     } else if (passwordConfirm.length === 0) {
-      Swal.fire(Constants.EMPTY_PASSWORD_CONFIRMATION);
+      // 비밀번호 확인이 비어있는 경우
+      await Swal.fire(Constants.EMPTY_PASSWORD_CONFIRMATION);
     } else if (password !== passwordConfirm) {
-      Swal.fire(Constants.PASSWORDS_NOT_MATCH);
+      // 비밀번호와 비밀번호 확인이 일치하지 않는 경우
+      await Swal.fire(Constants.PASSWORD_NOT_MATCH);
     } else if (phoneNumber.length === 0) {
-      Swal.fire(Constants.EMPTY_PHONE_NUMBER);
+      // 전화번호가 비어있는 경우
+      await Swal.fire(Constants.EMPTY_PHONE_NUMBER);
     } else if (!validPhoneNumber) {
-      Swal.fire(Constants.PHONE_NUMBER_NOT_VALID);
+      // 전화번호 형식이 올바르지 않은 경우
+      await Swal.fire(Constants.PHONE_NUMBER_NOT_VALID);
     } else if (studentName.length === 0) {
-      Swal.fire(Constants.EMPTY_STUDENT_NAME);
+      // 학생 이름이 비어있는 경우
+      await Swal.fire(Constants.EMPTY_STUDENT_NAME);
     } else if (agreeStatus === false) {
-      Swal.fire(Constants.TERMS_UNCHECKED);
+      // 약관 동의가 되어있지 않은 경우
+      await Swal.fire(Constants.TERMS_UNCHECKED);
     } else {
-      signUp();
+      // 모든 필드가 올바르게 입력된 경우
+      await signUp();
     }
   };
-  const onClickRegisterCoupon = () => {
+  const onClickRegisterCoupon = async () => {
     if (coupon.length === 0) {
-      Swal.fire(Constants.EMPTY_COUPON_CODE);
+      // 쿠폰 코드가 비어있는 경우
+      await Swal.fire(Constants.EMPTY_COUPON_CODE);
     } else {
+      // 쿠폰 코드가 입력된 경우
       setCouponMessage("쿠폰이 등록되었습니다.");
       setCoupon("");
     }
@@ -173,7 +181,6 @@ const SignUpFields = () => {
           variant={"outlined"}
           label={"아이디"}
           size={"medium"}
-          autoComplete={false}
           sx={{
             width: "100%",
             backgroundColor: "white",
@@ -190,6 +197,7 @@ const SignUpFields = () => {
           value={password}
           onChange={(event) => {
             if (!event.target.value.match(/\s/)) {
+              // 공백을 입력하지 못하도록 합니다.
               setPassword(event.target.value);
             }
           }}
@@ -214,6 +222,7 @@ const SignUpFields = () => {
           value={passwordConfirm}
           onChange={(event) => {
             if (!event.target.value.match(/\s/)) {
+              // 공백을 입력하지 못하도록 합니다.
               setPasswordConfirm(event.target.value);
             }
           }}
@@ -239,6 +248,7 @@ const SignUpFields = () => {
           value={phoneNumber}
           onChange={(event) => {
             if (event.target.value.match(/^[0-9]*$/)) {
+              // 숫자만 입력 가능
               setPhoneNumber(event.target.value);
             }
           }}
@@ -295,7 +305,7 @@ const SignUpFields = () => {
           onChange={(event) => setCoupon(event.target.value)}
           variant={"outlined"}
           label={"예) ########"}
-          size={"small"}
+          size={"medium"}
           sx={{
             backgroundColor: "white",
             borderRadius: 2,
@@ -310,6 +320,7 @@ const SignUpFields = () => {
           onClick={onClickRegisterCoupon}
           sx={{
             backgroundColor: "#222",
+            height: 57,
             ":hover": {
               backgroundColor: "#222"
             }
@@ -332,7 +343,7 @@ const SignUpFields = () => {
         variant={"contained"}
         onClick={onClickSignUp}
         sx={{
-          backgroundColor: "#1AB9C5",
+          backgroundColor: Constants.ACCENT_COLOR,
           filter: "brightness(1.0)",
           fontFamily: "Jua",
           fontSize: 18,
@@ -340,7 +351,7 @@ const SignUpFields = () => {
           height: 44,
           marginTop: 1.5,
           ":hover": {
-            backgroundColor: "#1AB9C5"
+            backgroundColor: Constants.ACCENT_COLOR
           }
         }}
       >

@@ -1,22 +1,23 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const FooterContainer = styled.div`
-  @media (480px <= width <= 767px) {
-    border-top: 2px solid #dfdfdf;
+  @media screen and (max-width: 767px) {
+    border-top: 2px solid ${Constants.LIGHT_GRAY};
     padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  @media (768px <= width <= 992px) {
-    border-top: 2px solid #dfdfdf;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    border-top: 2px solid ${Constants.LIGHT_GRAY};
     padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  @media (width >= 993px) {
-    border-top: 2px solid #dfdfdf;
+  @media screen and (min-width: 993px) {
+    border-top: 2px solid ${Constants.LIGHT_GRAY};
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -25,147 +26,148 @@ const FooterContainer = styled.div`
 `;
 
 const AddressContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
 `;
 
 const NameText = styled.p`
-  @media (480px <= width <= 767px) {
-    margin-bottom: 2px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 3px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-right: 8px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     padding-right: 8px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
 `;
 
 const AddressText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-left: 8px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     padding-left: 8px;
   }
 `;
 
 const DetailContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     font-size: 14px;
-    color: #707070;
+    color: ${Constants.SOOT};
     padding: 4px 0;
   }
 `;
 
 const OwnerText = styled.p`
-  @media (480px <= width <= 767px) {
-    margin-bottom: 2px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 3px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-right: 8px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     padding-right: 8px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
 `;
 
 const RegistrationNumberText = styled.p`
-  @media (480px <= width <= 767px) {
-    margin-bottom: 2px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 3px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     padding: 0 12px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     padding: 0 12px;
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid ${Constants.LIGHT_GRAY};
   }
 `;
 
 const CustomerServiceNumberText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-left: 12px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     padding-left: 12px;
   }
 `;
 
 const CopyrightContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     padding-top: 10px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     padding-top: 10px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     padding-top: 10px;
   }
 `;
 
 const CopyrightText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
+    letter-spacing: -1px;
     font-size: 14px;
-    color: #acacac;
+    color: ${Constants.GRAY};
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 14px;
-    color: #acacac;
+    color: ${Constants.GRAY};
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-size: 14px;
-    color: #acacac;
+    color: ${Constants.GRAY};
   }
 `;
 

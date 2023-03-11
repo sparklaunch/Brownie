@@ -1,12 +1,18 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const FeatureSpecimenContainer = styled.div`
-  @media (768px <= width <= 992px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,34 +20,44 @@ const FeatureSpecimenContainer = styled.div`
 `;
 
 const FeatureSpecimenImage = styled.img`
-  @media (768px <= width <= 992px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 36px;
     width: 600px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     margin-bottom: 36px;
     width: 600px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  @media screen and (min-width: 993px) {
+    margin-bottom: 36px;
+    width: 600px;
   }
 `;
 
 const FeatureSpecimenTextContainer = styled.div`
-  @media (768px <= width <= 992px) {
+  @media screen and (max-width: 767px) {
     text-align: center;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    text-align: center;
+  }
+  @media screen and (min-width: 993px) {
     text-align: center;
   }
 `;
 
 const FeatureSpecimenText = styled.p`
-  @media (768px <= width <= 992px) {
-    color: #515151;
+  @media screen and (max-width: 767px) {
+    color: ${Constants.DARK_GRAY};
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    color: ${Constants.DARK_GRAY};
     font-size: 20px;
   }
-  @media (width >= 993px) {
-    color: #515151;
+  @media screen and (min-width: 993px) {
+    color: ${Constants.DARK_GRAY};
     font-size: 20px;
   }
 `;

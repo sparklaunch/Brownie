@@ -1,85 +1,122 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const HamburgerMenuContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
   }
 `;
 
 const SignInButton = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-family: Jua, sans-serif;
     font-size: 14px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-family: Jua, sans-serif;
     font-size: 14px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-family: Jua, sans-serif;
     font-size: 14px;
     color: white;
     padding: 8px 20px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
   }
 `;
 
-const InstructionsText = styled.p`
-  @media (480px <= width <= 767px) {
+const SignOutButton = styled.p`
+  @media screen and (max-width: 767px) {
+    font-family: Jua, sans-serif;
     font-size: 14px;
-    color: #3d3d3d;
+    color: white;
+    padding: 8px 20px;
+    background-color: ${Constants.ACCENT_COLOR};
+    border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    font-family: Jua, sans-serif;
     font-size: 14px;
-    color: #3d3d3d;
+    color: white;
+    padding: 8px 20px;
+    background-color: ${Constants.ACCENT_COLOR};
+    border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
+    font-family: Jua, sans-serif;
     font-size: 14px;
-    color: #3d3d3d;
+    color: white;
+    padding: 8px 20px;
+    background-color: ${Constants.ACCENT_COLOR};
+    border-radius: 6px;
     cursor: pointer;
     margin-right: 12px;
   }
 `;
 
 const AdministratorSiteText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     cursor: pointer;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 14px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     cursor: pointer;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-size: 14px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
+    cursor: pointer;
+  }
+`;
+
+const ManualText = styled.p`
+  @media screen and (max-width: 767px) {
+    margin-left: 12px;
+    font-size: 14px;
+    color: ${Constants.CHARCOAL};
+    cursor: pointer;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    margin-left: 12px;
+    font-size: 14px;
+    color: ${Constants.CHARCOAL};
+    cursor: pointer;
+  }
+  @media screen and (min-width: 993px) {
+    margin-left: 12px;
+    font-size: 14px;
+    color: ${Constants.CHARCOAL};
     cursor: pointer;
   }
 `;
@@ -87,6 +124,7 @@ const AdministratorSiteText = styled.p`
 export {
   HamburgerMenuContainer,
   SignInButton,
-  InstructionsText,
-  AdministratorSiteText
+  SignOutButton,
+  AdministratorSiteText,
+  ManualText
 };

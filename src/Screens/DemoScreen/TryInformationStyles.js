@@ -1,48 +1,49 @@
 import styled from "styled-components";
+import Constants from "../../Utilities/Constants";
 
 const TryInformationContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     width: 90%;
     padding: 30px;
-    background-color: #f9f9f9;
-    border: 2px solid #dfdfdf;
+    background-color: ${Constants.WHITE};
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 20px;
-    margin: 12px auto;
+    margin: 0 auto 32px auto;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 100%;
     padding: 30px;
-    background-color: #f9f9f9;
-    border: 2px solid #dfdfdf;
+    background-color: ${Constants.WHITE};
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 20px;
     margin: 12px 0;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     width: 100%;
     padding: 30px;
-    background-color: #f9f9f9;
-    border: 2px solid #dfdfdf;
+    background-color: ${Constants.WHITE};
+    border: 2px solid ${Constants.LIGHT_GRAY};
     border-radius: 20px;
     margin: 36px 0;
   }
 `;
 
 const TryInformationItem = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 6px 0;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 4px 0;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -52,27 +53,29 @@ const TryInformationItem = styled.div`
 `;
 
 const TryInformationItemText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
+    font-size: 13px;
+    letter-spacing: -1px;
+    margin-left: 10px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 16px;
     margin-left: 16px;
   }
-  @media (768px <= width <= 992px) {
-    font-size: 20px;
-    margin-left: 20px;
-  }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-size: 20px;
     margin-left: 20px;
   }
 `;
 
 const CheckImage = styled.img`
-  @media (480px <= width <= 767px) {
-    height: 16px;
+  @media screen and (max-width: 767px) {
+    height: 12px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    height: 14px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
   }
 `;
 

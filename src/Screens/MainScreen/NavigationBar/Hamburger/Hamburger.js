@@ -25,7 +25,7 @@ const Hamburger = () => {
         onClick={onClickHamburgerIcon}
       />
       <SwipeableDrawer
-        anchor="right"
+        anchor="right" // 오른쪽에서 스와이프하면 드로어가 열립니다.
         open={drawerOpen}
         onOpen={onOpenDrawer}
         onClose={onCloseDrawer}

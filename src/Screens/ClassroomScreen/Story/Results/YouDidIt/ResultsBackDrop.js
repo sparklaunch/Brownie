@@ -1,9 +1,9 @@
 import { ResultsBackDropContainer } from "./ResultsBackDropStyles";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import modeAtom from "../../../../../Stores/Classroom/mode";
 
 const ResultsBackDrop = () => {
-  const [mode, setMode] = useRecoilState(modeAtom);
+  const mode = useRecoilValue(modeAtom);
   return <ResultsBackDropContainer isWordMode={mode === "word"} />;
 };
 

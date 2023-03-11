@@ -1,19 +1,28 @@
 import styled from "styled-components";
 
+const HistoryGraphContainer = styled.div`
+  @media screen and (max-width: 767px) {
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+  }
+  @media screen and (min-width: 993px) {
+  }
+`;
+
 const HistoryGraphTitle = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     border-left: 4px solid #00aea8;
     padding-left: 12px;
     margin-bottom: 12px;
     font-size: 20px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     border-left: 4px solid #00aea8;
     padding-left: 12px;
     margin-bottom: 12px;
     font-size: 20px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     border-left: 4px solid #00aea8;
     padding-left: 12px;
     margin-bottom: 12px;
@@ -21,4 +30,4 @@ const HistoryGraphTitle = styled.p`
   }
 `;
 
-export { HistoryGraphTitle };
+export { HistoryGraphContainer, HistoryGraphTitle };

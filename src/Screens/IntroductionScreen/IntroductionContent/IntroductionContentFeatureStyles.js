@@ -1,13 +1,19 @@
 import styled from "styled-components";
 
 const IntroductionContentFeatureContainer = styled.div`
-  @media (768px <= width <= 992px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 10px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+  }
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,19 +22,28 @@ const IntroductionContentFeatureContainer = styled.div`
 `;
 
 const IntroductionContentFeatureIcon = styled.img`
-  @media (768px <= width <= 992px) {
-    margin-right: 16px;
+  @media screen and (max-width: 767px) {
+    height: 24px;
+    margin-right: 10px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    margin-right: 12px;
+  }
+  @media screen and (min-width: 993px) {
     margin-right: 16px;
   }
 `;
 
 const IntroductionContentText = styled.p`
-  @media (768px <= width <= 992px) {
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+    letter-spacing: -1px;
+    text-align: center;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 24px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-size: 24px;
   }
 `;

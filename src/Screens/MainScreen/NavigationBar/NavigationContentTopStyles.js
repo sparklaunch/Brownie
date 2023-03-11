@@ -1,21 +1,22 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const NavigationContentTopContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
     margin-bottom: 24px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
     margin-bottom: 24px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,19 +26,22 @@ const NavigationContentTopContainer = styled.div`
 `;
 
 const NavigationLink = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
+    cursor: pointer;
     margin-right: 24px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     font-size: 18px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    cursor: pointer;
     margin-right: 24px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     font-size: 18px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
+    cursor: pointer;
     margin-right: 24px;
-    color: #3d3d3d;
+    color: ${Constants.CHARCOAL};
     font-size: 18px;
   }
 `;

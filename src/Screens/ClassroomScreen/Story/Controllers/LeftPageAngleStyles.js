@@ -1,43 +1,39 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const LeftPageAngleContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     width: 47px;
     height: 47px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-right: 8px;
     ${(props) =>
       props.disabled ? `opacity: 0.5;` : `opacity: 1; cursor: pointer;`}
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 47px;
     height: 47px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-right: 8px;
     ${(props) =>
       props.disabled ? `opacity: 0.5;` : `opacity: 1; cursor: pointer;`}
   }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     width: 47px;
     height: 47px;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-right: 8px;
     ${(props) =>
       props.disabled ? `opacity: 0.5;` : `opacity: 1; cursor: pointer;`}
@@ -45,14 +41,12 @@ const LeftPageAngleContainer = styled.div`
 `;
 
 const LeftPageAngleImage = styled.img`
-    @media (width <= 767px) {
-    }
-
-    @media (768px <= width <= 992px) {
-    }
-
-    @media (width >= 993px) {
-    }
+  @media screen and (max-width: 767px) {
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+  }
+  @media screen and (min-width: 993px) {
+  }
 `;
 
 export { LeftPageAngleContainer, LeftPageAngleImage };

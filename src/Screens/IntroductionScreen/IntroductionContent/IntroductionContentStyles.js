@@ -2,46 +2,55 @@ import styled from "styled-components";
 import Constants from "../../../Utilities/Constants";
 
 const IntroductionContentOuterContainer = styled.div`
-  @media (768px <= width <= 992px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #f9f9f9;
-    padding: 80px;
-    border-top: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf;
+    background-color: ${Constants.WHITE};
+    padding: 80px 0;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
+    border-bottom: 1px solid ${Constants.LIGHT_GRAY};
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: ${Constants.WHITE};
+    padding: 80px 0;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
+    border-bottom: 1px solid ${Constants.LIGHT_GRAY};
+  }
+  @media screen and (min-width: 993px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: ${Constants.WHITE};
     padding: 80px;
-    border-top: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf;
+    border-top: 1px solid ${Constants.LIGHT_GRAY};
+    border-bottom: 1px solid ${Constants.LIGHT_GRAY};
   }
 `;
 
 const IntroductionContentInnerContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     width: ${Constants.MOBILE_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     width: ${Constants.TABLET_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  @media (993px <= width <= 1279px) {
-    width: ${Constants.DESKTOP_CONTAINER_WIDTH};
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
+    width: ${Constants.LAPTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     width: ${Constants.DESKTOP_CONTAINER_WIDTH};
     display: flex;
     flex-direction: column;

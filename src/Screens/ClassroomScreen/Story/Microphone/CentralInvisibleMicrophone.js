@@ -1,5 +1,5 @@
 const CentralInvisibleMicrophone = () => {
-  return <></>;
+  return <></>; // TODO: Implement this
 };
 
 export default CentralInvisibleMicrophone;

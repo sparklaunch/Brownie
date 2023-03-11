@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import currentWordPageAtom from "../../../../Stores/Classroom/Word/currentWordPage";
 import wordMicrophoneStateAtom from "../../../../Stores/Classroom/Word/wordMicrophoneState";
 import {
@@ -10,9 +10,7 @@ import {
 const WordLeftPageTurner = () => {
   const [currentWordPage, setCurrentWordPage] =
     useRecoilState(currentWordPageAtom);
-  const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
-    wordMicrophoneStateAtom
-  );
+  const wordMicrophoneState = useRecoilValue(wordMicrophoneStateAtom);
   const onClickLeftPageTurner = () => {
     setCurrentWordPage(Math.max(currentWordPage - 1, 1));
   };

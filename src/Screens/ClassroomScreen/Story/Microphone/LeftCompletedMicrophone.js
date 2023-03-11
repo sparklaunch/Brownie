@@ -1,7 +1,6 @@
-import { useRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import highlightedPageAtom from "../../../../Stores/Classroom/Story/highlightedPage";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
-import axios from "axios";
 import uuid from "react-uuid";
 import centralMicrophoneStateAtom from "../../../../Stores/Classroom/Story/Microphones/centralMicrophoneState";
 import useData from "../../../../Hooks/useData";
@@ -22,118 +21,104 @@ import Constants from "../../../../Utilities/Constants";
 import Swal from "sweetalert2";
 import { Howl, Howler } from "howler";
 import mediaRecorderAtom from "../../../../Stores/Misc/mediaRecorder";
+import playMicrophoneOnAudio from "../../../../Utilities/playMicrophoneOnAudio";
+import { elaAxios } from "../../../../Utilities/AxiosInstances";
 
 const LeftCompletedMicrophone = () => {
   const { level } = useParams();
-  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
-    resultsScreenShownAtom
-  );
-  const [audioDuration, setAudioDuration] = useRecoilState(audioDurationAtom);
-  const [highlightedPage, setHighlightedPage] =
-    useRecoilState(highlightedPageAtom);
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
-  const [centralMicrophoneState, setCentralMicrophoneState] = useRecoilState(
+  const setResultsScreenShown = useSetRecoilState(resultsScreenShownAtom);
+  const audioDuration = useRecoilValue(audioDurationAtom);
+  const setHighlightedPage = useSetRecoilState(highlightedPageAtom);
+  const currentPage = useRecoilValue(currentPageAtom);
+  const setCentralMicrophoneState = useSetRecoilState(
     centralMicrophoneStateAtom
   );
-  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
-  const [scores, setScores] = useRecoilState(scoresAtom);
+  const setTotalScore = useSetRecoilState(totalScoreAtom);
+  const setScores = useSetRecoilState(scoresAtom);
   const sentences = useData("sentences");
-  const [highlightVisible, setHighlightVisible] =
-    useRecoilState(highlightVisibleAtom);
-  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
+  const setHighlightVisible = useSetRecoilState(highlightVisibleAtom);
+  const mediaRecorder = useRecoilValue(mediaRecorderAtom);
   const recordVoice = async () => {
     try {
-      const audio = new Howl({
-        src: ["/assets/audio/microphone_on.wav"]
-      });
-      audio.play();
-      mediaRecorder.start();
+      await playMicrophoneOnAudio(); // 마이크 온 음원을 재생합니다.
+      mediaRecorder.start(); // 녹음을 시작합니다.
       setCentralMicrophoneState("invisible");
-      mediaRecorder.ondataavailable = (event) => {
-        const blob = new Blob([event.data], { type: "audio/wav" });
-        const reader = new FileReader();
-        reader.readAsDataURL(blob);
+      mediaRecorder.ondataavailable = async (event) => {
+        // 녹음이 완료되고, 녹음본이 재생 가능한 상태일 경우,
+        const blob = new Blob([event.data], { type: "audio/wav" }); // 녹음본을 blob 형태로 변환합니다.
+        const reader = new FileReader(); // blob 형태의 녹음본을 base64 형태로 변환합니다.
+        reader.readAsDataURL(blob); // base64 형태로 변환합니다.
         reader.onloadend = () => {
+          // base64 형태로 변환된 녹음본을 localStorage에 저장합니다.
           const base64Record = reader.result;
           localStorage.setItem("left_record", base64Record);
         };
         const formData = new FormData();
-        formData.append("text", sentences[currentPage - 1]);
-        formData.append("student_audio", event.data);
-        axios
-          .post(`${Constants.ELA_API_ENDPOINT}/pron_v2/`, formData, {
-            headers: {
-              "Content-Type": "multipart/form-data",
-              "x-cors-api-key": "temp_e4ec220dbf44f09c113217921d9d34d6",
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-              "X-API-KEY": Constants.API_KEY
-            }
-          })
-          .then((response) => {
-            setHighlightVisible(false);
-            const record = localStorage.getItem("left_record");
-            const leftRecord = new Howl({
-              src: [record]
-            });
-            leftRecord.play();
-            const stringResponse = JSON.stringify(response, null, 2);
-            console.log(stringResponse);
-            const totalScore = response.data.total_score;
-            setTotalScore({
-              score: totalScore,
-              id: uuid()
-            });
-            setScores((previous) => {
-              return {
-                ...previous,
-                [`${level}-${currentPage}`]: totalScore
-              };
-            });
-            setResultsScreenShown(true);
-          })
-          .catch((error) => {
-            const stringError = JSON.stringify(error, null, 2);
-            console.log(stringError);
-          });
+        formData.append("text", sentences[currentPage - 1]); // 현재 페이지의 문장을 formData에 추가합니다.
+        formData.append("student_audio", event.data); // 녹음본을 formData에 추가합니다.
+        const response = await elaAxios.post("/pron_v2/", formData); // 서버에 formData를 전송합니다.
+        setHighlightVisible(false);
+        const record = localStorage.getItem("left_record");
+        const leftRecord = new Howl({
+          src: [record]
+        });
+        leftRecord.play(); // 녹음본을 재생합니다.
+        const stringResponse = JSON.stringify(response, null, 2);
+        console.log(stringResponse);
+        const totalScore = response.data.total_score;
+        setTotalScore({
+          score: totalScore,
+          id: uuid()
+        }); // 총 점수를 저장합니다.
+        setScores((previous) => {
+          return {
+            ...previous,
+            [`${level}-${currentPage}`]: totalScore
+          };
+        }); // 현재 페이지의 점수를 저장합니다.
+        setResultsScreenShown(true);
       };
       setTimeout(() => {
-        mediaRecorder.stop();
+        // 녹음이 완료되면,
+        mediaRecorder.stop(); // 녹음을 중지합니다.
         setCentralMicrophoneState("loading");
       }, audioDuration);
     } catch (error) {
       switch (error.message) {
-        case "Requested device not found":
+        case "Requested device not found": // 마이크가 없을 경우,
           await Swal.fire(Constants.MICROPHONE_NOT_FOUND);
           break;
-        case "Permission denied":
+        case "Permission denied": // 마이크 사용 권한이 없을 경우,
           await Swal.fire(Constants.MICROPHONE_PERMISSION_DENIED);
           break;
-        default:
+        default: // 그 외의 오류가 발생할 경우,
           await Swal.fire(Constants.MICROPHONE_EXCEPTION);
           break;
       }
     }
   };
-  const onClickRetry = () => {
-    Howler.unload();
+  const onClickRetry = async () => {
+    // 다시하기 버튼을 누를 경우,
+    Howler.unload(); // Howler를 초기화합니다.
     setHighlightedPage(currentPage);
+    setHighlightVisible(true);
     setResultsScreenShown(false);
     setScores((previousScores) => {
       return {
         ...previousScores,
         [`${level}-${currentPage}`]: undefined
       };
-    });
-    recordVoice();
+    }); // 현재 페이지의 점수를 undefined로 초기화합니다.
+    await recordVoice(); // 녹음을 다시 시작합니다.
   };
   const onClickMyVoice = () => {
-    Howler.unload();
-    const leftRecord = localStorage.getItem("left_record");
+    // 내 목소리 듣기 버튼을 누를 경우,
+    Howler.unload(); // Howler를 초기화합니다.
+    const leftRecord = localStorage.getItem("left_record"); // localStorage에 저장된 녹음본을 가져옵니다.
     const leftRecordAudio = new Howl({
       src: [leftRecord]
     });
-    leftRecordAudio.play();
+    leftRecordAudio.play(); // 녹음본을 재생합니다.
   };
   return (
     <LeftCompletedMicrophoneContainer>

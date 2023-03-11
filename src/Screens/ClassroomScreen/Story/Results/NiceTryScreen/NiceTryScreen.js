@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import totalScoreAtom from "../../../../../Stores/Classroom/Story/totalScore";
 import ScorePill from "../Score/ScorePill";
 import { Fade } from "@mui/material";
@@ -10,8 +10,8 @@ import {
 import modeAtom from "../../../../../Stores/Classroom/mode";
 
 const NiceTryScreen = () => {
-  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
-  const [mode, setMode] = useRecoilState(modeAtom);
+  const totalScore = useRecoilValue(totalScoreAtom);
+  const mode = useRecoilValue(modeAtom);
   return (
     <Fade in={true} timeout={500}>
       <NiceTryScreenContainer isWordMode={mode === "word"}>
@@ -22,7 +22,6 @@ const NiceTryScreen = () => {
         <ScorePillWrapper>
           <ScorePill score={totalScore.score} />
         </ScorePillWrapper>
-        <p>{totalScore.score}</p>
       </NiceTryScreenContainer>
     </Fade>
   );

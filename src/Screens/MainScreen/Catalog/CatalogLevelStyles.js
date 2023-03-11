@@ -1,33 +1,33 @@
 import styled from "styled-components";
 
 const CatalogLevelContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 48px;
   }
-  @media (768px <= width <= 992px) {
-    margin-bottom: 12px;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    margin-bottom: 32px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     margin-bottom: 12px;
   }
 `;
 
 const CatalogLevelLabelContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 8px;
     margin-top: 24px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 8px;
     margin-top: 24px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -37,17 +37,17 @@ const CatalogLevelLabelContainer = styled.div`
 `;
 
 const CatalogLevelLabel = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-family: "Jua", sans-serif;
     font-size: 20px;
     margin-left: 12px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-family: "Jua", sans-serif;
     font-size: 20px;
     margin-left: 12px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-family: "Jua", sans-serif;
     font-size: 20px;
     margin-left: 12px;
@@ -55,22 +55,23 @@ const CatalogLevelLabel = styled.p`
 `;
 
 const CatalogLevelGridContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 24px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
     gap: 24px;
   }
-  @media (993px <= width <= 1279px) {
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
-  @media (width >= 1280px) {
+  @media screen and (min-width: 1280px) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
@@ -78,15 +79,15 @@ const CatalogLevelGridContainer = styled.div`
 `;
 
 const SnowflakeIcon = styled.img`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     width: 14px;
     height: 14px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     width: 14px;
     height: 14px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     width: 14px;
     height: 14px;
   }

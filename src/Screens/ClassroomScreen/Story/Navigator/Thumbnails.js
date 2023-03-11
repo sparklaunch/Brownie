@@ -1,7 +1,7 @@
 import LeftEdgeThumbnail from "./LeftEdgeThumbnail";
 import RightEdgeThumbnail from "./RightEdgeThumbnail";
 import Thumbnail from "./Thumbnail";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import navigatorPageAtom from "../../../../Stores/Classroom/Story/navigatorPage";
 import currentPageAtom from "../../../../Stores/Classroom/Story/currentPage";
 import {
@@ -15,7 +15,7 @@ import {
 
 const Thumbnails = () => {
   const [navigatorPage, setNavigatorPage] = useRecoilState(navigatorPageAtom);
-  const [currentPage, setCurrentPage] = useRecoilState(currentPageAtom);
+  const setCurrentPage = useSetRecoilState(currentPageAtom);
   const onClickLeftEdgeThumbnail = () => {
     setNavigatorPage(Math.max(navigatorPage - 4, 0));
     setCurrentPage(Math.max(navigatorPage - 4, 0));

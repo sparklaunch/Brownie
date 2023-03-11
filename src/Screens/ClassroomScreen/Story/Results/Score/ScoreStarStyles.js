@@ -1,23 +1,65 @@
 import styled from "styled-components";
 
-const ScoreStarImage = styled.img`
-  @media (width <= 767px) {
-    width: 16px;
-    height: 16px;
+const ScoreStarImage = styled.div`
+  @media screen and (max-width: 767px) {
+    ${(props) =>
+      props.isEmpty
+        ? `
+      background-image: url("/assets/images/tiny_empty_star.svg");
+    `
+        : `
+      background-image: url("/assets/images/tiny_star.svg");
+    `}
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 8px;
+    height: 8px;
   }
-
-  @media (768px <= width <= 992px) {
-    width: 18px;
-    height: 18px;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    ${(props) =>
+      props.isEmpty
+        ? `
+      background-image: url("/assets/images/small_empty_star.svg");
+    `
+        : `
+      background-image: url("/assets/images/small_star.svg");
+    `}
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 10px;
+    height: 10px;
   }
-
-  @media (993px <= width <= 1279px) {
-    width: 22px;
-    height: 22px;
+  @media screen and (min-width: 993px) and (max-width: 1279px) {
+    ${(props) =>
+      props.isEmpty
+        ? `
+      background-image: url("/assets/images/medium_empty_star.svg");
+    `
+        : `
+      background-image: url("/assets/images/medium_star.svg");
+    `}
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 12px;
+    height: 12px;
   }
-  @media (width >= 1280px) {
-    width: 26px;
-    height: 26px;
+  @media screen and (min-width: 1280px) {
+    ${(props) =>
+      props.isEmpty
+        ? `
+      background-image: url("/assets/images/big_empty_star.svg");
+    `
+        : `
+      background-image: url("/assets/images/big_star.svg");
+    `}
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 14px;
+    height: 14px;
   }
 `;
 

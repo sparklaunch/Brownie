@@ -1,19 +1,20 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const InstructionText = styled.p`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     font-size: 18px;
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     font-size: 18px;
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     font-size: 18px;
-    color: #515151;
+    color: ${Constants.DARK_GRAY};
   }
 `;
 

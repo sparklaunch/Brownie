@@ -1,34 +1,29 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const CentralIdleMicrophoneContainer = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: relative;
-    width: 52px;
-    height: 52px;
     cursor: pointer;
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: relative;
-    width: 52px;
-    height: 52px;
     cursor: pointer;
   }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: relative;
     cursor: pointer;
   }
 `;
 
 const OuterCircle = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 100%;
     transform: scale(1.2);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -39,14 +34,13 @@ const OuterCircle = styled.div`
       }
     }
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 100%;
     transform: scale(1.2);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -57,14 +51,13 @@ const OuterCircle = styled.div`
       }
     }
   }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 100%;
     transform: scale(1.2);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -78,13 +71,13 @@ const OuterCircle = styled.div`
 `;
 
 const InnerCircle = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 100%;
     transform: scale(1.1);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -95,14 +88,13 @@ const InnerCircle = styled.div`
       }
     }
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 100%;
     transform: scale(1.1);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -113,14 +105,13 @@ const InnerCircle = styled.div`
       }
     }
   }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 100%;
     transform: scale(1.1);
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     animation: fadeOut 1.3s infinite;
     @keyframes fadeOut {
       0% {
@@ -134,13 +125,13 @@ const InnerCircle = styled.div`
 `;
 
 const Wave = styled.div`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 100%;
     transform: scale(1);
-    border: 5px solid #1ab9c5;
+    border: 5px solid ${Constants.ACCENT_COLOR};
     animation: wave 1.3s infinite;
     @keyframes wave {
       0% {
@@ -153,14 +144,13 @@ const Wave = styled.div`
       }
     }
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 100%;
     transform: scale(1);
-    border: 5px solid #1ab9c5;
+    border: 5px solid ${Constants.ACCENT_COLOR};
     animation: wave 1.3s infinite;
     @keyframes wave {
       0% {
@@ -173,14 +163,13 @@ const Wave = styled.div`
       }
     }
   }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 100%;
     transform: scale(1);
-    border: 5px solid #1ab9c5;
+    border: 5px solid ${Constants.ACCENT_COLOR};
     animation: wave 1.3s infinite;
     @keyframes wave {
       0% {
@@ -196,13 +185,20 @@ const Wave = styled.div`
 `;
 
 const CentralIdleMicrophoneImage = styled.img`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
+    position: relative;
+    width: 40px;
+    height: 40px;
   }
-
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    position: relative;
+    width: 55px;
+    height: 55px;
   }
-
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
+    position: relative;
+    width: 70px;
+    height: 70px;
   }
 `;
 

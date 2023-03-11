@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import Constants from "../../../../Utilities/Constants";
 
 const LeftNavigatorContainer = styled.div`
-  @media (width <= 767px) {
-    background-color: #1ab9c5;
+  @media screen and (max-width: 767px) {
+    background-color: ${Constants.ACCENT_COLOR};
     display: inline-block;
     padding: 16px 12px;
     border-radius: 10px;
@@ -11,8 +12,8 @@ const LeftNavigatorContainer = styled.div`
     margin-right: 12px;
   }
 
-  @media (768px <= width <= 992px) {
-    background-color: #1ab9c5;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    background-color: ${Constants.ACCENT_COLOR};
     display: inline-block;
     padding: 16px 12px;
     border-radius: 10px;
@@ -21,8 +22,8 @@ const LeftNavigatorContainer = styled.div`
     margin-right: 12px;
   }
 
-  @media (width >= 993px) {
-    background-color: #1ab9c5;
+  @media screen and (min-width: 993px) {
+    background-color: ${Constants.ACCENT_COLOR};
     display: inline-block;
     padding: 16px 12px;
     border-radius: 10px;
@@ -33,13 +34,13 @@ const LeftNavigatorContainer = styled.div`
 `;
 
 const LeftNavigatorImage = styled.img`
-  @media (width <= 767px) {
+  @media screen and (max-width: 767px) {
   }
 
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
   }
 
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
   }
 `;
 

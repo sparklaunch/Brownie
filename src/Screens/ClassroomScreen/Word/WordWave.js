@@ -9,7 +9,7 @@ const WordWave = () => {
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
     }
-  };
+  }; // Lottie options
   return <Lottie options={lottieOptions} height={200} width={200} />;
 };
 

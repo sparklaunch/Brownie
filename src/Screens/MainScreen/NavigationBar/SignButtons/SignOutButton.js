@@ -1,23 +1,24 @@
 import { Button } from "@mui/material";
+import Constants from "../../../../Utilities/Constants";
 
 const SignOutButton = () => {
   const onClickSignOut = () => {
     sessionStorage.removeItem("userNumber");
-    window.location.reload();
+    sessionStorage.removeItem("studentName");
+    window.location.reload(); // 페이지를 강제 새로고침합니다.
   };
   return (
     <Button
       variant={"contained"}
       onClick={onClickSignOut}
       sx={{
-        backgroundColor: "#1AB9C5",
-        filter: "brightness(1.0)",
+        backgroundColor: Constants.ACCENT_COLOR,
         fontFamily: "Jua",
         fontSize: 18,
         width: 104,
         height: 44,
         ":hover": {
-          backgroundColor: "#1AB9C5"
+          backgroundColor: Constants.ACCENT_COLOR
         }
       }}
     >

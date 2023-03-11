@@ -1,5 +1,5 @@
 import currentWordPageAtom from "../../../Stores/Classroom/Word/currentWordPage";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import useData from "../../../Hooks/useData";
 import totalScoreAtom from "../../../Stores/Classroom/Story/totalScore";
 import Constants from "../../../Utilities/Constants";
@@ -16,32 +16,31 @@ import { Howl } from "howler";
 const WordImage = () => {
   const words = useData("words");
   const bookID = useData("id");
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
+  const currentWordPage = useRecoilValue(currentWordPageAtom);
   const playWordAudio = () => {
-    const audio = new Howl({
+    const wordAudio = new Howl({
       src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`]
     });
-    audio.play();
+    wordAudio.play();
   };
   const onClickMegaphone = () => {
-    return _.throttle(playWordAudio, 1000, { leading: true, trailing: true });
+    return _.throttle(playWordAudio, 1000, { leading: true, trailing: true }); // 1초에 한번씩만 실행되도록
   };
-  const [totalScore, setTotalScore] = useRecoilState(totalScoreAtom);
-  let textColor;
+  const totalScore = useRecoilValue(totalScoreAtom);
+  let textColor; // 점수에 따라 단어 색깔을 다르게 표시
   if (totalScore.score >= Constants.WORD_EXCELLENT_THRESHOLD) {
-    textColor = "#15B58F";
+    textColor = Constants.TURQUOISE;
   } else if (totalScore.score >= Constants.WORD_GOOD_THRESHOLD) {
-    textColor = "#FF8200";
+    textColor = Constants.TANGERINE;
   } else {
-    textColor = "#FF2442";
+    textColor = Constants.RED;
   }
   return (
     <WordImageContainer>
       <WordIllustration
         src={`/assets/images/words/${bookID}_${words[currentWordPage - 1]
           .toLowerCase()
-          .replace(" ", "")}.png`}
+          .replace(" ", "")}.png`} // 단어 이미지 불러오기
         alt={words[currentWordPage - 1]}
       />
       <WordContainer>

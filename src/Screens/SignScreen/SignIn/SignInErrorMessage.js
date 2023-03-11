@@ -1,11 +1,9 @@
 import signInErrorMessageAtom from "../../../Stores/Auth/signInErrorMessage";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { SignInErrorMessageText } from "./SignInErrorMessageStyles";
 
 const SignInErrorMessage = () => {
-  const [signInErrorMessage, setSignInErrorMessage] = useRecoilState(
-    signInErrorMessageAtom
-  );
+  const signInErrorMessage = useRecoilValue(signInErrorMessageAtom);
   return <SignInErrorMessageText>{signInErrorMessage}</SignInErrorMessageText>;
 };
 

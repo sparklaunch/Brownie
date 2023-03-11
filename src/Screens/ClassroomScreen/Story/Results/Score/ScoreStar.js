@@ -2,19 +2,11 @@ import { ScoreStarImage } from "./ScoreStarStyles";
 
 const ScoreStar = ({ filled }) => {
   if (filled) {
-    return (
-      <ScoreStarImage
-        src={`/assets/images/star_filled.svg`}
-        alt={`Filled Star`}
-      />
-    );
+    // 채워진 별일 경우,
+    return <ScoreStarImage />;
   } else {
-    return (
-      <ScoreStarImage
-        src={`/assets/images/star_empty.svg`}
-        alt={`Empty Star`}
-      />
-    );
+    // 빈 별일 경우,
+    return <ScoreStarImage isEmpty={true} />;
   }
 };
 

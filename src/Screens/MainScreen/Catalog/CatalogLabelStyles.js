@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const CatalogLabelContainer = styled.div`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     bottom: 40px;
     left: 8px;
@@ -11,11 +12,10 @@ const CatalogLabelContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     bottom: 40px;
     left: 8px;
@@ -25,11 +25,10 @@ const CatalogLabelContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     position: absolute;
     bottom: 40px;
     left: 8px;
@@ -39,22 +38,21 @@ const CatalogLabelContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #1ab9c5;
+    background-color: ${Constants.ACCENT_COLOR};
     border-radius: 6px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
 
 const CatalogLabelText = styled.p`
-  @media (480px <= width <= 767px) {
+  @media screen and (max-width: 767px) {
     color: white;
     font-size: 14px;
   }
-  @media (768px <= width <= 992px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     color: white;
     font-size: 14px;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     color: white;
     font-size: 14px;
   }

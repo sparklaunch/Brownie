@@ -2,9 +2,9 @@ import { Button, TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
 import idAtom from "../../../../../Stores/Auth/id";
 import passwordAtom from "../../../../../Stores/Auth/password";
-import axios from "axios";
 import Constants from "../../../../../Utilities/Constants";
 import Swal from "sweetalert2";
+import { authAxios } from "../../../../../Utilities/AxiosInstances";
 
 const FormFields = () => {
   const [id, setID] = useRecoilState(idAtom);
@@ -15,52 +15,59 @@ const FormFields = () => {
   };
   const signIn = async () => {
     try {
-      const response = await axios.post(
-        `${Constants.AUTH_API_ENDPOINT}/api/ap002`,
-        {
-          id: id,
-          pwd: password
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*"
-          }
-        }
-      );
+      const response = await authAxios.post("/api/ap002", {
+        // 로그인 API를 호출합니다.
+        id: id,
+        pwd: password
+      });
       const stringResponse = JSON.stringify(response, null, 2);
       console.log(stringResponse);
-      if (response.data.resultCode === "100") {
-        await Swal.fire(Constants.WELCOME);
-        clearAllFields();
-        sessionStorage.setItem("userNumber", response.data.user_no);
-        sessionStorage.setItem("studentName", response.data.name);
-        window.location.reload();
-      } else if (response.data.resultCode === "200") {
-        await Swal.fire(Constants.INVALID_ACCOUNT);
-      } else if (response.data.resultCode === "900") {
-        await Swal.fire(Constants.SIGN_IN_FAILED);
-      } else {
-        await Swal.fire(Constants.SERVER_ERROR);
+      switch (
+        response.data.resultCode // 로그인 API의 응답 코드에 따라서 다른 처리를 합니다.
+      ) {
+        case "100": // 로그인 성공
+          await Swal.fire(Constants.WELCOME);
+          clearAllFields();
+          sessionStorage.setItem("userNumber", response.data.user_no);
+          sessionStorage.setItem("studentName", response.data.name);
+          window.location.reload(); // 페이지를 강제 새로고침합니다.
+          break;
+        case "900": // 로그인 실패
+          await Swal.fire(Constants.SIGN_IN_FAILED);
+          break;
+        case "901": // 아이디가 존재하지 않음
+          await Swal.fire(Constants.INVALID_ACCOUNT);
+          break;
+        case "902": // 비밀번호가 틀림
+          await Swal.fire(Constants.INVALID_PASSWORD);
+          break;
+        default: // 서버 오류
+          await Swal.fire(Constants.SERVER_ERROR);
+          break;
       }
     } catch (error) {
       const errorString = JSON.stringify(error, null, 2);
       console.log(errorString);
     }
   };
-  const onLogInButtonClicked = () => {
+  const onLogInButtonClicked = async () => {
     if (id.length === 0) {
-      Swal.fire(Constants.EMPTY_ID);
+      // 아이디가 입력되었는지 확인합니다.
+      await Swal.fire(Constants.EMPTY_ID);
     } else if (password.length === 0) {
-      Swal.fire(Constants.EMPTY_PASSWORD);
+      // 비밀번호가 입력되었는지 확인합니다.
+      await Swal.fire(Constants.EMPTY_PASSWORD);
     } else {
-      signIn();
+      // 아이디와 비밀번호가 모두 입력되었다면 로그인 API를 호출합니다.
+      await signIn();
     }
   };
   return (
     <>
       <TextField
-        id={"id"}
+        id={"username"}
+        name={"username"}
+        inputProps={{ autoComplete: "username" }}
         variant={"filled"}
         label={"아이디"}
         size={"small"}
@@ -74,7 +81,11 @@ const FormFields = () => {
         }}
       />
       <TextField
-        id={"password"}
+        id={"current-password"}
+        name={"current-password"}
+        inputProps={{
+          autoComplete: "current-password"
+        }}
         variant={"filled"}
         label={"비밀번호"}
         size={"small"}
@@ -90,10 +101,9 @@ const FormFields = () => {
       <Button
         variant={"contained"}
         onClick={onLogInButtonClicked}
-        disableTouchRipple={true}
+        disableTouchRipple={true} // 버튼을 눌렀을 때 터치 반응을 없앱니다.
         sx={{
-          backgroundColor: "#1AB9C5",
-          filter: "brightness(1.0) drop-shadow(0 0 5px rgba(0, 0, 0, 0.5))",
+          backgroundColor: Constants.ACCENT_COLOR,
           lineHeight: 1.2,
           boxShadow: "none",
           letterSpacing: 0,
@@ -104,7 +114,7 @@ const FormFields = () => {
           borderRadius: 2,
           marginTop: 2,
           ":hover": {
-            backgroundColor: "#1AB9C5"
+            backgroundColor: Constants.ACCENT_COLOR
           }
         }}
       >

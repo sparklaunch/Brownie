@@ -1,5 +1,4 @@
-import wordResultsShownAtom from "../../../Stores/Classroom/Word/wordResultsShown";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import wordMicrophoneStateAtom from "../../../Stores/Classroom/Word/wordMicrophoneState";
 import resultsScreenShownAtom from "../../../Stores/Classroom/Story/resultsScreenShown";
 import wordScoresAtom from "../../../Stores/Classroom/Word/wordScores";
@@ -42,24 +41,25 @@ import LoadingCard from "../LoadingCard";
 import ScorePill from "../Story/Results/Score/ScorePill";
 import textbookSizeAtom from "../../../Stores/Misc/textbookSize";
 import mediaRecorderAtom from "../../../Stores/Misc/mediaRecorder";
+import useData from "../../../Hooks/useData";
+import { Howl } from "howler";
+import _ from "lodash";
+import shouldAudioPlayAtom from "../../../Stores/Classroom/shouldAudioPlay";
 
 const Card = () => {
   const { level } = useParams();
-  const [currentWordPage, setCurrentWordPage] =
-    useRecoilState(currentWordPageAtom);
-  const [wordResultsShown, setWordResultsShown] =
-    useRecoilState(wordResultsShownAtom);
+  const currentWordPage = useRecoilValue(currentWordPageAtom);
   const [wordMicrophoneState, setWordMicrophoneState] = useRecoilState(
     wordMicrophoneStateAtom
   );
-  const [wordScores, setWordScores] = useRecoilState(wordScoresAtom);
-  const [resultsScreenShown, setResultsScreenShown] = useRecoilState(
-    resultsScreenShownAtom
-  );
-  const [youDidItShown, setYouDidItShown] = useRecoilState(youDidItShownAtom);
-  const [textbookSize, setTextbookSize] = useRecoilState(textbookSizeAtom);
-  const [mediaRecorder, setMediaRecorder] = useRecoilState(mediaRecorderAtom);
+  const wordScores = useRecoilValue(wordScoresAtom);
+  const resultsScreenShown = useRecoilValue(resultsScreenShownAtom);
+  const youDidItShown = useRecoilValue(youDidItShownAtom);
+  const textbookSize = useRecoilValue(textbookSizeAtom);
+  const mediaRecorder = useRecoilValue(mediaRecorderAtom);
+  const shouldAudioPlay = useRecoilValue(shouldAudioPlayAtom);
   const onClickWave = async () => {
+    // 웨이브 애니메이션을 누르면,
     try {
       setWordMicrophoneState(`loading`);
       mediaRecorder.stop();
@@ -67,13 +67,25 @@ const Card = () => {
       console.log(error);
     }
   };
+  const words = useData("words");
+  const playWordAudio = () => {
+    if (shouldAudioPlay) {
+      const wordAudio = new Howl({
+        src: [`/assets/audio/words/${words[currentWordPage - 1]}.wav`]
+      });
+      wordAudio.play();
+    }
+  };
+  const onClickWord = () => {
+    return _.throttle(playWordAudio, 1000, { leading: true, trailing: true }); // 1초에 한번씩만 실행되도록
+  };
   return (
     <CardOuterContainer>
       <CardInnerContainer textbookSize={textbookSize}>
         <InsetBorderContainer>
           <InsetBorder />
         </InsetBorderContainer>
-        <WordContainer>
+        <WordContainer onClick={onClickWord()}>
           {wordMicrophoneState === "completed" ? <WordImage /> : <WordCard />}
         </WordContainer>
         <InstructionsContainer>
@@ -98,7 +110,7 @@ const Card = () => {
           <HomeButton />
         </HomeButtonContainer>
         {resultsScreenShown && <ResultsScreen />}
-        {wordScores[`${level}-${currentWordPage}`] !== undefined && (
+        {wordScores[`${level}-${currentWordPage}`] !== undefined && ( // 점수가 있으면
           <WordResultsContainer>
             <ScorePill score={wordScores[`${level}-${currentWordPage}`]} />
           </WordResultsContainer>

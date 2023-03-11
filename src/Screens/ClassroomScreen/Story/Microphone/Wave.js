@@ -3,6 +3,7 @@ import Lottie from "react-lottie";
 
 const Wave = () => {
   const lottieOptions = {
+    // Lottie의 옵션을 설정합니다.
     loop: true,
     autoplay: true,
     animationData: animationData,

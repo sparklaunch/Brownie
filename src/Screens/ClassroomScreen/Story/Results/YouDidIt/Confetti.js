@@ -10,7 +10,7 @@ const Confetti = () => {
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
     }
-  };
+  }; // 로티 옵션
   return (
     <ConfettiContainer>
       <Lottie options={lottieOptions} height={400} width={400} />

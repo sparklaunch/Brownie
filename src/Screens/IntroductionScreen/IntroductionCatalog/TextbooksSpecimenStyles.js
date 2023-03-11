@@ -1,13 +1,21 @@
 import styled from "styled-components";
+import Constants from "../../../Utilities/Constants";
 
 const TextbooksSpecimenContainer = styled.div`
-  @media (768px <= width <= 992px) {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 993px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,27 +24,35 @@ const TextbooksSpecimenContainer = styled.div`
 `;
 
 const TextbooksImage = styled.img`
-  @media (768px <= width <= 992px) {
+  @media screen and (max-width: 767px) {
     margin-bottom: 36px;
     width: 400px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     margin-bottom: 36px;
     width: 400px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  @media screen and (min-width: 993px) {
+    margin-bottom: 36px;
+    width: 400px;
   }
 `;
 
 const TextbooksTitleText = styled.p`
-  @media (768px <= width <= 992px) {
-    color: #999999;
+  @media screen and (max-width: 767px) {
+    color: ${Constants.ASH};
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 12px;
   }
-  @media (width >= 993px) {
-    color: #999999;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    color: ${Constants.ASH};
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  @media screen and (min-width: 993px) {
+    color: ${Constants.ASH};
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 12px;
@@ -44,21 +60,29 @@ const TextbooksTitleText = styled.p`
 `;
 
 const TextbooksTextContainer = styled.div`
-  @media (768px <= width <= 992px) {
+  @media screen and (max-width: 767px) {
     text-align: center;
   }
-  @media (width >= 993px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    text-align: center;
+  }
+  @media screen and (min-width: 993px) {
     text-align: center;
   }
 `;
 
 const TextbooksText = styled.p`
-  @media (768px <= width <= 992px) {
-    color: #999999;
-    font-size: 16px;
+  @media screen and (max-width: 767px) {
+    color: ${Constants.ASH};
+    line-height: 1.5;
+    font-size: 14px;
   }
-  @media (width >= 993px) {
-    color: #999999;
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    color: ${Constants.ASH};
+    font-size: 15px;
+  }
+  @media screen and (min-width: 993px) {
+    color: ${Constants.ASH};
     font-size: 16px;
   }
 `;
