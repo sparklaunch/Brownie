@@ -33,9 +33,8 @@ const StatusInnerContainer = styled.div`
 
 const StatusContainer = styled.div`
   @media (480px <= width <= 767px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 32px;
   }
   @media (768px <= width <= 992px) {
