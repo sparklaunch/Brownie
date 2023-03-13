@@ -154,5 +154,7 @@
       "react-app"
     ]
   },
-  "env": "development"
+  "env": {
+    "NODE_ENV": "development"
+  }
 }
