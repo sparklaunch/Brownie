@@ -192,7 +192,7 @@ const LeftPageShade = styled.div`
       rgba(0, 0, 0, 0.2) 100%
     );
   }
-  c @media screen and(min-width: 768 px) and (max-width: 992 px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     position: absolute;
     top: 0;
     right: 0;
@@ -204,7 +204,6 @@ const LeftPageShade = styled.div`
       rgba(0, 0, 0, 0.2) 100%
     );
   }
-
   @media screen and (min-width: 993px) {
     position: absolute;
     top: 0;
